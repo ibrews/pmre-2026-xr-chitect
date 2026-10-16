@@ -16,17 +16,17 @@ set -euo pipefail
 OWNER=ibrews; UPSTREAM=https://github.com/ibrews/spatial-deck
 die(){ echo "new_talk: $*" >&2; exit 1; }
 [ $# -ge 1 ] || die "usage: new_talk.sh <slug> --title \"...\" [--description ...] [--from <checkout>] [--dir <path>] [--dry-run]"
-SLUG=$1; shift; TITLE=""; DESC=""; FROM=""; DIR=""; DRY=0
+SLUG=$1; shift; TITLE=""; DESC=""; FROM=""; DIR=""; DRY=0; RESUME=0
 while [ $# -gt 0 ]; do case "$1" in
   --title) TITLE=$2; shift 2;; --description) DESC=$2; shift 2;; --from) FROM=$2; shift 2;;
-  --dir) DIR=$2; shift 2;; --dry-run) DRY=1; shift;; *) die "unknown arg $1";; esac; done
+  --dir) DIR=$2; shift 2;; --dry-run) DRY=1; shift;; --resume) RESUME=1; shift;; *) die "unknown arg $1";; esac; done
 [[ "$SLUG" =~ ^[a-z0-9][a-z0-9-]{2,60}$ ]] || die "slug must be lowercase kebab-case: $SLUG"
 [ "$SLUG" != "spatial-deck" ] || die "refusing: talks never go in ibrews/spatial-deck itself"
 [ -n "$TITLE" ] || die "--title is required"
 [ -n "$DESC" ] || DESC="$TITLE — Alex Coulombe"
 command -v gh >/dev/null || die "gh CLI required"
-gh repo view "$OWNER/$SLUG" >/dev/null 2>&1 && die "$OWNER/$SLUG already exists — not overwriting (edit and push it directly)"
-run(){ echo "+ $*"; [ $DRY = 1 ] || "$@"; }
+if gh repo view "$OWNER/$SLUG" >/dev/null 2>&1; then [ "$RESUME" = 1 ] || die "$OWNER/$SLUG already exists — not overwriting (use --resume to finish a half-done run)"; else RESUME=0; fi
+run(){ echo "+ $*"; if [ "$DRY" = 0 ]; then "$@"; fi; }   # NOTE: `[..] || cmd` would disable set -e
 
 if [ -n "$FROM" ]; then
   SRC=$(cd "$FROM" && pwd); git -C "$SRC" rev-parse --git-dir >/dev/null || die "--from is not a git checkout"
@@ -66,7 +66,7 @@ EOF
   fi
 fi
 
-run gh repo create "$OWNER/$SLUG" --public --description "$DESC"
+[ "$RESUME" = 1 ] || run gh repo create "$OWNER/$SLUG" --public --description "$DESC"
 # remotes: the template becomes "upstream", the new talk repo becomes "origin"
 O=$(git -C "$SRC" remote get-url origin 2>/dev/null || true)
 if [ -n "$O" ]; then
@@ -74,11 +74,11 @@ if [ -n "$O" ]; then
                *) die "--from checkout's origin is $O (expected ibrews/spatial-deck or none) — refusing to guess";; esac
 fi
 git -C "$SRC" remote get-url upstream >/dev/null 2>&1 || run git -C "$SRC" remote add upstream "$UPSTREAM"
-run git -C "$SRC" remote add origin "https://github.com/$OWNER/$SLUG.git"
-run git -C "$SRC" push -q -u origin "$BR:main"
+git -C "$SRC" remote get-url origin >/dev/null 2>&1 || run git -C "$SRC" remote add origin "https://github.com/$OWNER/$SLUG.git"
+run git -C "$SRC" -c http.postBuffer=1048576000 push -q -u origin "$BR:main"   # big media packs 408 on the default buffer
 [ "$BR" = main ] || run git -C "$SRC" checkout -q -B main "origin/main"
 grep -qx 'notes-config.json' "$SRC/.gitignore" 2>/dev/null || echo "new_talk: warning — add notes-config.json to .gitignore" >&2
-run gh api -X POST "/repos/$OWNER/$SLUG/pages" -f 'source[branch]=main' -f 'source[path]=/' --silent
+gh api "/repos/$OWNER/$SLUG/pages" --silent 2>/dev/null || run gh api -X POST "/repos/$OWNER/$SLUG/pages" -f 'source[branch]=main' -f 'source[path]=/' --silent
 run gh repo edit "$OWNER/$SLUG" --homepage "https://$OWNER.github.io/$SLUG/"
 echo
 echo "new_talk: done → https://github.com/$OWNER/$SLUG  ·  Pages: https://$OWNER.github.io/$SLUG/ (first build takes ~1 min)"
