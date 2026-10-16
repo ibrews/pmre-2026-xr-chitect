@@ -75,7 +75,7 @@ if [ -n "$O" ]; then
                *) die "--from checkout's origin is $O (expected ibrews/spatial-deck or none) — refusing to guess";; esac
 fi
 git -C "$SRC" remote get-url upstream >/dev/null 2>&1 || run git -C "$SRC" remote add upstream "$UPSTREAM"
-git -C "$SRC" remote get-url origin >/dev/null 2>&1 || run git -C "$SRC" remote add origin "https://github.com/$OWNER/$SLUG.git"
+git -C "$SRC" remote get-url origin >/dev/null 2>&1 || run git -C "$SRC" remote add origin "git@github.com:$OWNER/$SLUG.git"   # SSH: HTTPS 408s on the first media-heavy push
 run git -C "$SRC" -c http.postBuffer=1048576000 push -q -u origin "$BR:main"   # big media packs 408 on the default buffer
 [ "$BR" = main ] || run git -C "$SRC" checkout -q -B main "origin/main"
 grep -qx 'notes-config.json' "$SRC/.gitignore" 2>/dev/null || echo "new_talk: warning — add notes-config.json to .gitignore" >&2
