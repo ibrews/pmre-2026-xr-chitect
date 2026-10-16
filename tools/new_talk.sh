@@ -71,6 +71,7 @@ fi
 O=$(git -C "$SRC" remote get-url origin 2>/dev/null || true)
 if [ -n "$O" ]; then
   case "$O" in *ibrews/spatial-deck*) git -C "$SRC" remote get-url upstream >/dev/null 2>&1 && run git -C "$SRC" remote remove origin || run git -C "$SRC" remote rename origin upstream;;
+               *"$OWNER/$SLUG"*) : ;;  # resume: origin already points at the talk repo
                *) die "--from checkout's origin is $O (expected ibrews/spatial-deck or none) — refusing to guess";; esac
 fi
 git -C "$SRC" remote get-url upstream >/dev/null 2>&1 || run git -C "$SRC" remote add upstream "$UPSTREAM"
