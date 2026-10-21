@@ -115,23 +115,17 @@ Timing: the agenda block is 11:00–12:00. This script runs ~42 min, leaving ~15
 
 ✅ VERIFIED: "Founder, Agile Lens" [ABS]; founded 2016 → 10 years of Agile Lens [ABS]; "100+ experiences" — the PMRE bio says "building 100+ experiences to date" [ABS] (the old decks said "100+ Projects Shipped"; changed to match the bio). "Architect turned XR-chitect … the last decade … the world's most ambitious clients" is the FMX 2026 slide's own wording [DECKS].
 
-❓ ALEX — "13 Years in VR (since the DK1)": the HarvardXR/FMX/NXT cards said "16 Years in XR". The KB has your first VR as the Oculus DK1 in 2013 [BIO], so the card now says 13. Confirm, or tell me what 16 counted from.
-❓ ALEX — "8 Years in Unreal": on all three prior decks; the KB bio says "8+ years professional Unreal Engine experience" [BIO], but that line may be dated (Yale Schwarzman UE work was 2016). Confirm the number.
-❓ ALEX — UE5 line: wording differs across decks (HXR "Gold authorized UE5 instructor", FMX adds "silver authorized training center", NXT BLD "Authorized UE5 instructors with Training Center"). This uses the newest (NXT BLD), made singular. KB [BIO]: Unreal Authorized Instructor (exp. Feb 2027) ✅, First Authorized Training Center in Manhattan — but that certification shows exp. Feb 2026. Confirm it renewed before saying "Training Center" on stage. ✅ Unreal NYC lead organizer and Unreal Fest speaker (Prague 2024, Stockholm 2025) [BIO].
-
 ✎ PROPOSED line while it walks in: "This is me. Architect by training. Then a headset fell out of the sky." On the UE5 click: "Then I learned Unreal, and everything got bigger." Let the tallies land, then click.
+
+✅ VERIFIED (Alex, in chat 2026-10-21): 16 years in XR — started using AR in 2010; 10 years in Unreal Engine; all certifications current (renewed); Agile Lens is bootstrapped — no XR investment.
 
 ### 4. Agile Lens
 
 ⏱ ~90s. The HarvardXR monocle slide, 5 clicks. On arrival: twelve client names orbit the Agile Lens monocle with a low hum. Click 1 = the names fade; just the lens. Click 2 = 2026 appears and counts backward through time. Click 3 = 2016 you (no beard, headset on) appears in the middle. Click 4 = he shrinks into the monocle's eyepiece. Click 5 = chiptune; he dashes around the lens and "2016" lands. Then click into the lane motion.
 
-✅ VERIFIED: immersive design studio, New York City, founded 2016 [ABS].
-Clients on the orbit — ✅ in your PMRE bio [ABS]: Google, Four Seasons, Lincoln Center, Waldorf Astoria, Royal Shakespeare Company (RSC), Royal Caribbean. ✅ in the KB "Notable Clients" list [ALOV]: Disney, CBS, Kennedy Center, Dell. ✅ Samsung listed as a client [BIO].
-❓ ALEX — Epic Games: the KB has Epic as your instructor/training-center partner, not a client. Keep it, or swap in Joby Aviation (named in your PMRE bio)? It's one string in sections.js.
-❓ ALEX — "BOOTSTRAPPED" in the footer line: on the HarvardXR slide, but there's no KB source for it. Confirm or cut. ("10 YEARS" ✅ from the 2016 founding.)
-For a real-estate room you may want Four Seasons and Waldorf Astoria in the four anchor positions (12/3/6/9 o'clock): swap them into clientsFixed.
-
 ✎ PROPOSED (on the last click): "Ten years ago that was me: one guy, one headset, and a lot of advice to stay in my lane. Here's what that advice looked like in my head." → click into the lane motion.
+
+✅ VERIFIED (Alex, in chat 2026-10-21): 16 years in XR — started using AR in 2010; 10 years in Unreal Engine; all certifications current (renewed); Agile Lens is bootstrapped — no XR investment.
 
 ### 5. motion: lane
 
