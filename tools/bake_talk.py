@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HTML, SRC = ROOT / "index.html", ROOT / "talk" / "sections.js"
 s = HTML.read_text(encoding="utf-8")
-talk = SRC.read_text(encoding="utf-8").strip() + "\n" + (ROOT / "talk" / "options.js").read_text(encoding="utf-8").strip()
+talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "intro.js"))
 
 def patch(marker, anchor, new, count=1):
     """Replace anchor with new unless marker already present."""
@@ -55,7 +55,8 @@ patch("TALK.mapCenter[0]", "ct.textContent='IS XR RIGHT'", "ct.textContent=TALK.
 patch("TALK.mapCenter[1]", "ct2.textContent='FOR YOUR PROJECT?'", "ct2.textContent=TALK.mapCenter[1]")
 
 # 4. Presenter notes for cover/close/map/bonus come from TALK/BONUS.
-patch("BONUS.notes||", "if(ty==='bonus')return'Bonus lesson:", "if(ty==='bonus'&&BONUS.notes)return BONUS.notes;\n  if(ty==='bonus')return'Bonus lesson:")
+patch("BONUS.notes)return BONUS.notes;",  # marker = the inserted text, so re-bakes do not stack copies
+      "if(ty==='bonus')return'Bonus lesson:", "if(ty==='bonus'&&BONUS.notes)return BONUS.notes;\n  if(ty==='bonus')return'Bonus lesson:")
 patch("TALK.coverNotes", "if(ty==='cover')return'Welcome", "if(ty==='cover'&&TALK.coverNotes)return TALK.coverNotes;\n  if(ty==='cover')return'Welcome")
 patch("TALK.closeNotes", "if(ty==='close')return'Wrap up.", "if(ty==='close'&&TALK.closeNotes)return TALK.closeNotes;\n  if(ty==='close')return'Wrap up.")
 patch("TALK.mapNotes", "if(ty==='map')return'The constellation", "if(ty==='map'&&TALK.mapNotes)return TALK.mapNotes;\n  if(ty==='map')return'The constellation")
@@ -67,12 +68,17 @@ patch("TALK_NO_MONOCLE", "// 3D Monocle on Bonus slide\n(function(){\n", "// 3D 
 patch("sd-motion-poster", "querySelectorAll('#deck iframe').forEach(f=>{const src=f.src||'';",
       "querySelectorAll('#deck iframe').forEach(f=>{const src=f.src||'';const _mm=src.match(/media\\/motion\\/([\\w-]+)\\.html/);if(_mm){const im=document.createElement('img');im.className='full-media sd-motion-poster';im.src='media/motion/mp4/'+_mm[1]+'-poster.png';f.replaceWith(im);return;}")
 
+# 6a. Intro slides (talk/intro.js): the case builder hands layout 'intro-alex' / 'intro-lens' to buildTalkIntro().
+patch("buildTalkIntro(s,c)", "    // layout: 'full' — full-bleed image",
+      "    if(c.layout==='intro-alex'||c.layout==='intro-lens'){if(typeof buildTalkIntro==='function')buildTalkIntro(s,c);deck.appendChild(s);allSlides.push(s);return;}\n    // layout: 'full' — full-bleed image")
+
 # 6b. Talk options: hide/swap alternates after all slides exist, before navigation is wired (exports honor picks).
 patch("applyTalkOptions();", "\n// Navigation\n", "\nif(typeof applyTalkOptions==='function')applyTalkOptions();\n// Navigation\n")
 
 # 7. Motion replay + reduced motion + talk CSS, appended before </body>.
 EXTRA = """<!-- ── PMRE TALK RUNTIME ── -->
 <style>
+@@INTRO_CSS@@
 .talk-title .xr{background:linear-gradient(90deg,var(--teal),var(--purple),var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent}
 .layout-big .big-text.big-l2{font-size:calc(5.2*var(--vw))}
 .layout-big .big-text.big-l3{font-size:calc(4.1*var(--vw))}
@@ -107,6 +113,7 @@ let last=null;new MutationObserver(()=>{const a=document.querySelector('#deck .s
 const a0=document.querySelector('#deck .slide.active');if(a0){arm(a0);last=a0;}})();
 </script>
 """
+EXTRA = EXTRA.replace("@@INTRO_CSS@@", (ROOT / "talk" / "intro.css").read_text(encoding="utf-8").strip())
 s = re.sub(r"<!-- ── PMRE TALK RUNTIME ── -->.*?(?=</body>)", "", s, flags=re.S)
 if True:
     i = s.rfind("</body>")

@@ -7,6 +7,9 @@ Every option below is built into the deck. Press **O** in the deck for the picke
 | Opening `open` | `cold` *(default)* | The lane motion: one road splits into architecture, theater and technology, then braids into XR-chitect. Ends on "I didn't." |
 | | `question` | Show of hands first: "Who here has a job title your parents can't explain?" Warms a post-lunch room. |
 | | `story` | Skips the motion and goes straight to the "that job doesn't exist yet" quote. Fastest start. |
+| Who I am `intro` | `classic` *(default)* | Two intro slides after the first chapter card. The 8-bit Alex power-up (walk, ? block, headset, Unreal power-up with fireballs, stat cards) and then the Agile Lens monocle: client names orbit, 2026 counts back, and 2016 Alex lands on the lens. About 3 min. |
+| | `alex` | Power-up only (about 90 s). This is also what the 20-minute cut keeps. |
+| | `none` | No intro. Straight from the chapter card into the cold open, as before. |
 | Render questions `renders` | `quote` *(default)* | Three questions as a big typographic quote. |
 | | `motion` | `questions-dissolve`: the questions orbit a flat render, a headset arrives, and they dissolve into the essay line. |
 | One talk → one client `onetalk` | `photo` *(default)* | Two-pane slide with the Ed Sullivan lighting render. |

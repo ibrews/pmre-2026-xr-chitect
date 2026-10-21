@@ -123,7 +123,7 @@ def main():
                 text(s, Inches(.5), H - Inches(1.05), Inches(8), Inches(.5), c.get("title", ""), 26, TEXT, bold=True)
                 text(s, Inches(.5), H - Inches(.55), Inches(10), Inches(.4), c.get("subtitle", ""), 14, DIM)
             else:
-                picture(s, c.get("img", ""), Inches(.6), Inches(1.2), Inches(6.2), Inches(5.1))
+                if c.get("img"): picture(s, c["img"], Inches(.6), Inches(1.2), Inches(6.2), Inches(5.1))  # intro-alex/intro-lens are text-only here
                 text(s, Inches(7.2), Inches(1.5), Inches(5.6), Inches(.4), sec["year"] + "  ·  " + L.get("short", ""), 12, ac, bold=True)
                 text(s, Inches(7.2), Inches(1.9), Inches(5.6), Inches(1.3), c.get("title", ""), 32, bold=True)
                 text(s, Inches(7.2), Inches(3.1), Inches(5.6), Inches(.6), c.get("subtitle", ""), 16, DIM, italic=True)

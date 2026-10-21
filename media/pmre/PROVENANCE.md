@@ -45,6 +45,9 @@ Rights: "Own" = Alex/Agile Lens work or capture. "Client" = work made for a clie
 | ghosted-06.png | Ghosted | Capture setup: laptop with capture software, green screen, man laughing | ghosted/Ghosted06.png | Own | none |
 | ghosted-capture.mp4 | Ghosted | Motion clip from Ghosted04 set (not frame-checked; same set as stills) | ghosted/Ghosted04.mp4 (GIF 7.4 MB not used) | Own | none |
 | jetblue-t5-terminal.jpg | JetBlue T5 | Wide interior of airport terminal with blue ring signage | interdisciplinary/jetblue_terminal.jpg | Own/3rd (JetBlue brand) | none |
+| monocle-white.png | Intro: Agile Lens orbit (`intro-lens`) | Agile Lens monocle logo, white on transparent, 852x877 (pulsing glow over the SVG ring) | repo root `monocle-white.png` (not media/), harvardxr-keynote@7c6fbf5; byte-identical in fmx-2026-spatial-storytelling and nxtbld-2026-productizing-xr | Own (Agile Lens logo) | none |
+| GoldAuthorized.png | Intro: Alex power-up (`intro-alex`) UE5 block + fireballs | Gold rounded square with the Unreal Engine "U" in a black circle (Epic authorized-instructor badge art), 649x648 | repo root `GoldAuthorized.png`, harvardxr-keynote@7c6fbf5; byte-identical in FMX/NXT BLD | 3rd (Epic Games badge/logo) | none |
+| ue5logo.png | Intro: Alex power-up fireballs | Black circle with white Unreal Engine "U" logo, 337x337 | repo root `ue5logo.png`, harvardxr-keynote@7c6fbf5; byte-identical in FMX/NXT BLD | 3rd (Epic Games logo) | none |
 
 ## Not copied (available in the same repo/folders if needed)
 Floor Tour candidates: `/Users/alex/git/nxtbld-2026-productizing-xr/media/nxtbld/floor-*` (not reviewed). Other xmas/ghosted frames, `ny-dbox-holodeck/05.jpg`, `stage-presence/*` (5 photos of an XR performance, not in this talk's beats), `shed/Shed_Video.mp4` (6 MB), `pivot/pivot01_academy65.mp4`, `pivot/pivot03_tiltbrush.mp4`.
