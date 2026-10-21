@@ -15,7 +15,7 @@ const TALK = {
   coverSub: "The Best Career Advice I Ever Ignored",
   speaker: "Alex Coulombe",
   speakerCo: "Founder, Agile Lens &middot; New York City",
-  coverNotes: "⏱ ~60s while the room settles.\n\n✎ PROPOSED open: \"Hi, I'm Alex. I'm an architect. Sort of. You'll see.\"\n\n✅ VERIFIED: \"I'm a former architect turned ex-architect, and I run an XR SWAT team in New York City called Agile Lens.\" [VOVR #1480] — a line Alex has actually used; good to say verbatim.\n\n✎ PROPOSED: Tell the room what this is NOT: not a sales pitch, not an AI talk. It's one winding career, and why the detours turned out to be the route.\n\nTiming: the agenda block is 11:00–12:00. This script runs ~42 min, leaving ~15 for Q&A. ❓ ALEX: confirm talk length vs Q&A with Brandon / the Presenter Guidelines PDF.",
+  coverNotes: "⏱ ~60s while the room settles.\n\n✎ PROPOSED open: \"Hi, I'm Alex. I'm an architect. Sort of. You'll see.\"\n\n✅ VERIFIED: \"I'm a former architect turned ex-architect, and I run an XR SWAT team in New York City called Agile Lens.\" [VOVR #1480] — a line Alex has actually used; good to say verbatim.\n\n✎ PROPOSED: Tell the room what this is NOT: not a sales pitch, not an AI talk. It's one winding career, and why the detours turned out to be the route.\n\nTiming: the agenda block is 11:00–12:00. The full run is ~58 min by design — more than the slot, so you cut live (press O → Length, or skip slides). Medium ~47, short ~31. ❓ ALEX: confirm talk length vs Q&A with Brandon / the Presenter Guidelines PDF.",
   mapCenter: ["ARCHITECT", "TO XR-CHITECT"],
   mapNotes: "⏱ 30s. ✎ PROPOSED: \"Every one of those dots was a detour somebody told me not to take.\" Let it breathe, then go to the thesis.",
   closeEyebrow: "Thank You",
