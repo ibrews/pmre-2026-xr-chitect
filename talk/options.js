@@ -11,6 +11,7 @@ function talkPicks(){
 function applyTalkOptions(){
   const pick=talkPicks();window.TALK_PICKS=pick;
   document.body.dataset.talkTheme=pick.theme;document.body.dataset.look=pick.theme;document.body.dataset.chrome=pick.chrome;  // styles/ looks + chrome density, applied by tools/apply_look.py
+  if(typeof applySafeZone==='function')applySafeZone(pick);  // talk/safezone.js: ?safe=70 venue safe zone + --safe-inset-x/y vars
   const cutN=pick.cut==='full'?Infinity:+pick.cut;
   // walk built slides in SECTIONS order
   let si=-1,ci=0;

@@ -92,7 +92,8 @@ const TALK = {
     cut:     { label: "Length", default: "full", choices: { full: "Full (~58 min)", "30": "Medium (~47 min)", "20": "Short (~31 min)" } },
     theme:   { label: "Look", default: "house", choices: { noir: "Noir (original)", sheet: "Drawing set", folio: "Folio (editorial)", house: "House (theater program)", swiss: "Swiss", memo: "Memo", cyanotype: "Cyanotype", gallery: "Gallery" } },
     chrome:  { label: "Page chrome", default: "quiet", choices: { quiet: "Quiet (title bar, page numbers, section labels off)", full: "Full (on every slide)", none: "None (chapter kickers off too)" } },
-    journey: { label: "Pixel Alex", default: "on", choices: { on: "Minimap + hop-outs", map: "Minimap only", off: "Off" } }
+    journey: { label: "Pixel Alex", default: "on", choices: { on: "Minimap + hop-outs", map: "Minimap only", off: "Off" } },
+    safe:    { label: "Venue safe zone", default: "off", choices: { off: "Off (full frame, web deck)", "70": "On: PMRE 1344×756 (70%, used by the venue export)" } }
   },
   thesisAlts: {
     a: { title: "The Advice Wasn’t Wrong.\nIt Just Assumed One Lane.", tagline: "Master your craft — absolutely. I did specialize: in a niche nobody had named yet.<br><br>The lane worth staying in is the one you build where your crafts overlap.", notes: "Thesis option A (default). ✎ PROPOSED." },
@@ -289,6 +290,7 @@ function talkPicks(){
 function applyTalkOptions(){
   const pick=talkPicks();window.TALK_PICKS=pick;
   document.body.dataset.talkTheme=pick.theme;document.body.dataset.look=pick.theme;document.body.dataset.chrome=pick.chrome;  // styles/ looks + chrome density, applied by tools/apply_look.py
+  if(typeof applySafeZone==='function')applySafeZone(pick);  // talk/safezone.js: ?safe=70 venue safe zone + --safe-inset-x/y vars
   const cutN=pick.cut==='full'?Infinity:+pick.cut;
   // walk built slides in SECTIONS order
   let si=-1,ci=0;
@@ -801,6 +803,36 @@ function jPrint() {
     const d = document.createElement('div'); d.className = 'journey-print'; const m = jBuildMap(); m.set(st); m.place(jLenFor(st)); d.appendChild(m.svg); sl.appendChild(d); });
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', jInit); else setTimeout(jInit, 0);
+/* Venue safe zone (PMRE 2026 Presenter Guidelines: 1920x1080 concave screen, all type and key info inside the centered
+   1344x756 box = 70%). ?safe=70 (or Options -> "Venue safe zone") scales every slide's content into that centered box
+   while the page background and the .bg layer still fill the frame. Off by default for the web deck; the venue exporter
+   (tools/export_venue_package.mjs) always turns it on. Other features position themselves with the CSS vars
+   --safe-inset-x / --safe-inset-y (0 when off) and --safe-scale (1 when off).
+   ?safezone draws the 1344x756 QA box on top of everything (works with or without ?safe). */
+function applySafeZone(pick){
+  const q=new URLSearchParams(location.search);
+  let pct=pick&&pick.safe&&pick.safe!=='off'?+pick.safe:NaN;
+  const raw=q.get('safe');if(raw&&/^\d{2,3}$/.test(raw))pct=+raw;  // ?safe=80 etc. work even if not a picker choice
+  if(!document.getElementById('sd-safe-css')){
+    const st=document.createElement('style');st.id='sd-safe-css';
+    st.textContent=':root{--safe-scale:1;--safe-inset-x:0px;--safe-inset-y:0px}'+
+      /* scale (not transform) composes with the deck's slideIn/zoom transform animations; origin = slide center */
+      'body.sd-safe #deck .slide{scale:var(--safe-scale);transform-origin:50% 50%}'+
+      'body.sd-safe #brand{left:calc(var(--safe-inset-x) + 24px);bottom:calc(var(--safe-inset-y) + 18px)}'+
+      'body.sd-safe #counter{right:calc(var(--safe-inset-x) + 24px);bottom:calc(var(--safe-inset-y) + 18px)}'+
+      '#sd-safezone{position:fixed;left:15vw;top:15vh;width:70vw;height:70vh;box-sizing:border-box;border:2px dashed #ff2d55;z-index:2147483000;pointer-events:none;'+
+      'box-shadow:0 0 0 100vmax rgba(255,45,85,.10)}'+
+      '#sd-safezone span{position:absolute;left:8px;top:6px;font:600 13px/1 system-ui,sans-serif;color:#ff2d55;letter-spacing:.04em}';
+    document.head.appendChild(st);
+  }
+  const on=pct>=40&&pct<100,s=on?pct/100:1,root=document.documentElement.style;
+  document.body.classList.toggle('sd-safe',on);document.body.dataset.safe=on?String(pct):'off';
+  root.setProperty('--safe-scale',String(s));
+  root.setProperty('--safe-inset-x',((1-s)/2*100).toFixed(3)+'vw');root.setProperty('--safe-inset-y',((1-s)/2*100).toFixed(3)+'vh');
+  if(q.has('safezone')&&!document.getElementById('sd-safezone')){
+    const z=document.createElement('div');z.id='sd-safezone';z.innerHTML='<span>PMRE safe zone 1344×756</span>';document.body.appendChild(z);
+  }
+}
 // ── TALK END ──
 </script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.min.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"}}</script>
