@@ -22,6 +22,8 @@ There's no build step. Arrow keys or clicks advance the slides.
 3. Try a combination straight from the URL: `index.html?open=question&thesis=b&cut=30&theme=sheet`.
 4. Press **N** for the presenter-notes popup, or open `index.html?notes` on a phone for the speaker companion.
 5. Watch the bottom-right corner as you move through the chapters: pixel Alex walks a tiny braided road to each chapter's stop, gets his headset on the 2013 card and his beard on the 2023 card, and waves on the close. `?journey=map` keeps the minimap without the hop-outs; `?journey=off` removes him. Open `index.html?reduced` to see each motion graphic as its final frame with Alex simply placed at his stop (the reduced-motion mode; it also works offline).
+6. Open `index.html?safe=70&safezone` to see the deck the way PMRE's concave 1920×1080 screen needs it: each slide's content fitted to the centered 1344×756 safe zone (dashed box) as large as it will go, background still full-frame. The same toggle is in the **O** picker as "Venue safe zone".
+7. Build the organizer package (PowerPoint + separate MP4s + cue sheet + checks) in one command: `PLAYWRIGHT_CORE=/Users/alex/GH/xrsim/node_modules/playwright-core node tools/export_venue_package.mjs --cuts 20,30`. It walks every slide and substep in safe-zone mode, re-renders only the animations that changed, and exits 1 with a slide-by-slide list if anything breaks a venue rule.
 
 ## What's in here
 
@@ -37,6 +39,9 @@ There's no build step. Arrow keys or clicks advance the slides.
 | `media/motion/mp4/` | MP4 and poster renders of each motion graphic (`node tools/render_motion.mjs`) |
 | `media/pmre/` | Talk photos and renders, with sources in `PROVENANCE.md` |
 | `tools/export_talk_pptx.py` | Editable PowerPoint export, e.g. `--pick cut=30 --pick thesis=b` |
+| `talk/safezone.js` | Venue safe zone (`?safe=70`, `?safezone` QA box); defines `--safe-inset-x/y` and `--safe-scale` |
+| `tools/export_venue_package.mjs` | PMRE organizer package: `venue_capture.mjs` (drives the rendered deck, one PPTX slide per build state, MP4 per animated state) → `venue_pptx.py` (native text/pictures/SVG over a frame image, clean stage notes) → `venue_checks.py` (safe zone, dark, no embedded media/links, cue files + durations, timing; `--selftest` proves each check fails on a broken copy) |
+| `tools/venue_audit_selftest.mjs` | Proves the baked-in video text audit is not vacuous (full-frame motion text must be flagged, safe-framed must pass). Cross-host renders: run `venue_capture.mjs` on another machine, then `export_venue_package.mjs --captured DIR --cache DIR` |
 
 To pull framework updates: `git remote add upstream https://github.com/ibrews/spatial-deck && git fetch upstream`.
 

@@ -25,8 +25,8 @@ for (const look of LOOKS) {
     document.documentElement.style.background = 'transparent';
     [...document.body.children].forEach(e => { e.style.visibility = 'hidden'; });
     document.body.style.background = 'transparent'; document.body.style.backgroundImage = 'none';
-    const d = document.createElement('div'); d.id = 'jpng'; d.style.cssText = 'position:fixed;left:40px;top:40px;width:230px;visibility:visible;padding:4px 6px 2px';
-    d.innerHTML = '<div class="j-label" style="text-align:right;font:700 13px/1 var(--font-mono,\'Space Grotesk\',Inter,sans-serif);letter-spacing:.2em;color:var(--acc-1,#00d4ff);margin:0 2px -2px 0"></div>';
+    const d = document.createElement('div'); d.id = 'jpng'; d.style.cssText = 'position:fixed;left:40px;top:40px;width:300px;visibility:visible;padding:4px 6px 2px';
+    d.innerHTML = '<div class="j-label" style="text-align:right;font:700 18px/1 var(--font-mono,\'Space Grotesk\',Inter,sans-serif);letter-spacing:.2em;color:var(--acc-1,#00d4ff);margin:0 2px -2px 0"></div>';
     document.body.appendChild(d);
   });
   const states = SECTIONS_COUNT => [...Array(SECTIONS_COUNT).keys()].map(i => ({ i, file: `stop-${i}.png` })).concat([{ i: SECTIONS_COUNT - 1, end: true, file: 'end.png' }]);

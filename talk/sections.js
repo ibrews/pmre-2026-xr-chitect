@@ -38,7 +38,8 @@ const TALK = {
     cut:     { label: "Length", default: "full", choices: { full: "Full (~58 min)", "30": "Medium (~47 min)", "20": "Short (~31 min)" } },
     theme:   { label: "Look", default: "house", choices: { noir: "Noir (original)", sheet: "Drawing set", folio: "Folio (editorial)", house: "House (theater program)", swiss: "Swiss", memo: "Memo", cyanotype: "Cyanotype", gallery: "Gallery" } },
     chrome:  { label: "Page chrome", default: "quiet", choices: { quiet: "Quiet (title bar, page numbers, section labels off)", full: "Full (on every slide)", none: "None (chapter kickers off too)" } },
-    journey: { label: "Pixel Alex", default: "on", choices: { on: "Minimap + hop-outs", map: "Minimap only", off: "Off" } }
+    journey: { label: "Pixel Alex", default: "on", choices: { on: "Minimap + hop-outs", map: "Minimap only", off: "Off" } },
+    safe:    { label: "Venue safe zone", default: "off", choices: { off: "Off (full frame, web deck)", "70": "On: PMRE 1344×756 (70%, used by the venue export)" } }
   },
   thesisAlts: {
     a: { title: "The Advice Wasn’t Wrong.\nIt Just Assumed One Lane.", tagline: "Master your craft — absolutely. I did specialize: in a niche nobody had named yet.<br><br>The lane worth staying in is the one you build where your crafts overlap.", notes: "Thesis option A (default). ✎ PROPOSED." },
