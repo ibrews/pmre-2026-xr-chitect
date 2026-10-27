@@ -1,15 +1,16 @@
 /* PMRE talk options runtime — lets Alex choose between alternates live instead of us guessing.
-   Picks come from URL params (?open=question&cut=30&theme=stage …), else localStorage 'pmre-opts', else TALK.options defaults.
+   Picks come from URL params (?open=question&cut=30&theme=sheet …), else localStorage 'pmre-opts', else TALK.options defaults.
    Slides tagged opt:"group:choice" are hidden unless that choice is picked; keep:20|30 marks slides that survive the
    20/30-minute cuts. Press O for the picker overlay. applyTalkOptions() runs after slides are built, before navigation
    is wired, so print/shot exports honor the picks too. */
 function talkPicks(){
   const P=new URLSearchParams(location.search);let saved={};try{saved=JSON.parse(localStorage.getItem('pmre-opts')||'{}');}catch(e){}
-  const out={};Object.entries(TALK.options).forEach(([g,o])=>{const v=P.get(g)||saved[g]||o.default;out[g]=o.choices[v]?v:o.default;});return out;
+  const LEGACY={theme:{blueprint:'sheet',stage:'house'}};  // older ?theme= links keep working
+  const out={};Object.entries(TALK.options).forEach(([g,o])=>{let v=P.get(g)||(g==='theme'&&P.get('look'))||saved[g]||o.default;v=(LEGACY[g]&&LEGACY[g][v])||v;out[g]=o.choices[v]?v:o.default;});return out;
 }
 function applyTalkOptions(){
   const pick=talkPicks();window.TALK_PICKS=pick;
-  document.body.dataset.talkTheme=pick.theme;
+  document.body.dataset.talkTheme=pick.theme;document.body.dataset.look=pick.theme;  // styles/ looks, applied by tools/apply_look.py
   const cutN=pick.cut==='full'?Infinity:+pick.cut;
   // walk built slides in SECTIONS order
   let si=-1,ci=0;

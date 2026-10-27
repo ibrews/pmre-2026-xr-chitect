@@ -50,6 +50,10 @@ s = re.sub(r'\n<meta (property="og:image:(width|height|alt)"|name="twitter:[a-z]
 s = s.replace(f'<meta property="og:image" content="{SOCIAL}">', f'<meta property="og:image" content="{SOCIAL}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="Architect to XR-chitect: The Best Career Advice I Ever Ignored. Alex Coulombe Presents, PMRE 2026, Las Vegas.">\n<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:title" content="Architect to XR-chitect: The Best Career Advice I Ever Ignored">\n<meta name="twitter:description" content="Alex Coulombe at PMRE 2026: from architecture school to walkable VR real estate.">\n<meta name="twitter:image" content="{SOCIAL}">', 1)
 if "spatial-deck/social.png" in s:
     sys.exit("bake_talk: template social.png still referenced")
+# 2c. Look frame text (styles/ looks: title block / running head / masthead) and the corner wordmark.
+s = re.sub(r'<meta name="(?:author|sd-event|sd-project)" content=".*?">\n?', "", s)
+s = s.replace("<title>", '<meta name="author" content="Alex Coulombe">\n<meta name="sd-event" content="PMRE 2026 · Las Vegas">\n<meta name="sd-project" content="Architect to XR-chitect">\n<title>', 1)
+s = s.replace('<div id="brand">Spatial Deck</div>', '<div id="brand">Alex Coulombe Presents</div>', 1)
 
 # 3. Cover + close + map center text driven by TALK.
 patch("TALK.coverTitle", "cov.innerHTML=`<div class=\"event-tag\">Spatial Deck &middot; Open-Source Presentation Framework</div><h1 class=\"talk-title\">Is XR Right<br>For Your Project?</h1><p class=\"talk-subtitle\">A framework for spatial decisions &mdash; before you pick a headset or a studio</p><div class=\"speaker-card\"><div><div class=\"speaker-name\">A Spatial Deck Presentation</div><div class=\"speaker-co\">github.com/spatial-deck</div></div></div>`;",
@@ -77,7 +81,17 @@ patch("TALK_NO_MONOCLE", "// 3D Monocle on Bonus slide\n(function(){\n", "// 3D 
 
 # 6. Print/shot export: motion iframes become their rendered poster frame instead of a placeholder panel.
 patch("sd-motion-poster", "querySelectorAll('#deck iframe').forEach(f=>{const src=f.src||'';",
-      "querySelectorAll('#deck iframe').forEach(f=>{const src=f.src||'';const _mm=src.match(/media\\/motion\\/([\\w-]+)\\.html/);if(_mm){const im=document.createElement('img');im.className='full-media sd-motion-poster';im.src='media/motion/mp4/'+_mm[1]+'-poster.png';f.replaceWith(im);return;}")
+      "querySelectorAll('#deck iframe').forEach(f=>{const src=f.src||'';const _mm=src.match(/media\\/motion\\/([\\w-]+)\\.html/);if(_mm){const im=document.createElement('img');im.className='full-media sd-motion-poster';const _lk=(typeof talkPicks==='function'&&talkPicks().theme)||new URLSearchParams(location.search).get('look')||'noir';im.src='media/motion/mp4/'+_mm[1]+'-poster'+(_lk!=='noir'?'.'+_lk:'')+'.png';im.onerror=function(){this.onerror=null;this.src='media/motion/mp4/'+_mm[1]+'-poster.png';};f.replaceWith(im);return;}")
+
+# 6-look. Already-baked decks keep the old poster line (patches are marker-idempotent): upgrade it to per-look posters.
+_OLDP = "im.src='media/motion/mp4/'+_mm[1]+'-poster.png';f.replaceWith(im)"
+_NEWP = ("const _lk=(typeof talkPicks==='function'&&talkPicks().theme)||new URLSearchParams(location.search).get('look')||'noir';"
+         "im.src='media/motion/mp4/'+_mm[1]+'-poster'+(_lk!=='noir'?'.'+_lk:'')+'.png';"
+         "im.onerror=function(){this.onerror=null;this.src='media/motion/mp4/'+_mm[1]+'-poster.png';};f.replaceWith(im)")
+if "_lk!=='noir'" not in s:
+    if _OLDP not in s:
+        sys.exit("bake_talk: motion poster line not found (template changed?)")
+    s = s.replace(_OLDP, _NEWP, 1)
 
 # 6a. Intro slides (talk/intro.js): the case builder hands layout 'intro-alex' / 'intro-lens' to buildTalkIntro().
 patch("buildTalkIntro(s,c)", "    // layout: 'full' — full-bleed image",
@@ -97,18 +111,19 @@ EXTRA = """<!-- ── PMRE TALK RUNTIME ── -->
 @media (prefers-reduced-motion: reduce){.slide,.slide *{animation-duration:.001s!important;animation-delay:0s!important;transition:none!important}.bg *{animation:none!important}}
 body.reduced-motion .slide,body.reduced-motion .slide *{animation-duration:.001s!important;animation-delay:0s!important;transition:none!important}
 body.reduced-motion .bg *{animation:none!important}
+body:where([data-look]:not([data-look="noir"])):not(#_) .intro-title{background:none;-webkit-text-fill-color:currentColor;color:var(--ink);font-family:var(--font-display)}
+body:where([data-look]:not([data-look="noir"])):not(#_) .intro-eyebrow,body:where([data-look]:not([data-look="noir"])):not(#_) .intro-stat .num{color:var(--acc-1)}
+body:where([data-look]:not([data-look="noir"])):not(#_) .intro-role{color:var(--ink)}
+body:where([data-look]:not([data-look="noir"])):not(#_) .intro-sub{color:var(--ink-2)}
+body:where([data-look]:not([data-look="noir"])):not(#_) .intro-stat{background:transparent;border:1px solid var(--rule);border-radius:0}
+body:where([data-look]:not([data-look="noir"])):not(#_) .intro-stat .lbl{color:var(--ink-2)}
 .cover-ambient{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:0;opacity:.9;mix-blend-mode:screen;background:transparent}
 .slide[data-type="cover"]>*:not(.cover-ambient){position:relative;z-index:1}
-body[data-talk-theme="blueprint"]{--bg-dark:#071a35}
-body[data-talk-theme="blueprint"] .bg-gradient{background:linear-gradient(rgba(120,180,255,.07) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(120,180,255,.07) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(rgba(120,180,255,.12) 1px,transparent 1px) 0 0/240px 240px,linear-gradient(90deg,rgba(120,180,255,.12) 1px,transparent 1px) 0 0/240px 240px,radial-gradient(ellipse 90% 70% at 50% 40%,#0d2a52 0%,#071a35 70%)}
-body[data-talk-theme="blueprint"] .slide h1,body[data-talk-theme="blueprint"] .slide h2{letter-spacing:-.005em}
-body[data-talk-theme="stage"]{--bg-dark:#0c0705}
-body[data-talk-theme="stage"] .bg-gradient{background:radial-gradient(ellipse 38% 70% at 50% -8%,rgba(255,214,150,.28) 0%,rgba(255,170,90,.10) 40%,transparent 72%),radial-gradient(ellipse 120% 40% at 50% 112%,rgba(150,20,40,.35) 0%,transparent 70%),linear-gradient(180deg,#120a07 0%,#0c0705 100%)}
 #talk-opts{position:fixed;right:24px;top:24px;z-index:99999;width:min(720px,calc(100vw - 48px));max-height:calc(100vh - 48px);overflow:auto;background:rgba(8,10,20,.96);border:1px solid rgba(0,212,255,.35);border-radius:16px;padding:18px 20px;font:14px/1.4 Inter,system-ui,sans-serif;color:#f0f4ff;box-shadow:0 20px 60px rgba(0,0,0,.6)}
 #talk-opts h3{margin:0 0 12px;font-size:18px}#talk-opts h3 small{font-weight:400;color:rgba(240,244,255,.5);font-size:12px;margin-left:8px}
 #talk-opts .to-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0}#talk-opts .to-g{width:190px;color:rgba(240,244,255,.65);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
 #talk-opts button{background:rgba(255,255,255,.06);color:#f0f4ff;border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:6px 12px;cursor:pointer;font:inherit}
-#talk-opts button.on{background:linear-gradient(90deg,#00d4ff,#a78bfa);color:#060810;border-color:transparent;font-weight:600}
+#talk-opts button.on{background:#f0f4ff;color:#060810;border-color:transparent;font-weight:600}
 #talk-opts .to-foot{display:flex;gap:12px;align-items:center;margin-top:14px;color:rgba(240,244,255,.45);font-size:12px}
 </style>
 <script>
@@ -132,3 +147,10 @@ if True:
 
 HTML.write_text(s, encoding="utf-8")
 print("bake_talk: index.html updated")
+
+# 8. Style library looks (styles/, from ibrews/spatial-deck) + motion recolorer, then refuse template branding.
+import subprocess
+subprocess.run([sys.executable, str(ROOT / "tools" / "apply_look.py"), "--html", str(HTML), "--styles", str(ROOT / "styles"),
+                "--default", "noir", "--motion-dir", str(ROOT / "media" / "motion")], check=True)
+if subprocess.run([sys.executable, str(ROOT / "tools" / "check_branding.py")]).returncode:
+    sys.exit("bake_talk: branding check failed (see above)")

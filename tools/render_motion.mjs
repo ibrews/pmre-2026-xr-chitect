@@ -2,6 +2,8 @@
 // Deterministic: every frame is seek()-ed, never screen-recorded, so output is identical run to run.
 //   node tools/render_motion.mjs [name ...]            # default: every media/motion/*.html
 //   PLAYWRIGHT_CORE=/path/to/node_modules/playwright-core FPS=30 node tools/render_motion.mjs lane
+//   LOOK=sheet node tools/render_motion.mjs          # recolored for a styles/ look: <name>.<look>.mp4 + <name>-poster.<look>.png
+//   LOOK=sheet POSTER_ONLY=1 node tools/render_motion.mjs   # just the final-frame posters (used by ?shot / PPTX exports)
 // Needs: Google Chrome, ffmpeg, and a playwright-core install (export_video.py's cache is tried first).
 import { createRequire } from 'module';
 import { execFileSync } from 'child_process';
@@ -14,23 +16,25 @@ const pwPath = cands.find(p => fs.existsSync(path.join(p, 'package.json')));
 if (!pwPath) { console.error('playwright-core not found. Set PLAYWRIGHT_CORE=/abs/path/node_modules/playwright-core (or run tools/export_video.py once to install it).'); process.exit(2); }
 const { chromium } = require(pwPath);
 const CHROME = process.env.CHROME_BIN || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
-const FPS = +(process.env.FPS || 30), HOLD = +(process.env.HOLD || 2);  // HOLD = seconds to hold the final frame
-const names = process.argv.slice(2).length ? process.argv.slice(2) : fs.readdirSync(MOTION).filter(f => f.endsWith('.html')).map(f => f.replace(/\.html$/, ''));
+const FPS = +(process.env.FPS || 30), HOLD = +(process.env.HOLD || 2);
+const LOOK = process.env.LOOK && process.env.LOOK !== 'noir' ? process.env.LOOK : '', SFX = LOOK ? '.' + LOOK : '', POSTER_ONLY = !!process.env.POSTER_ONLY;  // HOLD = seconds to hold the final frame
+const names = process.argv.slice(2).length ? process.argv.slice(2) : fs.readdirSync(MOTION).filter(f => f.endsWith('.html') && f !== 'look.html').map(f => f.replace(/\.html$/, ''));
 fs.mkdirSync(OUT, { recursive: true });
 const browser = await chromium.launch({ executablePath: CHROME, args: ['--hide-scrollbars'] });
 const page = await browser.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1, reducedMotion: 'no-preference' });
 for (const n of names) {
-  const url = 'file://' + path.join(MOTION, n + '.html') + '?t=0';
+  const url = 'file://' + path.join(MOTION, n + '.html') + '?t=0' + (LOOK ? '&look=' + LOOK : '');
   await page.goto(url); await page.waitForFunction(() => typeof window.seek === 'function');
-  await page.evaluate(() => document.fonts.ready);
+  await page.evaluate(() => document.fonts.ready); await page.waitForTimeout(LOOK ? 400 : 0);
   const end = await page.evaluate(() => window.MOTION_END);
+  if (POSTER_ONLY) { await page.evaluate(s => window.seek(s), end); await page.waitForTimeout(150); const pp = path.join(OUT, n + '-poster' + SFX + '.png'); await page.screenshot({ path: pp }); console.log(`${n}: poster -> ${path.relative(ROOT, pp)}`); continue; }
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'motion-' + n + '-'));
   const frames = Math.ceil(end * FPS);
   for (let i = 0; i <= frames; i++) {
     await page.evaluate(s => window.seek(s), Math.min(i / FPS, end));
     await page.screenshot({ path: path.join(tmp, String(i).padStart(5, '0') + '.png') });
   }
-  const mp4 = path.join(OUT, n + '.mp4'), poster = path.join(OUT, n + '-poster.png');
+  const mp4 = path.join(OUT, n + SFX + '.mp4'), poster = path.join(OUT, n + '-poster' + SFX + '.png');
   fs.copyFileSync(path.join(tmp, String(frames).padStart(5, '0') + '.png'), poster);
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', String(FPS), '-i', path.join(tmp, '%05d.png'),
     '-vf', `tpad=stop_mode=clone:stop_duration=${HOLD},format=yuv420p`, '-c:v', 'libx264', '-preset', 'slow', '-crf', '20', '-movflags', '+faststart', mp4]);

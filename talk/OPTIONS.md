@@ -1,6 +1,6 @@
 # PMRE 2026: options index ("Architect to XR-chitect")
 
-Every option below is built into the deck. Press **O** in the deck for the picker, or add URL params, for example `index.html?open=question&thesis=b&cut=30&theme=stage`. The defaults reproduce the audited draft exactly. Picks are saved per browser, and **Reset to defaults** in the O panel clears them.
+Every option below is built into the deck. Press **O** in the deck for the picker, or add URL params, for example `index.html?open=question&thesis=b&cut=30&theme=sheet`. The defaults reproduce the audited draft exactly. Picks are saved per browser, and **Reset to defaults** in the O panel clears them.
 
 | Group (`?param=`) | Choice | One-line pitch |
 |---|---|---|
@@ -28,7 +28,10 @@ Every option below is built into the deck. Press **O** in the deck for the picke
 | Length `cut` | `full` *(default)* | About 47 min, 35 slides. |
 | | `30` | About 35 min (25 slides; lessons keep their full timing). |
 | | `20` | About 25 min (17 slides). |
-| Look `theme` | `noir` *(default)* / `blueprint` / `stage` | Dark XR noir; a navy drafting grid; or a warm spotlight with a red-curtain glow. |
+| Look `theme` | `noir` *(default)* | The original Spatial Deck look. `node tools/lint_look.mjs --query theme=noir` flags 7 generic-AI-design tells in it. |
+| | `sheet` | Drawing set: paper, ink, hairlines, a title block with the sheet number, redline accent. Motion graphics are recolored to ink on paper. |
+| | `folio` | Editorial: serif on black with one vermilion spot color, running head and folio. Descends from Alex's NXT BLD 2020/2021 decks. |
+| | `house` | Theater program: gold masthead band, condensed wood-type caps, a followspot on chapter cards, curtain call close. |
 
 All new copy is ✎ PROPOSED (connective). The quotes inside motion graphics are ✅ VERIFIED against Alex's 2017 essay, the KB speaking modules and the Four Seasons Lake Austin notes. The plans in the motion graphics are illustrative.
 
@@ -39,3 +42,5 @@ All new copy is ✎ PROPOSED (connective). The quotes inside motion graphics are
 **Exports:**
 - Editable PPTX for any combination: `python3 tools/export_talk_pptx.py --pick thesis=b --pick cut=30 --out x.pptx`
 - MP4s for the organizer: `node tools/render_motion.mjs <name>` writes to `media/motion/mp4/`
+
+**Looks** come from the Spatial Deck style library (`styles/`, from ibrews/spatial-deck; rules in `styles/README.md`). `tools/bake_talk.py` inlines them with `tools/apply_look.py`, then runs `tools/check_branding.py`. Old `?theme=blueprint` / `?theme=stage` links map to `sheet` / `house`. Look-specific poster frames are `media/motion/mp4/<name>-poster.<look>.png` (`LOOK=sheet POSTER_ONLY=1 node tools/render_motion.mjs`). For organizer MP4s in a look, run `LOOK=<look> node tools/render_motion.mjs` (not rendered yet). PPTX in a look: `python3 tools/export_talk_pptx.py --pick theme=sheet --out x.pptx` (Arial is kept for show machines).

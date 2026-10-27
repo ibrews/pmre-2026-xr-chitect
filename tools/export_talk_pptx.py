@@ -6,6 +6,7 @@ organizer's production team can reformat for their non-standard LED wall. Images
 motion slides use the rendered poster frame and name their MP4 (media/motion/mp4/) in the notes — PMRE asked for
 video as separate files, not embedded. Full presenter notes go in the notes pane.
     python3 tools/export_talk_pptx.py --out ~/Archives/pmre2026-2026-10/exports/pmre2026-xr-chitect-editable.pptx
+    python3 tools/export_talk_pptx.py --pick theme=sheet --out x.pptx   # in a styles/ look (colors + recolored posters)
 """
 import argparse, html, json, re, subprocess
 from pathlib import Path
@@ -30,7 +31,8 @@ def clean(t):
     t = re.sub(r"<br\s*/?>\s*(<br\s*/?>)?", "\n", t or "")
     return html.unescape(re.sub(r"<[^>]+>", "", t)).strip()
 
-def text(slide, x, y, w, h, s, size, color=TEXT, bold=False, italic=False, align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.TOP, spacing=None):
+def text(slide, x, y, w, h, s, size, color=None, bold=False, italic=False, align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.TOP, spacing=None):
+    color = TEXT if color is None else color  # resolved per call: a --pick theme= look rebinds TEXT
     tb = slide.shapes.add_textbox(x, y, w, h); tf = tb.text_frame; tf.word_wrap = True; tf.vertical_anchor = anchor
     for i, line in enumerate(clean(s).split("\n")):
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph(); p.alignment = align
@@ -84,6 +86,14 @@ def main():
             g, ch = c["opt"].split(":")
             if pick.get(g) not in ch.split("|"): return False
         return cut is None or (c.get("keep") or 99) <= cut
+    look = pick.get("theme", "noir"); suffix = ""
+    if look != "noir":  # a styles/ look: its paper/ink/accents; type stays Arial so show machines need no fonts
+        global BG, TEXT, DIM
+        tok = json.loads((ROOT / "styles/looks" / look / "look.json").read_text(encoding="utf-8"))["tokens"]
+        rgb = lambda h: RGBColor.from_string(h.lstrip("#").upper())
+        BG, TEXT, DIM = rgb(tok["paper"]), rgb(tok["ink"]), rgb(tok["ink-2"])
+        ACC.update(teal=rgb(tok["acc-1"]), purple=rgb(tok["acc-2"]), amber=rgb(tok["acc-3"]), rose=rgb(tok["acc-4"]))
+        suffix = "." + look
     th = T.get("thesisAlts", {}).get(pick.get("thesis")); cl = T.get("closeAlts", {}).get(pick.get("close"))
     if th: B = {**B, "title": th["title"], "tagline": th["tagline"]}
     if cl: T = {**T, "closeTitle": cl["title"], "closeSub": cl["sub"]}
@@ -105,7 +115,8 @@ def main():
             if not shown(c): continue
             s = new(prs, c.get("notes")); lay = c.get("layout")
             if lay == "full" and c.get("motion"):
-                m = c["motion"]; poster = f"media/motion/mp4/{m}-poster.png"
+                m = c["motion"]; poster = f"media/motion/mp4/{m}-poster{suffix}.png"
+                if not (ROOT / poster).exists(): poster = f"media/motion/mp4/{m}-poster.png"
                 picture(s, poster, 0, 0, W, H)
                 s.notes_slide.notes_text_frame.text = f"▶ VIDEO: play media/motion/mp4/{m}.mp4 full-screen on this slide (submitted as a separate file).\n\n" + (c.get("notes") or "")
                 videos.append((len(prs.slides), m))

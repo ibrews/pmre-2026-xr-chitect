@@ -116,4 +116,5 @@ Q.forEach(q=>{
 window.seek=function(s){document.getAnimations().forEach(a=>{a.pause();a.currentTime=s*1000;});};
 if(matchMedia('(prefers-reduced-motion: reduce)').matches||P.has('static'))seek(END);else if(P.has('t'))seek(+P.get('t'));})();
 </script>
+<script src="look.js"></script>
 </body></html>
