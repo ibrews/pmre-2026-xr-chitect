@@ -18,6 +18,7 @@ svg{width:100%;height:100%;display:block}
 .lane-dash{stroke-dasharray:28 22;animation:march 1.2s linear 0s 6 forwards}
 @keyframes march{to{stroke-dashoffset:-50}}
 .label{fill:var(--dim);font-size:26px;letter-spacing:.32em;font-weight:500}
+.halo{stroke:#060810;stroke-width:14px;stroke-linejoin:round;paint-order:stroke fill}  /* labels sit clear of the strands; the halo keeps a crossing glow off the letters */
 .big{fill:var(--text);font-size:96px;font-weight:600;letter-spacing:-.01em}
 .dot{offset-rotate:0deg}
 </style></head><body>
@@ -42,7 +43,7 @@ svg{width:100%;height:100%;display:block}
 </g>
 <text x="930" y="300" text-anchor="middle" class="label fade" style="--t:6.8s;fill:#00d4ff">ARCHITECTURE</text>
 <text x="930" y="840" text-anchor="middle" class="label fade" style="--t:7.0s;fill:#f43f5e">THEATER</text>
-<text x="820" y="612" text-anchor="middle" class="label fade" style="--t:7.2s;fill:#a78bfa">TECHNOLOGY</text>
+<text x="940" y="616" text-anchor="middle" class="label halo fade" style="--t:7.2s;fill:#a78bfa">TECHNOLOGY</text>
 <!-- Act 3: one wider path -->
 <path d="M1500 560 L 1800 560" stroke="url(#g)" stroke-width="64" stroke-linecap="round" class="draw" pathLength="1" style="--d:1.2s;--t:9.4s" filter="url(#glow)"/>
 <text x="1650" y="680" text-anchor="middle" class="label fade" style="--t:10.2s;fill:#f0f4ff;letter-spacing:.24em">XR-CHITECT</text>

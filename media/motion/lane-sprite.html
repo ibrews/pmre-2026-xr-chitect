@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pick a Lane (sprite) — motion</title>
+<!-- PMRE 2026 motion graphic, option "lanemotion:sprite". The lane cold open with a protagonist: 2010 pixel Alex (the intro's
+     sprite) walks the "pick a lane" road, hops strand to strand touching the HarvardXR Venn icons (temple cracks, curtains
+     shimmer, the tiny platformer runs), lands on the XR-chitect road and grabs the headset power-up. Then "I didn't."
+     CSS draws + WAAPI keyframes sampled from pure functions of time (sprite.js); ?static / reduced-motion = final frame;
+     ?t=N seeks; window.seek(sec) for MP4 capture. -->
+<style>
+:root{--bg:#060810;--text:#f0f4ff;--dim:rgba(240,244,255,.45)}
+html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:'Space Grotesk','Inter','Avenir Next','Helvetica Neue',system-ui,sans-serif}
+svg{width:100%;height:100%;display:block}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw var(--d,2s) cubic-bezier(.3,0,.3,1) var(--t,0s) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fade{opacity:0;animation:fade .9s ease var(--t,0s) forwards}
+@keyframes fade{to{opacity:1}}
+.fadeout{animation:fadeout .8s ease var(--t,0s) forwards}
+@keyframes fadeout{to{opacity:0}}
+.rise{opacity:0;transform:translateY(24px);animation:rise 1s cubic-bezier(.2,.8,.2,1) var(--t,0s) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.lane-dash{stroke-dasharray:28 22;animation:march 1.2s linear 0s 4 forwards}
+@keyframes march{to{stroke-dashoffset:-50}}
+.label{fill:var(--dim);font-size:26px;letter-spacing:.32em;font-weight:500}
+.halo{stroke:#060810;stroke-width:14px;stroke-linejoin:round;paint-order:stroke fill}  /* a crossing strand never strikes through a label */
+.big{fill:var(--text);font-size:96px;font-weight:600;letter-spacing:-.01em}
+</style></head><body>
+<svg id="s" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" aria-label="A pixel-art Alex walks one straight lane, then hops across three strands (architecture, theater, technology), touching a temple, a stage and a game monitor, and lands on a wider road labeled XR-chitect, where he puts on a headset. Title: I didn't.">
+<defs>
+  <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="1580" y1="0" x2="1840" y2="0"><stop offset="0" stop-color="#00d4ff"/><stop offset=".5" stop-color="#a78bfa"/><stop offset="1" stop-color="#f43f5e"/></linearGradient>
+  <filter id="glow" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<!-- Act 1: the single lane -->
+<g class="fadeout" style="--t:4.8s">
+  <line x1="120" y1="500" x2="1800" y2="500" stroke="rgba(240,244,255,.35)" stroke-width="3" class="draw" pathLength="1" style="--d:1.6s;--t:.2s"/>
+  <line x1="120" y1="620" x2="1800" y2="620" stroke="rgba(240,244,255,.35)" stroke-width="3" class="draw" pathLength="1" style="--d:1.6s;--t:.35s"/>
+  <line x1="120" y1="560" x2="1800" y2="560" stroke="rgba(240,244,255,.5)" stroke-width="4" class="lane-dash"/>
+  <text x="960" y="380" text-anchor="middle" class="big rise" style="--t:1.6s">Pick a lane.</text>
+  <text x="960" y="720" text-anchor="middle" class="label rise" style="--t:2.6s">STAY IN IT &#183; MASTER ONE CRAFT</text>
+</g>
+<!-- Act 2: three strands leave the lane and braid (each one a platform) -->
+<g filter="url(#glow)" fill="none" stroke-linecap="round">
+  <path id="sA" d="M120 560 L600 560 C 700 560, 740 330, 860 330 C 980 330, 1100 700, 1300 700 C 1440 700, 1480 560, 1600 560" stroke="#00d4ff" stroke-width="7" class="draw" pathLength="1" style="--d:2.6s;--t:4.9s"/>
+  <path id="sT" d="M120 560 L600 560 C 720 560, 900 820, 1060 820 C 1180 820, 1200 420, 1300 420 C 1440 420, 1480 560, 1600 560" stroke="#f43f5e" stroke-width="7" class="draw" pathLength="1" style="--d:2.6s;--t:5.0s"/>
+  <path id="sX" d="M120 560 L600 560 C 800 560, 1000 560, 1300 560 C 1440 560, 1480 560, 1600 560" stroke="#a78bfa" stroke-width="7" class="draw" pathLength="1" style="--d:2.6s;--t:5.1s"/>
+</g>
+<g id="icons"></g>
+<text x="680" y="250" text-anchor="end" class="label halo fade" style="--t:6.6s;fill:#00d4ff">ARCHITECTURE</text>
+<text x="1060" y="900" text-anchor="middle" class="label halo fade" style="--t:6.8s;fill:#f43f5e">THEATER</text>
+<text x="1450" y="640" text-anchor="middle" class="label halo fade" style="--t:7.0s;fill:#a78bfa">TECHNOLOGY</text>
+<!-- Act 3: one wider path -->
+<path d="M1600 560 L 1840 560" stroke="url(#g)" stroke-width="64" stroke-linecap="round" class="draw" pathLength="1" style="--d:1s;--t:10.6s" filter="url(#glow)"/>
+<g id="block"></g>
+<g id="hero"></g>
+<g id="fx"></g>
+<text x="1720" y="690" text-anchor="middle" class="label halo fade" style="--t:13.2s;fill:#f0f4ff;letter-spacing:.24em">XR-CHITECT</text>
+<text x="1690" y="290" text-anchor="middle" class="big rise" style="--t:13.8s;font-size:84px">I didn&#8217;t.</text>
+</svg>
+<script src="sprite.js"></script>
+<script>
+// Build synchronously (before the seek runtime and look.js). Times in seconds.
+(function(){
+const END=15.5, {E,track,clamp}=PX, svg=document.getElementById('s'), icons=document.getElementById('icons');
+const sA=document.getElementById('sA'), sT=document.getElementById('sT'), sX=document.getElementById('sX');
+const S=4.2, SC=2.2, ROAD=528;  // icon pixel scale, sprite scale, top edge of the XR-chitect road
+// Power-ups sit ON their strand: temple steps on the architecture crest, the stage floor on the theater trough, the monitor on the tech line.
+const tmp=PX.temple(icons,860,330-17*S,S), th=PX.theater(icons,1060,820-12*S,S), mo=PX.monitor(icons,1300,560-14*S,S);
+[[tmp,6.3],[th,6.5],[mo,6.7]].forEach(([I,t0])=>track(I.pos,END,t=>{const k=clamp((t-t0)/.5,0,1);return{opacity:+k.toFixed(3)};}));
+// Headset "?" block over the XR-chitect road (the intro's block, scaled up).
+const bk=E('g',{transform:'translate(1720,330)'},document.getElementById('block')), bA=E('g',{},bk);
+E('rect',{x:-30,y:-30,width:60,height:60,fill:'#f59e0b',stroke:'#b45309','stroke-width':'3',rx:'4'},bA);
+E('rect',{x:-24,y:-24,width:48,height:48,fill:'none',stroke:'#fde68a','stroke-width':'1.5',rx:'2'},bA);
+E('rect',{x:-18,y:-10,width:36,height:20,rx:'7',fill:'#1a1a26'},bA);
+E('circle',{cx:-8,cy:0,r:'4',fill:'#00d4ff'},bA);E('circle',{cx:8,cy:0,r:'4',fill:'#00d4ff'},bA);
+const GRAB=12.85;
+track(bA,END,t=>{if(t<10.9)return{opacity:0,transform:'translate(0px,0px) scale(1)'};if(t<GRAB){const k=clamp((t-10.9)/.4,0,1);return{opacity:+k.toFixed(3),transform:`translate(0px,${(Math.sin((t-10.9)*Math.PI/.8)*6).toFixed(1)}px) scale(1)`};}
+  const k=clamp((t-GRAB)/.5,0,1);return{opacity:+(1-k).toFixed(3),transform:`translate(0px,${(-30*k).toFixed(1)}px) scale(${(1+.4*k).toFixed(3)})`};});
+// The hero
+const hero=PX.sprite(document.getElementById('hero'),{withBeard:false});
+const hs=PX.headset(hero.body); track(hs,END,t=>({opacity:t>=GRAB+.2?1:0}),true);
+const at=PX.route([
+  {type:'idle',t0:0,t1:1.0,a:[200,560],face:1},
+  {type:'walk',t0:1.0,t1:4.7,a:[200,560],b:[600,560],linear:true},
+  {type:'idle',t0:4.7,t1:5.9,a:[600,560],cheer:true},                    // the road splits under his feet
+  {type:'path',t0:5.9,t1:7.3,path:sA,x0:600,x1:860},                      // architecture crest → temple
+  {type:'idle',t0:7.3,t1:8.0,a:[860,330]},
+  {type:'hop',t0:8.0,t1:8.9,a:[860,330],b:[1060,820],h:110},              // drop onto the stage
+  {type:'idle',t0:8.9,t1:9.6,a:[1060,820]},
+  {type:'hop',t0:9.6,t1:10.5,a:[1060,820],b:[1240,560],h:150},            // up to the tech line
+  {type:'walk',t0:10.5,t1:10.8,a:[1240,560],b:[1300,560]},
+  {type:'idle',t0:10.8,t1:11.2,a:[1300,560]},
+  {type:'walk',t0:11.2,t1:11.9,a:[1300,560],b:[1560,560]},
+  {type:'hop',t0:11.9,t1:12.25,a:[1560,560],b:[1640,ROAD],h:40},          // step up onto the wide road
+  {type:'walk',t0:12.25,t1:12.45,a:[1640,ROAD],b:[1720,ROAD],linear:true},
+  {type:'hop',t0:12.45,t1:13.25,a:[1720,ROAD],b:[1720,ROAD],h:84},       // bonk the block
+  {type:'idle',t0:13.25,t1:END,a:[1720,ROAD],face:1}
+]);
+PX.drive(hero,END,at,SC,[0.3,0.9]);
+PX.reactArch(tmp,END,7.3); PX.reactTheater(th,END,8.9); PX.reactTech(mo,END,10.8);
+const fx=document.getElementById('fx');
+PX.sparkles(fx,END,860,240,7.3,11,.7); PX.sparkles(fx,END,1060,760,8.9,12,.7); PX.sparkles(fx,END,1300,500,10.8,13,.7);
+PX.sparkles(fx,END,1720,330,GRAB,14,1.2);
+const fl=E('rect',{x:0,y:0,width:1920,height:1080,fill:'#f0f4ff','pointer-events':'none'},fx);
+track(fl,END,t=>{const k=(t-GRAB)/.45;return{opacity:k<0||k>1?0:+(.18*(1-k)).toFixed(3)};});
+window.MOTION_END=END;
+})();
+</script>
+<script>
+// Shared motion runtime: static/reduced-motion = final frame; ?t=SEC or seek(SEC) = paused frame (for frame capture).
+(function(){const P=new URLSearchParams(location.search),END=window.MOTION_END;
+const all=()=>document.getAnimations();
+window.seek=function(s){all().forEach(a=>{a.pause();a.currentTime=s*1000;});};
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches||P.has('static');
+if(rm)seek(END);else if(P.has('t'))seek(+P.get('t'));
+})();
+</script>
+<script src="look.js"></script>
+</body></html>
