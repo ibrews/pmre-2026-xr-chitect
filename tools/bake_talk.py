@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HTML, SRC = ROOT / "index.html", ROOT / "talk" / "sections.js"
 s = HTML.read_text(encoding="utf-8")
-talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "intro.js"))
+talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "intro.js", "journey.js"))
 
 def patch(marker, anchor, new, count=1):
     """Replace anchor with new unless marker already present."""
@@ -147,7 +147,7 @@ addEventListener('message',e=>{const c=e.data&&e.data.sdMotionSfx;if(!Array.isAr
 })();
 </script>
 """
-EXTRA = EXTRA.replace("@@INTRO_CSS@@", (ROOT / "talk" / "intro.css").read_text(encoding="utf-8").strip())
+EXTRA = EXTRA.replace("@@INTRO_CSS@@", "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("intro.css", "journey.css")))
 s = re.sub(r"<!-- ── PMRE TALK RUNTIME ── -->.*?(?=</body>)", "", s, flags=re.S)
 if True:
     i = s.rfind("</body>")

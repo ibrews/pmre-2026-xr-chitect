@@ -1,0 +1,41 @@
+/* PMRE journey minimap + pixel Alex (talk/journey.js). Colors come from the look tokens (--ink, --acc-1, --paper, --rule),
+   with the noir defaults as fallbacks, so every styles/ look recolors it. Size follows the HXR tracker (small, ~11% of the
+   stage width). Position honors the venue safe zone: --safe-inset-x / --safe-inset-y are 0 unless a safe-area option sets
+   them (288px / 162px at 1920x1080 for PMRE's 70% box), so the minimap always sits inside the visible area. */
+#journey{--j-w:clamp(150px,calc(11*var(--vw)),230px);position:fixed;z-index:24;pointer-events:none;
+  right:calc(var(--safe-inset-x,0px) + clamp(16px,calc(1.4*var(--vw)),28px));bottom:calc(var(--safe-inset-y,0px) + clamp(12px,calc(1.3*var(--vh)),24px) + var(--journey-lift,0px));
+  width:var(--j-w);opacity:.92;transition:opacity .45s ease}
+#journey.is-hidden{opacity:0}
+/* close slide: several looks hang a curtain/rule on the right edge; step in so he waves inside it */
+#journey.is-close{right:calc(var(--safe-inset-x,0px) + clamp(48px,calc(5*var(--vw)),110px))}
+#journey .j-map{display:block;width:100%;height:auto;overflow:visible;shape-rendering:geometricPrecision}
+#journey .j-label,.journey-print .j-label{text-align:right;margin:0 2px -2px 0;font:700 clamp(10px,calc(.68*var(--vw)),13px)/1 var(--font-mono,'Space Grotesk',Inter,sans-serif);letter-spacing:.2em;text-transform:uppercase;color:var(--acc-1,var(--teal,#00d4ff));opacity:.85}
+.j-map .j-lane,.j-map .j-strand,.j-map .j-road{fill:none;stroke:var(--ink,#f0f4ff);stroke-linecap:round;opacity:.28}
+.j-map .j-lane,.j-map .j-strand{stroke-width:1}
+.j-map .j-road{stroke-width:3;opacity:.22}
+.j-map .j-trail{fill:none;stroke:var(--acc-1,var(--teal,#00d4ff));stroke-width:1.4;stroke-linecap:round;opacity:.75}
+.j-map .j-stop{fill:var(--paper,#060810);stroke:var(--ink,#f0f4ff);stroke-width:.8;stroke-opacity:.45}
+.j-map .j-stop.is-visited{fill:var(--acc-1,var(--teal,#00d4ff));stroke:var(--acc-1,var(--teal,#00d4ff));stroke-opacity:.9;fill-opacity:.7}
+.j-map .j-stop.is-current{fill:var(--acc-1,var(--teal,#00d4ff));fill-opacity:1;stroke:var(--paper,#060810);stroke-width:1;stroke-opacity:1}
+.j-map .j-av,.j-hop .j-av{shape-rendering:crispEdges}
+.j-av .j-beard,.j-av .j-headset,.j-av .j-arms-up{display:none}
+.j-av.has-beard .j-beard,.j-av.has-headset .j-headset,.j-av.arms-up .j-arms-up{display:inline}
+.j-av.arms-up .j-arms-down{display:none}
+#journey .j-walker{transition:opacity .4s}
+/* idle bob, and a two-frame leg shuffle while walking; both off for ?static / reduced motion */
+#journey:not(.is-still):not(.is-walking) .j-bob{animation:j-bob 1.8s ease-in-out infinite}
+#journey.is-walking .j-leg-l{animation:j-step .26s steps(1) infinite}
+#journey.is-walking .j-leg-r{animation:j-step .26s steps(1) infinite reverse}
+@keyframes j-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-.7px)}}
+@keyframes j-step{0%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+/* over a full-bleed photo or motion frame: a small plate in the slide's paper color so the map reads without shouting */
+#journey.on-media{background:color-mix(in srgb,var(--paper,#060810) 78%,transparent);border-radius:6px;padding:4px 6px 2px}
+.j-hop{position:fixed;inset:0;z-index:26;pointer-events:none;overflow:visible}
+.j-hop.j-flash .j-av{filter:brightness(2.4) saturate(.2)}
+/* nav arrows / step dots sit left of the map instead of under it */
+body[data-journey="on"] .nav-arrows,body[data-journey="map"] .nav-arrows,body[data-journey="on"] #step-indicator,body[data-journey="map"] #step-indicator{right:calc(var(--safe-inset-x,0px) + clamp(16px,calc(1.4*var(--vw)),28px) + clamp(150px,calc(11*var(--vw)),230px) + 24px)}
+body.notes-mode #journey,body.print-mode #journey,body.shot-mode .j-hop,body.notes-mode .j-hop{display:none!important}
+@media (prefers-reduced-motion: reduce){#journey .j-bob,#journey .j-leg-l,#journey .j-leg-r{animation:none!important}}
+/* ?print: each printed slide carries the static map for its own chapter */
+.journey-print{position:absolute;right:28px;bottom:22px;width:200px;z-index:5;pointer-events:none}
+.journey-print .j-map{display:block;width:100%;height:auto;overflow:visible}
