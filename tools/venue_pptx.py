@@ -84,12 +84,14 @@ def add_text(slide, t, safe_scale):
     bx, bw = x - pl, w + pl + pr
     tb = slide.shapes.add_textbox(emu(bx), emu(y), emu(bw), emu(h))
     tf = tb.text_frame; tf.word_wrap = False; tf.auto_size = None
+    gaps = [lines[i + 1]["y"] - lines[i]["y"] for i in range(len(lines) - 1)]
+    base = min(gaps) if gaps else lines[0]["h"]  # one line's pitch, not inflated by <br><br> gaps
     tf.margin_left = tf.margin_right = tf.margin_top = tf.margin_bottom = 0; tf.vertical_anchor = MSO_ANCHOR.TOP
     for i, ln in enumerate(lines):
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
         p.alignment = {"left": PP_ALIGN.LEFT, "center": PP_ALIGN.CENTER, "right": PP_ALIGN.RIGHT}[t["align"]]
         # exact spacing sets the distance from the PREVIOUS line, so a blank-line gap belongs to the line after it
-        pitch = (ln["y"] - lines[i - 1]["y"]) if i > 0 else (t["pitch"] or ln["h"])
+        pitch = (ln["y"] - lines[i - 1]["y"]) if i > 0 else base
         p.line_spacing = Pt(max(1, pitch * 0.5))
         for r in ln["runs"]:
             st = r["st"]; run = p.add_run(); run.text = r["t"]
@@ -104,9 +106,9 @@ def add_text(slide, t, safe_scale):
             set_alpha(rPr, c.get("a", 1))
     # PowerPoint puts the first baseline ~0.8 em below the top for exact spacing vs the DOM's half-leading: nudge
     first = lines[0]; em = max(r["st"]["px"] for r in first["runs"]) * fit
-    pitch0 = t["pitch"] or first["h"]
+    pitch0 = base
     tb.top = emu(y + (first["h"] - pitch0) / 2 if pitch0 else y)
-    tb.height = emu(max(h, pitch0 * len(lines)))
+    tb.height = emu(max(h, sum(gaps) + pitch0))
     tb.name = "venue-text: " + t["plain"][:40].replace("\n", " ")
     return tb
 
