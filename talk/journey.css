@@ -39,6 +39,9 @@ body[data-slide="close"]{--j-shift:calc(clamp(48px,calc(5*var(--vw)),110px) - va
 #journey.on-media{background:color-mix(in srgb,var(--paper,#060810) 78%,transparent);border-radius:6px;padding:4px 6px 2px}
 .j-hop{position:fixed;inset:0;z-index:26;pointer-events:none;overflow:visible}
 .j-hop.j-flash .j-av{filter:brightness(2.4) saturate(.2)}
+/* 2020 card: the headset lifts off before the beard reveal */
+.j-hop .j-av .j-headset{transition:transform .4s ease-in,opacity .4s ease-in}
+.j-hop .j-av.hs-off .j-headset{transform:translateY(-18px);opacity:0}
 /* nav arrows / step dots sit left of the map instead of under it */
 body[data-journey="on"] .nav-arrows,body[data-journey="map"] .nav-arrows,body[data-journey="on"] #step-indicator,body[data-journey="map"] #step-indicator{right:calc(var(--j-m) + var(--j-shift,0px) + var(--j-w) + 24px)}
 body.notes-mode #journey,body.print-mode #journey,body.shot-mode .j-hop,body.notes-mode .j-hop{display:none!important}

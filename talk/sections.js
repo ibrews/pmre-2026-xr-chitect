@@ -8,7 +8,8 @@
    "Designing Like You're There" · [HXR] HarvardXR 2026 keynote notes · [PREP] HarvardXR prep interview 2026-04-07 ·
    [VOVR] Voices of VR (Alex interviews) · [FSLA] projects/four-seasons-lake-austin/overview.md · [MOD] KB speaking module ·
    [FMXDRAFT] FMX 2026 draft script (Alex-approved wording, not a recording) · [FT] projects/floor-tour/overview.md ·
-   [ALOV] context/business/overview.md (Notable Clients) · [DECKS] Alex's HarvardXR / FMX / NXT BLD 2026 intro slides (stat cards + client orbit) */
+   [ALOV] context/business/overview.md (Notable Clients) · [DECKS] Alex's HarvardXR / FMX / NXT BLD 2026 intro slides (stat cards + client orbit) ·
+   [EPIC] context/team/alex-epic-portfolio.md · [UF24] media/youtube/by-year/2024.md (Unreal Fest 2024) */
 const TALK = {
   coverEvent: "PMRE 2026 &middot; Las Vegas &middot; Thursday, Nov 19",
   coverTitle: "Architect to <span class=\"xr\">XR</span>-chitect",
@@ -160,6 +161,20 @@ const SECTIONS = [
         notes: "⏱ ~2 min — the Waldorf story is the payoff.\n\n✅ VERIFIED [PREP + MOD cross-pollination]: after a 5-minute SIGGRAPH talk on A Christmas Carol VR, Waldorf Astoria approached Agile Lens — assuming Alex knew nothing about archviz — and asked to \"inject the live motion capture performance system from Christmas Carol into an archviz tour so there could be a host or guide walking you through.\" Waldorf Astoria Miami: a MetaHuman concierge for pre-sales of a 100-story tower [HXR].\n\n✅ VERIFIED [BIO]: Ghosted (Magic Leap AR, 2019) — you were lead dev, Kevin Laibson directed.\n\n✎ PROPOSED: \"The theater work everyone told me was a distraction is what sold the real estate work.\"\n\nMedia: own work (harvardxr-keynote/media/xmas-carol, ghosted). Ghosted poster carries a Cannes XR laurel (3rd-party mark)." },
       { layout: "big", title: "The pattern", bigText: "Never hide your\nweird, niche R&D.", bigCaption: "It’s the proof-of-concept for someone else’s problem",
         notes: "⏱ ~45s.\n\n✅ VERIFIED line from your cross-pollination speaking module [MOD]: \"Never hide your weird, niche R&D. It is the proof-of-concept for someone else's enterprise problem.\" Module core message: \"The weird niche thing you did 5 years ago will land you your biggest corporate client today.\"\n\n✎ PROPOSED audience version: \"Post the weird personal project. The drone experiment. The 360 thing nobody paid for. That's your portfolio for the client you don't have yet.\"" }
+    ] },
+  // ── TEACHING ──
+  { year: "2020", accent: "teal",
+    lesson: { title: "Teaching Made Me\nLearn It Properly.", short: "TEACHING", keep: 20,
+      tagline: "In 2020 I joined the first cohort of Epic Games Authorized Instructors.<br><br>Wanting to teach a feature well forced me to really learn it. And my students kept teaching me back.",
+      tags: "Epic Games Authorized Instructor &middot; Unreal Engine",
+      notes: "⏱ ~90s.\n\n✅ VERIFIED [EPIC]: Epic Games Authorized Instructor, first cohort, 2020.\n\n✅ VERIFIED (Alex, in chat 2026-10-27): becoming an Authorized Instructor \"forced me to learn more features because I wanted to teach them well\" — and teaching makes you learn, both new techniques and from your students.\n\n✅ VERIFIED (Alex, in chat 2026-10-21): certifications renewed.\n\n⚠ Epic is a partner of Agile Lens and a client of Alex Coulombe LLC. Never call Epic an Agile Lens client.\n\n❓ ALEX: how many classes or hours you have taught. The KB says \"300+ classes\" in one place and \"300+ hours\" in another, so don't say a number until you pick the right one.\n\n✎ PROPOSED aside, if the minimap gets a laugh: \"Also, 2020. You can see what happened to my face.\"\n\n✎ PROPOSED spoken line: \"The fastest way I ever learned Unreal was promising a room full of people I'd explain it to them.\"" },
+    cases: [
+      { layout: "big", keep: 30, title: "Why it worked", bigText: "Teaching it well\nmeant learning it\nfor real.", bigCaption: "Every class pushed me into the features I would have skipped on my own",
+        notes: "⏱ ~60s.\n\n✅ VERIFIED idea (Alex, in chat 2026-10-27): being an instructor \"forced me to learn more features because I wanted to teach them well.\" The slide wording is ✎ PROPOSED.\n\n✅ VERIFIED [UF24]: the Unreal Fest 2024 talk \"I Wish I Learned This Sooner\" came out of exactly this: tips you only find when you have to explain them.\n\n✎ PROPOSED: \"When you're the one at the front of the room, 'I think it works like this' stops being good enough.\"" },
+      { layout: "big", keep: 30, title: "Who taught whom", bigText: "My students taught me\nas much as I taught them.", bigCaption: "New techniques, and new ways of seeing tools I thought I knew",
+        notes: "⏱ ~45s.\n\n✅ VERIFIED idea (Alex, in chat 2026-10-27): teaching makes you learn \"also from your students.\" The slide wording is ✎ PROPOSED.\n\n✅ VERIFIED [EPIC]: 40+ authored or co-authored courses on Unreal Academy; Alex Coulombe Presents became the first Unreal Engine Authorized Training Center in NYC (2023). Say these only if there's time; they aren't on the slide.\n\n❓ ALEX: one student moment, a question that taught you something. Yours to tell; nothing on record." },
+      { layout: "big", keep: 20, title: "For some of you in this room", bigText: "You have a lot to teach.\nConsider teaching it.", bigCaption: "You’ll learn more than anyone, from the material and from your students",
+        notes: "⏱ ~60s. The invitation: say it to the room, not the slide.\n\n✅ VERIFIED (Alex, in chat 2026-10-27): \"someone in the audience who has a lot to offer should also consider teaching and enjoying the way teaching causing you to learn, both new techniques and also from your students.\"\n\n✎ PROPOSED spoken line: \"Some of you have twenty years of knowing exactly where to put the camera. Teach that. A workshop, a meetup, a YouTube channel. You'll be shocked what it teaches you.\"" }
     ] },
   // ── THE BIG PROOF ──
   { year: "2023", accent: "amber",
