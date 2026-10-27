@@ -18,10 +18,10 @@ const J = (() => {
   const q = new URLSearchParams(location.search); let rm = false; try { rm = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
   const exp = q.has('print') || q.has('shot');
   return { exp, still: exp || q.has('static') || q.has('reduced') || rm,
-    W: 200, H: 62, LANE_Y: 40, FORK: 24, MERGE: 160, A: 9, P: 68,
+    W: 200, H: 54, LANE_Y: 40, FORK: 24, MERGE: 160, A: 9, P: 68,
     STOP_X: [10, 40, 62, 85, 108, 132, 160, 184], END_X: 196,
     HOP: { 3: 'headset', 5: 'beard' },  // section index → costume change earned on that chapter card
-    S: 0.36 };                            // walker scale inside the 200-unit map (~26 units tall; HXR used 0.22 in a 120 box)
+    S: 1 / 3 };                           // walker scale in the 200-unit map: ~24 units; 0.5px per sprite pixel at 300px wide
 })();
 const jE = (tag, a = {}) => { const e = document.createElementNS('http://www.w3.org/2000/svg', tag); for (const k in a) e.setAttribute(k, a[k]); return e; };
 

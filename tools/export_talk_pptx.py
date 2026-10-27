@@ -75,8 +75,8 @@ def journey(slide, look, stop, journey_pick):
     f = ROOT / "media/journey" / look / (f"stop-{stop}.png" if stop != "end" else "end.png")
     if not f.exists(): f = ROOT / "media/journey/house" / f.name
     if not f.exists(): return
-    iw, ih = Image.open(f).size; w = Inches(1.7); h = int(w * ih / iw)
-    slide.shapes.add_picture(str(f), W - w - Inches(.22), H - h - Inches(.16), w, h)
+    iw, ih = Image.open(f).size; w = Inches(2.4); h = int(w * ih / iw)  # 300px of a 1920 frame, 24px in from the corner like the deck
+    slide.shapes.add_picture(str(f), W - w - Inches(.17), H - h - Inches(.17), w, h)
 
 def big_size(t):
     n = max(len(l) for l in clean(t).split("\n"))
