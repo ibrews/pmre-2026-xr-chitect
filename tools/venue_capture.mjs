@@ -106,6 +106,7 @@ function pageExtract(opts) {
   const xform = t => t === 'uppercase' ? s => s.toUpperCase() : t === 'lowercase' ? s => s.toLowerCase() : t === 'capitalize' ? s => s.replace(/\b\w/g, c => c.toUpperCase()) : s => s;
 
   // ---- text ----
+  slide.querySelectorAll('[data-vx-hide],[data-vx-keep]').forEach(e => { e.removeAttribute('data-vx-hide'); e.removeAttribute('data-vx-keep'); e.style.removeProperty('--vx-c'); e.style.removeProperty('--vx-f'); });
   const groups = new Map();
   const tw = document.createTreeWalker(slide, NodeFilter.SHOW_TEXT);
   for (let n; (n = tw.nextNode());) {
@@ -162,6 +163,10 @@ function pageExtract(opts) {
       _el: null
     });
     root.dataset.vxText = String(texts.length - 1);
+    // Hide only this block's own text when it is rebuilt natively; a nested block that stays in the image keeps its
+    // exact colors even though its parent's text goes transparent (inheritance).
+    if (!reason) nodes.forEach(n => n.parentElement && n.parentElement.setAttribute('data-vx-hide', ''));
+    else nodes.forEach(n => { const e = n.parentElement; if (!e) return; const c = getComputedStyle(e); e.setAttribute('data-vx-keep', ''); e.style.setProperty('--vx-c', c.color); e.style.setProperty('--vx-f', c.webkitTextFillColor); });
   }
 
   // ---- pictures ----
@@ -222,7 +227,7 @@ function pageHideNative(on) {
   if (!on) { if (st) st.remove(); return; }
   if (!st) { st = document.createElement('style'); st.id = 'vx-hide'; document.head.appendChild(st); }
   const N = window.__vxNative || { t: [], i: [], s: [] };
-  st.textContent = N.t.map(i => `[data-vx-text="${i}"],[data-vx-text="${i}"] *`).join(',') + (N.t.length ? '{color:transparent!important;-webkit-text-fill-color:transparent!important;text-shadow:none!important;text-decoration-color:transparent!important}' : '') +
+  st.textContent = '[data-vx-hide]{color:transparent!important;-webkit-text-fill-color:transparent!important;text-shadow:none!important;text-decoration-color:transparent!important}[data-vx-keep]{color:var(--vx-c)!important;-webkit-text-fill-color:var(--vx-f)!important}' +
     [...N.i.map(i => `[data-vx-img="${i}"]`), ...N.s.map(i => `[data-vx-svg="${i}"]`)].join(',') + (N.i.length + N.s.length ? '{visibility:hidden!important}' : '') + (N.f ? '#deck .slide.active iframe{visibility:hidden!important}' : '');
 }
 
