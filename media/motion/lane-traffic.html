@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lane Traffic — motion</title>
+<!-- PMRE 2026 motion graphic, option "lanemotion:traffic" (Alex's storyboard, 2026-10-27). Beats:
+     1 one road, ARCHITECTURE, "Pick a lane." — 2010 pixel Alex walks it, calm (0–5.8 s)
+     2 two more lanes arrive: THEATER, TECHNOLOGY (5.8–9 s)
+     3 traffic: seeded pixel cars and trucks; Alex hops lane to lane, near misses, cars swerve, HONK! (9–21.5 s)
+     4 the roads weave into each other (braid) and the traffic is gone (21.5–26.5 s)
+     5 the strands curl into the three Venn circles; "Reframe it." (26.5–30.5 s)
+     6 the venn-sprite sequence, verbatim (venn-scene.js), from T0 = 29.4 s to the end (42.9 s)
+     Honks: window.MOTION_SFX lists every cue; render_motion.mjs mixes them into the MP4 and the deck plays them live
+     (postMessage from this frame on a live play only). WAAPI + CSS, all sampled from time; seeded layout; ?static / reduced
+     motion = final frame; ?t=N seeks; window.seek(sec) for MP4 capture. -->
+<style>
+:root{--bg:#060810;--text:#f0f4ff;--dim:rgba(240,244,255,.45)}
+html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:'Space Grotesk','Inter','Avenir Next','Helvetica Neue',system-ui,sans-serif}
+svg{width:100%;height:100%;display:block}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw var(--d,2s) cubic-bezier(.3,0,.3,1) var(--t,0s) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fade{opacity:0;animation:fade .9s ease var(--t,0s) forwards}
+@keyframes fade{to{opacity:1}}
+.fadeout{animation:fadeout .8s ease var(--t,0s) forwards}
+@keyframes fadeout{to{opacity:0}}
+.rise{opacity:0;transform:translateY(24px);animation:rise 1s cubic-bezier(.2,.8,.2,1) var(--t,0s) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.c{mix-blend-mode:screen;opacity:0;animation:in 1.6s cubic-bezier(.2,.8,.2,1) var(--t) forwards}
+@keyframes in{from{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.8)}to{opacity:1;transform:none}}
+.vc{mix-blend-mode:screen}
+.pop{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop 1s cubic-bezier(.2,1.4,.4,1) var(--t) forwards}
+@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+.label{fill:var(--dim);font-size:26px;letter-spacing:.32em;font-weight:500}
+.big{fill:var(--text);font-size:96px;font-weight:600;letter-spacing:-.01em}
+.lbl{font-size:40px;font-weight:600;letter-spacing:.18em;fill:var(--text)}
+.ov{font-size:27px;font-weight:500;fill:var(--text);letter-spacing:.04em}
+.halo{stroke:#060810;stroke-width:10px;stroke-linejoin:round;paint-order:stroke fill;stroke-opacity:.85}
+.cap{font-size:30px;fill:var(--dim);letter-spacing:.3em}
+.core{font-size:44px;font-weight:700;fill:#060810;letter-spacing:.06em}
+</style></head><body>
+<svg id="s" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" aria-label="A pixel-art Alex walks one road labeled Architecture. Theater and Technology lanes appear, traffic floods in, and he hops lane to lane dodging honking, swerving cars. The roads braid, then curl into three overlapping circles: reframe it. He bounces through the Venn diagram (theater planning, live VR theater, archviz) and lands on XR-chitect.">
+<defs>
+  <radialGradient id="ga"><stop offset="0" stop-color="#00d4ff" stop-opacity=".42"/><stop offset="1" stop-color="#00d4ff" stop-opacity=".1"/></radialGradient>
+  <radialGradient id="gt"><stop offset="0" stop-color="#f43f5e" stop-opacity=".42"/><stop offset="1" stop-color="#f43f5e" stop-opacity=".1"/></radialGradient>
+  <radialGradient id="gx"><stop offset="0" stop-color="#a78bfa" stop-opacity=".42"/><stop offset="1" stop-color="#a78bfa" stop-opacity=".1"/></radialGradient>
+  <linearGradient id="core" x1="0" x2="1"><stop offset="0" stop-color="#00d4ff"/><stop offset=".5" stop-color="#a78bfa"/><stop offset="1" stop-color="#f43f5e"/></linearGradient>
+  <filter id="glow" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<!-- Beat 1 copy -->
+<g class="fadeout" style="--t:5.0s">
+  <text x="960" y="250" text-anchor="middle" class="big rise" style="--t:1.4s">Pick a lane.</text>
+  <text x="960" y="840" text-anchor="middle" class="label rise" style="--t:2.6s">STAY IN IT &#183; MASTER ONE CRAFT</text>
+</g>
+<g id="bands"></g>
+<g id="strands" filter="url(#glow)" fill="none" stroke-linecap="round"></g>
+<g id="lanelabels"></g>
+<g id="cars"></g>
+<g id="venn"></g>
+<g class="fadeout" style="--t:30.2s"><text x="960" y="585" text-anchor="middle" class="big rise" style="--t:27.4s">Reframe it.</text></g>
+<g id="hero"></g>
+<g id="honks"></g>
+<g id="fx"></g>
+</svg>
+<script src="sprite.js"></script>
+<script src="venn-scene.js"></script>
+<script>
+(function(){
+const T0=29.4, END=T0+PX.VENN_LEN, {E,track,clamp,ease}=PX, SC=1.6, CS=4.5;
+const R=PX.rng(20261027);
+// ── Lanes. Every lane / braid / circle path is M + five cubic segments with control x at the segment thirds, so they morph
+//    into one another and a point's y at a given x is the blend of the shapes' y (x(u) is the same linear map in all of them).
+const XN=[120,456,792,1128,1464,1800], AMP=180, LAM=840;
+const LANES=[ // the road he starts on first, then the two that arrive
+  {id:'ar',y:540,col:'#00d4ff',name:'ARCHITECTURE',dir:1, ph:0,        draw:.2, circ:[820,450]},
+  {id:'th',y:360,col:'#f43f5e',name:'THEATER',     dir:-1,ph:-Math.PI/2,draw:5.8,circ:[1100,450]},
+  {id:'te',y:720,col:'#a78bfa',name:'TECHNOLOGY',  dir:1, ph:Math.PI/2, draw:6.3,circ:[960,690]}];
+const BY=(L,x)=>540+AMP*Math.sin(2*Math.PI*(x-120)/LAM+L.ph), BD=(L,x)=>AMP*2*Math.PI/LAM*Math.cos(2*Math.PI*(x-120)/LAM+L.ph);
+function straightPts(L){const P=[[XN[0],L.y]];for(let i=0;i<5;i++){const a=XN[i],b=XN[i+1],d=(b-a)/3;P.push([a+d,L.y],[b-d,L.y],[b,L.y]);}return P;}
+function braidPts(L){const P=[[XN[0],BY(L,XN[0])]];for(let i=0;i<5;i++){const a=XN[i],b=XN[i+1],d=(b-a)/3;P.push([a+d,BY(L,a)+BD(L,a)*d],[b-d,BY(L,b)-BD(L,b)*d],[b,BY(L,b)]);}return P;}
+function circlePts(cx,cy,r){const n=5,da=2*Math.PI/n,k=4/3*Math.tan(da/4)*r,Q=a=>[cx+r*Math.cos(a),cy+r*Math.sin(a)];let a=Math.PI,p=Q(a);const P=[p];
+  for(let i=0;i<n;i++){const b=a+da,q=Q(b);P.push([p[0]-k*Math.sin(a),p[1]+k*Math.cos(a)],[q[0]+k*Math.sin(b),q[1]-k*Math.cos(b)],q);a=b;p=q;}return P;}
+const B0=21.6,B1=24.6,C0=26.6,C1=30.0;   // braid morph, curl morph
+const mB=t=>ease(clamp((t-B0)/(B1-B0),0,1)), mC=t=>ease(clamp((t-C0)/(C1-C0),0,1));
+const lerp=(P,Q,m)=>P.map((p,i)=>[p[0]+(Q[i][0]-p[0])*m,p[1]+(Q[i][1]-p[1])*m]);
+LANES.forEach(L=>{L.S=straightPts(L);L.B=braidPts(L);L.C=circlePts(L.circ[0],L.circ[1],300);});
+const ptsAt=(L,t)=>lerp(lerp(L.S,L.B,mB(t)),L.C,mC(t));
+const dOf=P=>`M${P[0][0].toFixed(1)} ${P[0][1].toFixed(1)}`+[0,1,2,3,4].map(i=>' C '+[P[1+3*i],P[2+3*i],P[3+3*i]].map(q=>q[0].toFixed(1)+' '+q[1].toFixed(1)).join(', ')).join('');
+// y of a lane's line at x (only valid before the curl starts: x(u) is linear per segment until then)
+function laneY(L,x,t){const P=lerp(L.S,L.B,mB(t)),i=clamp(Math.floor((x-XN[0])/336),0,4),u=clamp((x-XN[i])/336,0,1),a=P[3*i][1],b=P[3*i+1][1],c=P[3*i+2][1],d=P[3*i+3][1],v=1-u;return v*v*v*a+3*v*v*u*b+3*v*u*u*c+u*u*u*d;}
+const canD=window.CSS&&CSS.supports&&CSS.supports('d','path("M0 0")');
+const bands=document.getElementById('bands'),strands=document.getElementById('strands'),lbls=document.getElementById('lanelabels');
+LANES.forEach(L=>{
+  const d0=dOf(L.S);
+  E('path',{d:d0,stroke:L.col,'stroke-opacity':'.09','stroke-width':'120',fill:'none',class:'fade',style:`--t:${L.draw}s`},bands);
+  E('path',{d:d0,stroke:L.col,'stroke-opacity':'.35','stroke-width':'3','stroke-dasharray':'26 22',fill:'none',transform:'translate(0,48)',class:'fade',style:`--t:${L.draw+.4}s`},bands);
+  L.el=E('path',{d:d0,stroke:L.col,'stroke-width':'7',class:'draw',pathLength:'1',style:`--d:1.4s;--t:${L.draw}s`},strands);
+  if(canD)track(L.el,END,t=>({d:`path("${dOf(ptsAt(L,t))}")`}));
+  const tx=E('text',{x:140,y:L.y+40,'text-anchor':'start',class:'label fade',style:`--t:${L.draw+.9}s;fill:${L.col}`},lbls);tx.textContent=L.name;
+});
+track(bands,END,t=>({opacity:+(1-clamp((t-20.8)/.8,0,1)).toFixed(3)}));
+track(lbls,END,t=>({opacity:+(1-clamp((t-20.8)/.8,0,1)).toFixed(3)}));
+// strands hand over to the venn circles (or, without CSS d support, simply fade into them)
+track(strands,END,t=>({opacity:+(1-clamp((t-(canD?T0+.8:C0))/.8,0,1)).toFixed(3)}));
+const AR=LANES[0],TH=LANES[1],TE=LANES[2],Y={ar:540,th:360,te:720};
+// ── Alex: calm walk, then the traffic dance. Feet on the line. ──
+const P2=(l,x)=>[x,Y[l]];
+const segs=[
+  {type:'idle',t0:0,t1:1.6,a:P2('ar',300),face:1},
+  {type:'walk',t0:1.6,t1:5.6,a:P2('ar',300),b:P2('ar',720),linear:true},
+  {type:'idle',t0:5.6,t1:7.4,a:P2('ar',720)},
+  {type:'idle',t0:7.4,t1:8.4,a:P2('ar',720),cheer:true},           // more lanes!
+  {type:'idle',t0:8.4,t1:9.4,a:P2('ar',720)},
+  {type:'walk',t0:9.4,t1:10.6,a:P2('ar',720),b:P2('ar',900),linear:true},
+  {type:'hop',t0:10.6,t1:11.2,a:P2('ar',900),b:P2('th',980),h:70},     // dodge #1 (car from behind)
+  {type:'walk',t0:11.2,t1:12.3,a:P2('th',980),b:P2('th',1150),linear:true},
+  {type:'hop',t0:12.3,t1:12.9,a:P2('th',1150),b:P2('ar',1220),h:60},   // dodge #2 (oncoming truck)… straight in front of a car
+  {type:'hop',t0:12.95,t1:13.5,a:P2('ar',1220),b:P2('te',1290),h:50},  // dodge #3
+  {type:'walk',t0:13.5,t1:14.9,a:P2('te',1290),b:P2('te',1450),linear:true},
+  {type:'hop',t0:14.9,t1:15.5,a:P2('te',1450),b:P2('ar',1500),h:80},   // dodge #4 (car from behind)
+  {type:'walk',t0:15.5,t1:16.4,a:P2('ar',1500),b:P2('ar',1620),linear:true},
+  {type:'walk',t0:16.4,t1:17.5,a:P2('ar',1620),b:P2('ar',1450),linear:true},  // turns back to keep pace with the rest
+  {type:'hop',t0:17.5,t1:18.1,a:P2('ar',1450),b:P2('th',1380),h:70},   // dodge #5
+  {type:'walk',t0:18.1,t1:19.2,a:P2('th',1380),b:P2('th',1200),linear:true},
+  {type:'hop',t0:19.2,t1:20.2,a:P2('th',1200),b:P2('te',1100),h:120},  // dodge #6: two lanes at once
+  {type:'idle',t0:20.2,t1:22.6,a:P2('te',1100),face:-1},
+  // the roads weave: he rides the technology strand as it bends
+  {type:'fn',t0:22.6,t1:25.6,f:(t,k)=>{const x=1100+(960-1100)*ease(k);return{x,y:laneY(TE,x,t),face:-1};}},
+  {type:'fn',t0:25.6,t1:27.0,f:t=>({x:960,y:laneY(TE,960,Math.min(t,C0)),face:1})},
+  {type:'hop',t0:27.0,t1:29.0,a:[960,laneY(TE,960,C0)],b:[640,470],h:240},   // the floor curls up; he lands where the temple will be
+  {type:'idle',t0:29.0,t1:END,a:[640,470],face:1}];
+const at=PX.route(segs);
+// lane occupancy: on a lane while standing on it, and for the first/last .2 s of a hop
+const laneOf=y=>Object.keys(Y).find(k=>Math.abs(Y[k]-y)<2);
+function alexLane(t){for(const s of segs){if(t<s.t0||t>=s.t1)continue;if(s.type==='hop'){if(t<s.t0+.2)return laneOf(s.a[1]);if(t>s.t1-.2)return laneOf(s.b[1]);return null;}if(s.type==='fn')return null;return laneOf(s.a[1]);}return null;}
+// ── Traffic: threat cars (scripted near misses) + seeded ambient traffic that never touches him or each other ──
+const cars=[], cg=document.getElementById('cars'), hg=document.getElementById('honks'), SFX=[];
+const COLS=['#f59e0b','#f0f4ff','#00d4ff','#a78bfa','#f43f5e'];
+const X=(c,t)=>c.xc+c.dir*c.v*(t-c.tc);
+function mk(lane,kind,v,xc,tc,extra){const L=LANES.find(l=>l.id===lane);return Object.assign({lane,dir:L.dir,y:L.y,kind,v,xc,tc,len:(kind==='truck'?39:28)*CS,honks:[],swerve:null},extra||{});}
+// threat: the car's centre reaches where he WAS at time th; he is already in the air
+[['ar','car',760,960,11.0,[10.62],10.95,'#f59e0b'],
+ ['th','truck',560,1180,12.65,[12.25,12.42],12.6,'#a78bfa'],
+ ['ar','car',620,1220,13.25,[12.98],13.05,'#f0f4ff'],
+ ['te','car',820,1470,15.25,[14.9],15.2,'#f43f5e'],
+ ['ar','truck',640,1430,17.95,[17.45,17.62],17.85,'#00d4ff'],
+ ['th','car',700,1190,19.55,[19.15],19.5,'#f59e0b']].forEach(([l,k,v,x,t,hs,sw,col])=>cars.push(mk(l,k,v,x,t,{honks:hs,swerve:sw,col})));
+const gap=(a,b)=>(a.len+b.len)/2+70;
+function clash(c){const L=LANES.find(l=>l.id===c.lane),t0=c.tc,t1=c.tc+2300/c.v;
+  if(t1>20.6)return true;                                                    // gone before the roads start to weave
+  for(let t=t0;t<=t1;t+=1/30){const x=X(c,t);if(x<-260||x>2180)continue;
+    if(alexLane(t)===c.lane&&Math.abs(x-at(t).x)<c.len/2+90)return true;
+    for(const o of cars)if(o.lane===c.lane&&Math.abs(x-X(o,t))<gap(c,o))return true;}return false;}
+LANES.forEach(L=>{let t=8.6+R()*.8;while(t<19.6){const kind=R()<.22?'truck':'car',v=520+R()*260,c=mk(L.id,kind,v,L.dir>0?-200:2120,t,{col:COLS[Math.floor(R()*COLS.length)]});if(!clash(c))cars.push(c);t+=.9+R()*1.3;}});
+cars.forEach((c,i)=>{
+  const outer=E('g',{},cg),v=PX.vehicle(outer,c.kind,c.col,CS);
+  const sw=t=>{if(c.swerve==null)return 0;const k=(t-c.swerve)/.6;return k<0||k>1?0:Math.sin(Math.PI*k);};
+  track(outer,END,t=>{const x=X(c,t),s=sw(t);return{transform:`translate(${x.toFixed(1)}px,${(c.y-26*s).toFixed(1)}px) rotate(${(-6*s*c.dir).toFixed(2)}deg) scale(${c.dir},1)`};});
+  c.honks.forEach((h,j)=>{const b=PX.honkBubble(hg,c.kind==='truck'&&j===0?'HONK':'HONK!');
+    track(b,END,t=>{const k=(t-h)/.8;if(k<0||k>1)return{opacity:0,transform:'translate(-400px,0px) scale(1)'};const x=X(c,t)+c.dir*(c.len/2-10),pop=k<.15?.6+.4*k/.15+.15*Math.sin(k/.15*Math.PI):1;
+      return{opacity:k>.8?+((1-k)/.2).toFixed(3):1,transform:`translate(${x.toFixed(1)}px,${(c.y-62-26*sw(t)).toFixed(1)}px) scale(${pop.toFixed(3)})`};});
+    SFX.push({t:+h.toFixed(2),kind:'honk',pitch:c.kind==='truck'?.8:1});});
+});
+// ── Beat 6: the venn-sprite sequence, verbatim, starting at T0 ──
+PX.vennScene(document.getElementById('venn'),{END,T0,curl:true,handoff:true});
+const hero=PX.sprite(document.getElementById('hero'),{withBeard:false});
+PX.drive(hero,END,at,SC);
+track(hero.wrap,END,t=>({opacity:t<0.3?0:t<0.9?+((t-.3)/.6).toFixed(3):t<T0+2.6?1:0}));  // hands over to the venn hero at the temple
+window.MOTION_END=END; window.MOTION_SFX=SFX.sort((a,b)=>a.t-b.t);
+})();
+</script>
+<script>
+(function(){const P=new URLSearchParams(location.search),END=window.MOTION_END;
+window.seek=function(s){document.getAnimations().forEach(a=>{a.pause();a.currentTime=s*1000;});};
+const still=matchMedia('(prefers-reduced-motion: reduce)').matches||P.has('static');
+if(still)seek(END);else if(P.has('t'))seek(+P.get('t'));
+// Live play inside the deck: hand the honk cues to the parent, which plays them on its own audio clock (and stops them on slide change).
+else if(parent!==window)try{parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}catch(e){}
+})();
+</script>
+<script src="look.js"></script>
+</body></html>

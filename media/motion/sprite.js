@@ -105,6 +105,30 @@
     p(-10, -12, 6, 2, W, .15); p(5, -10, 4, 2, W, .1);
     I.foot = 14 * S; I.S = S; return I;
   }
+  // ── Traffic (lane-traffic): a side-view pixel car or truck, facing right at local origin = centre of the road contact line. ──
+  function vehicle(parent, kind, color, S) {
+    const g = E('g', { 'shape-rendering': 'crispEdges' }, parent), p = (x, y, w, h, f, o) => E('rect', Object.assign({ x: x * S, y: y * S, width: w * S, height: h * S, fill: f }, o == null ? {} : { 'fill-opacity': o }), g);
+    const W = '#f0f4ff', TIRE = '#1a1a26';
+    if (kind === 'truck') {
+      p(-20, -15, 29, 12, color); p(-20, -15, 29, 1, W, .35); p(-20, -4, 29, 1, color, .6);
+      p(10, -12, 9, 9, color, .8); p(13, -11, 5, 4, W, .55); p(18, -6, 1, 2, '#f59e0b'); p(-20, -6, 1, 2, '#f43f5e');
+      [-16, -9, 12].forEach(x => { p(x, -3, 5, 3, TIRE); p(x + 2, -2, 1, 1, W, .5); });
+      return { g, len: 39 * S };
+    }
+    p(-14, -9, 28, 6, color); p(-7, -14, 14, 5, color); p(-14, -9, 28, 1, W, .3);
+    p(-5, -13, 5, 3, W, .55); p(1, -13, 5, 3, W, .55);
+    p(13, -8, 1, 2, '#f59e0b'); p(-14, -8, 1, 2, '#f43f5e');
+    [-10, 5].forEach(x => { p(x, -3, 5, 3, TIRE); p(x + 2, -2, 1, 1, W, .5); });
+    return { g, len: 28 * S };
+  }
+  // A "HONK!" speech bubble (pixel-edged), local origin at the tail tip.
+  function honkBubble(parent, label) {
+    const g = E('g', { 'shape-rendering': 'crispEdges' }, parent);
+    E('rect', { x: -66, y: -74, width: 132, height: 52, fill: '#f0f4ff', stroke: '#060810', 'stroke-width': 4 }, g);
+    E('rect', { x: -10, y: -24, width: 20, height: 12, fill: '#f0f4ff' }, g); E('rect', { x: -4, y: -12, width: 8, height: 10, fill: '#f0f4ff' }, g);
+    const t = E('text', { x: 0, y: -37, 'text-anchor': 'middle', fill: '#060810', 'font-size': 34, 'font-weight': 800, 'letter-spacing': '.04em', style: "font-family:'Space Grotesk','Inter',system-ui,sans-serif" }, g); t.textContent = label || 'HONK!';
+    return g;
+  }
   // ── Reactions (all in absolute seconds; pass the page END). HXR timings: shake 6 × 65 ms, cracks 600 ms, shimmer 9 × 70 ms, run 13 × 60 ms. ──
   const SHAKE = [[3, -2], [-4, 2], [2, 3], [-3, -1], [1, -2], [0, 0]];
   function shake(g, END, hits, amp) {
@@ -131,7 +155,8 @@
     return g;
   }
   // ── Routes: the sprite's position is a pure function of time. Segments: idle | walk | path | hop. ──
-  // walk/path bob like steps; hop is a parabola with arms up. path rides an SVG path between two x positions.
+  // walk/path bob like steps; hop is a parabola with arms up. path rides an SVG path between two x positions;
+  // fn takes any pure function f(t, k) -> { x, y, up?, face? } (e.g. riding a morphing strand).
   function lengthAtX(path, x) { const L = path.getTotalLength(); let lo = 0, hi = L; for (let i = 0; i < 40; i++) { const m = (lo + hi) / 2; if (path.getPointAtLength(m).x < x) lo = m; else hi = m; } return (lo + hi) / 2; }
   function route(segs) {
     segs.forEach(s => { if (s.type === 'path') { s.l0 = lengthAtX(s.path, s.x0); s.l1 = lengthAtX(s.path, s.x1); } });
@@ -141,7 +166,8 @@
       const k = clamp((t - s.t0) / Math.max(.001, s.t1 - s.t0), 0, 1), stepBob = (dist) => -Math.abs(Math.sin(dist / 26 * Math.PI)) * 7;
       let x, y, up = false, bob = 0, face = s.face;
       if (s.type === 'idle' && face == null) face = last.face;
-      if (s.type === 'idle') { x = s.a[0]; y = s.a[1]; up = !!s.cheer && k > 0 && k < 1 && Math.floor((t - s.t0) / .25) % 2 === 0; }
+      if (s.type === 'fn') { const r = s.f(t, k); x = r.x; y = r.y; up = !!r.up; if (r.face) face = r.face; else if (face == null) face = last.face; }
+      else if (s.type === 'idle') { x = s.a[0]; y = s.a[1]; up = !!s.cheer && k > 0 && k < 1 && Math.floor((t - s.t0) / .25) % 2 === 0; }
       else if (s.type === 'walk') { const e = s.linear ? k : ease(k); x = s.a[0] + (s.b[0] - s.a[0]) * e; y = s.a[1] + (s.b[1] - s.a[1]) * e; bob = k > 0 && k < 1 ? stepBob(Math.hypot(x - s.a[0], y - s.a[1])) : 0; if (face == null) face = Math.sign(s.b[0] - s.a[0]) || 1; }
       else if (s.type === 'path') { const e = s.linear ? k : ease(k), pt = s.path.getPointAtLength(s.l0 + (s.l1 - s.l0) * e); x = pt.x; y = pt.y; bob = k > 0 && k < 1 ? stepBob((s.l1 - s.l0) * e) : 0; if (face == null) face = Math.sign(s.x1 - s.x0) || 1; }
       else { x = s.a[0] + (s.b[0] - s.a[0]) * k; const h = s.h == null ? 90 : s.h; y = s.a[1] + (s.b[1] - s.a[1]) * k - 4 * h * k * (1 - k) - (s.extra ? s.extra(k) : 0); up = k > 0 && k < 1; if (face == null) face = Math.sign(s.b[0] - s.a[0]) || last.face; }
@@ -161,5 +187,5 @@
     const wrap = E('g', {}, parent), outer = E('g', {}, wrap), feet = E('g', { transform: 'translate(0,-28)' }, outer), av = avatar(feet, opts);
     return { wrap, outer, av, body: av.body };
   }
-  window.PX = { E, track, ease, clamp, rng, avatar, headset, temple, theater, monitor, shake, reactArch, reactTheater, reactTech, sparkles, route, drive, sprite, lengthAtX, FPS };
+  window.PX = { vehicle, honkBubble, E, track, ease, clamp, rng, avatar, headset, temple, theater, monitor, shake, reactArch, reactTheater, reactTech, sparkles, route, drive, sprite, lengthAtX, FPS };
 })();
