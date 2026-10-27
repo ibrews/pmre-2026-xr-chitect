@@ -38,7 +38,18 @@ s = re.sub(r"<title>.*?</title>", "<title>Architect to XR-chitect — Alex Coulo
 s = re.sub(r'<meta name="description" content=".*?">', '<meta name="description" content="Architect to XR-chitect: The Best Career Advice I Ever Ignored. Alex Coulombe, PMRE 2026, Las Vegas.">', s, count=1)
 s = re.sub(r'<meta property="og:title" content=".*?">', '<meta property="og:title" content="Architect to XR-chitect: The Best Career Advice I Ever Ignored">', s, count=1)
 s = re.sub(r'<meta property="og:description" content=".*?">', '<meta property="og:description" content="Alex Coulombe at PMRE 2026: from architecture school to walkable VR real estate.">', s, count=1)
-s = s.replace('<link rel="icon" type="image/svg+xml" href="favicon.svg">', '<link rel="icon" type="image/svg+xml" href="talk/favicon.svg">', 1)
+ICONS = ('<link rel="icon" type="image/svg+xml" href="talk/favicon.svg">\n<link rel="icon" type="image/png" sizes="32x32" href="talk/favicon-32.png">\n'
+         '<link rel="alternate icon" href="talk/favicon.ico">\n<link rel="apple-touch-icon" href="talk/apple-touch-icon.png">')
+s = re.sub(r'<link rel="(icon|alternate icon|apple-touch-icon)"[^>]*>\n?', '', s)
+s = s.replace('</title>', '</title>\n' + ICONS, 1)
+
+# 2b. Social card: talk-specific og:image + twitter card (never the template's social.png — branding rule 2026-10-22).
+SOCIAL = "https://ibrews.github.io/pmre-2026-xr-chitect/talk/social.png"
+s = re.sub(r'<meta property="og:image" content=".*?">', f'<meta property="og:image" content="{SOCIAL}">', s, count=1)
+s = re.sub(r'\n<meta (property="og:image:(width|height|alt)"|name="twitter:[a-z]+")[^>]*>', '', s)
+s = s.replace(f'<meta property="og:image" content="{SOCIAL}">', f'<meta property="og:image" content="{SOCIAL}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="Architect to XR-chitect: The Best Career Advice I Ever Ignored. Alex Coulombe Presents, PMRE 2026, Las Vegas.">\n<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:title" content="Architect to XR-chitect: The Best Career Advice I Ever Ignored">\n<meta name="twitter:description" content="Alex Coulombe at PMRE 2026: from architecture school to walkable VR real estate.">\n<meta name="twitter:image" content="{SOCIAL}">', 1)
+if "spatial-deck/social.png" in s:
+    sys.exit("bake_talk: template social.png still referenced")
 
 # 3. Cover + close + map center text driven by TALK.
 patch("TALK.coverTitle", "cov.innerHTML=`<div class=\"event-tag\">Spatial Deck &middot; Open-Source Presentation Framework</div><h1 class=\"talk-title\">Is XR Right<br>For Your Project?</h1><p class=\"talk-subtitle\">A framework for spatial decisions &mdash; before you pick a headset or a studio</p><div class=\"speaker-card\"><div><div class=\"speaker-name\">A Spatial Deck Presentation</div><div class=\"speaker-co\">github.com/spatial-deck</div></div></div>`;",
