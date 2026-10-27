@@ -2,12 +2,15 @@
    with the noir defaults as fallbacks, so every styles/ look recolors it. Size follows the HXR tracker (small, ~11% of the
    stage width). Position honors the venue safe zone: --safe-inset-x / --safe-inset-y are 0 unless a safe-area option sets
    them (288px / 162px at 1920x1080 for PMRE's 70% box), so the minimap always sits inside the visible area. */
-#journey{--j-w:clamp(150px,calc(11*var(--vw)),230px);position:fixed;z-index:24;pointer-events:none;
-  right:calc(var(--safe-inset-x,0px) + clamp(16px,calc(1.4*var(--vw)),28px));bottom:calc(var(--safe-inset-y,0px) + clamp(12px,calc(1.3*var(--vh)),24px) + var(--journey-lift,0px));
+/* --j-r / --j-b clear the frame rules some looks draw ~20px in from the edge (sheet, cyanotype) */
+body{--j-w:clamp(176px,calc(11*var(--vw)),230px);--j-r:clamp(26px,calc(2.4*var(--vw)),46px);--j-b:clamp(22px,calc(3.4*var(--vh)),40px)}
+#journey{position:fixed;z-index:24;pointer-events:none;
+  right:calc(var(--safe-inset-x,0px) + var(--j-r));bottom:calc(var(--safe-inset-y,0px) + var(--j-b) + var(--journey-lift,0px));
   width:var(--j-w);opacity:.92;transition:opacity .45s ease}
 #journey.is-hidden{opacity:0}
 /* close slide: several looks hang a curtain/rule on the right edge; step in so he waves inside it */
-#journey.is-close{right:calc(var(--safe-inset-x,0px) + clamp(48px,calc(5*var(--vw)),110px))}
+body[data-slide="close"]{--j-shift:calc(clamp(48px,calc(5*var(--vw)),110px) - var(--j-r))}
+#journey.is-close{right:calc(var(--safe-inset-x,0px) + var(--j-r) + var(--j-shift,0px))}
 #journey .j-map{display:block;width:100%;height:auto;overflow:visible;shape-rendering:geometricPrecision}
 #journey .j-label,.journey-print .j-label{text-align:right;margin:0 2px -2px 0;font:700 clamp(10px,calc(.68*var(--vw)),13px)/1 var(--font-mono,'Space Grotesk',Inter,sans-serif);letter-spacing:.2em;text-transform:uppercase;color:var(--acc-1,var(--teal,#00d4ff));opacity:.85}
 .j-map .j-lane,.j-map .j-strand,.j-map .j-road{fill:none;stroke:var(--ink,#f0f4ff);stroke-linecap:round;opacity:.28}
@@ -33,7 +36,7 @@
 .j-hop{position:fixed;inset:0;z-index:26;pointer-events:none;overflow:visible}
 .j-hop.j-flash .j-av{filter:brightness(2.4) saturate(.2)}
 /* nav arrows / step dots sit left of the map instead of under it */
-body[data-journey="on"] .nav-arrows,body[data-journey="map"] .nav-arrows,body[data-journey="on"] #step-indicator,body[data-journey="map"] #step-indicator{right:calc(var(--safe-inset-x,0px) + clamp(16px,calc(1.4*var(--vw)),28px) + clamp(150px,calc(11*var(--vw)),230px) + 24px)}
+body[data-journey="on"] .nav-arrows,body[data-journey="map"] .nav-arrows,body[data-journey="on"] #step-indicator,body[data-journey="map"] #step-indicator{right:calc(var(--safe-inset-x,0px) + var(--j-r) + var(--j-shift,0px) + var(--j-w) + 24px)}
 body.notes-mode #journey,body.print-mode #journey,body.shot-mode .j-hop,body.notes-mode .j-hop{display:none!important}
 @media (prefers-reduced-motion: reduce){#journey .j-bob,#journey .j-leg-l,#journey .j-leg-r{animation:none!important}}
 /* ?print: each printed slide carries the static map for its own chapter */

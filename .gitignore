@@ -25,5 +25,6 @@ media/*
 # PMRE 2026 talk branch: curated, provenance-tracked talk media + motion graphics are content
 !media/pmre/
 !media/motion/
+!media/journey/
 tools/imported-*.json
 tools/palette-*.css
