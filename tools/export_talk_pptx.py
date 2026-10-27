@@ -83,8 +83,9 @@ def main():
     cut = None if pick.get("cut", "full") == "full" else int(pick["cut"])
     def shown(c):
         if c.get("opt"):
-            g, ch = c["opt"].split(":")
-            if pick.get(g) not in ch.split("|"): return False
+            for cond in c["opt"].split("&"):  # "a:x&b:y" = every condition must match
+                g, ch = cond.split(":")
+                if pick.get(g) not in ch.split("|"): return False
         return cut is None or (c.get("keep") or 99) <= cut
     look = pick.get("theme", "noir"); suffix = ""
     if look != "noir":  # a styles/ look: its paper/ink/accents; type stays Arial so show machines need no fonts

@@ -1,6 +1,6 @@
 /* PMRE talk options runtime — lets Alex choose between alternates live instead of us guessing.
    Picks come from URL params (?open=question&cut=30&theme=sheet …), else localStorage 'pmre-opts', else TALK.options defaults.
-   Slides tagged opt:"group:choice" are hidden unless that choice is picked; keep:20|30 marks slides that survive the
+   Slides tagged opt:"group:choice" (or "g1:c1&g2:c2", all must match) are hidden unless that choice is picked; keep:20|30 marks slides that survive the
    20/30-minute cuts. Press O for the picker overlay. applyTalkOptions() runs after slides are built, before navigation
    is wired, so print/shot exports honor the picks too. */
 function talkPicks(){
@@ -20,7 +20,7 @@ function applyTalkOptions(){
     else if(ty==='case'){cfg=SECTIONS[+sl.dataset.section].cases[ci++];}
     else return;
     let hide=false;
-    if(cfg.opt){const [g,c]=cfg.opt.split(':');if(!c.split('|').includes(pick[g]))hide=true;}
+    if(cfg.opt&&!cfg.opt.split('&').every(t=>{const [g,c]=t.split(':');return c.split('|').includes(pick[g]);}))hide=true;  // "a:x&b:y" = every condition must match
     if(cutN!==Infinity&&ty==='case'&&!(cfg.keep&&cfg.keep<=cutN))hide=true;
     if(hide)sl.dataset.hidden='1';
   });

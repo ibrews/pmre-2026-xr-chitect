@@ -9,7 +9,7 @@ const { T, S, B } = ctx;
 const secs = n => { const m = (n || '').match(/⏱\s*(\d+)s(?: of)? animation, ~(\d+)s total|⏱\s*~?(\d+)\s*(s|min)/); if (!m) return 60; if (m[2]) return +m[2]; return m[4] === 'min' ? +m[3] * 60 : +m[3]; };
 const strip = h => String(h || '').replace(/<br\s*\/?>/g, ' ').replace(/<[^>]+>/g, '').replace(/&middot;/g, '·').replace(/&mdash;/g, '—').replace(/\n/g, ' / ');
 const rows = []; const alts = []; const def = Object.fromEntries(Object.entries(T.options).map(([g, o]) => [g, o.default]));
-const isDefault = opt => { if (!opt) return true; const [g, c] = opt.split(':'); return c.split('|').includes(def[g]); };
+const isDefault = opt => !opt || opt.split('&').every(t => { const [g, c] = t.split(':'); return c.split('|').includes(def[g]); });
 const add = (kind, title, notes, keep, opt) => (isDefault(opt) ? rows : alts).push({ kind, title: strip(title), notes, s: secs(notes), keep, opt });
 add('cover', T.coverTitle + ' — ' + T.coverSub, T.coverNotes, 20);
 S.forEach(sec => {
