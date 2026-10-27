@@ -55,10 +55,10 @@ for (const cut of a.cuts) {
   const vids = rep.filter(r => r.video);
   const md = [`# PMRE 2026 · Alex Coulombe · "Architect to XR-chitect" · video cues (${cut}-minute cut)`, '',
     `**${a.label.toUpperCase()}** build ${date}, deck commit \`${commit}\`${dirty ? ' (+ uncommitted)' : ''}. Presentation: \`${NAME}.pptx\` (${rep.length} slides).`, '',
-    'Every video is a separate file in `videos/` (1920×1080, 30 fps, H.264, silent), framed for the 1344×756 safe zone on a dark background. Nothing is embedded or linked in the PPTX.',
+    'Every video is a separate file in `videos/` (1920×1080, 30 fps, H.264; silent unless the Audio column says otherwise), framed for the 1344×756 safe zone on a dark background. Nothing is embedded or linked in the PPTX.',
     'The PPTX slide shows the video\'s **final frame**, so returning to the deck after playback is seamless. The presenter\'s notes on that slide start with the same cue.', '',
-    '| PPTX slide | File | Length | Crew action |', '|---|---|---|---|',
-    ...vids.map(r => `| ${r.pptx} | videos/${r.video} | ${mmss(r.duration)} | When the speaker advances to slide ${r.pptx}, play the video full-screen; when it ends, return to the deck on slide ${r.pptx} (same final frame). The speaker's next click goes to slide ${r.pptx + 1}. |`),
+    '| PPTX slide | File | Length | Audio | Crew action |', '|---|---|---|---|---|',
+    ...vids.map(r => `| ${r.pptx} | videos/${r.video} | ${mmss(r.duration)} | ${r.audio ? 'yes (car horns): route to house sound' : 'silent'} | When the speaker advances to slide ${r.pptx}, play the video full-screen; when it ends, return to the deck on slide ${r.pptx} (same final frame). The speaker's next click goes to slide ${r.pptx + 1}. |`),
     '', vids.length ? '' : '_No video cues in this cut._', `Total video: ${vids.length} file(s), ${mmss(vids.reduce((s, r) => s + r.duration, 0))}.`].join('\n');
   fs.writeFileSync(path.join(dir, 'VIDEO-CUES.md'), md + '\n');
   summary.cuts[cut] = { slides: rep.length, modes: rep.reduce((m, r) => (m[r.mode] = (m[r.mode] || 0) + 1, m), {}), videos: vids.length, videoSec: +vids.reduce((s, r) => s + r.duration, 0).toFixed(1), pass: chk.pass, failures: Object.fromEntries(Object.entries(chk.results).filter(([, v]) => v.length)), timing: chk.timing && { talk_min: chk.timing.talk_min, with_qa_min: chk.timing.with_qa_min, fits: chk.timing.fits, fits_short_qa: chk.timing.fits_short_qa }, pageErrors: cap.errors.length, picks: cap.picks, deckUrl: cap.url, renderedOn: cap.host, renderedFrom: cap.roots && cap.roots.repo };
