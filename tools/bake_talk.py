@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HTML, SRC = ROOT / "index.html", ROOT / "talk" / "sections.js"
 s = HTML.read_text(encoding="utf-8")
-talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "intro.js"))
+talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js"))
 
 def patch(marker, anchor, new, count=1):
     """Replace anchor with new unless marker already present."""
@@ -93,9 +93,7 @@ if "_lk!=='noir'" not in s:
         sys.exit("bake_talk: motion poster line not found (template changed?)")
     s = s.replace(_OLDP, _NEWP, 1)
 
-# 6a. Intro slides (talk/intro.js): the case builder hands layout 'intro-alex' / 'intro-lens' to buildTalkIntro().
-patch("buildTalkIntro(s,c)", "    // layout: 'full' — full-bleed image",
-      "    if(c.layout==='intro-alex'||c.layout==='intro-lens'){if(typeof buildTalkIntro==='function')buildTalkIntro(s,c);deck.appendChild(s);allSlides.push(s);return;}\n    // layout: 'full' — full-bleed image")
+# 6a. The intro slides are slide modules now (slides/core/intro-avatar, slides/core/intro-lens; cases use `use:`).
 
 # 6b. Talk options: hide/swap alternates after all slides exist, before navigation is wired (exports honor picks).
 patch("applyTalkOptions();", "\n// Navigation\n", "\nif(typeof applyTalkOptions==='function')applyTalkOptions();\n// Navigation\n")
@@ -103,7 +101,6 @@ patch("applyTalkOptions();", "\n// Navigation\n", "\nif(typeof applyTalkOptions=
 # 7. Motion replay + reduced motion + talk CSS, appended before </body>.
 EXTRA = """<!-- ── PMRE TALK RUNTIME ── -->
 <style>
-@@INTRO_CSS@@
 .talk-title .xr{background:linear-gradient(90deg,var(--teal),var(--purple),var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent}
 .layout-big .big-text.big-l2{font-size:calc(5.2*var(--vw))}
 .layout-big .big-text.big-l3{font-size:calc(4.1*var(--vw))}
@@ -111,12 +108,6 @@ EXTRA = """<!-- ── PMRE TALK RUNTIME ── -->
 @media (prefers-reduced-motion: reduce){.slide,.slide *{animation-duration:.001s!important;animation-delay:0s!important;transition:none!important}.bg *{animation:none!important}}
 body.reduced-motion .slide,body.reduced-motion .slide *{animation-duration:.001s!important;animation-delay:0s!important;transition:none!important}
 body.reduced-motion .bg *{animation:none!important}
-body:where([data-look]:not([data-look="noir"])):not(#_) .intro-title{background:none;-webkit-text-fill-color:currentColor;color:var(--ink);font-family:var(--font-display)}
-body:where([data-look]:not([data-look="noir"])):not(#_) .intro-eyebrow,body:where([data-look]:not([data-look="noir"])):not(#_) .intro-stat .num{color:var(--acc-1)}
-body:where([data-look]:not([data-look="noir"])):not(#_) .intro-role{color:var(--ink)}
-body:where([data-look]:not([data-look="noir"])):not(#_) .intro-sub{color:var(--ink-2)}
-body:where([data-look]:not([data-look="noir"])):not(#_) .intro-stat{background:transparent;border:1px solid var(--rule);border-radius:0}
-body:where([data-look]:not([data-look="noir"])):not(#_) .intro-stat .lbl{color:var(--ink-2)}
 .cover-ambient{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:0;opacity:.9;mix-blend-mode:screen;background:transparent}
 .slide[data-type="cover"]>*:not(.cover-ambient){position:relative;z-index:1}
 #talk-opts{position:fixed;right:24px;top:24px;z-index:99999;width:min(720px,calc(100vw - 48px));max-height:calc(100vh - 48px);overflow:auto;background:rgba(8,10,20,.96);border:1px solid rgba(0,212,255,.35);border-radius:16px;padding:18px 20px;font:14px/1.4 Inter,system-ui,sans-serif;color:#f0f4ff;box-shadow:0 20px 60px rgba(0,0,0,.6)}
@@ -139,7 +130,6 @@ let last=null;new MutationObserver(()=>{const a=document.querySelector('#deck .s
 const a0=document.querySelector('#deck .slide.active');if(a0){arm(a0);last=a0;}})();
 </script>
 """
-EXTRA = EXTRA.replace("@@INTRO_CSS@@", (ROOT / "talk" / "intro.css").read_text(encoding="utf-8").strip())
 s = re.sub(r"<!-- ── PMRE TALK RUNTIME ── -->.*?(?=</body>)", "", s, flags=re.S)
 if True:
     i = s.rfind("</body>")

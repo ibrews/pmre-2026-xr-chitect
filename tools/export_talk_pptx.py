@@ -115,7 +115,7 @@ def main():
         for c in sec["cases"]:
             if not shown(c): continue
             s = new(prs, c.get("notes")); lay = c.get("layout")
-            if lay == "full" and c.get("motion"):
+            if (lay == "full" or c.get("use")) and c.get("motion"):  # IFRAME: motion or an iframe slide module
                 m = c["motion"]; poster = f"media/motion/mp4/{m}-poster{suffix}.png"
                 if not (ROOT / poster).exists(): poster = f"media/motion/mp4/{m}-poster.png"
                 picture(s, poster, 0, 0, W, H)
@@ -135,7 +135,7 @@ def main():
                 text(s, Inches(.5), H - Inches(1.05), Inches(8), Inches(.5), c.get("title", ""), 26, TEXT, bold=True)
                 text(s, Inches(.5), H - Inches(.55), Inches(10), Inches(.4), c.get("subtitle", ""), 14, DIM)
             else:
-                if c.get("img"): picture(s, c["img"], Inches(.6), Inches(1.2), Inches(6.2), Inches(5.1))  # intro-alex/intro-lens are text-only here
+                if c.get("img"): picture(s, c["img"], Inches(.6), Inches(1.2), Inches(6.2), Inches(5.1))  # the intro modules (core/intro-*) are text-only here
                 text(s, Inches(7.2), Inches(1.5), Inches(5.6), Inches(.4), sec["year"] + "  ·  " + L.get("short", ""), 12, ac, bold=True)
                 text(s, Inches(7.2), Inches(1.9), Inches(5.6), Inches(1.3), c.get("title", ""), 32, bold=True)
                 text(s, Inches(7.2), Inches(3.1), Inches(5.6), Inches(.6), c.get("subtitle", ""), 16, DIM, italic=True)

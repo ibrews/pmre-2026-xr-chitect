@@ -14,7 +14,7 @@ const add = (kind, title, notes, keep, opt) => (isDefault(opt) ? rows : alts).pu
 add('cover', T.coverTitle + ' — ' + T.coverSub, T.coverNotes, 20);
 S.forEach(sec => {
   add('lesson', `${sec.year} — ${sec.lesson.title}`, sec.lesson.notes, 20);
-  sec.cases.forEach(c => { const t = c.motion ? 'motion: ' + c.motion : (c.title || c.bigText); add(c.layout === 'full' && c.motion ? 'motion' : (c.layout || 'case'), t, c.notes, c.keep, c.opt); });
+  sec.cases.forEach(c => { const t = c.motion ? 'motion: ' + c.motion : (c.title || c.bigText); add((c.layout === 'full' || c.use) && c.motion ? 'motion' : (c.use ? c.use.split('/')[1] : (c.layout || 'case')), t, c.notes, c.keep, c.opt); });
 });
 add('bonus', B.title, B.notes, 20); add('map', 'The Journey, Mapped', T.mapNotes, undefined); add('close', T.closeTitle, T.closeNotes, 20);
 const fmt = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;

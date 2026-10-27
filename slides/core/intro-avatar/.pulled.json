@@ -1,0 +1,17 @@
+{
+ "id": "core/intro-avatar",
+ "pulled_from": "https://github.com/ibrews/spatial-deck.git",
+ "commit": "58cafe7ba51f4911d0adea0fd75035a5e24d99b6",
+ "pulled_at": "2026-10-27T18:41:04+00:00",
+ "files": {
+  "badge.svg": "2dc28ccbbc8f733a7b0105efe0ea97dbc771b4ff2f4526f3386c538c920ab458",
+  "logo.svg": "c34f40ecc7dfae0802503b70f18cbbd30a41b667fa03df128d8bf7cf618fcc61",
+  "slide.js": "1a9bb769f558e572bb9d4d815e6f8f6d34ce60907c7773b850e7538b2cd89b37"
+ },
+ "provenance": [
+  "git/fmx-2026-spatial-storytelling@b035b8c (walker, power-up, fireballs, tallies)",
+  "git/nxtbld-2026-productizing-xr@9736254 (config-driven text, mobile CSS)",
+  "harvardxr-keynote@7c6fbf5 (pixel avatar)",
+  "ibrews/pmre-2026-xr-chitect talk/intro.js @a8a98de (tiBuildAlex)"
+ ]
+}

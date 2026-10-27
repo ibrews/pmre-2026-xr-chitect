@@ -1,4 +1,5 @@
-// Render seekable HTML motion graphics (media/motion/*.html exposing window.seek(sec) + window.MOTION_END) to MP4 + poster PNG.
+// Render seekable HTML motion graphics (media/motion/*.html, or iframe slide modules used in talk/sections.js, exposing
+// window.seek(sec) + window.MOTION_END) to MP4 + poster PNG.
 // Deterministic: every frame is seek()-ed, never screen-recorded, so output is identical run to run.
 //   node tools/render_motion.mjs [name ...]            # default: every media/motion/*.html
 //   PLAYWRIGHT_CORE=/path/to/node_modules/playwright-core FPS=30 node tools/render_motion.mjs lane
@@ -7,7 +8,7 @@
 // Needs: Google Chrome, ffmpeg, and a playwright-core install (export_video.py's cache is tried first).
 import { createRequire } from 'module';
 import { execFileSync } from 'child_process';
-import fs from 'fs'; import path from 'path'; import os from 'os';
+import fs from 'fs'; import path from 'path'; import os from 'os'; import vm from 'vm';
 const require = createRequire(import.meta.url);
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const MOTION = path.join(ROOT, 'media/motion'), OUT = path.join(MOTION, 'mp4');
@@ -18,12 +19,28 @@ const { chromium } = require(pwPath);
 const CHROME = process.env.CHROME_BIN || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const FPS = +(process.env.FPS || 30), HOLD = +(process.env.HOLD || 2);
 const LOOK = process.env.LOOK && process.env.LOOK !== 'noir' ? process.env.LOOK : '', SFX = LOOK ? '.' + LOOK : '', POSTER_ONLY = !!process.env.POSTER_ONLY;  // HOLD = seconds to hold the final frame
-const names = process.argv.slice(2).length ? process.argv.slice(2) : fs.readdirSync(MOTION).filter(f => f.endsWith('.html') && f !== 'look.html').map(f => f.replace(/\.html$/, ''));
+// A motion graphic is media/motion/<name>.html, or a slide-module case in talk/sections.js with motion:"<name>"
+// (its module frame, opened with the case's props in the #sdp fragment, exactly as the deck opens it).
+const ctx = {}; vm.createContext(ctx);
+vm.runInContext(fs.readFileSync(path.join(ROOT, 'talk/sections.js'), 'utf8') + ';this.S=SECTIONS;', ctx);
+function moduleDef(id) {
+  let def = null; const sb = { SD: { defineSlide: d => (def = d) }, document: { currentScript: null }, window: {} };
+  vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'slides', id, 'slide.js'), 'utf8'), sb);
+  return def;
+}
+const modCases = Object.fromEntries(ctx.S.flatMap(sec => sec.cases).filter(c => c.use && c.motion).map(c => {
+  const d = moduleDef(c.use);
+  if (!d.frame) return null;
+  return [c.motion, { file: path.join(ROOT, 'slides', c.use, d.frame), frag: '#sdp=' + encodeURIComponent(JSON.stringify(Object.assign({}, d.props || {}, c.props || {}))) }];
+}).filter(Boolean));
+const source = n => modCases[n] || { file: path.join(MOTION, n + '.html'), frag: '' };
+const names = process.argv.slice(2).length ? process.argv.slice(2) : [...new Set([...fs.readdirSync(MOTION).filter(f => f.endsWith('.html') && f !== 'look.html').map(f => f.replace(/\.html$/, '')), ...Object.keys(modCases)])];
 fs.mkdirSync(OUT, { recursive: true });
 const browser = await chromium.launch({ executablePath: CHROME, args: ['--hide-scrollbars'] });
 const page = await browser.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1, reducedMotion: 'no-preference' });
 for (const n of names) {
-  const url = 'file://' + path.join(MOTION, n + '.html') + '?t=0' + (LOOK ? '&look=' + LOOK : '');
+  const src = source(n); if (!fs.existsSync(src.file)) { console.error(`${n}: no media/motion/${n}.html and no slide-module case with motion:"${n}"`); process.exitCode = 1; continue; }
+  const url = 'file://' + src.file + '?t=0' + (LOOK ? '&look=' + LOOK : '') + src.frag;
   await page.goto(url); await page.waitForFunction(() => typeof window.seek === 'function');
   await page.evaluate(() => document.fonts.ready); await page.waitForTimeout(LOOK ? 400 : 0);
   const end = await page.evaluate(() => window.MOTION_END);

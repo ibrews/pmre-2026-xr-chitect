@@ -1,0 +1,16 @@
+{
+ "id": "core/intro-lens",
+ "pulled_from": "https://github.com/ibrews/spatial-deck.git",
+ "commit": "58cafe7ba51f4911d0adea0fd75035a5e24d99b6",
+ "pulled_at": "2026-10-27T18:41:06+00:00",
+ "files": {
+  "monocle.svg": "7f0bbe4af1433a8a2d4b65696beeb103a7d214a2dac111bfd1ed272324c0f328",
+  "slide.js": "0790240b5acdc7a034c40b5ec96e47a3cb386f79e92763173368f56ddf15698a"
+ },
+ "provenance": [
+  "harvardxr-keynote@7c6fbf5 (the 5-step monocle slide)",
+  "git/fmx-2026-spatial-storytelling@b035b8c (pixel avatar)",
+  "git/nxtbld-2026-productizing-xr@9736254 (config-driven text, mobile CSS)",
+  "ibrews/pmre-2026-xr-chitect talk/intro.js @a8a98de (tiBuildLens)"
+ ]
+}
