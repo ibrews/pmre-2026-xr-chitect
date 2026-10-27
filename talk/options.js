@@ -10,7 +10,7 @@ function talkPicks(){
 }
 function applyTalkOptions(){
   const pick=talkPicks();window.TALK_PICKS=pick;
-  document.body.dataset.talkTheme=pick.theme;document.body.dataset.look=pick.theme;  // styles/ looks, applied by tools/apply_look.py
+  document.body.dataset.talkTheme=pick.theme;document.body.dataset.look=pick.theme;document.body.dataset.chrome=pick.chrome;  // styles/ looks + chrome density, applied by tools/apply_look.py
   const cutN=pick.cut==='full'?Infinity:+pick.cut;
   // walk built slides in SECTIONS order
   let si=-1,ci=0;

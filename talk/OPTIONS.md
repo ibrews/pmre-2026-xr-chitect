@@ -43,4 +43,8 @@ All new copy is ✎ PROPOSED (connective). The quotes inside motion graphics are
 - Editable PPTX for any combination: `python3 tools/export_talk_pptx.py --pick thesis=b --pick cut=30 --out x.pptx`
 - MP4s for the organizer: `node tools/render_motion.mjs <name>` writes to `media/motion/mp4/`
 
+| Page chrome `chrome` | `quiet` *(default)* | No masthead, page numbers or per-slide section labels; chapter cards keep their kicker without the "of 8". Henry Keyser's feedback, 2026-10-27. |
+| | `full` | The look's frame, page counter and section labels on every slide. |
+| | `none` | Also drops chapter kickers. |
+
 **Looks** come from the Spatial Deck style library (`styles/`, from ibrews/spatial-deck; rules in `styles/README.md`). `tools/bake_talk.py` inlines them with `tools/apply_look.py`, then runs `tools/check_branding.py`. Old `?theme=blueprint` / `?theme=stage` links map to `sheet` / `house`. Look-specific poster frames are `media/motion/mp4/<name>-poster.<look>.png` (`LOOK=sheet POSTER_ONLY=1 node tools/render_motion.mjs`). Organizer MP4s in the default look: `media/motion/mp4/<name>.house.mp4` (`LOOK=house node tools/render_motion.mjs`); `<name>.sheet.mp4` are the Drawing set renders; the unsuffixed `<name>.mp4` files are the noir renders. PPTX in a look: `python3 tools/export_talk_pptx.py --pick theme=sheet --out x.pptx` (Arial is kept for show machines).
