@@ -87,6 +87,8 @@ SD.defineSlide({
     const ready = (async () => {
       // file:// cannot load a module script (Chrome blocks it as cross-origin and logs an error): go straight to 2D.
       if (location.protocol === 'file:') return null;
+      // No WebGL (venue laptop, headless capture): skip three.js, which would log a context-creation error per attempt.
+      try { const t = document.createElement('canvas'); if (!(t.getContext('webgl2') || t.getContext('webgl'))) return null; } catch (e) { return null; }
       try {
         const THREE = await import(new URL(ctx.asset('three.module.min.js'), location.href).href);
         const r = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true }); r.setPixelRatio(1); r.setSize(1280, 720, false);
