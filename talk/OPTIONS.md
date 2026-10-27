@@ -21,6 +21,9 @@ Every option below is built into the deck. Press **O** in the deck for the picke
 | | `sprite` | `lane-sprite`: 2010 pixel Alex (the intro sprite) walks the lane, rides the architecture strand to a pixel temple (columns crack), drops onto the theater strand's stage (curtains shimmer), hops to the tech line (the monitor's platformer runs), then grabs the intro's headset on the XR-chitect road. "I didn't." |
 | | `venn` | `venn-sprite`: a seekable port of the HarvardXR 2026 Venn. He bounces icon to icon; theater planning, live VR theater and archviz appear as he crosses each overlap; he ends on XR-CHITECT. Previews the later Venn slide. |
 | | `lanevenn` | `lane-to-venn`: the lane plays, then the three strands curl up into the Venn circles under his feet; he lands on XR-CHITECT with the headset. "I didn't." |
+| Who-we-hired quote `q29` (2016, slide 29) | `hxr` *(default, 2026-10-27)* | "I was surrounded by theater people … those were the people who understood right out of the gate." Your words, HXR 2026 talk, 00:04:49–00:04:59 (auto-captions). |
+| | `disciplines` | "All the best XR experiences I've worked on had a lot of people coming from other disciplines." HXR 2026, 00:16:27. |
+| | `prep` | The previous line, "I don't want a bunch of computer science graduates. I want actual theater people." From prep-interview notes, not a recording; Alex didn't recognize it. |
 | Closing ask `ask` | `text` *(default)* | "What's your weird intersection?" as text. |
 | | `motion` | `venn-you`: the audience's own Venn. PHOTOGRAPHY / VIDEO plus two blanks that cycle examples, then YOUR LANE. |
 | Thesis `thesis` | `a` *(default)* | "The Advice Wasn't Wrong. It Just Assumed One Lane." |
@@ -62,3 +65,27 @@ All new copy is ✎ PROPOSED (connective). The quotes inside motion graphics are
 **Looks** come from the Spatial Deck style library (`styles/`, from ibrews/spatial-deck; rules in `styles/README.md`). `tools/bake_talk.py` inlines them with `tools/apply_look.py`, then runs `tools/check_branding.py`. Old `?theme=blueprint` / `?theme=stage` links map to `sheet` / `house`. Look-specific poster frames are `media/motion/mp4/<name>-poster.<look>.png` (`LOOK=sheet POSTER_ONLY=1 node tools/render_motion.mjs`). Organizer MP4s in the default look: `media/motion/mp4/<name>.house.mp4` (`LOOK=house node tools/render_motion.mjs`); `<name>.sheet.mp4` are the Drawing set renders; the unsuffixed `<name>.mp4` files are the noir renders. PPTX in a look: `python3 tools/export_talk_pptx.py --pick theme=sheet --out x.pptx` (Arial is kept for show machines).
 
 **Pixel Alex modes:** `?static`, `?reduced` and prefers-reduced-motion place him without walking, bobbing or hop-outs. `?notes` hides the minimap. `?print` puts a static minimap on each printed slide, because the PDF is a handout of the same journey the room saw. The minimap is independent of `chrome` (it is content, not page chrome; use `journey=off` to remove it); with `chrome=full` it lifts above a bottom-right title block (Drawing set). It is 300px wide at 1920 (scaled with the stage) and sits in the physical bottom-right corner, 24px in, even with `?safe=70`: Alex accepted the venue edge effect for the map (2026-10-27). The Drawing set and Cyanotype looks keep it inside their frame rule.
+
+## Title-slide lines from your HXR 2026 talk
+
+Every line below is your own wording from the HXR 2026 closing keynote ("10 Lessons from 10 Years", YouTube `t1nkXyvQY5g`), taken from YouTube's auto-captions, which are imperfect. The timestamps are the caption timestamps. Only filler words and obvious caption errors were fixed. The raw caption text for each line is in the KB story ledger, §17. None of these lines replaces any text you have approved. The lines marked *(in notes)* are written into that slide's presenter notes as ALTERNATE.
+
+| # | Line | Time | Could serve |
+|---|---|---|---|
+| 1 | "Virtual reality was very much a power-up for me." | 00:02:07 | Intro power-up slide *(in notes)* |
+| 2 | "I didn't think that I would ever get to combine all of my interests together." | 00:02:19 | 2005 chapter card, or thesis |
+| 3 | "They are inherently spatial." | 00:03:25 | Venn / cold open, YOU chapter |
+| 4 | "Maybe in that specificity, we will find some universality." | 00:04:21 | Cover kicker or the YOU bridge |
+| 5 | "I was surrounded by theater people." | 00:04:49 | Slide 29 *(now the default, `q29=hxr`)* |
+| 6 | "You have the ability to guide an eye with light." | 00:05:09 | YOU chapter card *(in notes)*; strongest line for photographers |
+| 7 | "You can't force someone to move through a building in a particular way, but you can guide them psychologically." | 00:05:20 | YOU chapter *(in notes)*, holodeck staging |
+| 8 | "We just gotta get some tape and some cardboard." | 00:06:28 | Spike-tape slide (2023) |
+| 9 | "All the best XR experiences I've worked on had a lot of people coming from other disciplines." | 00:16:27 | Slide 29 alternate (`q29=disciplines`), or thesis |
+| 10 | "A choreographer is going to think more about how people move." | 00:17:14 | YOU chapter *(in notes)* |
+| 11 | "This feels like stepping into a time machine." | 00:21:39 | 2023 "Real Estate, Before It's Built." *(in notes)* |
+| 12 | "Protect time for 'we're not sure yet.'" | 00:26:39 | "The pattern" (R&D) slide |
+| 13 | "Perfect is the enemy of best." | 00:28:27 | A standalone big slide |
+| 14 | "Don't get caught up in different hype cycles." | 00:29:55 | TASTE / "For everyone in this room" *(in notes)* |
+| 15 | "Use the tech for what you want it to be for." | 00:30:06 | Close, or the AI-era slide *(in notes)* |
+
+Line 1 of the §14 quote list, "I really don't think that job exists yet." (00:03:12), is already on a slide.
