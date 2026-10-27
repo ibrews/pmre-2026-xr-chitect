@@ -49,6 +49,15 @@ Rights: "Own" = Alex/Agile Lens work or capture. "Client" = work made for a clie
 | GoldAuthorized.png | Intro: Alex power-up (`intro-alex`) UE5 block + fireballs | Gold rounded square with the Unreal Engine "U" in a black circle (Epic authorized-instructor badge art), 649x648 | repo root `GoldAuthorized.png`, harvardxr-keynote@7c6fbf5; byte-identical in FMX/NXT BLD | 3rd (Epic Games badge/logo) | none |
 | ue5logo.png | Intro: Alex power-up fireballs | Black circle with white Unreal Engine "U" logo, 337x337 | repo root `ue5logo.png`, harvardxr-keynote@7c6fbf5; byte-identical in FMX/NXT BLD | 3rd (Epic Games logo) | none |
 
+| xmas-carol-camera-angles.jpg | 2025 CAPTURE: Carol camera angles (placed slide) | Ten browser-window screenshots of one A Christmas Carol VR scene (Scrooge and Marley) from ten camera angles; browser UI reads "Talk to Dickens" / "Send Message" | ibrews/mia-2026-collective-pitch@9ee2493 `media/fmx/s37-00-84e007f3.jpg` (MIA slide fmx-90 = FMX 2026 slide #90) | Own | none |
+| xmas-carol-vcam-iphone.jpg | 2025 CAPTURE: Carol camera angles (inset) | iPhone virtual-camera app over the Carol set: 18 mm, 16:9, 24 fps, iris f/2.8, "iBrews_iPhone" | same repo `media/fmx/s37-01-aa79ee67.jpg` (MIA fmx-90) | Own | none |
+| xmas-carol-replay-marley.jpg | 2025 CAPTURE: working-cut station 2 ("50 mm") | Free-camera view of a recorded Carol performance (Marley and Scrooge, doorway) | same repo `media/video/carol-replay-marley.jpg` (poster of "Replay Recording" by Yu-Jun Yeh, 0:18-0:30, per MIA README) | Own (credit Yu-Jun Yeh) | none |
+| xmas-carol-fezziwig.jpg | 2025 CAPTURE: working-cut station 4 ("WORKING CUT") | Fezziwig's party: dancers on a lit wooden floor, tall windows | same repo `media/carol/dancing.jpg` | Own | none |
+
+Working-cut stations 1 and 3 reuse `xmas-carol-02.jpg` and `xmas-carol-06.png` above: byte-identical (md5) to MIA's `media/carol/ScroogeDickens.jpg` and `marley.png`.
+The camera-toy module (`slides/pmre/camera-toy/`) vendors three.js r164 (`three.module.min.js` + `three-LICENSE.txt`, MIT), copied from MIA `assets/vendor/three/`. Module provenance lives in each `slide.js`.
+MIA clearance flags carried as ❓ ALEX in the speaker notes: working-cut claim must match the prototype (r849 receipt); camera-toy is a concept demo standing in for the UOXR film kit prototype. MIA's other open clearance items (Belle clip, holodeck build footage, DBOX NY photo, RSC stills, PortalCam clip) are NOT used here.
+
 ## Not copied (available in the same repo/folders if needed)
 Floor Tour candidates: `/Users/alex/git/nxtbld-2026-productizing-xr/media/nxtbld/floor-*` (not reviewed). Other xmas/ghosted frames, `ny-dbox-holodeck/05.jpg`, `stage-presence/*` (5 photos of an XR performance, not in this talk's beats), `shed/Shed_Video.mp4` (6 MB), `pivot/pivot01_academy65.mp4`, `pivot/pivot03_tiltbrush.mp4`.
 

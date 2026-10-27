@@ -33,13 +33,15 @@ Every option below is built into the deck. Press **O** in the deck for the picke
 | | `kids` | "Ask Me About My Kids' Names." The bio's hook as the whole close. |
 | | `question` | "What's Your Weird Intersection?" Ends on the audience. |
 | Cover `cover` | `still` *(default)* / `motion` | Ambient strand background (`cover-ambient.html`, delivered 10:34 ET). Text-free; screen-blended so it works on every theme. |
-| Length `cut` | `full` *(default)* | About 47 min, 35 slides. |
-| | `30` | About 35 min (25 slides; lessons keep their full timing). |
-| | `20` | About 25 min (17 slides). |
+| Length `cut` | `full` *(default)* | About 69 min (talk/REHEARSAL.md, 2026-10-27, with the 2025 CAPTURE chapter). |
+| | `30` | About 57 min. Over the venue cap: cut more before using it as-is. |
+| | `20` | About 35:30. The 2025 chapter keeps only its chapter card and `camera-toy` here. |
 | Look `theme` | `noir` | The original Spatial Deck look. `node tools/lint_look.mjs --query theme=noir` flags 7 generic-AI-design tells in it. |
 | | `sheet` | Drawing set: paper, ink, hairlines, a title block with the sheet number, redline accent. Motion graphics are recolored to ink on paper. |
 | | `folio` | Editorial: serif on black with one vermilion spot color, running head and folio. Descends from Alex's NXT BLD 2020/2021 decks. |
 | | `house` *(default, Alex 2026-10-27; old `?theme=stage`)* | Theater program: gold masthead band, condensed wood-type caps, a followspot on chapter cards, curtain call close. |
+
+**2025 · Capturing Places That Don’t Exist** (Alex, 2026-10-27) sits between 2023 and TASTE: a statement slide, the Christmas Carol camera angles (MIA `fmx-90`), `pmre/working-cut` (MIA `working-cut`, 3 clicks) and `pmre/camera-toy` (MIA `camera-toy`, 3 clicks: 85 mm, 2.39 mask, three shots; drag and lens buttons work between clicks), then synthetic Gaussian splats. Not an option group: it is in `full` and `30`, and `camera-toy` is also in `20`. Sources and ❓ ALEX items are in the speaker notes; media rows in `media/pmre/PROVENANCE.md`.
 
 All new copy is ✎ PROPOSED (connective). The quotes inside motion graphics are ✅ VERIFIED against Alex's 2017 essay, the KB speaking modules and the Four Seasons Lake Austin notes. The plans in the motion graphics are illustrative.
 
