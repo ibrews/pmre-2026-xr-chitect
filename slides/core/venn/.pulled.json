@@ -1,11 +1,16 @@
 {
  "id": "core/venn",
  "pulled_from": "https://github.com/ibrews/spatial-deck.git",
- "commit": "b4975734711d4a26dd0ebbde6cd3a36490c8d744",
- "pulled_at": "2026-10-27T18:34:05+00:00",
+ "commit": "9aadd2c4cd52fba1f036a11d4d824c167f2d81da",
+ "pulled_at": "2026-10-27T20:33:20+00:00",
  "files": {
-  "slide.js": "0848d2db704ff7eb188d3d9c068b3095c16bb10ae7c4b2c53e5479980dd8d484",
+  "slide.js": "d750af087c6fb93b513345f61060dc0e2b4e5deda8a9226feeb2a3c4139fb8e0",
   "venn.html": "9b35d6b7114dbd7886c308520e12a603ec656d68d6b76ae311edcecb7fa8b8d1"
+ },
+ "support_files": {
+  "sd-frame.js": "fc78a3559d3449a9cca466f8d6d0e1e42d78755759d72bef8d2eb44372670f45",
+  "look.js": "cbb7fc7b5f5bfb3e216e020c8df8e142be436ba90c39d2d6a12acc4a2cfe4f8f",
+  "kit/sprite.js": "e63d1c69599c5785f4d4d6a33fee981fad78cad6d10d61a5d26d8d6b42acc5ac"
  },
  "provenance": [
   "harvardxr-keynote@7c6fbf5 index.html buildVennSlide (icons, reactions, pinball idea)",

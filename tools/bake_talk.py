@@ -142,5 +142,7 @@ print("bake_talk: index.html updated")
 import subprocess
 subprocess.run([sys.executable, str(ROOT / "tools" / "apply_look.py"), "--html", str(HTML), "--styles", str(ROOT / "styles"),
                 "--default", "house", "--chrome", "quiet", "--motion-dir", str(ROOT / "media" / "motion")], check=True)
+# 9. The SD SLIDE MODULES block lists every slides/<ns>/<id>/slide.js on disk (a re-seeded template carries its own list).
+subprocess.run([sys.executable, str(ROOT / "tools" / "slide.py"), "sync", str(ROOT)], check=True)
 if subprocess.run([sys.executable, str(ROOT / "tools" / "check_branding.py")]).returncode:
     sys.exit("bake_talk: branding check failed (see above)")

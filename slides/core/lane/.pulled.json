@@ -1,11 +1,15 @@
 {
  "id": "core/lane",
  "pulled_from": "https://github.com/ibrews/spatial-deck.git",
- "commit": "b4975734711d4a26dd0ebbde6cd3a36490c8d744",
- "pulled_at": "2026-10-27T18:34:04+00:00",
+ "commit": "9aadd2c4cd52fba1f036a11d4d824c167f2d81da",
+ "pulled_at": "2026-10-27T20:33:20+00:00",
  "files": {
   "lane.html": "3c83f0ac53942e9c9124e9bcfc21b906c0e4575b13ea75e77caa565f4e1c6e38",
   "slide.js": "3551da667b57c726849ea4be1b3ce1cd3e00b60d8721bd6c161f9b6a29e7c845"
+ },
+ "support_files": {
+  "sd-frame.js": "fc78a3559d3449a9cca466f8d6d0e1e42d78755759d72bef8d2eb44372670f45",
+  "look.js": "cbb7fc7b5f5bfb3e216e020c8df8e142be436ba90c39d2d6a12acc4a2cfe4f8f"
  },
  "provenance": [
   "ibrews/pmre-2026-xr-chitect media/motion/lane.html @310afba (PMRE 2026 cold open)"

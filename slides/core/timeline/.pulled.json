@@ -1,11 +1,15 @@
 {
  "id": "core/timeline",
  "pulled_from": "https://github.com/ibrews/spatial-deck.git",
- "commit": "b4975734711d4a26dd0ebbde6cd3a36490c8d744",
- "pulled_at": "2026-10-27T18:34:05+00:00",
+ "commit": "9aadd2c4cd52fba1f036a11d4d824c167f2d81da",
+ "pulled_at": "2026-10-27T20:33:20+00:00",
  "files": {
   "slide.js": "7519567c9fa4f6873952ae3f9583d238581c2fa335c7f9e1492b5c254a0108de",
   "timeline.html": "93213f8f54cc5594d5af4059c2a62dcae57eae54f985cfca6a72babc62accec4"
+ },
+ "support_files": {
+  "sd-frame.js": "fc78a3559d3449a9cca466f8d6d0e1e42d78755759d72bef8d2eb44372670f45",
+  "look.js": "cbb7fc7b5f5bfb3e216e020c8df8e142be436ba90c39d2d6a12acc4a2cfe4f8f"
  },
  "provenance": [
   "ibrews/pmre-2026-xr-chitect media/motion/timeline.html @310afba (PMRE 2026 \"The Winding Path\")"

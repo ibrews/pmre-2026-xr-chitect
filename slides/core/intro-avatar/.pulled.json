@@ -1,13 +1,14 @@
 {
  "id": "core/intro-avatar",
  "pulled_from": "https://github.com/ibrews/spatial-deck.git",
- "commit": "58cafe7ba51f4911d0adea0fd75035a5e24d99b6",
- "pulled_at": "2026-10-27T18:41:04+00:00",
+ "commit": "9aadd2c4cd52fba1f036a11d4d824c167f2d81da",
+ "pulled_at": "2026-10-27T20:33:19+00:00",
  "files": {
   "badge.svg": "2dc28ccbbc8f733a7b0105efe0ea97dbc771b4ff2f4526f3386c538c920ab458",
   "logo.svg": "c34f40ecc7dfae0802503b70f18cbbd30a41b667fa03df128d8bf7cf618fcc61",
-  "slide.js": "1a9bb769f558e572bb9d4d815e6f8f6d34ce60907c7773b850e7538b2cd89b37"
+  "slide.js": "db91e22c6d0fd9fb2702d9d193ec1cc0f831352887cb1535ee0214566a1e3caf"
  },
+ "support_files": {},
  "provenance": [
   "git/fmx-2026-spatial-storytelling@b035b8c (walker, power-up, fireballs, tallies)",
   "git/nxtbld-2026-productizing-xr@9736254 (config-driven text, mobile CSS)",

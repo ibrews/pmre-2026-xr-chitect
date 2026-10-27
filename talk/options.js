@@ -3,6 +3,8 @@
    Slides tagged opt:"group:choice" (or "g1:c1&g2:c2", all must match) are hidden unless that choice is picked; keep:20|30 marks slides that survive the
    20/30-minute cuts. Press O for the picker overlay. applyTalkOptions() runs after slides are built, before navigation
    is wired, so print/shot exports honor the picks too. */
+// ?print / ?shot show each motion module's rendered poster in the picked look (tools/render_motion.mjs), not a live frame.
+window.SD_POSTERS='media/motion/mp4/{motion}-poster{.look}.png';
 function talkPicks(){
   const P=new URLSearchParams(location.search);let saved={};try{saved=JSON.parse(localStorage.getItem('pmre-opts')||'{}');}catch(e){}
   const LEGACY={theme:{blueprint:'sheet',stage:'house'}};  // older ?theme= links keep working
