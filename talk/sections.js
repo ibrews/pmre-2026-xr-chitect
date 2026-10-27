@@ -35,7 +35,7 @@ const TALK = {
     close:   { label: "Close", default: "talk", choices: { talk: "Let’s Talk.", kids: "Ask me about my kids’ names", question: "What’s your intersection?" } },
     cover:   { label: "Cover", default: "still", choices: { still: "Still", motion: "Ambient strands" } },
     cut:     { label: "Length", default: "full", choices: { full: "Full (~58 min)", "30": "Medium (~47 min)", "20": "Short (~31 min)" } },
-    theme:   { label: "Look", default: "sheet", choices: { noir: "Noir (original)", sheet: "Drawing set", folio: "Folio (editorial)", house: "House (theater program)" } }
+    theme:   { label: "Look", default: "house", choices: { noir: "Noir (original)", sheet: "Drawing set", folio: "Folio (editorial)", house: "House (theater program)" } }
   },
   thesisAlts: {
     a: { title: "The Advice Wasn’t Wrong.\nIt Just Assumed One Lane.", tagline: "Master your craft — absolutely. I did specialize: in a niche nobody had named yet.<br><br>The lane worth staying in is the one you build where your crafts overlap.", notes: "Thesis option A (default). ✎ PROPOSED." },
