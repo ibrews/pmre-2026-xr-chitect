@@ -6,7 +6,8 @@
    metaphor instead of the Agile Lens monocle: one lane ("pick a lane") forks into three strands (architecture, theater,
    technology) that braid and rejoin as one wider road, like media/motion/lane.html.
    Costume follows facts already in the deck: beardless student early; headset from the 2013 chapter (DK1, Kickstarter late
-   2012, hands-on 2013); beard from the 2023 chapter (HXR's tracker switches to the beard from 2020).
+   2012, hands-on 2013); the 2020 chapter card is the "pandemic beard" reveal (Alex, 2026-10-27; HXR's tracker also switches
+   to the beard from 2020): the headset comes off so the beard reads, and from 2020 on he stays bearded with no headset.
    Slide hook: listens for the modular-slides `sd:slide` event ({index, slide, type, section, year, shows}) and falls back to a
    MutationObserver on the active slide (data-section / data-year / data-sd-shows). Slides that already show pixel Alex
    declare `shows: ['avatar']` in sections.js; jInit() copies that to data-sd-shows unless something already set it.
@@ -19,8 +20,8 @@ const J = (() => {
   const exp = q.has('print') || q.has('shot');
   return { exp, still: exp || q.has('static') || q.has('reduced') || rm,
     W: 200, H: 54, LANE_Y: 40, FORK: 24, MERGE: 160, A: 9, P: 68,
-    STOP_X: [10, 40, 62, 85, 108, 132, 160, 184], END_X: 196,
-    HOP: { 3: 'headset', 5: 'beard' },  // section index → costume change earned on that chapter card
+    END_X: 196,
+    HOP: { '2013': 'headset', '2020': 'beard' },  // chapter year → costume change earned on that chapter card
     S: 1 / 3 };                           // walker scale in the 200-unit map: ~24 units; 0.5px per sprite pixel at 300px wide
 })();
 const jE = (tag, a = {}) => { const e = document.createElementNS('http://www.w3.org/2000/svg', tag); for (const k in a) e.setAttribute(k, a[k]); return e; };
@@ -68,7 +69,12 @@ function jAvatar(parent) {
   return root;
 }
 // Costume for a chapter index (-1 = before the talk starts, 99 = after the last chapter).
-function jCostume(si) { return { headset: si >= 3, beard: si >= 5 }; }
+function jIdx(year) { const i = SECTIONS.findIndex(s => String(s.year) === year); return i < 0 ? Infinity : i; }
+function jCostume(si) { const h = jIdx('2013'), b = jIdx('2020'); return { headset: si >= h && si < b, beard: si >= b }; }
+function jHop(si) { return J.HOP[String(SECTIONS[si]?.year)] || null; }
+// Stops: the lane stop, the braided chapters spaced evenly, the merge (second-to-last chapter) and the last chapter on the road.
+function jStops() { if (J._stops) return J._stops; const n = SECTIONS.length, mid = n - 3, x = [10];
+  for (let i = 0; i < mid; i++) x.push(Math.round(36 + (mid > 1 ? i * 100 / (mid - 1) : 0))); x.push(J.MERGE, 184); return (J._stops = x); }
 function jDress(av, c) { av.classList.toggle('has-headset', !!c.headset); av.classList.toggle('has-beard', !!c.beard); }
 
 // ── Map SVG: strands, stops, trail, walker. Returns {svg, set(state)} so live, print and PNG export share one renderer ──
@@ -79,14 +85,14 @@ function jBuildMap() {
   [1, 2, 0].forEach(j => g.appendChild(jE('path', { d: jPath(J.FORK, J.MERGE, j), class: 'j-strand' + (j === 0 ? ' j-strand-route' : '') })));
   g.appendChild(jE('path', { d: `M${J.MERGE},${J.LANE_Y} L${J.END_X + 2},${J.LANE_Y}`, class: 'j-road' }));
   const trail = jE('path', { d: '', class: 'j-trail' }); svg.appendChild(trail);
-  const stops = J.STOP_X.map(x => { const c = jE('circle', { cx: x, cy: jStrandY(x, 0).toFixed(2), r: 2.4, class: 'j-stop' }); svg.appendChild(c); return c; });
+  const stops = jStops().map(x => { const c = jE('circle', { cx: x, cy: jStrandY(x, 0).toFixed(2), r: 2.4, class: 'j-stop' }); svg.appendChild(c); return c; });
   const walker = jE('g', { class: 'j-walker' }); const flip = jE('g', { class: 'j-flip' }); const bob = jE('g', { class: 'j-bob' });
   const scale = jE('g', { transform: `scale(${J.S})` }); walker.appendChild(flip); flip.appendChild(bob); bob.appendChild(scale); svg.appendChild(walker);
   const av = jAvatar(scale);
   let L = 0;
   function place(len) { L = len; const p = jPointAt(len); walker.setAttribute('transform', `translate(${p[0].toFixed(2)},${(p[1] - 28 * J.S + 0.6).toFixed(2)})`); trail.setAttribute('d', jTrail(len)); }
   function set(st) {  // st = {si, lesson, end, costume}
-    const cur = st.end ? J.STOP_X.length : st.si;
+    const cur = st.end ? jStops().length : st.si;
     stops.forEach((c, i) => { c.classList.toggle('is-visited', i < cur || (i === cur && !st.lesson)); c.classList.toggle('is-current', i === cur); c.setAttribute('r', i === cur ? 3.4 : 2.4); });
     jDress(av, st.costume || jCostume(st.end ? 99 : st.si));
   }
@@ -98,7 +104,7 @@ function jStateFor(sl) {
   if (ty === 'bonus' || ty === 'close') return { si: SECTIONS.length - 1, lesson: false, end: true };
   return null;  // cover, map, settings: no minimap
 }
-function jLenFor(st) { return st.end ? jLenAtX(J.END_X) : jLenAtX(J.STOP_X[Math.min(st.si, J.STOP_X.length - 1)]); }
+function jLenFor(st) { return st.end ? jLenAtX(J.END_X) : jLenAtX(jStops()[Math.min(st.si, jStops().length - 1)]); }
 function jShows(sl) { return (sl?.dataset.sdShows || '').split(/[\s,]+/).includes('avatar'); }
 
 // Static SVG markup for a state (tools/render_journey_png.mjs → organizer PPTX).
@@ -151,7 +157,7 @@ function jInit() {
     box.classList.toggle('is-close', sl.dataset.type === 'close');
     if (!st) return;
     label.textContent = st.end ? (sl.dataset.type === 'close' ? 'THANK YOU' : (BONUS.year || 'THE LESSON')) : String(SECTIONS[st.si].year);
-    const hopKind = hopOn && fwd && st.lesson && !hidden && J.HOP[st.si] && lastSi !== null && lastSi < st.si ? J.HOP[st.si] : null;
+    const hopKind = hopOn && fwd && st.lesson && !hidden && jHop(st.si) && lastSi !== null && lastSi < st.si ? jHop(st.si) : null;
     // The costume change is earned on the chapter card: until the hop finishes he keeps the previous chapter's look.
     map.set(hopKind ? { ...st, costume: jCostume(st.si - 1) } : st);
     lastSi = st.end ? 99 : st.si;
@@ -177,11 +183,15 @@ function jInit() {
     const later = (ms, fn) => hop.timers.push(setTimeout(fn, ms));
     at(sx, sy, s0);
     tween([sx, sy, s0], [tx, ty, big], 900, () => {
-      const now = jCostume(st.si), old = jCostume(st.si - 1);
-      av.classList.add('arms-up');
-      [0, 180, 380, 620, 900].forEach((t, i) => later(t, () => { jDress(av, i % 2 ? old : now); layer.classList.toggle('j-flash', i % 2 === 0); }));
-      later(1100, () => { layer.classList.remove('j-flash'); av.classList.remove('arms-up'); jDress(av, now); });
-      later(2300, () => { const r = map.walker.getBoundingClientRect(); tween([tx, ty, big], [r.left + r.width / 2, r.bottom, s0], 900, () => { const h = hop; hop = null; h.layer.remove(); map.set(h.st); map.walker.style.opacity = ''; }); });
+      const now = jCostume(st.si); let old = jCostume(st.si - 1), t0 = 0;
+      if (kind === 'beard' && old.headset) {  // pandemic beard: the headset lifts off first (a beat), so the beard reads clearly
+        av.classList.add('hs-off'); later(450, () => { av.classList.remove('hs-off'); jDress(av, { ...old, headset: false }); });
+        old = { ...old, headset: false }; t0 = 650;
+      }
+      later(t0, () => av.classList.add('arms-up'));
+      [0, 180, 380, 620, 900].forEach((t, i) => later(t0 + t, () => { jDress(av, i % 2 ? old : now); layer.classList.toggle('j-flash', i % 2 === 0); }));
+      later(t0 + 1100, () => { layer.classList.remove('j-flash'); av.classList.remove('arms-up'); jDress(av, now); });
+      later(t0 + 2300, () => { const r = map.walker.getBoundingClientRect(); tween([tx, ty, big], [r.left + r.width / 2, r.bottom, s0], 900, () => { const h = hop; hop = null; h.layer.remove(); map.set(h.st); map.walker.style.opacity = ''; }); });
     });
   }
   const onEvent = e => { const d = e.detail || {}; update(d.slide || allSlides[d.index], d.index ?? allSlides.indexOf(d.slide)); };
