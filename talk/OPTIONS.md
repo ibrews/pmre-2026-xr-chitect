@@ -16,7 +16,8 @@ Every option below is built into the deck. Press **O** in the deck for the picke
 | | `motion` / `both` | `one-talk`: podium, ripple, audience member, client, twice (Late Show dome, then Waldorf Astoria). |
 | Holodeck staging `spike` | `photo` *(default)* | Holodeck photo with the spike-tape bullets. |
 | | `motion` / `both` | `spike-tape`: top-down plan over an empty room, spike marks laid, a guest walking mark to mark (illustrative). |
-| Career-path motion `lanemotion` (cold open; needs `open=cold`) | `original` *(default)* | The lane motion as it was: no protagonist. |
+| Career-path motion `lanemotion` (cold open; needs `open=cold`) | `traffic` *(default, Alex's pick 2026-10-27)* | `lane-traffic` (~43 s, with honks): one ARCHITECTURE road and "Pick a lane."; THEATER and TECHNOLOGY lanes arrive; traffic, and pixel Alex hops lane to lane dodging honking, swerving cars; the roads braid, curl into the Venn ("Reframe it."), then the full `venn` sequence plays. All type inside the presenter safe zone. |
+| | `original` | The lane motion as it was: no protagonist. |
 | | `sprite` | `lane-sprite`: 2010 pixel Alex (the intro sprite) walks the lane, rides the architecture strand to a pixel temple (columns crack), drops onto the theater strand's stage (curtains shimmer), hops to the tech line (the monitor's platformer runs), then grabs the intro's headset on the XR-chitect road. "I didn't." |
 | | `venn` | `venn-sprite`: a seekable port of the HarvardXR 2026 Venn. He bounces icon to icon; theater planning, live VR theater and archviz appear as he crosses each overlap; he ends on XR-CHITECT. Previews the later Venn slide. |
 | | `lanevenn` | `lane-to-venn`: the lane plays, then the three strands curl up into the Venn circles under his feet; he lands on XR-CHITECT with the headset. "I didn't." |
@@ -41,7 +42,7 @@ All new copy is ✎ PROPOSED (connective). The quotes inside motion graphics are
 
 **Not done (out of time, 10:45 ET):** an "extended" cut beyond full, a side-by-side comparison page, and alternate cover lines. The official title is already on the PMRE agenda, so only the kicker line would change.
 
-**MP4s for the alternates** (silent, 1080p30): `media/motion/mp4/{questions-dissolve,one-talk,spike-tape,venn-you}.mp4`; the career-path options in the default look: `media/motion/mp4/{lane-sprite,venn-sprite,lane-to-venn}.house.mp4`. The sprite options share `media/motion/sprite.js` (the intro's pixel Alex + headset and the HXR Venn icons, animated by WAAPI keyframes sampled from time, so they seek and render like the rest). Copies are also in `~/Archives/pmre2026-2026-10/organizer-package-draft/videos/alternates/`.
+**MP4s for the alternates** (silent, 1080p30): `media/motion/mp4/{questions-dissolve,one-talk,spike-tape,venn-you}.mp4`; the career-path options in the default look: `media/motion/mp4/{lane-traffic,lane-sprite,venn-sprite,lane-to-venn}.house.mp4` (`lane-traffic` has a synthesized honk track; in the deck the honks play live through the deck's audio). The sprite options share `media/motion/sprite.js` and `media/motion/venn-scene.js` (the venn sequence, reused verbatim by `lane-traffic`) (the intro's pixel Alex + headset and the HXR Venn icons, animated by WAAPI keyframes sampled from time, so they seek and render like the rest). Copies are also in `~/Archives/pmre2026-2026-10/organizer-package-draft/videos/alternates/`.
 
 **Exports:**
 - Editable PPTX for any combination: `python3 tools/export_talk_pptx.py --pick thesis=b --pick cut=30 --out x.pptx`

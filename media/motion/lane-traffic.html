@@ -157,9 +157,11 @@ cars.forEach((c,i)=>{
   const sw=t=>{if(c.swerve==null)return 0;const k=(t-c.swerve)/.6;return k<0||k>1?0:Math.sin(Math.PI*k);};
   track(outer,END,t=>{const x=X(c,t),s=sw(t);return{transform:`translate(${x.toFixed(1)}px,${(c.y-26*s).toFixed(1)}px) rotate(${(-6*s*c.dir).toFixed(2)}deg) scale(${c.dir},1)`};});
   c.honks.forEach((h,j)=>{const b=PX.honkBubble(hg,c.kind==='truck'&&j===0?'HONK':'HONK!');
-    track(b,END,t=>{const k=(t-h)/.8;if(k<0||k>1)return{opacity:0,transform:'translate(-400px,0px) scale(1)'};const x=clamp(X(c,t)+c.dir*(c.len/2-10),288+70,1632-70),pop=  // bubbles stay in the safe zone
+    track(b,END,t0=>{const k0=(t0-h)/.8,t=clamp(t0,h,h+.8),k=clamp(k0,0,1);  // hidden frames park at the nearest visible pose, so no in-between frame flies
+      if(k0<0||k0>1)return{opacity:0,transform:pose(t,k)};return{opacity:k>.8?+((1-k)/.2).toFixed(3):1,transform:pose(t,k)};});
+    function pose(t,k){const x=clamp(X(c,t)+c.dir*(c.len/2-10),288+70,1632-70),pop=  // bubbles stay in the safe zone
       k<.15?.6+.4*k/.15+.15*Math.sin(k/.15*Math.PI):1;
-      return{opacity:k>.8?+((1-k)/.2).toFixed(3):1,transform:`translate(${x.toFixed(1)}px,${(c.y-62-26*sw(t)).toFixed(1)}px) scale(${pop.toFixed(3)})`};});
+      return`translate(${x.toFixed(1)}px,${(c.y-62-26*sw(t)).toFixed(1)}px) scale(${pop.toFixed(3)})`;}
     SFX.push({t:+h.toFixed(2),kind:'honk',pitch:c.kind==='truck'?.8:1});});
 });
 // ── Beat 6: the venn-sprite sequence, verbatim, starting at T0 ──
