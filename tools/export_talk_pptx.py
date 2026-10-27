@@ -68,6 +68,16 @@ def new(prs, notes):
     s.notes_slide.notes_text_frame.text = notes or ""
     return s
 
+def journey(slide, look, stop, journey_pick):
+    """Static journey minimap (talk/journey.js, rendered by tools/render_journey_png.mjs) in the bottom-right corner.
+    stop = chapter index or "end"; skipped when the PNG has not been rendered or the journey option is off."""
+    if journey_pick == "off": return
+    f = ROOT / "media/journey" / look / (f"stop-{stop}.png" if stop != "end" else "end.png")
+    if not f.exists(): f = ROOT / "media/journey/house" / f.name
+    if not f.exists(): return
+    iw, ih = Image.open(f).size; w = Inches(1.7); h = int(w * ih / iw)
+    slide.shapes.add_picture(str(f), W - w - Inches(.22), H - h - Inches(.16), w, h)
+
 def big_size(t):
     n = max(len(l) for l in clean(t).split("\n"))
     return 66 if n <= 20 else 54 if n <= 27 else 44 if n <= 34 else 36
@@ -112,9 +122,11 @@ def main():
         text(s, Inches(1), Inches(2.0), Inches(11.3), Inches(2.2), L["title"], 54, bold=True, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
         text(s, Inches(2), Inches(4.4), Inches(9.3), Inches(1.9), L["tagline"], 20, DIM, align=PP_ALIGN.CENTER, spacing=8)
         if L.get("tags"): text(s, Inches(1), Inches(6.5), Inches(11.3), Inches(.4), L["tags"], 12, ac, align=PP_ALIGN.CENTER)
+        journey(s, look, si, pick.get("journey"))
         for c in sec["cases"]:
             if not shown(c): continue
             s = new(prs, c.get("notes")); lay = c.get("layout")
+            if "avatar" not in (c.get("shows") or []): journey(s, look, si, pick.get("journey"))  # never two Alexes
             if (lay == "full" or c.get("use")) and c.get("motion"):  # IFRAME: motion or an iframe slide module
                 m = c["motion"]; poster = f"media/motion/mp4/{m}-poster{suffix}.png"
                 if not (ROOT / poster).exists(): poster = f"media/motion/mp4/{m}-poster.png"
@@ -144,12 +156,14 @@ def main():
     text(s, Inches(1), Inches(1.4), Inches(11.3), Inches(.5), B["year"], 16, ACC["amber"], bold=True, align=PP_ALIGN.CENTER)
     text(s, Inches(.8), Inches(2.0), Inches(11.7), Inches(2.2), B["title"], 50, bold=True, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     text(s, Inches(2), Inches(4.4), Inches(9.3), Inches(1.9), B["tagline"], 20, DIM, align=PP_ALIGN.CENTER, spacing=8)
+    journey(s, look, "end", pick.get("journey"))
     s = new(prs, T["closeNotes"])
     text(s, Inches(1), Inches(1.5), Inches(11.3), Inches(.5), T["closeEyebrow"].upper(), 14, ACC["amber"], bold=True, align=PP_ALIGN.CENTER)
     text(s, Inches(1), Inches(2.0), Inches(11.3), Inches(1.3), T["closeTitle"], 60, bold=True, align=PP_ALIGN.CENTER)
     text(s, Inches(1), Inches(3.3), Inches(11.3), Inches(.7), T["closeSub"], 22, DIM, align=PP_ALIGN.CENTER)
     picture(s, "talk/qr.png", Inches(5.67), Inches(4.3), Inches(2), Inches(2))
     text(s, Inches(1), Inches(6.4), Inches(11.3), Inches(.5), T["web"], 16, ACC["teal"], align=PP_ALIGN.CENTER)
+    journey(s, look, "end", pick.get("journey"))
     out = Path(a.out).expanduser(); out.parent.mkdir(parents=True, exist_ok=True); prs.save(out)
     print(f"{out}: {len(prs.slides)} slides, picks={pick}, fonts={FONT}; video slides: " + ", ".join(f"#{n} {m}.mp4" for n, m in videos))
 

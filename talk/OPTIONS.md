@@ -47,9 +47,15 @@ All new copy is ✎ PROPOSED (connective). The quotes inside motion graphics are
 **Exports:**
 - Editable PPTX for any combination: `python3 tools/export_talk_pptx.py --pick thesis=b --pick cut=30 --out x.pptx`
 - MP4s for the organizer: `node tools/render_motion.mjs <name>` writes to `media/motion/mp4/`
+- Journey minimap PNGs for the PPTX (one per chapter, per look): `PLAYWRIGHT_CORE=/abs/node_modules/playwright-core node tools/render_journey_png.mjs` writes `media/journey/<look>/stop-<n>.png` and `end.png`; `export_talk_pptx.py` places them bottom-right, skipping slides that already show pixel Alex
 
 | Page chrome `chrome` | `quiet` *(default)* | No masthead, page numbers or per-slide section labels; chapter cards keep their kicker without the "of 8". Henry Keyser's feedback, 2026-10-27. |
 | | `full` | The look's frame, page counter and section labels on every slide. |
 | | `none` | Also drops chapter kickers. |
+| Pixel Alex `journey` | `on` *(default)* | Bottom-right journey minimap: one lane forks into three braided strands (architecture, theater, technology) and rejoins as a wider road, one stop per chapter. Pixel Alex walks to the current chapter; on the 2013 card he hops out, puts on the headset and shrinks back into the map, and on the 2023 card he gets the beard. He waves on the close. Hidden on the cover, the map slide, and every slide that already draws him (`shows: ["avatar"]`: intro, lane-traffic, lane-sprite, venn-sprite, lane-to-venn), so there is only ever one Alex on screen. Alex, 2026-10-27. |
+| | `map` | Minimap only: he still walks, the costume just changes on arrival, no hop-outs. |
+| | `off` | No minimap, no walker (also drops it from the PPTX). |
 
 **Looks** come from the Spatial Deck style library (`styles/`, from ibrews/spatial-deck; rules in `styles/README.md`). `tools/bake_talk.py` inlines them with `tools/apply_look.py`, then runs `tools/check_branding.py`. Old `?theme=blueprint` / `?theme=stage` links map to `sheet` / `house`. Look-specific poster frames are `media/motion/mp4/<name>-poster.<look>.png` (`LOOK=sheet POSTER_ONLY=1 node tools/render_motion.mjs`). Organizer MP4s in the default look: `media/motion/mp4/<name>.house.mp4` (`LOOK=house node tools/render_motion.mjs`); `<name>.sheet.mp4` are the Drawing set renders; the unsuffixed `<name>.mp4` files are the noir renders. PPTX in a look: `python3 tools/export_talk_pptx.py --pick theme=sheet --out x.pptx` (Arial is kept for show machines).
+
+**Pixel Alex modes:** `?static`, `?reduced` and prefers-reduced-motion place him without walking, bobbing or hop-outs. `?notes` hides the minimap. `?print` puts a static minimap on each printed slide, because the PDF is a handout of the same journey the room saw. The minimap is independent of `chrome` (it is content, not page chrome; use `journey=off` to remove it); with `chrome=full` it lifts above a bottom-right title block (Drawing set). It is positioned against `--safe-inset-x` / `--safe-inset-y` (0 by default), so a venue safe-zone option that sets them keeps it inside PMRE's 70% box.

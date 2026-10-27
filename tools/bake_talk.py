@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HTML, SRC = ROOT / "index.html", ROOT / "talk" / "sections.js"
 s = HTML.read_text(encoding="utf-8")
-talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js"))
+talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "journey.js"))
 
 def patch(marker, anchor, new, count=1):
     """Replace anchor with new unless marker already present."""
@@ -138,6 +138,8 @@ addEventListener('message',e=>{const c=e.data&&e.data.sdMotionSfx;if(!Array.isAr
 })();
 </script>
 """
+# journey.css (the minimap) goes first in the talk runtime <style>; the intro CSS lives in the intro modules now.
+EXTRA = EXTRA.replace("<style>\n", "<style>\n" + (ROOT / "talk" / "journey.css").read_text(encoding="utf-8").strip() + "\n", 1)
 s = re.sub(r"<!-- ── PMRE TALK RUNTIME ── -->.*?(?=</body>)", "", s, flags=re.S)
 if True:
     i = s.rfind("</body>")
