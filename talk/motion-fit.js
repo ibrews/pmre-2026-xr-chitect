@@ -16,7 +16,7 @@ window.MOTION_FIT = {
    1,
    1
   ],
-  "src": "f046b2e414e6af9c"
+  "src": "cc3d9bed2e5ad847"
  },
  "lane": {
   "box": [
@@ -25,7 +25,7 @@ window.MOTION_FIT = {
    0.875,
    0.6833
   ],
-  "src": "21e60bcfbd241823"
+  "src": "97f23423711be6ba"
  },
  "lane-sprite": {
   "box": [
@@ -34,7 +34,7 @@ window.MOTION_FIT = {
    0.8985,
    0.7
   ],
-  "src": "31a4ef9fe2c7c6d8"
+  "src": "8c62f7fbd14fbfae"
  },
  "lane-to-venn": {
   "box": [
@@ -43,7 +43,7 @@ window.MOTION_FIT = {
    0.917,
    0.9546
   ],
-  "src": "687e9dc69cd42bca"
+  "src": "4e3397b7e988c2a4"
  },
  "lane-traffic": {
   "box": [
@@ -52,7 +52,7 @@ window.MOTION_FIT = {
    1,
    0.673
   ],
-  "src": "0c7b1c4df0443cb8"
+  "src": "5eb02aa73071990b"
  },
  "one-talk": {
   "box": [
@@ -61,7 +61,7 @@ window.MOTION_FIT = {
    0.9635,
    1
   ],
-  "src": "3f2732371d35caa0"
+  "src": "2a931d8a9b2a94d6"
  },
  "questions-dissolve": {
   "box": [
@@ -70,7 +70,7 @@ window.MOTION_FIT = {
    1,
    1
   ],
-  "src": "a712d02319e28f14"
+  "src": "e35003680e569a43"
  },
  "scale": {
   "box": [
@@ -79,7 +79,7 @@ window.MOTION_FIT = {
    0.6458,
    0.9333
   ],
-  "src": "dd1180d7be9f0aaf"
+  "src": "854845c699541dbe"
  },
  "sightline": {
   "box": [
@@ -88,7 +88,7 @@ window.MOTION_FIT = {
    0.8854,
    0.8833
   ],
-  "src": "4030bb51d03bca64"
+  "src": "649f4e95bb9209be"
  },
  "spike-tape": {
   "box": [
@@ -97,7 +97,7 @@ window.MOTION_FIT = {
    0.8066,
    0.8806
   ],
-  "src": "5d545451f8040cc5"
+  "src": "cac78739a0fe8923"
  },
  "the-hand": {
   "box": [
@@ -106,7 +106,7 @@ window.MOTION_FIT = {
    0.8341,
    0.8639
   ],
-  "src": "284780831352b93e"
+  "src": "5bd1cd02a1995101"
  },
  "timeline": {
   "box": [
@@ -115,7 +115,7 @@ window.MOTION_FIT = {
    0.875,
    0.6253
   ],
-  "src": "910af762cdbf4e64"
+  "src": "9934357ecd1ba137"
  },
  "venn": {
   "box": [
@@ -124,7 +124,7 @@ window.MOTION_FIT = {
    0.68,
    0.9328
   ],
-  "src": "8d07950a4dac74a1"
+  "src": "49c7abc2fd1a689f"
  },
  "venn-sprite": {
   "box": [
@@ -133,7 +133,7 @@ window.MOTION_FIT = {
    0.68,
    0.9778
   ],
-  "src": "bfdfaca7d5ee39e8"
+  "src": "04f69e5c4bcc5c42"
  },
  "venn-you": {
   "box": [
@@ -142,6 +142,6 @@ window.MOTION_FIT = {
    0.7743,
    0.9557
   ],
-  "src": "34bf50c5bc88cb6b"
+  "src": "8ee6f4feecd28936"
  }
 };
