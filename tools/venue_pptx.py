@@ -88,7 +88,8 @@ def add_text(slide, t, safe_scale):
     for i, ln in enumerate(lines):
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
         p.alignment = {"left": PP_ALIGN.LEFT, "center": PP_ALIGN.CENTER, "right": PP_ALIGN.RIGHT}[t["align"]]
-        pitch = (lines[i + 1]["y"] - ln["y"]) if i + 1 < len(lines) else (t["pitch"] or ln["h"])
+        # exact spacing sets the distance from the PREVIOUS line, so a blank-line gap belongs to the line after it
+        pitch = (ln["y"] - lines[i - 1]["y"]) if i > 0 else (t["pitch"] or ln["h"])
         p.line_spacing = Pt(max(1, pitch * 0.5))
         for r in ln["runs"]:
             st = r["st"]; run = p.add_run(); run.text = r["t"]

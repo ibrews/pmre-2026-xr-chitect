@@ -98,7 +98,7 @@ if (a.office) for (const cut of a.cuts) {
     const t = fs.mkdtempSync(path.join(os.tmpdir(), 'vxsheet-'));
     execFileSync('pdftoppm', ['-r', '24', '-png', ref, path.join(t, 'p')]);
     const pages = fs.readdirSync(t).filter(f => f.endsWith('.png')).sort().map(f => path.join(t, f));
-    execFileSync('magick', ['montage', ...pages, '-tile', '6x', '-geometry', '+6+6', '-background', '#222', '-label', '', path.join(dir, 'contact-sheet.png')]);
+    execFileSync('magick', ['montage', ...pages, '-tile', '6x', '-geometry', '+6+6', '-background', '#222', ...(fs.existsSync('/System/Library/Fonts/Supplemental/Arial.ttf') ? ['-font', '/System/Library/Fonts/Supplemental/Arial.ttf'] : []), path.join(dir, 'contact-sheet.png')]);
     fs.rmSync(t, { recursive: true, force: true });
   }
   console.log(`  cut ${cut}: Keynote ${office[cut].keynote}; PowerPoint ${office[cut].powerpoint}`);

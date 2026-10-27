@@ -141,6 +141,9 @@ function pageExtract(opts) {
     const plain = lines.map(l => l.toks.map((k, i) => (i && k.sp ? ' ' : '') + k.t).join('')).join('\n');
     allText.push({ text: plain.slice(0, 160), rect: [L, T, R - L, B - T], visible: vis.r > vis.l && vis.b > vis.t ? [vis.l, vis.t, vis.r - vis.l, vis.b - vis.t] : null, clipped });
     if (clipped) reason = reason || 'clipped by its container (decorative)';
+    // CSS-generated text (::before/::after content, e.g. a "No." label) is not in the DOM: rebuilding the block natively
+    // would hide it with the rest and lose it, so such blocks stay in the frame image.
+    for (const e of [root, ...root.querySelectorAll('*')]) { for (const pe of ['::before', '::after']) { const c = getComputedStyle(e, pe).content; if (c && c !== 'none' && c !== 'normal' && /[\p{L}\p{N}]/u.test(c)) { reason = reason || 'has CSS-generated text (' + c.slice(0, 12) + ')'; break; } } if (reason) break; }
     const rcs = getComputedStyle(root); if (/rotate|skew|matrix3d/.test(rcs.transform) || (rcs.transform.startsWith('matrix(') && (() => { const m = rcs.transform.match(/matrix\(([^)]+)\)/)[1].split(',').map(Number); return Math.abs(m[1]) > 1e-3 || Math.abs(m[2]) > 1e-3; })())) reason = reason || 'rotated/skewed';
     // font fit: Arial (or Arial Narrow for condensed faces) at the DOM size must be within ~22% of the DOM line width
     // Candidates every show machine has: Arial, Arial Narrow (Office), Impact (Windows + macOS core font) for heavy condensed caps.
