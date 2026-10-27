@@ -110,7 +110,7 @@ function pageExtract(opts) {
   const tw = document.createTreeWalker(slide, NodeFilter.SHOW_TEXT);
   for (let n; (n = tw.nextNode());) {
     if (!n.nodeValue.trim()) continue; const pe = n.parentElement; if (!pe) continue;
-    if (inside(pe, 'svg,iframe,canvas,script,style,noscript,#sd-safezone')) continue;
+    if (inside(pe, 'svg,iframe,canvas,script,style,noscript,#sd-safezone,#journey,[id^="journey"],[class*="journey"]')) continue;  // the minimap may sit at the physical corner
     const root = blockRoot(pe); if (!groups.has(root)) groups.set(root, []); groups.get(root).push(n);
   }
   const texts = [], allText = [];
@@ -211,7 +211,7 @@ function pageExtract(opts) {
 
   const iframes = [...slide.querySelectorAll('iframe')].map(f => { const r = f.getBoundingClientRect(); return { src: f.dataset.motionBase || f.getAttribute('src') || '', abs: new URL(f.dataset.motionBase || f.getAttribute('src') || '', location.href).href, box: [r.left, r.top, r.width, r.height], visible: op(f) > 0.04 && r.width > 50 }; }).filter(f => f.visible);
   const videos = [...slide.querySelectorAll('video')].map(v => { const r = v.getBoundingClientRect(); return { src: new URL(v.currentSrc || v.src || '', location.href).href, box: [r.left, r.top, r.width, r.height], visible: op(v) > 0.04 && r.width > 50 }; }).filter(v => v.visible);
-  return { texts: texts.map(({ _el, ...t }) => t), images, svgs, allText, iframes, videos, slideRect: [SR.left, SR.top, SR.width, SR.height], vw: VW, vh: VH };
+  return { texts: texts.map(({ _el, ...t }) => t), images, svgs, allText, iframes, videos, slideRect: [SR.left, SR.top, SR.width, SR.height], vw: VW, vh: VH, fit: slide.dataset.safeFit || null };
 }
 
 function pageHideNative(on) {
@@ -306,7 +306,9 @@ export async function capture(opts) {
       // video for this state
       const vslug = slug(sl.module?.name || (st.iframes[0] && path.basename(st.iframes[0].src.split(/[?#]/)[0], '.html')) || sl.title);
       if (motionIframe && st.iframes.length) {
-        st.picks = realPicks; jobs.push({ st, fr: st.iframes[0], file: `${NN}${letter}-${vslug}.mp4` });  // rendered after the walk, same page (one browser, one page)
+        st.picks = realPicks; jobs.push({ st, fr: st.iframes[0], file: `${NN}${letter}-${vslug}.mp4` });
+        { const nm = (st.iframes[0].src.match(/([\w-]+)\.html/) || [])[1]; const mf = await page.evaluate(n => (window.MOTION_FIT || {})[n] || null, nm); const f = nm && path.join(ROOT, 'media/motion', nm + '.html');
+          if (f && fs.existsSync(f)) { const h = sha(fs.readFileSync(f, 'utf8').replace(/\r\n/g, '\n')).slice(0, 16); if (!mf) (st.warn = st.warn || []).push(`${nm}: no entry in talk/motion-fit.js (run node tools/motion_fit.mjs ${nm} && python3 tools/bake_talk.py); slide shows the whole frame at 70%`); else if (mf.src !== h) (st.warn = st.warn || []).push(`${nm}: talk/motion-fit.js is stale (run node tools/motion_fit.mjs ${nm} && python3 tools/bake_talk.py)`); } }  // rendered after the walk, same page (one browser, one page)
       } else if (rec && rec.kind === 'video') {
         Object.assign(st, { kind: 'video', video: { cache: path.join(cdir, 'video.mp4'), poster: path.join(cdir, 'poster.png'), duration: probeDur(path.join(cdir, 'video.mp4')), file: `${NN}${letter}-${vslug}.mp4`, source: 'record', capped: !!rec.capped, settleSec: rec.settleSec } });
       }
@@ -328,9 +330,9 @@ export async function capture(opts) {
 }
 
 // Fleet throttle (2026-10-27): admit heavy batches through the host load guard; exit 75 = wait and retry.
-export async function loadGuard() {
+export async function loadGuard(cls = 'build') {
   const g = path.join(os.homedir(), 'knowledge/scripts/fleet-load-guard.sh'); if (!fs.existsSync(g)) return;
-  for (let i = 0; ; i++) { try { execFileSync('bash', [g, 'admit', 'build'], { stdio: 'ignore' }); return; } catch (e) { if (e.status !== 75) return; console.log('  load guard: host busy, waiting 60 s'); await new Promise(r => setTimeout(r, 60000)); } }
+  for (let i = 0; ; i++) { try { execFileSync('bash', [g, 'admit', cls], { stdio: 'ignore' }); return; } catch (e) { if (e.status !== 75) return; console.log('  load guard: host busy, waiting 60 s'); await new Promise(r => setTimeout(r, 60000)); } }
 }
 
 export const auditMotionText = (p, [x, y, w, h]) => p.evaluate(([X, Y, W, H]) => {

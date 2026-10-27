@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HTML, SRC = ROOT / "index.html", ROOT / "talk" / "sections.js"
 s = HTML.read_text(encoding="utf-8")
-talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "intro.js", "journey.js", "safezone.js"))
+talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "intro.js", "journey.js", "motion-fit.js", "safezone.js"))
 
 def patch(marker, anchor, new, count=1):
     """Replace anchor with new unless marker already present."""

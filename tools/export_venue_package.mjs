@@ -61,11 +61,11 @@ for (const cut of a.cuts) {
     ...vids.map(r => `| ${r.pptx} | videos/${r.video} | ${mmss(r.duration)} | ${r.audio ? 'yes (car horns): route to house sound' : 'silent'} | When the speaker advances to slide ${r.pptx}, play the video full-screen; when it ends, return to the deck on slide ${r.pptx} (same final frame). The speaker's next click goes to slide ${r.pptx + 1}. |`),
     '', vids.length ? '' : '_No video cues in this cut._', `Total video: ${vids.length} file(s), ${mmss(vids.reduce((s, r) => s + r.duration, 0))}.`].join('\n');
   fs.writeFileSync(path.join(dir, 'VIDEO-CUES.md'), md + '\n');
-  summary.cuts[cut] = { slides: rep.length, modes: rep.reduce((m, r) => (m[r.mode] = (m[r.mode] || 0) + 1, m), {}), videos: vids.length, videoSec: +vids.reduce((s, r) => s + r.duration, 0).toFixed(1), pass: chk.pass, failures: Object.fromEntries(Object.entries(chk.results).filter(([, v]) => v.length)), timing: chk.timing && { talk_min: chk.timing.talk_min, with_qa_min: chk.timing.with_qa_min, fits: chk.timing.fits, fits_short_qa: chk.timing.fits_short_qa }, pageErrors: cap.errors.length, picks: cap.picks, deckUrl: cap.url, renderedOn: cap.host, renderedFrom: cap.roots && cap.roots.repo };
+  summary.cuts[cut] = { slides: rep.length, modes: rep.reduce((m, r) => (m[r.mode] = (m[r.mode] || 0) + 1, m), {}), videos: vids.length, videoSec: +vids.reduce((s, r) => s + r.duration, 0).toFixed(1), pass: chk.pass, failures: Object.fromEntries(Object.entries(chk.results).filter(([, v]) => v.length)), timing: chk.timing && { talk_min: chk.timing.talk_min, with_qa_min: chk.timing.with_qa_min, fits: chk.timing.fits, fits_short_qa: chk.timing.fits_short_qa }, fit: (() => { const f = cap.states.filter(x => x.step === 0 && x.fit).map(x => +x.fit.split(' ')[0]).sort((p, q) => p - q); return f.length ? { min: f[0], median: f[f.length >> 1], max: f[f.length - 1], n: f.length } : null; })(), warnings: [...new Set(cap.states.flatMap(x => x.warn || []))], pageErrors: cap.errors.length, picks: cap.picks, deckUrl: cap.url, renderedOn: cap.host, renderedFrom: cap.roots && cap.roots.repo };
 }
 
 // PDFs: cue sheet via Chrome (one browser at a time), PPTX via Keynote (opens it = the Keynote check) then PowerPoint
-await loadGuard();
+await loadGuard('light');  // single-document PDF exports: light class (coordinator OK 2026-10-27)
 { const { chromium } = loadPlaywright(); const b = await chromium.launch({ executablePath: CHROME });
   try { const p = await b.newPage();
     for (const cut of a.cuts) { const dir = path.join(pkg, 'cut' + cut); const md = fs.readFileSync(path.join(dir, 'VIDEO-CUES.md'), 'utf8');
@@ -80,7 +80,7 @@ const office = {};
 function osa(script, timeoutSec) { const r = spawnSync('osascript', ['-e', script], { timeout: timeoutSec * 1000, encoding: 'utf8' }); return r.error ? { ok: false, why: String(r.error.code || r.error) } : r.status ? { ok: false, why: (r.stderr || '').trim().slice(0, 200) } : { ok: true }; }
 if (a.office) for (const cut of a.cuts) {
   const dir = path.join(pkg, 'cut' + cut), pptx = path.join(dir, NAME + '.pptx'), kpdf = path.join(dir, NAME + '.keynote.pdf'), ppdf = path.join(dir, NAME + '.pdf');
-  await loadGuard();
+  await loadGuard('light');  // single-document PDF exports: light class (coordinator OK 2026-10-27)
   // Keynote: AppleScript `open` of a .pptx returns missing value on this Mac (sandbox import); try once, briefly.
   const k = a.keynote ? osa(`tell application "Keynote"\nset d to open (POSIX file "${pptx}")\ndelay 5\nexport front document to (POSIX file "${kpdf}") as PDF\nclose front document saving no\nend tell`, 90) : { ok: false, why: 'skipped (--no-keynote)' };
   const kp = k.ok && fs.existsSync(kpdf) ? +execFileSync('pdfinfo', [kpdf]).toString().match(/Pages:\s+(\d+)/)[1] : 0;
