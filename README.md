@@ -18,7 +18,7 @@ There's no build step. Arrow keys or clicks advance the slides.
 ## Things to Try
 
 1. Open the deck and press **→** through the opening. Right after the chapter card, 8-bit Alex walks in and powers up with a headset (→ again for the bio, the Unreal power-up with fireballs, and the stat cards), then the Agile Lens monocle orbit counts back to 2016 over five clicks. The "Pick a lane" motion graphic follows, and every one of these replays each time you land on its slide. Turn the intro off with `?intro=none`, or keep just the power-up with `?intro=alex`.
-2. Press **O** to open the options picker. You can switch the opening, the thesis line, the close, the length (full ~58 min, medium ~47 min, short ~31 min) and the look: Drawing set (the default), Folio, House (theater program) or Noir (the original), from the Spatial Deck style library in `styles/`. Your picks are saved in your browser.
+2. Press **O** to open the options picker. You can switch the opening, the thesis line, the close, the length (full ~58 min, medium ~47 min, short ~31 min) and the look: House (theater program, the default), Drawing set, Folio or Noir (the original), from the Spatial Deck style library in `styles/`. Your picks are saved in your browser.
 3. Try a combination straight from the URL: `index.html?open=question&thesis=b&cut=30&theme=sheet`.
 4. Press **N** for the presenter-notes popup, or open `index.html?notes` on a phone for the speaker companion.
 5. Open `index.html?reduced` to see each motion graphic as its final frame. This is the reduced-motion mode, and it also works offline.

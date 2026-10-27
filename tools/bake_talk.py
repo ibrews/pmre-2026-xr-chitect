@@ -151,6 +151,6 @@ print("bake_talk: index.html updated")
 # 8. Style library looks (styles/, from ibrews/spatial-deck) + motion recolorer, then refuse template branding.
 import subprocess
 subprocess.run([sys.executable, str(ROOT / "tools" / "apply_look.py"), "--html", str(HTML), "--styles", str(ROOT / "styles"),
-                "--default", "sheet", "--motion-dir", str(ROOT / "media" / "motion")], check=True)
+                "--default", "house", "--motion-dir", str(ROOT / "media" / "motion")], check=True)
 if subprocess.run([sys.executable, str(ROOT / "tools" / "check_branding.py")]).returncode:
     sys.exit("bake_talk: branding check failed (see above)")
