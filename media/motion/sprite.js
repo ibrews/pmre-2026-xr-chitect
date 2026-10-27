@@ -177,7 +177,8 @@
   }
   // Drive a sprite: outer g translate+scale(face), arms swap while hopping/cheering, optional fade-in window.
   function drive(sp, END, at, scale, show) {
-    track(sp.outer, END, t => { const s = at(t); return { transform: `translate(${s.x.toFixed(1)}px,${s.y.toFixed(1)}px) scale(${(s.face * scale).toFixed(3)},${scale})` }; });
+    const sc = typeof scale === 'function' ? scale : () => scale;  // scale may be a function of time
+    track(sp.outer, END, t => { const s = at(t), k = sc(t); return { transform: `translate(${s.x.toFixed(1)}px,${s.y.toFixed(1)}px) scale(${(s.face * k).toFixed(3)},${k.toFixed(3)})` }; });
     track(sp.av.armsUp, END, t => ({ opacity: at(t).up ? 1 : 0 }), true);
     track(sp.av.armsDown, END, t => ({ opacity: at(t).up ? 0 : 1 }), true);
     if (show) track(sp.outer.parentNode, END, t => ({ opacity: +clamp((t - show[0]) / (show[1] - show[0]), 0, 1).toFixed(3) }));

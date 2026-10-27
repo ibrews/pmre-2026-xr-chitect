@@ -3,13 +3,15 @@
    same as venn.html), the XR-CHITECT pill, the pixel-Alex hero and caption "BIZARRE OVERLAPS". Every time is T0 + the
    venn-sprite time. curl: the circles fade in (they arrive as strands curling) instead of flying in. handoff: the hero
    appears instantly at the temple at T0+2.6 (a previous sprite hands over there) instead of fading in.
+   big: larger type (for a scene drawn at .7 scale inside the 1344x756 presenter safe zone).
    Needs sprite.js, the gradients #ga #gt #gx #core in <defs>, and the page CSS classes .c .fade .pop .lbl .ov .halo .cap .core
    (see venn-sprite.html). Build synchronously, before the seek runtime and look.js. */
 (function () {
   const { E, track, clamp } = PX;
   PX.vennScene = function (svg, o) {
     const END = o.END, T = s => (o.T0 || 0) + s, at = (s) => `--t:${T(s).toFixed(2)}s`, S = 3.4, SC = 1.6;
-    const txt = (attrs, cls, style, str) => { const t = E('text', Object.assign({ 'text-anchor': 'middle', class: cls, style }, attrs), svg); t.textContent = str; return t; };
+    const FS = o.big ? { lbl: 52, ov: 36, cap: 38, core: 46 } : null;
+    const txt = (attrs, cls, style, str) => { if (FS) style += `;font-size:${FS[cls.split(' ')[0]]}px`; const t = E('text', Object.assign({ 'text-anchor': 'middle', class: cls, style }, attrs), svg); t.textContent = str; return t; };
     const cg = E('g', { class: 'venn-circles' }, svg);
     [[820, 450, 'ga', '#00d4ff', .3, '-500px', '-120px'], [1100, 450, 'gt', '#f43f5e', .8, '500px', '-120px'], [960, 690, 'gx', '#a78bfa', 1.3, '0px', '420px']].forEach(([cx, cy, g, col, t, dx, dy]) =>
       E('circle', { class: o.curl ? 'vc fade' : 'c', cx, cy, r: 300, fill: `url(#${g})`, stroke: col, 'stroke-width': 3, style: o.curl ? `${at(.3)}` : `${at(t)};--dx:${dx};--dy:${dy}` }, cg));
@@ -23,7 +25,7 @@
     txt({ x: 755, y: 700 }, 'ov halo fade', at(8.6), 'archviz');
     const pill = E('g', { class: 'pop', style: at(10.2) }, svg);
     E('rect', { x: 790, y: 508, width: 340, height: 76, rx: 38, fill: 'url(#core)' }, pill);
-    const core = E('text', { x: 960, y: 560, 'text-anchor': 'middle', class: 'core' }, pill); core.textContent = 'XR-CHITECT';
+    const core = E('text', { x: 960, y: 560, 'text-anchor': 'middle', class: 'core' }, pill); if (FS) core.setAttribute('style', `font-size:${FS.core}px`); core.textContent = 'XR-CHITECT';
     const heroG = E('g', {}, svg), fx = E('g', {}, svg);
     txt({ x: 960, y: 56 }, 'cap fade', at(11.4), 'BIZARRE OVERLAPS');
     // Icons in each circle's exclusive region (HXR layout, PMRE colors: architecture teal, theater rose, technology purple).

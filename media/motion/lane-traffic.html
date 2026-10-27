@@ -34,6 +34,7 @@ svg{width:100%;height:100%;display:block}
 .ov{font-size:27px;font-weight:500;fill:var(--text);letter-spacing:.04em}
 .halo{stroke:#060810;stroke-width:10px;stroke-linejoin:round;paint-order:stroke fill;stroke-opacity:.85}
 .cap{font-size:30px;fill:var(--dim);letter-spacing:.3em}
+.reframe{stroke:#060810;stroke-width:18px;stroke-linejoin:round;paint-order:stroke fill}
 .core{font-size:44px;font-weight:700;fill:#060810;letter-spacing:.06em}
 </style></head><body>
 <svg id="s" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" aria-label="A pixel-art Alex walks one road labeled Architecture. Theater and Technology lanes appear, traffic floods in, and he hops lane to lane dodging honking, swerving cars. The roads braid, then curl into three overlapping circles: reframe it. He bounces through the Venn diagram (theater planning, live VR theater, archviz) and lands on XR-chitect.">
@@ -46,15 +47,16 @@ svg{width:100%;height:100%;display:block}
 </defs>
 <!-- Beat 1 copy -->
 <g class="fadeout" style="--t:5.0s">
-  <text x="960" y="250" text-anchor="middle" class="big rise" style="--t:1.4s">Pick a lane.</text>
+  <text x="960" y="300" text-anchor="middle" class="big rise" style="--t:1.4s">Pick a lane.</text>
   <text x="960" y="840" text-anchor="middle" class="label rise" style="--t:2.6s">STAY IN IT &#183; MASTER ONE CRAFT</text>
 </g>
 <g id="bands"></g>
 <g id="strands" filter="url(#glow)" fill="none" stroke-linecap="round"></g>
 <g id="lanelabels"></g>
 <g id="cars"></g>
-<g id="venn"></g>
-<g class="fadeout" style="--t:30.2s"><text x="960" y="585" text-anchor="middle" class="big rise" style="--t:27.4s">Reframe it.</text></g>
+<!-- the Venn plays at .7 scale: exactly the 1344x756 presenter safe zone -->
+<g id="venn" transform="translate(960 540) scale(.7) translate(-960 -540)"></g>
+<g class="fadeout" style="--t:30.2s"><text x="960" y="585" text-anchor="middle" class="big rise reframe" style="--t:27.4s">Reframe it.</text></g>
 <g id="hero"></g>
 <g id="honks"></g>
 <g id="fx"></g>
@@ -63,7 +65,8 @@ svg{width:100%;height:100%;display:block}
 <script src="venn-scene.js"></script>
 <script>
 (function(){
-const T0=29.4, END=T0+PX.VENN_LEN, {E,track,clamp,ease}=PX, SC=1.6, CS=4.5;
+const T0=29.4, END=T0+PX.VENN_LEN, {E,track,clamp,ease}=PX, SC=1.6, CS=4.5, VS=.7;  // VS = venn scale (safe zone)
+const VA=[960+(640-960)*VS,540+(470-540)*VS];  // the venn hero's temple spot, in screen coordinates
 const R=PX.rng(20261027);
 // ── Lanes. Every lane / braid / circle path is M + five cubic segments with control x at the segment thirds, so they morph
 //    into one another and a point's y at a given x is the blend of the shapes' y (x(u) is the same linear map in all of them).
@@ -80,7 +83,7 @@ function circlePts(cx,cy,r){const n=5,da=2*Math.PI/n,k=4/3*Math.tan(da/4)*r,Q=a=
 const B0=21.6,B1=24.6,C0=26.6,C1=30.0;   // braid morph, curl morph
 const mB=t=>ease(clamp((t-B0)/(B1-B0),0,1)), mC=t=>ease(clamp((t-C0)/(C1-C0),0,1));
 const lerp=(P,Q,m)=>P.map((p,i)=>[p[0]+(Q[i][0]-p[0])*m,p[1]+(Q[i][1]-p[1])*m]);
-LANES.forEach(L=>{L.S=straightPts(L);L.B=braidPts(L);L.C=circlePts(L.circ[0],L.circ[1],300);});
+LANES.forEach(L=>{L.S=straightPts(L);L.B=braidPts(L);L.C=circlePts(960+(L.circ[0]-960)*VS,540+(L.circ[1]-540)*VS,300*VS);});
 const ptsAt=(L,t)=>lerp(lerp(L.S,L.B,mB(t)),L.C,mC(t));
 const dOf=P=>`M${P[0][0].toFixed(1)} ${P[0][1].toFixed(1)}`+[0,1,2,3,4].map(i=>' C '+[P[1+3*i],P[2+3*i],P[3+3*i]].map(q=>q[0].toFixed(1)+' '+q[1].toFixed(1)).join(', ')).join('');
 // y of a lane's line at x (only valid before the curl starts: x(u) is linear per segment until then)
@@ -93,7 +96,7 @@ LANES.forEach(L=>{
   E('path',{d:d0,stroke:L.col,'stroke-opacity':'.35','stroke-width':'3','stroke-dasharray':'26 22',fill:'none',transform:'translate(0,48)',class:'fade',style:`--t:${L.draw+.4}s`},bands);
   L.el=E('path',{d:d0,stroke:L.col,'stroke-width':'7',class:'draw',pathLength:'1',style:`--d:1.4s;--t:${L.draw}s`},strands);
   if(canD)track(L.el,END,t=>({d:`path("${dOf(ptsAt(L,t))}")`}));
-  const tx=E('text',{x:140,y:L.y+40,'text-anchor':'start',class:'label fade',style:`--t:${L.draw+.9}s;fill:${L.col}`},lbls);tx.textContent=L.name;
+  const tx=E('text',{x:300,y:L.y+40,'text-anchor':'start',class:'label fade',style:`--t:${L.draw+.9}s;fill:${L.col}`},lbls);tx.textContent=L.name;
 });
 track(bands,END,t=>({opacity:+(1-clamp((t-20.8)/.8,0,1)).toFixed(3)}));
 track(lbls,END,t=>({opacity:+(1-clamp((t-20.8)/.8,0,1)).toFixed(3)}));
@@ -103,8 +106,8 @@ const AR=LANES[0],TH=LANES[1],TE=LANES[2],Y={ar:540,th:360,te:720};
 // ── Alex: calm walk, then the traffic dance. Feet on the line. ──
 const P2=(l,x)=>[x,Y[l]];
 const segs=[
-  {type:'idle',t0:0,t1:1.6,a:P2('ar',300),face:1},
-  {type:'walk',t0:1.6,t1:5.6,a:P2('ar',300),b:P2('ar',720),linear:true},
+  {type:'idle',t0:0,t1:1.6,a:P2('ar',400),face:1},
+  {type:'walk',t0:1.6,t1:5.6,a:P2('ar',400),b:P2('ar',720),linear:true},
   {type:'idle',t0:5.6,t1:7.4,a:P2('ar',720)},
   {type:'idle',t0:7.4,t1:8.4,a:P2('ar',720),cheer:true},           // more lanes!
   {type:'idle',t0:8.4,t1:9.4,a:P2('ar',720)},
@@ -115,8 +118,8 @@ const segs=[
   {type:'hop',t0:12.95,t1:13.5,a:P2('ar',1220),b:P2('te',1290),h:50},  // dodge #3
   {type:'walk',t0:13.5,t1:14.9,a:P2('te',1290),b:P2('te',1450),linear:true},
   {type:'hop',t0:14.9,t1:15.5,a:P2('te',1450),b:P2('ar',1500),h:80},   // dodge #4 (car from behind)
-  {type:'walk',t0:15.5,t1:16.4,a:P2('ar',1500),b:P2('ar',1620),linear:true},
-  {type:'walk',t0:16.4,t1:17.5,a:P2('ar',1620),b:P2('ar',1450),linear:true},  // turns back to keep pace with the rest
+  {type:'walk',t0:15.5,t1:16.4,a:P2('ar',1500),b:P2('ar',1540),linear:true},
+  {type:'walk',t0:16.4,t1:17.5,a:P2('ar',1540),b:P2('ar',1450),linear:true},  // turns back to keep pace with the rest
   {type:'hop',t0:17.5,t1:18.1,a:P2('ar',1450),b:P2('th',1380),h:70},   // dodge #5
   {type:'walk',t0:18.1,t1:19.2,a:P2('th',1380),b:P2('th',1200),linear:true},
   {type:'hop',t0:19.2,t1:20.2,a:P2('th',1200),b:P2('te',1100),h:120},  // dodge #6: two lanes at once
@@ -124,8 +127,8 @@ const segs=[
   // the roads weave: he rides the technology strand as it bends
   {type:'fn',t0:22.6,t1:25.6,f:(t,k)=>{const x=1100+(960-1100)*ease(k);return{x,y:laneY(TE,x,t),face:-1};}},
   {type:'fn',t0:25.6,t1:27.0,f:t=>({x:960,y:laneY(TE,960,Math.min(t,C0)),face:1})},
-  {type:'hop',t0:27.0,t1:29.0,a:[960,laneY(TE,960,C0)],b:[640,470],h:240},   // the floor curls up; he lands where the temple will be
-  {type:'idle',t0:29.0,t1:END,a:[640,470],face:1}];
+  {type:'hop',t0:27.0,t1:29.0,a:[960,laneY(TE,960,C0)],b:VA,h:240},   // the floor curls up; he lands where the temple will be
+  {type:'idle',t0:29.0,t1:END,a:VA,face:1}];
 const at=PX.route(segs);
 // lane occupancy: on a lane while standing on it, and for the first/last .2 s of a hop
 const laneOf=y=>Object.keys(Y).find(k=>Math.abs(Y[k]-y)<2);
@@ -154,14 +157,15 @@ cars.forEach((c,i)=>{
   const sw=t=>{if(c.swerve==null)return 0;const k=(t-c.swerve)/.6;return k<0||k>1?0:Math.sin(Math.PI*k);};
   track(outer,END,t=>{const x=X(c,t),s=sw(t);return{transform:`translate(${x.toFixed(1)}px,${(c.y-26*s).toFixed(1)}px) rotate(${(-6*s*c.dir).toFixed(2)}deg) scale(${c.dir},1)`};});
   c.honks.forEach((h,j)=>{const b=PX.honkBubble(hg,c.kind==='truck'&&j===0?'HONK':'HONK!');
-    track(b,END,t=>{const k=(t-h)/.8;if(k<0||k>1)return{opacity:0,transform:'translate(-400px,0px) scale(1)'};const x=X(c,t)+c.dir*(c.len/2-10),pop=k<.15?.6+.4*k/.15+.15*Math.sin(k/.15*Math.PI):1;
+    track(b,END,t=>{const k=(t-h)/.8;if(k<0||k>1)return{opacity:0,transform:'translate(-400px,0px) scale(1)'};const x=clamp(X(c,t)+c.dir*(c.len/2-10),288+70,1632-70),pop=  // bubbles stay in the safe zone
+      k<.15?.6+.4*k/.15+.15*Math.sin(k/.15*Math.PI):1;
       return{opacity:k>.8?+((1-k)/.2).toFixed(3):1,transform:`translate(${x.toFixed(1)}px,${(c.y-62-26*sw(t)).toFixed(1)}px) scale(${pop.toFixed(3)})`};});
     SFX.push({t:+h.toFixed(2),kind:'honk',pitch:c.kind==='truck'?.8:1});});
 });
 // ── Beat 6: the venn-sprite sequence, verbatim, starting at T0 ──
-PX.vennScene(document.getElementById('venn'),{END,T0,curl:true,handoff:true});
+PX.vennScene(document.getElementById('venn'),{END,T0,curl:true,handoff:true,big:true});
 const hero=PX.sprite(document.getElementById('hero'),{withBeard:false});
-PX.drive(hero,END,at,SC);
+PX.drive(hero,END,at,t=>SC*(1-(1-VS)*ease(clamp((t-27)/2,0,1))));  // shrinks to the venn hero's size during the curl hop
 track(hero.wrap,END,t=>({opacity:t<0.3?0:t<0.9?+((t-.3)/.6).toFixed(3):t<T0+2.6?1:0}));  // hands over to the venn hero at the temple
 window.MOTION_END=END; window.MOTION_SFX=SFX.sort((a,b)=>a.t-b.t);
 })();

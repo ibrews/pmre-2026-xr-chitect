@@ -136,7 +136,15 @@ frames.forEach(f=>{const base=f.getAttribute('src').split('?')[0];f.dataset.moti
 function arm(sl){if(!sl)return;sl.querySelectorAll('iframe[data-motion-base]').forEach(f=>{f.setAttribute('src',f.dataset.motionBase+(reduced?'?static':'?play='+Date.now()));});}
 function rest(sl){if(!sl)return;sl.querySelectorAll('iframe[data-motion-base]').forEach(f=>{f.setAttribute('src',f.dataset.motionBase+'?static');});}
 let last=null;new MutationObserver(()=>{const a=document.querySelector('#deck .slide.active');if(a!==last){rest(last);arm(a);last=a;}}).observe(document.getElementById('deck'),{subtree:true,attributes:true,attributeFilter:['class']});
-const a0=document.querySelector('#deck .slide.active');if(a0){arm(a0);last=a0;}})();
+const a0=document.querySelector('#deck .slide.active');if(a0){arm(a0);last=a0;}
+// Sound cues: a motion graphic on a live play posts {sdMotionSfx:[{t,kind,pitch}]} (lane-traffic's honks). They are scheduled on the
+// deck's own audio clock (sfxCtx), so goTo() -> _killAllSfx() silences the rest when you leave the slide; ?reduced never plays them.
+addEventListener('message',e=>{const c=e.data&&e.data.sdMotionSfx;if(!Array.isArray(c)||reduced)return;
+  const f=[...document.querySelectorAll('#deck .slide.active iframe')].find(x=>x.contentWindow===e.source);if(!f)return;
+  try{const ctx=sfxCtx(),t0=ctx.currentTime+.05;c.forEach(q=>{if(q.kind!=='honk')return;const p=q.pitch||1,s=t0+q.t,g=ctx.createGain(),lp=ctx.createBiquadFilter();
+    lp.type='lowpass';lp.frequency.value=2200;lp.connect(g);g.connect(ctx.destination);g.gain.setValueAtTime(0,s);g.gain.linearRampToValueAtTime(.09,s+.012);g.gain.setValueAtTime(.09,s+.23);g.gain.linearRampToValueAtTime(0,s+.28);
+    [350,440].forEach(f0=>{const o=ctx.createOscillator();o.type='square';o.frequency.value=f0*p;o.connect(lp);o.start(s);o.stop(s+.3);});});}catch(err){}});
+})();
 </script>
 """
 EXTRA = EXTRA.replace("@@INTRO_CSS@@", (ROOT / "talk" / "intro.css").read_text(encoding="utf-8").strip())
