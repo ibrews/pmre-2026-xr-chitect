@@ -128,7 +128,7 @@ def add_svg(slide, sv, prs):
     x, y, w, h = sv["box"]
     pic = slide.shapes.add_picture(sv["png"], emu(x), emu(y), emu(w), emu(h))
     svg_bytes = Path(sv["svg"]).read_bytes()
-    part = Part(PackURI(f"/ppt/media/venue-svg-{abs(hash(svg_bytes)) % 10**10}.svg"), "image/svg+xml", prs.part.package, svg_bytes)
+    part = Part(prs.part.package.next_partname("/ppt/media/venue-svg-%d.svg"), "image/svg+xml", prs.part.package, svg_bytes)
     rid = slide.part.relate_to(part, RT_IMAGE)
     blip = pic._element.find(".//a:blip", NS)
     ext_lst = etree.SubElement(blip, f"{{{NS['a']}}}extLst")
