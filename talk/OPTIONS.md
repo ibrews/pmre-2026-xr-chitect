@@ -36,6 +36,7 @@ Every option below is built into the deck. Press **O** in the deck for the picke
 | Length `cut` | `full` *(default)* | About 69 min (talk/REHEARSAL.md, 2026-10-27, with the 2025 CAPTURE chapter). |
 | | `30` | About 57 min. Over the venue cap: cut more before using it as-is. |
 | | `20` | About 35:30. The 2025 chapter keeps only its chapter card and `camera-toy` here. |
+| | `20t` | 34:30 with default picks: cut20 minus the 60s `scale` illustration after the 2023 chapter. With 15 min Q&A: 49:30. Other picks can change the estimate. |
 | Look `theme` | `noir` | The original Spatial Deck look. `node tools/lint_look.mjs --query theme=noir` flags 7 generic-AI-design tells in it. |
 | | `sheet` | Drawing set: paper, ink, hairlines, a title block with the sheet number, redline accent. Motion graphics are recolored to ink on paper. |
 | | `folio` | Editorial: serif on black with one vermilion spot color, running head and folio. Descends from Alex's NXT BLD 2020/2021 decks. |

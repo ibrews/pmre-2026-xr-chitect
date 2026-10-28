@@ -90,7 +90,7 @@ def main():
     pick = {g: o["default"] for g, o in T.get("options", {}).items()}
     for kv in a.pick:
         g, c = kv.split("=", 1); assert g in pick and c in T["options"][g]["choices"], f"unknown option {kv}"; pick[g] = c
-    cut = None if pick.get("cut", "full") == "full" else int(pick["cut"])
+    cut = None if pick.get("cut", "full") == "full" else (19 if pick["cut"] == "20t" else int(pick["cut"]))
     def shown(c):
         if c.get("opt"):
             for cond in c["opt"].split("&"):  # "a:x&b:y" = every condition must match

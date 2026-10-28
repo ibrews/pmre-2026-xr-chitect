@@ -1,7 +1,7 @@
 /* PMRE talk options runtime — lets Alex choose between alternates live instead of us guessing.
    Picks come from URL params (?open=question&cut=30&theme=sheet …), else localStorage 'pmre-opts', else TALK.options defaults.
-   Slides tagged opt:"group:choice" (or "g1:c1&g2:c2", all must match) are hidden unless that choice is picked; keep:20|30 marks slides that survive the
-   20/30-minute cuts. Press O for the picker overlay. applyTalkOptions() runs after slides are built, before navigation
+   Slides tagged opt:"group:choice" (or "g1:c1&g2:c2", all must match) are hidden unless that choice is picked; keep:19|20|30 marks slides that survive the
+   trimmed-short/20/30-minute cuts. Press O for the picker overlay. applyTalkOptions() runs after slides are built, before navigation
    is wired, so print/shot exports honor the picks too. */
 // ?print / ?shot show each motion module's rendered poster in the picked look (tools/render_motion.mjs), not a live frame.
 window.SD_POSTERS='media/motion/mp4/{motion}-poster{.look}.png';
@@ -14,7 +14,7 @@ function applyTalkOptions(){
   const pick=talkPicks();window.TALK_PICKS=pick;
   document.body.dataset.talkTheme=pick.theme;document.body.dataset.look=pick.theme;document.body.dataset.chrome=pick.chrome;  // styles/ looks + chrome density, applied by tools/apply_look.py
   if(typeof applySafeZone==='function')applySafeZone(pick);  // talk/safezone.js: ?safe=70 venue safe zone + --safe-inset-x/y vars
-  const cutN=pick.cut==='full'?Infinity:+pick.cut;
+  const cutN=pick.cut==='full'?Infinity:pick.cut==='20t'?19:+pick.cut;
   // walk built slides in SECTIONS order
   let si=-1,ci=0;
   allSlides.forEach(sl=>{
