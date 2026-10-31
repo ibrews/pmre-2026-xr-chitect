@@ -57,3 +57,5 @@ Actual project assets, no generated illustrations. Source repository snapshots: 
 | media/pmre/xmas-carol-camera-angles.jpg | https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/xmas-carol-camera-angles.jpg | Carol camera views: Agile Lens |
 
 Floor Tour identity was checked visually: floor-26-vr.png is the actual VR view. Source comments claiming reversed names were stale. SplatDiorama is build77simulator screenshot; Rome clips are web-rendered scans, and UOXR is simulator footage. Working cut is the actual class demonstration. Preserve these distinctions. DBOX artwork visibly credits Rendering: DBOX for Austin Capital Partners; capture/production partner details remain in notes.
+
+Story-v2 Aspen static poster: `aspen-poster.jpg`, extracted at7seconds from existing `media/pmre/fs-v2/holo-aspen.mp4` (Video: Agile Lens). Existing source unchanged. Exporter uses the same selected timestamp.

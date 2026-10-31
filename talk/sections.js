@@ -777,6 +777,8 @@ const SECTIONS = [
         "props": {
           "title": "Then, Aspen",
           "src": "media/pmre/fs-v2/holo-aspen.mp4",
+          "poster": "media/story/aspen-poster.jpg",
+          "posterTime": 7,
           "credit": "Video: Agile Lens",
           "alt": "Then, Aspen",
           "mode": "content",

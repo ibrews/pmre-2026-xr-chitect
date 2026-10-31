@@ -66,3 +66,9 @@ For admitted off-host capture, use `venue_capture.mjs` on that host, copy its wo
 ## Credits
 
 **Alex Coulombe Presents.** Built on [Spatial Deck](https://github.com/ibrews/spatial-deck), with the existing house look and venue pipeline. Actual media comes from the HarvardXR, NXT BLD, MIA and VR Cinematics decks, supplied PMRE assets, and Alex’s UOXR/SplatDiorama artifacts. [All selected sources and credits](media/story/PROVENANCE.md); [original sources](media/pmre/PROVENANCE.md).
+
+## Story v2 venue polish
+
+On `story/chapters-v1`, story media fills the safe zone as far as its native aspect permits. Headlines overlay a dark lower band; chapter lessons and one-line takeaways use large fitted display type. The shared layout sizes the element to the actual media edge, with a 90% brightness treatment for the dark room. Images are never stretched or cropped. Aspen uses a real frame at seven seconds as its static poster. Separate AV exports retain the same overlay chrome; its Aspen poster uses that same selected time, while other clips use the final frame.
+
+Preview URLs and the `2026-11-01-story-v2` package receipt are recorded in `talk/STORY-V2.md`. X hides/restores a slide locally; Shift+X enables review navigation through hidden slides on both the story branch and main.

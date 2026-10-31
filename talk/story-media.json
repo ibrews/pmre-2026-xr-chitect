@@ -306,5 +306,11 @@
     "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/xmas-carol-camera-angles.jpg",
     "credit": "Carol camera views: Agile Lens",
     "sha256": "352c308968e77082483f74fe26204335ba1576fda776bf0998e14900da9a7626"
+  },
+  {
+    "path": "media/story/aspen-poster.jpg",
+    "source": "media/pmre/fs-v2/holo-aspen.mp4 at7seconds",
+    "credit": "Video: Agile Lens",
+    "sha256": "9325a3306b728666a828a3dc638549523a11e0a22ff52336fee0a3fd7ea93fb7"
   }
 ]
