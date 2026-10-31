@@ -2,7 +2,7 @@
 
 Preview source: branch`story/chapters-v1` of[ibrews/pmre-2026-xr-chitect](https://github.com/ibrews/pmre-2026-xr-chitect/tree/story/chapters-v1). Main contains only the separately authorized hide feature9d0a441; the story has not been merged to main.
 
-After fetching this branch, serve with`python3 tools/serve_deck.py --port 8775` and open`http://127.0.0.1:8775/?cut=20t&safe=70&theme=house`. Hosted preview: https://raw.githack.com/ibrews/pmre-2026-xr-chitect/08eb8e9/index.html?cut=20t&safe=70&theme=house . This immutable source matches the branch’s story implementation commit08eb8e9. On the host’s first-visit external-content notice, click **Open the page**.
+After fetching this branch, serve with`python3 tools/serve_deck.py --port 8775` and open`http://127.0.0.1:8775/?cut=20t&safe=70&theme=house`. Hosted preview: https://raw.githack.com/ibrews/pmre-2026-xr-chitect/697fa38/index.html?cut=20t&safe=70&theme=house . This immutable source matches the branch’s story implementation commit697fa38. On the host’s first-visit external-content notice, click **Open the page**.
 
 Eight lessons: Ignore the lane; Your skills travel; Teach to learn; Work at human scale; Make it repeatable; Capture impossible places; Share your niche; Find your weird intersection. Each has three O-picker expressions and a repeatable takeaway. The closing takeaway includes the contact QR.
 
