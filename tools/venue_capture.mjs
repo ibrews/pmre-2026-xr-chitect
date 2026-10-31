@@ -333,6 +333,7 @@ export async function capture(opts) {
       console.log(`  ${NN}${letter} deck#${sl.index} step ${k}/${sl.steps} ${st.kind}${st.video ? ' ' + st.video.file + ' ' + st.video.duration.toFixed(1) + 's (' + st.video.source + (st.video.cached ? ', cached' : '') + ')' : ''}  text ${st.texts.filter(t => t.native).length}/${st.texts.length} img ${st.images.filter(t => t.native).length}/${st.images.length} svg ${st.svgs.filter(t => t.native).length}/${st.svgs.length}  ${sl.title.slice(0, 40)}`);
     }
   }
+  fs.writeFileSync(path.join(work, 'capture.partial.json'), JSON.stringify(out,null,1));
   for (const j of jobs) {
     await loadGuard();
     const v = await renderIframeMotion(page, j.fr, j.st, opts, cache);
@@ -418,8 +419,15 @@ async function renderIframeMotion(p, fr, st, opts, cache) {
   // Safe-zone audit of the text baked into the video: every visible text box at t = 0, 0.25, 0.5 ... END, mapped
   // through the same scale/offset the composite uses (motion page 1920x1080 -> the slide's safe-zone rect).
   const audit = await auditMotionText(p, [x, y, w, h]);
-  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'vxm-')); const frames = Math.ceil(end * opts.fps);
-  for (let i = 0; i <= frames; i++) { await p.evaluate(s => window.seek(s), Math.min(i / opts.fps, end)); await p.screenshot({ path: path.join(tmp, String(i).padStart(5, '0') + '.png') }); }
+  fs.mkdirSync(cdir,{recursive:true});
+  const progressF=path.join(cdir,'render-frames.json'),frames=Math.ceil(end*opts.fps),sourceHash=sha(fs.readFileSync(srcPath));let saved=null;
+  try{saved=JSON.parse(fs.readFileSync(progressF));}catch(_){}
+  const reuse=saved?.complete&&saved.frames===frames&&saved.sourceHash===sourceHash&&fs.existsSync(saved.tmp)&&fs.readdirSync(saved.tmp).filter(f=>f.endsWith('.png')).length===frames+1;
+  const tmp=reuse?saved.tmp:fs.mkdtempSync(path.join(os.tmpdir(),'vxm-'));
+  if(reuse)console.log('  reusing completed source frames '+tmp);
+  else{for(let i=0;i<=frames;i++){await p.evaluate(s=>window.seek(s),Math.min(i/opts.fps,end));await p.screenshot({path:path.join(tmp,String(i).padStart(5,'0')+'.png')});}
+    fs.writeFileSync(progressF,JSON.stringify({complete:true,tmp,frames,sourceHash}));}
+
   // Sound cues (window.MOTION_SFX = [{t, kind:'honk', pitch}]): same synthesized horn as tools/render_motion.mjs
   const sfx = await p.evaluate(() => window.MOTION_SFX || null); const HOLD = 1;
   let aud = null;
@@ -432,7 +440,7 @@ async function renderIframeMotion(p, fr, st, opts, cache) {
   }
   fs.mkdirSync(cdir, { recursive: true });
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-threads', '4', '-loop', '1', '-framerate', String(opts.fps), '-i', st.bg, '-framerate', String(opts.fps), '-i', path.join(tmp, '%05d.png'), ...(aud ? ['-i', aud] : []),
-    '-filter_complex', `[1:v]colorchannelmixer=rr=${v.brightness||1}:gg=${v.brightness||1}:bb=${v.brightness||1},scale=${w}:${h}:flags=lanczos[f];[0:v][f]overlay=${x}:${y}:shortest=1,tpad=stop_mode=clone:stop_duration=${HOLD},format=yuv420p[v]`, '-map', '[v]', ...(aud ? ['-map', '2:a', '-c:a', 'copy'] : []),
+    '-filter_complex', `[1:v]scale=${w}:${h}:flags=lanczos[f];[0:v][f]overlay=${x}:${y}:shortest=1,tpad=stop_mode=clone:stop_duration=${HOLD},format=yuv420p[v]`, '-map', '[v]', ...(aud ? ['-map', '2:a', '-c:a', 'copy'] : []),
     '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-r', String(opts.fps), ...(aud ? ['-shortest'] : []), '-movflags', '+faststart', mp4]);
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-threads', '4', '-sseof', '-0.2', '-i', mp4, '-update', '1', '-frames:v', '1', poster]);  // = the held final frame
   fs.rmSync(tmp, { recursive: true, force: true });
