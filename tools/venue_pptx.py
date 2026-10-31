@@ -30,12 +30,9 @@ CODE = re.compile(r"\s*\[[A-Z][A-Z0-9 #:/.,_+&-]*(?:\s[^\]]{0,80})?\]")
 INTERNAL = re.compile(r"(MP4|media/|\.html|\.png|Options\s*→|ALTERNATE|Reduced-motion|reduced-motion|offline|KB |ledger|PROVENANCE|https?://|youtu\.be|\bsee [a-z/]+\.md)", re.I)
 
 def stage_notes(raw, cap=700):
-    """Keep ⏱ timing, spoken lines (quoted text in ✅/✎ paragraphs) and short cues; drop ❓ questions, source codes,
-    provenance and long background paragraphs."""
-    import html
-    # The presenter asked that removed slide explanations, sources and uncertainty survive in the actual PPTX notes.
-    # Preserve the complete text rather than truncating it for the wedge monitors.
-    return re.sub(r'<[^>]+>', '', html.unescape(raw or '')).strip()
+    """Preserve complete source notes, including literal markup/placeholders in archived slide copy."""
+    # Notes are plain text, not HTML. Stripping tags silently deleted archived <name> fields and changed source copy.
+    return raw or ""
 
 def fmt_dur(s):
     s = int(round(s)); return f"{s // 60:02d}:{s % 60:02d}"

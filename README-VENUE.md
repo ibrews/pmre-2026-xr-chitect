@@ -1,17 +1,21 @@
-# PMRE 2026 venue delivery
+# PMRE story-v1 venue delivery
 
-The primary deliverable is the **cut20t PowerPoint** plus its separate `videos/` folder and `VIDEO-CUES.md`. Estimated talk: **34:10**; with 15 minutes Q&A: **49:10**. Rehearse the estimate before presenting.
+Submit the **cut20t PowerPoint**, separate`videos/` folder and`VIDEO-CUES.md`. The authored talk budget is **29:10**, or **44:10 with15minutes Q&A**. Cut30 is **38:00**, expanded reference. Cut labels are historical, not duration claims. Rehearsal is still required.
 
-The default web URL now selects `cut=20t`, `theme=house`, `safe=70`; the explicit venue URL is `https://ibrews.github.io/pmre-2026-xr-chitect/?cut=20t&safe=70&theme=house`. Existing browser-saved options can override defaults; use the explicit URL on stage. The 1920×1080 frame holds type and key media inside the centered 1344×756 region. The decorative journey minimap remains in the physical corner.
+This revision is on`story/chapters-v1`; main retains the round4 story plus X/Shift+X controls. See [Story v1 preview](talk/STORY-V1.md).
 
-The `30` package is the expanded **72:00 rehearsal/reference cut**, not an eligible submission: it exceeds the 35-minute talk budget. Cut20 is 46:40; full is 82:45. Those names are historical cut labels, not their durations. Submit cut20t. Nothing was uploaded or submitted by this task.
+The deck uses1920×1080 and fits all type/key media into the centered1344×756 safe region (`?cut=20t&safe=70&theme=house`). The quiet chapter label and journey minimap are also inside that region. Content slides have one real image/video and one line of at most8words. The six-word DBOX credit is the sole line on its two slides. Other media credits and source qualifications are in speaker notes and [provenance](media/story/PROVENANCE.md).
 
-`ports=on` and `journeyv2=on` are defaults. `ports=off` retains the earlier project alternatives; `journeyv2=off` retains the earlier timeline/thesis alternative. `fs=legacy` retains the original Four Seasons chapter. Default new port tags are deliberate: the thesis, Late Show, Unreal bet, Waldorf, Floor Tour, community, Rome and niche appear in 20t. The Shed, Statue/free work, Intel, Geffen, additional Four Seasons/DBOX/production clips, Royal Caribbean, Blueprint, mapped wrap-up and full timeline are in `30` and full. Royal Caribbean immediately precedes the Perfect Day Mexico counterpoint.
+The eight O-picker groups each replace their chapter’s opening card. They preserve the current cut and timing. X/Shift+X choices are local rehearsal state, ignored by print/shot and venue captures; permanent source cuts require an explicit request.
 
-To fit 20t, the expanded career option skips the avatar intro, repeated teaching invitation, camera toy, taste explanation, frame-to-room transition, YOU setup card, and final two-minute thesis summary. The previous v2 budget also skips ADVICE, TASTE and the other marked repeated setup cards; the new 2010 graduation card is retained. No source video hold was shortened. All removed slide text is retained in speaker notes; `talk/WORD-COUNTS.md` reports every slide record before/after.
+Venue export uses native editable text/pictures over a raster background, complete separate video files, final-frame posters and full untruncated notes. Source-ratio media remains contained. Aspen’s full63.62second clip retains its audio; the55second Blueprint seat-demo hold includes its49.57second source. The Floor Tour plan demo is darkened to65% and its still to55% for the dark room; original bytes remain unchanged. Aspen stays at94% brightness.
 
-The Rome clip is a web-rendered Colosseum splat flythrough, not headset video; the hotel is a 10-second web-rendered flythrough of the whole-scene LOD dataset. See `media/pmre/round2/PROVENANCE.md` and each imported module's original `source.json` and `notes.txt`.
+Rome flythroughs are web-rendered scan footage, SplatDiorama is a build77simulator screenshot, and UOXR is simulator footage. The Carol working cut/replay are actual source demonstrations. Preserve these identities and DBOX/Pureblink/Agile Lens role credits.
 
-The large white CAD panel in the Shed video and the Intel article screenshot use a 35% dark overlay in venue looks; the original source media is retained byte-for-byte. This avoids flashing a light panel in the dark room. The separate Shed video cue applies the same treatment.
+Build with:
 
-Blueprint Immersive uses the source slide's original automatic belt (zero source substeps); the reusable module's seven inspection clicks are disabled in this talk. The venue cue runs the full belt with deterministic video seeks. The mapped wrap-up has a separate Windows D3D11 capture so its voxel reveal is preserved. The Aspen video uses 94% brightness to keep its peak mean luminance below 0.35; its length and audio remain intact.
+```bash
+node tools/export_venue_package.mjs --cuts 20t,30 --label 2026-11-01-story-v1 --no-keynote
+```
+
+For off-host capture, run`venue_capture.mjs --work <label>-cut20t --cache DIR --pick cut=20t`, then30. Transfer work/cache and pass`--captured DIR --cache DIR` to the package command. Run the exporter’s negative self-tests, inspect actual PowerPoint imports/PDFs, and retain`VENUE-COMPLIANCE.md` with final evidence. Keynote is skipped under the existing documented Mac limitation. No organizer submission is part of this work.

@@ -28,3 +28,6 @@ media/*
 !media/journey/
 tools/imported-*.json
 tools/palette-*.css
+
+# Curated story-v1 real project media, with talk/story-media.json provenance
+!media/story/

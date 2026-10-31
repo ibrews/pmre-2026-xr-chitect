@@ -21,7 +21,7 @@ const J = (() => {
   return { exp, still: exp || q.has('static') || q.has('reduced') || rm,
     W: 200, H: 54, LANE_Y: 40, FORK: 24, MERGE: 160, A: 9, P: 68,
     END_X: 196,
-    HOP: { '2013': 'headset', '2020': 'beard' },  // chapter year → costume change earned on that chapter card
+    HOP: { '2010': 'headset', '2020': 'beard' },  // chapter year → costume change earned on that chapter card
     S: 1 / 3 };                           // walker scale in the 200-unit map: ~24 units; 0.5px per sprite pixel at 300px wide
 })();
 const jE = (tag, a = {}) => { const e = document.createElementNS('http://www.w3.org/2000/svg', tag); for (const k in a) e.setAttribute(k, a[k]); return e; };
@@ -70,7 +70,7 @@ function jAvatar(parent) {
 }
 // Costume for a chapter index (-1 = before the talk starts, 99 = after the last chapter).
 function jIdx(year) { const i = SECTIONS.findIndex(s => String(s.year) === year); return i < 0 ? Infinity : i; }
-function jCostume(si) { const h = jIdx('2013'), b = jIdx('2020'); return { headset: si >= h && si < b, beard: si >= b }; }
+function jCostume(si) { const h = jIdx('2010'), b = jIdx('2020'); return { headset: si >= h && si < b, beard: si >= b }; }
 function jHop(si) { return J.HOP[String(SECTIONS[si]?.year)] || null; }
 // Stops: the lane stop, the braided chapters spaced evenly, the merge (second-to-last chapter) and the last chapter on the road.
 function jStops() { if (J._stops) return J._stops; const n = SECTIONS.length, mid = n - 3, x = [10];

@@ -17,7 +17,7 @@ S.forEach(sec => {
   add('lesson', `${sec.year} — ${sec.lesson.title}`, sec.lesson.notes, 19, sec.lesson.opt, sec.lesson.shortBudget, sec.lesson.round2Budget);
   sec.cases.forEach(c => { const t = c.motion ? 'motion: ' + c.motion : (c.title || c.label || c.bigText || (c.layout==='placed'?'Virtual camera angles':'Untitled case')); add((c.layout === 'full' || c.use) && c.motion ? 'motion' : (c.use ? c.use.split('/')[1] : (c.layout || 'case')), t, c.notes, c.keep, c.opt, c.shortBudget, c.round2Budget); });
 });
-add('bonus', B.title, B.notes, 19, B.opt); add('map', 'The Journey, Mapped', T.mapNotes, undefined); add('close', T.closeTitle, T.closeNotes, 19);
+if(!S.every(s=>s.storyChapter)){add('bonus', B.title, B.notes, 19, B.opt);add('map', 'The Journey, Mapped', T.mapNotes, undefined);} add('close', T.closeTitle, T.closeNotes, 19);
 const fmt = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
 const budgetSkip=(r,n)=>n===19&&((def.fs==='v2'&&def.fsbudget==='tight'&&r.shortBudget)||(def.ports==='on'&&r.round2Budget));
 const tot = n => rows.filter(r => (r.keep || 99) <= n&&!budgetSkip(r,n)).reduce((a, r) => a + r.s, 0);

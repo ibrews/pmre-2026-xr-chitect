@@ -1,0 +1,290 @@
+[
+  {
+    "path": "media/story/floor-tour-screen.png",
+    "source": "ibrews/nxtbld-2026-productizing-xr media/nxtbld/floor-26-vr.png",
+    "credit": "Product media: Agile Lens",
+    "sha256": "ff55245aac03988e47c1858615cad2cc52c5ef1a5805aadbb4629569d4fd2102"
+  },
+  {
+    "path": "media/story/floor-tour-demo.mp4",
+    "source": "/Users/alex/git/nxtbld-2026-productizing-xr/media/nxtbld/floor-30-b.mp4",
+    "credit": "Product demo: Agile Lens",
+    "sha256": "7cc6a68c551ddeb0b787175b07a45d4b1099a4c633b9e069adb99ce35fa310e9"
+  },
+  {
+    "path": "media/story/blueprint-seat-demo.mp4",
+    "source": "/Users/alex/git/nxtbld-2026-productizing-xr/media/nxtbld/bp-p62.mp4",
+    "credit": "Product demo: Agile Lens",
+    "sha256": "0050a1acd41010e53a03561018d741bcf718364a153b9635ad76951b4bd31799"
+  },
+  {
+    "path": "media/story/blueprint-design-demo.mp4",
+    "source": "/Users/alex/git/nxtbld-2026-productizing-xr/media/nxtbld/bp-p64.mp4",
+    "credit": "Product demo: Agile Lens",
+    "sha256": "6ace5651bb1ba5ed94482cd1952363a6db2ecc10c45b2c820bc0de0ae6658a7a"
+  },
+  {
+    "path": "media/story/blueprint-screen.png",
+    "source": "/Users/alex/git/nxtbld-2026-productizing-xr/media/nxtbld/bp-p63-still.png",
+    "credit": "Product media: Agile Lens",
+    "sha256": "ac8b43b3b94e5ecf94439953324f6560b457278ea750c1f871e3187a9df8c8ce"
+  },
+  {
+    "path": "media/story/uoxr-simulator.mp4",
+    "source": "/Users/alex/GH/alexcoulombepresents/public/trailers/uoxr-in-15-seconds.mp4",
+    "credit": "UOXR: Alex Coulombe Presents · Simulator footage",
+    "sha256": "5e114b7ce3dc415d81c46eec65f78e1d21f8d68eed0f9e76de48d07e7fbf213a"
+  },
+  {
+    "path": "media/story/uoxr-workshop.jpg",
+    "source": "/Users/alex/GH/alexcoulombepresents/public/lab/uoxr/workshop-preview.jpg",
+    "credit": "UOXR: Alex Coulombe Presents · Simulator screen",
+    "sha256": "67cdb9351da0cb037879e560dc4e0c8f1ecc7f0d71223f166207def0109a4ab0"
+  },
+  {
+    "path": "media/story/carol-working-cut.mp4",
+    "source": "/Users/alex/GH/vr-cinematics-ue58-deck/media/class/edit_final.mp4",
+    "credit": "Working cut: Alex Coulombe Presents",
+    "sha256": "d980e6090aa5d2981a28d1da15355fcdd2a15b5603338f3a76fd778b0cae2fe8"
+  },
+  {
+    "path": "media/story/carol-cameras.mp4",
+    "source": "/Users/alex/GH/vr-cinematics-ue58-deck/media/class/all_cameras.mp4",
+    "credit": "Camera coverage: Alex Coulombe Presents",
+    "sha256": "748f5f7c9e0d52ab0c7663337e58780eb71371ba666b7c61564f307169e2d1b9"
+  },
+  {
+    "path": "media/story/carol-replay.mp4",
+    "source": "/Users/alex/GH/mia-2026-collective-pitch/media/video/carol-replay-marley.mp4",
+    "credit": "Replay: Agile Lens / Yu-Jun Yeh",
+    "sha256": "c42f67db3e50786204ca7b463065d0d55c45c6bf25a4710cbf5a29ba63457b4e"
+  },
+  {
+    "path": "media/story/carol-show.mp4",
+    "source": "/Users/alex/GH/mia-2026-collective-pitch/media/video/carol-trailer-ghosts.mp4",
+    "credit": "A Christmas Carol VR: Agile Lens",
+    "sha256": "e0ba5e0ddbe8487a0529c4a1e4e734de5fc9a21d338f857a0d94cbaa2511289e"
+  },
+  {
+    "path": "media/story/holodeck-build.mp4",
+    "source": "/Users/alex/GH/mia-2026-collective-pitch/media/video/fs-holodeck-build.mp4",
+    "credit": "Video: Agile Lens",
+    "sha256": "3889bb71292e2139fec406c8bc4845e571f0aaa5fef4aa4cb15219c378743a56"
+  },
+  {
+    "path": "media/story/splatdiorama-rome.png",
+    "source": "/Users/alex/Archives/splatdiorama-lcc2-2026-10/evidence77/colosseum-lcc2-400k-twolayer.png",
+    "credit": "SplatDiorama build77 · Simulator screenshot",
+    "sha256": "7c2f11c9b1ae18e2ada30b135724f0e39e97cc9d8216348b86d7c920326473af"
+  },
+  {
+    "path": "media/story/four-seasons-walkthrough.mp4",
+    "source": "/Users/alex/GH/mia-2026-collective-pitch/media/video/fsla-in-vr.mp4",
+    "credit": "Rendering: DBOX for Austin Capital Partners; in-headset capture Agile Lens, with DBOX and Pureblink",
+    "sha256": "6a35b715d3ddebeceb00f921b793f2da8dd0ea79425c93681fe71d8f26deb381"
+  },
+  {
+    "path": "media/pmre/pre-fda-equus-syracuse-portfolio.png",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/pre-fda-equus-syracuse-portfolio.png",
+    "credit": "Chapter background: same original source attribution",
+    "sha256": "9f7b6482d4e1a8919b82c9d1f87b7926b6f8a28d81f47893379b32dd88714313"
+  },
+  {
+    "path": "media/pmre/round4/thesis-earlyatrium.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/round4/thesis-earlyatrium.jpg",
+    "credit": "Chapter background: same original source attribution",
+    "sha256": "d9d72f68ebda569b1463b9c929d9993251faf49e0fccc5d7ea598d5a8f86f3f9"
+  },
+  {
+    "path": "media/pmre/pre-fda-connective-corridor-2008.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/pre-fda-connective-corridor-2008.jpg",
+    "credit": "Student work: Alex Coulombe",
+    "sha256": "2393265616262f73c617829c7eaaaaab2c5be15e264bf0029abb81648a473b32"
+  },
+  {
+    "path": "media/pmre/round4/zgf-nyu-lobby.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/round4/zgf-nyu-lobby.jpg",
+    "credit": "Chapter background: same original source attribution",
+    "sha256": "bd746c4144eaab4ef85035ba085fe5a7f8daf71fbcc91d20ead2ec59d5e113c8"
+  },
+  {
+    "path": "media/pmre/fda-dk1-office-demo.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fda-dk1-office-demo.jpg",
+    "credit": "Chapter background: same original source attribution",
+    "sha256": "fcef4bb5a0ecd19e13fd27a55a95a2323af4c2b17a2cecbb422a66476e6e39c7"
+  },
+  {
+    "path": "media/pmre/fda-sightline-unity-capture-macbeth-folder.mp4",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fda-sightline-unity-capture-macbeth-folder.mp4",
+    "credit": "Capture: Alex Coulombe / Fisher Dachs Associates",
+    "sha256": "2bd84627665489e54cf3ee3843e39d463af5d725c2b273a881eaa0fa7f775544"
+  },
+  {
+    "path": "media/pmre/fda-macbeth-armory-vr-demo.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fda-macbeth-armory-vr-demo.jpg",
+    "credit": "Photo: Agile Lens / Fisher Dachs Associates",
+    "sha256": "6fff39a475375511f72acc8c12c0a53aee66248beb69bccfe4b2d286901e7350"
+  },
+  {
+    "path": "media/pmre/xmas-carol-01.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/xmas-carol-01.jpg",
+    "credit": "A Christmas Carol VR: Agile Lens",
+    "sha256": "c90e5b49455a101ddd22a5e399dde9eec01e3c0bfdfcf373787b313ee2d8c62b"
+  },
+  {
+    "path": "media/pmre/fda-shed-unity-axon.png",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fda-shed-unity-axon.png",
+    "credit": "Alex Coulombe / Fisher Dachs Associates",
+    "sha256": "1f974dae76f6c3d030f7eaac2307e46509e0b0cc122db2b99ef040ee1591228b"
+  },
+  {
+    "path": "media/pmre/fda-ed-sullivan-vr-capture.mp4",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fda-ed-sullivan-vr-capture.mp4",
+    "credit": "Alex Coulombe / Fisher Dachs Associates",
+    "sha256": "e8158a7a242979da190ad643c3ad01d8543806963addc9c97bded5343abcc90e"
+  },
+  {
+    "path": "media/pmre/GoldAuthorized.png",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/GoldAuthorized.png",
+    "credit": "Chapter background: same original source attribution",
+    "sha256": "d60c50e93e12da5b9a6be1b24354a50bc1a94fde750e9f898893b46ecd07569c"
+  },
+  {
+    "path": "media/pmre/fda-geffen-hall-vr-onsite.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fda-geffen-hall-vr-onsite.jpg",
+    "credit": "Chapter background: same original source attribution",
+    "sha256": "25f4dd2c61e66923c83f0c23c4741aa0a07e31724c4cf0d402f30d957dc14c07"
+  },
+  {
+    "path": "slides/pmre/hxr-waldorf-astoria/media/waldorf-astoria-miami/01.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/slides/pmre/hxr-waldorf-astoria/media/waldorf-astoria-miami/01.jpg",
+    "credit": "Project media: Agile Lens",
+    "sha256": "693bb7a75a1cfe8c978865bab7ecb97fe83424f0c3ba8b7e7cc9e764b437665b"
+  },
+  {
+    "path": "slides/pmre/hxr-david-geffen-hall/media/dgh/DavidGeffenHall02.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/slides/pmre/hxr-david-geffen-hall/media/dgh/DavidGeffenHall02.jpg",
+    "credit": "Project media: Agile Lens / Fisher Dachs Associates",
+    "sha256": "25f4dd2c61e66923c83f0c23c4741aa0a07e31724c4cf0d402f30d957dc14c07"
+  },
+  {
+    "path": "media/pmre/re-holodeck-fiducial-floor.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/re-holodeck-fiducial-floor.jpg",
+    "credit": "Chapter background: same original source attribution",
+    "sha256": "a2c3ca64a13504589b8702d823cf39886df5aac6dea5896693f6636b70078396"
+  },
+  {
+    "path": "media/pmre/fs-v2/lake-05.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fs-v2/lake-05.jpg",
+    "credit": "Chapter background: same original source attribution",
+    "sha256": "dfe1aa4ac768f839b797d9d5c3cd8eb894bf678ca37a8cff924d7fbe6d5a9b0f"
+  },
+  {
+    "path": "media/pmre/fs-v2/mexico-01.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fs-v2/mexico-01.jpg",
+    "credit": "Agile Lens / Royal Caribbean",
+    "sha256": "654d04ba36283c427b54bfb60c1eb6fb5bdb42fed358d4cd4fd8fab146e44885"
+  },
+  {
+    "path": "media/pmre/fs-v2/intro-render.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fs-v2/intro-render.jpg",
+    "credit": "Rendering: DBOX for Austin Capital Partners",
+    "sha256": "ab5a7cfede3478523d4d6e1487181d65cb0082093f94bedce792052288a7b052"
+  },
+  {
+    "path": "media/pmre/re-holodeck-tablet-guests.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/re-holodeck-tablet-guests.jpg",
+    "credit": "Photo: Agile Lens",
+    "sha256": "789347e793a363718f2a624865d56975984f3d0d5aa5a8d91637c6b4310a77d1"
+  },
+  {
+    "path": "media/pmre/fs-v2/lake-06.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fs-v2/lake-06.jpg",
+    "credit": "Photo: Agile Lens",
+    "sha256": "1b69ddc86b94ef98261a057d02906c53a201d14da8779be802de3ccfa6dd3357"
+  },
+  {
+    "path": "media/pmre/re-holodeck-lakeaustin-room.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/re-holodeck-lakeaustin-room.jpg",
+    "credit": "Photo: Agile Lens",
+    "sha256": "1b69ddc86b94ef98261a057d02906c53a201d14da8779be802de3ccfa6dd3357"
+  },
+  {
+    "path": "media/pmre/fs-v2/holo-aspen.mp4",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fs-v2/holo-aspen.mp4",
+    "credit": "Video: Agile Lens",
+    "sha256": "1ae7932aec5cbebca5b06ca193872386f7c4183eadb9eea1484599ead35fb61d"
+  },
+  {
+    "path": "media/pmre/fs-v2/dbox-01.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fs-v2/dbox-01.jpg",
+    "credit": "Photo: Agile Lens",
+    "sha256": "e159305becf0b60acffdbe61484cdde3c3698da2a674732eb27da31721b8ae58"
+  },
+  {
+    "path": "media/pmre/fs-v2/nyc-pop-up.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fs-v2/nyc-pop-up.jpg",
+    "credit": "Photo: Agile Lens",
+    "sha256": "63c7d7bff92b849efd804949a631d03043dfba70b570699bea42009ad228101b"
+  },
+  {
+    "path": "media/pmre/round4/california.png",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/round4/california.png",
+    "credit": "Photo: Agile Lens",
+    "sha256": "6b03ff34bae5750ed63a7a28d0868ff6f1dd72dacefa3209bb74f2ba7bee18d9"
+  },
+  {
+    "path": "media/pmre/fs-v2/aspen-setup.png",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fs-v2/aspen-setup.png",
+    "credit": "Photo: Agile Lens",
+    "sha256": "9da2571a213e293eef10b2f3dc8a754e3d628dbb280c7ea3c2b98643759c14d4"
+  },
+  {
+    "path": "slides/pmre/rome-splats/media/rome-colosseum-poster.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/slides/pmre/rome-splats/media/rome-colosseum-poster.jpg",
+    "credit": "Chapter background: same original source attribution",
+    "sha256": "1f1b95d875bd1293646078cbc93e5823360e68780ad3138db9f0db7b32a9257e"
+  },
+  {
+    "path": "media/pmre/xmas-carol-replay-marley.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/xmas-carol-replay-marley.jpg",
+    "credit": "Chapter background: same original source attribution",
+    "sha256": "05ba68b48609c4d3bc774450f77433c9d40cf7069ddc7ea2cfb289eb4d4cb0e1"
+  },
+  {
+    "path": "slides/pmre/rome-splats/media/rome-colosseum-flythrough-15s-1080p.mp4",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/slides/pmre/rome-splats/media/rome-colosseum-flythrough-15s-1080p.mp4",
+    "credit": "Josette Seitz / Agile Lens · Web-rendered scan",
+    "sha256": "78818fa8096a94d3b5e7740c512fda743da838fa65c7b2a9ebe3ba98ad390724"
+  },
+  {
+    "path": "slides/pmre/rome-splats/media/rome-hotel-flythrough-10s-1080p.mp4",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/slides/pmre/rome-splats/media/rome-hotel-flythrough-10s-1080p.mp4",
+    "credit": "Josette Seitz / Agile Lens · Web-rendered scan",
+    "sha256": "d4033d16bf51d028d6450886aaeed96cb940bfd562831c4bfd7099eed753e580"
+  },
+  {
+    "path": "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg",
+    "credit": "Chapter background: same original source attribution",
+    "sha256": "318da5e6deee7603b29ef7558e90afdc84b0eab35923178e3dd84428bc53e8bb"
+  },
+  {
+    "path": "slides/pmre/hxr-community/media/community/community05_halcyonvr.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/slides/pmre/hxr-community/media/community/community05_halcyonvr.jpg",
+    "credit": "Chapter background: same original source attribution",
+    "sha256": "86b044d9aafb1b1b14ec1f5a27023f9814958d000e43c9c6194d5ae1a17212ea"
+  },
+  {
+    "path": "slides/pmre/hxr-community/media/community/community03_unrealnyc.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/slides/pmre/hxr-community/media/community/community03_unrealnyc.jpg",
+    "credit": "Photo: Agile Lens",
+    "sha256": "82504444a2f42200f88c90f6d7c549656bc2947685f00d81ef62f34bb51f50ac"
+  },
+  {
+    "path": "media/pmre/round4/zgf-nyu-lab.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/round4/zgf-nyu-lab.jpg",
+    "credit": "Alex Coulombe / ZGF Architects",
+    "sha256": "107f244401ddca67776ab79c8fe0f3074ece4bf6163642915629c9d60de031fe"
+  }
+]

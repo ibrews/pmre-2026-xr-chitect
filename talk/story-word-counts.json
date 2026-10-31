@@ -1,0 +1,2328 @@
+{
+  "method": "Rendered text nodes, including required credits, excluding persistent chapter/navigation labels, year/chapter chrome and image pixels. All configured slide records incl alternatives; initial settled base states as baseline convention. Separate current20t column. No OCR of text inside real product screens.",
+  "totals": {
+    "before": 1586,
+    "after": 374,
+    "before20t": 426,
+    "after20t": 243,
+    "nav20t": 282
+  },
+  "chapters": [
+    {
+      "chapter": 1,
+      "lesson": "Ignore the lane",
+      "before": 309,
+      "after": 51,
+      "afterHeadlines": 48,
+      "afterCredits": 0,
+      "before20t": 75,
+      "after20t": 34,
+      "nav20t": 35
+    },
+    {
+      "chapter": 2,
+      "lesson": "Your skills travel",
+      "before": 387,
+      "after": 50,
+      "afterHeadlines": 50,
+      "afterCredits": 0,
+      "before20t": 77,
+      "after20t": 31,
+      "nav20t": 35
+    },
+    {
+      "chapter": 3,
+      "lesson": "Teach to learn",
+      "before": 102,
+      "after": 37,
+      "afterHeadlines": 37,
+      "afterCredits": 0,
+      "before20t": 28,
+      "after20t": 23,
+      "nav20t": 25
+    },
+    {
+      "chapter": 4,
+      "lesson": "Work at human scale",
+      "before": 323,
+      "after": 77,
+      "afterHeadlines": 77,
+      "afterCredits": 0,
+      "before20t": 139,
+      "after20t": 59,
+      "nav20t": 84
+    },
+    {
+      "chapter": 5,
+      "lesson": "Make it repeatable",
+      "before": 16,
+      "after": 40,
+      "afterHeadlines": 40,
+      "afterCredits": 0,
+      "before20t": 8,
+      "after20t": 26,
+      "nav20t": 30
+    },
+    {
+      "chapter": 6,
+      "lesson": "Capture impossible places",
+      "before": 116,
+      "after": 55,
+      "afterHeadlines": 55,
+      "afterCredits": 0,
+      "before20t": 33,
+      "after20t": 35,
+      "nav20t": 35
+    },
+    {
+      "chapter": 7,
+      "lesson": "Share your niche",
+      "before": 16,
+      "after": 35,
+      "afterHeadlines": 35,
+      "afterCredits": 0,
+      "before20t": 16,
+      "after20t": 20,
+      "nav20t": 20
+    },
+    {
+      "chapter": 8,
+      "lesson": "Find your weird intersection",
+      "before": 317,
+      "after": 29,
+      "afterHeadlines": 29,
+      "afterCredits": 0,
+      "before20t": 50,
+      "after20t": 15,
+      "nav20t": 18
+    }
+  ],
+  "slides": [
+    {
+      "i": 1,
+      "chapter": 1,
+      "role": "cover",
+      "id": "chapter-1-cover",
+      "headline": "Architect to XR-chitect",
+      "credit": "",
+      "label": "1 / 8   Ignore the lane",
+      "text": "Architect to XR -chitect Alex Coulombe 1 / 8   Ignore the lane",
+      "bad": [],
+      "media": [],
+      "headlineWords": 3,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 6,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 2,
+      "chapter": 1,
+      "role": "chapter",
+      "id": "chapter-1-lesson",
+      "headline": "1. Ignore the lane",
+      "credit": "",
+      "label": "1 / 8   Ignore the lane",
+      "text": "1. Ignore the lane 1 / 8   Ignore the lane",
+      "bad": [],
+      "media": [],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 3,
+      "chapter": 1,
+      "role": "chapter",
+      "id": "ch1-alt2",
+      "headline": "1. Follow the overlap",
+      "credit": "",
+      "label": "1 / 8   Ignore the lane",
+      "text": "1. Follow the overlap 1 / 8   Ignore the lane",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/pre-fda-equus-syracuse-portfolio.png",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 4,
+      "chapter": 1,
+      "role": "chapter",
+      "id": "ch1-alt3",
+      "headline": "1. Keep your interests together",
+      "credit": "",
+      "label": "1 / 8   Ignore the lane",
+      "text": "1. Keep your interests together 1 / 8   Ignore the lane",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/round4/thesis-earlyatrium.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 5,
+      "chapter": 1,
+      "role": "content",
+      "id": "rosa",
+      "headline": "“Pick a lane”",
+      "credit": "",
+      "label": "1 / 8   Ignore the lane",
+      "text": "“Pick a lane” 1 / 8   Ignore the lane",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/pre-fda-equus-syracuse-portfolio.png",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 3,
+      "creditWords": 0,
+      "totalWords": 8,
+      "bodyWords": 3,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 6,
+      "chapter": 1,
+      "role": "content",
+      "id": "london",
+      "headline": "London, 2008: theater opens up",
+      "credit": "",
+      "label": "1 / 8   Ignore the lane",
+      "text": "London, 2008: theater opens up 1 / 8   Ignore the lane",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/pre-fda-connective-corridor-2008.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 7,
+      "chapter": 1,
+      "role": "content",
+      "id": "thesis",
+      "headline": "Governors Island, 2009",
+      "credit": "",
+      "label": "1 / 8   Ignore the lane",
+      "text": "Governors Island, 2009 1 / 8   Ignore the lane",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/round4/thesis-earlyatrium.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 3,
+      "creditWords": 0,
+      "totalWords": 8,
+      "bodyWords": 3,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 8,
+      "chapter": 1,
+      "role": "content",
+      "id": "graduation",
+      "headline": "I DON’T THINK MY JOB EXISTS YET",
+      "credit": "",
+      "label": "1 / 8   Ignore the lane",
+      "text": "I DON’T THINK MY JOB EXISTS YET 1 / 8   Ignore the lane",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/round4/thesis-earlyatrium.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 7,
+      "creditWords": 0,
+      "totalWords": 12,
+      "bodyWords": 7,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 9,
+      "chapter": 1,
+      "role": "content",
+      "id": "equus",
+      "headline": "Equus: a theater problem",
+      "credit": "",
+      "label": "1 / 8   Ignore the lane",
+      "text": "Equus: a theater problem 1 / 8   Ignore the lane",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/pre-fda-equus-syracuse-portfolio.png",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": false,
+      "visible30": true
+    },
+    {
+      "i": 10,
+      "chapter": 1,
+      "role": "content",
+      "id": "corridor",
+      "headline": "Architecture became a stage",
+      "credit": "",
+      "label": "1 / 8   Ignore the lane",
+      "text": "Architecture became a stage 1 / 8   Ignore the lane",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/pre-fda-connective-corridor-2008.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": false,
+      "visible30": true
+    },
+    {
+      "i": 11,
+      "chapter": 1,
+      "role": "takeaway",
+      "id": "ch1-takeaway",
+      "headline": "Your interests can share a job",
+      "credit": "",
+      "label": "1 / 8   Ignore the lane",
+      "text": "Your interests can share a job 1 / 8   Ignore the lane",
+      "bad": [],
+      "media": [],
+      "headlineWords": 6,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 6,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 12,
+      "chapter": 2,
+      "role": "chapter",
+      "id": "chapter-2-lesson",
+      "headline": "2. Your skills travel",
+      "credit": "",
+      "label": "2 / 8   Your skills travel",
+      "text": "2. Your skills travel 2 / 8   Your skills travel",
+      "bad": [],
+      "media": [],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 13,
+      "chapter": 2,
+      "role": "chapter",
+      "id": "ch2-alt2",
+      "headline": "2. Bring your old skills",
+      "credit": "",
+      "label": "2 / 8   Your skills travel",
+      "text": "2. Bring your old skills 2 / 8   Your skills travel",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/round4/zgf-nyu-lobby.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 14,
+      "chapter": 2,
+      "role": "chapter",
+      "id": "ch2-alt3",
+      "headline": "2. Carry your craft forward",
+      "credit": "",
+      "label": "2 / 8   Your skills travel",
+      "text": "2. Carry your craft forward 2 / 8   Your skills travel",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fda-dk1-office-demo.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 15,
+      "chapter": 2,
+      "role": "content",
+      "id": "archviz",
+      "headline": "Viñoly, ZGF, and visualization",
+      "credit": "",
+      "label": "2 / 8   Your skills travel",
+      "text": "Viñoly, ZGF, and visualization 2 / 8   Your skills travel",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/round4/zgf-nyu-lobby.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 16,
+      "chapter": 2,
+      "role": "content",
+      "id": "dk1",
+      "headline": "2013: a headset at work",
+      "credit": "",
+      "label": "2 / 8   Your skills travel",
+      "text": "2013: a headset at work 2 / 8   Your skills travel",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fda-dk1-office-demo.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 17,
+      "chapter": 2,
+      "role": "content",
+      "id": "sightlines",
+      "headline": "Could everyone see the stage?",
+      "credit": "",
+      "label": "2 / 8   Your skills travel",
+      "text": "Could everyone see the stage? 2 / 8   Your skills travel",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fda-sightline-unity-capture-macbeth-folder.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 18,
+      "chapter": 2,
+      "role": "content",
+      "id": "agile",
+      "headline": "2016: Agile Lens",
+      "credit": "",
+      "label": "2 / 8   Your skills travel",
+      "text": "2016: Agile Lens 2 / 8   Your skills travel",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fda-macbeth-armory-vr-demo.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 3,
+      "creditWords": 0,
+      "totalWords": 8,
+      "bodyWords": 3,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 19,
+      "chapter": 2,
+      "role": "content",
+      "id": "theater",
+      "headline": "Theater people got VR first",
+      "credit": "",
+      "label": "2 / 8   Your skills travel",
+      "text": "Theater people got VR first 2 / 8   Your skills travel",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/xmas-carol-01.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 20,
+      "chapter": 2,
+      "role": "content",
+      "id": "shed",
+      "headline": "The Shed, seen before opening",
+      "credit": "",
+      "label": "2 / 8   Your skills travel",
+      "text": "The Shed, seen before opening 2 / 8   Your skills travel",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fda-shed-unity-axon.png",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": true
+    },
+    {
+      "i": 21,
+      "chapter": 2,
+      "role": "content",
+      "id": "late-show",
+      "headline": "Lighting the Late Show",
+      "credit": "",
+      "label": "2 / 8   Your skills travel",
+      "text": "Lighting the Late Show 2 / 8   Your skills travel",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fda-ed-sullivan-vr-capture.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": false,
+      "visible30": true
+    },
+    {
+      "i": 22,
+      "chapter": 2,
+      "role": "takeaway",
+      "id": "ch2-takeaway",
+      "headline": "Your skills travel with you",
+      "credit": "",
+      "label": "2 / 8   Your skills travel",
+      "text": "Your skills travel with you 2 / 8   Your skills travel",
+      "bad": [],
+      "media": [],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 23,
+      "chapter": 3,
+      "role": "chapter",
+      "id": "chapter-3-lesson",
+      "headline": "3. Teach to learn",
+      "credit": "",
+      "label": "3 / 8   Teach to learn",
+      "text": "3. Teach to learn 3 / 8   Teach to learn",
+      "bad": [],
+      "media": [],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 24,
+      "chapter": 3,
+      "role": "chapter",
+      "id": "ch3-alt2",
+      "headline": "3. Learn by explaining",
+      "credit": "",
+      "label": "3 / 8   Teach to learn",
+      "text": "3. Learn by explaining 3 / 8   Teach to learn",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/GoldAuthorized.png",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 25,
+      "chapter": 3,
+      "role": "chapter",
+      "id": "ch3-alt3",
+      "headline": "3. Let teaching stretch you",
+      "credit": "",
+      "label": "3 / 8   Teach to learn",
+      "text": "3. Let teaching stretch you 3 / 8   Teach to learn",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fda-geffen-hall-vr-onsite.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 26,
+      "chapter": 3,
+      "role": "content",
+      "id": "unreal",
+      "headline": "2020: the Unreal Engine bet",
+      "credit": "",
+      "label": "3 / 8   Teach to learn",
+      "text": "2020: the Unreal Engine bet 3 / 8   Teach to learn",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/GoldAuthorized.png",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 27,
+      "chapter": 3,
+      "role": "content",
+      "id": "waldorf",
+      "headline": "Waldorf Astoria, before construction",
+      "credit": "",
+      "label": "3 / 8   Teach to learn",
+      "text": "Waldorf Astoria, before construction 3 / 8   Teach to learn",
+      "bad": [],
+      "media": [
+        {
+          "src": "slides/pmre/hxr-waldorf-astoria/media/waldorf-astoria-miami/01.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 28,
+      "chapter": 3,
+      "role": "content",
+      "id": "geffen",
+      "headline": "David Geffen Hall, at eye level",
+      "credit": "",
+      "label": "3 / 8   Teach to learn",
+      "text": "David Geffen Hall, at eye level 3 / 8   Teach to learn",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fda-geffen-hall-vr-onsite.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 6,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 6,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 29,
+      "chapter": 3,
+      "role": "content",
+      "id": "geffen-inside",
+      "headline": "A seat inside Geffen Hall",
+      "credit": "",
+      "label": "3 / 8   Teach to learn",
+      "text": "A seat inside Geffen Hall 3 / 8   Teach to learn",
+      "bad": [],
+      "media": [
+        {
+          "src": "slides/pmre/hxr-david-geffen-hall/media/dgh/DavidGeffenHall02.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": true
+    },
+    {
+      "i": 30,
+      "chapter": 3,
+      "role": "takeaway",
+      "id": "ch3-takeaway",
+      "headline": "Teaching makes you learn",
+      "credit": "",
+      "label": "3 / 8   Teach to learn",
+      "text": "Teaching makes you learn 3 / 8   Teach to learn",
+      "bad": [],
+      "media": [],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 31,
+      "chapter": 4,
+      "role": "chapter",
+      "id": "chapter-4-lesson",
+      "headline": "4. Work at human scale",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "4. Work at human scale 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 5,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 32,
+      "chapter": 4,
+      "role": "chapter",
+      "id": "ch4-alt2",
+      "headline": "4. Stand inside the idea",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "4. Stand inside the idea 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/re-holodeck-fiducial-floor.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 33,
+      "chapter": 4,
+      "role": "chapter",
+      "id": "ch4-alt3",
+      "headline": "4. Feel the place",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "4. Feel the place 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fs-v2/lake-05.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 4,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 34,
+      "chapter": 4,
+      "role": "content",
+      "id": "mexico",
+      "headline": "A flyby keeps you outside",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "A flyby keeps you outside 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fs-v2/mexico-01.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 5,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 35,
+      "chapter": 4,
+      "role": "content",
+      "id": "fs-render",
+      "headline": "Rendering: DBOX for Austin Capital Partners",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "Rendering: DBOX for Austin Capital Partners 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fs-v2/intro-render.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 6,
+      "creditWords": 0,
+      "totalWords": 12,
+      "bodyWords": 6,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 36,
+      "chapter": 4,
+      "role": "content",
+      "id": "buyers",
+      "headline": "Buyers walk the future home",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "Buyers walk the future home 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/re-holodeck-tablet-guests.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 5,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 37,
+      "chapter": 4,
+      "role": "content",
+      "id": "fs-walkthrough",
+      "headline": "Rendering: DBOX for Austin Capital Partners",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "Rendering: DBOX for Austin Capital Partners 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/story/four-seasons-walkthrough.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 6,
+      "creditWords": 0,
+      "totalWords": 12,
+      "bodyWords": 6,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 38,
+      "chapter": 4,
+      "role": "content",
+      "id": "presales",
+      "headline": "$500M+ in presales",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "$500M+ in presales 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fs-v2/lake-05.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 3,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 3,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 39,
+      "chapter": 4,
+      "role": "content",
+      "id": "investment",
+      "headline": "$870M investment",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "$870M investment 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fs-v2/lake-06.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 2,
+      "creditWords": 0,
+      "totalWords": 8,
+      "bodyWords": 2,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 40,
+      "chapter": 4,
+      "role": "content",
+      "id": "spike",
+      "headline": "The floor becomes the set",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "The floor becomes the set 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/re-holodeck-fiducial-floor.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 5,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 41,
+      "chapter": 4,
+      "role": "content",
+      "id": "austin",
+      "headline": "First, Austin",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "First, Austin 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/re-holodeck-lakeaustin-room.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 2,
+      "creditWords": 0,
+      "totalWords": 8,
+      "bodyWords": 2,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 42,
+      "chapter": 4,
+      "role": "content",
+      "id": "aspen",
+      "headline": "Then, Aspen",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "Then, Aspen 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fs-v2/holo-aspen.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 2,
+      "creditWords": 0,
+      "totalWords": 8,
+      "bodyWords": 2,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 43,
+      "chapter": 4,
+      "role": "content",
+      "id": "dbox",
+      "headline": "Inside the DBOX space",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "Inside the DBOX space 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fs-v2/dbox-01.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 44,
+      "chapter": 4,
+      "role": "content",
+      "id": "ny57",
+      "headline": "57th Street, for investors",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "57th Street, for investors 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fs-v2/nyc-pop-up.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 45,
+      "chapter": 4,
+      "role": "content",
+      "id": "california",
+      "headline": "Then, the California tour",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "Then, the California tour 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/round4/california.png",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 46,
+      "chapter": 4,
+      "role": "content",
+      "id": "build",
+      "headline": "Building the walkable room",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "Building the walkable room 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/story/holodeck-build.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 4,
+      "visible20t": false,
+      "visible30": true
+    },
+    {
+      "i": 47,
+      "chapter": 4,
+      "role": "content",
+      "id": "aspen-setup",
+      "headline": "A room becomes a holodeck",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "A room becomes a holodeck 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fs-v2/aspen-setup.png",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": true
+    },
+    {
+      "i": 48,
+      "chapter": 4,
+      "role": "takeaway",
+      "id": "ch4-takeaway",
+      "headline": "Human scale makes places feel real",
+      "credit": "",
+      "label": "4 / 8   Work at human scale",
+      "text": "Human scale makes places feel real 4 / 8   Work at human scale",
+      "bad": [],
+      "media": [],
+      "headlineWords": 6,
+      "creditWords": 0,
+      "totalWords": 12,
+      "bodyWords": 6,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 49,
+      "chapter": 5,
+      "role": "chapter",
+      "id": "chapter-5-lesson",
+      "headline": "5. Make it repeatable",
+      "credit": "",
+      "label": "5 / 8   Make it repeatable",
+      "text": "5. Make it repeatable 5 / 8   Make it repeatable",
+      "bad": [],
+      "media": [],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 50,
+      "chapter": 5,
+      "role": "chapter",
+      "id": "ch5-alt2",
+      "headline": "5. Build tools from patterns",
+      "credit": "",
+      "label": "5 / 8   Make it repeatable",
+      "text": "5. Build tools from patterns 5 / 8   Make it repeatable",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/story/blueprint-screen.png",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 51,
+      "chapter": 5,
+      "role": "chapter",
+      "id": "ch5-alt3",
+      "headline": "5. Reuse what keeps working",
+      "credit": "",
+      "label": "5 / 8   Make it repeatable",
+      "text": "5. Reuse what keeps working 5 / 8   Make it repeatable",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/story/uoxr-workshop.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 52,
+      "chapter": 5,
+      "role": "content",
+      "id": "floor",
+      "headline": "Floor Tour, in use",
+      "credit": "",
+      "label": "5 / 8   Make it repeatable",
+      "text": "Floor Tour, in use 5 / 8   Make it repeatable",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/story/floor-tour-screen.png",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 53,
+      "chapter": 5,
+      "role": "content",
+      "id": "floor-demo",
+      "headline": "A plan becomes walkable",
+      "credit": "",
+      "label": "5 / 8   Make it repeatable",
+      "text": "A plan becomes walkable 5 / 8   Make it repeatable",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/story/floor-tour-demo.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 54,
+      "chapter": 5,
+      "role": "content",
+      "id": "blueprint",
+      "headline": "Blueprint Immersive seat check",
+      "credit": "",
+      "label": "5 / 8   Make it repeatable",
+      "text": "Blueprint Immersive seat check 5 / 8   Make it repeatable",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/story/blueprint-seat-demo.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 55,
+      "chapter": 5,
+      "role": "content",
+      "id": "uoxr",
+      "headline": "UOXR template, shown in simulator",
+      "credit": "",
+      "label": "5 / 8   Make it repeatable",
+      "text": "UOXR template, shown in simulator 5 / 8   Make it repeatable",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/story/uoxr-simulator.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 56,
+      "chapter": 5,
+      "role": "content",
+      "id": "bp-design",
+      "headline": "Blueprint Immersive design options",
+      "credit": "",
+      "label": "5 / 8   Make it repeatable",
+      "text": "Blueprint Immersive design options 5 / 8   Make it repeatable",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/story/blueprint-design-demo.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": false,
+      "visible30": true
+    },
+    {
+      "i": 57,
+      "chapter": 5,
+      "role": "takeaway",
+      "id": "ch5-takeaway",
+      "headline": "Turn repeated work into tools",
+      "credit": "",
+      "label": "5 / 8   Make it repeatable",
+      "text": "Turn repeated work into tools 5 / 8   Make it repeatable",
+      "bad": [],
+      "media": [],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 58,
+      "chapter": 6,
+      "role": "chapter",
+      "id": "chapter-6-lesson",
+      "headline": "6. Capture impossible places",
+      "credit": "",
+      "label": "6 / 8   Capture impossible places",
+      "text": "6. Capture impossible places 6 / 8   Capture impossible places",
+      "bad": [],
+      "media": [],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 59,
+      "chapter": 6,
+      "role": "chapter",
+      "id": "ch6-alt2",
+      "headline": "6. Keep the moment walkable",
+      "credit": "",
+      "label": "6 / 8   Capture impossible places",
+      "text": "6. Keep the moment walkable 6 / 8   Capture impossible places",
+      "bad": [],
+      "media": [
+        {
+          "src": "slides/pmre/rome-splats/media/rome-colosseum-poster.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 60,
+      "chapter": 6,
+      "role": "chapter",
+      "id": "ch6-alt3",
+      "headline": "6. Let places live again",
+      "credit": "",
+      "label": "6 / 8   Capture impossible places",
+      "text": "6. Let places live again 6 / 8   Capture impossible places",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/xmas-carol-replay-marley.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 61,
+      "chapter": 6,
+      "role": "content",
+      "id": "carol",
+      "headline": "A Christmas Carol, in VR",
+      "credit": "",
+      "label": "6 / 8   Capture impossible places",
+      "text": "A Christmas Carol, in VR 6 / 8   Capture impossible places",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/story/carol-show.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 62,
+      "chapter": 6,
+      "role": "content",
+      "id": "replay",
+      "headline": "The show ends. Cameras keep moving",
+      "credit": "",
+      "label": "6 / 8   Capture impossible places",
+      "text": "The show ends. Cameras keep moving 6 / 8   Capture impossible places",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/story/carol-replay.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 6,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 6,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 63,
+      "chapter": 6,
+      "role": "content",
+      "id": "working-cut",
+      "headline": "A cinematographer’s working cut",
+      "credit": "",
+      "label": "6 / 8   Capture impossible places",
+      "text": "A cinematographer’s working cut 6 / 8   Capture impossible places",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/story/carol-working-cut.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 64,
+      "chapter": 6,
+      "role": "content",
+      "id": "rome",
+      "headline": "Rome splats, rendered for the web",
+      "credit": "",
+      "label": "6 / 8   Capture impossible places",
+      "text": "Rome splats, rendered for the web 6 / 8   Capture impossible places",
+      "bad": [],
+      "media": [
+        {
+          "src": "slides/pmre/rome-splats/media/rome-colosseum-flythrough-15s-1080p.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 6,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 6,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 65,
+      "chapter": 6,
+      "role": "content",
+      "id": "splatdiorama",
+      "headline": "SplatDiorama simulator, Rome scan",
+      "credit": "",
+      "label": "6 / 8   Capture impossible places",
+      "text": "SplatDiorama simulator, Rome scan 6 / 8   Capture impossible places",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/story/splatdiorama-rome.png",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            446.8523254394531,
+            337.9883117675781,
+            1147.2342529296875,
+            461.9852600097656
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 66,
+      "chapter": 6,
+      "role": "content",
+      "id": "hotel",
+      "headline": "A hotel becomes a location",
+      "credit": "",
+      "label": "6 / 8   Capture impossible places",
+      "text": "A hotel becomes a location 6 / 8   Capture impossible places",
+      "bad": [],
+      "media": [
+        {
+          "src": "slides/pmre/rome-splats/media/rome-hotel-flythrough-10s-1080p.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": true
+    },
+    {
+      "i": 67,
+      "chapter": 6,
+      "role": "content",
+      "id": "camera-coverage",
+      "headline": "One performance, several camera positions",
+      "credit": "",
+      "label": "6 / 8   Capture impossible places",
+      "text": "One performance, several camera positions 6 / 8   Capture impossible places",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/story/carol-cameras.mp4",
+          "tag": "VIDEO",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": true
+    },
+    {
+      "i": 68,
+      "chapter": 6,
+      "role": "takeaway",
+      "id": "ch6-takeaway",
+      "headline": "A place can outlive its moment",
+      "credit": "",
+      "label": "6 / 8   Capture impossible places",
+      "text": "A place can outlive its moment 6 / 8   Capture impossible places",
+      "bad": [],
+      "media": [],
+      "headlineWords": 6,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 6,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 69,
+      "chapter": 7,
+      "role": "chapter",
+      "id": "chapter-7-lesson",
+      "headline": "7. Share your niche",
+      "credit": "",
+      "label": "7 / 8   Share your niche",
+      "text": "7. Share your niche 7 / 8   Share your niche",
+      "bad": [],
+      "media": [],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 70,
+      "chapter": 7,
+      "role": "chapter",
+      "id": "ch7-alt2",
+      "headline": "7. Teach what you discover",
+      "credit": "",
+      "label": "7 / 8   Share your niche",
+      "text": "7. Teach what you discover 7 / 8   Share your niche",
+      "bad": [],
+      "media": [
+        {
+          "src": "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 71,
+      "chapter": 7,
+      "role": "chapter",
+      "id": "ch7-alt3",
+      "headline": "7. Grow through your community",
+      "credit": "",
+      "label": "7 / 8   Share your niche",
+      "text": "7. Grow through your community 7 / 8   Share your niche",
+      "bad": [],
+      "media": [
+        {
+          "src": "slides/pmre/hxr-community/media/community/community05_halcyonvr.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 72,
+      "chapter": 7,
+      "role": "content",
+      "id": "community",
+      "headline": "Speaking, teaching, curating, sharing",
+      "credit": "",
+      "label": "7 / 8   Share your niche",
+      "text": "Speaking, teaching, curating, sharing 7 / 8   Share your niche",
+      "bad": [],
+      "media": [
+        {
+          "src": "slides/pmre/hxr-community/media/community/community03_unrealnyc.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 9,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 73,
+      "chapter": 7,
+      "role": "content",
+      "id": "niche",
+      "headline": "Be the best at your niche",
+      "credit": "",
+      "label": "7 / 8   Share your niche",
+      "text": "Be the best at your niche 7 / 8   Share your niche",
+      "bad": [],
+      "media": [
+        {
+          "src": "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 6,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 6,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 74,
+      "chapter": 7,
+      "role": "content",
+      "id": "meetup",
+      "headline": "Your community sees different things",
+      "credit": "",
+      "label": "7 / 8   Share your niche",
+      "text": "Your community sees different things 7 / 8   Share your niche",
+      "bad": [],
+      "media": [
+        {
+          "src": "slides/pmre/hxr-community/media/community/community05_halcyonvr.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": true
+    },
+    {
+      "i": 75,
+      "chapter": 7,
+      "role": "takeaway",
+      "id": "ch7-takeaway",
+      "headline": "Your niche grows when you share",
+      "credit": "",
+      "label": "7 / 8   Share your niche",
+      "text": "Your niche grows when you share 7 / 8   Share your niche",
+      "bad": [],
+      "media": [],
+      "headlineWords": 6,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 6,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 76,
+      "chapter": 8,
+      "role": "chapter",
+      "id": "chapter-8-lesson",
+      "headline": "8. Find your weird intersection",
+      "credit": "",
+      "label": "8 / 8   Find your weird intersection",
+      "text": "8. Find your weird intersection 8 / 8   Find your weird intersection",
+      "bad": [],
+      "media": [],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 5,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 77,
+      "chapter": 8,
+      "role": "chapter",
+      "id": "ch8-alt2",
+      "headline": "8. What’s your weird intersection?",
+      "credit": "",
+      "label": "8 / 8   Find your weird intersection",
+      "text": "8. What’s your weird intersection? 8 / 8   Find your weird intersection",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/round4/thesis-earlyatrium.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 78,
+      "chapter": 8,
+      "role": "chapter",
+      "id": "ch8-alt3",
+      "headline": "8. Make your own job",
+      "credit": "",
+      "label": "8 / 8   Find your weird intersection",
+      "text": "8. Make your own job 8 / 8   Find your weird intersection",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fda-dk1-office-demo.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            288,
+            162,
+            1344,
+            756
+          ]
+        }
+      ],
+      "headlineWords": 5,
+      "creditWords": 0,
+      "totalWords": 11,
+      "bodyWords": 5,
+      "visible20t": false,
+      "visible30": false
+    },
+    {
+      "i": 79,
+      "chapter": 8,
+      "role": "content",
+      "id": "intersection",
+      "headline": "Your experience is the starting point",
+      "credit": "",
+      "label": "8 / 8   Find your weird intersection",
+      "text": "Your experience is the starting point 8 / 8   Find your weird intersection",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/fda-macbeth-armory-vr-demo.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 6,
+      "creditWords": 0,
+      "totalWords": 12,
+      "bodyWords": 6,
+      "visible20t": true,
+      "visible30": true
+    },
+    {
+      "i": 80,
+      "chapter": 8,
+      "role": "content",
+      "id": "eye",
+      "headline": "Your eye still matters",
+      "credit": "",
+      "label": "8 / 8   Find your weird intersection",
+      "text": "Your eye still matters 8 / 8   Find your weird intersection",
+      "bad": [],
+      "media": [
+        {
+          "src": "media/pmre/round4/zgf-nyu-lab.jpg",
+          "tag": "IMG",
+          "broken": false,
+          "box": [
+            368.6312561035156,
+            343.4312438964844,
+            1182.715576171875,
+            476.2734069824219
+          ]
+        }
+      ],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 4,
+      "visible20t": false,
+      "visible30": true
+    },
+    {
+      "i": 83,
+      "chapter": 8,
+      "role": "takeaway",
+      "id": "chapter-8-close",
+      "headline": "What’s your weird intersection?",
+      "credit": "",
+      "label": "8 / 8   Find your weird intersection",
+      "text": "What’s your weird intersection? 8 / 8   Find your weird intersection",
+      "bad": [],
+      "media": [],
+      "headlineWords": 4,
+      "creditWords": 0,
+      "totalWords": 10,
+      "bodyWords": 4,
+      "visible20t": true,
+      "visible30": true
+    }
+  ]
+}

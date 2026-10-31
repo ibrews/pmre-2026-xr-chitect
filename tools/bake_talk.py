@@ -26,7 +26,7 @@ if SYNC_GUARD + "const r=await fetch('notes-config.json'" not in s:
 # Sound is optional; absorb that asynchronous close/resume race just like synchronous audio failures.
 s = s.replace("_sfxCtx.resume();", "_sfxCtx.resume().catch(()=>{});")
 s = s.replace("_audio.resume();", "_audio.resume().catch(()=>{});")
-talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "journey.js", "motion-fit.js", "safezone.js", "media-fit.js"))
+talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "journey.js", "motion-fit.js", "safezone.js", "media-fit.js", "story.js"))
 
 def patch(marker, anchor, new, count=1):
     """Replace anchor with new unless marker already present."""

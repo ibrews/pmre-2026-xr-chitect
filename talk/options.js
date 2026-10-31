@@ -31,6 +31,7 @@ function applyTalkOptions(){
   });
   if(cutN!==Infinity){allSlides.filter(s=>s.dataset.type==='map').forEach(s=>s.dataset.hidden='1');}
   if(pick.ports==='on'){const b=allSlides.find(s=>s.dataset.type==='bonus');if(b)b.dataset.hidden='1';}
+  if(typeof applyStorySpine==='function')applyStorySpine();
   // thesis + close copy alternates
   const th=TALK.thesisAlts[pick.thesis];const bon=allSlides.find(s=>s.dataset.type==='bonus');
   if(th&&bon){const t=bon.querySelector('.lesson-title'),g=bon.querySelector('.lesson-tagline');if(t)t.innerHTML=th.title.replace(/\n/g,'<br>');if(g)g.innerHTML=th.tagline;BONUS.notes=th.notes+'\n\n'+(BONUS.baseNotes||(BONUS.baseNotes=BONUS.notes));}
@@ -45,9 +46,9 @@ function applyTalkOptions(){
     const pick=window.TALK_PICKS||talkPicks();el=document.createElement('div');el.id='talk-opts';
     el.innerHTML='<h3>Talk options <small>O to close · picks are saved in this browser</small></h3>'+Object.entries(TALK.options).map(([g,o])=>
       `<div class="to-row"><div class="to-g">${o.label}</div>${Object.entries(o.choices).map(([k,lbl])=>`<button data-g="${g}" data-c="${k}" class="${pick[g]===k?'on':''}">${lbl}</button>`).join('')}</div>`).join('')+
-      '<div class="to-foot"><button data-reset="1">Reset to defaults</button><span>Share a combo: add ?open=…&amp;cut=… to the URL</span></div>';
+      '<div class="to-foot"><button data-reset="1">Reset to defaults</button><span>Share a combo: use ?cut=30&amp;story1=b</span></div>';
     el.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;let s={};try{s=JSON.parse(localStorage.getItem('pmre-opts')||'{}');}catch(_){}
-      if(b.dataset.reset)s={};else s[b.dataset.g]=b.dataset.c;try{localStorage.setItem('pmre-opts',JSON.stringify(s));}catch(_){}
+      if(b.dataset.reset)s={};else{s={...s,...talkPicks()};s[b.dataset.g]=b.dataset.c;}try{localStorage.setItem('pmre-opts',JSON.stringify(s));}catch(_){}
       const u=new URL(location.href);Object.keys(TALK.options).forEach(g=>u.searchParams.delete(g));u.searchParams.delete('opt');location.href=u.toString();});
     document.body.appendChild(el);
   }
