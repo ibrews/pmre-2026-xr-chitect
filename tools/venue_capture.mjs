@@ -271,6 +271,8 @@ export async function capture(opts) {
       const st = { n, NN, letter, deckIndex: sl.index, step: k, nSteps: sl.steps, type: sl.type, title: sl.title, kind: 'static' };
       const probe = await page.evaluate(() => { const s = allSlides[current]; return { html: s.outerHTML.length > 2e6 ? s.outerHTML.slice(0, 2e6) : s.outerHTML, iframe: [...s.querySelectorAll('iframe')].some(f => /media\/motion\/|#sdp=|\/slides\//.test(f.dataset.motionBase || f.getAttribute('src') || '')) }; });
       const motionIframe = probe.iframe && k === 0;
+      // Local source clips are exported in full below. Settle their layout without recording a redundant 12-second movie.
+      const fastLocalVideo=sl.module?.id!=='pmre/nxt-blueprint-immersive'&&(sl.module?.id==='pmre/nxt-four-seasons-production'||await page.evaluate(()=>{const s=allSlides[current];return !!s.querySelector('canvas[data-video-source]')||[...s.querySelectorAll('video')].some(v=>{const c=getComputedStyle(v),r=v.getBoundingClientRect();return c.display!=='none'&&c.visibility!=='hidden'&&+c.opacity>.04&&r.width>50;});}));
       // record/settle
       const key = sha(JSON.stringify([probe.html, styleHash, realPicks, opts.safe, k, opts.fps, opts.videoMin, sl.module?.id==='pmre/nxt-blueprint-immersive'?'belt-full-v1':'rec-v2']));
       const cdir = path.join(cache, 'video', key.slice(0, 24)); const meta = path.join(cdir, 'meta.json');
@@ -278,8 +280,8 @@ export async function capture(opts) {
       const shots = [];
       const maxT = Math.round((sl.module?.id==='pmre/nxt-blueprint-immersive'?Math.max(opts.maxSec,25):opts.maxSec) * opts.fps);
       let tick = 0, last = null, lastChange = 0, stable = 0;
-      if (motionIframe) { // the deck itself just shows the iframe's ?play; settle the deck chrome, the video comes from seek
-        for (; tick < 45; tick++) { await page.evaluate(([t, d]) => window.__vxStep(t + window.__vx.tick, d), [tick, dt]); await page.clock.runFor(dt); }
+      if (motionIframe || fastLocalVideo) { // the deck itself just shows the iframe's ?play; settle the deck chrome, the video comes from seek
+        for (; tick < (fastLocalVideo?90:45); tick++) { await page.evaluate(([t, d]) => window.__vxStep(t + window.__vx.tick, d), [tick, dt]); await page.clock.runFor(dt); }
       } else if (rec) { // cached: fast-forward without screenshots
         const T = Math.round((rec.settleSec + 1.2) * opts.fps);
         for (; tick < T; tick++) { await page.evaluate(([t, d]) => window.__vxStep(t + window.__vx.tick, d), [tick, dt]); await page.clock.runFor(dt); }
