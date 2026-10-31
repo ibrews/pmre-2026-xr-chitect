@@ -1977,9 +1977,9 @@ function applyStorySpine(){
  .story-v1 #journey .j-label{display:none!important}.story-v1 #journey.is-hidden{opacity:1!important}
  .story-v1 .slide[data-type="cover"] .event-tag,.story-v1 .slide[data-type="cover"] .talk-subtitle,.story-v1 .slide[data-type="cover"] .speaker-co{display:none}
  .story-v1 .slide[data-type="close"] .close-ey,.story-v1 .slide[data-type="close"] .close-sub,.story-v1 .slide[data-type="close"] .qr-label,.story-v1 .slide[data-type="close"] .qr-badge,.story-v1 .slide[data-type="close"] .contact-row{display:none}
- .story-v1 .slide[data-type="close"] .close-title{font-size:100px!important}.story-v1 .slide[data-type="close"] .close-qr-row{margin-top:40px}
+ .story-v1 .slide[data-type="close"] .close-title{font-size:180px!important;white-space:nowrap}.story-v1 .slide[data-type="close"] .close-qr-row{margin-top:40px}
  `;document.head.append(st);}
- const fitTitles=()=>{allSlides.filter(s=>s.dataset.storyRole==='chapter').forEach(sl=>{const h=sl.querySelector('.lesson-title,.case-title');if(!h)return;const cs=getComputedStyle(h),c=document.createElement('canvas').getContext('2d');c.font=`${cs.fontWeight} 180px ${cs.fontFamily}`;const text=cs.textTransform==='uppercase'?h.textContent.toUpperCase():h.textContent;h.style.setProperty('font-size',Math.min(180,Math.floor(innerWidth*.92/c.measureText(text).width*180))+'px','important');});};
+ const fitTitles=()=>{allSlides.filter(s=>s.dataset.storyRole==='chapter'||s.dataset.type==='close').forEach(sl=>{const h=sl.querySelector('.lesson-title,.case-title,.close-title');if(!h)return;const cs=getComputedStyle(h),c=document.createElement('canvas').getContext('2d');c.font=`${cs.fontWeight} 180px ${cs.fontFamily}`;const text=cs.textTransform==='uppercase'?h.textContent.toUpperCase():h.textContent;h.style.setProperty('font-size',Math.min(180,Math.floor(innerWidth*.92/c.measureText(text).width*180))+'px','important');});};
  document.fonts?.ready.then(fitTitles);addEventListener('resize',fitTitles);requestAnimationFrame(fitTitles);
 }
 // ── TALK END ──
