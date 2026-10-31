@@ -5,7 +5,7 @@ Downloaded from the supplied public portfolio pages on 2026-10-30. Images are re
 | File | Source | Credit / treatment |
 |---|---|---|
 | dbox-01.jpg | https://www.agilelens.com/portfolio/ny-dbox-space/01.jpg | Agile Lens |
-| intro-render.jpg | https://communityimpact.com/_next/image/?url=https%3A%2F%2Fassets.communityimpact.com%2Fuploads%2Fimages%2F2024%2F07%2F10%2F317376.jpg&w=800&q=75 | Rendering: DBOX for Austin Capital Partners |
+| intro-render.jpg | https://communityimpact.com/_next/image/?url=https%3A%2F%2Fassets.communityimpact.com%2Fuploads%2Fimages%2F2024%2F07%2F10%2F317376.jpg&w=800&q=75 | Rendering: DBOX for Austin Capital Partners; source endpoint returned WebP, normalized to JPEG for PowerPoint |
 | lake-05.jpg | https://www.agilelens.com/portfolio/four-seasons-lake-austin/05.jpg | Agile Lens; rotated 180°, removed the stale EXIF rotation flag, resized to 2560 px; verified upright in a browser |
 | lake-06.jpg | https://www.agilelens.com/portfolio/four-seasons-lake-austin/06.jpg | Agile Lens |
 | mexico-01.jpg | https://www.agilelens.com/portfolio/perfect-day-mexico/01.jpg | Agile Lens / Royal Caribbean; max 2560 px |
