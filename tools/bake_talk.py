@@ -42,6 +42,10 @@ VIDEO_OLD = 'else if(/\\.(mp4|webm)$/i.test(src)){media=`<video class="full-medi
 VIDEO_NEW = 'else if(/\\.(mp4|webm)$/i.test(src)){\n        const attr=v=>String(v||\'\').replace(/[&"<>]/g,ch=>({\'&\':\'&amp;\',\'"\':\'&quot;\',\'<\':\'&lt;\',\'>\':\'&gt;\'}[ch]));\n        const label=attr(c.alt),credit=attr(c.credit),q=new URLSearchParams(location.search),still=q.has(\'shot\')||q.has(\'print\');\n        media=still&&c.poster?`<img class="full-media" src="${attr(c.poster)}" alt="${label}" title="${credit}">`:`<video controls class="full-media" src="${attr(src)}"${c.poster?` poster="${attr(c.poster)}"`:\'\'} aria-label="${label}" title="${credit}" autoplay loop muted playsinline>${label}</video>`;\n      }'
 s = s.replace(VIDEO_OLD, VIDEO_NEW, 1)
 
+# Venue video peak: preserve the complete Aspen clip and audio while keeping the brightest frame below 0.35.
+if 'PMRE_ASPEN_DARK' not in s:
+    s=s.replace('</head>', '<style id="PMRE_ASPEN_DARK">video.full-media[src*="holo-aspen.mp4"]{filter:brightness(.94)}</style>\n</head>',1)
+
 # 1. Content block: first bake replaces the template's SECTIONS..BONUS; later bakes replace between sentinels.
 START, END = "// ── TALK START ──", "// ── TALK END ──"
 block = f"{START}\n{talk}\n{END}"
