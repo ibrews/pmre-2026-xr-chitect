@@ -5,12 +5,12 @@ import fs from 'node:fs'; import os from 'node:os'; import path from 'node:path'
 const d=fs.mkdtempSync(path.join(os.tmpdir(),'venue-local-test-'));
 try {
  const clip=path.join(d,'clip.mp4'),bg=path.join(d,'bg.png');
- execFileSync('ffmpeg',['-y','-loglevel','error','-f','lavfi','-i','testsrc2=s=320x180:r=30:d=2','-f','lavfi','-i','sine=frequency=440:duration=2','-shortest','-c:v','libx264','-pix_fmt','yuv420p','-c:a','aac',clip]);
+ execFileSync('ffmpeg',['-y','-loglevel','error','-f','lavfi','-i','testsrc2=s=320x180:r=30:d=2','-f','lavfi','-i','sine=frequency=440:duration=2.15','-c:v','libx264','-pix_fmt','yuv420p','-c:a','aac',clip]);
  execFileSync('ffmpeg',['-y','-loglevel','error','-f','lavfi','-i','color=c=0x101014:s=1920x1080','-frames:v','1','-update','1',bg]);
  const r=renderLocalVideo({src:pathToFileURL(clip).href},{bg},{safe:70,fps:30},d);
- assert(fs.existsSync(r.cache)&&fs.existsSync(r.poster));assert(r.audio);assert(Math.abs(r.duration-2)<.12);assert.deepEqual(r.safeBox,[288,162,1344,756]);
+ assert(fs.existsSync(r.cache)&&fs.existsSync(r.poster));assert(r.audio);assert(Math.abs(r.duration-2.15)<.12);assert.deepEqual(r.safeBox,[288,162,1344,756]);
  const probe=JSON.parse(execFileSync('ffprobe',['-v','error','-show_streams','-of','json',r.cache]));assert(probe.streams.some(s=>s.codec_type==='audio'));assert.equal(probe.streams[0].width,1920);assert.equal(probe.streams[0].height,1080);
  const pix=execFileSync('ffmpeg',['-loglevel','error','-ss','1','-i',r.cache,'-frames:v','1','-f','rawvideo','-pix_fmt','rgb24','-'],{maxBuffer:10e6});assert(pix[0]<30&&pix[1]<30&&pix[2]<30);
  const at=(540*1920+960)*3;assert(pix[at]+pix[at+1]+pix[at+2]>40);
- console.log('PASS: complete 2s local clip, source audio, dark 1920x1080 frame, 1344x756 safe box');
+ console.log('PASS: complete local clip with audio longer than video, source audio, dark 1920x1080 frame, 1344x756 safe box');
 }finally{fs.rmSync(d,{recursive:true,force:true});}

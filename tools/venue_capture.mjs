@@ -371,11 +371,15 @@ export function renderLocalVideo(v, st, opts, cache) {
   const key=sha(JSON.stringify([sha(fs.readFileSync(source)),sha(fs.readFileSync(st.bg)),w,h,opts.fps,'local-clip-v1']));
   const dir=path.join(cache,'video','local-'+key.slice(0,24)), mp4=path.join(dir,'video.mp4'), poster=path.join(dir,'poster.png');
   fs.mkdirSync(dir,{recursive:true});
-  if(!fs.existsSync(mp4)||!fs.existsSync(poster)) {
+  if(!fs.existsSync(mp4)) {
     execFileSync('ffmpeg',['-y','-loglevel','error','-threads','4','-loop','1','-framerate',String(opts.fps),'-i',st.bg,'-i',source,
       '-filter_complex',`[1:v]scale=${w}:${h}:force_original_aspect_ratio=decrease,pad=${w}:${h}:(ow-iw)/2:(oh-ih)/2:color=black,setsar=1[v];[0:v][v]overlay=${x}:${y}:shortest=1,format=yuv420p[out]`,
       '-map','[out]',...(audio?['-map','1:a:0','-c:a','aac','-b:a','160k']:['-an']),'-t',String(duration),'-r',String(opts.fps),'-c:v','libx264','-preset','medium','-crf','18','-movflags','+faststart',mp4]);
-    execFileSync('ffmpeg',['-y','-loglevel','error','-sseof','-0.1','-i',mp4,'-frames:v','1','-update','1',poster]);
+  }
+  if(!fs.existsSync(poster)) {
+    // Audio can outlast the last video frame. Decode the final second and retain the last available picture.
+    execFileSync('ffmpeg',['-y','-loglevel','error','-sseof','-1','-i',mp4,'-an','-update','1',poster]);
+    if(!fs.existsSync(poster)) throw new Error('Local clip produced no final-frame poster: '+mp4);
   }
   return {cache:mp4,poster,duration:probeDur(mp4),audio,audioKind:audio?'original clip audio':'silent',textAudit:[],safeBox:[x,y,w,h]};
 }
