@@ -32,26 +32,28 @@
   {
     "path": "media/story/uoxr-simulator.mp4",
     "source": "/Users/alex/GH/alexcoulombepresents/public/trailers/uoxr-in-15-seconds.mp4",
-    "credit": "UOXR: Alex Coulombe Presents · Simulator footage",
+    "credit": "UOXR: Alex Coulombe Presents \u00b7 Simulator footage",
     "sha256": "5e114b7ce3dc415d81c46eec65f78e1d21f8d68eed0f9e76de48d07e7fbf213a"
   },
   {
     "path": "media/story/uoxr-workshop.jpg",
     "source": "/Users/alex/GH/alexcoulombepresents/public/lab/uoxr/workshop-preview.jpg",
-    "credit": "UOXR: Alex Coulombe Presents · Simulator screen",
+    "credit": "UOXR: Alex Coulombe Presents \u00b7 Simulator screen",
     "sha256": "67cdb9351da0cb037879e560dc4e0c8f1ecc7f0d71223f166207def0109a4ab0"
   },
   {
     "path": "media/story/carol-working-cut.mp4",
     "source": "/Users/alex/GH/vr-cinematics-ue58-deck/media/class/edit_final.mp4",
     "credit": "Working cut: Alex Coulombe Presents",
-    "sha256": "d980e6090aa5d2981a28d1da15355fcdd2a15b5603338f3a76fd778b0cae2fe8"
+    "sha256": "d980e6090aa5d2981a28d1da15355fcdd2a15b5603338f3a76fd778b0cae2fe8",
+    "status": "Retained class reference; not used on stage because it shows practice blocks"
   },
   {
     "path": "media/story/carol-cameras.mp4",
     "source": "/Users/alex/GH/vr-cinematics-ue58-deck/media/class/all_cameras.mp4",
     "credit": "Camera coverage: Alex Coulombe Presents",
-    "sha256": "748f5f7c9e0d52ab0c7663337e58780eb71371ba666b7c61564f307169e2d1b9"
+    "sha256": "748f5f7c9e0d52ab0c7663337e58780eb71371ba666b7c61564f307169e2d1b9",
+    "status": "Retained class reference; not used on stage because it shows practice blocks"
   },
   {
     "path": "media/story/carol-replay.mp4",
@@ -74,7 +76,7 @@
   {
     "path": "media/story/splatdiorama-rome.png",
     "source": "/Users/alex/Archives/splatdiorama-lcc2-2026-10/evidence77/colosseum-lcc2-400k-twolayer.png",
-    "credit": "SplatDiorama build77 · Simulator screenshot",
+    "credit": "SplatDiorama build77 \u00b7 Simulator screenshot",
     "sha256": "7c2f11c9b1ae18e2ada30b135724f0e39e97cc9d8216348b86d7c920326473af"
   },
   {
@@ -254,13 +256,13 @@
   {
     "path": "slides/pmre/rome-splats/media/rome-colosseum-flythrough-15s-1080p.mp4",
     "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/slides/pmre/rome-splats/media/rome-colosseum-flythrough-15s-1080p.mp4",
-    "credit": "Josette Seitz / Agile Lens · Web-rendered scan",
+    "credit": "Josette Seitz / Agile Lens \u00b7 Web-rendered scan",
     "sha256": "78818fa8096a94d3b5e7740c512fda743da838fa65c7b2a9ebe3ba98ad390724"
   },
   {
     "path": "slides/pmre/rome-splats/media/rome-hotel-flythrough-10s-1080p.mp4",
     "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/slides/pmre/rome-splats/media/rome-hotel-flythrough-10s-1080p.mp4",
-    "credit": "Josette Seitz / Agile Lens · Web-rendered scan",
+    "credit": "Josette Seitz / Agile Lens \u00b7 Web-rendered scan",
     "sha256": "d4033d16bf51d028d6450886aaeed96cb940bfd562831c4bfd7099eed753e580"
   },
   {
@@ -286,5 +288,23 @@
     "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/round4/zgf-nyu-lab.jpg",
     "credit": "Alex Coulombe / ZGF Architects",
     "sha256": "107f244401ddca67776ab79c8fe0f3074ece4bf6163642915629c9d60de031fe"
+  },
+  {
+    "path": "media/pmre/fs-v2/mexico-02.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/fs-v2/mexico-02.jpg",
+    "credit": "Agile Lens / Royal Caribbean",
+    "sha256": "a5ad262a9ac9ef38dc27eb4be23de73265a9c2533f56a31d649f1b175bc16a7b"
+  },
+  {
+    "path": "media/pmre/xmas-carol-vcam-iphone.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/xmas-carol-vcam-iphone.jpg",
+    "credit": "Virtual camera screen: Agile Lens",
+    "sha256": "4ae5cde663548bbbdafefced293b21df786b099abcfb1ae28b76f6e70855822f"
+  },
+  {
+    "path": "media/pmre/xmas-carol-camera-angles.jpg",
+    "source": "https://github.com/ibrews/pmre-2026-xr-chitect/blob/be561ca02c9e6ef2cfffc7e9f65c654a63649682/media/pmre/xmas-carol-camera-angles.jpg",
+    "credit": "Carol camera views: Agile Lens",
+    "sha256": "352c308968e77082483f74fe26204335ba1576fda776bf0998e14900da9a7626"
   }
 ]

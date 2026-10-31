@@ -2,9 +2,9 @@
   "method": "Rendered text nodes, including required credits, excluding persistent chapter/navigation labels, year/chapter chrome and image pixels. All configured slide records incl alternatives; initial settled base states as baseline convention. Separate current20t column. No OCR of text inside real product screens.",
   "totals": {
     "before": 1586,
-    "after": 374,
+    "after": 380,
     "before20t": 426,
-    "after20t": 243,
+    "after20t": 249,
     "nav20t": 282
   },
   "chapters": [
@@ -12,11 +12,11 @@
       "chapter": 1,
       "lesson": "Ignore the lane",
       "before": 309,
-      "after": 51,
-      "afterHeadlines": 48,
+      "after": 53,
+      "afterHeadlines": 50,
       "afterCredits": 0,
       "before20t": 75,
-      "after20t": 34,
+      "after20t": 36,
       "nav20t": 35
     },
     {
@@ -34,11 +34,11 @@
       "chapter": 3,
       "lesson": "Teach to learn",
       "before": 102,
-      "after": 37,
-      "afterHeadlines": 37,
+      "after": 39,
+      "afterHeadlines": 39,
       "afterCredits": 0,
       "before20t": 28,
-      "after20t": 23,
+      "after20t": 25,
       "nav20t": 25
     },
     {
@@ -67,11 +67,11 @@
       "chapter": 6,
       "lesson": "Capture impossible places",
       "before": 116,
-      "after": 55,
-      "afterHeadlines": 55,
+      "after": 57,
+      "afterHeadlines": 57,
       "afterCredits": 0,
       "before20t": 33,
-      "after20t": 35,
+      "after20t": 37,
       "nav20t": 35
     },
     {
@@ -229,10 +229,10 @@
       "chapter": 1,
       "role": "content",
       "id": "london",
-      "headline": "London, 2008: theater opens up",
+      "headline": "London, 2008. Student work shown here",
       "credit": "",
       "label": "1 / 8   Ignore the lane",
-      "text": "London, 2008: theater opens up 1 / 8   Ignore the lane",
+      "text": "London, 2008. Student work shown here 1 / 8   Ignore the lane",
       "bad": [],
       "media": [
         {
@@ -247,10 +247,10 @@
           ]
         }
       ],
-      "headlineWords": 5,
+      "headlineWords": 6,
       "creditWords": 0,
-      "totalWords": 10,
-      "bodyWords": 5,
+      "totalWords": 11,
+      "bodyWords": 6,
       "visible20t": true,
       "visible30": true
     },
@@ -289,10 +289,10 @@
       "chapter": 1,
       "role": "content",
       "id": "graduation",
-      "headline": "I DON’T THINK MY JOB EXISTS YET",
+      "headline": "2010: I DON’T THINK MY JOB EXISTS YET",
       "credit": "",
       "label": "1 / 8   Ignore the lane",
-      "text": "I DON’T THINK MY JOB EXISTS YET 1 / 8   Ignore the lane",
+      "text": "2010: I DON’T THINK MY JOB EXISTS YET 1 / 8   Ignore the lane",
       "bad": [],
       "media": [
         {
@@ -307,10 +307,10 @@
           ]
         }
       ],
-      "headlineWords": 7,
+      "headlineWords": 8,
       "creditWords": 0,
-      "totalWords": 12,
-      "bodyWords": 7,
+      "totalWords": 13,
+      "bodyWords": 8,
       "visible20t": true,
       "visible30": true
     },
@@ -811,10 +811,10 @@
       "chapter": 3,
       "role": "content",
       "id": "waldorf",
-      "headline": "Waldorf Astoria, before construction",
+      "headline": "Waldorf Astoria: a live virtual host",
       "credit": "",
       "label": "3 / 8   Teach to learn",
-      "text": "Waldorf Astoria, before construction 3 / 8   Teach to learn",
+      "text": "Waldorf Astoria: a live virtual host 3 / 8   Teach to learn",
       "bad": [],
       "media": [
         {
@@ -829,10 +829,10 @@
           ]
         }
       ],
-      "headlineWords": 4,
+      "headlineWords": 6,
       "creditWords": 0,
-      "totalWords": 9,
-      "bodyWords": 4,
+      "totalWords": 11,
+      "bodyWords": 6,
       "visible20t": true,
       "visible30": true
     },
@@ -1004,7 +1004,7 @@
       "bad": [],
       "media": [
         {
-          "src": "media/pmre/fs-v2/mexico-01.jpg",
+          "src": "media/pmre/fs-v2/mexico-02.jpg",
           "tag": "IMG",
           "broken": false,
           "box": [
@@ -1819,15 +1819,15 @@
       "chapter": 6,
       "role": "content",
       "id": "working-cut",
-      "headline": "A cinematographer’s working cut",
+      "headline": "Working-cut prototype: frame the recorded show",
       "credit": "",
       "label": "6 / 8   Capture impossible places",
-      "text": "A cinematographer’s working cut 6 / 8   Capture impossible places",
+      "text": "Working-cut prototype: frame the recorded show 6 / 8   Capture impossible places",
       "bad": [],
       "media": [
         {
-          "src": "media/story/carol-working-cut.mp4",
-          "tag": "VIDEO",
+          "src": "media/pmre/xmas-carol-vcam-iphone.jpg",
+          "tag": "IMG",
           "broken": false,
           "box": [
             368.6312561035156,
@@ -1837,10 +1837,10 @@
           ]
         }
       ],
-      "headlineWords": 4,
+      "headlineWords": 6,
       "creditWords": 0,
-      "totalWords": 9,
-      "bodyWords": 4,
+      "totalWords": 11,
+      "bodyWords": 6,
       "visible20t": true,
       "visible30": true
     },
@@ -1939,15 +1939,15 @@
       "chapter": 6,
       "role": "content",
       "id": "camera-coverage",
-      "headline": "One performance, several camera positions",
+      "headline": "One show, several camera positions",
       "credit": "",
       "label": "6 / 8   Capture impossible places",
-      "text": "One performance, several camera positions 6 / 8   Capture impossible places",
+      "text": "One show, several camera positions 6 / 8   Capture impossible places",
       "bad": [],
       "media": [
         {
-          "src": "media/story/carol-cameras.mp4",
-          "tag": "VIDEO",
+          "src": "media/pmre/xmas-carol-camera-angles.jpg",
+          "tag": "IMG",
           "broken": false,
           "box": [
             368.6312561035156,
@@ -2072,7 +2072,7 @@
       "bad": [],
       "media": [
         {
-          "src": "slides/pmre/hxr-community/media/community/community03_unrealnyc.jpg",
+          "src": "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg",
           "tag": "IMG",
           "broken": false,
           "box": [

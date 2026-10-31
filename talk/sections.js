@@ -209,19 +209,19 @@ const SECTIONS = [
       },
       {
         "id": "london",
-        "title": "London, 2008: theater opens up",
+        "title": "London, 2008. Student work shown here",
         use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
-          "title": "London, 2008: theater opens up",
+          "title": "London, 2008. Student work shown here",
           "src": "media/pmre/pre-fda-connective-corridor-2008.jpg",
           "credit": "Student work: Alex Coulombe",
           "alt": "London, 2008: theater opens up",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~45s.\n\nLondon2008 with Michael Barclay. Presenter: Michael Barclay helped him expand his love of theater, spatial storytelling and live shows. Visual is a contemporary student project; it is not labeled as a London photograph.\n\nMedia: media/pmre/pre-fda-connective-corridor-2008.jpg\nCredit: Student work: Alex Coulombe"
+        "notes": "⏱ ~45s.\n\nLondon2008 with Michael Barclay. Presenter: Michael Barclay helped him expand his love of theater, spatial storytelling and live shows. Visual is a contemporary student project; it is not labeled as a London photograph.\n\nMedia: media/pmre/pre-fda-connective-corridor-2008.jpg\nCredit: Student work: Alex Coulombe\n\nStory media correction: Caption explicitly identifies the illustration as student work, not a London location photograph."
       },
       {
         "id": "thesis",
@@ -241,19 +241,19 @@ const SECTIONS = [
       },
       {
         "id": "graduation",
-        "title": "I DON’T THINK MY JOB EXISTS YET",
+        "title": "2010: I DON’T THINK MY JOB EXISTS YET",
         use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
-          "title": "I DON’T THINK MY JOB EXISTS YET",
+          "title": "2010: I DON’T THINK MY JOB EXISTS YET",
           "src": "media/pmre/round4/thesis-earlyatrium.jpg",
           "credit": "Alex Coulombe, 2010",
           "alt": "I DON’T THINK MY JOB EXISTS YET",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~35s.\n\nPresenter-approved remembered quote, Alex Coulombe2010: “I don’t think my job exists yet.” Keep the original wording in notes.\n\nMedia: media/pmre/round4/thesis-earlyatrium.jpg\nCredit: Alex Coulombe, 2010"
+        "notes": "⏱ ~35s.\n\nPresenter-approved remembered quote, Alex Coulombe2010: “I don’t think my job exists yet.” Keep the original wording in notes.\n\nMedia: media/pmre/round4/thesis-earlyatrium.jpg\nCredit: Alex Coulombe, 2010\n\nStory media correction: Graduation year is part of the one eight-word line; remembered quote wording unchanged."
       },
       {
         "id": "equus",
@@ -535,19 +535,19 @@ const SECTIONS = [
       },
       {
         "id": "waldorf",
-        "title": "Waldorf Astoria, before construction",
+        "title": "Waldorf Astoria: a live virtual host",
         use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
-          "title": "Waldorf Astoria, before construction",
+          "title": "Waldorf Astoria: a live virtual host",
           "src": "slides/pmre/hxr-waldorf-astoria/media/waldorf-astoria-miami/01.jpg",
           "credit": "Project media: Agile Lens",
           "alt": "Waldorf Astoria, before construction",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~45s.\n\nActual Waldorf Astoria Miami project image from HarvardXR source, preserving its source notes and credit.\n\nMedia: slides/pmre/hxr-waldorf-astoria/media/waldorf-astoria-miami/01.jpg\nCredit: Project media: Agile Lens"
+        "notes": "⏱ ~45s.\n\nActual Waldorf Astoria Miami project image from HarvardXR source, preserving its source notes and credit.\n\nMedia: slides/pmre/hxr-waldorf-astoria/media/waldorf-astoria-miami/01.jpg\nCredit: Project media: Agile Lens\n\nStory media correction: Actual source screenshot shows the live virtual host, not an unbuilt-room render. Preserve the Rokoko performance-pipeline crossover in source notes."
       },
       {
         "id": "geffen",
@@ -648,13 +648,13 @@ const SECTIONS = [
         "storyRole": "content",
         "props": {
           "title": "A flyby keeps you outside",
-          "src": "media/pmre/fs-v2/mexico-01.jpg",
+          "src": "media/pmre/fs-v2/mexico-02.jpg",
           "credit": "Agile Lens / Royal Caribbean",
           "alt": "A flyby keeps you outside",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~65s.\n\nRoyal Caribbean Perfect Day Mexico: six-person VR balloon preview on a cruise ship. Compare distant flyby with human scale. Resort approval is a separate question; never imply flyby caused rejection. Source https://agilelens.com/portfolio/perfect-day-mexico\n\nMedia: media/pmre/fs-v2/mexico-01.jpg\nCredit: Agile Lens / Royal Caribbean"
+        "notes": "⏱ ~65s.\n\nRoyal Caribbean Perfect Day Mexico: six-person VR balloon preview on a cruise ship. Compare distant flyby with human scale. Resort approval is a separate question; never imply flyby caused rejection. Source https://agilelens.com/portfolio/perfect-day-mexico\n\nMedia: media/pmre/fs-v2/mexico-01.jpg\nCredit: Agile Lens / Royal Caribbean\n\nStory media correction: Actual editor aerial preview image. The source01is the physical balloon basket;02is the virtual aerial view. Preserve this identity; no claim of ground-scale walkthrough."
       },
       {
         "id": "fs-render",
@@ -1096,19 +1096,19 @@ const SECTIONS = [
       },
       {
         "id": "working-cut",
-        "title": "A cinematographer’s working cut",
+        "title": "Working-cut prototype: frame the recorded show",
         use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
-          "title": "A cinematographer’s working cut",
-          "src": "media/story/carol-working-cut.mp4",
-          "credit": "Working cut: Alex Coulombe Presents",
+          "title": "Working-cut prototype: frame the recorded show",
+          "src": "media/pmre/xmas-carol-vcam-iphone.jpg",
+          "credit": "Virtual camera screen: Agile Lens",
           "alt": "A cinematographer’s working cut",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~45s.\n\nActual class edit_final.mp4, from VR Cinematics for UE5.8. Working cut demonstration, not an announced finished film.\n\nMedia: media/story/carol-working-cut.mp4\nCredit: Working cut: Alex Coulombe Presents"
+        "notes": "⏱ ~45s.\n\nActual class edit_final.mp4, from VR Cinematics for UE5.8. Working cut demonstration, not an announced finished film.\n\nMedia: media/story/carol-working-cut.mp4\nCredit: Working cut: Alex Coulombe Presents\n\nStory media correction: Replaced generic class practice-scene video with the actual Carol iPhone virtual-camera screen. It illustrates the working-cut prototype; no finished-film or finished-editor claim. Original class clip and its explanation remain in source/archive, not presented as Carol product footage. Source media/pmre/PROVENANCE.md, MIA fmx-90."
       },
       {
         "id": "rome",
@@ -1160,19 +1160,19 @@ const SECTIONS = [
       },
       {
         "id": "camera-coverage",
-        "title": "One performance, several camera positions",
+        "title": "One show, several camera positions",
         use: "pmre/story-media",
         "keep": 30,
         "storyRole": "content",
         "props": {
-          "title": "One performance, several camera positions",
-          "src": "media/story/carol-cameras.mp4",
-          "credit": "Camera coverage: Alex Coulombe Presents",
+          "title": "One show, several camera positions",
+          "src": "media/pmre/xmas-carol-camera-angles.jpg",
+          "credit": "Carol camera views: Agile Lens",
           "alt": "One performance, several camera positions",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~35s.\n\nExpanded: actual class all_cameras.mp4, source disclosure preserved.\n\nMedia: media/story/carol-cameras.mp4\nCredit: Camera coverage: Alex Coulombe Presents"
+        "notes": "⏱ ~35s.\n\nExpanded: actual class all_cameras.mp4, source disclosure preserved.\n\nMedia: media/story/carol-cameras.mp4\nCredit: Camera coverage: Alex Coulombe Presents\n\nStory media correction: Actual ten-camera Carol screenshot from MIA fmx-90 replaces generic class blocks."
       },
       {
         "id": "ch6-takeaway",
@@ -1241,13 +1241,13 @@ const SECTIONS = [
         "storyRole": "content",
         "props": {
           "title": "Speaking, teaching, curating, sharing",
-          "src": "slides/pmre/hxr-community/media/community/community03_unrealnyc.jpg",
+          "src": "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg",
           "credit": "Photo: Agile Lens",
           "alt": "Speaking, teaching, curating, sharing",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~45s.\n\nPresenter-approved: speaking, teaching, curating FMX and RealTime Conference tracks. The photograph shows Unreal NYC, not an asserted FMX/RTC event.\n\nMedia: slides/pmre/hxr-community/media/community/community03_unrealnyc.jpg\nCredit: Photo: Agile Lens"
+        "notes": "⏱ ~45s.\n\nPresenter-approved: speaking, teaching, curating FMX and RealTime Conference tracks. The photograph shows Unreal NYC, not an asserted FMX/RTC event.\n\nMedia: slides/pmre/hxr-community/media/community/community03_unrealnyc.jpg\nCredit: Photo: Agile Lens\n\nStory media correction: Actual Unreal NYC event photograph replaces a logo."
       },
       {
         "id": "niche",

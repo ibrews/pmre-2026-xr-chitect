@@ -10,7 +10,7 @@ The eight O-picker groups each replace their chapter’s opening card. They pres
 
 Venue export uses native editable text/pictures over a raster background, complete separate video files, final-frame posters and full untruncated notes. Source-ratio media remains contained. Aspen’s full63.62second clip retains its audio; the55second Blueprint seat-demo hold includes its49.57second source. The Floor Tour plan demo is darkened to65% and its still to55% for the dark room; original bytes remain unchanged. Aspen stays at94% brightness.
 
-Rome flythroughs are web-rendered scan footage, SplatDiorama is a build77simulator screenshot, and UOXR is simulator footage. The Carol working cut/replay are actual source demonstrations. Preserve these identities and DBOX/Pureblink/Agile Lens role credits.
+Rome flythroughs are web-rendered scan footage, SplatDiorama is a build77simulator screenshot, and UOXR is simulator footage. The Carol replay is actual recorded-show footage; its working-cut prototype uses the real iPhone virtual-camera screen, with actual Carol camera views in the expanded cut. Preserve these identities and DBOX/Pureblink/Agile Lens role credits.
 
 Build with:
 
