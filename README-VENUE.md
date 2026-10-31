@@ -13,3 +13,5 @@ To fit 20t, the expanded career option skips the avatar intro, repeated teaching
 The Rome clip is a web-rendered Colosseum splat flythrough, not headset video; the hotel is a 10-second web-rendered flythrough of the whole-scene LOD dataset. See `media/pmre/round2/PROVENANCE.md` and each imported module's original `source.json` and `notes.txt`.
 
 The large white CAD panel in the Shed video and the Intel article screenshot use a 35% dark overlay in venue looks; the original source media is retained byte-for-byte. This avoids flashing a light panel in the dark room. The separate Shed video cue applies the same treatment.
+
+Blueprint Immersive uses the source slide's original automatic belt (zero source substeps); the reusable module's seven inspection clicks are disabled in this talk. The venue cue runs the full belt with deterministic video seeks. The mapped wrap-up has a separate Windows D3D11 capture so its voxel reveal is preserved. The Aspen video uses 94% brightness to keep its peak mean luminance below 0.35; its length and audio remain intact.

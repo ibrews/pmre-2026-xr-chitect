@@ -1,10 +1,10 @@
 # On-slide word count
 
-**Deck inventory: 2279 → 1485 words** (72 previous records → 92 current records, including hidden alternatives). New slide records have 0 in Before. The inserted source-deck text is included in After.
+**Deck inventory: 2279 → 1502 words** (72 previous records → 92 current records, including hidden alternatives). New slide records have 0 in Before. The inserted source-deck text is included in After.
 
 These are browser-read text inventories over each slide's builds, including SVG and motion iframe text, excluding notes, navigation and text baked into photographs/video. Display:none copy is excluded; opacity-faded build labels are counted once so later beats are not omitted. This counts the inventory of a motion, rather than multiplying words by animation frames. The old source is the previous published fa2cf72 deck; current source is this checkout. All removed copy remains in notes.
 
-Default-option inventories by cut: **20t 376 · 20 551 · 30 901 · full 1076 words**. Timings are in REHEARSAL.md; these are word counts, not timing estimates.
+Default-option inventories by cut: **20t 376 · 20 551 · 30 918 · full 1093 words**. Timings are in REHEARSAL.md; these are word counts, not timing estimates.
 
 | Current slide | Subject | Before | After | In 20t |
 |---:|---|---:|---:|:---:|
@@ -94,7 +94,7 @@ Default-option inventories by cut: **20t 376 · 20 551 · 30 901 · full 1076 wo
 | 84 | pmre/venn | 12 | 12 |  |
 | 85 | So, tonight | 7 | 7 | yes |
 | 86 | pmre/venn-you | 23 | 23 |  |
-| 87 | The journey, mapped | 0 | 0 |  |
+| 87 | The journey, mapped | 0 | 17 |  |
 | 88 | core/timeline | 70 | 31 |  |
 | 89 | core/timeline | 0 | 38 |  |
 | 90 | Thesis summary | 41 | 13 |  |
