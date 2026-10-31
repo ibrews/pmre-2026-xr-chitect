@@ -1,0 +1,32 @@
+{
+  "id": "pmre/hxr-waldorf-astoria",
+  "source": "https://ibrews.github.io/harvardxr-keynote/#30",
+  "source_commit": "811042a2a87476a045be69f8c2e2aafa50cca12c",
+  "source_steps": 0,
+  "steps": 2,
+  "duration": 26.4,
+  "year": 2022,
+  "title": "Waldorf Astoria Miami",
+  "line": "A live motion capture host in an architectural tour",
+  "notes": "A Rokoko motion capture pipeline put a live virtual host inside an architectural tour. The client found the team after a SIGGRAPH talk about Christmas Carol VR. A performance workflow could serve an architectural client.",
+  "media": [
+    {
+      "src": "media/waldorf-astoria-miami/01.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/waldorf-astoria-miami/02.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/waldorf-astoria-miami/waldorf_concierge.png",
+      "seconds": 6,
+      "loop": false
+    }
+  ],
+  "kind": "gallery",
+  "suggested_placement": "2022 source chapter / performance workflow reused in architectural tours",
+  "adaptation": "Source automatic media sequence preserved; added ArrowRight stops expose each item for inspection."
+}

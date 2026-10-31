@@ -1,0 +1,4 @@
+{
+  "use": "pmre/nxt-blueprint-immersive",
+  "notes": "The first attempt grew from FDA Theatre Planning work. The tool used Datasmith runtime importing and option toggles. The seven-item belt shows both videos and five stills. In the source, the text fades to 50% and the belt enters after 3.5 seconds, moves for 20 seconds, and leaves the final image centered."
+}

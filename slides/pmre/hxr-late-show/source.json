@@ -1,0 +1,37 @@
+{
+  "id": "pmre/hxr-late-show",
+  "source": "https://ibrews.github.io/harvardxr-keynote/#8",
+  "source_commit": "811042a2a87476a045be69f8c2e2aafa50cca12c",
+  "source_steps": 0,
+  "steps": 3,
+  "duration": 61.485,
+  "year": 2016,
+  "title": "The Late Show",
+  "line": "Test the sightlines before installation",
+  "notes": "Bravo Media reused the sightline code for The Late Show at the Ed Sullivan Theater. The design had to work without damaging the historic dome. The source describes time saved but gives no measured amount.",
+  "media": [
+    {
+      "src": "media/lateshow/lateshow01_early-oculus-rift_orig.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/lateshow/lateshow02_unity.png",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/lateshow/lateshow03_mag.png",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/lateshow/lateshow04_vid.mp4",
+      "seconds": 32.285156,
+      "loop": false
+    }
+  ],
+  "kind": "gallery",
+  "suggested_placement": "2016 / sightlines and reuse of the theatre-design tool",
+  "adaptation": "Source automatic media sequence preserved; added ArrowRight stops expose each item for inspection."
+}

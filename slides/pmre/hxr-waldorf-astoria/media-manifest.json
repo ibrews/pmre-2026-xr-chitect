@@ -1,0 +1,23 @@
+[
+  {
+    "file": "media/waldorf-astoria-miami/01.jpg",
+    "sha256": "693bb7a75a1cfe8c978865bab7ecb97fe83424f0c3ba8b7e7cc9e764b437665b",
+    "source_path": "media/waldorf-astoria-miami/01.jpg",
+    "source_sha256": "693bb7a75a1cfe8c978865bab7ecb97fe83424f0c3ba8b7e7cc9e764b437665b",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/waldorf-astoria-miami/02.jpg",
+    "sha256": "64fb49c97e98cfbe591bd17ccf4f39a289c0f8ed7db6a7b625d851529119f7a5",
+    "source_path": "media/waldorf-astoria-miami/02.jpg",
+    "source_sha256": "64fb49c97e98cfbe591bd17ccf4f39a289c0f8ed7db6a7b625d851529119f7a5",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/waldorf-astoria-miami/waldorf_concierge.png",
+    "sha256": "4029a915ece7e6177382712270f4da806ee09842bd120d1eb15dfc3d2f9c3ddc",
+    "source_path": "media/waldorf-astoria-miami/waldorf_concierge.png",
+    "source_sha256": "4029a915ece7e6177382712270f4da806ee09842bd120d1eb15dfc3d2f9c3ddc",
+    "transformation": "Byte-identical source copy"
+  }
+]

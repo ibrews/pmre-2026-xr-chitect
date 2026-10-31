@@ -1,0 +1,23 @@
+[
+  {
+    "file": "media/fsla/fsla_01.jpg",
+    "sha256": "ef2ace9d1a874cc508683e570ea2fce7f11ee42f7a4e9d571746b66103c44111",
+    "source_path": "media/fsla/fsla_01.jpg",
+    "source_sha256": "ef2ace9d1a874cc508683e570ea2fce7f11ee42f7a4e9d571746b66103c44111",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/fsla/fsla_02.jpg",
+    "sha256": "766d7d3fd54c3d1fb5a005c052b74944c5eb4e5cf325a4ecb9d11383f6f47642",
+    "source_path": "media/fsla/fsla_02.jpg",
+    "source_sha256": "766d7d3fd54c3d1fb5a005c052b74944c5eb4e5cf325a4ecb9d11383f6f47642",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/fsla/fsla_03.jpg",
+    "sha256": "1b69ddc86b94ef98261a057d02906c53a201d14da8779be802de3ccfa6dd3357",
+    "source_path": "media/fsla/fsla_03.jpg",
+    "source_sha256": "1b69ddc86b94ef98261a057d02906c53a201d14da8779be802de3ccfa6dd3357",
+    "transformation": "Byte-identical source copy"
+  }
+]

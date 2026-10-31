@@ -1,0 +1,3 @@
+Three production clips appear in a row: portrait, landscape, portrait. Preserve each clip’s full aspect ratio and the sequential fades (800 ms delay, 500 ms stagger, 700 ms fade). Alex requested this as Four Seasons; the source title is Holodeck Anywhere / In Production and does not label each clip’s location. Do not assign a location to an individual clip without further evidence.
+
+Source: https://ibrews.github.io/nxtbld-2026-productizing-xr/#37 @ 9736254f9099037e9a1155a242b0c4b27fb13ffb

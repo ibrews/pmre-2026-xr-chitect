@@ -1,0 +1,4 @@
+{
+  "use": "pmre/nxt-four-seasons-production",
+  "notes": "Three production clips appear in a row: portrait, landscape, portrait. Preserve each clip\u2019s full aspect ratio and the sequential fades (800 ms delay, 500 ms stagger, 700 ms fade). Alex requested this as Four Seasons; the source title is Holodeck Anywhere / In Production and does not label each clip\u2019s location. Do not assign a location to an individual clip without further evidence."
+}
