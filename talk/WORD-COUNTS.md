@@ -14,4 +14,4 @@ Rendered text, including required credits; navigation is reported separately. Te
 | 8 | Find your weird intersection | 317 | 29 | 50 | 15 | 18 |
 | Total | | 1586 | 374 | 426 | 243 | 282 |
 
-All content headlines have at most8words. Required credit lines are counted above and kept visible. The chapter/minimap label is a separate navigational layer, repeated intentionally. Verbatim original notes and copy remain in actual speaker notes, with allocation in story-preservation.json.
+All content headlines have at most8words. DBOX’s required credit is counted above as its slide’s sole line; other credits are in notes. The chapter/minimap label is a separate navigational layer, repeated intentionally. Verbatim original notes and copy remain in actual speaker notes, with allocation in story-preservation.json.
