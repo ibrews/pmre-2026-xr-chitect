@@ -391,11 +391,11 @@ export function renderLocalVideo(v, st, opts, cache) {
 // Multi-clip source slide: preserve the simultaneous layout and each clip, separate AV cue.
 export function renderLocalVideoSet(videos,st,opts,cache){
  const source=videos.map(v=>fileURLToPath(v.src)),duration=Math.max(...source.map(probeDur));
- const key=sha(JSON.stringify([source.map(f=>sha(fs.readFileSync(f))),sha(fs.readFileSync(st.full)),videos,opts.fps,'multiclip-v1']));
+ const key=sha(JSON.stringify([source.map(f=>sha(fs.readFileSync(f))),sha(fs.readFileSync(st.full)),videos,opts.fps,'multiclip-v2']));
  const dir=path.join(cache,'video','multi-'+key.slice(0,24));fs.mkdirSync(dir,{recursive:true});const mp4=path.join(dir,'video.mp4'),poster=path.join(dir,'poster.png');
  if(!fs.existsSync(mp4)){
-  const filters=[],args=['-y','-loglevel','error','-threads','4','-loop','1','-framerate',String(opts.fps),'-i',st.full];source.forEach(f=>args.push('-i',f));
-  let prev='0:v';videos.forEach((v,i)=>{const [x,y,bw,bh]=v.box,w=Math.max(2,Math.round(bw/2)*2),h=Math.max(2,Math.round(bh/2)*2);filters.push(`[${i+1}:v]scale=${w}:${h}:force_original_aspect_ratio=decrease,pad=${w}:${h}:(ow-iw)/2:(oh-ih)/2:color=black,setsar=1,tpad=stop_mode=clone:stop_duration=${duration}[v${i}]`);filters.push(`[${prev}][v${i}]overlay=${Math.round(x)}:${Math.round(y)}:shortest=1[o${i}]`);prev='o'+i;});
+  const filters=[],args=['-y','-loglevel','error','-threads','4','-loop','1','-framerate',String(opts.fps),'-i',st.full];source.forEach(f=>args.push('-stream_loop','-1','-i',f));
+  let prev='0:v';videos.forEach((v,i)=>{const [x,y,bw,bh]=v.box,w=Math.max(2,Math.round(bw/2)*2),h=Math.max(2,Math.round(bh/2)*2);filters.push(`[${i+1}:v]scale=${w}:${h}:force_original_aspect_ratio=decrease,pad=${w}:${h}:(ow-iw)/2:(oh-ih)/2:color=black,setsar=1,fade=t=in:st=${(.8+.5*i).toFixed(1)}:d=0.7[v${i}]`);filters.push(`[${prev}][v${i}]overlay=${Math.round(x)}:${Math.round(y)}:shortest=1[o${i}]`);prev='o'+i;});
   filters.push(`[${prev}]format=yuv420p[out]`);execFileSync('ffmpeg',[...args,'-filter_complex',filters.join(';'),'-map','[out]','-an','-t',String(duration),'-r',String(opts.fps),'-c:v','libx264','-preset','medium','-crf','18','-movflags','+faststart',mp4]);
  }
  if(!fs.existsSync(poster))execFileSync('ffmpeg',['-y','-loglevel','error','-sseof','-1','-i',mp4,'-an','-update','1',poster]);
