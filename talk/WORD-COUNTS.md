@@ -2,7 +2,7 @@
 
 **Deck inventory: 2279 → 1485 words** (72 previous records → 92 current records, including hidden alternatives). New slide records have 0 in Before. The inserted source-deck text is included in After.
 
-These are browser-read text inventories over each slide's builds, including SVG, motion iframe text and later Rome build captions, excluding notes, navigation and text baked into photographs/video. Display:none copy is excluded; opacity-faded build labels are counted once so later beats are not omitted. This counts the inventory of a motion, rather than multiplying words by animation frames. The old source is the previous published fa2cf72 deck; current source is this checkout. All removed copy remains in notes.
+These are browser-read text inventories over each slide's builds, including SVG and motion iframe text, excluding notes, navigation and text baked into photographs/video. Display:none copy is excluded; opacity-faded build labels are counted once so later beats are not omitted. This counts the inventory of a motion, rather than multiplying words by animation frames. The old source is the previous published fa2cf72 deck; current source is this checkout. All removed copy remains in notes.
 
 Default-option inventories by cut: **20t 376 · 20 551 · 30 901 · full 1076 words**. Timings are in REHEARSAL.md; these are word counts, not timing estimates.
 
