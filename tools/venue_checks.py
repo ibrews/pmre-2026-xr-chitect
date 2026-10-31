@@ -136,10 +136,11 @@ def run(pptx, vdir, capf):
         frame_vals=[]
         for st in cap['states']:
             f=Path(st.get('full',''))
-            if not f.exists(): f=Path(capf).parent/'frames'/f.name
+            if not f.exists(): f=Path(capf).parent/'frames'/str(st.get('full','')).replace('\\','/').split('/')[-1]
             if f.exists():
                 L=luma(Image.open(f));frame_vals.append({'deck':st['deckIndex'],'step':st['step'],'luma':round(L/255,4)})
                 if L>LIGHT_LUMA:res['dark'].append(f"deck slide {st['deckIndex']} step {st['step']}: full-frame luma {L/255:.3f} > 0.35")
+            else: res['dark'].append(f"missing rendered frame for deck {st['deckIndex']} step {st['step']}: {f}")
     else: frame_vals=[]
     res["no-media"] = check_media(pptx)
     res["video-cues"], cues = check_videos(prs, vdir)
