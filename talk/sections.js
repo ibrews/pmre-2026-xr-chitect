@@ -1259,7 +1259,8 @@ const SECTIONS = [
         title: "Blueprint Immersive",
         notes: "⏱ ~45s.\n\nThe first attempt grew from FDA Theatre Planning work. The tool used Datasmith runtime importing and option toggles. The seven-item belt shows both videos and five stills. In the source, the text fades to 50% and the belt enters after 3.5 seconds, moves for 20 seconds, and leaves the final image centered.\n\nSource: https://ibrews.github.io/nxtbld-2026-productizing-xr/#20 @9736254f9099037e9a1155a242b0c4b27fb13ffb; all source states and media preserved in the module. See module notes.txt and source.json for original source notes.\n\nOriginal source slide copy (retained for context; use the qualifications above):\ntitle: Blueprint Immersive.\ntagline: “Does this layout work best?”",
         bullets: [],
-        subtitle: ""
+        subtitle: "",
+        steps: 0
       },
       {
         use: "pmre/hxr-community",
