@@ -69,3 +69,9 @@ To pull framework updates: `git remote add upstream https://github.com/ibrews/sp
 Royal Caribbean / Perfect Day Mexico sets up the human-scale lesson before Four Seasons. The travel sequence is Austin, Aspen, DBOX New York, the 57th Street investor pop-up, then California. Image frames follow each source's aspect ratio, including ported canvas substeps. A forward press during a module beat completes that beat; the following press advances. The frame protocol accepts `complete` with the current step number. Speaker wording and new image provenance are in `talk/sections.js` and `media/pmre/round4/PROVENANCE.md`. Cut20t remains 34:10; cut30 remains 72:00 (reference only).
 
 To regression-test rapid navigation at 1920×1080, serve this checkout and run `node tools/qa_step_completion.cjs http://127.0.0.1:8774/ navigation-qa.json`. It visits every slide with registered substeps, presses during each beat, and requires that the completion press stays on the same slide/step before the subsequent press advances.
+
+## Presenter keep/cut review
+
+Press **X** to hide or restore the current slide. Normal forward/back navigation skips local hidden slides. **Shift+X** toggles review navigation through them. The grid keeps them dimmed with struck labels; Ctrl/Cmd-click uses the same persistent hide list. Press **?** for the help overlay. Keys are ignored while typing or using command modifiers.
+
+Choices persist in localStorage for this deck path and browser. **A → Copy All** includes a **HIDDEN SLIDES** section with the deck-counter number, stable content ID and title, even with no other annotations. Paste that list to request a permanent cut. Local choices never alter source defaults, print/shot output, or venue exports; applying a list to source requires an explicit request. Option-group and baked-cut exclusions remain separate.

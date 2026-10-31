@@ -2266,7 +2266,8 @@ body[data-bg-style]:not([data-bg-style="none"]) .cfg-panel{background:rgba(8,10,
 .sg-thumb{flex:0 0 auto;min-width:64px;height:46px;border:1px solid rgba(255,255,255,.12);border-radius:6px;background:rgba(255,255,255,.03);padding:5px 8px;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;font-family:var(--font);transition:all .15s}
 .sg-thumb:hover{background:rgba(0,212,255,.12);border-color:rgba(0,212,255,.4);transform:translateY(-2px)}
 .sg-thumb.active{background:rgba(0,212,255,.18);border-color:var(--teal);box-shadow:0 0 12px rgba(0,212,255,.3)}
-.sg-thumb.slide-hidden{opacity:.3;border-style:dashed}
+.sg-thumb.slide-hidden{opacity:.3;border-style:dashed;text-decoration:line-through}
+#deck-help{position:fixed;z-index:100000;inset:20% 15%;background:#10131c;color:#f0f4ff;padding:36px;font:20px/1.6 Inter,system-ui,sans-serif;border:1px solid #596273;border-radius:12px}
 .sg-num{font-size:.62rem;font-weight:600;color:rgba(255,255,255,.55)}
 .sg-thumb.active .sg-num{color:var(--teal)}
 .sg-label{font-size:.52rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
@@ -4080,9 +4081,20 @@ deck.appendChild(cls);allSlides.push(cls);
 
 SD._wire();
 if(typeof applyTalkOptions==='function')applyTalkOptions();
+// Presenter hide list: browser-local rehearsal state; never writes baked visibility.
+const _hiddenKey='pmre-hidden-slides-v1:'+location.pathname.replace(/index\.html$/,'');
+const _hiddenExport=new URLSearchParams(location.search).has('print')||new URLSearchParams(location.search).has('shot');
+let _showHidden=false,_hiddenIds=new Set();
+try{const a=JSON.parse(localStorage.getItem(_hiddenKey)||'[]');if(Array.isArray(a))_hiddenIds=new Set(a.filter(x=>typeof x==='string'));}catch(_){}
+const _hiddenSeen=new Map();
+allSlides.forEach(s=>{const title=(s.querySelector('.case-title,.lesson-title,.talk-title,.close-title,.big-text,h1,h2')?.textContent||s.dataset.type||'').replace(/\s+/g,' ').trim();const raw=[s.dataset.type,s.dataset.year,s.dataset.sdMod||'',title].join('/');const n=(_hiddenSeen.get(raw)||0)+1;_hiddenSeen.set(raw,n);s.dataset.presenterId=raw+(n>1?'/'+n:'');s.dataset.presenterTitle=title;s.dataset.presenterHidden=_hiddenIds.has(s.dataset.presenterId)?'1':'';});
+function presenterNavigable(s){return s.dataset.hidden!=='1'&&(_hiddenExport||_showHidden||s.dataset.presenterHidden!=='1');}
+function presenterToggle(s){if(!s||s.dataset.type==='settings'||_hiddenExport)return;const id=s.dataset.presenterId;if(_hiddenIds.has(id))_hiddenIds.delete(id);else _hiddenIds.add(id);s.dataset.presenterHidden=_hiddenIds.has(id)?'1':'';try{localStorage.setItem(_hiddenKey,JSON.stringify([..._hiddenIds]));}catch(_){}buildGrid();annoToast(s.dataset.presenterHidden==='1'?'Hidden locally · Shift+X to review':'Slide restored');}
+function presenterHiddenMarkdown(){const rows=allSlides.map((s,i)=>({s,i})).filter(({s})=>s.dataset.presenterHidden==='1');return '\n## HIDDEN SLIDES\n\n_Browser-local keep/cut list. Apply to source only when explicitly requested. Numbers match the deck counter._\n\n'+(rows.length?rows.map(({s,i})=>`- ${i} · ${s.dataset.presenterId} · ${s.dataset.presenterTitle}`).join('\n'):'_(none)_')+'\n';}
+document.addEventListener('keydown',e=>{if(e.repeat||e.metaKey||e.ctrlKey||e.altKey||e.target.closest('input,textarea,select,[contenteditable]'))return;if(e.key.toLowerCase()==='x'){e.preventDefault();if(e.shiftKey){_showHidden=!_showHidden;document.body.classList.toggle('presenter-show-hidden',_showHidden);buildGrid();annoToast(_showHidden?'Show hidden: on':'Show hidden: off');}else presenterToggle(allSlides[current]);}if(e.key==='?'){e.preventDefault();const old=document.getElementById('deck-help');if(old){old.remove();return;}const h=document.createElement('div');h.id='deck-help';h.innerHTML='<h2>Deck keys</h2><p>← / → Navigate · H Chrome · O Options · A Annotations</p><p>X Hide / restore current slide · Shift+X Show hidden</p><p>N Presenter notes · Shift+N Notes drawer · ? Close help</p><p>Hide choices stay in this browser. Copy All includes HIDDEN SLIDES. Exports use the baked cut.</p>';document.body.append(h);}if(e.key==='Escape')document.getElementById('deck-help')?.remove();});
 // Navigation
 let current=1,total=allSlides.length,direction=1;
-function nextVisible(f,d){let i=f;for(let n=0;n<total;n++){i=(i+d+total)%total;if(allSlides[i].dataset.hidden!=='1')return i;}return f;}
+function nextVisible(f,d){let i=f;for(let n=0;n<total;n++){i=(i+d+total)%total;if(presenterNavigable(allSlides[i]))return i;}return f;}
 function goTo(n,fwd){if(n<0||n>=total||n===current)return;window._killAllSfx();const dir=fwd!==undefined?fwd:n>current;direction=dir?1:-1;if(window._verticalMode){const prev=allSlides[current];if(prev)prev.classList.remove('active');current=n;_primeSlideMedia(n);const next=allSlides[current];next.classList.add('active');try{next.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){next.scrollIntoView();}updateHUD();updateHash();if(typeof gridEnsureSlide==='function')gridEnsureSlide();if(window.kfOnSlideEnter)window.kfOnSlideEnter();return;}const trans=(window._sdCfg||JSON.parse(localStorage.getItem('sd-cfg')||'{}')).transition||'slide';const prev=allSlides[current];prev.classList.remove('active');if(trans==='none'){prev.style.animation='';}else{let exitAnim;if(trans==='fade')exitAnim='fadeOut';else if(trans==='zoom')exitAnim=dir?'zoomOutFwd':'zoomOutBwd';else exitAnim=dir?'slideOutFwd':'slideOutBwd';prev.style.animation=exitAnim+' .4s ease forwards';setTimeout(()=>{prev.style.animation='';},450);}current=n;_primeSlideMedia(n);const next=allSlides[current];next.classList.add('active');if(trans==='none'){next.style.animation='';}else{let enterAnim;if(trans==='fade')enterAnim='fadeIn';else if(trans==='zoom')enterAnim=dir?'zoomInFwd':'zoomInBwd';else enterAnim=dir?'slideInFwd':'slideInBwd';next.style.animation=enterAnim+' .4s ease forwards';setTimeout(()=>{next.style.animation='';},450);}updateHUD();updateHash();playWhoosh();if(typeof gridEnsureSlide==='function')gridEnsureSlide();if(window.kfOnSlideEnter)window.kfOnSlideEnter();}
 function goNext(){goTo(nextVisible(current,1),true);}
 function goPrev(){goTo(nextVisible(current,-1),false);}
@@ -4110,8 +4122,8 @@ document.addEventListener('keydown',e=>{
   if(e.target.closest('#search-input,#anno-text,[contenteditable]'))return;
   if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();if(window._arrowSubstep!==false&&advanceStep())return;goNext();}
   if(e.key==='ArrowLeft'||e.key==='PageUp'||e.key==='Backspace'){e.preventDefault();goPrev();}
-  if(e.key==='Home'){e.preventDefault();goTo(1);}
-  if(e.key==='End'){e.preventDefault();goTo(total-1);}
+  if(e.key==='Home'){e.preventDefault();goTo(nextVisible(0,1));}
+  if(e.key==='End'){e.preventDefault();goTo(nextVisible(0,-1));}
   if(e.shiftKey&&e.key==='ArrowRight'&&window._activeCycler){e.preventDefault();window._activeCycler.next();}
   if(e.shiftKey&&e.key==='ArrowLeft'&&window._activeCycler){e.preventDefault();window._activeCycler.prev();}
   if((e.key==='h'||e.key==='H')&&!e.target.closest('input,textarea,[contenteditable]')){e.preventDefault();document.body.classList.toggle('presentation-mode');_mobileBtn();}
@@ -4152,7 +4164,7 @@ if(_wantLandscape){const lo=document.createElement('div');lo.id='landscape-promp
 // (Mobile-landscape viewport override removed: the fixed 16:9 stage now scales every slide to fit any viewport.)
 
 // Slide grid
-function buildGrid(){const g=document.getElementById('slide-grid');g.innerHTML='';allSlides.forEach((s,i)=>{const t=document.createElement('div');const ty=s.dataset.type||'slide';let c='sg-thumb';if(i===current)c+=' active';if(s.dataset.hidden==='1')c+=' slide-hidden';if(ty==='bonus')c+=' sg-bonus';t.className=c;const lb=ty==='lesson'?(s.dataset.ln?`L${s.dataset.ln}`:'LESSON'):ty==='case'?`${s.dataset.year}`:ty.toUpperCase();t.innerHTML=`<span class="sg-num">${String(i).padStart(2,'0')}</span><span class="sg-label">${lb}</span>`;t.addEventListener('click',e=>{if(e.ctrlKey||e.metaKey){s.dataset.hidden=s.dataset.hidden==='1'?'':'1';buildGrid();return;}goTo(i);});g.appendChild(t);});const a=g.querySelector('.active');if(a)a.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
+function buildGrid(){const g=document.getElementById('slide-grid');g.innerHTML='';allSlides.forEach((s,i)=>{const t=document.createElement('div');const ty=s.dataset.type||'slide';let c='sg-thumb';if(i===current)c+=' active';if(s.dataset.hidden==='1'||s.dataset.presenterHidden==='1')c+=' slide-hidden';if(ty==='bonus')c+=' sg-bonus';t.className=c;const lb=ty==='lesson'?(s.dataset.ln?`L${s.dataset.ln}`:'LESSON'):ty==='case'?`${s.dataset.year}`:ty.toUpperCase();t.innerHTML=`<span class="sg-num">${String(i).padStart(2,'0')}</span><span class="sg-label">${lb}</span>`;t.addEventListener('click',e=>{if(e.ctrlKey||e.metaKey){presenterToggle(s);return;}goTo(i);});g.appendChild(t);});const a=g.querySelector('.active');if(a)a.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
 const gridZone=document.getElementById('slide-grid-zone'),gridEl=document.getElementById('slide-grid');let gridTimer=null;
 gridZone.addEventListener('mouseenter',()=>{clearTimeout(gridTimer);gridEl.classList.add('visible');});
 gridEl.addEventListener('mouseenter',()=>{clearTimeout(gridTimer);gridEl.classList.add('visible');});
@@ -4343,15 +4355,16 @@ document.getElementById('anno-export').addEventListener('click',()=>{
   const arr=aL();
   // Always include current settings so feeding the export back updates the SECTIONS-time defaults
   let cfg={};try{cfg=JSON.parse(localStorage.getItem('sd-cfg')||'{}');}catch(e){}
+  const hiddenMd=presenterHiddenMarkdown();
   const settingsMd='## Current Settings (slide 0 — apply as new defaults)\n\n'+
     Object.keys(cfg).sort().map(k=>`- **${k}:** ${typeof cfg[k]==='string'?`"${cfg[k]}"`:cfg[k]}`).join('\n')+
     '\n\n_Reset/missing keys use the built-in `D` defaults._\n';
   if(!arr.length){
-    const md='# Annotations\n\n'+settingsMd+'\n_(no per-element annotations)_\n';
+    const md='# Annotations\n\n'+settingsMd+hiddenMd+'\n_(no per-element annotations)_\n';
     navigator.clipboard.writeText(md).then(()=>annoToast(`Copied settings only (no annotations)`));
     return;
   }
-  const md='# Annotations\n\n'+settingsMd+'\n'+arr.map((a,i)=>`## ${i+1}. ${a.context||''}\n**Selector:** \`${a.selector}\`\n${a.position?'**'+a.position+'**\n':''}${a.transform?'**'+a.transform+'**\n':''}**Note:** ${a.text}\n${a.type==='text-edit'&&a.newText?'**Full text:** '+a.newText.replace(/\n/g,'↵')+'\n':''}`).join('\n');
+  const md='# Annotations\n\n'+settingsMd+hiddenMd+'\n'+arr.map((a,i)=>`## ${i+1}. ${a.context||''}\n**Selector:** \`${a.selector}\`\n${a.position?'**'+a.position+'**\n':''}${a.transform?'**'+a.transform+'**\n':''}**Note:** ${a.text}\n${a.type==='text-edit'&&a.newText?'**Full text:** '+a.newText.replace(/\n/g,'↵')+'\n':''}`).join('\n');
   navigator.clipboard.writeText(md).then(()=>annoToast(`Copied ${arr.length} annotations + settings`));
 });
 document.getElementById('anno-clear').addEventListener('click',()=>{if(!confirm('Clear all?'))return;aS([]);aRender();annoToast('Cleared');});
@@ -5216,7 +5229,7 @@ function naAdvance(dir){
   let n=current;
   for(let i=0;i<total;i++){
     n=(n+dir+total)%total;
-    if(allSlides[n].dataset.hidden!=='1'&&allSlides[n].dataset.type!=='settings')break;
+    if(presenterNavigable(allSlides[n])&&allSlides[n].dataset.type!=='settings')break;
   }
   goTo(n);
   if(_notesView.locked){_pushClickerState();}
