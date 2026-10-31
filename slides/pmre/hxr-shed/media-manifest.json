@@ -1,0 +1,23 @@
+[
+  {
+    "file": "media/shed/Shed_Photo.jpg",
+    "sha256": "e8d2a0bfe470e26ce8a49f31891ecb5ad4543db94ffeafe3ea7f6599bf751ebe",
+    "source_path": "media/shed/Shed_Photo.jpg",
+    "source_sha256": "e8d2a0bfe470e26ce8a49f31891ecb5ad4543db94ffeafe3ea7f6599bf751ebe",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/shed/Shed_Video.mp4",
+    "sha256": "2bac19d065cd639b0b0dc04198e6f1e47281fa1033434d7d4b9d5a77abcb96c5",
+    "source_path": "media/shed/Shed_Video.mp4",
+    "source_sha256": "2bac19d065cd639b0b0dc04198e6f1e47281fa1033434d7d4b9d5a77abcb96c5",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/shed/Shed_Axon.png",
+    "sha256": "1f974dae76f6c3d030f7eaac2307e46509e0b0cc122db2b99ef040ee1591228b",
+    "source_path": "media/shed/Shed_Axon.png",
+    "source_sha256": "1f974dae76f6c3d030f7eaac2307e46509e0b0cc122db2b99ef040ee1591228b",
+    "transformation": "Byte-identical source copy"
+  }
+]

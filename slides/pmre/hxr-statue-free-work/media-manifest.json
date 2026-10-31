@@ -1,0 +1,44 @@
+[
+  {
+    "file": "media/pivot/00_StatueOfLiberty.jpg",
+    "sha256": "a1a4d301c1e44cf74716090569d56ea8c6e1ec70dfee38aa4044bc9a94b4af95",
+    "source_path": "media/pivot/00_StatueOfLiberty.jpg",
+    "source_sha256": "a1a4d301c1e44cf74716090569d56ea8c6e1ec70dfee38aa4044bc9a94b4af95",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/pivot/pivot01_academy65.mp4",
+    "sha256": "765693374d1738f925df4685497b0de321c5fc1432bcd5e1de268e11c0712df8",
+    "source_path": "media/pivot/pivot01_academy65.mp4",
+    "source_sha256": "765693374d1738f925df4685497b0de321c5fc1432bcd5e1de268e11c0712df8",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/pivot/pivot02_avenueMain360.mp4",
+    "sha256": "342673097f190c105fabe1a86fedf9d060e585438cbe7e55bdd6c40b6552d669",
+    "source_path": "media/pivot/pivot02_avenueMain360.mp4",
+    "source_sha256": "342673097f190c105fabe1a86fedf9d060e585438cbe7e55bdd6c40b6552d669",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/pivot/pivot03_tiltbrush.mp4",
+    "sha256": "9f6b05607e1bda407b8eda361c223643129c95f0ad7f508bdb572c67aa3d385e",
+    "source_path": "media/pivot/pivot03_tiltbrush.mp4",
+    "source_sha256": "9f6b05607e1bda407b8eda361c223643129c95f0ad7f508bdb572c67aa3d385e",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/pivot/pivot04_autodeskuniversity2017.jpg",
+    "sha256": "a0b3a8792a3d9b2dae486f07e60024c91e983e26856930794ba31307ade3e7a1",
+    "source_path": "media/pivot/pivot04_autodeskuniversity2017.jpg",
+    "source_sha256": "a0b3a8792a3d9b2dae486f07e60024c91e983e26856930794ba31307ade3e7a1",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/pivot/pivot05_article.jpg",
+    "sha256": "35239dc1933330b1988eb87415c91cc15957c835ebab892f63686ed3a8cd31c0",
+    "source_path": "media/pivot/pivot05_article.jpg",
+    "source_sha256": "35239dc1933330b1988eb87415c91cc15957c835ebab892f63686ed3a8cd31c0",
+    "transformation": "Byte-identical source copy"
+  }
+]

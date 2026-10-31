@@ -1,0 +1,32 @@
+{
+  "id": "pmre/hxr-david-geffen-hall",
+  "source": "https://ibrews.github.io/harvardxr-keynote/#31",
+  "source_commit": "811042a2a87476a045be69f8c2e2aafa50cca12c",
+  "source_steps": 0,
+  "steps": 2,
+  "duration": 26.4,
+  "year": 2022,
+  "title": "David Geffen Hall",
+  "line": "A physical railing inside the VR experience",
+  "notes": "A physical railing was included in the VR experience so stakeholders could lean on something real while seeing the virtual space. The source reports fewer downstream change orders without a count; do not attach an invented metric.",
+  "media": [
+    {
+      "src": "media/dgh/DavidGeffenHall01.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/dgh/DavidGeffenHall02.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/dgh/DavidGeffenHall03.jpeg",
+      "seconds": 6,
+      "loop": false
+    }
+  ],
+  "kind": "gallery",
+  "suggested_placement": "2022 source chapter / tactile review and architectural decisions",
+  "adaptation": "Source automatic media sequence preserved; added ArrowRight stops expose each item for inspection."
+}

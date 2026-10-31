@@ -1,0 +1,4 @@
+{
+  "use": "pmre/hxr-royal-caribbean",
+  "notes": "The Royal Caribbean work deployed XR experiences on a cruise ship. The source highlights constrained connectivity and the need for contingencies and graceful fallbacks. Show what works and keep the experience moving when a planned moment fails."
+}

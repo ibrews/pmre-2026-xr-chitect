@@ -1,0 +1,32 @@
+{
+  "id": "pmre/nxt-four-seasons-production",
+  "source": "https://ibrews.github.io/nxtbld-2026-productizing-xr/#37",
+  "source_commit": "9736254f9099037e9a1155a242b0c4b27fb13ffb",
+  "source_steps": 0,
+  "steps": 0,
+  "duration": 24.653,
+  "year": 2026,
+  "title": "Holodeck Anywhere",
+  "line": "In production",
+  "notes": "Three production clips appear in a row: portrait, landscape, portrait. Preserve each clip\u2019s full aspect ratio and the sequential fades (800 ms delay, 500 ms stagger, 700 ms fade). Alex requested this as Four Seasons; the source title is Holodeck Anywhere / In Production and does not label each clip\u2019s location. Do not assign a location to an individual clip without further evidence.",
+  "media": [
+    {
+      "src": "media/nxtbld/holo-prod-a.mp4",
+      "seconds": 10.873334,
+      "loop": false
+    },
+    {
+      "src": "media/nxtbld/holo-prod-b.mp4",
+      "seconds": 22.153334,
+      "loop": false
+    },
+    {
+      "src": "media/nxtbld/holo-prod-c.mp4",
+      "seconds": 14.935,
+      "loop": false
+    }
+  ],
+  "kind": "production",
+  "suggested_placement": "Four Seasons / Holodeck production chapter; 2026 source talk, per-clip location unverified",
+  "adaptation": "Original zero-click simultaneous production videos with staggered fades."
+}
