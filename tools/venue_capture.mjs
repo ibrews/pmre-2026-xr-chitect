@@ -113,7 +113,7 @@ function pageExtract(opts) {
   const tw = document.createTreeWalker(slide, NodeFilter.SHOW_TEXT);
   for (let n; (n = tw.nextNode());) {
     if (!n.nodeValue.trim()) continue; const pe = n.parentElement; if (!pe) continue;
-    if (inside(pe, 'svg,iframe,canvas,script,style,noscript,#sd-safezone,#journey,[id^="journey"],[class*="journey"]')) continue;  // the minimap may sit at the physical corner
+    if (inside(pe, 'svg,iframe,canvas,script,style,noscript,#sd-safezone,#journey,[id^="journey"],.journey-print')) continue;  // the minimap may sit at the physical corner
     const root = blockRoot(pe); if (!groups.has(root)) groups.set(root, []); groups.get(root).push(n);
   }
   const texts = [], allText = [];
@@ -221,7 +221,7 @@ function pageExtract(opts) {
 
   const iframes = [...slide.querySelectorAll('iframe')].map(f => { const r = f.getBoundingClientRect(); return { motion: f.dataset.motion || null, src: f.dataset.motionBase || f.getAttribute('src') || '', abs: new URL(f.dataset.motionBase || f.getAttribute('src') || '', location.href).href, box: [r.left, r.top, r.width, r.height], visible: op(f) > 0.04 && r.width > 50 }; }).filter(f => f.visible);
   const videos = [...slide.querySelectorAll('video,canvas[data-video-source]')].map(v => { const r = v.getBoundingClientRect(); return { brightness: +(v.dataset.videoBrightness||1), src: new URL(v.dataset.videoSource || v.currentSrc || v.src || '', location.href).href, box: [r.left, r.top, r.width, r.height], visible: op(v) > 0.04 && r.width > 50 }; }).filter(v => v.visible);
-  const keyMedia=[...slide.querySelectorAll('img,video,canvas,iframe,svg')].filter(e=>!e.closest('#journey,[class*=journey],.sd-skip-fit')&&!e.parentElement.closest('svg')&&op(e)>.04).map(e=>{const r=e.getBoundingClientRect();let box=[r.left,r.top,r.width,r.height];if(e.tagName==='IFRAME'){const n=e.dataset.motion||((e.dataset.motionBase||e.src||'').match(/([\w-]+)\.html/)||[])[1],f=window.MOTION_FIT?.[n];if(f?.box){const q=f.box;box=[r.left+q[0]*r.width,r.top+q[1]*r.height,q[2]*r.width,q[3]*r.height];}}const cl=clipRect(e),l=Math.max(box[0],cl.l),t=Math.max(box[1],cl.t),rr=Math.min(box[0]+box[2],cl.r),bb=Math.min(box[1]+box[3],cl.b);return {tag:e.tagName,src:e.currentSrc||e.src||'',box:[l,t,Math.max(0,rr-l),Math.max(0,bb-t)]};}).filter(e=>e.box[2]>2&&e.box[3]>2&&e.box[0]+e.box[2]>0&&e.box[0]<1920&&e.box[1]+e.box[3]>0&&e.box[1]<1080);
+  const keyMedia=[...slide.querySelectorAll('img,video,canvas,iframe,svg')].filter(e=>!e.closest('#journey,.journey-print,.sd-skip-fit')&&!e.parentElement.closest('svg')&&op(e)>.04).map(e=>{const r=e.getBoundingClientRect();let box=[r.left,r.top,r.width,r.height];if(e.tagName==='IFRAME'){const n=e.dataset.motion||((e.dataset.motionBase||e.src||'').match(/([\w-]+)\.html/)||[])[1],f=window.MOTION_FIT?.[n];if(f?.box){const q=f.box;box=[r.left+q[0]*r.width,r.top+q[1]*r.height,q[2]*r.width,q[3]*r.height];}}const cl=clipRect(e),l=Math.max(box[0],cl.l),t=Math.max(box[1],cl.t),rr=Math.min(box[0]+box[2],cl.r),bb=Math.min(box[1]+box[3],cl.b);return {tag:e.tagName,src:e.currentSrc||e.src||'',box:[l,t,Math.max(0,rr-l),Math.max(0,bb-t)]};}).filter(e=>e.box[2]>2&&e.box[3]>2&&e.box[0]+e.box[2]>0&&e.box[0]<1920&&e.box[1]+e.box[3]>0&&e.box[1]<1080);
   return { keyMedia, texts: texts.map(({ _el, ...t }) => t), images, svgs, allText, iframes, videos, slideRect: [SR.left, SR.top, SR.width, SR.height], vw: VW, vh: VH, fit: slide.dataset.safeFit || null };
 }
 
