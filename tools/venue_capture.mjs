@@ -243,7 +243,7 @@ export async function capture(opts) {
   const picks = Object.fromEntries(opts.pick.map(kv => kv.split('=')));
   const qs = new URLSearchParams({ ...picks, safe: opts.safe }).toString();
   const url = pathToFileURL(path.join(ROOT, 'index.html')).href + '?' + qs;
-  const browser = await chromium.launch({ executablePath: CHROME, args: ['--hide-scrollbars', '--autoplay-policy=no-user-gesture-required'] });
+  const browser = await chromium.launch({ executablePath: CHROME, args: ['--hide-scrollbars', '--autoplay-policy=no-user-gesture-required', ...(process.platform==='win32'?['--enable-webgl','--ignore-gpu-blocklist','--use-gl=angle','--use-angle=d3d11']:[])] });
   const ctx = await browser.newContext({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
   await ctx.addInitScript(() => { try { localStorage.clear(); localStorage.setItem('sd-cfg', JSON.stringify({ transition: 'none' })); } catch (_) {} });
   const page = await ctx.newPage();
