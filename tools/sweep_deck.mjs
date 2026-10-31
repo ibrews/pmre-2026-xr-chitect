@@ -68,6 +68,12 @@ const { chromium, exe: CHROME_EXE } = await loadChromium();
 // anything here is invisible to the verdict, so a wrong entry hides a real defect.
 const EXPECTED_NOISE = [
   {
+    id: 'played-video-navigation-cancel',
+    // Only suppress Chrome canceling a media request after this exact clip actually decoded and advanced.
+    match: s => / :: net::ERR_ABORTED$/.test(s) && per.some(x => x.videos?.some(v => v.rs >= 3 && v.adv && v.dur > 0 && new URL(v.src,url).href === s.split(' :: ')[0])),
+    why: 'Chrome may cancel an outstanding MP4 range request when navigation parks a clip. This classification requires measured playback of the same URL; decode/HTTP failures still fail.',
+  },
+  {
     id: 'notes-config-404',
     match: (s) => /notes-config\.json/.test(s),
     why: 'Optional presenter-sync config, gitignored by design. Absent => local-only notes mode (HANDOFF_PROMPT.md, tools/SETUP_NOTES_SYNC.md). The 404 is the feature detection.',

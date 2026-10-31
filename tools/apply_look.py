@@ -19,10 +19,8 @@ import argparse, json, re, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-FONTS = ("https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600"
-         "&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Big+Shoulders+Display:wght@100..900"
-         "&family=Libre+Franklin:wght@300..800&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Jost:wght@300..800"
-         "&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Alfa+Slab+One&display=swap")
+FONTS = 'assets/fonts/looks.css'
+
 HEAD_A, HEAD_B = "<!-- ── SD LOOKS START ── -->", "<!-- ── SD LOOKS END ── -->"
 BODY_A, BODY_B = "<!-- ── SD LOOK RUNTIME START ── -->", "<!-- ── SD LOOK RUNTIME END ── -->"
 
@@ -135,11 +133,11 @@ def main():
     # Slide modules (slides/<ns>/<id>/*.html) load slides/look.js themselves through slides/sd-frame.js.
     sd = html.parent / "slides"
     if (sd / "sd-frame.js").exists():
-        (sd / "look.js").write_text(js, encoding="utf-8")
+        (sd / "look.js").write_text(js.replace(json.dumps(FONTS), "new URL('../assets/fonts/looks.css',document.currentScript.src).href"), encoding="utf-8")
         print(f"apply_look: wrote {sd / 'look.js'} for iframe slide modules")
     if a.motion_dir:
         md = Path(a.motion_dir)
-        (md / "look.js").write_text(js, encoding="utf-8")
+        (md / "look.js").write_text(js.replace(json.dumps(FONTS), "new URL('../../assets/fonts/looks.css',document.currentScript.src).href"), encoding="utf-8")
         n = 0
         for f in sorted(md.glob("*.html")):
             t = f.read_text(encoding="utf-8")

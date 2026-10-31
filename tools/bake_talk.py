@@ -11,6 +11,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HTML, SRC = ROOT / "index.html", ROOT / "talk" / "sections.js"
 s = HTML.read_text(encoding="utf-8")
+# Offline presentation uses the same packaged font faces and the existing vendored Three.js.
+s = re.sub(r'<link[^>]+href="https://fonts.googleapis.com/[^"]+"[^>]*>', '<link href="assets/fonts/base.css" rel="stylesheet">', s)
+s = re.sub(r'<link[^>]+rel="preconnect"[^>]*>', '', s)
+s = s.replace('"three":"https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.min.js"','"three":"./slides/pmre/camera-toy/three.module.min.js"')
+s = s.replace("const threeURL='./slides/pmre/camera-toy/three.module.min.js';", "const threeURL='https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.min.js';")
+SYNC_GUARD = "if(!new URLSearchParams(location.search).has('sync'))return null;"
+while SYNC_GUARD + SYNC_GUARD in s:
+    s = s.replace(SYNC_GUARD + SYNC_GUARD, SYNC_GUARD)
+if SYNC_GUARD + "const r=await fetch('notes-config.json'" not in s:
+    s = s.replace("const r=await fetch('notes-config.json'", SYNC_GUARD + "const r=await fetch('notes-config.json'", 1)
+
 talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "journey.js", "motion-fit.js", "safezone.js"))
 
 def patch(marker, anchor, new, count=1):
@@ -21,6 +32,11 @@ def patch(marker, anchor, new, count=1):
     if anchor not in s:
         sys.exit(f"bake_talk: anchor not found for {marker!r} — template changed? anchor starts: {anchor[:80]!r}")
     s = s.replace(anchor, new, count)
+
+# Same metadata/poster preservation already proved in the class-deck pipeline.
+VIDEO_OLD = 'else if(/\\.(mp4|webm)$/i.test(src)){media=`<video class="full-media" src="${src}" autoplay loop muted playsinline></video>`;}'
+VIDEO_NEW = 'else if(/\\.(mp4|webm)$/i.test(src)){\n        const attr=v=>String(v||\'\').replace(/[&"<>]/g,ch=>({\'&\':\'&amp;\',\'"\':\'&quot;\',\'<\':\'&lt;\',\'>\':\'&gt;\'}[ch]));\n        const label=attr(c.alt),credit=attr(c.credit),q=new URLSearchParams(location.search),still=q.has(\'shot\')||q.has(\'print\');\n        media=still&&c.poster?`<img class="full-media" src="${attr(c.poster)}" alt="${label}" title="${credit}">`:`<video controls class="full-media" src="${attr(src)}"${c.poster?` poster="${attr(c.poster)}"`:\'\'} aria-label="${label}" title="${credit}" autoplay loop muted playsinline>${label}</video>`;\n      }'
+s = s.replace(VIDEO_OLD, VIDEO_NEW, 1)
 
 # 1. Content block: first bake replaces the template's SECTIONS..BONUS; later bakes replace between sentinels.
 START, END = "// ── TALK START ──", "// ── TALK END ──"

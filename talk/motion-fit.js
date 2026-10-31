@@ -18,6 +18,24 @@ window.MOTION_FIT = {
   ],
   "src": "cc3d9bed2e5ad847"
  },
+ "fs-stats": {
+  "box": [
+   0.125,
+   0.1648,
+   0.6463,
+   0.6454
+  ],
+  "src": "4941f62d8fa7d3ad"
+ },
+ "fs-travels": {
+  "box": [
+   0.1198,
+   0.1417,
+   0.7164,
+   0.6439
+  ],
+  "src": "a0c5d9db1c63ad3a"
+ },
  "lane": {
   "box": [
    0.0625,
@@ -53,6 +71,15 @@ window.MOTION_FIT = {
    0.673
   ],
   "src": "5eb02aa73071990b"
+ },
+ "mexico-scale": {
+  "box": [
+   0.1224,
+   0.1509,
+   0.7292,
+   0.6944
+  ],
+  "src": "4807322ef0d119cc"
  },
  "one-talk": {
   "box": [

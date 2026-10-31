@@ -1,9 +1,11 @@
 # PMRE 2026: options index ("Architect to XR-chitect")
 
-Every option below is built into the deck. Press **O** in the deck for the picker, or add URL params, for example `index.html?open=question&thesis=b&cut=30&theme=sheet`. The defaults reproduce the audited draft exactly. Picks are saved per browser, and **Reset to defaults** in the O panel clears them.
+Every option below is built into the deck. Press **O** in the deck for the picker, or add URL params, for example `index.html?open=question&thesis=b&cut=30&theme=sheet`. The defaults select the traveling-holodeck chapter (`fs=v2`). `?opt=fs:v2` is also accepted. Picks are saved per browser, and **Reset to defaults** in the O panel clears them.
 
 | Group (`?param=`) | Choice | One-line pitch |
 |---|---|---|
+| Four Seasons `fs` | `v2` *(default)* / `legacy` | New traveling holodeck chapter or original chapter. |
+| Short budget `fsbudget` | `tight` *(default)* / `all` | Only for v2 + 20t: skip ADVICE, 2010, TASTE and YOU setup cards, or restore them. All content and notes remain available. |
 | Opening `open` | `cold` *(default)* | The lane motion: one road splits into architecture, theater and technology, then braids into XR-chitect. Ends on "I didn't." |
 | | `question` | Show of hands first: "Who here has a job title your parents can't explain?" Warms a post-lunch room. |
 | | `story` | Skips the motion and goes straight to the "that job doesn't exist yet" quote. Fastest start. |

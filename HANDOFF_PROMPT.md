@@ -1,3 +1,5 @@
+> PMRE fork update, 2026-10-30: author talk content in `talk/sections.js`, picker in `talk/options.js`, then `python3 tools/bake_talk.py`. `index.html` is the baked runtime. `fs=v2` is now default; `fs=legacy` preserves the original chapter. Four `shortBudget` setup cards are skipped only by v2 + cut20t + fsbudget=tight. `tools/talk_script.mjs --pick fs=legacy` computes another pick set (regenerate without picks afterward). New modules: fs-stats, fs-travels, mexico-scale. Local MP4 venue capture is regression-tested; fonts are packaged under assets/fonts. See README and media/pmre/fs-v2/PROVENANCE.md before changing claims or location labels.
+
 # Spatial Deck — AI Agent Handoff Prompt
 
 > **Last updated:** 2026-05-06

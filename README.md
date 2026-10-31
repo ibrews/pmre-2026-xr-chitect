@@ -26,6 +26,18 @@ There's no build step. Arrow keys or clicks advance the slides.
 7. Open `index.html?safe=70&safezone` to see the deck the way PMRE's concave 1920×1080 screen needs it: each slide's content fitted to the centered 1344×756 safe zone (dashed box) as large as it will go, background still full-frame. The same toggle is in the **O** picker as "Venue safe zone".
 8. Build the organizer package (PowerPoint + separate MP4s + cue sheet + checks) in one command: `PLAYWRIGHT_CORE=/Users/alex/GH/xrsim/node_modules/playwright-core node tools/export_venue_package.mjs --cuts 20,30`. SVG parts have unique package names, including repeated artwork, so PowerPoint can open without a duplicate-part repair. It walks every slide and substep in safe-zone mode, re-renders only the animations that changed, and exits 1 with a slide-by-slide list if anything breaks a venue rule.
 
+## Four Seasons chapter (2026-10-30)
+
+The default `fs=v2` chapter introduces Lake Austin with the supplied images, reveals **$500M+ presales** and **$870M investment** separately, retains the walkable scale / spike-tape material, maps the traveling holodeck, plays the complete Aspen video, and closes with the Perfect Day Mexico counterpoint. The $870M is the project’s TYKO construction loan; it is not VR revenue. Credits and timestamped source prompts are in the notes and [media provenance](media/pmre/fs-v2/PROVENANCE.md).
+
+- New chapter: [`?opt=fs:v2`](https://ibrews.github.io/pmre-2026-xr-chitect/?opt=fs:v2). Original: `?fs=legacy`.
+- Venue short: `?opt=fs:v2&cut=20t&safe=70`. Default `fsbudget=tight` skips four repeated setup cards only for v2 / 20t (ADVICE, 2010, TASTE, YOU); `?fsbudget=all` restores them. No notes or media holds are shortened.
+- Default estimates: **20t 33:45 · 20 41:45 · 30 61:30 · full 72:15**. 20t plus 15 minutes Q&A is 48:45. Medium/full remain rehearsal material. Legacy chapter timing is unchanged.
+- **ALEX TO CONFIRM:** California tour stops, dates and photo; itinerary order; relationship of the older 57th Street montage to the 2026 NYC pop-up; Aspen source audio; Alex’s firsthand Mexico lesson. The map visibly marks California’s missing photo instead of reusing a different location.
+- Fonts and the used Three.js module are local. Optional notes sync loads only with `?sync`. The venue exporter now emits complete local MP4s, with original audio and a safe-zone final-frame poster, alongside seekable motions. Run `node tools/tests/test_venue_local_video.mjs` for its regression fixture.
+
+Rebuild from this checkout with `python3 tools/bake_talk.py` and `node tools/talk_script.mjs`. Repackage with `PLAYWRIGHT_CORE=/Users/alex/GH/xrsim/node_modules/playwright-core node tools/export_venue_package.mjs --cuts 20t,30 --label 2026-10-30-holodeck` (use the documented `--captured` path when rendering off-host).
+
 ## What's in here
 
 | Path | What |

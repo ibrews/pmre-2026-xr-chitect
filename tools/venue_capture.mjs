@@ -230,7 +230,7 @@ function pageHideNative(on) {
   if (!st) { st = document.createElement('style'); st.id = 'vx-hide'; document.head.appendChild(st); }
   const N = window.__vxNative || { t: [], i: [], s: [] };
   st.textContent = '[data-vx-hide]{color:transparent!important;-webkit-text-fill-color:transparent!important;text-shadow:none!important;text-decoration-color:transparent!important}[data-vx-keep]{color:var(--vx-c)!important;-webkit-text-fill-color:var(--vx-f)!important}' +
-    [...N.i.map(i => `[data-vx-img="${i}"]`), ...N.s.map(i => `[data-vx-svg="${i}"]`)].join(',') + (N.i.length + N.s.length ? '{visibility:hidden!important}' : '') + (N.f ? '#deck .slide.active iframe{visibility:hidden!important}' : '');
+    [...N.i.map(i => `[data-vx-img="${i}"]`), ...N.s.map(i => `[data-vx-svg="${i}"]`)].join(',') + (N.i.length + N.s.length ? '{visibility:hidden!important}' : '') + (N.f ? '#deck .slide.active iframe{visibility:hidden!important}' : '') + (N.v ? '#deck .slide.active video{visibility:hidden!important}' : '');
 }
 
 // ---------- node side ----------
@@ -308,21 +308,24 @@ export async function capture(opts) {
       const ex = await page.evaluate(pageExtract);
       const full = path.join(FR, NN + '-full.png'); await page.screenshot({ path: full, caret: 'hide' });
       for (const sv of ex.svgs) if (sv.native) { const [x, y, w, h] = sv.box; sv.png = path.join(FR, `${NN}-svg${sv.id}.png`); await page.screenshot({ path: sv.png, clip: { x, y, width: w, height: h }, caret: 'hide' }); fs.writeFileSync(path.join(FR, `${NN}-svg${sv.id}.svg`), sv.markup); sv.svg = path.join(FR, `${NN}-svg${sv.id}.svg`); delete sv.markup; }
-      await page.evaluate(N => { window.__vxNative = N; }, { t: ex.texts.filter(t => t.native).map(t => t.id), i: ex.images.filter(t => t.native).map(t => t.id), s: ex.svgs.filter(t => t.native).map(t => t.id), f: motionIframe });
+      await page.evaluate(N => { window.__vxNative = N; }, { t: ex.texts.filter(t => t.native).map(t => t.id), i: ex.images.filter(t => t.native).map(t => t.id), s: ex.svgs.filter(t => t.native).map(t => t.id), f: motionIframe, v: ex.videos.length > 0 });
       await page.evaluate(pageHideNative, true);
       const bg = path.join(FR, NN + '-bg.png'); await page.screenshot({ path: bg, caret: 'hide' });
       await page.evaluate(pageHideNative, false);
       Object.assign(st, { full, bg, ...ex, notes: await page.evaluate(i => (typeof getSlideNotes === 'function' ? getSlideNotes(i) : '') || '', sl.index) });
       // video for this state
       const vslug = slug(sl.module?.name || (st.iframes[0] && path.basename(st.iframes[0].src.split(/[?#]/)[0], '.html')) || sl.title);
-      if (motionIframe && st.iframes.length) {
+      if (st.videos.length === 1 && st.videos[0].src.startsWith('file:')) {
+        const v=renderLocalVideo(st.videos[0],st,opts,cache);
+        Object.assign(st,{kind:'video',video:{...v,file:`${NN}${letter}-${vslug}.mp4`,source:'local'}});
+      } else if (motionIframe && st.iframes.length) {
         st.picks = realPicks; jobs.push({ st, fr: st.iframes[0], file: `${NN}${letter}-${vslug}.mp4` });
         { const nm = st.iframes[0].motion || (st.iframes[0].src.match(/([\w-]+)\.html/) || [])[1]; const mf = await page.evaluate(n => (window.MOTION_FIT || {})[n] || null, nm); const f = nm && motionSource(nm).file;
           if (f && fs.existsSync(f)) { const h = motionHash(nm); if (!mf) (st.warn = st.warn || []).push(`${nm}: no entry in talk/motion-fit.js (run node tools/motion_fit.mjs ${nm} && python3 tools/bake_talk.py); slide shows the whole frame at 70%`); else if (mf.src !== h) (st.warn = st.warn || []).push(`${nm}: talk/motion-fit.js is stale (run node tools/motion_fit.mjs ${nm} && python3 tools/bake_talk.py)`); } }  // rendered after the walk, same page (one browser, one page)
       } else if (rec && rec.kind === 'video') {
         Object.assign(st, { kind: 'video', video: { cache: path.join(cdir, 'video.mp4'), poster: path.join(cdir, 'poster.png'), duration: probeDur(path.join(cdir, 'video.mp4')), file: `${NN}${letter}-${vslug}.mp4`, source: 'record', capped: !!rec.capped, settleSec: rec.settleSec } });
       }
-      if (st.videos.length) st.warn = (st.warn || []).concat(['<video> element on slide: frozen in capture (not exported as its own MP4 yet)']);
+      if (st.videos.length && st.video?.source !== 'local') st.warn = (st.warn || []).concat(['<video> element on slide: frozen in capture (not exported as its own MP4 yet)']);
       out.states.push(st);
       console.log(`  ${NN}${letter} deck#${sl.index} step ${k}/${sl.steps} ${st.kind}${st.video ? ' ' + st.video.file + ' ' + st.video.duration.toFixed(1) + 's (' + st.video.source + (st.video.cached ? ', cached' : '') + ')' : ''}  text ${st.texts.filter(t => t.native).length}/${st.texts.length} img ${st.images.filter(t => t.native).length}/${st.images.length} svg ${st.svgs.filter(t => t.native).length}/${st.svgs.length}  ${sl.title.slice(0, 40)}`);
     }
@@ -359,6 +362,23 @@ export const auditMotionText = (p, [x, y, w, h]) => p.evaluate(([X, Y, W, H]) =>
   }, [x, y, w, h]);
 
 function probeDur(f) { return +execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', f]).toString().trim(); }
+
+// A complete local clip is a separate AV cue, fitted inside the venue's safe zone. Preserve its source audio.
+export function renderLocalVideo(v, st, opts, cache) {
+  const source=fileURLToPath(v.src), probe=JSON.parse(execFileSync('ffprobe',['-v','error','-show_streams','-show_format','-of','json',source]).toString());
+  const audio=probe.streams.some(s=>s.codec_type==='audio'), duration=+probe.format.duration;
+  const safe=(+opts.safe||70)/100, w=Math.floor(1920*safe/2)*2, h=Math.floor(1080*safe/2)*2, x=(1920-w)/2, y=(1080-h)/2;
+  const key=sha(JSON.stringify([sha(fs.readFileSync(source)),sha(fs.readFileSync(st.bg)),w,h,opts.fps,'local-clip-v1']));
+  const dir=path.join(cache,'video','local-'+key.slice(0,24)), mp4=path.join(dir,'video.mp4'), poster=path.join(dir,'poster.png');
+  fs.mkdirSync(dir,{recursive:true});
+  if(!fs.existsSync(mp4)||!fs.existsSync(poster)) {
+    execFileSync('ffmpeg',['-y','-loglevel','error','-threads','4','-loop','1','-framerate',String(opts.fps),'-i',st.bg,'-i',source,
+      '-filter_complex',`[1:v]scale=${w}:${h}:force_original_aspect_ratio=decrease,pad=${w}:${h}:(ow-iw)/2:(oh-ih)/2:color=black,setsar=1[v];[0:v][v]overlay=${x}:${y}:shortest=1,format=yuv420p[out]`,
+      '-map','[out]',...(audio?['-map','1:a:0','-c:a','aac','-b:a','160k']:['-an']),'-t',String(duration),'-r',String(opts.fps),'-c:v','libx264','-preset','medium','-crf','18','-movflags','+faststart',mp4]);
+    execFileSync('ffmpeg',['-y','-loglevel','error','-sseof','-0.1','-i',mp4,'-frames:v','1','-update','1',poster]);
+  }
+  return {cache:mp4,poster,duration:probeDur(mp4),audio,audioKind:audio?'original clip audio':'silent',textAudit:[],safeBox:[x,y,w,h]};
+}
 
 // Deterministic render of a seekable motion graphic, composited into its on-slide (safe-zone) rect over the deck bg.
 async function renderIframeMotion(p, fr, st, opts, cache) {
