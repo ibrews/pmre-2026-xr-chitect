@@ -1,3 +1,5 @@
+> **PMRE venue default:** use cut20t PowerPoint + separate videos. Web defaults to `?cut=20t&safe=70&theme=house`. [Venue delivery and cut limits](README-VENUE.md).
+
 # Architect to XR-chitect: The Best Career Advice I Ever Ignored
 
 **Alex Coulombe at PMRE 2026** (Photo + Media for Real Estate), Palms Casino Resort, Las Vegas, Thursday, November 19, 11:00 am. The talk follows one winding career through architecture, theater and VR, and connects it to the craft of real-estate photographers and videographers.

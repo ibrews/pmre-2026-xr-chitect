@@ -9,6 +9,7 @@ css:".sd-mod-pmre-hxr-journey-map{padding:0!important}.sd-mod-pmre-hxr-journey-m
     const root=document.createElement('div');root.className='journey-port';root.innerHTML=p.svg;el.appendChild(root);
     const header=document.createElement('header');const h=document.createElement('h2');h.textContent=p.title;const line=document.createElement('p');line.textContent=p.line;header.append(h,line);root.appendChild(header);
     const svg=root.querySelector('svg'),logo=svg.querySelector('image');logo.setAttribute('href',ctx.asset('monocle-white.png'));
+    const yrs=['2005','2008','2010','2013','2016','2020','2023','2025','2026','2026'];svg.querySelectorAll('.recap-pill').forEach((g,i)=>{const y=[...g.querySelectorAll('text')].find(t=>/^20\d\d$/.test(t.textContent.trim()));if(y)y.textContent=yrs[i];});
     const ring=[...svg.querySelectorAll('circle')].find(e=>e.hasAttribute('stroke-dasharray'));
     const cord=svg.querySelector('path[stroke-dasharray]'),nodes=[...svg.querySelectorAll('.recap-pill')],lines=[...svg.querySelectorAll('line')];
     const bonus=[...svg.querySelectorAll('text')].find(e=>e.textContent==='2026')?.parentElement;

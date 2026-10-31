@@ -3,7 +3,7 @@ SD.defineSlide({
   id: 'pmre/sightline',
   frame: 'sightline.html',
   steps: 0,
-  duration: 13,
+  duration: 8,
   assets: ['sightline.html'],
   provenance: ['ibrews/pmre-2026-xr-chitect media/motion/sightline.html @310afba'],
 });

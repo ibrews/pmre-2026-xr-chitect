@@ -19,7 +19,7 @@ from pptx.util import Emu
 
 PX = 6350
 ZONE = (288, 162, 1632, 918)  # 1344x756 centered in 1920x1080
-LIGHT_LUMA = 110              # mean Rec.709 luma (0-255) above this = light background
+LIGHT_LUMA = 89              # mean Rec.709 luma (0-255) above this = light background
 CAP_MIN, QA_MIN = 50, (10, 15)
 MEDIA_EXT = (".mp4", ".mov", ".m4v", ".avi", ".wmv", ".mp3", ".wav", ".m4a", ".aac", ".ogg", ".webm", ".mpg", ".mpeg")
 CUE = re.compile(r"▶ VIDEO (\S+\.mp4) \((\d+):(\d\d)\)")
@@ -35,10 +35,12 @@ def check_safe(prs, cap):
     bad = []
     for n, s in enumerate(prs.slides, 1):
         for sh in s.shapes:
-            if not (sh.has_text_frame and sh.text_frame.text.strip()): continue
+            is_text=sh.has_text_frame and sh.text_frame.text.strip()
+            is_picture=sh.shape_type==13 and not (abs(sh.width-prs.slide_width)<PX*4 and abs(sh.height-prs.slide_height)<PX*4)
+            if not (is_text or is_picture): continue
             x, y, w, h = (v / PX for v in (sh.left, sh.top, sh.width, sh.height))
             if x < ZONE[0] - 1 or y < ZONE[1] - 1 or x + w > ZONE[2] + 1 or y + h > ZONE[3] + 1:
-                bad.append(f"PPTX slide {n}: text box {sh.text_frame.text.strip()[:40]!r} at x={x:.0f} y={y:.0f} w={w:.0f} h={h:.0f} px is outside the 1344x756 safe zone")
+                bad.append(f"PPTX slide {n}: key object {sh.name!r} at x={x:.0f} y={y:.0f} w={w:.0f} h={h:.0f} px is outside the 1344x756 safe zone")
     for st in (cap or {}).get("states", []):
         for t in (st.get("video") or {}).get("textAudit") or []:
             bad.append(f"VIDEO {st['video']['file']} (PPTX slide {st['n']}): baked-in text {t['text']!r} is outside the safe zone at t={t['t']}s ({t['over']}) — fix the motion graphic's layout")
@@ -48,6 +50,12 @@ def check_safe(prs, cap):
             x, y, w, h = v
             if x < ZONE[0] - 2 or y < ZONE[1] - 2 or x + w > ZONE[2] + 2 or y + h > ZONE[3] + 2:
                 bad.append(f"PPTX slide {st['n']} (deck slide {st['deckIndex']}, step {st['step']}): the deck draws {t['text'][:40]!r} outside the safe zone (x={x:.0f} y={y:.0f} w={w:.0f} h={h:.0f}) — fix the slide layout in the deck")
+    if cap:
+        for st in cap['states']:
+            for m in st.get('keyMedia',[]):
+                x,y,w,h=m['box']
+                if x<287 or y<161 or x+w>1633 or y+h>919:
+                    bad.append(f"deck slide {st['deckIndex']} step {st['step']}: key {m['tag']} outside safe zone {m['box']}")
     return bad
 
 def check_dark(prs):
@@ -124,10 +132,19 @@ def run(pptx, vdir, capf):
     res = {}
     res["safe-zone"] = check_safe(prs, cap)
     res["dark"], lumas = check_dark(prs)
+    if cap:
+        frame_vals=[]
+        for st in cap['states']:
+            f=Path(st.get('full',''))
+            if not f.exists(): f=Path(capf).parent/'frames'/f.name
+            if f.exists():
+                L=luma(Image.open(f));frame_vals.append({'deck':st['deckIndex'],'step':st['step'],'luma':round(L/255,4)})
+                if L>LIGHT_LUMA:res['dark'].append(f"deck slide {st['deckIndex']} step {st['step']}: full-frame luma {L/255:.3f} > 0.35")
+    else: frame_vals=[]
     res["no-media"] = check_media(pptx)
     res["video-cues"], cues = check_videos(prs, vdir)
     t = timing(cap) if cap else None
-    return res, {"lumas": lumas, "cues": cues, "timing": t}
+    return res, {"lumas": lumas, "full_frame_luminance":frame_vals, "cues": cues, "timing": t}
 
 def selftest(pptx, vdir, capf):
     """Break a copy in every way the checks guard against; each check must FAIL on it, or the PASS means nothing."""
@@ -150,6 +167,9 @@ def selftest(pptx, vdir, capf):
     prs.save(bp)
     with zipfile.ZipFile(bp, "a") as z: z.writestr("ppt/media/media99.mp4", b"\0" * 64)
     res, _ = run(bp, bv, None)
+    # Native and rasterized key media must fail too; background/poster frames alone are exempt.
+    mediafake={"states":[{"n":1,"deckIndex":1,"step":0,"allText":[],"keyMedia":[{"tag":"IMG","box":[10,10,600,400]}]}]}
+    res["safe-zone(media)"]=check_safe(Presentation(pptx),mediafake)
     # a deck-side text outside the zone (capture-level) must also fail
     fake = {"states": [{"n": 1, "deckIndex": 0, "step": 0, "allText": [{"text": "edge text", "visible": [10, 10, 100, 20]}]}]}
     res["safe-zone(deck)"] = check_safe(Presentation(pptx), fake)

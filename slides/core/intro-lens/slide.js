@@ -137,7 +137,7 @@ SD.defineSlide({
     function fadeNames() { texts.forEach(t => { t.style.transition = ctx.instant ? 'none' : 'opacity .8s ease-out'; t.style.opacity = '0'; }); stopHum(); }
 
     function countdown() {
-      const from = +L.countFrom || 2026;
+      const from = +L.countFrom || 2026, landing=+L.year||2016;
       const y = svgE('text', { x: CX, y: CY, 'text-anchor': 'middle', 'dominant-baseline': 'middle', fill: 'rgba(255,255,255,.85)', 'font-family': 'Space Grotesk,sans-serif', 'font-size': '72', 'font-weight': '700', 'letter-spacing': '4', class: 'ti-lens-x ti-lens-count' });
       y.style.transformBox = 'fill-box'; y.style.transformOrigin = 'center'; y.textContent = String(from); svg.appendChild(y);
       // Reduced motion: the live counter's last frame is empty, so show its first value instead (spawn() removes it).
@@ -146,10 +146,9 @@ SD.defineSlide({
       C.after(50, () => { y.style.transition = 'opacity .4s'; y.style.opacity = '1'; });
       C.after(500, () => {
         y.style.transition = ''; const t0 = performance.now(); let last = -1;
-        const frame = now => { const k = Math.min(1, (now - t0) / 3000), cur = Math.round(from - k * 126); y.textContent = String(cur); if (cur !== last) { if (cur > from - 51) sfx.countTick(); last = cur; }
-          const ct = Math.min(1, Math.max(0, (from - cur) / 16)); y.setAttribute('fill', `rgb(${Math.round(255 * (1 - ct))},${Math.round(255 - 43 * ct)},255)`);
-          if (cur <= from - 56) { const f = Math.min(1, (from - 56 - cur) / 20); y.style.opacity = (1 - f).toFixed(3); y.style.transform = `scale(${(1 - .15 * f).toFixed(3)})`; }
-          if (k < 1) C.raf(frame); else y.style.opacity = '0'; };
+        const frame = now => { const k = Math.min(1, (now - t0) / 3000), cur = Math.round(from - k * (from-landing)); y.textContent = String(cur); if (cur !== last) { if (cur > from - 51) sfx.countTick(); last = cur; }
+          const ct=k; y.setAttribute('fill',`rgb(${Math.round(255*(1-ct))},${Math.round(255-43*ct)},255)`);
+          if (k < 1) C.raf(frame); else y.style.opacity = '1'; };
         C.raf(frame);
       });
     }
@@ -158,9 +157,9 @@ SD.defineSlide({
     const ease = k => k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
     function spawn() {
       svg.querySelectorAll('.ti-lens-av').forEach(n => n.remove());
-      if (ctx.instant) svg.querySelectorAll('.ti-lens-count').forEach(n => n.remove());
+      svg.querySelectorAll('.ti-lens-count').forEach(n => n.remove());
       av = svgE('g', { class: 'ti-lens-x ti-lens-av', transform: `translate(${CX},${CY}) scale(1.2)` });
-      const root = avatar(av); headset(root.querySelector('.av-body')); svg.appendChild(av);
+      const root = avatar(av); if(L.headset!==false)headset(root.querySelector('.av-body')); svg.appendChild(av);
       if (ctx.instant) return;
       root.classList.add('arm-up'); av.style.opacity = '0'; av.style.transition = 'opacity .5s';
       C.after(50, () => { av.style.opacity = '1'; sfx.spawn(); });

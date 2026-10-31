@@ -32,32 +32,10 @@ INTERNAL = re.compile(r"(MP4|media/|\.html|\.png|Options\s*→|ALTERNATE|Reduced
 def stage_notes(raw, cap=700):
     """Keep ⏱ timing, spoken lines (quoted text in ✅/✎ paragraphs) and short cues; drop ❓ questions, source codes,
     provenance and long background paragraphs."""
-    out = []
-    for para in re.split(r"\n\s*\n", (raw or "").strip()):
-        p = para.strip()
-        if not p or p.startswith("❓") or "❓ ALEX" in p:
-            continue
-        if p.startswith("⏱"):
-            line = re.sub(r"\s*\b(DEFAULT|ALTERNATE)\b[^.]*\.", "", CODE.sub("", p.split("\n")[0]))
-            out.append(line.strip()); continue
-        marked = re.match(r"^(✅\s*VERIFIED|✎\s*PROPOSED)[^:]*:?\s*", p)
-        body = CODE.sub("", p[marked.end():] if marked else p).strip()
-        quotes = re.findall(r"[\"“]([^\"”]{8,400})[\"”]", body)
-        if marked:
-            if quotes:
-                out.append("  ".join(f"“{q.strip()}”" for q in quotes))
-            elif len(body) <= 160 and not INTERNAL.search(body):
-                out.append(body)
-            continue
-        if INTERNAL.search(body) or len(body) > 240:
-            if quotes:
-                out.append("  ".join(f"“{q.strip()}”" for q in quotes))
-            continue
-        out.append(body)
-    txt = "\n".join(o for o in out if o)
-    if len(txt) > cap:
-        txt = txt[:cap].rsplit("\n", 1)[0].rstrip() + "\n…"
-    return txt
+    import html
+    # The presenter asked that removed slide explanations, sources and uncertainty survive in the actual PPTX notes.
+    # Preserve the complete text rather than truncating it for the wedge monitors.
+    return re.sub(r'<[^>]+>', '', html.unescape(raw or '')).strip()
 
 def fmt_dur(s):
     s = int(round(s)); return f"{s // 60:02d}:{s % 60:02d}"

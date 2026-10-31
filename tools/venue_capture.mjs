@@ -220,8 +220,9 @@ function pageExtract(opts) {
   });
 
   const iframes = [...slide.querySelectorAll('iframe')].map(f => { const r = f.getBoundingClientRect(); return { motion: f.dataset.motion || null, src: f.dataset.motionBase || f.getAttribute('src') || '', abs: new URL(f.dataset.motionBase || f.getAttribute('src') || '', location.href).href, box: [r.left, r.top, r.width, r.height], visible: op(f) > 0.04 && r.width > 50 }; }).filter(f => f.visible);
-  const videos = [...slide.querySelectorAll('video')].map(v => { const r = v.getBoundingClientRect(); return { src: new URL(v.currentSrc || v.src || '', location.href).href, box: [r.left, r.top, r.width, r.height], visible: op(v) > 0.04 && r.width > 50 }; }).filter(v => v.visible);
-  return { texts: texts.map(({ _el, ...t }) => t), images, svgs, allText, iframes, videos, slideRect: [SR.left, SR.top, SR.width, SR.height], vw: VW, vh: VH, fit: slide.dataset.safeFit || null };
+  const videos = [...slide.querySelectorAll('video,canvas[data-video-source]')].map(v => { const r = v.getBoundingClientRect(); return { brightness: +(v.dataset.videoBrightness||1), src: new URL(v.dataset.videoSource || v.currentSrc || v.src || '', location.href).href, box: [r.left, r.top, r.width, r.height], visible: op(v) > 0.04 && r.width > 50 }; }).filter(v => v.visible);
+  const keyMedia=[...slide.querySelectorAll('img,video,canvas,iframe,svg')].filter(e=>!e.closest('#journey,[class*=journey],.sd-skip-fit')&&!e.parentElement.closest('svg')&&op(e)>.04).map(e=>{const r=e.getBoundingClientRect();let box=[r.left,r.top,r.width,r.height];if(e.tagName==='IFRAME'){const n=e.dataset.motion||((e.dataset.motionBase||e.src||'').match(/([\w-]+)\.html/)||[])[1],f=window.MOTION_FIT?.[n];if(f?.box){const q=f.box;box=[r.left+q[0]*r.width,r.top+q[1]*r.height,q[2]*r.width,q[3]*r.height];}}const cl=clipRect(e),l=Math.max(box[0],cl.l),t=Math.max(box[1],cl.t),rr=Math.min(box[0]+box[2],cl.r),bb=Math.min(box[1]+box[3],cl.b);return {tag:e.tagName,src:e.currentSrc||e.src||'',box:[l,t,Math.max(0,rr-l),Math.max(0,bb-t)]};}).filter(e=>e.box[2]>2&&e.box[3]>2&&e.box[0]+e.box[2]>0&&e.box[0]<1920&&e.box[1]+e.box[3]>0&&e.box[1]<1080);
+  return { keyMedia, texts: texts.map(({ _el, ...t }) => t), images, svgs, allText, iframes, videos, slideRect: [SR.left, SR.top, SR.width, SR.height], vw: VW, vh: VH, fit: slide.dataset.safeFit || null };
 }
 
 function pageHideNative(on) {
@@ -271,11 +272,11 @@ export async function capture(opts) {
       const probe = await page.evaluate(() => { const s = allSlides[current]; return { html: s.outerHTML.length > 2e6 ? s.outerHTML.slice(0, 2e6) : s.outerHTML, iframe: [...s.querySelectorAll('iframe')].some(f => /media\/motion\/|#sdp=|\/slides\//.test(f.dataset.motionBase || f.getAttribute('src') || '')) }; });
       const motionIframe = probe.iframe && k === 0;
       // record/settle
-      const key = sha(JSON.stringify([probe.html, styleHash, realPicks, opts.safe, k, opts.fps, opts.videoMin, 'rec-v2']));
+      const key = sha(JSON.stringify([probe.html, styleHash, realPicks, opts.safe, k, opts.fps, opts.videoMin, sl.module?.id==='pmre/nxt-blueprint-immersive'?'belt-full-v1':'rec-v2']));
       const cdir = path.join(cache, 'video', key.slice(0, 24)); const meta = path.join(cdir, 'meta.json');
       let rec = !motionIframe && fs.existsSync(meta) ? JSON.parse(fs.readFileSync(meta, 'utf8')) : null;
       const shots = [];
-      const maxT = Math.round(opts.maxSec * opts.fps);
+      const maxT = Math.round((sl.module?.id==='pmre/nxt-blueprint-immersive'?Math.max(opts.maxSec,25):opts.maxSec) * opts.fps);
       let tick = 0, last = null, lastChange = 0, stable = 0;
       if (motionIframe) { // the deck itself just shows the iframe's ?play; settle the deck chrome, the video comes from seek
         for (; tick < 45; tick++) { await page.evaluate(([t, d]) => window.__vxStep(t + window.__vx.tick, d), [tick, dt]); await page.clock.runFor(dt); }
@@ -315,8 +316,8 @@ export async function capture(opts) {
       Object.assign(st, { full, bg, ...ex, notes: await page.evaluate(i => (typeof getSlideNotes === 'function' ? getSlideNotes(i) : '') || '', sl.index) });
       // video for this state
       const vslug = slug(sl.module?.name || (st.iframes[0] && path.basename(st.iframes[0].src.split(/[?#]/)[0], '.html')) || sl.title);
-      if (st.videos.length === 1 && st.videos[0].src.startsWith('file:')) {
-        const v=renderLocalVideo(st.videos[0],st,opts,cache);
+      if (st.videos.length > 0 && st.videos.every(v=>v.src.startsWith('file:'))) {
+        const v=st.videos.length===1?renderLocalVideo(st.videos[0],st,opts,cache):renderLocalVideoSet(st.videos,st,opts,cache);
         Object.assign(st,{kind:'video',video:{...v,file:`${NN}${letter}-${vslug}.mp4`,source:'local'}});
       } else if (motionIframe && st.iframes.length) {
         st.picks = realPicks; jobs.push({ st, fr: st.iframes[0], file: `${NN}${letter}-${vslug}.mp4` });
@@ -367,13 +368,13 @@ function probeDur(f) { return +execFileSync('ffprobe', ['-v', 'error', '-show_en
 export function renderLocalVideo(v, st, opts, cache) {
   const source=fileURLToPath(v.src), probe=JSON.parse(execFileSync('ffprobe',['-v','error','-show_streams','-show_format','-of','json',source]).toString());
   const audio=probe.streams.some(s=>s.codec_type==='audio'), duration=+probe.format.duration;
-  const safe=(+opts.safe||70)/100, w=Math.floor(1920*safe/2)*2, h=Math.floor(1080*safe/2)*2, x=(1920-w)/2, y=(1080-h)/2;
-  const key=sha(JSON.stringify([sha(fs.readFileSync(source)),sha(fs.readFileSync(st.bg)),w,h,opts.fps,'local-clip-v1']));
+  const safe=(+opts.safe||70)/100, [bx,by,bw,bh]=v.box, w=Math.max(2,Math.floor(Math.min(1920*safe,bw)/2)*2), h=Math.max(2,Math.floor(Math.min(1080*safe,bh)/2)*2), x=Math.max(288,Math.min(1632-w,Math.round(bx+(bw-w)/2))), y=Math.max(162,Math.min(918-h,Math.round(by+(bh-h)/2)));
+  const key=sha(JSON.stringify([sha(fs.readFileSync(source)),sha(fs.readFileSync(st.full)),x,y,w,h,v.brightness,opts.fps,'local-clip-v3']));
   const dir=path.join(cache,'video','local-'+key.slice(0,24)), mp4=path.join(dir,'video.mp4'), poster=path.join(dir,'poster.png');
   fs.mkdirSync(dir,{recursive:true});
   if(!fs.existsSync(mp4)) {
-    execFileSync('ffmpeg',['-y','-loglevel','error','-threads','4','-loop','1','-framerate',String(opts.fps),'-i',st.bg,'-i',source,
-      '-filter_complex',`[1:v]scale=${w}:${h}:force_original_aspect_ratio=decrease,pad=${w}:${h}:(ow-iw)/2:(oh-ih)/2:color=black,setsar=1[v];[0:v][v]overlay=${x}:${y}:shortest=1,format=yuv420p[out]`,
+    execFileSync('ffmpeg',['-y','-loglevel','error','-threads','4','-loop','1','-framerate',String(opts.fps),'-i',st.full,'-i',source,
+      '-filter_complex',`[1:v]colorchannelmixer=rr=${v.brightness||1}:gg=${v.brightness||1}:bb=${v.brightness||1},scale=${w}:${h}:force_original_aspect_ratio=decrease,pad=${w}:${h}:(ow-iw)/2:(oh-ih)/2:color=black,setsar=1[v];[0:v][v]overlay=${x}:${y}:shortest=1,format=yuv420p[out]`,
       '-map','[out]',...(audio?['-map','1:a:0','-c:a','aac','-b:a','160k']:['-an']),'-t',String(duration),'-r',String(opts.fps),'-c:v','libx264','-preset','medium','-crf','18','-movflags','+faststart',mp4]);
   }
   if(!fs.existsSync(poster)) {
@@ -384,11 +385,25 @@ export function renderLocalVideo(v, st, opts, cache) {
   return {cache:mp4,poster,duration:probeDur(mp4),audio,audioKind:audio?'original clip audio':'silent',textAudit:[],safeBox:[x,y,w,h]};
 }
 
+// Multi-clip source slide: preserve the simultaneous layout and each clip, separate AV cue.
+export function renderLocalVideoSet(videos,st,opts,cache){
+ const source=videos.map(v=>fileURLToPath(v.src)),duration=Math.max(...source.map(probeDur));
+ const key=sha(JSON.stringify([source.map(f=>sha(fs.readFileSync(f))),sha(fs.readFileSync(st.full)),videos,opts.fps,'multiclip-v1']));
+ const dir=path.join(cache,'video','multi-'+key.slice(0,24));fs.mkdirSync(dir,{recursive:true});const mp4=path.join(dir,'video.mp4'),poster=path.join(dir,'poster.png');
+ if(!fs.existsSync(mp4)){
+  const filters=[],args=['-y','-loglevel','error','-threads','4','-loop','1','-framerate',String(opts.fps),'-i',st.full];source.forEach(f=>args.push('-i',f));
+  let prev='0:v';videos.forEach((v,i)=>{const [x,y,bw,bh]=v.box,w=Math.max(2,Math.round(bw/2)*2),h=Math.max(2,Math.round(bh/2)*2);filters.push(`[${i+1}:v]scale=${w}:${h}:force_original_aspect_ratio=decrease,pad=${w}:${h}:(ow-iw)/2:(oh-ih)/2:color=black,setsar=1,tpad=stop_mode=clone:stop_duration=${duration}[v${i}]`);filters.push(`[${prev}][v${i}]overlay=${Math.round(x)}:${Math.round(y)}:shortest=1[o${i}]`);prev='o'+i;});
+  filters.push(`[${prev}]format=yuv420p[out]`);execFileSync('ffmpeg',[...args,'-filter_complex',filters.join(';'),'-map','[out]','-an','-t',String(duration),'-r',String(opts.fps),'-c:v','libx264','-preset','medium','-crf','18','-movflags','+faststart',mp4]);
+ }
+ if(!fs.existsSync(poster))execFileSync('ffmpeg',['-y','-loglevel','error','-sseof','-1','-i',mp4,'-an','-update','1',poster]);
+ return {cache:mp4,poster,duration:probeDur(mp4),audio:false,audioKind:'silent multi-clip montage',textAudit:[],safeBox:[288,162,1344,756]};
+}
+
 // Deterministic render of a seekable motion graphic, composited into its on-slide (safe-zone) rect over the deck bg.
 async function renderIframeMotion(p, fr, st, opts, cache) {
   const srcPath = fileURLToPath(fr.abs.split(/[?#]/)[0]);
   const deps = [srcPath, ...fs.readdirSync(path.dirname(srcPath)).filter(f => f.endsWith('.js')).map(f => path.join(path.dirname(srcPath), f))].filter(f => fs.existsSync(f));
-  const key = sha(JSON.stringify([deps.map(f => sha(fs.readFileSync(f))), sha(fs.readFileSync(st.bg)), fr.box.map(Math.round), new URL(fr.abs).search, new URL(fr.abs).hash, opts.fps, st.picks, 'seek-v1']));
+  const key = sha(JSON.stringify([deps.map(f => sha(fs.readFileSync(f))), sha(fs.readFileSync(st.bg)), fr.box.map(Math.round), new URL(fr.abs).search, new URL(fr.abs).hash, opts.fps, Object.fromEntries(Object.entries(st.picks||{}).filter(([k])=>k!=='cut')), 'seek-v2']));
   const cdir = path.join(cache, 'video', 'seek-' + key.slice(0, 24)); const mp4 = path.join(cdir, 'video.mp4'), poster = path.join(cdir, 'poster.png'), metaF = path.join(cdir, 'meta.json');
   if (fs.existsSync(mp4) && fs.existsSync(poster) && fs.existsSync(metaF)) return { cache: mp4, poster, duration: probeDur(mp4), cached: true, ...JSON.parse(fs.readFileSync(metaF, 'utf8')) };
   const u = new URL(fr.abs); u.searchParams.delete('static'); u.searchParams.delete('play'); u.searchParams.set('t', '0');
@@ -415,7 +430,7 @@ async function renderIframeMotion(p, fr, st, opts, cache) {
   }
   fs.mkdirSync(cdir, { recursive: true });
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-threads', '4', '-loop', '1', '-framerate', String(opts.fps), '-i', st.bg, '-framerate', String(opts.fps), '-i', path.join(tmp, '%05d.png'), ...(aud ? ['-i', aud] : []),
-    '-filter_complex', `[1:v]scale=${w}:${h}:flags=lanczos[f];[0:v][f]overlay=${x}:${y}:shortest=1,tpad=stop_mode=clone:stop_duration=${HOLD},format=yuv420p[v]`, '-map', '[v]', ...(aud ? ['-map', '2:a', '-c:a', 'copy'] : []),
+    '-filter_complex', `[1:v]colorchannelmixer=rr=${v.brightness||1}:gg=${v.brightness||1}:bb=${v.brightness||1},scale=${w}:${h}:flags=lanczos[f];[0:v][f]overlay=${x}:${y}:shortest=1,tpad=stop_mode=clone:stop_duration=${HOLD},format=yuv420p[v]`, '-map', '[v]', ...(aud ? ['-map', '2:a', '-c:a', 'copy'] : []),
     '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-r', String(opts.fps), ...(aud ? ['-shortest'] : []), '-movflags', '+faststart', mp4]);
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-threads', '4', '-sseof', '-0.2', '-i', mp4, '-update', '1', '-frames:v', '1', poster]);  // = the held final frame
   fs.rmSync(tmp, { recursive: true, force: true });

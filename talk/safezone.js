@@ -2,7 +2,7 @@
    1344x756 box = 70%). ?safe=70 (or Options -> "Venue safe zone") FITS EACH SLIDE'S CONTENT to that box: the content
    bounding box (text, pictures, graphics; for motion-graphic slides the timeline-wide box from talk/motion-fit.js) is
    scaled to reach the box on its tightest axis and centered in it, never above native size, so the talk uses as much
-   of the safe zone as it can. The page background and the .bg layer still fill the frame. Off by default for the web
+   of the safe zone as it can. The page background and the .bg layer still fill the frame. On by default for the venue web
    deck; tools/export_venue_package.mjs always turns it on. Each slide records its fit in data-safe-fit ("scale tx ty").
    The journey minimap is not moved by safe mode: --safe-inset-x/-y stay 0; --safe-box-inset-x/-y carry the box margins
    for anything that wants them. ?safezone draws the 1344x756 QA box on top of everything (with or without ?safe). */
@@ -51,26 +51,15 @@ function safeContentBox(sl){
     const rg=document.createRange();rg.selectNodeContents(n);for(const r of rg.getClientRects())add(r);}
   let motion=null,fullFrame=false;
   sl.querySelectorAll('img,svg,canvas,video,iframe').forEach(el=>{if(skip(el)||el.parentElement.closest('svg')||!shown(el))return;const r=el.getBoundingClientRect();if(r.width<2||r.height<2)return;
-    if(r.width>=R.width*.9&&r.height>=R.height*.9){if(el.tagName==='IFRAME'){const nm=el.dataset.motion||((el.dataset.motionBase||el.getAttribute('src')||'').match(/([\w-]+)\.html/)||[])[1];const f=window.MOTION_FIT&&MOTION_FIT[nm];if(f&&f.box){const q=f.box;motion=[r.left+q[0]*r.width,r.top+q[1]*r.height,q[2]*r.width,q[3]*r.height];}else fullFrame=true;}return;}
+    if(r.width>=R.width*.9&&r.height>=R.height*.9){if(el.tagName==='IFRAME'){const nm=el.dataset.motion||((el.dataset.motionBase||el.getAttribute('src')||'').match(/([\w-]+)\.html/)||[])[1];const f=window.MOTION_FIT&&MOTION_FIT[nm];if(f&&f.box){const q=f.box;motion=[r.left+q[0]*r.width,r.top+q[1]*r.height,q[2]*r.width,q[3]*r.height];}else fullFrame=true;}else add(r);return;}
     add(r);});
   if(motion)add({left:motion[0],top:motion[1],right:motion[0]+motion[2],bottom:motion[1]+motion[3]});
   return fullFrame?{fullFrame:true,R}:Rt>L?{x:L,y:T,w:Rt-L,h:B-T,R}:null;
 }
 function safeFitSlide(sl){
-  const s=window.SD_SAFE;if(!s)return;
-  sl.style.scale='';sl.style.translate='';
-  // measure the settled layout: entrance animations (slide-in, fade-up) would otherwise skew the box. Jump each running
-  // animation on the slide to its end, measure, then put it back exactly where it was.
-  const anims=[];try{sl.getAnimations({subtree:true}).forEach(a=>{const e=a.effect&&a.effect.getComputedTiming?a.effect.getComputedTiming().endTime:Infinity;if(isFinite(e)&&a.playState!=='finished'){anims.push([a,a.currentTime,a.playState]);try{a.currentTime=Math.max(0,e-1);}catch(_){}}});}catch(_){}
-  const b=safeContentBox(sl);
-  anims.forEach(([a,t,ps])=>{try{a.currentTime=t;if(ps==='running')a.play();}catch(_){}});const R=b?b.R:sl.getBoundingClientRect();
-  const W=innerWidth,H=innerHeight,bw=W*s,bh=H*s;
-  // a full-bleed frame with no timeline box (or no content found): the whole frame goes in the box (plain 70% scale)
-  const box=b&&!b.fullFrame?b:{x:R.left,y:R.top,w:R.width,h:R.height};
-  const k=Math.min(1,bw/box.w,bh/box.h);
-  // origin 0 0 at the slide's top-left: screen = R + k*(p - R) + t; put the content box center on the frame center
-  const cx=box.x+box.w/2-R.left,cy=box.y+box.h/2-R.top;
-  const tx=W/2-R.left-k*cx,ty=H/2-R.top-k*cy;
-  sl.style.scale=String(k);sl.style.translate=tx.toFixed(1)+'px '+ty.toFixed(1)+'px';
-  sl.dataset.safeFit=k.toFixed(3)+' '+tx.toFixed(0)+' '+ty.toFixed(0);
+  // Frame containment is stable across asynchronous image decode, canvas aspect changes and substeps.
+  // The prior content-box measurement could use the gallery's temporary loading dimensions and spill later.
+  const k=window.SD_SAFE;if(!k)return;
+  sl.style.scale=String(k);sl.style.translate=((1-k)*innerWidth/2).toFixed(1)+'px '+((1-k)*innerHeight/2).toFixed(1)+'px';
+  sl.dataset.safeFit=k.toFixed(3)+' '+Math.round((1-k)*innerWidth/2)+' '+Math.round((1-k)*innerHeight/2);
 }

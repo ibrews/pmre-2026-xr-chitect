@@ -28,7 +28,7 @@ css:".sd-mod-pmre-nxt-blueprint-immersive{padding:0!important}.sd-mod-pmre-nxt-b
       media.forEach((m,i)=>{let mx=xs[i]+shift;if(i===last)mx+=Math.max(0,centerShift-shift);if(which!==null)mx=xs[i]+W/2-(xs[which]+widths[which]/2);m.style.cssText=`left:${mx}px;top:19%;height:62%;width:${widths[i]}px;opacity:${i===last-1&&k===1&&which===null?0:1}`;});
     }
     function seekVideos(t){media.forEach(m=>{if(m.tagName==='VIDEO'&&m.readyState>=1)m.currentTime=t%Math.max(.01,m.duration||1);});}
-    return {enter(){active=true;current=0;mode='auto';media.forEach(m=>{if(m.tagName==='VIDEO')m.currentTime=0;});play();frame(ctx.instant?(p.kind==='belt'?0:3):0);if(!ctx.instant)ctx.clock.loop(t=>{if(!active)return false;if(mode==='auto')frame(t);});},step(n){mode='manual';current=p.kind==='belt'?Math.max(0,n-1):n;frame(24,current);play();},seek(t){active=false;mode='manual';pause();frame(t);seekVideos(t);},staticFrame(){active=false;pause();frame(p.kind==='belt'?23.5:3);seekVideos(0);},leave(){active=false;pause();}};
+    return {enter(){active=true;current=0;mode='auto';media.forEach(m=>{if(m.tagName==='VIDEO')m.currentTime=0;});play();frame(ctx.instant?(p.kind==='belt'?23.5:3):0);if(!ctx.instant)ctx.clock.loop(t=>{if(!active)return false;if(mode==='auto')frame(t);});},step(n){mode='manual';current=p.kind==='belt'?Math.max(0,n-1):n;frame(24,current);play();},seek(t){active=false;mode='manual';pause();frame(t);seekVideos(t);},staticFrame(){active=false;pause();frame(p.kind==='belt'?23.5:3);seekVideos(0);},leave(){active=false;pause();}};
   }
 
 });

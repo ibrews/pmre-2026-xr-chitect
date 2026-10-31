@@ -193,6 +193,8 @@ for (let i = 0; i < total; i++) {
     });
     s.querySelectorAll('img').forEach((im) => { if (!im.complete || !im.naturalWidth) r.badImg.push(im.getAttribute('src')); });
     const vs = [...s.querySelectorAll('video')];
+    // Reduced-mode modules intentionally pause their hidden canvas sources. Explicitly prove each clip plays.
+    await Promise.all(vs.map(async v=>{v.muted=true;try{await v.play();}catch(_){}}));
     const t0 = vs.map((v) => v.currentTime);
     await new Promise((z) => setTimeout(z, 700));
     vs.forEach((v, k) => r.videos.push({

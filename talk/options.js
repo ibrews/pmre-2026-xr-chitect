@@ -23,12 +23,14 @@ function applyTalkOptions(){
     if(ty==='lesson'){si=+sl.dataset.section;ci=0;cfg=SECTIONS[si].lesson;}
     else if(ty==='case'){cfg=SECTIONS[+sl.dataset.section].cases[ci++];}
     else return;
-    let hide=pick.fs==='v2'&&pick.fsbudget==='tight'&&pick.cut==='20t'&&!!cfg.shortBudget;
+    let hide=pick.ports==='on'&&pick.cut==='20t'&&!!cfg.round2Budget;
+    hide ||=pick.fs==='v2'&&pick.fsbudget==='tight'&&pick.cut==='20t'&&!!cfg.shortBudget;
     if(cfg.opt&&!cfg.opt.split('&').every(t=>{const [g,c]=t.split(':');return c.split('|').includes(pick[g]);}))hide=true;  // "a:x&b:y" = every condition must match
     if(cutN!==Infinity&&ty==='case'&&!(cfg.keep&&cfg.keep<=cutN))hide=true;
     if(hide)sl.dataset.hidden='1';
   });
   if(cutN!==Infinity){allSlides.filter(s=>s.dataset.type==='map').forEach(s=>s.dataset.hidden='1');}
+  if(pick.ports==='on'){const b=allSlides.find(s=>s.dataset.type==='bonus');if(b)b.dataset.hidden='1';}
   // thesis + close copy alternates
   const th=TALK.thesisAlts[pick.thesis];const bon=allSlides.find(s=>s.dataset.type==='bonus');
   if(th&&bon){const t=bon.querySelector('.lesson-title'),g=bon.querySelector('.lesson-tagline');if(t)t.innerHTML=th.title.replace(/\n/g,'<br>');if(g)g.innerHTML=th.tagline;BONUS.notes=th.notes+'\n\n'+(BONUS.baseNotes||(BONUS.baseNotes=BONUS.notes));}
