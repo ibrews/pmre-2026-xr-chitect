@@ -34,5 +34,5 @@ md += `\n## Full script and notes (default run)\n\n`;
 rows.forEach((r, i) => { md += `### ${i + 1}. ${r.title}\n\n${String(r.notes || '').trim()}\n\n`; });
 md += `## Alternate slides (shown only when picked)\n\n`;
 alts.forEach(r => { md += `### ${r.title} — \`${r.opt}\`\n\n${String(r.notes || '').trim()}\n\n`; });
-fs.writeFileSync(path.join(ROOT, 'talk/REHEARSAL.md'), md);
+fs.writeFileSync(path.join(ROOT, 'talk/REHEARSAL.md'), md.split('\n').map(l=>l.trimEnd()).join('\n'));
 console.log(`REHEARSAL.md: ${rows.length} default slides + ${alts.length} alternates; full ${fmt(total)}, 30-min ${fmt(t30)}, 20-min ${fmt(t20)}, 20t ${fmt(t20t)}`);

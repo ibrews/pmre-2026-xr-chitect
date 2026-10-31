@@ -10,6 +10,6 @@ The `30` package is the expanded **72:00 rehearsal/reference cut**, not an eligi
 
 To fit 20t, the expanded career option skips the avatar intro, repeated teaching invitation, camera toy, taste explanation, frame-to-room transition, YOU setup card, and final two-minute thesis summary. The previous v2 budget also skips ADVICE, TASTE and the other marked repeated setup cards; the new 2010 graduation card is retained. No source video hold was shortened. All removed slide text is retained in speaker notes; `talk/WORD-COUNTS.md` reports every slide record before/after.
 
-The Rome clip is a web-rendered Colosseum splat flythrough, not headset video; the hotel is the whole-scan dataset thumbnail. See `media/pmre/round2/PROVENANCE.md` and each imported module's original `source.json` and `notes.txt`.
+The Rome clip is a web-rendered Colosseum splat flythrough, not headset video; the hotel is a 10-second web-rendered flythrough of the whole-scene LOD dataset. See `media/pmre/round2/PROVENANCE.md` and each imported module's original `source.json` and `notes.txt`.
 
 The large white CAD panel in the Shed video and the Intel article screenshot use a 35% dark overlay in venue looks; the original source media is retained byte-for-byte. This avoids flashing a light panel in the dark room. The separate Shed video cue applies the same treatment.

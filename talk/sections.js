@@ -1106,49 +1106,50 @@ const SECTIONS = [
         keep: 30,
         title: "Cut Your Own Version of the Show",
         props: {
-          title: "Cut Your Own Version of the Show",
-          subtitle: "Prototype · A Christmas Carol VR, recorded as data and handed back to you as a camera",
+          title: "Your camera, inside the show",
+          subtitle: "Prototype",
           stations: [
             {
-              when: "The recording",
+              when: "",
               short: "Recorded show",
-              t: "The full show, recorded",
-              d: "Laptop and gamepad, offline. Default scene: Dickens and Scrooge",
+              t: "",
+              d: "",
               img: "media/pmre/xmas-carol-02.jpg",
-              alt: "Scrooge and Dickens in a London street, A Christmas Carol VR"
+              alt: "Scrooge and Dickens in a London street, A Christmas Carol VR",
+              overlay: ""
             },
             {
-              when: "You",
+              when: "",
               short: "Your camera",
-              t: "You are the camera operator",
-              d: "Fly a virtual camera through the performance; 24, 35, 50 or 85 mm",
+              t: "",
+              d: "",
               img: "media/pmre/xmas-carol-replay-marley.jpg",
               alt: "A free camera view of a recorded Christmas Carol performance",
               overlay: "50 mm"
             },
             {
-              when: "Your shot",
+              when: "",
               short: "Credited",
-              t: "Your shot, credited",
-              d: "Add or replace a shot anywhere in the show",
+              t: "",
+              d: "",
               img: "media/pmre/xmas-carol-06.png",
               alt: "Marley’s ghost",
-              overlay: "Shot by &lt;your name&gt;",
+              overlay: "",
               letterbox: true
             },
             {
-              when: "A new cut",
+              when: "",
               short: "Working cut",
-              t: "A new cut of the whole show",
-              d: "Plays back in 2.39 with a WORKING CUT title card; survives a crash; exports",
+              t: "",
+              d: "",
               img: "media/pmre/xmas-carol-fezziwig.jpg",
               alt: "Fezziwig’s party, A Christmas Carol VR",
-              overlay: "WORKING CUT",
+              overlay: "",
               letterbox: true
             }
           ]
         },
-        notes: "⏱ ~75s. Three clicks. Ported from the MIA 2026 deck (slide working-cut); the four stations and their clicks are unchanged, only the subtitle changed (MIA's was \"At our table today: a prototype built overnight for MIA\").\n\n✅ VERIFIED [MIA, KB 2026-10-21-missing-shot-build-receipt via projects/mia-2026/collective-pitch-deck.md]: a prototype built for the MIA XR Collective Pitch (Rome, 22 Oct 2026): the recorded full show of A Christmas Carol, a virtual camera with 24/35/50/85 mm, shots credited to whoever shot them, and a working cut played back in 2.39.\n\nMIA's spoken track, adapted: \"We took the recorded full show of A Christmas Carol and handed you the camera. [click] Here's the recording. The default scene is Ari switching between Dickens and Scrooge. [click] You fly a virtual camera through it, and you pick a lens: 24, 35, 50 or 85. [click] You save your shot, anywhere in the show, and it's credited to you: shot by your name. And everyone's shots add up to a new cut of the whole show, played back like a film, in 2.39.\"\n\n✎ PROPOSED for this room: \"It's a photo walk through a place that only exists as data. Same decisions you make on every shoot: where to stand, which lens, what to leave out.\"\n\n❓ ALEX (carried from MIA's NEEDS CONFIRMATION): make the claim match what the prototype actually does (KB receipt: r849 working-cut build; a physical pad and the audio through a cut were not yet checked by a person). Say prototype, not product. The four stills are existing Carol images, not frames from the build.\n\nCredit: the 50 mm still is from \"Replay Recording\" by Yu-Jun Yeh (Agile Lens), per the MIA README. Media: xmas-carol-02.jpg and -06.png (byte-identical to MIA's ScroogeDickens.jpg and marley.png), xmas-carol-replay-marley.jpg and xmas-carol-fezziwig.jpg (copied from MIA).",
+        notes: "⏱ ~75s. Three clicks. Ported from the MIA 2026 deck (slide working-cut); the four stations and their clicks are unchanged, only the subtitle changed (MIA's was \"At our table today: a prototype built overnight for MIA\").\n\n✅ VERIFIED [MIA, KB 2026-10-21-missing-shot-build-receipt via projects/mia-2026/collective-pitch-deck.md]: a prototype built for the MIA XR Collective Pitch (Rome, 22 Oct 2026): the recorded full show of A Christmas Carol, a virtual camera with 24/35/50/85 mm, shots credited to whoever shot them, and a working cut played back in 2.39.\n\nMIA's spoken track, adapted: \"We took the recorded full show of A Christmas Carol and handed you the camera. [click] Here's the recording. The default scene is Ari switching between Dickens and Scrooge. [click] You fly a virtual camera through it, and you pick a lens: 24, 35, 50 or 85. [click] You save your shot, anywhere in the show, and it's credited to you: shot by your name. And everyone's shots add up to a new cut of the whole show, played back like a film, in 2.39.\"\n\n✎ PROPOSED for this room: \"It's a photo walk through a place that only exists as data. Same decisions you make on every shoot: where to stand, which lens, what to leave out.\"\n\n❓ ALEX (carried from MIA's NEEDS CONFIRMATION): make the claim match what the prototype actually does (KB receipt: r849 working-cut build; a physical pad and the audio through a cut were not yet checked by a person). Say prototype, not product. The four stills are existing Carol images, not frames from the build.\n\nCredit: the 50 mm still is from \"Replay Recording\" by Yu-Jun Yeh (Agile Lens), per the MIA README. Media: xmas-carol-02.jpg and -06.png (byte-identical to MIA's ScroogeDickens.jpg and marley.png), xmas-carol-replay-marley.jpg and xmas-carol-fezziwig.jpg (copied from MIA).\n\nMoved from slide: {\"title\":\"Cut Your Own Version of the Show\",\"subtitle\":\"Prototype · A Christmas Carol VR, recorded as data and handed back to you as a camera\",\"stations\":[{\"when\":\"The recording\",\"short\":\"Recorded show\",\"t\":\"The full show, recorded\",\"d\":\"Laptop and gamepad, offline. Default scene: Dickens and Scrooge\",\"img\":\"media/pmre/xmas-carol-02.jpg\",\"alt\":\"Scrooge and Dickens in a London street, A Christmas Carol VR\"},{\"when\":\"You\",\"short\":\"Your camera\",\"t\":\"You are the camera operator\",\"d\":\"Fly a virtual camera through the performance; 24, 35, 50 or 85 mm\",\"img\":\"media/pmre/xmas-carol-replay-marley.jpg\",\"alt\":\"A free camera view of a recorded Christmas Carol performance\",\"overlay\":\"50 mm\"},{\"when\":\"Your shot\",\"short\":\"Credited\",\"t\":\"Your shot, credited\",\"d\":\"Add or replace a shot anywhere in the show\",\"img\":\"media/pmre/xmas-carol-06.png\",\"alt\":\"Marley’s ghost\",\"overlay\":\"Shot by &lt;your name&gt;\",\"letterbox\":true},{\"when\":\"A new cut\",\"short\":\"Working cut\",\"t\":\"A new cut of the whole show\",\"d\":\"Plays back in 2.39 with a WORKING CUT title card; survives a crash; exports\",\"img\":\"media/pmre/xmas-carol-fezziwig.jpg\",\"alt\":\"Fezziwig’s party, A Christmas Carol VR\",\"overlay\":\"WORKING CUT\",\"letterbox\":true}]}",
         bullets: [],
         subtitle: ""
       },
@@ -1278,7 +1279,7 @@ const SECTIONS = [
         keep: 19,
         opt: "ports:on",
         title: "What's exciting me right now",
-        notes: "⏱ ~60s.\n\nPresenter: Gaussian splats working well in VR, both real captures and synthetic. Real: Rome hotel whole-scan (still) and Colosseum (15-second rendered flythrough), MIA trip 2026-10-21..23. These are recordings of a web splat renderer, not headset footage. Scan: Josette Seitz / Agile Lens; XGRIDS PortalCam (dataset header). Hotel source: RomaHotelMIA_render2/info/thumb.jpg, whole-scan dataset thumbnail; hotel name NEEDS CONFIRMATION. Colosseum: point_cloud.ply, rendered with GaussianSplats3D / Three.js; see media/pmre/round2/PROVENANCE.md. Black sky gaps and scan ghosts are retained.\n\nSynthetic comparison reuses the 2025 virtual-capture material: ⏱ ~75s. The newest thing in the talk; keep it plain.\n\n✎ PROPOSED one-line definition: \"A Gaussian splat is a 3D capture made from lots of photos: millions of soft colored blobs that look photoreal from any angle.\"\n\n✅ VERIFIED [SPLAT-RESULT, KB projects/apple-demo-2026-09-14/dbox-splat-capture-RESULT.md]: Agile Lens rendered a virtual theater out of Unreal from a grid of camera positions — 1,152 frames at 1920×1080, 1,136 kept, a 9.67 m spread of camera positions — and trained a splat from those renders. That is the \"synthetic\" part: the photos come from a virtual camera, not a real one.\n\n✅ VERIFIED [SPLAT-DECISION, KB intelligence/decisions/2026-05-28-gaussian-splatting-track.md]: our first real room scan came out as smeared floaters because the camera barely moved: almost no translation between frames. Photographer's lesson: for a splat, move the camera, don't just pan.\n\n✅ VERIFIED [WWDC26, KB intelligence/research/wwdc-2026-visionos27-highlights.md]: visionOS 27 renders Gaussian splats natively in RealityKit. ✅ [SPLATSTAGE, KB projects/splat-stage.md]: Alex built SplatStage, a visionOS 27 viewer for walking inside splat scenes, the day after the keynote.\n\n✎ PROPOSED: \"So the place doesn't exist, but you can still photograph it, the way you'd photograph a listing: walk it, pick the angle, pick the lens.\"\n\n❓ ALEX: the virtual-theater splat was made for a client demo (KB: apple-demo-2026-09-14 / Four Seasons theater). Don't name the client, venue or demo on stage unless cleared; the slide names none. No cleared synthetic-splat still exists in the PMRE or MIA repos; keep the synthetic comparison as the existing virtual-camera diagram and the explanation in notes.\n\n⚠ Not ours: the \"Unreal to Gaussian Splat\" plugin (v2.0 launch trailer, 2026-05-16) is by Walhar Gohar, a third party (KB media/youtube/launch-trailer-v-20-of-unreal-to-gaussian-splat-plugin.md). Mention it only as someone else's tool.",
+        notes: "⏱ ~60s.\n\nPresenter: Gaussian splats working well in VR, both real captures and synthetic. Real: Rome hotel whole-scan dataset (10-second flythrough) and Colosseum (15-second rendered flythrough), MIA trip 2026-10-21..23. These are recordings of a web splat renderer, not headset footage. Scan: Josette Seitz / Agile Lens; XGRIDS PortalCam (dataset header). Hotel source: RomaHotelMIA_ply-result/point_cloud/iteration_100/point_cloud_1.ply, whole-scene LOD, rendered on FRIDGE / RTX 4090 with GaussianSplats3D / Three.js; hotel name NEEDS CONFIRMATION. Colosseum: point_cloud.ply, rendered with GaussianSplats3D / Three.js; see media/pmre/round2/PROVENANCE.md. Black sky gaps and scan ghosts are retained.\n\nSynthetic comparison reuses the 2025 virtual-capture material: ⏱ ~75s. The newest thing in the talk; keep it plain.\n\n✎ PROPOSED one-line definition: \"A Gaussian splat is a 3D capture made from lots of photos: millions of soft colored blobs that look photoreal from any angle.\"\n\n✅ VERIFIED [SPLAT-RESULT, KB projects/apple-demo-2026-09-14/dbox-splat-capture-RESULT.md]: Agile Lens rendered a virtual theater out of Unreal from a grid of camera positions — 1,152 frames at 1920×1080, 1,136 kept, a 9.67 m spread of camera positions — and trained a splat from those renders. That is the \"synthetic\" part: the photos come from a virtual camera, not a real one.\n\n✅ VERIFIED [SPLAT-DECISION, KB intelligence/decisions/2026-05-28-gaussian-splatting-track.md]: our first real room scan came out as smeared floaters because the camera barely moved: almost no translation between frames. Photographer's lesson: for a splat, move the camera, don't just pan.\n\n✅ VERIFIED [WWDC26, KB intelligence/research/wwdc-2026-visionos27-highlights.md]: visionOS 27 renders Gaussian splats natively in RealityKit. ✅ [SPLATSTAGE, KB projects/splat-stage.md]: Alex built SplatStage, a visionOS 27 viewer for walking inside splat scenes, the day after the keynote.\n\n✎ PROPOSED: \"So the place doesn't exist, but you can still photograph it, the way you'd photograph a listing: walk it, pick the angle, pick the lens.\"\n\n❓ ALEX: the virtual-theater splat was made for a client demo (KB: apple-demo-2026-09-14 / Four Seasons theater). Don't name the client, venue or demo on stage unless cleared; the slide names none. No cleared synthetic-splat still exists in the PMRE or MIA repos; keep the synthetic comparison as the existing virtual-camera diagram and the explanation in notes.\n\n⚠ Not ours: the \"Unreal to Gaussian Splat\" plugin (v2.0 launch trailer, 2026-05-16) is by Walhar Gohar, a third party (KB media/youtube/launch-trailer-v-20-of-unreal-to-gaussian-splat-plugin.md). Mention it only as someone else's tool.",
         bullets: [],
         subtitle: ""
       },
@@ -1353,7 +1354,7 @@ const SECTIONS = [
             [
               "2005",
               "Syracuse",
-              "Architecture + theater",
+              "",
               "#00d4ff"
             ],
             [
@@ -1365,19 +1366,19 @@ const SECTIONS = [
             [
               "2010",
               "Graduation",
-              "Thesis: theater + AR",
+              "",
               "#a78bfa"
             ],
             [
               "2013",
               "First VR",
-              "Fisher Dachs + DK1",
+              "",
               "#f43f5e"
             ],
             [
               "2016",
               "Agile Lens",
-              "Founded with Josh Dachs",
+              "",
               "#a78bfa"
             ],
             [
@@ -1389,19 +1390,19 @@ const SECTIONS = [
             [
               "2023",
               "Walkable holodeck",
-              "Four Seasons Lake Austin",
+              "",
               "#f59e0b"
             ],
             [
               "2025",
               "Virtual capture",
-              "A Christmas Carol VR",
+              "",
               "#f43f5e"
             ],
             [
               "2026",
               "PMRE",
-              "Your weird intersection",
+              "",
               "#f0f4ff"
             ]
           ],
@@ -1409,7 +1410,7 @@ const SECTIONS = [
         },
         motion: "timeline",
         keep: 30,
-        notes: "⏱ ~60s.\n\nLook back: 2005 Syracuse; 2008 London with Michael Barclay; 2010 graduation/thesis; 2013 first VR; 2016 Agile Lens; 2020 Authorized Unreal Engine instructor and the Unreal Engine bet; 2023 Four Seasons; 2025 virtual capture; 2026 PMRE. Presenter supplied instructor wording and year 2026-10-30. Keep the theater-people point in the existing 2016/live-theater chapter.\n\nThe thesis project itself is dated 2009 in earlier biography; shown at graduation here. Exact project year NEEDS CONFIRMATION.",
+        notes: "⏱ ~60s.\n\nLook back: 2005 Syracuse; 2008 London with Michael Barclay; 2010 graduation/thesis; 2013 first VR; 2016 Agile Lens; 2020 Authorized Unreal Engine instructor and the Unreal Engine bet; 2023 Four Seasons; 2025 virtual capture; 2026 PMRE. Presenter supplied instructor wording and year 2026-10-30. Keep the theater-people point in the existing 2016/live-theater chapter.\n\nThe thesis project itself is dated 2009 in earlier biography; shown at graduation here. Exact project year NEEDS CONFIRMATION.\n\nTimeline detail moved from slide: [[\"2005\",\"Syracuse\",\"Architecture + theater\",\"#00d4ff\"],[\"2008\",\"London\",\"Michael Barclay\",\"#f43f5e\"],[\"2010\",\"Graduation\",\"Thesis: theater + AR\",\"#a78bfa\"],[\"2013\",\"First VR\",\"Fisher Dachs + DK1\",\"#f43f5e\"],[\"2016\",\"Agile Lens\",\"Founded with Josh Dachs\",\"#a78bfa\"],[\"2020\",\"Authorized Unreal Engine instructor\",\"The Unreal Engine bet\",\"#00d4ff\"],[\"2023\",\"Walkable holodeck\",\"Four Seasons Lake Austin\",\"#f59e0b\"],[\"2025\",\"Virtual capture\",\"A Christmas Carol VR\",\"#f43f5e\"],[\"2026\",\"PMRE\",\"Your weird intersection\",\"#f0f4ff\"]]",
         opt: "journeyv2:on",
         bullets: [],
         subtitle: ""
@@ -1421,7 +1422,7 @@ const SECTIONS = [
             [
               "2005",
               "Syracuse Architecture",
-              "Year one: no computers",
+              "",
               "#00d4ff"
             ],
             [
@@ -1433,43 +1434,43 @@ const SECTIONS = [
             [
               "2009",
               "Thesis on Governors Island",
-              "Immersive theater + webcam AR",
+              "",
               "#a78bfa"
             ],
             [
               "2010",
               "Rafael Viñoly → ZGF",
-              "Architect. Renders. Questions.",
+              "",
               "#00d4ff"
             ],
             [
               "2013",
               "Fisher Dachs + Oculus DK1",
-              "First VR theater sightline tests",
+              "",
               "#f43f5e"
             ],
             [
               "2016",
               "Agile Lens",
-              "Founded with Josh Dachs",
+              "",
               "#a78bfa"
             ],
             [
               "2019",
               "Theater people, not just coders",
-              "Improv actors join the team",
+              "",
               "#f43f5e"
             ],
             [
               "2023",
               "A walkable holodeck",
-              "Real estate, before it’s built",
+              "",
               "#f59e0b"
             ],
             [
               "2026",
               "PMRE",
-              "Las Vegas",
+              "",
               "#f0f4ff"
             ]
           ],
@@ -1477,7 +1478,7 @@ const SECTIONS = [
         },
         motion: "timeline",
         keep: 30,
-        notes: "⏱ 10s animation, ~60s total. THE LOOK-BACK — this is where the title pays off.\n\nThe career as a winding road, not a lane: 2005 Syracuse → 2008 London → 2009 Governors Island thesis → 2010 Viñoly → ZGF → 2013 Fisher Dachs + DK1 → 2016 Agile Lens → 2019 theater people → 2023 a walkable holodeck → 2026 PMRE.\n\n✅ VERIFIED: every node's year and label is in the ledger [BIO, ESSAY17, PREP, FSLA]. ⚠ 2023 = the year the Lake Austin holodeck was public (Voices of VR 2023 hands-on, Unreal Fest 2023); work began after the Nov 2022 engagement.\n\n✎ PROPOSED: \"If you'd asked me in 2005 to draw this, I'd have drawn a straight line. Every bend is a time somebody said 'that's a distraction.'\"\n\nBuild option: slides/core/timeline/timeline.html?step=N shows only nodes 0..N.",
+        notes: "⏱ 10s animation, ~60s total. THE LOOK-BACK — this is where the title pays off.\n\nThe career as a winding road, not a lane: 2005 Syracuse → 2008 London → 2009 Governors Island thesis → 2010 Viñoly → ZGF → 2013 Fisher Dachs + DK1 → 2016 Agile Lens → 2019 theater people → 2023 a walkable holodeck → 2026 PMRE.\n\n✅ VERIFIED: every node's year and label is in the ledger [BIO, ESSAY17, PREP, FSLA]. ⚠ 2023 = the year the Lake Austin holodeck was public (Voices of VR 2023 hands-on, Unreal Fest 2023); work began after the Nov 2022 engagement.\n\n✎ PROPOSED: \"If you'd asked me in 2005 to draw this, I'd have drawn a straight line. Every bend is a time somebody said 'that's a distraction.'\"\n\nBuild option: slides/core/timeline/timeline.html?step=N shows only nodes 0..N.\n\nTimeline detail moved from slide: [[\"2005\",\"Syracuse Architecture\",\"Year one: no computers\",\"#00d4ff\"],[\"2008\",\"London\",\"Study abroad: architecture + theater\",\"#f43f5e\"],[\"2009\",\"Thesis on Governors Island\",\"Immersive theater + webcam AR\",\"#a78bfa\"],[\"2010\",\"Rafael Viñoly → ZGF\",\"Architect. Renders. Questions.\",\"#00d4ff\"],[\"2013\",\"Fisher Dachs + Oculus DK1\",\"First VR theater sightline tests\",\"#f43f5e\"],[\"2016\",\"Agile Lens\",\"Founded with Josh Dachs\",\"#a78bfa\"],[\"2019\",\"Theater people, not just coders\",\"Improv actors join the team\",\"#f43f5e\"],[\"2023\",\"A walkable holodeck\",\"Real estate, before it’s built\",\"#f59e0b\"],[\"2026\",\"PMRE\",\"Las Vegas\",\"#f0f4ff\"]]",
         opt: "journeyv2:off",
         bullets: [],
         subtitle: ""

@@ -6,7 +6,7 @@
      to an audience of dots, one dot lights up, and a line draws to the work that came of it.
      VERIFIED: (a) a 2015 talk about VR theater sightlines; someone in that audience was working on the Ed Sullivan Theater
        dome projection for The Late Show, and Agile Lens built an app to steer projectors around a grid.
-       (b) a 5-minute SIGGRAPH talk on A Christmas Carol VR led to the Waldorf Astoria work: a live guide inside an
+       (b) SIGGRAPH · A Christmas Carol VR led to the Waldorf Astoria work: a live guide inside an
        archviz tour. End caption is the exact module line "Never hide your weird, niche R&D." with the sub-line
        "It's the proof-of-concept for someone else's problem."
      PROPOSED / ILLUSTRATIVE: the audience dots, their count and which dot lights up are abstract; no person is depicted
@@ -25,7 +25,7 @@ svg{width:100%;height:100%;display:block}
 .cap{font-size:56px;font-weight:600;fill:var(--text)}
 .sub{font-size:34px;fill:var(--dim)}
 .rip{fill:none;stroke-width:3;transform-box:fill-box;transform-origin:50% 50%;transform:scale(0);opacity:0}
-</style></head><body>
+.ns,.sub{display:none}</style></head><body>
 <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" aria-label="Two rows. In each, a talk from a podium ripples out to an audience; one audience member lights up and a line connects to the project that followed: The Late Show dome projector-planning app, and a live guide inside a Waldorf Astoria archviz tour.">
 <defs>
   <clipPath id="clip0"><rect x="250" y="158" width="700" height="224"/></clipPath>
@@ -43,10 +43,10 @@ function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const
 function fadeIn(e,delay,dur){e.setAttribute('opacity',0);e.animate([{opacity:0},{opacity:1}],{duration:dur||700,delay,fill:'both'});}
 const rows=[
   {cy:270,t0:0,color:'#f43f5e',pick:[6,2],
-   label:[['2015',true],[' · a talk about VR theater sightlines',false]],
+   label:[['2015',true],[' · VR sightlines',false]],
    node:['The Late Show dome','a projector-planning app']},
   {cy:600,t0:5200,color:'#f59e0b',pick:[6,1],
-   label:[['a 5-minute SIGGRAPH talk on ',false],['A Christmas Carol',true],[' VR',false]],
+   label:[['SIGGRAPH · ',false],['A Christmas Carol',true],[' VR',false]],
    node:['Waldorf Astoria','a live guide inside an archviz tour']}
 ];
 const PX=200,RIP=720,RIPDUR=1800,COLS=7,ROWS=4;

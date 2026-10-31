@@ -1,98 +1,102 @@
 # On-slide word count
 
-Authoring-text count before/after the final minimal-text pass: **1637 → 937 words** across all 92 slide records, including alternatives. The before column includes new source modules as supplied by the prep lane; it is not a comparison of deck lengths. Counts cover configured slide text and source-module headline/line/timeline-node props, excluding notes, navigation, decorative years and text baked into photographs/video. Motion iframe wording and alternate thesis/close strings were visually reviewed separately. The same slide is counted once across its substeps, so figures do not multiply repeated labels. Removed words are retained in notes.
+**Deck inventory: 2279 → 1485 words** (72 previous records → 92 current records, including hidden alternatives). New slide records have 0 in Before. The inserted source-deck text is included in After.
 
-| Slide record | Title | Before | After | Cut tag / option |
-|---|---|---:|---:|---|
-| cover | Architect to <span class="xr">XR</span>-chitect | 26 | 26 |   |
-| THE ADVICE/lesson | Pick a lane. / Stay in it. | 15 | 10 | chapter  |
-| THE ADVICE/core/intro-avatar | Alex Coulombe | 19 | 0 | 19 intro:classic|alex |
-| THE ADVICE/core/intro-lens | Agile Lens | 27 | 0 | 30 intro:classic |
-| THE ADVICE/2 | Quick show of hands | 21 | 21 | 19 open:question |
-| THE ADVICE/core/lane | core/lane | 3 | 3 | 19 open:cold&lanemotion:original |
-| THE ADVICE/pmre/lane-traffic | pmre/lane-traffic | 0 | 0 | 19 open:cold&lanemotion:traffic |
-| THE ADVICE/pmre/lane-sprite | pmre/lane-sprite | 0 | 0 | 19 open:cold&lanemotion:sprite |
-| THE ADVICE/core/venn | core/venn | 0 | 0 | 19 open:cold&lanemotion:venn |
-| THE ADVICE/pmre/lane-to-venn | pmre/lane-to-venn | 0 | 0 | 19 open:cold&lanemotion:lanevenn |
-| THE ADVICE/8 | What I wanted to do | 21 | 21 | 30  |
-| 2005/lesson | Architecture + theater | 10 | 4 | chapter  |
-| 2005/0 | London · 2008 | 9 | 9 | 30  |
-| 2005/1 | Syracuse · year one | 16 | 16 | 30  |
-| 2005/2 | Equus, 2008 | 48 | 10 | full  |
-| 2005/3 | Connective Corridor, 2008 | 41 | 9 | full  |
-| 2005/4 | 2009 · Thesis | 24 | 7 | 30 journeyv2:off |
-| 2010/lesson | Graduation. / What next? | 14 | 7 | chapter  |
-| 2010/0 | Scopic Operations in Military Theatre | 5 | 5 | 19 journeyv2:on |
-| 2010/1 | What my renders kept getting asked | 31 | 23 | 19 renders:quote |
-| 2010/pmre/questions-dissolve | pmre/questions-dissolve | 0 | 0 | 19 renders:motion |
-| 2010/3 | Sound familiar? | 21 | 21 | full  |
-| 2013/lesson | Then a Headset Showed Up / on Kickstarter. | 49 | 7 | chapter  |
-| 2013/0 | The Next Logical Step | 49 | 11 | 30  |
-| 2013/pmre/sightline | pmre/sightline | 0 | 0 | 19  |
-| 2013/2 | 2013 · Xiqu Centre, Hong Kong | 35 | 25 | full  |
-| 2013/3 | Sightlines, Everywhere | 8 | 8 | full  |
-| 2013/4 | One Talk → One Client | 54 | 13 | 30 onetalk:photo|both&ports:off |
-| 2013/pmre/one-talk | pmre/one-talk | 0 | 0 | 30 onetalk:motion|both&ports:off |
-| 2013/pmre/hxr-shed | The Shed | 9 | 9 | 30 ports:on |
-| 2013/pmre/hxr-late-show | The Late Show | 8 | 8 | 19 ports:on |
-| 2016/lesson | Going All In. | 36 | 3 | chapter  |
-| 2016/0 | Who got it first | 29 | 29 | 30 q29:hxr |
-| 2016/1 | Who we hired | 23 | 23 | 30 q29:disciplines |
-| 2016/2 | Who we hired | 23 | 22 | 30 q29:prep |
-| 2016/3 | Live VR Theater | 13 | 13 | full  |
-| 2016/4 | The pattern | 16 | 16 | full  |
-| 2016/pmre/hxr-statue-free-work | ArchViz & R&D | 7 | 7 | 30 ports:on |
-| 2016/pmre/hxr-intel-paid-experiments | Intel — Project Arena | 10 | 10 | 30 ports:on |
-| 2020/lesson | Teaching Made Me / Learn It Properly. | 44 | 6 | chapter  |
-| 2020/pmre/hxr-unreal-bet | The Unreal Engine bet | 8 | 8 | 19 ports:on |
-| 2020/1 | Why it worked | 25 | 11 | 30  |
-| 2020/2 | Who taught whom | 25 | 25 | 30  |
-| 2020/3 | For some of you in this room | 28 | 28 | 19  |
-| 2020/pmre/hxr-waldorf-astoria | Waldorf Astoria Miami | 12 | 12 | 19 ports:on |
-| 2020/pmre/hxr-david-geffen-hall | David Geffen Hall | 10 | 10 | 30 ports:on |
-| 2023/lesson | Real Estate, / Before It’s Built. | 41 | 5 | chapter  |
-| 2023/0 | Placed images | 0 | 0 | 19 fs:v2 |
-| 2023/1 | Placed images | 0 | 0 | 19 fs:v2 |
-| 2023/pmre/hxr-four-seasons | Four Seasons Lake Austin | 10 | 10 | 30 ports:on |
-| 2023/pmre/fs-stats | pmre/fs-stats | 0 | 0 | 19 fs:v2 |
-| 2023/pmre/scale | pmre/scale | 0 | 0 | 20  |
-| 2023/5 | A Theater Experience | 43 | 10 | 30 fs:legacy&spike:photo|both |
-| 2023/pmre/spike-tape | pmre/spike-tape | 0 | 0 | 30 fs:legacy&spike:motion|both |
-| 2023/7 | A Theater Experience | 43 | 10 | 19 fs:v2&spike:photo|both |
-| 2023/pmre/spike-tape | pmre/spike-tape | 0 | 0 | 19 fs:v2&spike:motion|both |
-| 2023/pmre/hxr-dbox-holodeck | DBOX Holodeck | 7 | 7 | 30 ports:on |
-| 2023/pmre/fs-travels | pmre/fs-travels | 0 | 0 | 19 fs:v2 |
-| 2023/11 | Aspen pop-up | 2 | 2 | 19 fs:v2 |
-| 2023/pmre/nxt-four-seasons-production | Holodeck Anywhere | 4 | 4 | 30 ports:on |
-| 2023/pmre/hxr-royal-caribbean | Royal Caribbean | 9 | 9 | 30 ports:on |
-| 2023/pmre/mexico-scale | pmre/mexico-scale | 0 | 0 | 19 fs:v2 |
-| 2023/15 | What it did | 27 | 26 | 19 fs:legacy |
-| 2023/16 | The Holodeck | 11 | 11 | full fs:legacy |
-| 2025/lesson | Capturing Places / That Don’t Exist. | 44 | 5 | chapter  |
-| 2025/0 | The job, restated | 20 | 20 | 30  |
-| 2025/1 | Placed images | 0 | 0 | 30  |
-| 2025/pmre/working-cut | Cut Your Own Version of the Show | 7 | 7 | 30  |
-| 2025/pmre/camera-toy | Find the Shot | 3 | 3 | 19  |
-| 2025/4 | Synthetic Gaussian splats | 30 | 10 | 30  |
-| TASTE/lesson | A Thousand Drawings / By Hand. | 39 | 5 | chapter  |
-| TASTE/pmre/the-hand | pmre/the-hand | 0 | 0 | 19  |
-| TASTE/1 | Then the software arrived | 26 | 11 | 30  |
-| TASTE/2 | Taste is more than aesthetics | 25 | 25 | 19  |
-| TASTE/3 | For everyone in this room | 24 | 24 | 30  |
-| YOU/lesson | You Already / Think Spatially. | 37 | 4 | chapter  |
-| YOU/pmre/nxt-floor-tour | Floor Tour | 8 | 8 | 19 ports:on |
-| YOU/pmre/nxt-blueprint-immersive | Blueprint Immersive | 8 | 8 | 30 ports:on |
-| YOU/pmre/hxr-community | Unreal NYC & HalcyonVR | 4 | 4 | 19 ports:on |
-| YOU/pmre/rome-splats | What's exciting me right now | 24 | 24 | 19 ports:on |
-| YOU/4 | Your niche | 12 | 12 | 19 ports:on |
-| YOU/pmre/frame-to-room | pmre/frame-to-room | 0 | 0 | 19  |
-| YOU/6 | Tools Within Reach | 59 | 9 | full  |
-| YOU/pmre/venn | pmre/venn | 0 | 0 | 30  |
-| YOU/8 | So, tonight | 9 | 7 | 19 ask:text |
-| YOU/pmre/venn-you | pmre/venn-you | 0 | 0 | 19 ask:motion |
-| YOU/pmre/hxr-journey-map | The journey, mapped | 9 | 9 | 30 ports:on |
-| YOU/core/timeline | core/timeline | 54 | 54 | 30 journeyv2:on |
-| YOU/core/timeline | core/timeline | 70 | 70 | 30 journeyv2:off |
-| bonus | The Advice Wasn’t Wrong. / It Just Assumed One Lane. | 37 | 9 |  ports:off |
-| map | The Journey, Mapped | 3 | 3 |   |
-| close | Let’s Talk. | 16 | 16 |   |
+These are browser-read text inventories over each slide's builds, including SVG, motion iframe text and later Rome build captions, excluding notes, navigation and text baked into photographs/video. Display:none copy is excluded; opacity-faded build labels are counted once so later beats are not omitted. This counts the inventory of a motion, rather than multiplying words by animation frames. The old source is the previous published fa2cf72 deck; current source is this checkout. All removed copy remains in notes.
+
+Default-option inventories by cut: **20t 376 · 20 551 · 30 901 · full 1076 words**. Timings are in REHEARSAL.md; these are word counts, not timing estimates.
+
+| Current slide | Subject | Before | After | In 20t |
+|---:|---|---:|---:|:---:|
+| 1 | Cover | 26 | 26 | yes |
+| 2 | Pick a lane. / Stay in it. | 36 | 13 |  |
+| 3 | Alex Coulombe | 60 | 23 |  |
+| 4 | Agile Lens | 31 | 31 |  |
+| 5 | Quick show of hands | 21 | 21 |  |
+| 6 | core/lane | 15 | 15 |  |
+| 7 | pmre/lane-traffic | 34 | 38 | yes |
+| 8 | pmre/lane-sprite | 15 | 15 |  |
+| 9 | core/venn | 12 | 12 |  |
+| 10 | pmre/lane-to-venn | 24 | 24 |  |
+| 11 | What I wanted to do | 21 | 21 |  |
+| 12 | Architecture + theater | 45 | 6 | yes |
+| 13 | London · 2008 | 0 | 9 |  |
+| 14 | Syracuse · year one | 16 | 16 |  |
+| 15 | Equus, 2008 | 48 | 10 |  |
+| 16 | Connective Corridor, 2008 | 41 | 9 |  |
+| 17 | 2009 · Thesis | 24 | 7 |  |
+| 18 | Graduation. / What next? | 38 | 9 | yes |
+| 19 | Scopic Operations in Military Theatre | 0 | 5 | yes |
+| 20 | What my renders kept getting asked | 31 | 23 | yes |
+| 21 | pmre/questions-dissolve | 32 | 32 |  |
+| 22 | Sound familiar? | 21 | 21 |  |
+| 23 | Then a Headset Showed Up / on Kickstarter. | 49 | 9 | yes |
+| 24 | The Next Logical Step | 49 | 11 |  |
+| 25 | pmre/sightline | 28 | 10 | yes |
+| 26 | 2013 · Xiqu Centre, Hong Kong | 35 | 25 |  |
+| 27 | Sightlines, Everywhere | 21 | 21 |  |
+| 28 | One Talk → One Client | 54 | 13 |  |
+| 29 | pmre/one-talk | 46 | 21 |  |
+| 30 | The Shed | 0 | 9 |  |
+| 31 | The Late Show | 0 | 8 | yes |
+| 32 | Going All In. | 37 | 5 | yes |
+| 33 | Who got it first | 29 | 29 |  |
+| 34 | Who we hired | 23 | 23 |  |
+| 35 | Who we hired | 23 | 22 |  |
+| 36 | Live VR Theater | 24 | 24 |  |
+| 37 | The pattern | 16 | 16 |  |
+| 38 | ArchViz & R&D | 0 | 7 |  |
+| 39 | Intel — Project Arena | 0 | 10 |  |
+| 40 | Teaching Made Me / Learn It Properly. | 45 | 8 | yes |
+| 41 | The Unreal Engine bet | 0 | 8 | yes |
+| 42 | Why it worked | 25 | 11 |  |
+| 43 | Who taught whom | 25 | 25 |  |
+| 44 | For some of you in this room | 28 | 28 |  |
+| 45 | Waldorf Astoria Miami | 0 | 12 | yes |
+| 46 | David Geffen Hall | 0 | 10 |  |
+| 47 | Real Estate, / Before It’s Built. | 41 | 7 | yes |
+| 48 | Thesis images | 0 | 0 | yes |
+| 49 | Thesis images | 0 | 0 | yes |
+| 50 | Four Seasons Lake Austin | 0 | 10 |  |
+| 51 | pmre/fs-stats | 23 | 23 | yes |
+| 52 | pmre/scale | 24 | 24 |  |
+| 53 | A Theater Experience | 43 | 10 |  |
+| 54 | pmre/spike-tape | 35 | 35 |  |
+| 55 | A Theater Experience | 43 | 10 | yes |
+| 56 | pmre/spike-tape | 35 | 35 |  |
+| 57 | DBOX Holodeck | 0 | 7 |  |
+| 58 | pmre/fs-travels | 87 | 12 | yes |
+| 59 | Aspen pop-up | 12 | 12 | yes |
+| 60 | Holodeck Anywhere | 0 | 4 |  |
+| 61 | Royal Caribbean | 0 | 9 |  |
+| 62 | pmre/mexico-scale | 35 | 35 | yes |
+| 63 | What it did | 27 | 26 |  |
+| 64 | The Holodeck | 24 | 24 |  |
+| 65 | Capturing Places / That Don’t Exist. | 44 | 7 | yes |
+| 66 | The job, restated | 20 | 20 |  |
+| 67 | Thesis images | 0 | 0 |  |
+| 68 | Cut Your Own Version of the Show | 111 | 15 |  |
+| 69 | Find the Shot | 38 | 38 |  |
+| 70 | Synthetic Gaussian splats | 30 | 10 |  |
+| 71 | A Thousand Drawings / By Hand. | 41 | 7 |  |
+| 72 | pmre/the-hand | 20 | 20 | yes |
+| 73 | Then the software arrived | 26 | 11 |  |
+| 74 | Taste is more than aesthetics | 25 | 25 |  |
+| 75 | For everyone in this room | 24 | 24 |  |
+| 76 | You Already / Think Spatially. | 37 | 6 |  |
+| 77 | Floor Tour | 0 | 8 | yes |
+| 78 | Blueprint Immersive | 0 | 8 |  |
+| 79 | Unreal NYC & HalcyonVR | 0 | 4 | yes |
+| 80 | What's exciting me right now | 0 | 29 | yes |
+| 81 | Your niche | 0 | 12 | yes |
+| 82 | pmre/frame-to-room | 11 | 11 |  |
+| 83 | Tools Within Reach | 59 | 9 |  |
+| 84 | pmre/venn | 12 | 12 |  |
+| 85 | So, tonight | 7 | 7 | yes |
+| 86 | pmre/venn-you | 23 | 23 |  |
+| 87 | The journey, mapped | 0 | 0 |  |
+| 88 | core/timeline | 70 | 31 |  |
+| 89 | core/timeline | 0 | 38 |  |
+| 90 | Thesis summary | 41 | 13 |  |
+| 91 | Map | 40 | 40 |  |
+| 92 | Close | 23 | 23 | yes |
