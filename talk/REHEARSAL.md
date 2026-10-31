@@ -340,11 +340,13 @@ bullets: ["“We were already taking flat 2D views of seats…”", "“…the c
 
 ### 18. motion: sightline
 
-⏱ 13s animation, ~75s total. Explain sightline testing in plain language WHILE it plays.
+⏱ 8s animation, ~75s total.
 
-Beat 1 "Can every seat see the show?" — rays from each seat to the top of the set. Beat 2 — the seats under the balcony go red: blocked. Beat 3 — a headset sits in a blocked seat: "Sit in the seat before it's built." Beat 4 — the balcony is raised; every ray clears: "Find it in VR, fix it in the drawings."
+Ask: Can every seat see the actor?
 
-⚠ This is an ILLUSTRATIVE generic section, not a specific venue. Say "a theater" not a name.
+The original illustrative section draws actual seat outlines and eye points. Each sightline converges on an actor standing on a balcony. This is a generic explanatory drawing, not a measured analysis of a named venue. Describe the view from a seat; there is no blocked-seat or moving-balcony sequence in this revision.
+
+Style reference only: https://www.fisherdachs.com/seating-and-sightline-analysis/ . Artwork drawn for PMRE.
 
 ✅ VERIFIED [ESSAY17]: "When presented with the full-scale version of their design for the very first time, every architect sees decisions they would like to change. If they're seeing it for the first time after construction, it's too late. In VR, it almost never is."
 
