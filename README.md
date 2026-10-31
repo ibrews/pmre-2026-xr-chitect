@@ -28,7 +28,7 @@ There's no build step. Arrow keys or clicks advance the slides.
 
 ## Four Seasons chapter (2026-10-30)
 
-The default `fs=v2` chapter introduces Lake Austin with the supplied images, reveals **$500M+ presales** and **$870M investment** separately, retains the walkable scale / spike-tape material, maps the traveling holodeck, plays the complete Aspen video, and closes with the Perfect Day Mexico counterpoint. The $870M is the project’s TYKO construction loan; it is not VR revenue. Credits and timestamped source prompts are in the notes and [media provenance](media/pmre/fs-v2/PROVENANCE.md).
+The default `fs=v2` chapter introduces Lake Austin with the supplied images, reveals **$500M+ presales** and **$870M investment** separately, retains the walkable scale / spike-tape material, maps the traveling holodeck, plays the complete Aspen video, and closes with the Perfect Day Mexico counterpoint. The $870M is the project’s TYKO construction loan; it is not VR revenue. Credits and timestamped source prompts are in the notes (the short timestamped quotes and Mexico questions also survive the PowerPoint stage-note curation) and [media provenance](media/pmre/fs-v2/PROVENANCE.md).
 
 - New chapter: [`?opt=fs:v2`](https://ibrews.github.io/pmre-2026-xr-chitect/?opt=fs:v2). Original: `?fs=legacy`.
 - Venue short: `?opt=fs:v2&cut=20t&safe=70`. Default `fsbudget=tight` skips four repeated setup cards only for v2 / 20t (ADVICE, 2010, TASTE, YOU); `?fsbudget=all` restores them. No notes or media holds are shortened.

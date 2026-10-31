@@ -15,7 +15,7 @@ const add = (kind, title, notes, keep, opt, shortBudget) => (isDefault(opt) ? ro
 add('cover', T.coverTitle + ' — ' + T.coverSub, T.coverNotes, 19);
 S.forEach(sec => {
   add('lesson', `${sec.year} — ${sec.lesson.title}`, sec.lesson.notes, 19, sec.lesson.opt, sec.lesson.shortBudget);
-  sec.cases.forEach(c => { const t = c.motion ? 'motion: ' + c.motion : (c.title || c.bigText || (c.layout==='placed'?'Virtual camera angles':'Untitled case')); add((c.layout === 'full' || c.use) && c.motion ? 'motion' : (c.use ? c.use.split('/')[1] : (c.layout || 'case')), t, c.notes, c.keep, c.opt, c.shortBudget); });
+  sec.cases.forEach(c => { const t = c.motion ? 'motion: ' + c.motion : (c.title || c.label || c.bigText || (c.layout==='placed'?'Virtual camera angles':'Untitled case')); add((c.layout === 'full' || c.use) && c.motion ? 'motion' : (c.use ? c.use.split('/')[1] : (c.layout || 'case')), t, c.notes, c.keep, c.opt, c.shortBudget); });
 });
 add('bonus', B.title, B.notes, 19); add('map', 'The Journey, Mapped', T.mapNotes, undefined); add('close', T.closeTitle, T.closeNotes, 19);
 const fmt = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
