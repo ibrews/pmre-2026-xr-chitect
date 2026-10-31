@@ -2395,7 +2395,7 @@ const _activeAudioCtxs=new Set();
 {const _OAC=window.AudioContext||window.webkitAudioContext;const _PAC=function(...a){const c=new _OAC(...a);_activeAudioCtxs.add(c);const oc=c.close.bind(c);c.close=function(){_activeAudioCtxs.delete(c);return oc();};return c;};_PAC.prototype=_OAC.prototype;window.AudioContext=_PAC;if(window.webkitAudioContext)window.webkitAudioContext=_PAC;}
 window._killAllSfx=function(){_activeAudioCtxs.forEach(c=>{try{c.close();}catch(e){}});_activeAudioCtxs.clear();_sfxCtx=null;(window._sfxKillHooks||[]).forEach(fn=>{try{fn();}catch(e){}});};window._sfxKillHooks=[];
 let _sfxCtx=null;
-function sfxCtx(){if(!_sfxCtx)_sfxCtx=new(window.AudioContext||window.webkitAudioContext)();if(_sfxCtx.state==='suspended')_sfxCtx.resume();return _sfxCtx;}
+function sfxCtx(){if(!_sfxCtx)_sfxCtx=new(window.AudioContext||window.webkitAudioContext)();if(_sfxCtx.state==='suspended')_sfxCtx.resume().catch(()=>{});return _sfxCtx;}
 function playWhoosh(){try{const c=sfxCtx(),t=c.currentTime;const bufLen=c.sampleRate*0.25;const buf=c.createBuffer(1,bufLen,c.sampleRate);const d=buf.getChannelData(0);for(let i=0;i<bufLen;i++)d[i]=Math.random()*2-1;const s=c.createBufferSource();s.buffer=buf;const bp=c.createBiquadFilter();bp.type='bandpass';bp.frequency.value=900;bp.Q.value=0.6;const g=c.createGain();g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(0.08,t+0.04);g.gain.exponentialRampToValueAtTime(0.001,t+0.22);s.connect(bp);bp.connect(g);g.connect(c.destination);s.start(t);s.stop(t+0.25);}catch(e){}}
 function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.setValueAtTime(72,t);o.frequency.exponentialRampToValueAtTime(38,t+.18);o.connect(g);g.connect(c.destination);g.gain.setValueAtTime(.007,t);g.gain.exponentialRampToValueAtTime(.001,t+.22);o.start(t);o.stop(t+.23);}catch(e){}}
 
@@ -2486,7 +2486,7 @@ function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),
     stop(){ts.forEach(clearTimeout);ts.clear();iv.forEach(clearInterval);iv.clear();gen++;}};}
   let _audio=null;
   // The deck's _killAllSfx() closes every AudioContext on slide change; hand out a fresh one after that.
-  function audio(){if(INSTANT)return null;try{if(!_audio||_audio.state==='closed')_audio=new(window.AudioContext||window.webkitAudioContext)();if(_audio.state==='suspended')_audio.resume();return _audio;}catch(e){return null;}}
+  function audio(){if(INSTANT)return null;try{if(!_audio||_audio.state==='closed')_audio=new(window.AudioContext||window.webkitAudioContext)();if(_audio.state==='suspended')_audio.resume().catch(()=>{});return _audio;}catch(e){return null;}}
   function call(r,fn,...a){const f=r.inst&&r.inst[fn];if(typeof f!=='function')return;try{return f.apply(r.inst,a);}catch(e){console.error('SD: '+r.id+'.'+fn+'() threw',e);}}
   function resolveSteps(def,c,props){const n=c.steps!=null?c.steps:(typeof def.steps==='function'?def.steps(props):def.steps);return Math.max(0,Math.floor(+n||0));}
   const esc=x=>String(x).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));

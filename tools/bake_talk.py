@@ -22,6 +22,10 @@ while SYNC_GUARD + SYNC_GUARD in s:
 if SYNC_GUARD + "const r=await fetch('notes-config.json'" not in s:
     s = s.replace("const r=await fetch('notes-config.json'", SYNC_GUARD + "const r=await fetch('notes-config.json'", 1)
 
+# Navigation may close a suspended context before Chrome resolves its pending resume promise.
+# Sound is optional; absorb that asynchronous close/resume race just like synchronous audio failures.
+s = s.replace("_sfxCtx.resume();", "_sfxCtx.resume().catch(()=>{});")
+s = s.replace("_audio.resume();", "_audio.resume().catch(()=>{});")
 talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "journey.js", "motion-fit.js", "safezone.js"))
 
 def patch(marker, anchor, new, count=1):
