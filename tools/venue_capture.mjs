@@ -266,7 +266,7 @@ export async function capture(opts) {
     await page.evaluate(i => { goTo(i); }, sl.index);
     const nStates = sl.steps + 1;
     for (let k = 0; k < nStates; k++) {
-      if (k > 0) await page.keyboard.press('ArrowRight');
+      if (k > 0) await page.evaluate(()=>{const ss=slideSteps.get(allSlides[current]);if(ss&&ss.current<ss.steps.length){ss.steps[ss.current++]();updateStepIndicator();}});
       n++; const NN = String(n).padStart(2, '0'), letter = 'abcdefghijklmnopqrstuvwxyz'[k];
       const st = { n, NN, letter, deckIndex: sl.index, step: k, nSteps: sl.steps, type: sl.type, title: sl.title, kind: 'static' };
       const probe = await page.evaluate(() => { const s = allSlides[current]; return { html: s.outerHTML.length > 2e6 ? s.outerHTML.slice(0, 2e6) : s.outerHTML, iframe: [...s.querySelectorAll('iframe')].some(f => /media\/motion\/|#sdp=|\/slides\//.test(f.dataset.motionBase || f.getAttribute('src') || '')) }; });

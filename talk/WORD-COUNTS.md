@@ -100,3 +100,7 @@ Default-option inventories by cut: **20t 376 · 20 551 · 30 918 · full 1093 wo
 | 90 | Thesis summary | 41 | 13 |  |
 | 91 | Map | 40 | 40 |  |
 | 92 | Close | 23 | 23 | yes |
+
+## 2026-10-31 presenter correction
+
+The table above records round2/round3. The later corrective pass restores the presenter’s exact intro and lesson wording, adds source credits, and replaces text-only 2009–2013 beats with real images. It does not claim the earlier totals as a new count. See media/pmre/round4/PROVENANCE.md.

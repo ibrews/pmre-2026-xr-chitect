@@ -63,3 +63,9 @@ To pull framework updates: `git remote add upstream https://github.com/ibrews/sp
 ## Credits
 
 **Alex Coulombe Presents.** Built on the open-source [Spatial Deck](https://github.com/ibrews/spatial-deck) framework (see `LICENSE`). Sources for the project imagery are credited in `media/pmre/PROVENANCE.md`.
+
+### Presenter corrective pass (2026-10-31)
+
+Royal Caribbean / Perfect Day Mexico sets up the human-scale lesson before Four Seasons. The travel sequence is Austin, Aspen, DBOX New York, the 57th Street investor pop-up, then California. Image frames follow each source's aspect ratio, including ported canvas substeps. A forward press during a module beat completes that beat; the following press advances. The frame protocol accepts `complete` with the current step number. Speaker wording and new image provenance are in `talk/sections.js` and `media/pmre/round4/PROVENANCE.md`. Cut20t remains 34:10; cut30 remains 72:00 (reference only).
+
+To regression-test rapid navigation at 1920×1080, serve this checkout and run `node tools/qa_step_completion.cjs http://127.0.0.1:8774/ navigation-qa.json`. It visits every slide with registered substeps, presses during each beat, and requires that the completion press stays on the same slide/step before the subsequent press advances.

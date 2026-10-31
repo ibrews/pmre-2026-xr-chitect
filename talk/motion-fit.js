@@ -32,9 +32,9 @@ window.MOTION_FIT = {
    0.1198,
    0.1417,
    0.7164,
-   0.4972
+   0.5887
   ],
-  "src": "d5550260a5eab047"
+  "src": "f2ee73e97fa728a6"
  },
  "lane": {
   "box": [
@@ -79,7 +79,7 @@ window.MOTION_FIT = {
    0.7292,
    0.6944
   ],
-  "src": "a190b84e92e09c9c"
+  "src": "8ee4b657e876bd6f"
  },
  "one-talk": {
   "box": [
@@ -97,7 +97,7 @@ window.MOTION_FIT = {
    1,
    1
   ],
-  "src": "e35003680e569a43"
+  "src": "15cd88eba2819b65"
  },
  "scale": {
   "box": [

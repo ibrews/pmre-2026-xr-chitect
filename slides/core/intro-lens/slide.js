@@ -122,7 +122,7 @@ SD.defineSlide({
     function startHum() { if (ctx.instant) return; const c = ctx.audio(); if (!c) return; try { const g = c.createGain(); g.gain.value = 0; g.connect(c.destination); const oscs = [[68, 1], [136, .55], [204, .25]].map(([f, rel]) => { const o = c.createOscillator(), og = c.createGain(); o.type = 'sine'; o.frequency.value = f; og.gain.value = rel; o.connect(og); og.connect(g); o.start(); return o; }); g.gain.setValueAtTime(0, c.currentTime); g.gain.linearRampToValueAtTime(.091, c.currentTime + 1.2); hum = { c, g, oscs }; } catch (e) {} }
     // The hum's fade-out must finish after the clock is stopped on leave, so these two timers are deliberately plain setTimeout.
     function stopHum() { const h = hum; hum = null; if (!h) return; try { if (h.c.state !== 'closed') { h.g.gain.setValueAtTime(h.g.gain.value, h.c.currentTime); h.g.gain.linearRampToValueAtTime(0, h.c.currentTime + .6); setTimeout(() => h.oscs.forEach(o => { try { o.stop(); } catch (e) {} }), 700); } } catch (e) {} }
-    function orbit() { ang += .003; tt += .02; place(); pulseImg.setAttribute('opacity', (.06 + .06 * Math.sin(tt)).toFixed(3)); if (hum && hum.c.state !== 'closed') hum.g.gain.setTargetAtTime(.056 + .07 * ((Math.sin(tt) + 1) / 2), hum.c.currentTime, .08); C.raf(orbit); }
+    function orbit() { /* Keep horizontal client labels at their non-overlapping anchors; pulse the centered lens. */ ang = 0; tt += .02; place(); pulseImg.setAttribute('opacity', (.06 + .06 * Math.sin(tt)).toFixed(3)); if (hum && hum.c.state !== 'closed') hum.g.gain.setTargetAtTime(.056 + .07 * ((Math.sin(tt) + 1) / 2), hum.c.currentTime, .08); C.raf(orbit); }
     function clear() { svg.querySelectorAll('.ti-lens-x').forEach(n => n.remove()); av = null; }
 
     function enter() {

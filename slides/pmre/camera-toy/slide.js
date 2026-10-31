@@ -38,15 +38,15 @@ SD.defineSlide({
 .sd-mod-pmre-camera-toy .ct-btns button{font:inherit;font-size:calc(1.05*var(--vw));font-weight:700;letter-spacing:.06em;padding:.35em .8em;border-radius:999px;background:rgba(255,255,255,.04);border:2px solid var(--teal,#00d4ff);color:var(--teal,#00d4ff);cursor:pointer;opacity:.55;transition:opacity .3s,background .3s}
 .sd-mod-pmre-camera-toy .ct-btns button.on{opacity:1;background:rgba(255,255,255,.12)}
 .sd-mod-pmre-camera-toy .ct-right{display:flex;flex-direction:column;gap:calc(1.4*var(--vh));min-width:0}
-.sd-mod-pmre-camera-toy .ct-view{position:relative;height:calc(55*var(--vh));aspect-ratio:16/9;max-width:100%;border-radius:14px;overflow:hidden;border:2px solid var(--teal,#00d4ff);background:#05060a}
+.sd-mod-pmre-camera-toy .ct-view{position:relative;width:100%;height:auto;aspect-ratio:16/9;max-width:100%;border-radius:14px;overflow:hidden;border:2px solid var(--teal,#00d4ff);background:#05060a}
 .sd-mod-pmre-camera-toy .ct-view canvas{width:100%;height:100%;display:block}
 .sd-mod-pmre-camera-toy .ct-bar{position:absolute;left:0;right:0;height:0;background:#000;transition:height .5s}
 .sd-mod-pmre-camera-toy .ct-bar.t{top:0}.sd-mod-pmre-camera-toy .ct-bar.b{bottom:0}
-.sd-mod-pmre-camera-toy .ct-view.masked .ct-bar{height:12.8%}
+.sd-mod-pmre-camera-toy .ct-view.masked{aspect-ratio:2.39}.sd-mod-pmre-camera-toy .ct-bar{display:none}
 .sd-mod-pmre-camera-toy .ct-hud{position:absolute;left:14px;top:10px;font-size:calc(1.1*var(--vw));font-weight:700;color:#fff;text-shadow:0 1px 3px #000;z-index:2}
 .sd-mod-pmre-camera-toy .ct-strip{display:flex;gap:calc(1*var(--vw))}
-.sd-mod-pmre-camera-toy .ct-frame{position:relative;height:calc(17*var(--vh));aspect-ratio:16/9;border-radius:8px;background:#11131b center/cover no-repeat;border:2px solid rgba(255,255,255,.16)}
-.sd-mod-pmre-camera-toy .ct-frame.masked{box-shadow:inset 0 calc(1.1*var(--vw)) 0 #000,inset 0 calc(-1.1*var(--vw)) 0 #000}
+.sd-mod-pmre-camera-toy .ct-frame{position:relative;width:31%;height:auto;aspect-ratio:16/9;border-radius:8px;background:#11131b center/cover no-repeat;border:2px solid rgba(255,255,255,.16)}
+.sd-mod-pmre-camera-toy .ct-frame.masked{aspect-ratio:2.39;box-shadow:none}
 .sd-mod-pmre-camera-toy .ct-frame span{position:absolute;left:8px;bottom:6px;font-size:calc(.95*var(--vw));font-weight:700;color:#fff;text-shadow:0 1px 3px #000}
 .sd-mod-pmre-camera-toy .ct-frame.flash{animation:sdCtFlash .5s ease-out}
 @keyframes sdCtFlash{0%{filter:brightness(3)}100%{filter:brightness(1)}}
@@ -124,9 +124,9 @@ SD.defineSlide({
         if (o.lamp) { g.fillStyle = '#ffd27a'; g.beginPath(); g.arc(top.x, top.y, Math.max(4, .2 / top.z * fx), 0, 7); g.fill(); } else { g.fillStyle = '#f2c79b'; g.beginPath(); g.arc(top.x, top.y + hr, hr, 0, 7); g.fill(); } });
     }
     function draw() {
-      drawPlan(); if (!three) { render2d(); return; }
+      drawPlan(); const ratio=st.mask?2.39:16/9; if(canvas.height!==Math.round(1280/ratio)){canvas.width=1280;canvas.height=Math.round(1280/ratio);} if (!three) { render2d(); return; }
       const { r, scene, cam, toW } = three, p = toW(st), a = toW(AIM);
-      cam.position.set(p.x, 1.55, p.z); cam.fov = 2 * Math.atan(Math.tan(hfov(st.f) / 2) / (16 / 9)) * 180 / Math.PI; cam.updateProjectionMatrix(); cam.lookAt(a.x, 1.35, a.z);
+      r.setSize(1280,Math.round(1280/ratio),false);cam.aspect=ratio;cam.position.set(p.x, 1.55, p.z); cam.fov = 2 * Math.atan(Math.tan(hfov(st.f) / 2) / ratio) * 180 / Math.PI; cam.updateProjectionMatrix(); cam.lookAt(a.x, 1.35, a.z);
       r.render(scene, cam);
     }
     function take() {
@@ -136,7 +136,7 @@ SD.defineSlide({
     }
     // Every state change goes through act(): it runs after the viewfinder is ready, and a generation counter drops work
     // queued before the latest enter() (going back to the slide mid-load must not replay stale clicks).
-    let gen = 0; const act = fn => { const g = gen; ready.then(() => { if (g === gen) fn(); }); };
+    let gen = 0; const act = fn => { const g = gen,instant=ctx.instant; ready.then(() => { if (g === gen) {const old=ctx.instant;ctx.instant=instant;try{fn();}finally{ctx.instant=old;}} }); };
     let drag = false; const toPlan = e => { const b = plan.getBoundingClientRect(); return { x: Math.max(30, Math.min(370, (e.clientX - b.left) / b.width * 400)), y: Math.max(215, Math.min(370, (e.clientY - b.top) / b.height * 400)) }; };
     plan.addEventListener('pointerdown', e => { drag = true; try { plan.setPointerCapture(e.pointerId); } catch (_) {} Object.assign(st, toPlan(e)); act(draw); });
     plan.addEventListener('pointermove', e => { if (drag) { Object.assign(st, toPlan(e)); act(draw); } });

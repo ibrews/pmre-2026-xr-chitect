@@ -16,7 +16,7 @@ css:".sd-mod-pmre-nxt-four-seasons-production{padding:0!important}.sd-mod-pmre-n
     function frame(t,which=null){
       if(p.kind==='title'){head.style.opacity=clamp(t/1.2);return;}
       if(p.kind==='production'){
-        media.forEach((m,i)=>{m.style.cssText=`left:${3+32*i}%;top:22%;width:30%;height:67%;opacity:${which===null?clamp((t-.8-.5*i)/.7):i<=which?1:0}`;});
+        media.forEach((m,i)=>{const ratio=(m.videoWidth||m.naturalWidth)/(m.videoHeight||m.naturalHeight)||[16/9,9/16,9/16][i],sw=root.clientWidth*.30,sh=root.clientHeight*.67,w=Math.min(sw,sh*ratio),h=w/ratio;m.style.cssText=`left:${root.clientWidth*(.03+.32*i)+(sw-w)/2}px;top:${root.clientHeight*.22+(sh-h)/2}px;width:${w}px;height:${h}px;opacity:${which===null?clamp((t-.8-.5*i)/.7):i<=which?1:0}`;});
         return;
       }
       // Faithful NXT #20 conveyor: enter from off-right at 3.5s; pan 20s;

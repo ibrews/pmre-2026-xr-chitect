@@ -1,4 +1,3 @@
-// PMRE content source.
 const TALK = {
   coverEvent: "PMRE 2026 &middot; Las Vegas &middot; Thursday, Nov 19",
   coverTitle: "Architect to <span class=\"xr\">XR</span>-chitect",
@@ -246,7 +245,7 @@ const SECTIONS = [
       shortBudget: true,
       title: "Pick a lane.\nStay in it.",
       short: "THE ADVICE",
-      tagline: "Richard Rosa · Syracuse University",
+      tagline: "Architecture professor advice:<br>\"pick a lane, stay in it, master one craft.\"",
       notes: "⏱ ~2 min. This is the cold open — slow down.\n\n✅ VERIFIED: the advice as worded in your own submitted abstract: \"pick a lane, stay in it, and master one craft.\" [ABS]\n\n✅ VERIFIED nuance worth one sentence: Syracuse wasn't anti-technology — grad chair Brian Lonsway \"first brought VR headsets into the architecture studio during their 'first wave' in the late 1990's\" [ESSAY17]. The advice was about focus, not fear of tech.\n\n✎ PROPOSED transition: \"Here's what that advice looked like in my head.\" → click. (With the intro on — the default — say \"But first: who ignored it?\" and click into the pixel intro; the \"what that advice looked like\" line moves to the end of the Agile Lens orbit.)\n\nPresenter, 2026-10-30: the professor who told him to focus on architecture was Richard Rosa at Syracuse University. Name Richard Rosa in the opening. The exact conversation and words remain NEEDS CONFIRMATION; the advice is Alex’s recollection, not a verified quotation from Rosa.\n\nMoved from slide (retained for the presenter):\ntags: \"Architecture &middot; Theater &middot; Technology\""
     },
     cases: [
@@ -268,8 +267,8 @@ const SECTIONS = [
           name: "Alex<br>Coulombe",
           role: "Founder, Agile Lens",
           withBeard: true,
-          bio: "",
-          ue5: "",
+          bio: "Architect turned XR-chitect who has spent the last decade building<br>spatial experiences for the world's most ambitious clients.",
+          ue5: "Gold Authorized Unreal Engine Instructor.\nManhattan Authorized Training Center.\nOrganizer of Unreal NYC and frequent Unreal Fest speaker.",
           stats: [
             {
               n: "16",
@@ -430,9 +429,9 @@ const SECTIONS = [
         layout: "big",
         keep: 30,
         title: "What I wanted to do",
-        bigText: "“I really don’t think\nthat job exists yet.”",
-        bigCaption: "Me, on combining architecture, theater and emerging technology",
-        notes: "⏱ ~60s.\n\n✅ VERIFIED quote: \"I really don't think that job exists yet.\" [HXR — HarvardXR 2026 closing keynote, pull quote]. The keynote notes frame it as \"Alex in 2010\". ❓ ALEX: confirm the year/context before saying \"2010\" aloud — the full transcript is no longer on disk.\n\n✅ VERIFIED (draft wording you approved for FMX): \"Struggled a lot when I was younger with whether I should be an architect, or do theater, or chase emerging technology — and I'm still in disbelief that I carved out a career doing all three at once.\" [FMXDRAFT]\n\n✎ PROPOSED audience hook: \"Who here has a job title their parents still can't explain? … Keep your hand up if you invented it.\" Real-estate media is full of people who invented their own job.",
+        bigText: "\"I DON'T THINK\nMY JOB EXISTS YET.\"",
+        bigCaption: "-Me, 2010",
+        notes: "⏱ ~60s.\n\n✅ VERIFIED quote: \"I really don't think that job exists yet.\" [HXR — HarvardXR 2026 closing keynote, pull quote]. The keynote notes frame it as \"Alex in 2010\". ❓ ALEX: confirm the year/context before saying \"2010\" aloud — the full transcript is no longer on disk.\n\n✅ VERIFIED (draft wording you approved for FMX): \"Struggled a lot when I was younger with whether I should be an architect, or do theater, or chase emerging technology — and I'm still in disbelief that I carved out a career doing all three at once.\" [FMXDRAFT]\n\n✎ PROPOSED audience hook: \"Who here has a job title their parents still can't explain? … Keep your hand up if you invented it.\" Real-estate media is full of people who invented their own job.\n\nPresenter exact edit, 2026-10-31: \"I DON’T THINK MY JOB EXISTS YET.\" — Me, 2010.",
         bullets: [],
         subtitle: ""
       }
@@ -483,15 +482,14 @@ const SECTIONS = [
         bullets: []
       },
       {
-        layout: "big",
         keep: 30,
-        title: "2009 · Thesis",
-        bigText: "Fake AR on\nGovernors Island.",
-        bigCaption: "",
-        notes: "⏱ ~90s — the origin of the XR career.\n\n✅ VERIFIED [BIO]: thesis \"Scopic Operations in Military Theatre\" — immersive theatre installation at Fort Jay, Governors Island; early AR using webcams and markers (2009); the bio calls it the origin of your XR career.\n\n❓ ALEX: this beat has no photos and no anecdote anywhere in the KB. If you have thesis images, drop them in media/pmre/ and turn this into a two-pane slide. Stories that would land: what your thesis jury said; how the webcams/markers actually worked; what broke on the day.\n\n✎ PROPOSED: \"This was 2009. AR wasn't a product category. It was a hack I needed for a theater piece.\"\n\nMoved from slide (retained for the presenter):\nbigCaption: “Scopic Operations in Military Theatre” — an immersive theater installation at Fort Jay, built with webcams and markers",
+        title: "Fake AR on Governors Island",
+        notes: "⏱ ~90s — the origin of the XR career.\n\n✅ VERIFIED [BIO]: thesis \"Scopic Operations in Military Theatre\" — immersive theatre installation at Fort Jay, Governors Island; early AR using webcams and markers (2009); the bio calls it the origin of your XR career.\n\n❓ ALEX: this beat has no photos and no anecdote anywhere in the KB. If you have thesis images, drop them in media/pmre/ and turn this into a two-pane slide. Stories that would land: what your thesis jury said; how the webcams/markers actually worked; what broke on the day.\n\n✎ PROPOSED: \"This was 2009. AR wasn't a product category. It was a hack I needed for a theater piece.\"\n\nMoved from slide (retained for the presenter):\nbigCaption: “Scopic Operations in Military Theatre” — an immersive theater installation at Fort Jay, built with webcams and markers\n\nImage credit: Alex Coulombe · portfolio © 2010. Source: http://www.alexcoulombe.com/architecture/portfolio/zgf.htm",
         opt: "journeyv2:off",
         bullets: [],
-        subtitle: ""
+        subtitle: "Alex Coulombe · portfolio © 2010",
+        img: "media/pmre/round4/thesis-earlyatrium.jpg",
+        credit: "Alex Coulombe · portfolio © 2010"
       }
     ]
   },
@@ -500,10 +498,12 @@ const SECTIONS = [
     accent: "teal",
     lesson: {
       shortBudget: false,
-      title: "Graduation.\nWhat next?",
+      title: "Years of quiet archviz work",
       short: "THE QUIET YEARS",
       tagline: "Architecture · theater · augmented reality",
-      notes: "⏱ ~90s.\n\n✅ VERIFIED [BIO]: Rafael Viñoly Architects, then ZGF (Zimmer Gunsul Frasca), 2010–2013; advocated for AR/real-time visualization tools inside traditional architecture firms; published in the New York Times (bio bullet; no article details on record).\n\n⚠ The FMX draft script says \"Alfonso Frasca\" — wrong. It's Zimmer Gunsul Frasca.\n\n❓ ALEX: the NYT mention has no title/date/topic in the KB — only mention it if you can name it. Any Viñoly/ZGF anecdote (a crit, a client meeting, a render that went wrong) is gold here; there are none on record.\n\n✎ PROPOSED: \"Quiet\" is your own word from the abstract. Lean on it: most of a career is the quiet years.\n\nPresenter, 2026-10-30: 2010 is graduation and figuring out the career path, including the thesis (theater + architecture + augmented reality). The portfolio is credited © 2010; earlier biographical notes date the project 2009. Present it as the graduation thesis; exact project year NEEDS CONFIRMATION.\n\nMoved from slide (retained for the presenter):\ntags: \"Rafael Viñoly &middot; ZGF &middot; 2010–2013\""
+      notes: "⏱ ~90s.\n\n✅ VERIFIED [BIO]: Rafael Viñoly Architects, then ZGF (Zimmer Gunsul Frasca), 2010–2013; advocated for AR/real-time visualization tools inside traditional architecture firms; published in the New York Times (bio bullet; no article details on record).\n\n⚠ The FMX draft script says \"Alfonso Frasca\" — wrong. It's Zimmer Gunsul Frasca.\n\n❓ ALEX: the NYT mention has no title/date/topic in the KB — only mention it if you can name it. Any Viñoly/ZGF anecdote (a crit, a client meeting, a render that went wrong) is gold here; there are none on record.\n\n✎ PROPOSED: \"Quiet\" is your own word from the abstract. Lean on it: most of a career is the quiet years.\n\nPresenter, 2026-10-30: 2010 is graduation and figuring out the career path, including the thesis (theater + architecture + augmented reality). The portfolio is credited © 2010; earlier biographical notes date the project 2009. Present it as the graduation thesis; exact project year NEEDS CONFIRMATION.\n\nMoved from slide (retained for the presenter):\ntags: \"Rafael Viñoly &middot; ZGF &middot; 2010–2013\"",
+      visual: "media/pmre/round4/zgf-massbay.jpg",
+      visualCredit: "Alex Coulombe / ZGF Architects · portfolio © 2012"
     },
     cases: [
       {
@@ -543,15 +543,14 @@ const SECTIONS = [
         title: "Scopic Operations in Military Theatre"
       },
       {
-        layout: "big",
         opt: "renders:quote",
         keep: 19,
-        title: "What my renders kept getting asked",
-        bigText: "“Is that the right scale?”\n“Where’s that light coming from?”\n“What am I looking at right now?”",
-        bigCaption: "",
-        notes: "⏱ ~90s. THE BRIDGE TO THIS ROOM — pause after the three questions.\n\n✅ VERIFIED quote [ESSAY17]: \"When I produced architectural renders at my previous firms there were similar questions: 'Is that the right scale?' 'Where's that light coming from?' 'What am I looking at right now?'\"\n\n✎ PROPOSED audience move: \"Hands up if a client has asked you one of these about a listing photo this year.\" (Expect most hands.) \"Same questions. Different medium. That's the whole talk.\"\n\nMoved from slide (retained for the presenter):\nbigCaption: From my 2017 essay, “Designing Like You’re There”",
+        title: "“Is that the right scale?”\n“Where’s that light coming from?”\n“What am I looking at right now?”",
+        notes: "⏱ ~90s. THE BRIDGE TO THIS ROOM — pause after the three questions.\n\n✅ VERIFIED quote [ESSAY17]: \"When I produced architectural renders at my previous firms there were similar questions: 'Is that the right scale?' 'Where's that light coming from?' 'What am I looking at right now?'\"\n\n✎ PROPOSED audience move: \"Hands up if a client has asked you one of these about a listing photo this year.\" (Expect most hands.) \"Same questions. Different medium. That's the whole talk.\"\n\nMoved from slide (retained for the presenter):\nbigCaption: From my 2017 essay, “Designing Like You’re There”\n\nImage credit: Alex Coulombe / ZGF Architects · portfolio © 2012. Source: http://www.alexcoulombe.com/architecture/portfolio/zgf.htm",
         bullets: [],
-        subtitle: ""
+        subtitle: "Alex Coulombe / ZGF Architects · portfolio © 2012",
+        img: "media/pmre/round4/zgf-nyu-lobby.jpg",
+        credit: "Alex Coulombe / ZGF Architects · portfolio © 2012"
       },
       {
         use: "pmre/questions-dissolve",
@@ -563,13 +562,12 @@ const SECTIONS = [
         subtitle: ""
       },
       {
-        layout: "big",
-        title: "Sound familiar?",
-        bigText: "A still image asks\nthe viewer to imagine.",
-        bigCaption: "Architects, photographers, videographers — we all sell a feeling of standing somewhere",
-        notes: "⏱ ~60s.\n\n✎ PROPOSED (entire slide): connective copy aimed at PMRE's audience of solo/small-studio photographers and videographers [projects/pmre2026/overview.md]. Audience context: you are NOT claiming photography expertise — nothing in your record says you shoot real estate. Frame it as: \"You are already doing the hardest part of my job.\"\n\nPMRE audience note ✅: research found this crowd is AI/tech-hype fatigued and prefers relatable personal stories over pitches [overview]. Keep the next chapter human.",
+        title: "A still image asks the viewer to imagine",
+        notes: "⏱ ~60s.\n\n✎ PROPOSED (entire slide): connective copy aimed at PMRE's audience of solo/small-studio photographers and videographers [projects/pmre2026/overview.md]. Audience context: you are NOT claiming photography expertise — nothing in your record says you shoot real estate. Frame it as: \"You are already doing the hardest part of my job.\"\n\nPMRE audience note ✅: research found this crowd is AI/tech-hype fatigued and prefers relatable personal stories over pitches [overview]. Keep the next chapter human.\n\nImage credit: Alex Coulombe / ZGF Architects · portfolio © 2012. Source: http://www.alexcoulombe.com/architecture/portfolio/zgf.htm",
         bullets: [],
-        subtitle: ""
+        subtitle: "Alex Coulombe / ZGF Architects · portfolio © 2012",
+        img: "media/pmre/round4/zgf-nyu-lab.jpg",
+        credit: "Alex Coulombe / ZGF Architects · portfolio © 2012"
       }
     ]
   },
@@ -580,7 +578,9 @@ const SECTIONS = [
       title: "Then a Headset Showed Up\non Kickstarter.",
       short: "THE FIRST PROOF",
       tagline: "",
-      notes: "⏱ ~2 min.\n\n✅ VERIFIED quote [ESSAY17]: \"Fast forward to late 2012… I had never heard of architectural consultancy, and was excited to gain expertise in the design of theater spaces. It was around then that the very first Oculus Rift Development Kit entered Kickstarter…\" \n\n✅ VERIFIED: \"Pioneered the world's first use of VR for theatrical sightline testing\" [BIO, ABS].\n\n✅ VERIFIED (FMX draft wording): \"I thought I'd found the crossover of my Venn diagram: I'm an architect who gets to specialize in theaters.\" [FMXDRAFT] — this is the twist on the title: you DID specialize… in a niche nobody had named.\n\n✅ VERIFIED: first DK1 experience = the Tuscany demo: \"…the same level of excitement I had after trying the Tuscany demo on my Oculus Rift DK1 back in 2013\" [UploadVR Orion piece, 2024].\n\n⚠ Dates: Kickstarter late 2012, hands-on 2013. Say \"2013\".\n\nMoved from slide (retained for the presenter):\ntags: \"Fisher Dachs Associates &middot; Oculus DK1 &middot; Sightlines\"\ntagline: At Fisher Dachs Associates I was finally an architect who specialized — in theaters. Then the first Oculus Rift dev kit arrived.<br><br>We used it for something nobody had done: testing theater sightlines in VR."
+      notes: "⏱ ~2 min.\n\n✅ VERIFIED quote [ESSAY17]: \"Fast forward to late 2012… I had never heard of architectural consultancy, and was excited to gain expertise in the design of theater spaces. It was around then that the very first Oculus Rift Development Kit entered Kickstarter…\" \n\n✅ VERIFIED: \"Pioneered the world's first use of VR for theatrical sightline testing\" [BIO, ABS].\n\n✅ VERIFIED (FMX draft wording): \"I thought I'd found the crossover of my Venn diagram: I'm an architect who gets to specialize in theaters.\" [FMXDRAFT] — this is the twist on the title: you DID specialize… in a niche nobody had named.\n\n✅ VERIFIED: first DK1 experience = the Tuscany demo: \"…the same level of excitement I had after trying the Tuscany demo on my Oculus Rift DK1 back in 2013\" [UploadVR Orion piece, 2024].\n\n⚠ Dates: Kickstarter late 2012, hands-on 2013. Say \"2013\".\n\nMoved from slide (retained for the presenter):\ntags: \"Fisher Dachs Associates &middot; Oculus DK1 &middot; Sightlines\"\ntagline: At Fisher Dachs Associates I was finally an architect who specialized — in theaters. Then the first Oculus Rift dev kit arrived.<br><br>We used it for something nobody had done: testing theater sightlines in VR.",
+      visual: "media/pmre/fda-dk1-office-demo.jpg",
+      visualCredit: "Fisher Dachs Associates / Agile Lens"
     },
     cases: [
       {
@@ -856,9 +856,27 @@ const SECTIONS = [
       title: "Real Estate,\nBefore It’s Built.",
       short: "THE BIG PROOF",
       tagline: "",
-      notes: "⏱ ~2 min.\n\n✅ VERIFIED [FSLA]: wireless VR holodeck, 5,300 sq ft (82×65 ft); Unreal, OptiTrack, Antilatency, wireless multi-user. Marketing materials say \"5,000 sq ft\" — the slide says \"more than 5,000\", which is true of both.\n\n✅ VERIFIED [FSLA]: in a 10-studio bake-off the client hired two studios — another studio for visual fidelity, Agile Lens for methodology — \"our particular method of problem solving and approaching this from a perspective of novel ideas and novel solutions.\"\n\n✅ VERIFIED [FSLA, from PREP]: \"17 different people were like, 'oh yeah, Alex should be involved with this project somehow.' A lot of forces in the universe were conspiring.\" ❓ ALEX: don't name the 17 people or the competing studio on stage without permission.\n\nAlex, 2026-10-30: use $500M+ presales and $870M investment. These supersede older $700M figures. The June 2, 2026 project announcement identifies the $870M as a TYKO construction loan, not VR revenue. Public sources: https://www.agilelens.com/portfolio/four-seasons-lake-austin and https://www.prnewswire.com/news-releases/tyko-capital-provides-870-million-construction-loan-for-four-seasons-private-residences-lake-austin-302788931.html\n\nALTERNATE line, your words (Unreal archviz near construction, 2020) [HXR26-TALK 00:21:39, auto-captions]: \"This feels like stepping into a time machine.\"\n\nMoved from slide (retained for the presenter):\ntags: \"Four Seasons &middot; Lake Austin &middot; Walkable VR\"\ntagline: Four Seasons Private Residences, Lake Austin: a wireless VR holodeck of more than 5,000 square feet, where buyers walk homes at true scale years before they exist."
+      notes: "⏱ ~2 min.\n\n✅ VERIFIED [FSLA]: wireless VR holodeck, 5,300 sq ft (82×65 ft); Unreal, OptiTrack, Antilatency, wireless multi-user. Marketing materials say \"5,000 sq ft\" — the slide says \"more than 5,000\", which is true of both.\n\n✅ VERIFIED [FSLA]: in a 10-studio bake-off the client hired two studios — another studio for visual fidelity, Agile Lens for methodology — \"our particular method of problem solving and approaching this from a perspective of novel ideas and novel solutions.\"\n\n✅ VERIFIED [FSLA, from PREP]: \"17 different people were like, 'oh yeah, Alex should be involved with this project somehow.' A lot of forces in the universe were conspiring.\" ❓ ALEX: don't name the 17 people or the competing studio on stage without permission.\n\nAlex, 2026-10-30: use $500M+ presales and $870M investment. These supersede older $700M figures. The June 2, 2026 project announcement identifies the $870M as a TYKO construction loan, not VR revenue. Public sources: https://www.agilelens.com/portfolio/four-seasons-lake-austin and https://www.prnewswire.com/news-releases/tyko-capital-provides-870-million-construction-loan-for-four-seasons-private-residences-lake-austin-302788931.html\n\nALTERNATE line, your words (Unreal archviz near construction, 2020) [HXR26-TALK 00:21:39, auto-captions]: \"This feels like stepping into a time machine.\"\n\nMoved from slide (retained for the presenter):\ntags: \"Four Seasons &middot; Lake Austin &middot; Walkable VR\"\ntagline: Four Seasons Private Residences, Lake Austin: a wireless VR holodeck of more than 5,000 square feet, where buyers walk homes at true scale years before they exist.\n\nOpen with Royal Caribbean / Perfect Day Mexico, then Four Seasons. VR is most powerful at human scale, feeling like you’re in the experience, not outside looking in; Four Seasons is the proof."
     },
     cases: [
+      {
+        use: "pmre/hxr-royal-caribbean",
+        keep: 30,
+        opt: "ports:on",
+        title: "Royal Caribbean",
+        notes: "⏱ ~40s.\n\nThe Royal Caribbean work deployed XR experiences on a cruise ship. The source highlights constrained connectivity and the need for contingencies and graceful fallbacks. Show what works and keep the experience moving when a planned moment fails.\n\nSource: https://ibrews.github.io/harvardxr-keynote/#39 @811042a2a87476a045be69f8c2e2aafa50cca12c; all source states and media preserved in the module. See module notes.txt and source.json for original source notes.\n\nOriginal source slide copy (retained for context; use the qualifications above):\ntitle: Royal Caribbean\nsubtitle: When the demo breaks at sea, there's no IT department to call\nbullets: Deploying XR experiences on a cruise ship — the most constrained environment. Satellite Wi-Fi, salt air, motion sickness that's real.\nThe demo WILL break. Have contingencies. Build graceful fallbacks into every moment of the experience.\nNobody knows what you envisioned. When something fails, pivot gracefully — the audience experiences what you show them, not what you planned.\n\nPresenter lesson, 2026-10-31: VR is most powerful at human scale, feeling like you’re in the experience, not outside looking in; Four Seasons is the proof.",
+        bullets: [],
+        subtitle: ""
+      },
+      {
+        use: "pmre/mexico-scale",
+        motion: "mexico-scale",
+        opt: "fs:v2",
+        keep: 19,
+        notes: "⏱ 6s animation, ~90s total. Counterpoint: Perfect Day Mexico was not approved despite best efforts.\n\nThe delivered experience was a six-person VR balloon preview on a cruise ship: https://www.agilelens.com/portfolio/perfect-day-mexico . The left picture is the virtual distant view; the right picture shows a guest in the physical basket. Neither is a ground-level walk-through. Images: Agile Lens / Royal Caribbean.\n\nTravel Weekly, Teri West, May 20, 2026, reports Mexico rejected the proposed resort after environmental objections: https://www.travelweekly.com/Cruise-Travel/Mexico-rejects-Royal-Caribbean-Perfect-Day-Mexico . A functioning preview is not evidence of development approval. Do not claim that the flyby caused rejection or that ground-scale VR would have secured approval.\n\nDiscuss the scale of the experience separately from the resort’s approval outcome.\n\nCompare a distant flyby with standing in the thick of it at ground scale. Where does VR as a time machine help, and what can it never decide for people?\n\nPresenter lesson confirmed in chat, 2026-10-31.\n\nPresenter lesson, 2026-10-31: VR is most powerful at human scale, feeling like you’re in the experience, not outside looking in; Four Seasons is the proof.",
+        bullets: [],
+        subtitle: ""
+      },
       {
         layout: "placed",
         opt: "fs:v2",
@@ -866,7 +884,7 @@ const SECTIONS = [
         title: "",
         alt: "DBOX rendering of the planned Lake Austin residences",
         credit: "Rendering: DBOX for Austin Capital Partners",
-        notes: "⏱ ~15s. The planned place, before construction. Rendering: DBOX for Austin Capital Partners, via Community Impact. https://communityimpact.com/_next/image/?url=https%3A%2F%2Fassets.communityimpact.com%2Fuploads%2Fimages%2F2024%2F07%2F10%2F317376.jpg&w=800&q=75",
+        notes: "⏱ ~15s. The planned place, before construction. Rendering: DBOX for Austin Capital Partners\nSource: Community Impact. https://communityimpact.com/_next/image/?url=https%3A%2F%2Fassets.communityimpact.com%2Fuploads%2Fimages%2F2024%2F07%2F10%2F317376.jpg&w=800&q=75",
         placedImages: [
           [
             "media/pmre/fs-v2/intro-render.jpg",
@@ -877,8 +895,9 @@ const SECTIONS = [
           ]
         ],
         label: "Four Seasons Private Residences, Lake Austin",
-        subtitle: "",
-        bullets: []
+        subtitle: "Rendering: DBOX for Austin Capital Partners",
+        bullets: [],
+        overlayStyle: "left:12%;bottom:8%;padding:8px 0;background:transparent;border:0;backdrop-filter:none"
       },
       {
         layout: "placed",
@@ -977,7 +996,7 @@ const SECTIONS = [
         motion: "fs-travels",
         opt: "fs:v2",
         keep: 19,
-        notes: "⏱ 21s animation, ~75s total. The map shows locations, not chronological travel order.\n\nAustin: https://www.agilelens.com/portfolio/four-seasons-lake-austin . NYC pop-up: a 5,000 sq ft rebuild in three days, https://www.agilelens.com/portfolio/four-seasons-lake-austin-nyc-vr-experience-pop-up . Permanent DBOX space: nearly 2,000 sq ft in 2025, shared spatial anchors replacing the original optical tracking approach, https://www.agilelens.com/portfolio/ny-dbox-space . Do not describe the pop-up and DBOX office as the same space.\n\nAspen: Alex’s UNREAL DAY talk 22:26–22:53 describes moving equipment and recalibrating for a hotel ballroom. https://www.youtube.com/watch?v=00fTTbyKkwI&t=1346 . The NXT BLD 078-p90 montage labels the Aspen setup photograph.\n\nCalifornia tour: Alex supplied this fact on 2026-10-30. NEEDS CONFIRMATION: specific stops, dates, visit order and a correctly identified tour photo. No California photo was identifiable in the supplied portfolio pages; the slide visibly marks the gap.\n\nNXT BLD 077-p89 / 078-p90 and MIA fs-dbox supplied the Holodeck Anywhere / New York continuity. NEEDS CONFIRMATION: whether 57th Street, the 2026 pop-up and any earlier NYC event are separate visits; no address is inferred.\n\n22:43–22:45 · UNREAL DAY 2024: “a hotel ballroom for a few days”.",
+        notes: "⏱ 21s animation, ~75s total.\n\nPresenter-confirmed travel order, 2026-10-31: Austin, Aspen, DBOX (NY DBOX space), NY 57th Street investor pop-up, California tour.\n57th Street is the NYC pop-up for investors: Four Seasons Lake Austin NYC VR experience pop-up.\nPhoto credits: Agile Lens (Aspen from the NXT BLD source deck; California supplied by Alex, 2026-10-31).\n\nSources: https://www.agilelens.com/portfolio/four-seasons-lake-austin ; https://www.agilelens.com/portfolio/ny-dbox-space ; https://www.agilelens.com/portfolio/four-seasons-lake-austin-nyc-vr-experience-pop-up .\nAustin: 5,300 sq ft. Aspen: hotel ballroom. DBOX: permanent NY space with shared spatial anchors. Investor pop-up: 5,000 sq ft rebuild in three days. California specific cities/dates remain unconfirmed.\n22:43–22:45 · UNREAL DAY 2024: “a hotel ballroom for a few days”. https://www.youtube.com/watch?v=00fTTbyKkwI&t=1346",
         bullets: [],
         subtitle: ""
       },
@@ -1000,24 +1019,6 @@ const SECTIONS = [
         opt: "ports:on",
         title: "Holodeck Anywhere",
         notes: "⏱ ~35s.\n\nThree production clips appear in a row: landscape, portrait, portrait. Preserve each clip’s full aspect ratio and the sequential fades (800 ms delay, 500 ms stagger, 700 ms fade). Alex requested this as Four Seasons; the source title is Holodeck Anywhere / In Production and does not label each clip’s location. Do not assign a location to an individual clip without further evidence.\n\nSource: https://ibrews.github.io/nxtbld-2026-productizing-xr/#37 @9736254f9099037e9a1155a242b0c4b27fb13ffb; all source states and media preserved in the module. See module notes.txt and source.json for original source notes.",
-        bullets: [],
-        subtitle: ""
-      },
-      {
-        use: "pmre/hxr-royal-caribbean",
-        keep: 30,
-        opt: "ports:on",
-        title: "Royal Caribbean",
-        notes: "⏱ ~40s.\n\nThe Royal Caribbean work deployed XR experiences on a cruise ship. The source highlights constrained connectivity and the need for contingencies and graceful fallbacks. Show what works and keep the experience moving when a planned moment fails.\n\nSource: https://ibrews.github.io/harvardxr-keynote/#39 @811042a2a87476a045be69f8c2e2aafa50cca12c; all source states and media preserved in the module. See module notes.txt and source.json for original source notes.\n\nOriginal source slide copy (retained for context; use the qualifications above):\ntitle: Royal Caribbean\nsubtitle: When the demo breaks at sea, there's no IT department to call\nbullets: Deploying XR experiences on a cruise ship — the most constrained environment. Satellite Wi-Fi, salt air, motion sickness that's real.\nThe demo WILL break. Have contingencies. Build graceful fallbacks into every moment of the experience.\nNobody knows what you envisioned. When something fails, pivot gracefully — the audience experiences what you show them, not what you planned.",
-        bullets: [],
-        subtitle: ""
-      },
-      {
-        use: "pmre/mexico-scale",
-        motion: "mexico-scale",
-        opt: "fs:v2",
-        keep: 19,
-        notes: "⏱ 6s animation, ~90s total. Counterpoint: Perfect Day Mexico was not approved despite best efforts.\n\nThe delivered experience was a six-person VR balloon preview on a cruise ship: https://www.agilelens.com/portfolio/perfect-day-mexico . The left picture is the virtual distant view; the right picture shows a guest in the physical basket. Neither is a ground-level walk-through. Images: Agile Lens / Royal Caribbean.\n\nTravel Weekly, Teri West, May 20, 2026, reports Mexico rejected the proposed resort after environmental objections: https://www.travelweekly.com/Cruise-Travel/Mexico-rejects-Royal-Caribbean-Perfect-Day-Mexico . A functioning preview is not evidence of development approval. Do not claim that the flyby caused rejection or that ground-scale VR would have secured approval.\n\nASK YOURSELF: Why did this one not work out, in your words?\n\nCompare a distant flyby with standing in the thick of it at ground scale. Where does VR as a time machine help, and what can it never decide for people?\n\nNEEDS CONFIRMATION: your firsthand lesson beyond the reported environmental rejection.",
         bullets: [],
         subtitle: ""
       },
@@ -1060,10 +1061,10 @@ const SECTIONS = [
     year: "2025",
     accent: "rose",
     lesson: {
-      title: "Capturing Places\nThat Don’t Exist.",
+      title: "Two Ways XR\nWorks for Film",
       short: "CAPTURE",
       keep: 30,
-      tagline: "",
+      tagline: "Inside the pipeline: result is still a standard film.<br>New product: adaptation that enhances audience.",
       notes: "⏱ ~45s. Virtual cinematography chapter.\n\n✅ VERIFIED [MIA]: A Christmas Carol VR ran five seasons, 2021–2025 (KB projects/mia-2026/collective-pitch-deck.md). Live actors with facial and motion capture perform on the streets of a virtual Victorian London (KB context/agile-lens-projects-master-list.md).\n\n✅ VERIFIED [YT25]: Alex's Dec 2025 video \"A Christmas Carol VR - How we do the livestream!\" shows the cinematography tools: procedurally generated cameras for specific characters, virtual camera systems, Jackie directing the live stream (KB media/youtube/by-year/2025.md). The year on this card is that final season.\n\n✎ PROPOSED (Alex's own framing, chat 2026-10-27): \"Most of you make people feel like they've been somewhere. My weird corner of that is making them feel like they've been somewhere that doesn't exist. And it turns out your whole craft still applies there: framing, lens, light, the cut.\"\n\nPlacement: after the Four Seasons chapter and before TASTE. The corrected look-back is near the end and includes this 2025 capture chapter.\n\nMoved from slide (retained for the presenter):\ntags: \"A Christmas Carol VR &middot; Virtual cameras &middot; Gaussian splats\"\ntagline: For five winters, A Christmas Carol VR played live on the streets of a Victorian London that was never built.<br><br>Somebody still had to decide where the camera goes."
     },
     cases: [

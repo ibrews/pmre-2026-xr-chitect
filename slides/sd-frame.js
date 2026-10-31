@@ -41,6 +41,7 @@
     var d=e.data;if(!d||d.sd!==MSG||!cfg||e.source!==window.parent)return;
     var instant=!!d.instant||rm;
     if(d.type==='enter'){if(instant){setStep(0,true);seek(cfg.duration);}else play();}
+    else if(d.type==='complete'){setStep(d.n|0,true);seek(cfg.duration);}
     else if(d.type==='step')setStep(d.n|0,instant);
     else if(d.type==='leave'){if(cfg.onLeave)cfg.onLeave();finalFrame();}
     else if(d.type==='seek')seek(+d.t||0);
