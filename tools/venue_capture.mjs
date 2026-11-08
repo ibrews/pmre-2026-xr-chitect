@@ -322,6 +322,11 @@ export async function capture(opts) {
         const css=await page.addStyleTag({content:'html,body,#deck,#deck .slide.active{background:transparent!important}body::before,body::after,#deck::before,#deck::after,.bg{display:none!important}.story-photo{visibility:hidden!important}'});
         st.videoChrome=path.join(FR,NN+'-chrome.png');await page.screenshot({path:st.videoChrome,omitBackground:true,caret:'hide'});await css.evaluate(e=>e.remove());
       }
+      // Fixed overlays must survive full-screen iframe AV playback, just as local-video captions do.
+      if(motionIframe){
+        const css=await page.addStyleTag({content:'html,body,#deck,#deck .slide.active{background:transparent!important}body::before,body::after,#deck::before,#deck::after,.bg{display:none!important}iframe{visibility:hidden!important}'});
+        st.motionChrome=path.join(FR,NN+'-motion-chrome.png');await page.screenshot({path:st.motionChrome,omitBackground:true,caret:'hide'});await css.evaluate(e=>e.remove());
+      }
       // video for this state
       const vslug = slug(sl.module?.name || (st.iframes[0] && path.basename(st.iframes[0].src.split(/[?#]/)[0], '.html')) || sl.title);
       if (st.videos.length > 0 && st.videos.every(v=>v.src.startsWith('file:'))) {
@@ -413,7 +418,7 @@ export function renderLocalVideoSet(videos,st,opts,cache){
 async function renderIframeMotion(p, fr, st, opts, cache) {
   const srcPath = fileURLToPath(fr.abs.split(/[?#]/)[0]);
   const deps = [srcPath, ...fs.readdirSync(path.dirname(srcPath)).filter(f => f.endsWith('.js')).map(f => path.join(path.dirname(srcPath), f))].filter(f => fs.existsSync(f));
-  const key = sha(JSON.stringify([deps.map(f => sha(fs.readFileSync(f))), sha(fs.readFileSync(st.bg)), fr.box.map(Math.round), new URL(fr.abs).search, new URL(fr.abs).hash, opts.fps, Object.fromEntries(Object.entries(st.picks||{}).filter(([k])=>k!=='cut')), 'seek-v2']));
+  const key = sha(JSON.stringify([deps.map(f => sha(fs.readFileSync(f))), sha(fs.readFileSync(st.bg)), st.motionChrome?sha(fs.readFileSync(st.motionChrome)):null, fr.box.map(Math.round), new URL(fr.abs).search, new URL(fr.abs).hash, opts.fps, Object.fromEntries(Object.entries(st.picks||{}).filter(([k])=>k!=='cut')), 'seek-v3-chrome']));
   const cdir = path.join(cache, 'video', 'seek-' + key.slice(0, 24)); const mp4 = path.join(cdir, 'video.mp4'), poster = path.join(cdir, 'poster.png'), metaF = path.join(cdir, 'meta.json');
   if (fs.existsSync(mp4) && fs.existsSync(poster) && fs.existsSync(metaF)) return { cache: mp4, poster, duration: probeDur(mp4), cached: true, ...JSON.parse(fs.readFileSync(metaF, 'utf8')) };
   const u = new URL(fr.abs); u.searchParams.delete('static'); u.searchParams.delete('play'); u.searchParams.set('t', '0');
@@ -446,8 +451,8 @@ async function renderIframeMotion(p, fr, st, opts, cache) {
     execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-threads', '4', ...ins, '-filter_complex', fl.join(';') + ';' + sfx.map((_, i) => `[a${i}]`).join('') + `amix=inputs=${sfx.length}:normalize=0,apad,atrim=0:${dur.toFixed(3)}[out]`, '-map', '[out]', '-c:a', 'aac', '-b:a', '128k', aud]);
   }
   fs.mkdirSync(cdir, { recursive: true });
-  execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-threads', '4', '-loop', '1', '-framerate', String(opts.fps), '-i', st.bg, '-framerate', String(opts.fps), '-i', path.join(tmp, '%05d.png'), ...(aud ? ['-i', aud] : []),
-    '-filter_complex', `[1:v]scale=${w}:${h}:flags=lanczos[f];[0:v][f]overlay=${x}:${y}:shortest=1,tpad=stop_mode=clone:stop_duration=${HOLD},format=yuv420p[v]`, '-map', '[v]', ...(aud ? ['-map', '2:a', '-c:a', 'copy'] : []),
+  execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-threads', '4', '-loop', '1', '-framerate', String(opts.fps), '-i', st.bg, '-framerate', String(opts.fps), '-i', path.join(tmp, '%05d.png'), ...(st.motionChrome?['-loop','1','-framerate',String(opts.fps),'-i',st.motionChrome]:[]), ...(aud ? ['-i', aud] : []),
+    '-filter_complex', `[1:v]scale=${w}:${h}:flags=lanczos[f];[0:v][f]overlay=${x}:${y}:shortest=1${st.motionChrome?'[base];[base][2:v]overlay=0:0:shortest=1':''},tpad=stop_mode=clone:stop_duration=${HOLD},format=yuv420p[v]`, '-map', '[v]', ...(aud ? ['-map', st.motionChrome?'3:a':'2:a', '-c:a', 'copy'] : []),
     '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-r', String(opts.fps), ...(aud ? ['-shortest'] : []), '-movflags', '+faststart', mp4]);
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-threads', '4', '-sseof', '-0.2', '-i', mp4, '-update', '1', '-frames:v', '1', poster]);  // = the held final frame
   fs.rmSync(tmp, { recursive: true, force: true });
