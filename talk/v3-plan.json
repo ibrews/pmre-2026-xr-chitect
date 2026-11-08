@@ -26,7 +26,7 @@
       ],
       "sec": 75,
       "keep": 19,
-      "title": "“Pick a lane”",
+      "title": "\u201cPick a lane\u201d",
       "note": "Richard Rosa told me to pick a lane. I think people who tell you to focus on one thing are telling you what worked for their brain. They are trying to help. My brain was excited to jump between things.",
       "source": "",
       "opt": ""
@@ -161,7 +161,7 @@
       ],
       "sec": 50,
       "keep": 99,
-      "title": "I don’t think my job exists yet",
+      "title": "I don\u2019t think my job exists yet",
       "note": "I did not think a traditional architecture partner ladder was going to make me happy. I was interested in too many other things.",
       "source": "",
       "opt": ""
@@ -177,7 +177,7 @@
       "sec": 90,
       "keep": 19,
       "title": "New York",
-      "note": "Teaching myself Revit helped me get the Rafael Viñoly job that brought me to New York. The image shown is my later ZGF work, not a Viñoly project.",
+      "note": "Teaching myself Revit helped me get the Rafael Vi\u00f1oly job that brought me to New York. The image shown is my later ZGF work, not a Vi\u00f1oly project.",
       "source": "",
       "opt": ""
     },
@@ -221,7 +221,7 @@
       ],
       "sec": 105,
       "keep": 99,
-      "title": "It wasn’t turnkey",
+      "title": "It wasn\u2019t turnkey",
       "note": "In 2013 there was no elegant turnkey way to do what I expected. I went home at night and learned JavaScript and C# on Codecademy, learned Unity, learned model optimization. Architecture school taught me modeling, not optimization. It was exactly the kind of challenge I loved going home to.",
       "source": "media/pmre/fda-dk1-office-demo.jpg",
       "opt": ""
@@ -238,7 +238,7 @@
       "keep": 19,
       "title": "Macbeth / Park Avenue Armory",
       "note": "Early Macbeth work at the Park Avenue Armory. Could everyone see? Now I could stand in a theater before it existed, at a human eye height. Source: KB Macbeth overview dates this previs work to 2014.",
-      "source": "",
+      "source": "media/pmre/fda-macbeth-armory-vr-demo.jpg",
       "opt": ""
     },
     {
@@ -281,7 +281,7 @@
       ],
       "sec": 115,
       "keep": 19,
-      "title": "Josh’s office",
+      "title": "Early 2016",
       "note": "Early 2016: Josh pulled me in and said he felt I was thinking of leaving to start a VR company. My reaction was, What? No! I will work here till I die. Then he said I was not much of a business manager, not organized, with creative wildfire but not much direction. I thought he was trying to convince me not to leave. These are paraphrased delivery prompts from the walk, not a verbatim historical transcript.",
       "source": "media/pmre/fda-dk1-office-demo.jpg",
       "opt": ""
@@ -296,7 +296,7 @@
       ],
       "sec": 100,
       "keep": 19,
-      "title": "“We should do it together”",
+      "title": "\u201cWe should do it together\u201d",
       "note": "Then Josh said that if I really wanted to start a VR company, we should do it together. That was the surprise. We founded Agile Lens later in 2016. Ten years now. Show people how passionate you are, including what you do off-hours because you love it. That is how they come to believe in you.",
       "source": "",
       "opt": ""
@@ -378,7 +378,7 @@
     },
     {
       "id": "universities",
-      "year": "2017–2020",
+      "year": "2017\u20132020",
       "venn": [
         0.8,
         0.6,
@@ -408,7 +408,7 @@
     },
     {
       "id": "teaching",
-      "year": "2020–2026",
+      "year": "2020\u20132026",
       "venn": [
         0.6,
         0.5,
@@ -462,7 +462,7 @@
       "sec": 90,
       "keep": 30,
       "title": "Getting the brief",
-      "note": "Four Seasons came through word of mouth. Original Unreal Fest 2023 slide and notes name Shane Scranton, Paul Debevec, Kim Baumann Larsen, Jeff Mottle, Vikas Reddy and Jeff Powers. Several contacts converged on an introduction to Jonathan Coon. Do not turn them into a made-up relay chain or say the slide lists 17 people. Original recording 9:10–9:43. Correspondence includes an October 2022 message.",
+      "note": "Four Seasons came through word of mouth. Original Unreal Fest 2023 slide and notes name Shane Scranton, Paul Debevec, Kim Baumann Larsen, Jeff Mottle, Vikas Reddy and Jeff Powers. Several contacts converged on an introduction to Jonathan Coon. Do not turn them into a made-up relay chain or say the slide lists 17 people. Original recording 9:10\u20139:43. Correspondence includes an October 2022 message.",
       "source": "media/v3/referrals.jpg",
       "opt": ""
     },
@@ -528,7 +528,7 @@
     },
     {
       "id": "presales",
-      "year": "2023–2026",
+      "year": "2023\u20132026",
       "venn": [
         1,
         0.5,
@@ -543,7 +543,7 @@
     },
     {
       "id": "investment",
-      "year": "2023–2026",
+      "year": "2023\u20132026",
       "venn": [
         1,
         0.4,
@@ -558,7 +558,7 @@
     },
     {
       "id": "austin",
-      "year": "2023–2026",
+      "year": "2023\u20132026",
       "venn": [
         1,
         0.8,
@@ -573,7 +573,7 @@
     },
     {
       "id": "aspen",
-      "year": "2023–2026",
+      "year": "2023\u20132026",
       "venn": [
         1,
         1,
@@ -588,7 +588,7 @@
     },
     {
       "id": "build",
-      "year": "2023–2026",
+      "year": "2023\u20132026",
       "venn": [
         1,
         1,
@@ -603,7 +603,7 @@
     },
     {
       "id": "dbox",
-      "year": "2023–2026",
+      "year": "2023\u20132026",
       "venn": [
         1,
         0.8,
@@ -618,7 +618,7 @@
     },
     {
       "id": "ny57",
-      "year": "2023–2026",
+      "year": "2023\u20132026",
       "venn": [
         1,
         0.8,
@@ -633,7 +633,7 @@
     },
     {
       "id": "california",
-      "year": "2023–2026",
+      "year": "2023\u20132026",
       "venn": [
         1,
         0.8,
@@ -648,7 +648,7 @@
     },
     {
       "id": "why-us",
-      "year": "2023–2026",
+      "year": "2023\u20132026",
       "venn": [
         1,
         1,
@@ -672,13 +672,13 @@
       "sec": 105,
       "keep": 19,
       "title": "Royal Shakespeare Company",
-      "note": "Work on VR rehearsal tools for the Royal Shakespeare Company and Royal Central School of Speech and Drama. A real performance question drives the technology. Public evidence: Alex’s July 16, 2025 London Adventures video. NEEDS CONFIRMATION: precise project scope and which pictured workshop to describe.",
+      "note": "Work on VR rehearsal tools for the Royal Shakespeare Company and Royal Central School of Speech and Drama. A real performance question drives the technology. Public evidence: Alex\u2019s July 16, 2025 London Adventures video. NEEDS CONFIRMATION: precise project scope and which pictured workshop to describe.",
       "source": "media/v3/rsc.jpg",
       "opt": ""
     },
     {
       "id": "blueprint",
-      "year": "2025–2026",
+      "year": "2025\u20132026",
       "venn": [
         1,
         1,
@@ -693,7 +693,7 @@
     },
     {
       "id": "bp-design",
-      "year": "2025–2026",
+      "year": "2025\u20132026",
       "venn": [
         1,
         1,
@@ -708,7 +708,7 @@
     },
     {
       "id": "floor-demo",
-      "year": "2025–2026",
+      "year": "2025\u20132026",
       "venn": [
         1,
         0.3,
@@ -792,7 +792,7 @@
       "sec": 85,
       "keep": 99,
       "title": "Spatial storytelling",
-      "note": "I was part of the inaugural SIGGRAPH spatial storytelling track, and I am curating FMX’s spatial storytelling track for a second year. This is the combination of theater and emerging technology again. It could be a whole talk. Here is just a hint. NEEDS CONFIRMATION: exact track title/edition before delivery.",
+      "note": "I was part of the inaugural SIGGRAPH spatial storytelling track, and I am curating FMX\u2019s spatial storytelling track for a second year. This is the combination of theater and emerging technology again. It could be a whole talk. Here is just a hint. NEEDS CONFIRMATION: exact track title/edition before delivery.",
       "source": "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg",
       "opt": ""
     },
@@ -807,7 +807,7 @@
       "sec": 150,
       "keep": 19,
       "title": "VR is like the early days of film",
-      "note": "One camera films an action. Then cuts connect angles and time: the next day. Montage makes relationships. A close-up feels different from a wide. Tilting the camera can make us uneasy. That language developed over time. VR is still young. Dated milestones, not first-invention claims: Lumière 1895 (ACMI); Porter 1903 (MoMA/LOC); Pig Alley 1912 (MoMA); Intolerance 1916 (BFI); expressionist geometry 1920s (Deutsche Kinemathek); Eisenstein 1925 (MoMA). Dutch tilt first use NEEDS CONFIRMATION, do not claim a first.",
+      "note": "One camera films an action. Then cuts connect angles and time: the next day. Montage makes relationships. A close-up feels different from a wide. Tilting the camera can make us uneasy. That language developed over time. VR is still young. Dated milestones, not first-invention claims: Lumi\u00e8re 1895 (ACMI); Porter 1903 (MoMA/LOC); Pig Alley 1912 (MoMA); Intolerance 1916 (BFI); expressionist geometry 1920s (Deutsche Kinemathek); Eisenstein 1925 (MoMA). Dutch tilt first use NEEDS CONFIRMATION, do not claim a first.",
       "source": "pmre/film-language",
       "opt": ""
     },
@@ -897,7 +897,7 @@
       "sec": 35,
       "keep": 99,
       "title": "Devon Pastorius",
-      "note": "A quick example from this room: Narwhal Creative’s Devon Pastorius combines rap videos, comedy/sketch and cinematic one-takes with real-estate media. Official PMRE presenter bio. This is an editorial observation about the work, not a claim about his private motivation. Agenda must be rechecked before saying you already heard him.",
+      "note": "A quick example from this room: Narwhal Creative\u2019s Devon Pastorius combines rap videos, comedy/sketch and cinematic one-takes with real-estate media. Official PMRE presenter bio. This is an editorial observation about the work, not a claim about his private motivation. Agenda must be rechecked before saying you already heard him.",
       "source": "https://www.pmreconference.com/presenters",
       "opt": ""
     },

@@ -433,7 +433,7 @@ const SECTIONS = [
         "storyRole": "content",
         "props": {
           "title": "Macbeth / Park Avenue Armory",
-          "src": "media/pmre/fda-sightline-unity-capture-macbeth-folder.mp4",
+          "src": "media/pmre/fda-macbeth-armory-vr-demo.jpg",
           "credit": "Capture: Alex Coulombe / Fisher Dachs Associates",
           "alt": "Could everyone see the stage?",
           "mode": "content",
@@ -512,10 +512,10 @@ const SECTIONS = [
         use: "pmre/story-media",
         "props": {
           "mode": "content",
-          "title": "Josh’s office",
+          "title": "Early 2016",
           "src": "media/pmre/fda-dk1-office-demo.jpg"
         },
-        "title": "Josh’s office",
+        "title": "Early 2016",
         "keep": 19,
         "year": "2016",
         "venn": [
