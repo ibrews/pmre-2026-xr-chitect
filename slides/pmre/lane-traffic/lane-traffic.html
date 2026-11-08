@@ -177,6 +177,9 @@ window.MOTION_END=END; window.MOTION_SFX=SFX.sort((a,b)=>a.t-b.t);
 <script>
 // Live play inside the deck (enter): hand the honk cues to the deck, which plays them on its own audio clock (and stops
 // them on slide change); instant/reduced enters never send them.
+// Domain colors carry meaning across the talk; preserve them when a look recolors decorative accents.
+const domainAttrs=[];document.querySelectorAll('svg *').forEach(el=>['fill','stroke','stop-color','style'].forEach(a=>{const v=el.getAttribute(a);if(v&&/#00d4ff|#f43f5e|#a78bfa/i.test(v))domainAttrs.push([el,a,v]);}));
+addEventListener('load',()=>domainAttrs.forEach(([el,a,v])=>el.setAttribute(a,v)),{once:true});
 SDFrame.init({ duration: window.MOTION_END, steps: 0, onEnter() { try { parent.postMessage({ sdMotionSfx: window.MOTION_SFX }, '*'); } catch (e) {} } });
 </script>
 </body></html>

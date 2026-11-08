@@ -46,6 +46,9 @@ svg{width:100%;height:100%;display:block}
 </svg>
 <script src="../../sd-frame.js"></script>
 <script>
+// Domain colors carry meaning across the talk; preserve them when a look recolors decorative accents.
+const domainAttrs=[];document.querySelectorAll('svg *').forEach(el=>['fill','stroke','stop-color','style'].forEach(a=>{const v=el.getAttribute(a);if(v&&/#00d4ff|#f43f5e|#a78bfa/i.test(v))domainAttrs.push([el,a,v]);}));
+addEventListener('load',()=>domainAttrs.forEach(([el,a,v])=>el.setAttribute(a,v)),{once:true});
 SDFrame.init({ duration: 9, steps: 0 });
 </script>
 </body></html>

@@ -70,7 +70,7 @@ window.MOTION_FIT = {
    0.9265,
    0.9454
   ],
-  "src": "4e3397b7e988c2a4"
+  "src": "378101681501d63c"
  },
  "lane-traffic": {
   "box": [
@@ -79,7 +79,7 @@ window.MOTION_FIT = {
    1,
    0.6702
   ],
-  "src": "61116f1e5c3856ed"
+  "src": "13c85f1e4b13491c"
  },
  "mexico-scale": {
   "box": [
@@ -160,7 +160,7 @@ window.MOTION_FIT = {
    0.68,
    0.9328
   ],
-  "src": "49c7abc2fd1a689f"
+  "src": "511a43e3ab20f46c"
  },
  "venn-sprite": {
   "box": [
