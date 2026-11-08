@@ -12,7 +12,7 @@ function applyStorySpine(){
   const year=cfg?.year||'2026',weights=cfg?.venn||[1,1,1];sl.dataset.year=year;sl.dataset.venn=JSON.stringify(weights);
   const old=sl.querySelector('.v3-tracker');if(old)old.remove();
   const tracker=document.createElement('div');tracker.className='v3-tracker';tracker.setAttribute('aria-label',year+': architecture '+weights[0]+', theater '+weights[1]+', technology '+weights[2]);
-  tracker.innerHTML='<span class="v3-year">'+year+'</span><svg viewBox="0 0 190 115" aria-hidden="true">'+weights.map((w,i)=>{const x=[66,118,92][i],y=[40,40,77][i],r=12+24*Math.sqrt(w);return `<circle cx="${x}" cy="${y}" r="${r}" fill="${colors[i]}" fill-opacity=".15" stroke="${colors[i]}" stroke-width="2"/><g transform="translate(${x},${y}) scale(${.4+.65*Math.sqrt(w)})" style="shape-rendering:crispEdges">${icons[i]}</g>`;}).join('')+'</svg>';sl.append(tracker);
+  tracker.innerHTML='<span class="v3-year">'+year.replace('–','–<br>')+'</span><svg viewBox="0 0 190 115" aria-hidden="true">'+weights.map((w,i)=>{const x=[66,118,92][i],y=[40,40,77][i],r=12+24*Math.sqrt(w);return `<circle cx="${x}" cy="${y}" r="${r}" fill="${colors[i]}" fill-opacity=".15" stroke="${colors[i]}" stroke-width="2"/><g transform="translate(${x},${y}) scale(${.4+.65*Math.sqrt(w)})" style="shape-rendering:crispEdges">${icons[i]}</g>`;}).join('')+'</svg>';sl.append(tracker);
  });
  if(!document.getElementById('v3-style')){const st=document.createElement('style');st.id='v3-style';st.textContent=`
  #journey,.journey-print,.story-chapter-label{display:none!important}
