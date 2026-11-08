@@ -53,7 +53,7 @@ for (const cut of a.cuts) {
   // cue sheet
   const mmss = s => `${String(Math.floor(Math.round(s) / 60)).padStart(2, '0')}:${String(Math.round(s) % 60).padStart(2, '0')}`;
   const vids = rep.filter(r => r.video);
-  const md = [`# PMRE 2026 · Alex Coulombe · "Architect to XR-chitect" · video cues (${cut}-minute cut)`, '',
+  const md = [`# PMRE 2026 · Alex Coulombe · "Architect to XR-chitect" · video cues (${cut==='full'?'full story':cut==='30'?'medium rehearsal':cut+' preset'})`, '',
     `**${a.label.toUpperCase()}** build ${date}, deck commit \`${commit}\`${dirty ? ' (+ uncommitted)' : ''}. Presentation: \`${NAME}.pptx\` (${rep.length} slides).`, '',
     `This cut: ${mmss((chk.timing?.slides||[]).reduce((sum,s)=>sum+s.sec,0))} talk estimate. ${cut==='full'?'PRIMARY FULL REHEARSAL; exceeds the venue slot.':cut==='20t'?'VENUE SHORT, with 15 minutes Q&A reserved.':'MEDIUM REHEARSAL; use cut20t for the venue slot.'} Web venue URL: ?cut=${cut}&safe=70&theme=house.`, '',
     'Every video is a separate file in `videos/` (1920×1080, 30 fps, H.264; silent unless the Audio column says otherwise), framed for the 1344×756 safe zone on a dark background. Nothing is embedded or linked in the PPTX.',
