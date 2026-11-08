@@ -1,3 +1,5 @@
+> **V3 chronological preview:** see [talk/STORY-V3.md](talk/STORY-V3.md). Full 80:00 is now the default; 20t remains the venue-budget cut.
+
 # Architect to XR-chitect
 
 Alex Coulombe at PMRE2026, November19, Las Vegas. This preview tells one chronological career story through eight plain lessons, real project media, and a repeatable takeaway at each chapter’s end.

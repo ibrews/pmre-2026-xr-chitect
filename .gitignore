@@ -31,3 +31,7 @@ tools/palette-*.css
 
 # Curated story-v1 real project media, with talk/story-media.json provenance
 !media/story/
+
+# Chronological v3 research media
+!media/v3/
+!media/v3/**

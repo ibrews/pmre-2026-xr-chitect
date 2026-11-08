@@ -1,0 +1,935 @@
+{
+  "base": "ca07098",
+  "slides": [
+    {
+      "id": "interests",
+      "year": "2026",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 50,
+      "keep": 19,
+      "title": "Architecture. Theater. Emerging technology.",
+      "note": "Here are the things I love. This is the story of how they became interesting to me, and how they became a job. I hope it sparks an idea about the things you love.",
+      "source": "pmre/venn",
+      "opt": ""
+    },
+    {
+      "id": "rosa",
+      "year": "2005",
+      "venn": [
+        1,
+        0.5,
+        0.2
+      ],
+      "sec": 75,
+      "keep": 19,
+      "title": "“Pick a lane”",
+      "note": "Richard Rosa told me to pick a lane. I think people who tell you to focus on one thing are telling you what worked for their brain. They are trying to help. My brain was excited to jump between things.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "lanes",
+      "year": "2005",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 50,
+      "keep": 99,
+      "title": "",
+      "note": "My interests kept pulling in different directions. Architecture, theater, emerging technology.",
+      "source": "pmre/lane-traffic",
+      "opt": ""
+    },
+    {
+      "id": "lanes-venn",
+      "year": "2005",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 50,
+      "keep": 19,
+      "title": "",
+      "note": "I was looking for places where those interests could work together. Establish cyan architecture, rose theater and violet technology, matching the tracker.",
+      "source": "pmre/lane-to-venn",
+      "opt": ""
+    },
+    {
+      "id": "hand",
+      "year": "2005",
+      "venn": [
+        1,
+        0,
+        0.1
+      ],
+      "sec": 85,
+      "keep": 30,
+      "title": "One deliberate line",
+      "note": "At Syracuse we were not allowed to touch a computer for the first year. At the time it was excruciating. It made me think deliberately about every line and every line weight. With Revit you make a wall, and the lines are a byproduct. Clarity can get lost.",
+      "source": "pmre/the-hand",
+      "opt": ""
+    },
+    {
+      "id": "revit",
+      "year": "2007",
+      "venn": [
+        1,
+        0,
+        0.8
+      ],
+      "sec": 100,
+      "keep": 30,
+      "title": "Brian Lonsway let me try Revit",
+      "note": "In third-year comprehensive studio Brian Lonsway was teaching MicroStation. He let me teach myself Revit instead. That led to internships at VIP Structures and Redleaf Corporation. NEEDS CONFIRMATION: Redleaf spelling. Visual is my architectural work, not a photograph of Brian or the internship.",
+      "source": "media/pmre/round4/zgf-nyu-lobby.jpg",
+      "opt": ""
+    },
+    {
+      "id": "london",
+      "year": "2008",
+      "venn": [
+        0.7,
+        1,
+        0.2
+      ],
+      "sec": 75,
+      "keep": 99,
+      "title": "London, 2008",
+      "note": "Michael Barclay helped expand my love of theater, spatial storytelling and live shows. This image is my student work.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "equus",
+      "year": "2008",
+      "venn": [
+        0.8,
+        1,
+        0.1
+      ],
+      "sec": 65,
+      "keep": 99,
+      "title": "Equus",
+      "note": "Set design was already a place where architecture and theater could meet. Student work, not professional client work.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "corridor",
+      "year": "2008",
+      "venn": [
+        1,
+        0.6,
+        0.6
+      ],
+      "sec": 50,
+      "keep": 99,
+      "title": "Architecture became a stage",
+      "note": "Student work: architecture, civic technology and performance were already overlapping.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "thesis",
+      "year": "2009",
+      "venn": [
+        1,
+        0.5,
+        0.6
+      ],
+      "sec": 50,
+      "keep": 99,
+      "title": "Governors Island",
+      "note": "Optional, brief thesis image. Describe the project only as far as I want to take it in rehearsal.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "graduation",
+      "year": "2010",
+      "venn": [
+        1,
+        0.5,
+        0.5
+      ],
+      "sec": 50,
+      "keep": 99,
+      "title": "I don’t think my job exists yet",
+      "note": "I did not think a traditional architecture partner ladder was going to make me happy. I was interested in too many other things.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "archviz",
+      "year": "2010",
+      "venn": [
+        1,
+        0.1,
+        0.8
+      ],
+      "sec": 90,
+      "keep": 19,
+      "title": "New York",
+      "note": "Teaching myself Revit helped me get the Rafael Viñoly job that brought me to New York. The image shown is my later ZGF work, not a Viñoly project.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "fda",
+      "year": "2012",
+      "venn": [
+        1,
+        1,
+        0.1
+      ],
+      "sec": 90,
+      "keep": 99,
+      "title": "Fisher Dachs Associates",
+      "note": "I got to be an architect specializing in theaters. Two of my interests in one job. And still I felt a gap: where was the emerging technology? It felt like complaining about the sheen of the gold on the wall. A very first-world problem.",
+      "source": "media/pmre/fda-shed-unity-axon.png",
+      "opt": ""
+    },
+    {
+      "id": "dk1",
+      "year": "2013",
+      "venn": [
+        1,
+        0.8,
+        1
+      ],
+      "sec": 90,
+      "keep": 19,
+      "title": "Oculus Rift DK1",
+      "note": "A year later the DK1 arrived. Josh Dachs, my boss and later co-founder, let me focus on it. I thought I would just drop the 3ds Max, Rhino and SketchUp models in.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "not-turnkey",
+      "year": "2013",
+      "venn": [
+        0.8,
+        0.4,
+        1
+      ],
+      "sec": 105,
+      "keep": 99,
+      "title": "It wasn’t turnkey",
+      "note": "In 2013 there was no elegant turnkey way to do what I expected. I went home at night and learned JavaScript and C# on Codecademy, learned Unity, learned model optimization. Architecture school taught me modeling, not optimization. It was exactly the kind of challenge I loved going home to.",
+      "source": "media/pmre/fda-dk1-office-demo.jpg",
+      "opt": ""
+    },
+    {
+      "id": "sightlines",
+      "year": "2014",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 100,
+      "keep": 19,
+      "title": "Macbeth / Park Avenue Armory",
+      "note": "Early Macbeth work at the Park Avenue Armory. Could everyone see? Now I could stand in a theater before it existed, at a human eye height. Source: KB Macbeth overview dates this previs work to 2014.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "shed",
+      "year": "2014",
+      "venn": [
+        1,
+        1,
+        0.9
+      ],
+      "sec": 60,
+      "keep": 99,
+      "title": "The Shed",
+      "note": "Optional additional theater planning example. The visual is a Unity axonometric, not a finished-building photograph.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "late-show",
+      "year": "2015",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 105,
+      "keep": 19,
+      "title": "Ed Sullivan Theater",
+      "note": "Sightlines for people became sightlines for projectors at the Late Show. Architecture, theater and technology all in the same job. Tell the transition, rather than explain the technical pipeline.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "josh-office",
+      "year": "2016",
+      "venn": [
+        0.5,
+        0.7,
+        1
+      ],
+      "sec": 115,
+      "keep": 19,
+      "title": "Josh’s office",
+      "note": "Early 2016: Josh pulled me in and said he felt I was thinking of leaving to start a VR company. My reaction was, What? No! I will work here till I die. Then he said I was not much of a business manager, not organized, with creative wildfire but not much direction. I thought he was trying to convince me not to leave. These are paraphrased delivery prompts from the walk, not a verbatim historical transcript.",
+      "source": "media/pmre/fda-dk1-office-demo.jpg",
+      "opt": ""
+    },
+    {
+      "id": "agile",
+      "year": "2016",
+      "venn": [
+        0.7,
+        0.8,
+        1
+      ],
+      "sec": 100,
+      "keep": 19,
+      "title": "“We should do it together”",
+      "note": "Then Josh said that if I really wanted to start a VR company, we should do it together. That was the surprise. We founded Agile Lens later in 2016. Ten years now. Show people how passionate you are, including what you do off-hours because you love it. That is how they come to believe in you.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "hiring",
+      "year": "2016",
+      "venn": [
+        0.5,
+        1,
+        0.8
+      ],
+      "sec": 100,
+      "keep": 19,
+      "title": "Curiosity",
+      "note": "When I hire, I am not looking first at GPA or whether someone studied VR. Excitement, being a quick study, curiosity. Be curious, not judgmental, as Ted Lasso puts it. I knew talented architects whose presentations looked like watching paint dry. I would have been thrilled to show work like theirs.",
+      "source": "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg",
+      "opt": ""
+    },
+    {
+      "id": "picasso",
+      "year": "2016",
+      "venn": [
+        0.4,
+        0.5,
+        0.6
+      ],
+      "sec": 35,
+      "keep": 99,
+      "title": "NEEDS CONFIRMATION: Picasso slide",
+      "note": "PLACEHOLDER: Alex will supply the remembered Picasso slide. Research did not find it in the final AU 2017 deck. Do not state an age or attribute a quotation until confirmed. Optional Miranda anecdote also needs a primary source before inclusion.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "youtube",
+      "year": "2017",
+      "venn": [
+        0.4,
+        0.6,
+        1
+      ],
+      "sec": 85,
+      "keep": 19,
+      "title": "The right one or two people",
+      "note": "Business development took off when I stopped cold calling and started speaking. Jeff Mottle invited me to Autodesk University after a YouTube video with few views. It did not need to go viral. It needed to reach the right person. Separate channels are fine if that helps you put work out there. Name corrected against official Autodesk panel credits.",
+      "source": "media/v3/au-panel.jpeg",
+      "opt": ""
+    },
+    {
+      "id": "au-panel",
+      "year": "2017",
+      "venn": [
+        0.5,
+        0.7,
+        1
+      ],
+      "sec": 90,
+      "keep": 99,
+      "title": "Autodesk University, 2017",
+      "note": "I got to sit on a panel of experts, several still friends today. It helped with my imposter syndrome: maybe this combination of knowledge really was useful. Official thumbnail shows two participants, not the whole panel.",
+      "source": "media/v3/au-panel.jpeg",
+      "opt": ""
+    },
+    {
+      "id": "au-line",
+      "year": "2017",
+      "venn": [
+        0.3,
+        1,
+        0.8
+      ],
+      "sec": 85,
+      "keep": 30,
+      "title": "Happy to be back in Vegas",
+      "note": "There was a line outside my talk. I remember how exciting that was. I am happy to be back in Vegas. NEEDS CONFIRMATION: exact year of this queue photograph. It was on the old Agile Lens home page by 2019; the archive date is not the event date. Do not call the photograph independently verified as 2017.",
+      "source": "media/v3/au-line.jpg",
+      "opt": ""
+    },
+    {
+      "id": "universities",
+      "year": "2017–2020",
+      "venn": [
+        0.8,
+        0.6,
+        1
+      ],
+      "sec": 85,
+      "keep": 99,
+      "title": "Teaching",
+      "note": "Speaking led to teaching at NYU, Princeton and Columbia. I met Eugenia while I was a guest critic at Columbia, and she became my best employee. This visual is a community gathering, not a claimed Columbia classroom. Exact appointment and hiring years NEEDS CONFIRMATION.",
+      "source": "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg",
+      "opt": ""
+    },
+    {
+      "id": "unreal",
+      "year": "2020",
+      "venn": [
+        0.6,
+        0.4,
+        1
+      ],
+      "sec": 75,
+      "keep": 19,
+      "title": "Unreal Authorized Instructor",
+      "note": "As an Unreal Authorized Instructor I taught on behalf of Epic. CD Projekt Red, the Age of Empires team, Gensler, BIG. If you are teaching those people, you are going to make sure you know your shit. Teaching forces you to learn.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "teaching",
+      "year": "2020–2026",
+      "venn": [
+        0.6,
+        0.5,
+        1
+      ],
+      "sec": 85,
+      "keep": 99,
+      "title": "Teaching forces you to learn",
+      "note": "Actual teaching footage from August 2026 illustrates the continuing practice. It is not footage of my 2020 certification or of the named private client trainings.",
+      "source": "media/v3/teaching.jpg",
+      "opt": ""
+    },
+    {
+      "id": "geffen",
+      "year": "2022",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 85,
+      "keep": 99,
+      "title": "David Geffen Hall",
+      "note": "Another chance to bring theater expertise into a real architectural decision at eye level. Image and project credits: Agile Lens / Fisher Dachs Associates.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "mexico",
+      "year": "2023",
+      "venn": [
+        1,
+        0.4,
+        1
+      ],
+      "sec": 100,
+      "keep": 19,
+      "title": "Royal Caribbean / Perfect Day Mexico",
+      "note": "Compare the flyby to being there at human scale. Keep the development outcome separate from what the preview demonstrated. Do not imply the form of the visualization caused a planning decision. NEEDS CONFIRMATION: exact commission year, shown as the existing deck era pending rehearsal.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "referrals",
+      "year": "2023",
+      "venn": [
+        0.7,
+        1,
+        1
+      ],
+      "sec": 90,
+      "keep": 30,
+      "title": "Getting the brief",
+      "note": "Four Seasons came through word of mouth. Original Unreal Fest 2023 slide and notes name Shane Scranton, Paul Debevec, Kim Baumann Larsen, Jeff Mottle, Vikas Reddy and Jeff Powers. Several contacts converged on an introduction to Jonathan Coon. Do not turn them into a made-up relay chain or say the slide lists 17 people. Original recording 9:10–9:43. Correspondence includes an October 2022 message.",
+      "source": "media/v3/referrals.jpg",
+      "opt": ""
+    },
+    {
+      "id": "fs-render",
+      "year": "2023",
+      "venn": [
+        1,
+        0.7,
+        1
+      ],
+      "sec": 75,
+      "keep": 19,
+      "title": "Four Seasons Lake Austin",
+      "note": "Why us? Our particular combination of architecture, theater and technology. Rendering: DBOX for Austin Capital Partners. PureBlink and Agile Lens contributions remain credited separately.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "buyers",
+      "year": "2023",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 90,
+      "keep": 99,
+      "title": "",
+      "note": "Buyers walk the future home together. A guide and physical stagecraft make this a shared visit.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "fs-walkthrough",
+      "year": "2023",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 90,
+      "keep": 19,
+      "title": "",
+      "note": "Actual in-headset tour. We end in a theater, which feels fitting. Rendering: DBOX for Austin Capital Partners. PureBlink: project visualization collaborator; Agile Lens: interactive experience.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "spike",
+      "year": "2023",
+      "venn": [
+        0.8,
+        1,
+        0.8
+      ],
+      "sec": 115,
+      "keep": 19,
+      "title": "Spike tape",
+      "note": "Kevin Laibson story. Jonathan wished there were a way to remember where the furniture belonged so it could go back in exactly the same place. Theater already has that: spike tape. I hire a lot of theater people. They bring things like this. The photograph shows the room setup, not a claimed close-up of theatrical spike tape.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "presales",
+      "year": "2023–2026",
+      "venn": [
+        1,
+        0.5,
+        1
+      ],
+      "sec": 60,
+      "keep": 99,
+      "title": "$500M+ in presales",
+      "note": "Presenter-approved project context. Do not turn the figure into a measured causal return on VR.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "investment",
+      "year": "2023–2026",
+      "venn": [
+        1,
+        0.4,
+        0.8
+      ],
+      "sec": 50,
+      "keep": 99,
+      "title": "$870M construction loan",
+      "note": "Presenter previously called this investment. The public June 2, 2026 TYKO announcement specifies a construction loan. Do not add it to presales or imply VR caused financing.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "austin",
+      "year": "2023–2026",
+      "venn": [
+        1,
+        0.8,
+        1
+      ],
+      "sec": 60,
+      "keep": 99,
+      "title": "Austin",
+      "note": "The experience could travel. Locations shown next are not a claimed dated itinerary.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "aspen",
+      "year": "2023–2026",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 85,
+      "keep": 30,
+      "title": "Aspen",
+      "note": "The full Aspen setup clip. Let the real room and people show the stagecraft. Preserve source audio.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "build",
+      "year": "2023–2026",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 60,
+      "keep": 99,
+      "title": "",
+      "note": "Building the walkable room. Actual setup footage, Agile Lens.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "dbox",
+      "year": "2023–2026",
+      "venn": [
+        1,
+        0.8,
+        1
+      ],
+      "sec": 55,
+      "keep": 99,
+      "title": "DBOX",
+      "note": "A real physical place to experience the digital one.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "ny57",
+      "year": "2023–2026",
+      "venn": [
+        1,
+        0.8,
+        1
+      ],
+      "sec": 50,
+      "keep": 99,
+      "title": "New York",
+      "note": "The investor pop-up. Exact 57th Street relationship and date NEEDS CONFIRMATION.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "california",
+      "year": "2023–2026",
+      "venn": [
+        1,
+        0.8,
+        1
+      ],
+      "sec": 50,
+      "keep": 99,
+      "title": "California",
+      "note": "Presenter-supplied California photograph. Stops and dates NEEDS CONFIRMATION.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "why-us",
+      "year": "2023–2026",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 75,
+      "keep": 99,
+      "title": "",
+      "note": "If you are wondering why another company got the job you wanted, maybe they were more exciting. Good presentations and storytelling matter. This is why our weird combination made us suited to this project.",
+      "source": "media/pmre/re-holodeck-tablet-guests.jpg",
+      "opt": ""
+    },
+    {
+      "id": "rsc",
+      "year": "2025",
+      "venn": [
+        0.7,
+        1,
+        1
+      ],
+      "sec": 105,
+      "keep": 19,
+      "title": "Royal Shakespeare Company",
+      "note": "Work on VR rehearsal tools for the Royal Shakespeare Company and Royal Central School of Speech and Drama. A real performance question drives the technology. Public evidence: Alex’s July 16, 2025 London Adventures video. NEEDS CONFIRMATION: precise project scope and which pictured workshop to describe.",
+      "source": "media/v3/rsc.jpg",
+      "opt": ""
+    },
+    {
+      "id": "blueprint",
+      "year": "2025–2026",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 105,
+      "keep": 19,
+      "title": "Blueprint Immersive",
+      "note": "This product takes the one-off bespoke theater VR workflow I built for Fisher Dachs and lets them do it themselves. Disseminating expertise can mean teaching, software, a platform, or a talk.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "bp-design",
+      "year": "2025–2026",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 50,
+      "keep": 99,
+      "title": "",
+      "note": "Optional additional design options demo. Product demo, Agile Lens.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "floor-demo",
+      "year": "2025–2026",
+      "venn": [
+        1,
+        0.3,
+        1
+      ],
+      "sec": 60,
+      "keep": 99,
+      "title": "Floor Tour",
+      "note": "Another repeatable tool: walk an architectural plan at human scale. Product demonstration, not a current price or availability claim.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "uoxr",
+      "year": "2026",
+      "venn": [
+        0.6,
+        0.5,
+        1
+      ],
+      "sec": 50,
+      "keep": 99,
+      "title": "UOXR / simulator footage",
+      "note": "Reusable starting points let other people go further. Actual simulator capture, not headset acceptance.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "carol",
+      "year": "2026",
+      "venn": [
+        0.4,
+        1,
+        1
+      ],
+      "sec": 85,
+      "keep": 30,
+      "title": "A Christmas Carol, in VR",
+      "note": "Spatial storytelling is another place theater and emerging technology meet. Show actual production footage. Production began earlier; 2026 is the present-day storytelling discussion, not a premiere claim.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "replay",
+      "year": "2026",
+      "venn": [
+        0.3,
+        1,
+        1
+      ],
+      "sec": 80,
+      "keep": 99,
+      "title": "",
+      "note": "The performance can end and we can still choose a camera. Replay by Agile Lens / Yu-Jun Yeh.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "working-cut",
+      "year": "2026",
+      "venn": [
+        0.4,
+        1,
+        1
+      ],
+      "sec": 55,
+      "keep": 99,
+      "title": "Virtual camera / prototype",
+      "note": "A working-cut prototype, illustrated with the actual Carol virtual-camera screen.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "spatial",
+      "year": "2026",
+      "venn": [
+        0.4,
+        1,
+        1
+      ],
+      "sec": 85,
+      "keep": 99,
+      "title": "Spatial storytelling",
+      "note": "I was part of the inaugural SIGGRAPH spatial storytelling track, and I am curating FMX’s spatial storytelling track for a second year. This is the combination of theater and emerging technology again. It could be a whole talk. Here is just a hint. NEEDS CONFIRMATION: exact track title/edition before delivery.",
+      "source": "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg",
+      "opt": ""
+    },
+    {
+      "id": "film-language",
+      "year": "2026",
+      "venn": [
+        0.2,
+        1,
+        1
+      ],
+      "sec": 150,
+      "keep": 19,
+      "title": "VR is like the early days of film",
+      "note": "One camera films an action. Then cuts connect angles and time: the next day. Montage makes relationships. A close-up feels different from a wide. Tilting the camera can make us uneasy. That language developed over time. VR is still young. Dated milestones, not first-invention claims: Lumière 1895 (ACMI); Porter 1903 (MoMA/LOC); Pig Alley 1912 (MoMA); Intolerance 1916 (BFI); expressionist geometry 1920s (Deutsche Kinemathek); Eisenstein 1925 (MoMA). Dutch tilt first use NEEDS CONFIRMATION, do not claim a first.",
+      "source": "pmre/film-language",
+      "opt": ""
+    },
+    {
+      "id": "rome",
+      "year": "2026",
+      "venn": [
+        1,
+        0.3,
+        1
+      ],
+      "sec": 85,
+      "keep": 19,
+      "title": "Rome / web-rendered scan",
+      "note": "This is what is exciting me now: places captured from photographs that you can move through. Josette Seitz / Agile Lens scan. Web-rendered footage, not headset footage.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "hotel",
+      "year": "2026",
+      "venn": [
+        1,
+        0.3,
+        1
+      ],
+      "sec": 50,
+      "keep": 99,
+      "title": "",
+      "note": "Optional second scan. Hotel name NEEDS CONFIRMATION.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "splatdiorama",
+      "year": "2026",
+      "venn": [
+        1,
+        0.3,
+        1
+      ],
+      "sec": 60,
+      "keep": 99,
+      "title": "SplatDiorama / simulator",
+      "note": "Same scan in the actual app simulator. Maintain simulator label.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "ai",
+      "year": "2026",
+      "venn": [
+        0.6,
+        0.3,
+        1
+      ],
+      "sec": 100,
+      "keep": 30,
+      "title": "What excites me now",
+      "note": "Optional current excitement. I may skip this if the room has heard enough AI this week. Connect it to the things I already love, rather than presenting a lesson about tools. My architectural training helps me judge the output.",
+      "source": "media/pmre/round4/zgf-nyu-lab.jpg",
+      "opt": "ai:on"
+    },
+    {
+      "id": "ai-hand",
+      "year": "2026",
+      "venn": [
+        0.9,
+        0.2,
+        1
+      ],
+      "sec": 85,
+      "keep": 99,
+      "title": "Your eye still matters",
+      "note": "Revisit the hand-trained eye. The tools can make more things, but I still have to decide what is worth making. Avoid claiming a specific unverified product demo.",
+      "source": "media/pmre/round4/thesis-earlyatrium.jpg",
+      "opt": "ai:on"
+    },
+    {
+      "id": "devon",
+      "year": "2026",
+      "venn": [
+        0.4,
+        1,
+        0.8
+      ],
+      "sec": 35,
+      "keep": 99,
+      "title": "Devon Pastorius",
+      "note": "A quick example from this room: Narwhal Creative’s Devon Pastorius combines rap videos, comedy/sketch and cinematic one-takes with real-estate media. Official PMRE presenter bio. This is an editorial observation about the work, not a claim about his private motivation. Agenda must be rechecked before saying you already heard him.",
+      "source": "https://www.pmreconference.com/presenters",
+      "opt": ""
+    },
+    {
+      "id": "niche",
+      "year": "2026",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 65,
+      "keep": 19,
+      "title": "Your particular combination",
+      "note": "Being the best photographer in the world is a hard lift. Being the best medical-equipment photographer is a more specific possibility if you love both. This is my illustrative example from the walk; it is not verified podcast wording. The podcast instead uses luxury houses with pools. No promise of a measured global ranking.",
+      "source": "",
+      "opt": ""
+    },
+    {
+      "id": "intersection",
+      "year": "2026",
+      "venn": [
+        1,
+        1,
+        1
+      ],
+      "sec": 40,
+      "keep": 19,
+      "title": "",
+      "note": "It makes me happy when I hear I inspired someone to pursue VR, architecture, theater, or whatever they love. That is what I hope this story does.",
+      "source": "",
+      "opt": ""
+    }
+  ]
+}
