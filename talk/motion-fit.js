@@ -16,7 +16,7 @@ window.MOTION_FIT = {
    0.7069,
    0.96
   ],
-  "src": "192eed0eaaeb6f6e"
+  "src": "3cf64b32f1e01385"
  },
  "frame-to-room": {
   "box": [

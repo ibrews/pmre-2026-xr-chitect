@@ -98,7 +98,7 @@ const SECTIONS = [
     "cases": [
       {
         "id": "interests",
-        "use": "pmre/venn",
+        use: "pmre/venn",
         "props": {},
         "title": "Architecture. Theater. Emerging technology.",
         "keep": 19,
@@ -131,7 +131,7 @@ const SECTIONS = [
       {
         "id": "rosa",
         "title": "“Pick a lane”",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -152,7 +152,7 @@ const SECTIONS = [
       },
       {
         "id": "lanes",
-        "use": "pmre/lane-traffic",
+        use: "pmre/lane-traffic",
         "props": {},
         "title": "",
         "keep": 99,
@@ -168,7 +168,7 @@ const SECTIONS = [
       },
       {
         "id": "lanes-venn",
-        "use": "pmre/lane-to-venn",
+        use: "pmre/lane-to-venn",
         "props": {},
         "title": "",
         "keep": 19,
@@ -184,7 +184,7 @@ const SECTIONS = [
       },
       {
         "id": "hand",
-        "use": "pmre/the-hand",
+        use: "pmre/the-hand",
         "props": {},
         "title": "One deliberate line",
         "keep": 30,
@@ -200,7 +200,7 @@ const SECTIONS = [
       },
       {
         "id": "revit",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Brian Lonsway let me try Revit",
@@ -220,7 +220,7 @@ const SECTIONS = [
       {
         "id": "london",
         "title": "London, 2008",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -242,7 +242,7 @@ const SECTIONS = [
       {
         "id": "equus",
         "title": "Equus",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -264,7 +264,7 @@ const SECTIONS = [
       {
         "id": "corridor",
         "title": "Architecture became a stage",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -286,7 +286,7 @@ const SECTIONS = [
       {
         "id": "thesis",
         "title": "Governors Island",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -308,7 +308,7 @@ const SECTIONS = [
       {
         "id": "graduation",
         "title": "I don’t think my job exists yet",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -330,7 +330,7 @@ const SECTIONS = [
       {
         "id": "archviz",
         "title": "New York",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -367,7 +367,7 @@ const SECTIONS = [
     "cases": [
       {
         "id": "fda",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Fisher Dachs Associates",
@@ -387,7 +387,7 @@ const SECTIONS = [
       {
         "id": "dk1",
         "title": "Oculus Rift DK1",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -408,7 +408,7 @@ const SECTIONS = [
       },
       {
         "id": "not-turnkey",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "It wasn’t turnkey",
@@ -428,7 +428,7 @@ const SECTIONS = [
       {
         "id": "sightlines",
         "title": "Macbeth / Park Avenue Armory",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -450,7 +450,7 @@ const SECTIONS = [
       {
         "id": "shed",
         "title": "The Shed",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -472,7 +472,7 @@ const SECTIONS = [
       {
         "id": "late-show",
         "title": "Ed Sullivan Theater",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -509,7 +509,7 @@ const SECTIONS = [
     "cases": [
       {
         "id": "josh-office",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Josh’s office",
@@ -529,7 +529,7 @@ const SECTIONS = [
       {
         "id": "agile",
         "title": "“We should do it together”",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -550,7 +550,7 @@ const SECTIONS = [
       },
       {
         "id": "hiring",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Curiosity",
@@ -569,7 +569,7 @@ const SECTIONS = [
       },
       {
         "id": "picasso",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "title": "NEEDS CONFIRMATION: Picasso slide",
           "mode": "takeaway"
@@ -603,7 +603,7 @@ const SECTIONS = [
     "cases": [
       {
         "id": "youtube",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "The right one or two people",
@@ -623,7 +623,7 @@ const SECTIONS = [
       },
       {
         "id": "au-panel",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Autodesk University, 2017",
@@ -643,7 +643,7 @@ const SECTIONS = [
       },
       {
         "id": "au-line",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Happy to be back in Vegas",
@@ -663,7 +663,7 @@ const SECTIONS = [
       },
       {
         "id": "universities",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Teaching",
@@ -683,7 +683,7 @@ const SECTIONS = [
       {
         "id": "unreal",
         "title": "Unreal Authorized Instructor",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -704,7 +704,7 @@ const SECTIONS = [
       },
       {
         "id": "teaching",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Teaching forces you to learn",
@@ -725,7 +725,7 @@ const SECTIONS = [
       {
         "id": "geffen",
         "title": "David Geffen Hall",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -763,7 +763,7 @@ const SECTIONS = [
       {
         "id": "mexico",
         "title": "Royal Caribbean / Perfect Day Mexico",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -784,7 +784,7 @@ const SECTIONS = [
       },
       {
         "id": "referrals",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Getting the brief",
@@ -805,7 +805,7 @@ const SECTIONS = [
       {
         "id": "fs-render",
         "title": "Four Seasons Lake Austin",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -827,7 +827,7 @@ const SECTIONS = [
       {
         "id": "buyers",
         "title": "",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -849,7 +849,7 @@ const SECTIONS = [
       {
         "id": "fs-walkthrough",
         "title": "",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -871,7 +871,7 @@ const SECTIONS = [
       {
         "id": "spike",
         "title": "Spike tape",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -893,7 +893,7 @@ const SECTIONS = [
       {
         "id": "presales",
         "title": "$500M+ in presales",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -915,7 +915,7 @@ const SECTIONS = [
       {
         "id": "investment",
         "title": "$870M construction loan",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -937,7 +937,7 @@ const SECTIONS = [
       {
         "id": "austin",
         "title": "Austin",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -959,7 +959,7 @@ const SECTIONS = [
       {
         "id": "aspen",
         "title": "Aspen",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 30,
         "storyRole": "content",
         "props": {
@@ -983,7 +983,7 @@ const SECTIONS = [
       {
         "id": "build",
         "title": "",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1005,7 +1005,7 @@ const SECTIONS = [
       {
         "id": "dbox",
         "title": "DBOX",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1027,7 +1027,7 @@ const SECTIONS = [
       {
         "id": "ny57",
         "title": "New York",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1049,7 +1049,7 @@ const SECTIONS = [
       {
         "id": "california",
         "title": "California",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1070,7 +1070,7 @@ const SECTIONS = [
       },
       {
         "id": "why-us",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "",
@@ -1105,7 +1105,7 @@ const SECTIONS = [
     "cases": [
       {
         "id": "rsc",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Royal Shakespeare Company",
@@ -1126,7 +1126,7 @@ const SECTIONS = [
       {
         "id": "blueprint",
         "title": "Blueprint Immersive",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -1148,7 +1148,7 @@ const SECTIONS = [
       {
         "id": "bp-design",
         "title": "",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1170,7 +1170,7 @@ const SECTIONS = [
       {
         "id": "floor-demo",
         "title": "Floor Tour",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1192,7 +1192,7 @@ const SECTIONS = [
       {
         "id": "uoxr",
         "title": "UOXR / simulator footage",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1214,7 +1214,7 @@ const SECTIONS = [
       {
         "id": "carol",
         "title": "A Christmas Carol, in VR",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 30,
         "storyRole": "content",
         "props": {
@@ -1236,7 +1236,7 @@ const SECTIONS = [
       {
         "id": "replay",
         "title": "",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1258,7 +1258,7 @@ const SECTIONS = [
       {
         "id": "working-cut",
         "title": "Virtual camera / prototype",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1279,7 +1279,7 @@ const SECTIONS = [
       },
       {
         "id": "spatial",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Spatial storytelling",
@@ -1298,7 +1298,7 @@ const SECTIONS = [
       },
       {
         "id": "film-language",
-        "use": "pmre/film-language",
+        use: "pmre/film-language",
         "props": {},
         "title": "VR is like the early days of film",
         "keep": 19,
@@ -1331,7 +1331,7 @@ const SECTIONS = [
       {
         "id": "rome",
         "title": "Rome / web-rendered scan",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -1353,7 +1353,7 @@ const SECTIONS = [
       {
         "id": "hotel",
         "title": "",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1375,7 +1375,7 @@ const SECTIONS = [
       {
         "id": "splatdiorama",
         "title": "SplatDiorama / simulator",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1396,7 +1396,7 @@ const SECTIONS = [
       },
       {
         "id": "ai",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "What excites me now",
@@ -1416,7 +1416,7 @@ const SECTIONS = [
       },
       {
         "id": "ai-hand",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Your eye still matters",
@@ -1436,7 +1436,7 @@ const SECTIONS = [
       },
       {
         "id": "devon",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "props": {
           "title": "Devon Pastorius",
           "mode": "takeaway"
@@ -1455,7 +1455,7 @@ const SECTIONS = [
       {
         "id": "niche",
         "title": "Your particular combination",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -1477,7 +1477,7 @@ const SECTIONS = [
       {
         "id": "intersection",
         "title": "",
-        "use": "pmre/story-media",
+        use: "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
