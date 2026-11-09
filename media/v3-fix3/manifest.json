@@ -10,5 +10,14 @@
     "source": "https://cdn.prod.website-files.com/67caf5475ec48839bc4019a2/6a029600daced63e53e42608_Matt%20Feddermann.png",
     "context": "https://www.pmreconference.com/presenters",
     "credit": "Matt Feddermann / PMRE 2026"
+  },
+  {
+    "path": "media/v3-fix3/picasso-facing-death.jpg",
+    "source": "https://mgpandersen.files.wordpress.com/2010/04/pablopicasso-self-portrait-1972.jpg",
+    "identitySource": "https://www.bridgemanimages.com/en-US/picasso/self-portrait-facing-death-mougins-30-june-1972-pencil-and-crayon-on-paper/pencil-and-crayon-on-paper/asset/6437065",
+    "title": "Self Portrait Facing Death",
+    "date": "1972-06-30",
+    "credit": "Pablo Picasso / © Succession Picasso; public reproduction; no new license asserted",
+    "reason": "Replaces supplied monochrome1972 self-portrait, which is a different work"
   }
 ]
