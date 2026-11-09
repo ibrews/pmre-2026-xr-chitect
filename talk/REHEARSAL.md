@@ -408,7 +408,7 @@ When I hire, I am not looking first at GPA or whether someone studied VR. Excite
 Year: 2016. Venn weights: 0.5 / 1 / 0.8.
 
 
-Source: Designing Naturally s63. A studio critique supports the curiosity/hiring story; it is not a photograph of Eugenia’s hiring or a staff meeting. The clip illustrates a studio critique, without assigning a date to this capture.
+Source: Designing Naturally s63. A studio critique supports the curiosity/hiring story; it is not a photograph of Yu-Jun Yeh’s hiring or a staff meeting. The clip illustrates a studio critique, without assigning a date to this capture.
 
 Lin-Manuel Miranda recalled Hunter College Elementary School: “I was good at making up songs, and I was good at making kids laugh”. This is his short verbatim quote, reported by Jennifer Vanasco from Daniel Pollack-Pelzner’s biography, not a ranking I am making of his classmates. The review argues that collaboration and the contradictions of his background became creative strengths. Be curious about what your combination makes possible. Then reveal the Picasso paintings.
 Source: https://www.capradio.org/news/npr/story?storyid=nx-s1-5532081 (Jennifer Vanasco, September 12, 2025).
@@ -507,9 +507,9 @@ Actual teaching footage from August 2026 illustrates the continuing practice. It
 
 ⏱ ~60s.
 
-Teaching and guest criticism became another way to connect disciplines. Dated engagements: Syracuse University School of Architecture, ARC 682: Media instructor, 2020; NYU Tisch, Brendan Bradley Innovation Lab, fall 2020; NYU Steinhardt, Business of Virtual Reality and Augmented Reality guest lecturer, 2021; NYU ITP VR thesis guest critic and Columbia Architecture Virtual Architecture Studio Final guest critic, 2021; NYU Tisch guest lecturer, 2022. Do not collapse guest criticism into a faculty appointment or claim these are the first dates.
-I met Eugenia through guest criticism at Columbia, and she became an employee (my recollection). No hiring year is asserted. The pictured Syracuse critique is an illustration of teaching, not Columbia or Eugenia.
-Sources: https://alexcoulombepresents.com/appearances; https://www.brendanabradley.com/nyu . The public LinkedIn experience dates are masked behind sign-in; alexcoulombe.com has a TLS hostname mismatch and www returns 502. Princeton appointment date and Eugenia hiring date remain undocumented after KB, official-site, LinkedIn and web checks; they are omitted from the timeline rather than assigned a date.
+Teaching and guest criticism became another way to connect disciplines. Dated engagements: Syracuse University School of Architecture, ARC 682: Media instructor, 2020; NYU Tisch, Brendan Bradley Innovation Lab, fall 2020; NYU Steinhardt, Business of Virtual Reality and Augmented Reality guest lecturer, 2021; NYU ITP VR thesis guest critic and Columbia Architecture Virtual Architecture Studio Final guest critic, 2021; Princeton, 2021; NYU Tisch guest lecturer, 2022. Do not collapse guest criticism into a faculty appointment or claim these are the first dates.
+I met Yu-Jun Yeh through guest criticism at Columbia, and she became an employee (my recollection). No hiring year is asserted. The pictured Syracuse critique is an illustration of teaching, not Columbia or Yu-Jun Yeh.
+Sources: https://alexcoulombepresents.com/appearances; https://www.brendanabradley.com/nyu . The public LinkedIn experience dates are masked behind sign-in; alexcoulombe.com has a TLS hostname mismatch and www returns 502. Princeton teaching: 2021 (presenter, 2026-11-09). Yu-Jun Yeh hiring date is not asserted.
 
 ### 37. Brockman / virtual and construction
 
