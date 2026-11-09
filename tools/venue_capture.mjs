@@ -380,7 +380,7 @@ function probeDur(f) { return +execFileSync('ffprobe', ['-v', 'error', '-show_en
 
 // Keep all DOM captions above either a normal video or a video-backed canvas.
 export async function captureVideoChrome(page,file){
- const css=await page.addStyleTag({content:'html,body,#deck,#deck .slide.active{background:transparent!important}body::before,body::after,#deck::before,#deck::after,.bg{display:none!important}.story-photo,canvas[data-video-source]{visibility:hidden!important}'});
+ const css=await page.addStyleTag({content:'.nav-arrows,.nav-autoplay,#step-indicator,#counter,#mobile-ui-toggle,#slide-grid-zone,#slide-grid,#anno-toggle,#move-toggle,#move-hud,#notes-drawer,#export-modal,#anno-toast,#_fs-toast,#fs-btn,#talk-opts{display:none!important}html,body,#deck,#deck .slide.active{background:transparent!important}body::before,body::after,#deck::before,#deck::after,.bg{display:none!important}.nav-arrows,.nav-autoplay,#step-indicator,#counter,#mobile-ui-toggle,#slide-grid-zone,#slide-grid,#anno-toggle,#move-toggle,#move-hud,#notes-drawer,#export-modal,#anno-toast,#_fs-toast,#fs-btn,#talk-opts,.story-photo,canvas[data-video-source],body> :not(#deck):not(script):not(style):not(link){visibility:hidden!important}'});
  try{await page.screenshot({path:file,omitBackground:true,caret:'hide'});}finally{await css.evaluate(e=>e.remove());}
 }
 

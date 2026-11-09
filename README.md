@@ -54,4 +54,4 @@ Motion sound design is original procedural synthesis by Alex Coulombe Presents (
 
 The traffic graphic includes four staggered car speech bubbles, each held 1.8 seconds with a paired horn. Timings remain full80:00 / medium45:05 / short34:35.
 
-Venue export captures transparent title/credit/tracker chrome above video-backed canvases as well as normal videos, preserving the complete source credit on sequence movie posters and playback.
+Venue export captures transparent title/credit/tracker chrome above video-backed canvases as well as normal videos, preserving the complete source credit on sequence movie posters and playback. Captured overlays exclude presenter navigation and step controls.
