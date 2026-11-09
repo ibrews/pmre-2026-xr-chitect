@@ -194,7 +194,7 @@
     "original": "sources/rtc/image51.png",
     "sourceSHA256": "484bf0dd53f62fe514fcab5a904b4622e939941f13698d2370ab7fc710255c84",
     "sha256": "93774c6ee1b73e627f864ad6ea53bed3ab12e87993e28821403be24dc9ff3e25",
-    "credit": "RTC 2021 supplied photograph; photographer NEEDS CONFIRMATION",
+    "credit": "RTC 2021 supplied photograph; photographer uncredited in supplied source",
     "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
   },
   {
@@ -239,7 +239,7 @@
     "original": "museum-built.jpg",
     "sourceSHA256": "4fd4332a52cb506548b2e5afb8e5ca8c8b43cda0749b6fdbed9d56d7c8720ef2",
     "sha256": "a01053de853482bfc343766adf147ad61b39ae94fdb5d88a2eaabace464e1729",
-    "credit": "FXCollaborative; photographer NEEDS CONFIRMATION",
+    "credit": "FXCollaborative; photographer uncredited in supplied source",
     "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
   },
   {

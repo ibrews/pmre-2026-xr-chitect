@@ -10,7 +10,7 @@ Each content record owns `year` and `venn: [architecture, theater, technology]`.
 
 `slides/pmre/film-language` is a 28-second seekable schematic motion: static action, cut/reverse angle, close-up, cut across time, expressive tilt, montage, and VR's emerging language. It uses the existing SDFrame WAAPI protocol and supports seek, static and reduced motion. Museum/archive sources are in its notes. The drawings illustrate grammar and are not archival film frames. Dates are examples, not claims about who invented a technique first.
 
-`media/v3/PROVENANCE.md` records the original research media; `media/v3-fix1/manifest.json` and `PROVENANCE.md` record the restored sources. AU queue year, Picasso age/catalog identity, some project dates and exact RSC/SIGGRAPH/FMX scope remain flagged in notes. Breadloaf spelling is corrected from Alex’s supplied addition. No Miranda anecdote or attributed Frost/Picasso quotation is presented as verified.
+`media/v3/PROVENANCE.md` records the original research media; `media/v3-fix1/manifest.json` and `PROVENANCE.md` record the restored sources. November 9 source verification resolves the AU queue (2017), Picasso work identities/ages, Mexico (2025), RSC 2024–2025 scope, SIGGRAPH 2025/2026 and FMX 2026 roles, the 2026 tour and Sina Bernini Bristol hotel. Miranda’s short verbatim recollection is cited to Jennifer Vanasco’s September 12, 2025 NPR review on CapRadio. Career dates distinguish dated teaching engagements from unknown first appointments. See the canonical KB presenter-career-facts reference and source table in the receipt.
 
 ## Things to try
 
@@ -33,3 +33,7 @@ The story-media module defers video source loading until activation, avoiding hi
 ## Presenter corrections
 
 The cover has no tracker. Content media and source sequences reserve a170px footer at the1920×1080 design size, so the title and tracker cannot mask source captions or credits. Source sequences now fill the slide with aspect-preserved media and a lower-left title; explanatory side copy remains in speaker notes. Picasso follows hiring/curiosity, with its original three reveals. All motion SFX use the deterministic synth in `talk/motion-sfx.js`, shared with both video exporters. Cue definitions live in each frame’s `MOTION_SFX`. Live playback requires trusted activation, respects mute/static/reduced and is canceled by the existing audio-context cleanup on slide exit. `?mute` / `?audio=off` silence SFX; no sampled audio requires licensing. Preserve the synthesis source in the capture-cache hash.
+
+## Verified facts and selectable niche examples
+
+The default `niche=devon` beat is 65 seconds. `niche=miranda`, `niche=natalia` and `niche=matt` replace it at the same budget. Each example states a sourced combination; “best at X-plus-Y” is presenter opinion, not a measured ranking. No relative speaker order is asserted. The abstract equipment example is removed. Hotel media is the existing 10-second PortalCam splat flythrough, credited to Josette Seitz / Agile Lens and identified as web-rendered footage.

@@ -1,13 +1,9 @@
-# Presenter checks
+# Fact verification status
 
-Resolved by the presenter: Richard Rosa at Syracuse; Michael Barclay on the London 2008 beat; 2020 Authorized Unreal Engine instructor / Unreal bet; the niche and community-curation wording. These are no longer open identity questions.
+November 9, 2026: the presenter’s fourteen corrections are sourced in the canonical KB receipt and `projects/pmre2026/presenter-career-facts.md`. Internship names are VIP Structures and Breadloaf Corporation. Resolved items include Picasso’s catalog identities and ages, Miranda’s quote, AU 2017, dated university engagements, Mexico 2025, RSC rehearsal R&D scope, SIGGRAPH/FMX roles, California/Miami 2026, the New York investor pop-up, TCG Portland/Brockman and Sina Bernini Bristol.
 
-Remaining items are marked NEEDS CONFIRMATION in the notes:
+Two exact historical dates remain undocumented after semantic KB search, recursive keyword search, appearances, personal/studio sites, public LinkedIn and broader web checks: first Princeton teaching appointment and Eugenia’s hiring. They are omitted from the dated timeline. LinkedIn masks tenure behind sign-in; the legacy personal site has a TLS hostname mismatch (www returns 502). This does not reopen the verified 2020–2022 teaching engagements.
 
-- Exact thesis project year: earlier biography says 2009; the graduation beat and credited portfolio are 2010.
-- California specific cities and dates only. Presenter confirmed photo, travel order and 57th Street investor pop-up identity on 2026-10-31.
-- The individual locations in NXT BLD #37's three production clips; HarvardXR #41 is labeled DBOX Holodeck, with no inferred Four Seasons identity.
-- Exact hotel name in the Rome scan. Credit Josette Seitz / Agile Lens, XGRIDS PortalCam; these are web-rendered splat recordings, not headset footage.
-- Aspen clip audio mix, student/class-count anecdotes, and clearance to identify the synthetic-splat client/venue or Carol collaborators. Existing source notes retain their qualifications; no answer has been invented.
+Other source material has bounded attribution: source decks establish the shown project/capture era without proving a contract date; unnamed photographers stay credited to the supplied source rather than receiving invented names. No first-invention claim is made for film techniques.
 
-The 34:10 figure is the notes-based estimate. Actual presenter pace requires rehearsal. Cut30 is 72:00 and is not the submission cut.
+PMRE’s agenda does not establish relative speaker order for these examples. No speaker is said to have already spoken. Full 80:00, medium 45:05, short/20t 34:35 are authored budgets, not measured rehearsal timings. Every niche choice preserves the same budget.

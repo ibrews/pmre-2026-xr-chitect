@@ -39,3 +39,7 @@ tools/palette-*.css
 # Presenter-supplied v3 source deck selections and corrected media
 !media/v3-fix1/
 !media/v3-fix1/**
+
+# PMRE 2026 verified public presenter portraits
+!media/v3-fix3/
+!media/v3-fix3/**
