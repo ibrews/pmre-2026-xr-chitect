@@ -573,7 +573,8 @@ const SECTIONS = [
           "src": "media/v3-fix1/shoreditch.mp4",
           "credit": "Alex Coulombe / Fisher Dachs Associates",
           "brightness": 1,
-          "alt": "Theatre at Shoreditch"
+          "alt": "Theatre at Shoreditch",
+          "mediaFooter": true
         },
         "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s10. The source itself labels early2015, OculusDK2. Proposed theater on the historic Shoreditch site; source notes say the owner later canceled it. Test steep sightlines, leaning audience members, seats, aisles and atmosphere. Do not relabel this clip Macbeth."
       },
@@ -596,7 +597,8 @@ const SECTIONS = [
           "credit": "Allan Greenberg Architect / Fisher Dachs Associates",
           "brightness": 0.65,
           "alt": "Rice / designing at human scale",
-          "posterTime": 8
+          "posterTime": 8,
+          "mediaFooter": true
         },
         "notes": "⏱ ~48s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s28. Alex dates the beginning of this Rice work to2015. The selected video segment visibly says late2015, OculusDK2; this matches the supplied date. The separate static poster in the original deck says late2016 and is not used. The source clip opens on Wisconsin School of Music before changing to Rice. This derivative contains only the verified Rice40-second segment from4–44seconds, not the unrelated opening. Allan Greenberg Architect, theater design Fisher Dachs Associates. Compare design options rather than claiming the finished opera hall opened in2015. Exact start year/scope NEEDS CONFIRMATION."
       },

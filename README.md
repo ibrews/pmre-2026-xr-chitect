@@ -48,7 +48,7 @@ Run heavy capture only after host admission. For admitted fleet capture, use `to
 
 ## November 9 presenter corrections
 
-The cover omits the year/Venn tracker. Picasso’s three-click-state comparison follows the 2016 hiring/curiosity beat. Designing Naturally sequences use large source-ratio media and the same short lower-left title as the rest of the story.
+The cover omits the year/Venn tracker. Picasso’s three-click-state comparison follows the 2016 hiring/curiosity beat. All content media reserves a footer for the title and tracker, keeping captions/credits baked into images and footage clear. Designing Naturally sequences use the same large source-ratio media and short lower-left title.
 
 Motion sound design is original procedural synthesis by Alex Coulombe Presents (2026), with no sampled or third-party audio. `talk/motion-sfx.js` generates the same PCM samples for live WebAudio and `tools/motion_sfx.mjs` offline WAV generation. Both MP4 renderers mix those cues into their separate venue videos: car/engine passes and honks, road merges, Venn pops, projector clatter and hard-cut snaps. Live sounds require a trusted pointer/touch/key interaction, stop on slide exit and stay silent in static/reduced/export views. Add `?mute` or `?audio=off` to silence all deck SFX; `window.setMotionMuted(true)` also stops pending cues. This does not change source videos’ existing muted playback. Venue cue sheets identify the baked SFX audio tracks.
 
