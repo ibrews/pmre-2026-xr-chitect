@@ -7,7 +7,7 @@ Full is the default **80:00** rehearsal. Medium (`30`) is **45:05**, short (`20`
 ## Quickstart
 
 ```bash
-git clone --branch story/v3-chronological https://github.com/ibrews/pmre-2026-xr-chitect
+git clone --single-branch --branch story/v3-chronological https://github.com/ibrews/pmre-2026-xr-chitect
 cd pmre-2026-xr-chitect
 python3 tools/serve_deck.py --port 8791
 ```
@@ -17,14 +17,14 @@ Open `http://127.0.0.1:8791/?cut=full&safe=70&theme=house`. Arrow keys advance s
 ## Things to Try
 
 1. Follow the year and weighted architecture/theater/technology icons through the story.
-2. At Picasso, reveal the left painting, then the right painting, then dates 1896 / 1972. Notes connect this to deliberate practice.
-3. Press **O** to select the short cut, skip AI, or include the two extra Designing Naturally workflow demonstrations (`workflows=extended`).
+2. At Picasso, reveal the 1896 self-portrait, then the catalog-matched color *Facing Death*, then dates/ages14–15 and90. Notes connect this to deliberate practice.
+3. Press **O** to select the short cut, choose a real-person niche example (`niche=devon|miranda|natalia|matt`), skip AI, or include the two extra Designing Naturally workflow demonstrations (`workflows=extended`).
 4. Press **X** to hide or restore a slide locally. **Shift+X** includes hidden slides for review. These choices never alter source or exports.
 5. Press **N** for presenter notes or **Shift+N** for the notes drawer. `?safe=70&safezone` shows the venue safe box.
 
 ## Source and media
 
-Edit `talk/sections.js` and the relevant modules, then bake `index.html`. `talk/v3-plan.json` records the running order, authored budgets, source media, notes and merged beats. The restored Designing Naturally, AU 2017, RTC 2021 and HarvardXR media have separate relevant views. [New media manifest](media/v3-fix1/manifest.json) · [Source and uncertainty details](media/v3-fix1/PROVENANCE.md) · [Earlier sources](media/v3/PROVENANCE.md).
+Edit `talk/sections.js` and the relevant modules, then bake `index.html`. `talk/v3-plan.json` records the running order, authored budgets, source media, notes and merged beats. The restored Designing Naturally, AU 2017, RTC 2021 and HarvardXR media have separate relevant views. [New media manifest](media/v3-fix1/manifest.json) · [Verified source details](media/v3-fix1/PROVENANCE.md) · [Earlier sources](media/v3/PROVENANCE.md).
 
 Picasso has three click states. The napkin sketch combines the sketchbook, sketching and sketch at scale in one beat. Children’s drawing/VR are one short personal beat. Set-designer footage is silent in both web and separate venue AV. Source captions that conflict with recalled dates are qualified in notes. Museum design work precedes the 2019 built view; the RTC 2021 Brockman comparison appears after the 2015–2016 design work.
 
@@ -55,3 +55,9 @@ Motion sound design is original procedural synthesis by Alex Coulombe Presents (
 The traffic graphic includes four staggered car speech bubbles, each held 1.8 seconds with a paired horn. Timings remain full80:00 / medium45:05 / short34:35.
 
 Venue export captures transparent title/credit/tracker chrome above video-backed canvases as well as normal videos, preserving the complete source credit on sequence movie posters and playback. Captured overlays exclude presenter navigation and step controls.
+
+## November9 verified facts
+
+Speaker notes cite the career dates, Miranda quotation, AU2017, TCG2017Portland/Brockman, PerfectDayMexico2025, RSC2024–2025 rehearsal R&D, SIGGRAPH2025/2026 and FMX2026 roles, the California/Miami2026 tour and SinaBerniniBristol hotel scan. The supplied monochrome1972 Picasso was a different work; the displayed color *FacingDeath* matches the June30,1972 catalog. [Additional source/portrait manifest](media/v3-fix3/manifest.json). Exact firstPrinceton appointment and Eugenia hiring dates are omitted because they remain undocumented. No relative PMRE speaker order is claimed.
+
+Niche options replace the default65-second example at the same budget. Sourced combinations are facts; “best at X-plus-Y” and the Sondheim comparison are presenter opinion. Miranda is an outside example; Devon, Natalia and Matt are listed PMRE2026 participants. `talk/story-baseline*.json` and `talk/story-plan.json` are historical source snapshots, not current fact status; current wording is `talk/sections.js` and the generated rehearsal notes.
