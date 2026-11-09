@@ -1,0 +1,284 @@
+[
+  {
+    "path": "media/v3-fix1/fda-sightlines.jpg",
+    "source": "Designing Naturally, slide 7",
+    "original": "sources/dn/image35.png",
+    "sourceSHA256": "2e38c895c9beaf12d0b561313b450fef611ac8cd7f2224fb8c8d18868b9034b8",
+    "sha256": "bc1bd6ec5e8ac148411f3c2dc10607a8c8c194e3af92d9749d9e0a18d4520ac0",
+    "credit": "Alex Coulombe / Fisher Dachs Associates",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/fda-early-vr.mp4",
+    "source": "Designing Naturally, slide 8",
+    "original": "sources/dn/media1.mp4",
+    "sourceSHA256": "b0c3963589938c4509ab35f27a10b56004eaefd6b9bfff22af34edd8c79f8d9b",
+    "sha256": "a6b4870008c4eea0c69e0cc763db2dad1223073949ed7607586b65a6f4ec78ad",
+    "credit": "Alex Coulombe / Fisher Dachs Associates",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/xiqu.jpg",
+    "source": "Designing Naturally, slide 9",
+    "original": "sources/dn/image38.jpg",
+    "sourceSHA256": "634fade5ad0519a0a408dbb83d2ddfeb83d942c99b7d39733d89f2adb83b25e0",
+    "sha256": "fc0861fa82a4567eb6f82631b94ae6ac0e32e1f93d8f26f2e8d65c050b5ca517",
+    "credit": "Alex Coulombe / Fisher Dachs Associates",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/shoreditch.mp4",
+    "source": "Designing Naturally, slide 10",
+    "original": "sources/dn/media2.mp4",
+    "sourceSHA256": "a269aaab1282fcd075efc854e402b972b528911efc88e703d403a08a1a7e0474",
+    "sha256": "10c7adbdcca484a649c61dbc225e3bc20b2e05a3c171524ac1c2f580a34b4d4f",
+    "credit": "Alex Coulombe / Fisher Dachs Associates",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/workflow.jpg",
+    "source": "Designing Naturally, slide 20",
+    "original": "sources/dn/image59.jpg",
+    "sourceSHA256": "9807b0f7b15285766bad1dc4134a8288252124334541403ab9e2e1eefea5bbc0",
+    "sha256": "f056edafe96d9edd705368ffb2e0df3430ff6ffd783c62d69ab50b02a37f1ee5",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/revit-example.jpg",
+    "source": "Designing Naturally, slide 44",
+    "original": "sources/dn/image111.JPG",
+    "sourceSHA256": "1ac6bd3f90c1598d78bdd2169004859e8e3cf0b8afccef27bfb4cfaed65a815e",
+    "sha256": "a7f55d49c412e8f9ff687147eab828594f913c2fcb65b7cf3cf09f6905389752",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/napkin.jpg",
+    "source": "Designing Naturally, slide 44",
+    "original": "sources/dn/image112.png",
+    "sourceSHA256": "499374806d11b0dcd878dbfd03f4b440436f94fa8393e8651d66e48bcf8cb831",
+    "sha256": "f51f605e076138d8692993d071863093188907dae45758b23970b7e3750ed382",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/sketching.mp4",
+    "source": "Designing Naturally, slide 44",
+    "original": "sources/dn/image113.gif",
+    "sourceSHA256": "0488c67b9504df5dfd839668528fbff45410b19b5cae52cccc3ab17e311685dd",
+    "sha256": "1fbc220e722b9f8354ce0b25f82d87b680c3a6b7a135a716baebffa3f3ac5a8d",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/sketch-at-scale.mp4",
+    "source": "Designing Naturally, slide 15",
+    "original": "sources/dn/image48.gif",
+    "sourceSHA256": "bad69eb4280bb0c26fb4311d5cfaf7abe94aa5d965f16c13033fad8abea96fd6",
+    "sha256": "359b29f98c11018ea50c30fcdf342a6f543c2f4b6662965cd0a8ad4723911121",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/equinox.jpg",
+    "source": "Designing Naturally, slide 34",
+    "original": "sources/dn/image95.jpg",
+    "sourceSHA256": "4cc4366059ecb0d1299f74d3271105f2e229b55f8ad84490a1658acade9a74fc",
+    "sha256": "74219011809b25a74c5f8f5120e8c4ebfb014785404bc69f2b1b6645e16c9dbb",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/kids-drawing.mp4",
+    "source": "Designing Naturally, slide 36",
+    "original": "sources/dn/image96.gif",
+    "sourceSHA256": "fec4331c9c99f19e0cb02cc672267bbc0db6c0e00f081f16a5b9e9f7de84960f",
+    "sha256": "e90abf3d89d62709b756313ef8b434cdcf42de323da7b17f1597acad53e32b71",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/kids-vr.mp4",
+    "source": "Designing Naturally, slide 36",
+    "original": "sources/dn/image97.gif",
+    "sourceSHA256": "4e7423e53292c941b51bb0d1b43e056c78b60855c8c80cc948f21079adeded39",
+    "sha256": "8d9dd314598c62f6f32ac70788abb3b01fac3556c961cbcf319124f220f5bbf8",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/set-designers-muted.mp4",
+    "source": "Designing Naturally, slide 38",
+    "original": "sources/dn/media25.mp4",
+    "sourceSHA256": "9f1a5e07cc6f08215c3d887b83d788ed456cd0aef60026977a70ed0dec6a6a9e",
+    "sha256": "7168c0c595fd68a85acce78fe034b6d1b62fb96cfdda316f7872aa7f9bd8b408",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/thesis-atrium.jpg",
+    "source": "Designing Naturally, slide 57",
+    "original": "sources/dn/image145.jpg",
+    "sourceSHA256": "9bc208793a4983763b7317cefc3ddd326f83e36e93c5bc63ba1aea59de629c9f",
+    "sha256": "d0cac8b5a9dc08be2329ee54413aa107626d8b83dad46b8f488284d15dc65ec6",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/thesis-model.jpg",
+    "source": "Designing Naturally, slide 57",
+    "original": "sources/dn/image143.jpg",
+    "sourceSHA256": "b1d0337fae53b464fd689ef6ed269b95e57a9e2ea19369e974fbbc3b4dfb4ab9",
+    "sha256": "67540420133dbb8a68e83abadb926c9aafc4fb8ef365be2fe537baea29ea070a",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/student-crit.mp4",
+    "source": "Designing Naturally, slide 63",
+    "original": "sources/dn/image172.gif",
+    "sourceSHA256": "96041fc9613db062abb3a713e97b350af418e561b722225bcf81b43eeaf4ad19",
+    "sha256": "5f9ed8fae4873fc2d85651eb4534a1c2a658aef1dbb4a7b9fbb16d5a2c288720",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/student-review.jpg",
+    "source": "Designing Naturally, slide 63",
+    "original": "sources/dn/image171.jpeg",
+    "sourceSHA256": "d82598274d03b478054dc6d19ac0fe3504aaa58407fd711d27df69bdd1ee8b11",
+    "sha256": "922df9ae7cde2536f9e9123f5a371c6b016fc2051b2c22b6754a580b432acb27",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/agile-lens-logo.jpg",
+    "source": "Designing Naturally, slide 2",
+    "original": "sources/dn/image23.JPG",
+    "sourceSHA256": "1c374251576ce2b632eb3eac719f0a7c870b4dcc7ed99a32dc7e85d04e0c0ada",
+    "sha256": "824cccaf497e507f2fee4cd37068a021a3a461808dc5f634fa924770f91d02b9",
+    "credit": "Alex Coulombe / Fisher Dachs Associates",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/vr-workflow-demo.mp4",
+    "source": "Designing Naturally, slide 45",
+    "original": "sources/dn/media29.mp4",
+    "sourceSHA256": "6c403c3fe15b199abb800fec4867dd5d8fcc73e65f9001c3896f72a856976575",
+    "sha256": "35bd9a0a4655eae2b6c4c96dca20d18d48039e4baddc2fb45f15f162fe697032",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/conception-completion.mp4",
+    "source": "Designing Naturally, slide 53",
+    "original": "sources/dn/media35.mp4",
+    "sourceSHA256": "147d8dc1ee1a3a621b3fa2c6c9e04b8bb903fa830e339901d77fa3b84bcfbd8e",
+    "sha256": "4a8c393732791e157ee27d55fc604a9df87de579d794904e3fc6b8b99cb00a2c",
+    "credit": "Alex Coulombe / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/brockman-virtual.mp4",
+    "source": "Virtual Architecture RTC 2021, slide45",
+    "original": "sources/rtc/image74.gif",
+    "sourceSHA256": "906d2faaee93083e68c4b76b0c4d034f595dfafafe93dd571df6a753a5ca5975",
+    "sha256": "631acca5bc86f4dd26e07b8453f417a6e21cc2157c03762ca8b4966cb0403252",
+    "credit": "Alex Coulombe / Fisher Dachs Associates; Allan Greenberg Architect",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/brockman-real.jpg",
+    "source": "Virtual Architecture RTC 2021, slide46",
+    "original": "sources/rtc/image51.png",
+    "sourceSHA256": "484bf0dd53f62fe514fcab5a904b4622e939941f13698d2370ab7fc710255c84",
+    "sha256": "93774c6ee1b73e627f864ad6ea53bed3ab12e87993e28821403be24dc9ff3e25",
+    "credit": "RTC 2021 supplied photograph; photographer NEEDS CONFIRMATION",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/picasso.png",
+    "source": "Virtual Architecture RTC 2021, slide18",
+    "original": "/Users/alex/Archives/pmre2026-2026-10/v3-walk/picasso-Google_Shape;214;p45.png",
+    "sourceSHA256": "63bc792e8e13791d75482d5e8f96fc3ec676007a6a84e824597a73819d6e967a",
+    "sha256": "912e9175766998703e5dbdf49ae94c0c31b47ed4344ce2336938566903b9727e",
+    "credit": "Pablo Picasso; source comparison supplied by Alex Coulombe",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/rsc-headsets.jpg",
+    "source": "HarvardXR #7 RSC source",
+    "original": "/Users/alex/harvardxr-keynote/media/rsc/rsc_02.jpg",
+    "sourceSHA256": "3ebfe83c5ad9374b91592e43da28cfa0a60deb09649c458be8a3a9555ba76b3b",
+    "sha256": "6959aee3eec26834bab18f37944ed6e5ac77e388dfbaee6c5a7f330c9e0a415a",
+    "credit": "Royal Shakespeare Company / Agile Lens",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/spatial-community.jpg",
+    "source": "https://www.agilelens.com/unrealnyc",
+    "original": "/Users/alex/Archives/pmre2026-2026-10/v3-research/media/unrealnyc-gallery-22.jpeg",
+    "sourceSHA256": "4d6b2556c742471abefde3171d88fb7e1cb481e401dc01b35d7d13258f52e994",
+    "sha256": "6333281338eb723e8cb88acaec86d0bfad7692c2c1839449f709cc8614aee83f",
+    "credit": "Unreal NYC / Agile Lens; date not asserted",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/niche-community.jpg",
+    "source": "https://www.agilelens.com/unrealnyc",
+    "original": "/Users/alex/Archives/pmre2026-2026-10/v3-research/media/unrealnyc-gallery-50.jpeg",
+    "sourceSHA256": "a372884e011700cd691a8e3dbea3015faa49b5536199e4aa5d69b0142df1c7f7",
+    "sha256": "2f1f7088608d18c60ad75ce2e420a94ace368c1e3c6516f9806858284f3d1891",
+    "credit": "Unreal NYC / Agile Lens; date not asserted",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/museum-built.jpg",
+    "source": "https://www.fxcollaborative.com/projects/filter/175/the-statue-of-liberty-museum/",
+    "original": "museum-built.jpg",
+    "sourceSHA256": "4fd4332a52cb506548b2e5afb8e5ca8c8b43cda0749b6fdbed9d56d7c8720ef2",
+    "sha256": "a01053de853482bfc343766adf147ad61b39ae94fdb5d88a2eaabace464e1729",
+    "credit": "FXCollaborative; photographer NEEDS CONFIRMATION",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/devon.png",
+    "source": "https://www.pmreconference.com/presenters",
+    "original": "devon.png",
+    "sourceSHA256": "ef36393792d94a1a689820ff796704bd5730e858dd78199cf87ed4011fd1a563",
+    "sha256": "80f68079f4d8b02bdade28b2255c6dc77104957a648682ed1feeabc0b38cce88",
+    "credit": "PMRE 2026 / Devon Pastorius; photographer not specified",
+    "transformation": "resized at most 2560px; videos H264 silent, 1280px max"
+  },
+  {
+    "path": "media/v3-fix1/picasso-left.png",
+    "source": "Virtual Architecture RTC2021 s18 supplied picasso-*.png",
+    "transformation": "lossless half-image extraction; no generated pixels",
+    "sha256": "80b87dd3a6cb5846471a2a82ba53b8de08a81bdff04cd11242f2bb57e2b40de2"
+  },
+  {
+    "path": "media/v3-fix1/picasso-right.png",
+    "source": "Virtual Architecture RTC2021 s18 supplied picasso-*.png",
+    "transformation": "lossless half-image extraction; no generated pixels",
+    "sha256": "e75f0333a18303ee76dc22166b13dbd758b0ee0254ae514c4de9a5d1167b4610"
+  },
+  {
+    "path": "media/v3-fix1/rice-2015.mp4",
+    "source": "Designing Naturally s28 embeddedmedia17.mp4",
+    "transformation": "Rice only: source4\u201344seconds; H264 silent1280px",
+    "sha256": "d3db94d17ab7732ff463455c8f09ab5c36c3f634e97a2831da49bc556660f26b"
+  },
+  {
+    "path": "media/v3-fix1/shed-options-poster.png",
+    "source": "HarvardXR #6 Shed_Video.mp4",
+    "transformation": "Original video frame2.7seconds",
+    "sha256": "409ddf12ecc9c1ab4610da58a3e367ec59d07ba6d157c2a84730d16f94e43281"
+  },
+  {
+    "path": "media/v3-fix1/set-designers-poster.png",
+    "source": "Designing Naturally s38 media25.mp4",
+    "transformation": "Original video frame9.5seconds",
+    "sha256": "387e4ca9d7f6017eb69df6398f0b9c317e60b0d65627ebbf2f010881b704924c"
+  }
+]

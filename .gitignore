@@ -35,3 +35,7 @@ tools/palette-*.css
 # Chronological v3 research media
 !media/v3/
 !media/v3/**
+
+# Presenter-supplied v3 source deck selections and corrected media
+!media/v3-fix1/
+!media/v3-fix1/**

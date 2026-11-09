@@ -1,76 +1,47 @@
-> **V3 chronological preview:** see [talk/STORY-V3.md](talk/STORY-V3.md). Full 80:00 is now the default; 20t remains the venue-budget cut.
-
 # Architect to XR-chitect
 
-Alex Coulombe at PMRE2026, November19, Las Vegas. This preview tells one chronological career story through eight plain lessons, real project media, and a repeatable takeaway at each chapter’s end.
+Alex Coulombe Presents at PMRE 2026, November 19, Las Vegas. A chronological story about architecture, theater and emerging technology becoming one career. Source lives on `story/v3-chronological`; main remains unchanged.
 
-**Branch:** `story/chapters-v1`. The story stays off main. Main contains the round4 deck plus the separately shipped **X / Shift+X** hide controls (`9d0a441`). Preview and package evidence: [Story v1](talk/STORY-V1.md).
+Full is the default **80:00** rehearsal. Medium (`30`) is **45:05**, short (`20` / `20t`) **34:35**. Short plus 15 minutes Q&A is **49:35**. These are authored budgets, including media playback, not a measured rehearsal. AI off gives full **76:55**, medium **43:25**, short unchanged. [Running order and notes](talk/REHEARSAL.md) · [V3 source guide](talk/STORY-V3.md).
 
 ## Quickstart
 
 ```bash
-git clone --branch story/chapters-v1 https://github.com/ibrews/pmre-2026-xr-chitect
+git clone --branch story/v3-chronological https://github.com/ibrews/pmre-2026-xr-chitect
 cd pmre-2026-xr-chitect
-python3 tools/serve_deck.py --port 8775
+python3 tools/serve_deck.py --port 8791
 ```
 
-Open `http://127.0.0.1:8775/?cut=20t&safe=70&theme=house`. Arrow keys navigate. Files, fonts and media are local; the deck can also open from `index.html`.
+Open `http://127.0.0.1:8791/?cut=full&safe=70&theme=house`. Arrow keys advance slides and reveals. Fonts and media are local. Use the supplied server: its concurrent request handling prevents false image failures during QA.
 
 ## Things to Try
 
-1. Advance through the eight chapters. The quiet chapter label and journey minimap keep your place. Each chapter opens with a lesson and ends with a takeaway.
-2. Press **O** and choose one of three expressions for any chapter. The choice replaces its opening card and preserves your current cut. URL example: `?cut=30&story1=b&safe=70`.
-3. Press **X** to hide/restore the current slide, then **Shift+X** to review hidden slides. The grid shows hidden slides dimmed and struck. Ctrl/Cmd-click a thumbnail uses the same hide list.
-4. Press **A**, then **Copy All**. Its **HIDDEN SLIDES** section lists the deck-counter number, content ID and title, even without element annotations. Paste the list to request a permanent cut.
-5. Press **N** for presenter notes, **Shift+N** for the notes drawer, or **?** for help. Try `?safe=70&safezone` to show the venue’s centered1344×756 safe region.
+1. Follow the year and weighted architecture/theater/technology icons through the story.
+2. At Picasso, reveal the left painting, then the right painting, then dates 1896 / 1972. Notes connect this to deliberate practice.
+3. Press **O** to select the short cut, skip AI, or include the two extra Designing Naturally workflow demonstrations (`workflows=extended`).
+4. Press **X** to hide or restore a slide locally. **Shift+X** includes hidden slides for review. These choices never alter source or exports.
+5. Press **N** for presenter notes or **Shift+N** for the notes drawer. `?safe=70&safezone` shows the venue safe box.
 
-## Chapters and timing
+## Source and media
 
-1. Ignore the lane
-2. Your skills travel
-3. Teach to learn
-4. Work at human scale
-5. Make it repeatable
-6. Capture impossible places
-7. Share your niche
-8. Find your weird intersection
+Edit `talk/sections.js` and the relevant modules, then bake `index.html`. `talk/v3-plan.json` records the running order, authored budgets, source media, notes and merged beats. The restored Designing Naturally, AU 2017, RTC 2021 and HarvardXR media have separate relevant views. [New media manifest](media/v3-fix1/manifest.json) · [Source and uncertainty details](media/v3-fix1/PROVENANCE.md) · [Earlier sources](media/v3/PROVENANCE.md).
 
-**20t:29:10**, plus15minutes Q&A=44:10. **30:38:00**, expanded reference. These are authored budgets, including clip playback, not a measured rehearsal. [Run of show and complete notes](talk/REHEARSAL.md).
+Picasso has three click states. The napkin sketch combines the sketchbook, sketching and sketch at scale in one beat. Children’s drawing/VR are one short personal beat. Set-designer footage is silent in both web and separate venue AV. Source captions that conflict with recalled dates are qualified in notes. Museum design work precedes the 2019 built view; the RTC 2021 Brockman comparison appears after the 2015–2016 design work.
 
-Content slides contain one visual and one line of at most8words. Credits live in speaker notes and [media provenance](media/story/PROVENANCE.md); the required **Rendering: DBOX for Austin Capital Partners** is the sole line on its two slides. Simulator and web-rendered footage retain explicit identity in their visible line. Original wording and notes are preserved verbatim in actual chapter takeaway/closing notes; [allocation](talk/story-preservation.json), [baseline source](talk/story-baseline.json), [word counts](talk/WORD-COUNTS.md).
-
-## Presenter keep/cut review
-
-X choices persist in localStorage for this browser and deck path. Normal navigation skips them; Shift+X includes them for review. Typing and command-modified keys are ignored. They never change baked defaults, print/shot output or venue exports. An explicit source-apply request is required to make a keep/cut list permanent. Baked cut and option exclusions remain separate.
-
-## Editing and verification
-
-Edit `talk/sections.js`, `talk/options.js`, `talk/story.js`, or `slides/pmre/story-media/slide.js`, then:
+## Verification and venue package
 
 ```bash
 python3 tools/bake_talk.py
 node tools/talk_script.mjs
+python3 tools/check_branding.py
 python3 tools/slide.py check .
-node tools/tests/test_story.cjs http://127.0.0.1:8775/
-node tools/tests/test_presenter_hidden.cjs http://127.0.0.1:8775/
+node tools/qa_v3.mjs http://127.0.0.1:8791/ ../qa-runtime
+node tools/sweep_deck.mjs 'http://127.0.0.1:8791/?cut=full&safe=70&theme=house' ../sweep 1920 1080 v3-fix1 --steps
+node tools/export_venue_package.mjs --cuts full,30 --label 2026-11-09-v3-fix1 --no-keynote
 ```
 
-There is no bundler or npm build. `index.html` is the baked runtime. [Module contract](slides/README.md). The chapter alternatives use `story1`–`story8` with choices`a`, `b`, `c`.
-
-Venue package command:
-
-```bash
-node tools/export_venue_package.mjs --cuts 20t,30 --label 2026-11-01-story-v1 --no-keynote
-```
-
-For admitted off-host capture, use `venue_capture.mjs` on that host, copy its work/cache directories back, and add `--captured DIR --cache DIR`. See [venue pipeline](README-VENUE.md). Submit the cut20t PowerPoint, separate MP4s and VIDEO-CUES. No organizer upload/email/submission is performed by this work.
+Run heavy capture only after host admission. For admitted fleet capture, use `tools/venue_capture.mjs`, then pass `--captured DIR --cache DIR` to the same exporter. [Venue pipeline](README-VENUE.md). Each PowerPoint has its own separate numbered MP4 cues. No movies are embedded or linked. Full and medium are rehearsal cuts exceeding the venue slot; the web short cut fits the 50-minute talk-plus-Q&A budget. No organizer upload, email or submission is authorized.
 
 ## Credits
 
-**Alex Coulombe Presents.** Built on [Spatial Deck](https://github.com/ibrews/spatial-deck), with the existing house look and venue pipeline. Actual media comes from the HarvardXR, NXT BLD, MIA and VR Cinematics decks, supplied PMRE assets, and Alex’s UOXR/SplatDiorama artifacts. [All selected sources and credits](media/story/PROVENANCE.md); [original sources](media/pmre/PROVENANCE.md).
-
-## Story v2 venue polish
-
-On `story/chapters-v1`, story media fills the safe zone as far as its native aspect permits. Headlines overlay a dark lower band; chapter lessons and one-line takeaways use large fitted display type. The shared layout sizes the element to the actual media edge, with a 90% brightness treatment for the dark room. Images are never stretched or cropped. Aspen uses a real frame at seven seconds as its static poster. Separate AV exports retain the same overlay chrome; its Aspen poster uses that same selected time, while other clips use the final frame.
-
-Preview URLs and the `2026-11-01-story-v2` package receipt are recorded in `talk/STORY-V2.md`. X hides/restores a slide locally; Shift+X enables review navigation through hidden slides on both the story branch and main.
+**Alex Coulombe Presents.** Built on [Spatial Deck](https://github.com/ibrews/spatial-deck). Project media retains credits to Fisher Dachs Associates, Agile Lens, collaborating architects, Royal Shakespeare Company and source photographers where known. DBOX renders remain visibly credited **Rendering: DBOX for Austin Capital Partners**. Simulator and web-rendered footage retain their actual playback identity.

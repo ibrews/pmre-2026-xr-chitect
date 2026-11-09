@@ -86,7 +86,7 @@ def talk_sources(root):
 
 def uses_in(html):
     """`use:` ids in a deck's SECTIONS (and any talk source spliced into it), with counts."""
-    ids = re.findall(r"""\buse\s*:\s*['"]([\w-]+/[\w-]+)['"]""", html)
+    ids = re.findall(r"""(?:\buse|["']use["'])\s*:\s*['"]([\w-]+/[\w-]+)['"]""", html)
     return {i: ids.count(i) for i in dict.fromkeys(ids)}
 
 

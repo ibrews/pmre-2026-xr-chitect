@@ -1,4 +1,4 @@
-// PMRE v3: chronological story from the presenter’s walk.
+// PMRE v3: chronological story; unique-media correction.
 const TALK = {
   "coverEvent": "",
   "coverTitle": "Architect to <span class=\"xr\">XR</span>-chitect",
@@ -75,11 +75,19 @@ const TALK = {
         "on": "Include",
         "off": "Skip"
       }
+    },
+    "workflows": {
+      "label": "Extra design demonstrations",
+      "default": "core",
+      "choices": {
+        "core": "Core story",
+        "extended": "Include Designing Naturally s45 + s53"
+      }
     }
   },
   "thesisAlts": {},
   "closeAlts": {},
-  "closeNotes": "⏱ ~40s.\n\nIt makes me happy when I hear that I inspired someone to pursue VR, architecture, theater, or whatever they love. Thank you. What’s your weird intersection?"
+  "closeNotes": "⏱ ~40s.\n\nIt makes me happy when I hear that I inspired someone to pursue VR, architecture, theater, or whatever they love. Thank you. What’s your weird intersection?\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nIt makes me happy when I hear I inspired someone to pursue VR, architecture, theater, or whatever they love. That is what I hope this story does.\n\nYear: 2026. Venn weights: 1 / 1 / 1.\n"
 };
 const SECTIONS = [
   {
@@ -98,7 +106,7 @@ const SECTIONS = [
     "cases": [
       {
         "id": "interests",
-        use: "pmre/venn",
+        "use": "pmre/venn",
         "props": {},
         "title": "Architecture. Theater. Emerging technology.",
         "keep": 19,
@@ -131,7 +139,7 @@ const SECTIONS = [
       {
         "id": "rosa",
         "title": "“Pick a lane”",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -142,7 +150,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~75s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nRichard Rosa told me to pick a lane. I think people who tell you to focus on one thing are telling you what worked for their brain. They are trying to help. My brain was excited to jump between things.\n\nYear: 2005. Venn weights: 1 / 0.5 / 0.2.\n\n\nShort-cut story context (full version has separate visuals):\nAt Syracuse we were not allowed to touch a computer for the first year. At the time it was excruciating. It made me think deliberately about every line and every line weight. With Revit you make a wall, and the lines are a byproduct. Clarity can get lost.\n\nIn third-year comprehensive studio Brian Lonsway was teaching MicroStation. He let me teach myself Revit instead. That led to internships at VIP Structures and Redleaf Corporation. NEEDS CONFIRMATION: Redleaf spelling. Visual is my architectural work, not a photograph of Brian or the internship.",
+        "notes": "⏱ ~75s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nRichard Rosa told me to pick a lane. I think people who tell you to focus on one thing are telling you what worked for their brain. They are trying to help. My brain was excited to jump between things.\n\nYear: 2005. Venn weights: 1 / 0.5 / 0.2.\n\n\nShort-cut story context (full version has separate visuals):\nAt Syracuse we were not allowed to touch a computer for the first year. At the time it was excruciating. It made me think deliberately about every line and every line weight. With Revit you make a wall, and the lines are a byproduct. Clarity can get lost.\n\nIn third-year comprehensive studio Brian Lonsway was teaching MicroStation. He let me teach myself Revit instead. That led to internships at VIP Structures and Breadloaf Corporation. Breadloaf spelling corrected by Alex. Visual is my architectural work, not a photograph of Brian or the internship.\n\nMerged delivery context:\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nSet design was already a place where architecture and theater could meet. Student work, not professional client work.\n\nYear: 2008. Venn weights: 0.8 / 1 / 0.1.\n",
         "year": "2005",
         "venn": [
           1,
@@ -152,7 +160,7 @@ const SECTIONS = [
       },
       {
         "id": "lanes",
-        use: "pmre/lane-traffic",
+        "use": "pmre/lane-traffic",
         "props": {},
         "title": "",
         "keep": 99,
@@ -163,12 +171,12 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nMy interests kept pulling in different directions. Architecture, theater, emerging technology.\n\nYear: 2005. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nMy interests kept pulling in different directions. Architecture, theater, emerging technology.\n\nYear: 2005. Venn weights: 1 / 1 / 1.\n",
         "motion": "lane-traffic"
       },
       {
         "id": "lanes-venn",
-        use: "pmre/lane-to-venn",
+        "use": "pmre/lane-to-venn",
         "props": {},
         "title": "",
         "keep": 19,
@@ -184,7 +192,7 @@ const SECTIONS = [
       },
       {
         "id": "hand",
-        use: "pmre/the-hand",
+        "use": "pmre/the-hand",
         "props": {},
         "title": "One deliberate line",
         "keep": 30,
@@ -199,14 +207,32 @@ const SECTIONS = [
         "motion": "the-hand"
       },
       {
+        "id": "picasso",
+        "use": "pmre/picasso",
+        "props": {},
+        "title": "Who painted this?",
+        "keep": 19,
+        "year": "2005",
+        "venn": [
+          0.4,
+          0.5,
+          0.6
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~75s.\n\nThree deliberate reveals: (0) left painting only, ask “Anyone know who painted this?” (1) reveal right painting, ask “And this one?” (2) reveal dates 1896 / 1972. Both are Picasso. Let the room answer before revealing the next image or the dates.\n\nPlace beside Syracuse’s no-computers/deliberate-drawing story: learn the disciplines before changing their rules. Passion benefits from deliberate practice. Psychologist K. Anders Ericsson, with Ralf Krampe and Clemens Tesch-Römer, developed the deliberate-practice framework in 1993: focused, effortful work on specific weaknesses, tasks just beyond current ability, feedback and correction, often guided by a qualified teacher. Repetition alone is not the definition. Ericsson and Robert Pool explain the framework in Peak (2016); it is not a term originating in Atomic Habits.\n\nSources: Ericsson, Krampe & Tesch-Römer (1993), The Role of Deliberate Practice in the Acquisition of Expert Performance, Psychological Review100(3),363–406, https://doi.org/10.1037/0033-295X.100.3.363 and original paper https://www.moodle.is.ed.ac.uk/pluginfile.php/29313/mod_resource/content/2/ericsson%201993.pdf; Peak (Ericsson & Pool,2016). Original comparison: supplied Virtual Architecture RTC2021 s18, picasso-*.png, losslessly separated into halves. Museu Picasso dates the early self-portrait to1896: https://museupicassobcn.cat/en/collection/artwork/self-portrait-8 . The supplied RTC notes say16, but Picasso was born1881, so that age conflicts with1896: age NEEDS CONFIRMATION, do not say16 as verified. Later work/date1972 follows Alex’s supplied comparison; exact work/catalog identity NEEDS CONFIRMATION. These are historical examples within the2005 craft discussion, not career-timeline events in1896/1972."
+      },
+      {
         "id": "revit",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "props": {
           "mode": "content",
-          "title": "Brian Lonsway let me try Revit",
-          "src": "media/pmre/round4/zgf-nyu-lobby.jpg"
+          "title": "Learning Revit",
+          "src": "media/v3-fix1/revit-example.jpg",
+          "credit": "Alex Coulombe / Agile Lens · later workflow example",
+          "brightness": 0.68,
+          "alt": "Learning Revit"
         },
-        "title": "Brian Lonsway let me try Revit",
+        "title": "Learning Revit",
         "keep": 30,
         "year": "2007",
         "venn": [
@@ -215,23 +241,23 @@ const SECTIONS = [
           0.8
         ],
         "storyRole": "content",
-        "notes": "⏱ ~100s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nIn third-year comprehensive studio Brian Lonsway was teaching MicroStation. He let me teach myself Revit instead. That led to internships at VIP Structures and Redleaf Corporation. NEEDS CONFIRMATION: Redleaf spelling. Visual is my architectural work, not a photograph of Brian or the internship.\n\nYear: 2007. Venn weights: 1 / 0 / 0.8.\n"
+        "notes": "⏱ ~100s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nIn third-year comprehensive studio Brian Lonsway was teaching MicroStation. He let me teach myself Revit instead. That led to internships at VIP Structures and Breadloaf Corporation. Breadloaf Corporation spelling supplied by Alex.\n Visual is my architectural work, not a photograph of Brian or the internship.\n\nYear: 2007. Venn weights: 1 / 0 / 0.8.\n\n\nImage: Designing Naturally s44, a later Revit workflow example, not an image of the 2007 studio. Breadloaf Corporation is the corrected internship name supplied by Alex (November 8 addition)."
       },
       {
         "id": "london",
-        "title": "London, 2008",
-        use: "pmre/story-media",
+        "title": "Architecture became a stage",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
-          "title": "London, 2008",
+          "mode": "content",
+          "title": "Architecture became a stage",
           "src": "media/pmre/pre-fda-connective-corridor-2008.jpg",
           "credit": "Student work: Alex Coulombe",
-          "alt": "London, 2008: theater opens up",
-          "mode": "content",
-          "brightness": 1
+          "brightness": 1,
+          "alt": "Architecture became a stage"
         },
-        "notes": "⏱ ~75s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nMichael Barclay helped expand my love of theater, spatial storytelling and live shows. This image is my student work.\n\nYear: 2008. Venn weights: 0.7 / 1 / 0.2.\n",
+        "notes": "⏱ ~54s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nMichael Barclay helped expand my love of theater, spatial storytelling and live shows. This image is my student work.\n\nYear: 2008. Venn weights: 0.7 / 1 / 0.2.\n\n\nMerged delivery context:\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nStudent work: architecture, civic technology and performance were already overlapping.\n\nYear: 2008. Venn weights: 1 / 0.6 / 0.6.\n\n\nVisual is the Connective Corridor student model, not a photograph of London. The London/Barclay story is delivery context.",
         "year": "2008",
         "venn": [
           0.7,
@@ -240,64 +266,20 @@ const SECTIONS = [
         ]
       },
       {
-        "id": "equus",
-        "title": "Equus",
-        use: "pmre/story-media",
-        "keep": 99,
-        "storyRole": "content",
-        "props": {
-          "title": "Equus",
-          "src": "media/pmre/pre-fda-equus-syracuse-portfolio.png",
-          "credit": "Student work: Alex Coulombe",
-          "alt": "Equus: a theater problem",
-          "mode": "content",
-          "brightness": 1
-        },
-        "notes": "⏱ ~65s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nSet design was already a place where architecture and theater could meet. Student work, not professional client work.\n\nYear: 2008. Venn weights: 0.8 / 1 / 0.1.\n",
-        "year": "2008",
-        "venn": [
-          0.8,
-          1,
-          0.1
-        ]
-      },
-      {
-        "id": "corridor",
-        "title": "Architecture became a stage",
-        use: "pmre/story-media",
-        "keep": 99,
-        "storyRole": "content",
-        "props": {
-          "title": "Architecture became a stage",
-          "src": "media/pmre/pre-fda-connective-corridor-2008.jpg",
-          "credit": "Student work: Alex Coulombe",
-          "alt": "Architecture became a stage",
-          "mode": "content",
-          "brightness": 1
-        },
-        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nStudent work: architecture, civic technology and performance were already overlapping.\n\nYear: 2008. Venn weights: 1 / 0.6 / 0.6.\n",
-        "year": "2008",
-        "venn": [
-          1,
-          0.6,
-          0.6
-        ]
-      },
-      {
         "id": "thesis",
         "title": "Governors Island",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
-          "title": "Governors Island",
-          "src": "media/pmre/round4/thesis-earlyatrium.jpg",
-          "credit": "Thesis: Alex Coulombe",
-          "alt": "Governors Island, 2009",
           "mode": "content",
-          "brightness": 1
+          "title": "Governors Island",
+          "src": "media/v3-fix1/thesis-atrium.jpg",
+          "credit": "Alex Coulombe · Designing Naturally s57",
+          "brightness": 1,
+          "alt": "Governors Island"
         },
-        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOptional, brief thesis image. Describe the project only as far as I want to take it in rehearsal.\n\nYear: 2009. Venn weights: 1 / 0.5 / 0.6.\n",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOptional, brief thesis image. Describe the project only as far as I want to take it in rehearsal.\n\nYear: 2009. Venn weights: 1 / 0.5 / 0.6.\n",
         "year": "2009",
         "venn": [
           1,
@@ -308,18 +290,18 @@ const SECTIONS = [
       {
         "id": "graduation",
         "title": "I don’t think my job exists yet",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
-          "title": "I don’t think my job exists yet",
-          "src": "media/pmre/round4/thesis-earlyatrium.jpg",
-          "credit": "Alex Coulombe, 2010",
-          "alt": "I DON’T THINK MY JOB EXISTS YET",
           "mode": "content",
-          "brightness": 1
+          "title": "I don’t think my job exists yet",
+          "src": "media/v3-fix1/thesis-model.jpg",
+          "credit": "Alex Coulombe · thesis model, Designing Naturally s57",
+          "brightness": 1,
+          "alt": "I don’t think my job exists yet"
         },
-        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI did not think a traditional architecture partner ladder was going to make me happy. I was interested in too many other things.\n\nYear: 2010. Venn weights: 1 / 0.5 / 0.5.\n",
+        "notes": "⏱ ~40s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI did not think a traditional architecture partner ladder was going to make me happy. I was interested in too many other things.\n\nYear: 2010. Venn weights: 1 / 0.5 / 0.5.\n",
         "year": "2010",
         "venn": [
           1,
@@ -330,16 +312,16 @@ const SECTIONS = [
       {
         "id": "archviz",
         "title": "New York",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
+          "mode": "content",
           "title": "New York",
           "src": "media/pmre/round4/zgf-nyu-lobby.jpg",
           "credit": "Alex Coulombe / ZGF Architects",
-          "alt": "Viñoly, ZGF, and visualization",
-          "mode": "content",
-          "brightness": 1
+          "brightness": 1,
+          "alt": "New York"
         },
         "notes": "⏱ ~90s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nTeaching myself Revit helped me get the Rafael Viñoly job that brought me to New York. The image shown is my later ZGF work, not a Viñoly project.\n\nYear: 2010. Venn weights: 1 / 0.1 / 0.8.\n",
         "year": "2010",
@@ -367,13 +349,16 @@ const SECTIONS = [
     "cases": [
       {
         "id": "fda",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "props": {
           "mode": "content",
-          "title": "Fisher Dachs Associates",
-          "src": "media/pmre/fda-shed-unity-axon.png"
+          "title": "Sightlines, before VR",
+          "src": "media/v3-fix1/fda-sightlines.jpg",
+          "credit": "Fisher Dachs Associates · historical drawing",
+          "brightness": 0.68,
+          "alt": "Sightlines, before VR"
         },
-        "title": "Fisher Dachs Associates",
+        "title": "Sightlines, before VR",
         "keep": 99,
         "year": "2012",
         "venn": [
@@ -382,12 +367,35 @@ const SECTIONS = [
           0.1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~90s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI got to be an architect specializing in theaters. Two of my interests in one job. And still I felt a gap: where was the emerging technology? It felt like complaining about the sheen of the gold on the wall. A very first-world problem.\n\nYear: 2012. Venn weights: 1 / 1 / 0.1.\n"
+        "notes": "⏱ ~67s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI got to be an architect specializing in theaters. Two of my interests in one job. And still I felt a gap: where was the emerging technology? It felt like complaining about the sheen of the gold on the wall. A very first-world problem.\n\nYear: 2012. Venn weights: 1 / 1 / 0.1.\n\n\nSource: Designing Naturally s7. FDA sightline work predates my arrival and VR, going back to the 1980s per Alex. Do not assign an exact year to this scanned drawing without confirmation."
+      },
+      {
+        "id": "early-vr",
+        "year": "2013",
+        "title": "At eye level",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "At eye level",
+          "src": "media/v3-fix1/fda-early-vr.mp4",
+          "credit": "Alex Coulombe / Fisher Dachs Associates",
+          "brightness": 0.78,
+          "alt": "At eye level",
+          "posterTime": 5
+        },
+        "notes": "⏱ ~45s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s8. Early FDA work: plans and renders could not answer whether a seat felt good. VR made that experience discussable. Source recording is a later demonstration of the early workflow; do not call it a dated2013 recording."
       },
       {
         "id": "dk1",
         "title": "Oculus Rift DK1",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -408,13 +416,16 @@ const SECTIONS = [
       },
       {
         "id": "not-turnkey",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "props": {
           "mode": "content",
-          "title": "It wasn’t turnkey",
-          "src": "media/pmre/fda-dk1-office-demo.jpg"
+          "title": "An extension of the workflow",
+          "src": "media/v3-fix1/workflow.jpg",
+          "credit": "Alex Coulombe · Designing Naturally s18–20",
+          "brightness": 0.62,
+          "alt": "An extension of the workflow"
         },
-        "title": "It wasn’t turnkey",
+        "title": "An extension of the workflow",
         "keep": 99,
         "year": "2013",
         "venn": [
@@ -423,21 +434,43 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~105s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nIn 2013 there was no elegant turnkey way to do what I expected. I went home at night and learned JavaScript and C# on Codecademy, learned Unity, learned model optimization. Architecture school taught me modeling, not optimization. It was exactly the kind of challenge I loved going home to.\n\nYear: 2013. Venn weights: 0.8 / 0.4 / 1.\n"
+        "notes": "⏱ ~56s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nIn 2013 there was no elegant turnkey way to do what I expected. I went home at night and learned JavaScript and C# on Codecademy, learned Unity, learned model optimization. Architecture school taught me modeling, not optimization. It was exactly the kind of challenge I loved going home to.\n\nYear: 2013. Venn weights: 0.8 / 0.4 / 1.\n\n\nDesigning Naturally s18–20: begin with existing drawings, modeling, texturing and lighting; add optimization and an interactive engine, then deliver human-scale experience. The s20 diagram incorporates the progression of s18 and s19. Keep the technical sequence in notes, not extra dense on-slide text. This is a later diagram explaining the 2013 learning story."
+      },
+      {
+        "id": "xiqu",
+        "year": "2013–2015",
+        "title": "Xiqu Centre",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "Xiqu Centre",
+          "src": "media/v3-fix1/xiqu.jpg",
+          "credit": "Rendering: Bing Thom Architects",
+          "brightness": 1,
+          "alt": "Xiqu Centre"
+        },
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s9. Bing Thom Architects render of Xiqu Centre. Source notes describe testing railing height and the swoop of a wall at human scale. Paraphrase the recorded Venelin Kokalov response; do not invent a new quotation. Exact VR commission year NEEDS CONFIRMATION."
       },
       {
         "id": "sightlines",
         "title": "Macbeth / Park Avenue Armory",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
-          "title": "Macbeth / Park Avenue Armory",
-          "src": "media/pmre/fda-macbeth-armory-vr-demo.jpg",
-          "credit": "Capture: Alex Coulombe / Fisher Dachs Associates",
-          "alt": "Could everyone see the stage?",
           "mode": "content",
-          "brightness": 1
+          "title": "Macbeth / Park Avenue Armory",
+          "src": "media/pmre/fda-macbeth-armory-unity.png",
+          "credit": "Alex Coulombe / Fisher Dachs Associates",
+          "brightness": 1,
+          "alt": "Macbeth / Park Avenue Armory"
         },
         "notes": "⏱ ~100s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nEarly Macbeth work at the Park Avenue Armory. Could everyone see? Now I could stand in a theater before it existed, at a human eye height. Source: KB Macbeth overview dates this previs work to 2014.\n\nYear: 2014. Venn weights: 1 / 1 / 1.\n",
         "year": "2014",
@@ -448,9 +481,31 @@ const SECTIONS = [
         ]
       },
       {
+        "id": "macbeth-built",
+        "year": "2014",
+        "title": "Macbeth, in the Armory",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "Macbeth, in the Armory",
+          "src": "media/pmre/fda-macbeth-armory-vr-demo.jpg",
+          "credit": "Park Avenue Armory · Macbeth, 2014",
+          "brightness": 1,
+          "alt": "Macbeth, in the Armory"
+        },
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s37 / AU2017 s20. Separate production photo after the virtual Stonehenge model. Alex supplied early Macbeth/Park Avenue Armory work; credit production photo to Park Avenue Armory as the source deck does. Describe testing stage/audience relationships. No invented production outcome."
+      },
+      {
         "id": "shed",
         "title": "The Shed",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -461,7 +516,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~60s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOptional additional theater planning example. The visual is a Unity axonometric, not a finished-building photograph.\n\nYear: 2014. Venn weights: 1 / 1 / 0.9.\n",
+        "notes": "⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOptional additional theater planning example. The visual is a Unity axonometric, not a finished-building photograph.\n\nYear: 2014. Venn weights: 1 / 1 / 0.9.\n",
         "year": "2014",
         "venn": [
           1,
@@ -470,9 +525,33 @@ const SECTIONS = [
         ]
       },
       {
+        "id": "shed-options",
+        "year": "2014",
+        "title": "The Shed / design options",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          1,
+          0.9,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "The Shed / design options",
+          "src": "slides/pmre/hxr-shed/media/shed/Shed_Video.mp4",
+          "credit": "Alex Coulombe / Fisher Dachs Associates",
+          "brightness": 0.75,
+          "alt": "The Shed / design options",
+          "poster": "media/v3-fix1/shed-options-poster.png",
+          "posterTime": 2.7
+        },
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nHarvardXR #6 source. Alex designed quick VR experiences alongside design, with only the detail needed for a clear question. It did not need to look finished to help the team. Work year follows existing v3 FDA chronology; exact commission date NEEDS CONFIRMATION."
+      },
+      {
         "id": "late-show",
         "title": "Ed Sullivan Theater",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -490,6 +569,73 @@ const SECTIONS = [
           1,
           1
         ]
+      },
+      {
+        "id": "shoreditch",
+        "year": "2015",
+        "title": "Theatre at Shoreditch",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "Theatre at Shoreditch",
+          "src": "media/v3-fix1/shoreditch.mp4",
+          "credit": "Alex Coulombe / Fisher Dachs Associates",
+          "brightness": 1,
+          "alt": "Theatre at Shoreditch"
+        },
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s10. The source itself labels early2015, OculusDK2. Proposed theater on the historic Shoreditch site; source notes say the owner later canceled it. Test steep sightlines, leaning audience members, seats, aisles and atmosphere. Do not relabel this clip Macbeth."
+      },
+      {
+        "id": "rice-early",
+        "year": "2015",
+        "title": "Rice / designing at human scale",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "Rice / designing at human scale",
+          "src": "media/v3-fix1/rice-2015.mp4",
+          "credit": "Allan Greenberg Architect / Fisher Dachs Associates",
+          "brightness": 0.65,
+          "alt": "Rice / designing at human scale",
+          "posterTime": 8
+        },
+        "notes": "⏱ ~48s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s28. Alex dates the beginning of this Rice work to2015. The selected video segment visibly says late2015, OculusDK2; this matches the supplied date. The separate static poster in the original deck says late2016 and is not used. The source clip opens on Wisconsin School of Music before changing to Rice. This derivative contains only the verified Rice40-second segment from4–44seconds, not the unrelated opening. Allan Greenberg Architect, theater design Fisher Dachs Associates. Compare design options rather than claiming the finished opera hall opened in2015. Exact start year/scope NEEDS CONFIRMATION."
+      },
+      {
+        "id": "equinox",
+        "year": "2015",
+        "title": "Equinox / just the lobby",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          1,
+          0.1,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "Equinox / just the lobby",
+          "src": "media/v3-fix1/equinox.jpg",
+          "credit": "Alex Coulombe · supplied portfolio",
+          "brightness": 1,
+          "alt": "Equinox / just the lobby"
+        },
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s34. Presenter identifies Equinox2015. Sometimes a sketch or a single panorama tells you everything you need. Do not imply a full building model was necessary. Exact commission date NEEDS CONFIRMATION."
       }
     ]
   },
@@ -508,39 +654,20 @@ const SECTIONS = [
     },
     "cases": [
       {
-        "id": "josh-office",
-        use: "pmre/story-media",
-        "props": {
-          "mode": "content",
-          "title": "Early 2016",
-          "src": "media/pmre/fda-dk1-office-demo.jpg"
-        },
-        "title": "Early 2016",
-        "keep": 19,
-        "year": "2016",
-        "venn": [
-          0.5,
-          0.7,
-          1
-        ],
-        "storyRole": "content",
-        "notes": "⏱ ~115s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nEarly 2016: Josh pulled me in and said he felt I was thinking of leaving to start a VR company. My reaction was, What? No! I will work here till I die. Then he said I was not much of a business manager, not organized, with creative wildfire but not much direction. I thought he was trying to convince me not to leave. These are paraphrased delivery prompts from the walk, not a verbatim historical transcript.\n\nYear: 2016. Venn weights: 0.5 / 0.7 / 1.\n"
-      },
-      {
         "id": "agile",
         "title": "“We should do it together”",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
-          "title": "“We should do it together”",
-          "src": "media/pmre/fda-macbeth-armory-vr-demo.jpg",
-          "credit": "Photo: Agile Lens / Fisher Dachs Associates",
-          "alt": "2016: Agile Lens",
           "mode": "content",
-          "brightness": 1
+          "title": "“We should do it together”",
+          "src": "media/v3-fix1/agile-lens-logo.jpg",
+          "credit": "Agile Lens · founded 2016",
+          "brightness": 0.85,
+          "alt": "“We should do it together”"
         },
-        "notes": "⏱ ~100s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThen Josh said that if I really wanted to start a VR company, we should do it together. That was the surprise. We founded Agile Lens later in 2016. Ten years now. Show people how passionate you are, including what you do off-hours because you love it. That is how they come to believe in you.\n\nYear: 2016. Venn weights: 0.7 / 0.8 / 1.\n",
+        "notes": "⏱ ~210s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThen Josh said that if I really wanted to start a VR company, we should do it together. That was the surprise. We founded Agile Lens later in 2016. Ten years now. Show people how passionate you are, including what you do off-hours because you love it. That is how they come to believe in you.\n\nYear: 2016. Venn weights: 0.7 / 0.8 / 1.\n\n\nMerged delivery context:\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nEarly 2016: Josh pulled me in and said he felt I was thinking of leaving to start a VR company. My reaction was, What? No! I will work here till I die. Then he said I was not much of a business manager, not organized, with creative wildfire but not much direction. I thought he was trying to convince me not to leave. These are paraphrased delivery prompts from the walk, not a verbatim historical transcript.\n\nYear: 2016. Venn weights: 0.5 / 0.7 / 1.\n\n\nTell the early-2016 Josh office story first, then the invitation to become partners and the later-2016 founding. The logo is company identity, not a photo of that conversation.",
         "year": "2016",
         "venn": [
           0.7,
@@ -549,12 +676,37 @@ const SECTIONS = [
         ]
       },
       {
+        "id": "statue-vr",
+        "year": "2016–2018",
+        "title": "Statue of Liberty Museum",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          1,
+          0.4,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "Statue of Liberty Museum",
+          "src": "slides/pmre/hxr-statue-free-work/media/pivot/00_StatueOfLiberty.jpg",
+          "credit": "FXCollaborative / Agile Lens · design visualization",
+          "brightness": 1,
+          "alt": "Statue of Liberty Museum"
+        },
+        "notes": "⏱ ~51s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nHarvardXR #10 source. Per Alex’s supplied brief, we did this basically for free and it became an important portfolio item. FXCollaborative were sad to experience it in VR only after the design decisions were settled. Bring VR into the process while it can still change decisions. This is the unbuilt render, not a completed-building photo. Work happened before the2019 opening; precise VR commission year NEEDS CONFIRMATION."
+      },
+      {
         "id": "hiring",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Curiosity",
-          "src": "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg"
+          "src": "media/v3-fix1/student-crit.mp4",
+          "credit": "Alex Coulombe · Syracuse studio review, 2015–2017",
+          "brightness": 1,
+          "alt": "Curiosity"
         },
         "title": "Curiosity",
         "keep": 19,
@@ -565,25 +717,7 @@ const SECTIONS = [
           0.8
         ],
         "storyRole": "content",
-        "notes": "⏱ ~100s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nWhen I hire, I am not looking first at GPA or whether someone studied VR. Excitement, being a quick study, curiosity. Be curious, not judgmental, as Ted Lasso puts it. I knew talented architects whose presentations looked like watching paint dry. I would have been thrilled to show work like theirs.\n\nYear: 2016. Venn weights: 0.5 / 1 / 0.8.\n"
-      },
-      {
-        "id": "picasso",
-        use: "pmre/story-media",
-        "props": {
-          "title": "NEEDS CONFIRMATION: Picasso slide",
-          "mode": "takeaway"
-        },
-        "title": "NEEDS CONFIRMATION: Picasso slide",
-        "keep": 99,
-        "year": "2016",
-        "venn": [
-          0.4,
-          0.5,
-          0.6
-        ],
-        "storyRole": "content",
-        "notes": "⏱ ~35s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPLACEHOLDER: Alex will supply the remembered Picasso slide. Research did not find it in the final AU 2017 deck. Do not state an age or attribute a quotation until confirmed. Optional Miranda anecdote also needs a primary source before inclusion.\n\nYear: 2016. Venn weights: 0.4 / 0.5 / 0.6.\n"
+        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nWhen I hire, I am not looking first at GPA or whether someone studied VR. Excitement, being a quick study, curiosity. Be curious, not judgmental, as Ted Lasso puts it. I knew talented architects whose presentations looked like watching paint dry. I would have been thrilled to show work like theirs.\n\nYear: 2016. Venn weights: 0.5 / 1 / 0.8.\n\n\nSource: Designing Naturally s63. A studio critique supports the curiosity/hiring story; it is not a photograph of Eugenia’s hiring or a staff meeting. Exact review date NEEDS CONFIRMATION."
       }
     ]
   },
@@ -603,7 +737,7 @@ const SECTIONS = [
     "cases": [
       {
         "id": "youtube",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "The right one or two people",
@@ -619,31 +753,11 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBusiness development took off when I stopped cold calling and started speaking. Jeff Mottle invited me to Autodesk University after a YouTube video with few views. It did not need to go viral. It needed to reach the right person. Separate channels are fine if that helps you put work out there. Name corrected against official Autodesk panel credits.\n\nYear: 2017. Venn weights: 0.4 / 0.6 / 1.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017\n\nShort-cut story context (full version has separate visuals):\nI got to sit on a panel of experts, several still friends today. It helped with my imposter syndrome: maybe this combination of knowledge really was useful. Official thumbnail shows two participants, not the whole panel.\n\nThere was a line outside my talk. I remember how exciting that was. I am happy to be back in Vegas. NEEDS CONFIRMATION: exact year of this queue photograph. It was on the old Agile Lens home page by 2019; the archive date is not the event date. Do not call the photograph independently verified as 2017.\n\nSpeaking led to teaching at NYU, Princeton and Columbia. I met Eugenia while I was a guest critic at Columbia, and she became my best employee. This visual is a community gathering, not a claimed Columbia classroom. Exact appointment and hiring years NEEDS CONFIRMATION."
-      },
-      {
-        "id": "au-panel",
-        use: "pmre/story-media",
-        "props": {
-          "mode": "content",
-          "title": "Autodesk University, 2017",
-          "src": "media/v3/au-panel.jpeg",
-          "credit": "Autodesk University 2017 · AS129811"
-        },
-        "title": "Autodesk University, 2017",
-        "keep": 99,
-        "year": "2017",
-        "venn": [
-          0.5,
-          0.7,
-          1
-        ],
-        "storyRole": "content",
-        "notes": "⏱ ~90s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI got to sit on a panel of experts, several still friends today. It helped with my imposter syndrome: maybe this combination of knowledge really was useful. Official thumbnail shows two participants, not the whole panel.\n\nYear: 2017. Venn weights: 0.5 / 0.7 / 1.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017"
+        "notes": "⏱ ~110s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBusiness development took off when I stopped cold calling and started speaking. Jeff Mottle invited me to Autodesk University after a YouTube video with few views. It did not need to go viral. It needed to reach the right person. Separate channels are fine if that helps you put work out there. Name corrected against official Autodesk panel credits.\n\nYear: 2017. Venn weights: 0.4 / 0.6 / 1.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017\n\nShort-cut story context (full version has separate visuals):\nI got to sit on a panel of experts, several still friends today. It helped with my imposter syndrome: maybe this combination of knowledge really was useful. Official thumbnail shows two participants, not the whole panel.\n\nThere was a line outside my talk. I remember how exciting that was. I am happy to be back in Vegas. NEEDS CONFIRMATION: exact year of this queue photograph. It was on the old Agile Lens home page by 2019; the archive date is not the event date. Do not call the photograph independently verified as 2017.\n\nSpeaking led to teaching at NYU, Princeton and Columbia. I met Eugenia while I was a guest critic at Columbia, and she became my best employee. This visual is a community gathering, not a claimed Columbia classroom. Exact appointment and hiring years NEEDS CONFIRMATION.\n\nMerged delivery context:\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI got to sit on a panel of experts, several still friends today. It helped with my imposter syndrome: maybe this combination of knowledge really was useful. Official thumbnail shows two participants, not the whole panel.\n\nYear: 2017. Venn weights: 0.5 / 0.7 / 1.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017"
       },
       {
         "id": "au-line",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Happy to be back in Vegas",
@@ -662,12 +776,158 @@ const SECTIONS = [
         "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThere was a line outside my talk. I remember how exciting that was. I am happy to be back in Vegas. NEEDS CONFIRMATION: exact year of this queue photograph. It was on the old Agile Lens home page by 2019; the archive date is not the event date. Do not call the photograph independently verified as 2017.\n\nYear: 2017. Venn weights: 0.3 / 1 / 0.8.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017"
       },
       {
+        "id": "napkin-scale",
+        "year": "2017",
+        "title": "A sketch, at full scale",
+        "use": "pmre/source-sequence",
+        "keep": 99,
+        "venn": [
+          1,
+          0.7,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "title": "A sketch, at full scale",
+          "line": "",
+          "credit": "Alex Coulombe / Agile Lens",
+          "media": [
+            {
+              "src": "../../../media/v3-fix1/napkin.jpg",
+              "seconds": 5,
+              "loop": false,
+              "brightness": 0.75
+            },
+            {
+              "src": "../../../media/v3-fix1/sketching.mp4",
+              "seconds": 5,
+              "loop": false,
+              "brightness": 0.75
+            },
+            {
+              "src": "../../../media/v3-fix1/sketch-at-scale.mp4",
+              "seconds": 5,
+              "loop": false,
+              "brightness": 0.75
+            }
+          ]
+        },
+        "notes": "⏱ ~48s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s15+s44 grouped as one beat. First the sketchbook, then Alex sketching in VR, then the sketch as a3D environment at scale. Move from dollhouse scale into the space. This is a demonstration of design intent, not finished construction documentation. Original s44 nTransit work credits Paloma Rodriguez. Exact demo year NEEDS CONFIRMATION."
+      },
+      {
+        "id": "workflow-demo",
+        "year": "2017",
+        "title": "Sketch to design workflow",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          1,
+          0.7,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "Sketch to design workflow",
+          "src": "media/v3-fix1/vr-workflow-demo.mp4",
+          "credit": "Alex Coulombe / Agile Lens",
+          "brightness": 0.65,
+          "alt": "Sketch to design workflow",
+          "posterTime": 22.6
+        },
+        "notes": "⏱ ~155s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s45. Suggested placement after napkin sketch: bring the spatial sketch back into the Autodesk workflow as an overlay for the resolved model and documents. This is the original2017-era limitation described by Alex, not a claim about all present-day software. Optional extension; exact capture date NEEDS CONFIRMATION.",
+        "opt": "workflows:extended"
+      },
+      {
+        "id": "conception-completion",
+        "year": "2017",
+        "title": "Conception to completion",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          1,
+          0.7,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "Conception to completion",
+          "src": "media/v3-fix1/conception-completion.mp4",
+          "credit": "Alex Coulombe / Agile Lens",
+          "brightness": 0.65,
+          "alt": "Conception to completion"
+        },
+        "notes": "⏱ ~50s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s53. Suggested placement directly after the sketch-to-VR workflow: Alex’s design exercise staying in VR, testing materials, furniture and moving the fireplace. Optional extra example, not a client commission. Source date NEEDS CONFIRMATION.",
+        "opt": "workflows:extended"
+      },
+      {
+        "id": "kids-space",
+        "year": "2017",
+        "title": "Playing with space",
+        "use": "pmre/source-sequence",
+        "keep": 99,
+        "venn": [
+          0.5,
+          0.2,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "title": "Playing with space",
+          "line": "",
+          "credit": "Family footage: Alex Coulombe",
+          "media": [
+            {
+              "src": "../../../media/v3-fix1/kids-drawing.mp4",
+              "seconds": 5,
+              "loop": false,
+              "brightness": 0.75
+            },
+            {
+              "src": "../../../media/v3-fix1/kids-vr.mp4",
+              "seconds": 5,
+              "loop": false,
+              "brightness": 0.75
+            }
+          ]
+        },
+        "notes": "⏱ ~35s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s36, personal2017 beat supplied by Alex. Children drawing, then trying VR. Starting early to explore spatial reasoning is Alex’s motivation here; do not claim this footage proves a measured cognitive benefit. Keep it short."
+      },
+      {
+        "id": "set-designers",
+        "year": "2017",
+        "title": "Set design, at scale",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "Set design, at scale",
+          "src": "media/v3-fix1/set-designers-muted.mp4",
+          "credit": "Alex Coulombe / Agile Lens · event NEEDS CONFIRMATION",
+          "brightness": 0.78,
+          "alt": "Set design, at scale",
+          "posterTime": 9.5,
+          "poster": "media/v3-fix1/set-designers-poster.png"
+        },
+        "notes": "⏱ ~65s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s38, labeled TCG Conference2017. Alex identifies the activity as teaching set designers to sketch inside the virtual Brockman Hall and see sets at scale. TCG2017 event identity, venue and exact scope NEEDS CONFIRMATION. PLAY MUTED. Supplied source has been transcoded without audio so the separate venue cue is also silent."
+      },
+      {
         "id": "universities",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Teaching",
-          "src": "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg"
+          "src": "media/v3-fix1/student-review.jpg",
+          "credit": "Alex Coulombe · Syracuse review, 2015–2017",
+          "brightness": 1,
+          "alt": "Teaching"
         },
         "title": "Teaching",
         "keep": 99,
@@ -678,12 +938,34 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nSpeaking led to teaching at NYU, Princeton and Columbia. I met Eugenia while I was a guest critic at Columbia, and she became my best employee. This visual is a community gathering, not a claimed Columbia classroom. Exact appointment and hiring years NEEDS CONFIRMATION.\n\nYear: 2017–2020. Venn weights: 0.8 / 0.6 / 1.\n"
+        "notes": "⏱ ~60s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nSpeaking led to teaching at NYU, Princeton and Columbia. I met Eugenia while I was a guest critic at Columbia, and she became my best employee. This visual is a community gathering, not a claimed Columbia classroom. Exact appointment and hiring years NEEDS CONFIRMATION.\n\nYear: 2017–2020. Venn weights: 0.8 / 0.6 / 1.\n\n\nVisible source is a Syracuse review from Designing Naturally s63, supporting the teaching theme; do not call the pictured people Columbia students or Eugenia. Exact NYU/Princeton/Columbia appointments and hiring dates NEEDS CONFIRMATION."
+      },
+      {
+        "id": "statue-built",
+        "year": "2019",
+        "title": "VR, while decisions can still change",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          1,
+          0.3,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "VR, while decisions can still change",
+          "src": "media/v3-fix1/museum-built.jpg",
+          "credit": "FXCollaborative · photographer NEEDS CONFIRMATION",
+          "brightness": 0.85,
+          "alt": "VR, while decisions can still change"
+        },
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nCompleted Statue of Liberty Museum image from FXCollaborative’s project page. Opening2019 is verified there. Recall the earlier design-visualization story: the lesson is timing, not a claimed causal benefit from a late VR review. The “basically for free” and FXCollaborative reaction are Alex’s supplied recollections. https://www.fxcollaborative.com/projects/filter/175/the-statue-of-liberty-museum/ ."
       },
       {
         "id": "unreal",
         "title": "Unreal Authorized Instructor",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -703,29 +985,53 @@ const SECTIONS = [
         ]
       },
       {
-        "id": "teaching",
-        use: "pmre/story-media",
-        "props": {
-          "mode": "content",
-          "title": "Teaching forces you to learn",
-          "src": "media/v3/teaching.jpg",
-          "credit": "Alex Coulombe Presents · August 2026"
-        },
-        "title": "Teaching forces you to learn",
+        "id": "brockman-virtual",
+        "year": "2021",
+        "title": "Brockman / virtual and construction",
+        "use": "pmre/story-media",
         "keep": 99,
-        "year": "2020–2026",
         "venn": [
-          0.6,
-          0.5,
+          1,
+          1,
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nActual teaching footage from August 2026 illustrates the continuing practice. It is not footage of my 2020 certification or of the named private client trainings.\n\nYear: 2020–2026. Venn weights: 0.6 / 0.5 / 1.\n"
+        "props": {
+          "mode": "content",
+          "title": "Brockman / virtual and construction",
+          "src": "media/v3-fix1/brockman-virtual.mp4",
+          "credit": "Allan Greenberg Architect / Fisher Dachs Associates",
+          "brightness": 1,
+          "alt": "Brockman / virtual and construction"
+        },
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nVirtual Architecture RTC2021 s45. This is the virtual/construction comparison from the supplied deck, following the2015–2016 design work. Let the comparison play before advancing to the built-hall photo. Allan Greenberg Architect; theater design Fisher Dachs Associates; acoustic design Threshold Acoustics. Project roles verified by Rice https://music.rice.edu/news/built-brilliance-brockman-hall-opera ."
+      },
+      {
+        "id": "brockman-real",
+        "year": "2021",
+        "title": "Brockman / built",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "Brockman / built",
+          "src": "media/v3-fix1/brockman-real.jpg",
+          "credit": "RTC 2021 source photograph · photographer unconfirmed",
+          "brightness": 1,
+          "alt": "Brockman / built"
+        },
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nVirtual Architecture RTC2021 s46, actual built hall photograph supplied in that deck. Alex’s contemporaneous notes say the building opened during the pandemic and imagine virtual performances if digital rights were licensed. Frame that as an idea from2021, not an existing agreement or NFT product. Rice dates the public opening and first in-person public performances to April2022; distinguish that from the pandemic construction/access recollection. https://news.rice.edu/news/2022/it-feels-walking-versailles-rices-new-opera-hall-officially-opens-mozarts-legendary-don . Photographer/2021 access date NEEDS CONFIRMATION."
       },
       {
         "id": "geffen",
         "title": "David Geffen Hall",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -736,7 +1042,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother chance to bring theater expertise into a real architectural decision at eye level. Image and project credits: Agile Lens / Fisher Dachs Associates.\n\nYear: 2022. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~60s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother chance to bring theater expertise into a real architectural decision at eye level. Image and project credits: Agile Lens / Fisher Dachs Associates.\n\nYear: 2022. Venn weights: 1 / 1 / 1.\n",
         "year": "2022",
         "venn": [
           1,
@@ -763,7 +1069,7 @@ const SECTIONS = [
       {
         "id": "mexico",
         "title": "Royal Caribbean / Perfect Day Mexico",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -784,7 +1090,7 @@ const SECTIONS = [
       },
       {
         "id": "referrals",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Getting the brief",
@@ -805,7 +1111,7 @@ const SECTIONS = [
       {
         "id": "fs-render",
         "title": "Four Seasons Lake Austin",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -816,7 +1122,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~75s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nWhy us? Our particular combination of architecture, theater and technology. Rendering: DBOX for Austin Capital Partners. PureBlink and Agile Lens contributions remain credited separately.\n\nYear: 2023. Venn weights: 1 / 0.7 / 1.\n\n\nShort-cut story context (full version has separate visuals):\nFour Seasons came through word of mouth. Original Unreal Fest 2023 slide and notes name Shane Scranton, Paul Debevec, Kim Baumann Larsen, Jeff Mottle, Vikas Reddy and Jeff Powers. Several contacts converged on an introduction to Jonathan Coon. Do not turn them into a made-up relay chain or say the slide lists 17 people. Original recording 9:10–9:43. Correspondence includes an October 2022 message.\n\nIf you are wondering why another company got the job you wanted, maybe they were more exciting. Good presentations and storytelling matter. This is why our weird combination made us suited to this project.",
+        "notes": "⏱ ~75s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nWhy us? Our particular combination of architecture, theater and technology. Rendering: DBOX for Austin Capital Partners. PureBlink and Agile Lens contributions remain credited separately.\n\nYear: 2023. Venn weights: 1 / 0.7 / 1.\n\n\nShort-cut story context (full version has separate visuals):\nFour Seasons came through word of mouth. Original Unreal Fest 2023 slide and notes name Shane Scranton, Paul Debevec, Kim Baumann Larsen, Jeff Mottle, Vikas Reddy and Jeff Powers. Several contacts converged on an introduction to Jonathan Coon. Do not turn them into a made-up relay chain or say the slide lists 17 people. Original recording 9:10–9:43. Correspondence includes an October 2022 message.\n\nIf you are wondering why another company got the job you wanted, maybe they were more exciting. Good presentations and storytelling matter. This is why our weird combination made us suited to this project.\n\nMerged delivery context:\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nIf you are wondering why another company got the job you wanted, maybe they were more exciting. Good presentations and storytelling matter. This is why our weird combination made us suited to this project.\n\nYear: 2023–2026. Venn weights: 1 / 1 / 1.\n",
         "year": "2023",
         "venn": [
           1,
@@ -827,7 +1133,7 @@ const SECTIONS = [
       {
         "id": "buyers",
         "title": "",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -838,7 +1144,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~90s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBuyers walk the future home together. A guide and physical stagecraft make this a shared visit.\n\nYear: 2023. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~67s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBuyers walk the future home together. A guide and physical stagecraft make this a shared visit.\n\nYear: 2023. Venn weights: 1 / 1 / 1.\n",
         "year": "2023",
         "venn": [
           1,
@@ -849,7 +1155,7 @@ const SECTIONS = [
       {
         "id": "fs-walkthrough",
         "title": "",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -871,7 +1177,7 @@ const SECTIONS = [
       {
         "id": "spike",
         "title": "Spike tape",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -893,7 +1199,7 @@ const SECTIONS = [
       {
         "id": "presales",
         "title": "$500M+ in presales",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -904,7 +1210,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~60s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter-approved project context. Do not turn the figure into a measured causal return on VR.\n\nYear: 2023–2026. Venn weights: 1 / 0.5 / 1.\n",
+        "notes": "⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter-approved project context. Do not turn the figure into a measured causal return on VR.\n\nYear: 2023–2026. Venn weights: 1 / 0.5 / 1.\n",
         "year": "2023–2026",
         "venn": [
           1,
@@ -915,7 +1221,7 @@ const SECTIONS = [
       {
         "id": "investment",
         "title": "$870M construction loan",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -926,7 +1232,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter previously called this investment. The public June 2, 2026 TYKO announcement specifies a construction loan. Do not add it to presales or imply VR caused financing.\n\nYear: 2023–2026. Venn weights: 1 / 0.4 / 0.8.\n",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter previously called this investment. The public June 2, 2026 TYKO announcement specifies a construction loan. Do not add it to presales or imply VR caused financing.\n\nYear: 2023–2026. Venn weights: 1 / 0.4 / 0.8.\n",
         "year": "2023–2026",
         "venn": [
           1,
@@ -937,18 +1243,18 @@ const SECTIONS = [
       {
         "id": "austin",
         "title": "Austin",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
           "title": "Austin",
-          "src": "media/pmre/re-holodeck-lakeaustin-room.jpg",
+          "src": "media/pmre/re-fourseasons-holodeck-session.jpg",
           "credit": "Photo: Agile Lens",
           "alt": "First, Austin",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~60s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThe experience could travel. Locations shown next are not a claimed dated itinerary.\n\nYear: 2023–2026. Venn weights: 1 / 0.8 / 1.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017",
+        "notes": "⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThe experience could travel. Locations shown next are not a claimed dated itinerary.\n\nYear: 2023–2026. Venn weights: 1 / 0.8 / 1.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017",
         "year": "2023–2026",
         "venn": [
           1,
@@ -959,7 +1265,7 @@ const SECTIONS = [
       {
         "id": "aspen",
         "title": "Aspen",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 30,
         "storyRole": "content",
         "props": {
@@ -983,7 +1289,7 @@ const SECTIONS = [
       {
         "id": "build",
         "title": "",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -992,9 +1298,10 @@ const SECTIONS = [
           "credit": "Video: Agile Lens",
           "alt": "Building the walkable room",
           "mode": "content",
-          "brightness": 1
+          "brightness": 1,
+          "posterTime": 8
         },
-        "notes": "⏱ ~60s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBuilding the walkable room. Actual setup footage, Agile Lens.\n\nYear: 2023–2026. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBuilding the walkable room. Actual setup footage, Agile Lens.\n\nYear: 2023–2026. Venn weights: 1 / 1 / 1.\n",
         "year": "2023–2026",
         "venn": [
           1,
@@ -1005,7 +1312,7 @@ const SECTIONS = [
       {
         "id": "dbox",
         "title": "DBOX",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1016,7 +1323,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~55s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nA real physical place to experience the digital one.\n\nYear: 2023–2026. Venn weights: 1 / 0.8 / 1.\n",
+        "notes": "⏱ ~48s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nA real physical place to experience the digital one.\n\nYear: 2023–2026. Venn weights: 1 / 0.8 / 1.\n",
         "year": "2023–2026",
         "venn": [
           1,
@@ -1027,7 +1334,7 @@ const SECTIONS = [
       {
         "id": "ny57",
         "title": "New York",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1038,7 +1345,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThe investor pop-up. Exact 57th Street relationship and date NEEDS CONFIRMATION.\n\nYear: 2023–2026. Venn weights: 1 / 0.8 / 1.\n",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThe investor pop-up. Exact 57th Street relationship and date NEEDS CONFIRMATION.\n\nYear: 2023–2026. Venn weights: 1 / 0.8 / 1.\n",
         "year": "2023–2026",
         "venn": [
           1,
@@ -1049,7 +1356,7 @@ const SECTIONS = [
       {
         "id": "california",
         "title": "California",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1060,32 +1367,13 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter-supplied California photograph. Stops and dates NEEDS CONFIRMATION.\n\nYear: 2023–2026. Venn weights: 1 / 0.8 / 1.\n",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter-supplied California photograph. Stops and dates NEEDS CONFIRMATION.\n\nYear: 2023–2026. Venn weights: 1 / 0.8 / 1.\n",
         "year": "2023–2026",
         "venn": [
           1,
           0.8,
           1
         ]
-      },
-      {
-        "id": "why-us",
-        use: "pmre/story-media",
-        "props": {
-          "mode": "content",
-          "title": "",
-          "src": "media/pmre/re-holodeck-tablet-guests.jpg"
-        },
-        "title": "",
-        "keep": 99,
-        "year": "2023–2026",
-        "venn": [
-          1,
-          1,
-          1
-        ],
-        "storyRole": "content",
-        "notes": "⏱ ~75s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nIf you are wondering why another company got the job you wanted, maybe they were more exciting. Good presentations and storytelling matter. This is why our weird combination made us suited to this project.\n\nYear: 2023–2026. Venn weights: 1 / 1 / 1.\n"
       }
     ]
   },
@@ -1105,7 +1393,7 @@ const SECTIONS = [
     "cases": [
       {
         "id": "rsc",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Royal Shakespeare Company",
@@ -1124,9 +1412,31 @@ const SECTIONS = [
         "notes": "⏱ ~105s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nWork on VR rehearsal tools for the Royal Shakespeare Company and Royal Central School of Speech and Drama. A real performance question drives the technology. Public evidence: Alex’s July 16, 2025 London Adventures video. NEEDS CONFIRMATION: precise project scope and which pictured workshop to describe.\n\nYear: 2025. Venn weights: 0.7 / 1 / 1.\n"
       },
       {
+        "id": "rsc-workshop",
+        "year": "2025",
+        "title": "Royal Shakespeare Company / rehearsal",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          0.6,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "Royal Shakespeare Company / rehearsal",
+          "src": "media/v3-fix1/rsc-headsets.jpg",
+          "credit": "Royal Shakespeare Company / Agile Lens",
+          "brightness": 1,
+          "alt": "Royal Shakespeare Company / rehearsal"
+        },
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSecond distinct Royal Shakespeare Company source photograph from HarvardXR #7 rsc_02.jpg. Discuss the connection between rehearsal, architecture and VR. Exact workshop date, participants and scope NEEDS CONFIRMATION; do not infer a production credit or claimed result from the picture."
+      },
+      {
         "id": "blueprint",
         "title": "Blueprint Immersive",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -1148,7 +1458,7 @@ const SECTIONS = [
       {
         "id": "bp-design",
         "title": "",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1159,7 +1469,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOptional additional design options demo. Product demo, Agile Lens.\n\nYear: 2025–2026. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOptional additional design options demo. Product demo, Agile Lens.\n\nYear: 2025–2026. Venn weights: 1 / 1 / 1.\n",
         "year": "2025–2026",
         "venn": [
           1,
@@ -1170,7 +1480,7 @@ const SECTIONS = [
       {
         "id": "floor-demo",
         "title": "Floor Tour",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1181,18 +1491,34 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 0.65
         },
-        "notes": "⏱ ~60s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother repeatable tool: walk an architectural plan at human scale. Product demonstration, not a current price or availability claim.\n\nYear: 2025–2026. Venn weights: 1 / 0.3 / 1.\n",
+        "notes": "⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother repeatable tool: walk an architectural plan at human scale. Product demonstration, not a current price or availability claim.\n\nYear: 2025–2026. Venn weights: 1 / 0.3 / 1.\n",
         "year": "2025–2026",
         "venn": [
           1,
           0.3,
           1
         ]
-      },
+      }
+    ]
+  },
+  {
+    "year": "2026",
+    "accent": "rose",
+    "storyChapter": 8,
+    "storyLesson": "What excites me now",
+    "lesson": {
+      "title": "What excites me now",
+      "short": "What excites me now",
+      "tagline": "",
+      "tags": "",
+      "opt": "chapter:off",
+      "notes": "⏱ ~0s.\nHidden organizational record."
+    },
+    "cases": [
       {
         "id": "uoxr",
         "title": "UOXR / simulator footage",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1203,7 +1529,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nReusable starting points let other people go further. Actual simulator capture, not headset acceptance.\n\nYear: 2026. Venn weights: 0.6 / 0.5 / 1.\n",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nReusable starting points let other people go further. Actual simulator capture, not headset acceptance.\n\nYear: 2026. Venn weights: 0.6 / 0.5 / 1.\n",
         "year": "2026",
         "venn": [
           0.6,
@@ -1214,7 +1540,7 @@ const SECTIONS = [
       {
         "id": "carol",
         "title": "A Christmas Carol, in VR",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 30,
         "storyRole": "content",
         "props": {
@@ -1236,7 +1562,7 @@ const SECTIONS = [
       {
         "id": "replay",
         "title": "",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1247,7 +1573,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~80s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThe performance can end and we can still choose a camera. Replay by Agile Lens / Yu-Jun Yeh.\n\nYear: 2026. Venn weights: 0.3 / 1 / 1.\n",
+        "notes": "⏱ ~62s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThe performance can end and we can still choose a camera. Replay by Agile Lens / Yu-Jun Yeh.\n\nYear: 2026. Venn weights: 0.3 / 1 / 1.\n",
         "year": "2026",
         "venn": [
           0.3,
@@ -1258,7 +1584,7 @@ const SECTIONS = [
       {
         "id": "working-cut",
         "title": "Virtual camera / prototype",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1269,7 +1595,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~55s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nA working-cut prototype, illustrated with the actual Carol virtual-camera screen.\n\nYear: 2026. Venn weights: 0.4 / 1 / 1.\n",
+        "notes": "⏱ ~48s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nA working-cut prototype, illustrated with the actual Carol virtual-camera screen.\n\nYear: 2026. Venn weights: 0.4 / 1 / 1.\n",
         "year": "2026",
         "venn": [
           0.4,
@@ -1279,11 +1605,14 @@ const SECTIONS = [
       },
       {
         "id": "spatial",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Spatial storytelling",
-          "src": "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg"
+          "src": "media/v3-fix1/spatial-community.jpg",
+          "credit": "Unreal NYC / Agile Lens · gallery photograph",
+          "brightness": 1,
+          "alt": "Spatial storytelling"
         },
         "title": "Spatial storytelling",
         "keep": 99,
@@ -1294,11 +1623,31 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI was part of the inaugural SIGGRAPH spatial storytelling track, and I am curating FMX’s spatial storytelling track for a second year. This is the combination of theater and emerging technology again. It could be a whole talk. Here is just a hint. NEEDS CONFIRMATION: exact track title/edition before delivery.\n\nYear: 2026. Venn weights: 0.4 / 1 / 1.\n"
+        "notes": "⏱ ~60s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI was part of the inaugural SIGGRAPH spatial storytelling track, and I am curating FMX’s spatial storytelling track for a second year. This is the combination of theater and emerging technology again. It could be a whole talk. Here is just a hint. NEEDS CONFIRMATION: exact track title/edition before delivery.\n\nYear: 2026. Venn weights: 0.4 / 1 / 1.\n\n\nVisual is an undated Unreal NYC community discussion, not a photograph of SIGGRAPH or FMX. Exact track titles/edition NEEDS CONFIRMATION."
+      },
+      {
+        "id": "teaching",
+        "use": "pmre/story-media",
+        "props": {
+          "mode": "content",
+          "title": "Teaching forces you to learn",
+          "src": "media/v3/teaching.jpg",
+          "credit": "Alex Coulombe Presents · August 2026"
+        },
+        "title": "Teaching forces you to learn",
+        "keep": 99,
+        "year": "2026",
+        "venn": [
+          0.6,
+          0.5,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~65s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nActual teaching footage from August 2026 illustrates the continuing practice. It is not footage of my 2020 certification or of the named private client trainings.\n\nYear: 2020–2026. Venn weights: 0.6 / 0.5 / 1.\n"
       },
       {
         "id": "film-language",
-        use: "pmre/film-language",
+        "use": "pmre/film-language",
         "props": {},
         "title": "VR is like the early days of film",
         "keep": 19,
@@ -1311,27 +1660,11 @@ const SECTIONS = [
         "storyRole": "content",
         "notes": "⏱ ~150s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOne camera films an action. Then cuts connect angles and time: the next day. Montage makes relationships. A close-up feels different from a wide. Tilting the camera can make us uneasy. That language developed over time. VR is still young. Dated milestones, not first-invention claims: Lumière 1895 (ACMI); Porter 1903 (MoMA/LOC); Pig Alley 1912 (MoMA); Intolerance 1916 (BFI); expressionist geometry 1920s (Deutsche Kinemathek); Eisenstein 1925 (MoMA). Dutch tilt first use NEEDS CONFIRMATION, do not claim a first.\n\nYear: 2026. Venn weights: 0.2 / 1 / 1.\nHistorical milestones: https://www.acmi.net.au/works/91927--lumiere-programme-silent-version/\nhttps://www.moma.org/collection/works/304708\nhttps://www.moma.org/collection/works/306011\nhttps://www.bfi.org.uk/lists/10-great-silent-epics\nhttps://www.deutsche-kinemathek.de/en/visit/exhibitions/be-caligari-virtual-cabinet\nhttps://www.moma.org/collection/works/305815\n\nShort-cut story context (full version has separate visuals):\nI was part of the inaugural SIGGRAPH spatial storytelling track, and I am curating FMX’s spatial storytelling track for a second year. This is the combination of theater and emerging technology again. It could be a whole talk. Here is just a hint. NEEDS CONFIRMATION: exact track title/edition before delivery.",
         "motion": "film-language"
-      }
-    ]
-  },
-  {
-    "year": "2026",
-    "accent": "rose",
-    "storyChapter": 8,
-    "storyLesson": "What excites me now",
-    "lesson": {
-      "title": "What excites me now",
-      "short": "What excites me now",
-      "tagline": "",
-      "tags": "",
-      "opt": "chapter:off",
-      "notes": "⏱ ~0s.\nHidden organizational record."
-    },
-    "cases": [
+      },
       {
         "id": "rome",
         "title": "Rome / web-rendered scan",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
@@ -1353,7 +1686,7 @@ const SECTIONS = [
       {
         "id": "hotel",
         "title": "",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1364,7 +1697,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOptional second scan. Hotel name NEEDS CONFIRMATION.\n\nYear: 2026. Venn weights: 1 / 0.3 / 1.\n",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOptional second scan. Hotel name NEEDS CONFIRMATION.\n\nYear: 2026. Venn weights: 1 / 0.3 / 1.\n",
         "year": "2026",
         "venn": [
           1,
@@ -1375,7 +1708,7 @@ const SECTIONS = [
       {
         "id": "splatdiorama",
         "title": "SplatDiorama / simulator",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
@@ -1386,7 +1719,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~60s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nSame scan in the actual app simulator. Maintain simulator label.\n\nYear: 2026. Venn weights: 1 / 0.3 / 1.\n",
+        "notes": "⏱ ~56s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nSame scan in the actual app simulator. Maintain simulator label.\n\nYear: 2026. Venn weights: 1 / 0.3 / 1.\n",
         "year": "2026",
         "venn": [
           1,
@@ -1396,7 +1729,7 @@ const SECTIONS = [
       },
       {
         "id": "ai",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "What excites me now",
@@ -1416,7 +1749,7 @@ const SECTIONS = [
       },
       {
         "id": "ai-hand",
-        use: "pmre/story-media",
+        "use": "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Your eye still matters",
@@ -1435,60 +1768,20 @@ const SECTIONS = [
         "opt": "ai:on"
       },
       {
-        "id": "devon",
-        use: "pmre/story-media",
-        "props": {
-          "title": "Devon Pastorius",
-          "mode": "takeaway"
-        },
-        "title": "Devon Pastorius",
-        "keep": 99,
-        "year": "2026",
-        "venn": [
-          0.4,
-          1,
-          0.8
-        ],
-        "storyRole": "content",
-        "notes": "⏱ ~35s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nA quick example from this room: Narwhal Creative’s Devon Pastorius combines rap videos, comedy/sketch and cinematic one-takes with real-estate media. Official PMRE presenter bio. This is an editorial observation about the work, not a claim about his private motivation. Agenda must be rechecked before saying you already heard him.\n\nYear: 2026. Venn weights: 0.4 / 1 / 0.8.\nSource: https://www.pmreconference.com/presenters\n\nOfficial bio: real-estate rap videos, cinematic one-takes and comedy/sketch. No cleared portrait supplied."
-      },
-      {
         "id": "niche",
-        "title": "Your particular combination",
-        use: "pmre/story-media",
+        "title": "Devon Pastorius",
+        "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
-          "title": "Your particular combination",
-          "src": "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg",
-          "credit": "Photo: Agile Lens",
-          "alt": "Be the best at your niche",
           "mode": "content",
-          "brightness": 1
+          "title": "Devon Pastorius",
+          "src": "media/v3-fix1/devon.png",
+          "credit": "PMRE 2026 / Devon Pastorius",
+          "brightness": 1,
+          "alt": "Devon Pastorius"
         },
-        "notes": "⏱ ~65s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBeing the best photographer in the world is a hard lift. Being the best medical-equipment photographer is a more specific possibility if you love both. This is my illustrative example from the walk; it is not verified podcast wording. The podcast instead uses luxury houses with pools. No promise of a measured global ranking.\n\nYear: 2026. Venn weights: 1 / 1 / 1.\nRelated podcast (different example): https://www.youtube.com/watch?v=3xiznCmDUX0&t=1893s",
-        "year": "2026",
-        "venn": [
-          1,
-          1,
-          1
-        ]
-      },
-      {
-        "id": "intersection",
-        "title": "",
-        use: "pmre/story-media",
-        "keep": 19,
-        "storyRole": "content",
-        "props": {
-          "title": "",
-          "src": "media/pmre/fda-macbeth-armory-vr-demo.jpg",
-          "credit": "Photo: Agile Lens / Fisher Dachs Associates",
-          "alt": "Your experience is the starting point",
-          "mode": "content",
-          "brightness": 1
-        },
-        "notes": "⏱ ~40s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nIt makes me happy when I hear I inspired someone to pursue VR, architecture, theater, or whatever they love. That is what I hope this story does.\n\nYear: 2026. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~65s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBeing the best photographer in the world is a hard lift. Being the best medical-equipment photographer is a more specific possibility if you love both. This is my illustrative example from the walk; it is not verified podcast wording. The podcast instead uses luxury houses with pools. No promise of a measured global ranking.\n\nYear: 2026. Venn weights: 1 / 1 / 1.\nRelated podcast (different example): https://www.youtube.com/watch?v=3xiznCmDUX0&t=1893s\n\nMerged delivery context:\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nA quick example from this room: Narwhal Creative’s Devon Pastorius combines rap videos, comedy/sketch and cinematic one-takes with real-estate media. Official PMRE presenter bio. This is an editorial observation about the work, not a claim about his private motivation. Agenda must be rechecked before saying you already heard him.\n\nYear: 2026. Venn weights: 0.4 / 1 / 0.8.\nSource: https://www.pmreconference.com/presenters\n\nOfficial bio: real-estate rap videos, cinematic one-takes and comedy/sketch. No cleared portrait supplied.\n\nOfficial PMRE2026 presenter bio, checked November9: Devon combines property media with real-estate rap videos, cinematic one-takes and sketch comedy. Use this real person as the30-second niche example. Do not claim a specific earlier session happened without rechecking the live agenda. Source https://www.pmreconference.com/presenters . Abstract medical-equipment example stays in notes only.",
         "year": "2026",
         "venn": [
           1,
