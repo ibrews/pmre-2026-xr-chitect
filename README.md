@@ -12,7 +12,7 @@ cd pmre-2026-xr-chitect
 python3 tools/serve_deck.py --port 8791
 ```
 
-Open `http://127.0.0.1:8791/?cut=full&safe=70&theme=house`. Arrow keys advance slides and reveals. Fonts and media are local. Use the supplied server: its concurrent request handling prevents false image failures during QA.
+Open `http://127.0.0.1:8791/?cut=full&safe=70&theme=house`. Arrow keys advance slides and reveals. Fonts and media are local. Use the supplied server: its concurrent request handling prevents false image failures during QA, and byte-range responses support actual video seeking and selected posters.
 
 ## Things to Try
 

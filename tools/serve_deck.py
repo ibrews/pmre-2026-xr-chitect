@@ -24,6 +24,7 @@ Then, in another shell:
 import argparse
 import functools
 import os
+import re
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
 
@@ -36,8 +37,56 @@ class DeckServer(ThreadingHTTPServer):
 
 
 class QuietHandler(SimpleHTTPRequestHandler):
+    def send_head(self):
+        # Chrome needs byte ranges for selected video posters and seeking.
+        # A 200 response to a Range request can silently seek back to frame zero.
+        self._range = None
+        value = self.headers.get("Range")
+        local = self.translate_path(self.path)
+        if not value or not os.path.isfile(local):
+            return super().send_head()
+        match = re.fullmatch(r"bytes=(\d*)-(\d*)", value.strip())
+        if not match or not any(match.groups()):
+            return super().send_head()
+        stream = open(local, "rb")
+        size = os.fstat(stream.fileno()).st_size
+        first, last = match.groups()
+        start = int(first) if first else max(0, size - int(last))
+        end = min(size - 1, int(last)) if first and last else size - 1
+        if start >= size or end < start:
+            stream.close()
+            self.send_response(416)
+            self.send_header("Content-Range", f"bytes */{size}")
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return None
+        stream.seek(start)
+        self._range = (start, end)
+        self.send_response(206)
+        self.send_header("Content-Type", self.guess_type(local))
+        self.send_header("Content-Length", str(end - start + 1))
+        self.send_header("Content-Range", f"bytes {start}-{end}/{size}")
+        self.send_header("Accept-Ranges", "bytes")
+        self.end_headers()
+        return stream
+
+    def copyfile(self, source, outputfile):
+        if self._range is None:
+            return super().copyfile(source, outputfile)
+        remaining = self._range[1] - self._range[0] + 1
+        while remaining:
+            chunk = source.read(min(65536, remaining))
+            if not chunk:
+                break
+            outputfile.write(chunk)
+            remaining -= len(chunk)
+
     def log_message(self, fmt, *args):  # a sweep makes thousands of these
         pass
+
+
+class VerboseHandler(QuietHandler):
+    log_message = SimpleHTTPRequestHandler.log_message
 
 
 def main() -> int:
@@ -48,7 +97,7 @@ def main() -> int:
     args = ap.parse_args()
 
     handler = functools.partial(
-        SimpleHTTPRequestHandler if args.verbose else QuietHandler, directory=args.dir
+        VerboseHandler if args.verbose else QuietHandler, directory=args.dir
     )
     with DeckServer(("127.0.0.1", args.port), handler) as httpd:
         print(f"serving {args.dir} at http://localhost:{args.port}/ "
