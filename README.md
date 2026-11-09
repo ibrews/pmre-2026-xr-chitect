@@ -17,7 +17,7 @@ Open `http://127.0.0.1:8791/?cut=full&safe=70&theme=house`. Arrow keys advance s
 ## Things to Try
 
 1. Follow the year and weighted architecture/theater/technology icons through the story.
-2. At Picasso, reveal the 1896 self-portrait, then the catalog-matched color *Facing Death*, then dates/ages14–15 and90. Notes connect this to deliberate practice.
+2. At Picasso, reveal the 1896 self-portrait, then the catalog-matched color *Facing Death*, then dates and ages 14–15 and 90. Notes connect this to deliberate practice.
 3. Press **O** to select the short cut, choose a real-person niche example (`niche=devon|miranda|natalia|matt`), skip AI, or include the two extra Designing Naturally workflow demonstrations (`workflows=extended`).
 4. Press **X** to hide or restore a slide locally. **Shift+X** includes hidden slides for review. These choices never alter source or exports.
 5. Press **N** for presenter notes or **Shift+N** for the notes drawer. `?safe=70&safezone` shows the venue safe box.
@@ -56,8 +56,8 @@ The traffic graphic includes four staggered car speech bubbles, each held 1.8 se
 
 Venue export captures transparent title/credit/tracker chrome above video-backed canvases as well as normal videos, preserving the complete source credit on sequence movie posters and playback. Captured overlays exclude presenter navigation and step controls.
 
-## November9 verified facts
+## November 9 verified facts
 
-Speaker notes cite the career dates, Miranda quotation, AU2017, TCG2017Portland/Brockman, PerfectDayMexico2025, RSC2024–2025 rehearsal R&D, SIGGRAPH2025/2026 and FMX2026 roles, the California/Miami2026 tour and SinaBerniniBristol hotel scan. The supplied monochrome1972 Picasso was a different work; the displayed color *FacingDeath* matches the June30,1972 catalog. [Additional source/portrait manifest](media/v3-fix3/manifest.json). Exact firstPrinceton appointment and Eugenia hiring dates are omitted because they remain undocumented. No relative PMRE speaker order is claimed.
+Speaker notes cite career dates, the Miranda quotation, AU 2017, TCG 2017 in Portland with the Brockman model, Perfect Day Mexico 2025, RSC rehearsal R&D in 2024–2025, SIGGRAPH 2025/2026 and FMX 2026 roles, the California/Miami 2026 tour, and the Sina Bernini Bristol hotel scan. The supplied monochrome 1972 Picasso was a different work. The displayed color *Facing Death* matches the June 30, 1972 catalog. [Additional source and portrait manifest](media/v3-fix3/manifest.json). Exact dates of the first Princeton appointment and Eugenia’s hiring are omitted because they remain undocumented. No relative PMRE speaker order is claimed.
 
-Niche options replace the default65-second example at the same budget. Sourced combinations are facts; “best at X-plus-Y” and the Sondheim comparison are presenter opinion. Miranda is an outside example; Devon, Natalia and Matt are listed PMRE2026 participants. `talk/story-baseline*.json` and `talk/story-plan.json` are historical source snapshots, not current fact status; current wording is `talk/sections.js` and the generated rehearsal notes.
+Niche options replace the default 65-second example at the same budget. The sourced combinations are facts; “best at X-plus-Y” and the Sondheim comparison are presenter opinion. Miranda is an outside example. Devon, Natalia and Matt are listed PMRE 2026 participants. `talk/story-baseline*.json` and `talk/story-plan.json` are historical source snapshots, rather than current fact status. Current wording lives in `talk/sections.js` and the generated rehearsal notes.

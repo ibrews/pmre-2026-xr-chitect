@@ -12,4 +12,4 @@ The ZGF page explicitly describes these as design/visualization work from Alex's
 
 DBOX rendered artwork is credited exactly **Rendering: DBOX for Austin Capital Partners**, visibly and in notes. DBOX office/holodeck photographs retain Photo: Agile Lens; the studio's name is a location, not a rendering credit.
 
-Presenter-confirmed route: Austin → Aspen → DBOX (NY DBOX space) → NY 57th Street investor pop-up → California tour. The 57th Street stop is the Four Seasons Lake Austin NYC VR experience pop-up for investors. California tour: summer2026; Miami: current November2026, confirmed by Alex November9. No individual California city or day is asserted.
+Presenter-confirmed route: Austin → Aspen → DBOX (NY DBOX space) → NY 57th Street investor pop-up → California tour. The 57th Street stop is the Four Seasons Lake Austin NYC VR experience pop-up for investors. California tour: summer 2026; Miami: current November 2026, confirmed by Alex November 9. No individual California city or day is asserted.

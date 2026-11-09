@@ -15,7 +15,7 @@ Downloaded from the supplied public portfolio pages on 2026-10-30. Images are re
 | holo-aspen.mp4 | same source commit, media/nxtbld/holo-aspen.mp4 | Agile Lens; byte-identical full 63.62s source clip, original audio retained |
 | aspen-poster.jpg | Frame at 8s of that clip | Derived still |
 
-Aspen uses the explicitly labeled source-deck photograph plus the required video. Alex supplied the California tour photograph on 2026-10-31, credited Photo: Agile Lens (`media/pmre/round4/california.png`). Only specific California tour: summer2026; Miami: current November2026, confirmed by Alex November9. No individual California city or day is asserted.
+Aspen uses the explicitly labeled source-deck photograph plus the required video. Alex supplied the California tour photograph on 2026-10-31, credited Photo: Agile Lens (`media/pmre/round4/california.png`). Only specific California tour: summer 2026; Miami: current November 2026, confirmed by Alex November 9. No individual California city or day is asserted.
 
 Route basemap: [Natural Earth 1:110m countries](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_admin_0_countries.geojson), public domain. Presenter-confirmed travel order (2026-10-31): Austin → Aspen → DBOX (NY DBOX space) → NY 57th Street investor pop-up → California tour. 57th Street is the Four Seasons Lake Austin NYC VR experience pop-up for investors. Exact California cities are not implied by the map marker.
 
