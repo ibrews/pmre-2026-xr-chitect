@@ -78,6 +78,7 @@ LC.forEach(l=>{const p=document.createElementNS(NS,'line');p.setAttribute('x1',c
 const ccx=cx+265,ccy=cy+438;let d='';for(let i=0;i<=40;i++){const a=-2.4+i/40*(Math.PI*2.15),r=86+Math.sin(i*1.7)*5;d+=(i?' L':'M')+(ccx+Math.cos(a)*r*1.25).toFixed(1)+' '+(ccy+Math.sin(a)*r).toFixed(1);}
 document.getElementById('circle').setAttribute('d',d);
 })();
-SDFrame.init({ duration: 12, steps: 0 });
+window.MOTION_SFX=[{t:5.6,kind:'snap',gain:.6},{t:8.2,kind:'pop',gain:.4}];
+SDFrame.init({duration:12,steps:0,onEnter(){parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}});
 </script>
 </body></html>

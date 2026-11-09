@@ -114,7 +114,8 @@ PX.sparkles(document.getElementById('fx'),END,960,470,10.9,31,1.3);
 // Domain colors carry meaning across the talk; preserve them when a look recolors decorative accents.
 const domainAttrs=[];document.querySelectorAll('svg *').forEach(el=>['fill','stroke','stop-color','style'].forEach(a=>{const v=el.getAttribute(a);if(v&&/#00d4ff|#f43f5e|#a78bfa/i.test(v))domainAttrs.push([el,a,v]);}));
 addEventListener('load',()=>domainAttrs.forEach(([el,a,v])=>el.setAttribute(a,v)),{once:true});
-SDFrame.init({ duration: END, steps: 0 });
+window.MOTION_SFX=[{t:4.7,kind:'merge'},{t:7.9,kind:'merge'},{t:9.4,kind:'pop'},{t:10.8,kind:'pop'}];
+SDFrame.init({duration:END,steps:0,onEnter(){parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}});
 })();
 </script>
 </body></html>

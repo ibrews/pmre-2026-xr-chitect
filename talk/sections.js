@@ -1,4 +1,4 @@
-// PMRE v3: chronological story; unique-media correction.
+// PMRE v3: chronological story; presenter correction.
 const TALK = {
   "coverEvent": "",
   "coverTitle": "Architect to <span class=\"xr\">XR</span>-chitect",
@@ -205,21 +205,6 @@ const SECTIONS = [
         "storyRole": "content",
         "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAt Syracuse we were not allowed to touch a computer for the first year. At the time it was excruciating. It made me think deliberately about every line and every line weight. With Revit you make a wall, and the lines are a byproduct. Clarity can get lost.\n\nYear: 2005. Venn weights: 1 / 0 / 0.1.\n",
         "motion": "the-hand"
-      },
-      {
-        "id": "picasso",
-        "use": "pmre/picasso",
-        "props": {},
-        "title": "Who painted this?",
-        "keep": 19,
-        "year": "2005",
-        "venn": [
-          0.4,
-          0.5,
-          0.6
-        ],
-        "storyRole": "content",
-        "notes": "⏱ ~75s.\n\nThree deliberate reveals: (0) left painting only, ask “Anyone know who painted this?” (1) reveal right painting, ask “And this one?” (2) reveal dates 1896 / 1972. Both are Picasso. Let the room answer before revealing the next image or the dates.\n\nPlace beside Syracuse’s no-computers/deliberate-drawing story: learn the disciplines before changing their rules. Passion benefits from deliberate practice. Psychologist K. Anders Ericsson, with Ralf Krampe and Clemens Tesch-Römer, developed the deliberate-practice framework in 1993: focused, effortful work on specific weaknesses, tasks just beyond current ability, feedback and correction, often guided by a qualified teacher. Repetition alone is not the definition. Ericsson and Robert Pool explain the framework in Peak (2016); it is not a term originating in Atomic Habits.\n\nSources: Ericsson, Krampe & Tesch-Römer (1993), The Role of Deliberate Practice in the Acquisition of Expert Performance, Psychological Review100(3),363–406, https://doi.org/10.1037/0033-295X.100.3.363 and original paper https://www.moodle.is.ed.ac.uk/pluginfile.php/29313/mod_resource/content/2/ericsson%201993.pdf; Peak (Ericsson & Pool,2016). Original comparison: supplied Virtual Architecture RTC2021 s18, picasso-*.png, losslessly separated into halves. Museu Picasso dates the early self-portrait to1896: https://museupicassobcn.cat/en/collection/artwork/self-portrait-8 . The supplied RTC notes say16, but Picasso was born1881, so that age conflicts with1896: age NEEDS CONFIRMATION, do not say16 as verified. Later work/date1972 follows Alex’s supplied comparison; exact work/catalog identity NEEDS CONFIRMATION. These are historical examples within the2005 craft discussion, not career-timeline events in1896/1972."
       },
       {
         "id": "revit",
@@ -717,7 +702,22 @@ const SECTIONS = [
           0.8
         ],
         "storyRole": "content",
-        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nWhen I hire, I am not looking first at GPA or whether someone studied VR. Excitement, being a quick study, curiosity. Be curious, not judgmental, as Ted Lasso puts it. I knew talented architects whose presentations looked like watching paint dry. I would have been thrilled to show work like theirs.\n\nYear: 2016. Venn weights: 0.5 / 1 / 0.8.\n\n\nSource: Designing Naturally s63. A studio critique supports the curiosity/hiring story; it is not a photograph of Eugenia’s hiring or a staff meeting. Exact review date NEEDS CONFIRMATION."
+        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nWhen I hire, I am not looking first at GPA or whether someone studied VR. Excitement, being a quick study, curiosity. Be curious, not judgmental, as Ted Lasso puts it. I knew talented architects whose presentations looked like watching paint dry. I would have been thrilled to show work like theirs.\n\nYear: 2016. Venn weights: 0.5 / 1 / 0.8.\n\n\nSource: Designing Naturally s63. A studio critique supports the curiosity/hiring story; it is not a photograph of Eugenia’s hiring or a staff meeting. Exact review date NEEDS CONFIRMATION.\n\nBridge to the Picasso reveal: curiosity and drive benefit from deliberate practice. Alex’s supplied Lin-Manuel Miranda comparison is a personal Hunter anecdote, not a verified ranking of students’ talent; exact wording/source NEEDS CONFIRMATION. Keep it as a qualified presenter recollection, then show the paintings and let the audience answer."
+      },
+      {
+        "id": "picasso",
+        "use": "pmre/picasso",
+        "props": {},
+        "title": "Who painted this?",
+        "keep": 19,
+        "year": "2016",
+        "venn": [
+          0.4,
+          0.5,
+          0.6
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~75s.\n\nThree deliberate reveals: (0) left painting only, ask “Anyone know who painted this?” (1) reveal right painting, ask “And this one?” (2) reveal dates 1896 / 1972. Both are Picasso. Let the room answer before revealing the next image or the dates.\n\nAfter the hiring/curiosity story: learn the disciplines before changing their rules. Passion benefits from deliberate practice. Psychologist K. Anders Ericsson, with Ralf Krampe and Clemens Tesch-Römer, developed the deliberate-practice framework in 1993: focused, effortful work on specific weaknesses, tasks just beyond current ability, feedback and correction, often guided by a qualified teacher. Repetition alone is not the definition. Ericsson and Robert Pool explain the framework in Peak (2016); it is not a term originating in Atomic Habits.\n\nSources: Ericsson, Krampe & Tesch-Römer (1993), The Role of Deliberate Practice in the Acquisition of Expert Performance, Psychological Review100(3),363–406, https://doi.org/10.1037/0033-295X.100.3.363 and original paper https://www.moodle.is.ed.ac.uk/pluginfile.php/29313/mod_resource/content/2/ericsson%201993.pdf; Peak (Ericsson & Pool,2016). Original comparison: supplied Virtual Architecture RTC2021 s18, picasso-*.png, losslessly separated into halves. Museu Picasso dates the early self-portrait to1896: https://museupicassobcn.cat/en/collection/artwork/self-portrait-8 . The supplied RTC notes say16, but Picasso was born1881, so that age conflicts with1896: age NEEDS CONFIRMATION, do not say16 as verified. Later work/date1972 follows Alex’s supplied comparison; exact work/catalog identity NEEDS CONFIRMATION. These are historical examples within the2016 hiring/deliberate-practice discussion, not career-timeline events in1896/1972."
       }
     ]
   },

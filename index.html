@@ -52,7 +52,7 @@
    'IFRAME:'  Prefix c.img with 'IFRAME:' to embed a URL (YouTube, etc.)
    ======================================================================= */
 // ── TALK START ──
-// PMRE v3: chronological story; unique-media correction.
+// PMRE v3: chronological story; presenter correction.
 const TALK = {
   "coverEvent": "",
   "coverTitle": "Architect to <span class=\"xr\">XR</span>-chitect",
@@ -259,21 +259,6 @@ const SECTIONS = [
         "storyRole": "content",
         "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAt Syracuse we were not allowed to touch a computer for the first year. At the time it was excruciating. It made me think deliberately about every line and every line weight. With Revit you make a wall, and the lines are a byproduct. Clarity can get lost.\n\nYear: 2005. Venn weights: 1 / 0 / 0.1.\n",
         "motion": "the-hand"
-      },
-      {
-        "id": "picasso",
-        "use": "pmre/picasso",
-        "props": {},
-        "title": "Who painted this?",
-        "keep": 19,
-        "year": "2005",
-        "venn": [
-          0.4,
-          0.5,
-          0.6
-        ],
-        "storyRole": "content",
-        "notes": "⏱ ~75s.\n\nThree deliberate reveals: (0) left painting only, ask “Anyone know who painted this?” (1) reveal right painting, ask “And this one?” (2) reveal dates 1896 / 1972. Both are Picasso. Let the room answer before revealing the next image or the dates.\n\nPlace beside Syracuse’s no-computers/deliberate-drawing story: learn the disciplines before changing their rules. Passion benefits from deliberate practice. Psychologist K. Anders Ericsson, with Ralf Krampe and Clemens Tesch-Römer, developed the deliberate-practice framework in 1993: focused, effortful work on specific weaknesses, tasks just beyond current ability, feedback and correction, often guided by a qualified teacher. Repetition alone is not the definition. Ericsson and Robert Pool explain the framework in Peak (2016); it is not a term originating in Atomic Habits.\n\nSources: Ericsson, Krampe & Tesch-Römer (1993), The Role of Deliberate Practice in the Acquisition of Expert Performance, Psychological Review100(3),363–406, https://doi.org/10.1037/0033-295X.100.3.363 and original paper https://www.moodle.is.ed.ac.uk/pluginfile.php/29313/mod_resource/content/2/ericsson%201993.pdf; Peak (Ericsson & Pool,2016). Original comparison: supplied Virtual Architecture RTC2021 s18, picasso-*.png, losslessly separated into halves. Museu Picasso dates the early self-portrait to1896: https://museupicassobcn.cat/en/collection/artwork/self-portrait-8 . The supplied RTC notes say16, but Picasso was born1881, so that age conflicts with1896: age NEEDS CONFIRMATION, do not say16 as verified. Later work/date1972 follows Alex’s supplied comparison; exact work/catalog identity NEEDS CONFIRMATION. These are historical examples within the2005 craft discussion, not career-timeline events in1896/1972."
       },
       {
         "id": "revit",
@@ -771,7 +756,22 @@ const SECTIONS = [
           0.8
         ],
         "storyRole": "content",
-        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nWhen I hire, I am not looking first at GPA or whether someone studied VR. Excitement, being a quick study, curiosity. Be curious, not judgmental, as Ted Lasso puts it. I knew talented architects whose presentations looked like watching paint dry. I would have been thrilled to show work like theirs.\n\nYear: 2016. Venn weights: 0.5 / 1 / 0.8.\n\n\nSource: Designing Naturally s63. A studio critique supports the curiosity/hiring story; it is not a photograph of Eugenia’s hiring or a staff meeting. Exact review date NEEDS CONFIRMATION."
+        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nWhen I hire, I am not looking first at GPA or whether someone studied VR. Excitement, being a quick study, curiosity. Be curious, not judgmental, as Ted Lasso puts it. I knew talented architects whose presentations looked like watching paint dry. I would have been thrilled to show work like theirs.\n\nYear: 2016. Venn weights: 0.5 / 1 / 0.8.\n\n\nSource: Designing Naturally s63. A studio critique supports the curiosity/hiring story; it is not a photograph of Eugenia’s hiring or a staff meeting. Exact review date NEEDS CONFIRMATION.\n\nBridge to the Picasso reveal: curiosity and drive benefit from deliberate practice. Alex’s supplied Lin-Manuel Miranda comparison is a personal Hunter anecdote, not a verified ranking of students’ talent; exact wording/source NEEDS CONFIRMATION. Keep it as a qualified presenter recollection, then show the paintings and let the audience answer."
+      },
+      {
+        "id": "picasso",
+        "use": "pmre/picasso",
+        "props": {},
+        "title": "Who painted this?",
+        "keep": 19,
+        "year": "2016",
+        "venn": [
+          0.4,
+          0.5,
+          0.6
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~75s.\n\nThree deliberate reveals: (0) left painting only, ask “Anyone know who painted this?” (1) reveal right painting, ask “And this one?” (2) reveal dates 1896 / 1972. Both are Picasso. Let the room answer before revealing the next image or the dates.\n\nAfter the hiring/curiosity story: learn the disciplines before changing their rules. Passion benefits from deliberate practice. Psychologist K. Anders Ericsson, with Ralf Krampe and Clemens Tesch-Römer, developed the deliberate-practice framework in 1993: focused, effortful work on specific weaknesses, tasks just beyond current ability, feedback and correction, often guided by a qualified teacher. Repetition alone is not the definition. Ericsson and Robert Pool explain the framework in Peak (2016); it is not a term originating in Atomic Habits.\n\nSources: Ericsson, Krampe & Tesch-Römer (1993), The Role of Deliberate Practice in the Acquisition of Expert Performance, Psychological Review100(3),363–406, https://doi.org/10.1037/0033-295X.100.3.363 and original paper https://www.moodle.is.ed.ac.uk/pluginfile.php/29313/mod_resource/content/2/ericsson%201993.pdf; Peak (Ericsson & Pool,2016). Original comparison: supplied Virtual Architecture RTC2021 s18, picasso-*.png, losslessly separated into halves. Museu Picasso dates the early self-portrait to1896: https://museupicassobcn.cat/en/collection/artwork/self-portrait-8 . The supplied RTC notes say16, but Picasso was born1881, so that age conflicts with1896: age NEEDS CONFIRMATION, do not say16 as verified. Later work/date1972 follows Alex’s supplied comparison; exact work/catalog identity NEEDS CONFIRMATION. These are historical examples within the2016 hiring/deliberate-practice discussion, not career-timeline events in1896/1972."
       }
     ]
   },
@@ -2142,7 +2142,7 @@ window.MOTION_FIT = {
    0.7069,
    0.96
   ],
-  "src": "3cf64b32f1e01385"
+  "src": "dccce3fc3621b691"
  },
  "frame-to-room": {
   "box": [
@@ -2196,7 +2196,7 @@ window.MOTION_FIT = {
    0.9265,
    0.9454
   ],
-  "src": "378101681501d63c"
+  "src": "4bf3b0ed3f9aed44"
  },
  "lane-traffic": {
   "box": [
@@ -2205,7 +2205,7 @@ window.MOTION_FIT = {
    1,
    0.6702
   ],
-  "src": "13c85f1e4b13491c"
+  "src": "b458b497d7e1b05a"
  },
  "mexico-scale": {
   "box": [
@@ -2268,7 +2268,7 @@ window.MOTION_FIT = {
    0.8344,
    0.8602
   ],
-  "src": "5bd1cd02a1995101"
+  "src": "d2dace3e75910289"
  },
  "timeline": {
   "box": [
@@ -2286,7 +2286,7 @@ window.MOTION_FIT = {
    0.68,
    0.9328
   ],
-  "src": "511a43e3ab20f46c"
+  "src": "830bbfe3907513f3"
  },
  "venn-sprite": {
   "box": [
@@ -2393,12 +2393,13 @@ function applyStorySpine(){
   if(['bonus','map','lesson'].includes(ty))sl.dataset.hidden='1';
   if(ty==='settings')return;
   const year=cfg?.year||'2026',weights=cfg?.venn||[1,1,1];sl.dataset.year=year;sl.dataset.venn=JSON.stringify(weights);
-  const old=sl.querySelector('.v3-tracker');if(old)old.remove();
+  const old=sl.querySelector('.v3-tracker');if(old)old.remove();if(ty==='cover')return;
   const tracker=document.createElement('div');tracker.className='v3-tracker';tracker.setAttribute('aria-label',year+': architecture '+weights[0]+', theater '+weights[1]+', technology '+weights[2]);
   tracker.innerHTML='<span class="v3-year">'+year.replace('–','–<br>')+'</span><svg viewBox="0 0 190 115" aria-hidden="true">'+weights.map((w,i)=>{const x=[66,118,92][i],y=[40,40,77][i],r=12+24*Math.sqrt(w);return `<circle cx="${x}" cy="${y}" r="${r}" fill="${colors[i]}" fill-opacity=".15" stroke="${colors[i]}" stroke-width="2"/><g transform="translate(${x},${y}) scale(${.4+.65*Math.sqrt(w)})" style="shape-rendering:crispEdges">${icons[i]}</g>`;}).join('')+'</svg>';sl.append(tracker);
  });
  if(!document.getElementById('v3-style')){const st=document.createElement('style');st.id='v3-style';st.textContent=`
  #journey,.journey-print,.story-chapter-label{display:none!important}
+ .slide[data-type="cover"] .v3-tracker{display:none!important}
  .v3-tracker{position:absolute;right:2.5%;bottom:2.5%;width:260px;height:130px;display:flex;align-items:center;justify-content:flex-end;gap:8px;background:rgba(17,14,13,.9);border-radius:12px;padding:4px 10px;box-sizing:border-box;z-index:20;pointer-events:none}
  .v3-tracker svg{width:150px;height:115px;flex-shrink:0}.v3-year{color:#e0d7ca;font:500 28px/1.1 var(--font);max-width:96px;text-align:right}
  .story-v3 .slide[data-type="cover"] .event-tag,.story-v3 .slide[data-type="cover"] .talk-subtitle,.story-v3 .slide[data-type="cover"] .speaker-co{display:none}
@@ -2407,6 +2408,30 @@ function applyStorySpine(){
  .story-v3 .story-stage .case-title{max-width:calc(100% - 370px)}
  `;document.head.append(st);}
 }
+// Original procedural sound design, Alex Coulombe Presents, 2026. No sampled/third-party audio.
+// Pure deterministic PCM generator shared by WebAudio and both offline MP4 exporters.
+(function(root){
+ if(typeof window==='object'){
+  const q=new URLSearchParams(location.search);let unlocked=false;
+  window._sdSfxMuted=q.has('mute')||q.get('audio')==='off';
+  window._sdSoundAllowed=()=>unlocked&&!window._sdSfxMuted&&!q.has('reduced')&&!q.has('static')&&!q.has('print')&&!q.has('shot')&&!matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for(const type of ['pointerdown','keydown','touchstart'])addEventListener(type,e=>{if(e.isTrusted)unlocked=true;},{capture:true,passive:true});
+  window.setMotionMuted=value=>{window._sdSfxMuted=!!value;if(value)window._killAllSfx?.();};
+ }
+ const RATE=48000,TAU=2*Math.PI;
+ function samples(c,rate=RATE){const dur=c.duration||({honk:.28,pass:1.2,merge:.85,pop:.18,snap:.09,projector:3.8}[c.kind]||.2),a=new Float32Array(Math.ceil(dur*rate));let seed=24681357,phase=0,low=0;const pitch=c.pitch||1;
+  for(let i=0;i<a.length;i++){const t=i/rate,u=t/dur;seed=(Math.imul(seed,1664525)+1013904223)|0;const noise=(seed>>>0)/2147483648-1;low+=.14*(noise-low);let v=0;
+   if(c.kind==='honk'){const f=350*pitch;v=.09*(Math.sin(TAU*f*t)+.65*Math.sin(TAU*440*pitch*t)+.15*Math.sin(TAU*3*f*t))*Math.min(1,t/.012,(dur-t)/.05);}
+   else if(c.kind==='pass'||c.kind==='merge'){phase+=TAU*(c.kind==='pass'?150-80*u:90+100*u)/rate;v=(.055*Math.sin(phase)+.08*low)*Math.sin(Math.PI*u)**2;}
+   else if(c.kind==='projector'){const pulse=Math.exp(-((t*18)%1)*17);v=.06*(noise-low)*pulse*Math.min(1,t/.12,(dur-t)/.2);}
+   else if(c.kind==='pop'){phase+=TAU*(950*Math.exp(-t*22)+130)/rate;v=.15*Math.sin(phase)*Math.exp(-t*34)*Math.min(1,t/.004);}
+   else if(c.kind==='snap'){v=.15*(noise-low)*Math.exp(-t*70)*Math.min(1,t/.002);}
+   a[i]=v*(c.gain??1);
+  }return a;
+ }
+ function mix(cues,duration,rate=RATE){const a=new Float32Array(Math.ceil(duration*rate));for(const c of cues){const s=samples(c,rate),off=Math.round(c.t*rate);for(let i=0;i<s.length&&i+off<a.length;i++)if(i+off>=0)a[i+off]+=s[i];}for(let i=0;i<a.length;i++)a[i]=Math.max(-.85,Math.min(.85,a[i]));return a;}
+ const api={RATE,samples,mix};if(typeof module==='object'&&module.exports)module.exports=api;else root.SDMotionSfx=api;
+})(typeof window==='object'?window:globalThis);
 // ── TALK END ──
 </script>
 <script>
@@ -3966,7 +3991,7 @@ const _activeAudioCtxs=new Set();
 {const _OAC=window.AudioContext||window.webkitAudioContext;const _PAC=function(...a){const c=new _OAC(...a);_activeAudioCtxs.add(c);const oc=c.close.bind(c);c.close=function(){_activeAudioCtxs.delete(c);return oc();};return c;};_PAC.prototype=_OAC.prototype;window.AudioContext=_PAC;if(window.webkitAudioContext)window.webkitAudioContext=_PAC;}
 window._killAllSfx=function(){_activeAudioCtxs.forEach(c=>{try{c.close();}catch(e){}});_activeAudioCtxs.clear();_sfxCtx=null;(window._sfxKillHooks||[]).forEach(fn=>{try{fn();}catch(e){}});};window._sfxKillHooks=[];
 let _sfxCtx=null;
-function sfxCtx(){if(!_sfxCtx)_sfxCtx=new(window.AudioContext||window.webkitAudioContext)();if(_sfxCtx.state==='suspended')_sfxCtx.resume().catch(()=>{});return _sfxCtx;}
+function sfxCtx(){if(!window._sdSoundAllowed?.())return null;if(!_sfxCtx)_sfxCtx=new(window.AudioContext||window.webkitAudioContext)();if(_sfxCtx.state==='suspended')_sfxCtx.resume().catch(()=>{});return _sfxCtx;}
 function playWhoosh(){try{const c=sfxCtx(),t=c.currentTime;const bufLen=c.sampleRate*0.25;const buf=c.createBuffer(1,bufLen,c.sampleRate);const d=buf.getChannelData(0);for(let i=0;i<bufLen;i++)d[i]=Math.random()*2-1;const s=c.createBufferSource();s.buffer=buf;const bp=c.createBiquadFilter();bp.type='bandpass';bp.frequency.value=900;bp.Q.value=0.6;const g=c.createGain();g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(0.08,t+0.04);g.gain.exponentialRampToValueAtTime(0.001,t+0.22);s.connect(bp);bp.connect(g);g.connect(c.destination);s.start(t);s.stop(t+0.25);}catch(e){}}
 function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.setValueAtTime(72,t);o.frequency.exponentialRampToValueAtTime(38,t+.18);o.connect(g);g.connect(c.destination);g.gain.setValueAtTime(.007,t);g.gain.exponentialRampToValueAtTime(.001,t+.22);o.start(t);o.stop(t+.23);}catch(e){}}
 
@@ -4057,7 +4082,7 @@ function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),
     busy(){return ts.size>0||iv.size>0||frames>0;},stop(){frames=0;ts.forEach(clearTimeout);ts.clear();iv.forEach(clearInterval);iv.clear();gen++;}};}
   let _audio=null;
   // The deck's _killAllSfx() closes every AudioContext on slide change; hand out a fresh one after that.
-  function audio(){if(INSTANT)return null;try{if(!_audio||_audio.state==='closed')_audio=new(window.AudioContext||window.webkitAudioContext)();if(_audio.state==='suspended')_audio.resume().catch(()=>{});return _audio;}catch(e){return null;}}
+  function audio(){if(INSTANT||!window._sdSoundAllowed?.())return null;try{if(!_audio||_audio.state==='closed')_audio=new(window.AudioContext||window.webkitAudioContext)();if(_audio.state==='suspended')_audio.resume().catch(()=>{});return _audio;}catch(e){return null;}}
   function call(r,fn,...a){const f=r.inst&&r.inst[fn];if(typeof f!=='function')return;try{return f.apply(r.inst,a);}catch(e){console.error('SD: '+r.id+'.'+fn+'() threw',e);}}
   function resolveSteps(def,c,props){const n=c.steps!=null?c.steps:(typeof def.steps==='function'?def.steps(props):def.steps);return Math.max(0,Math.floor(+n||0));}
   const esc=x=>String(x).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -6269,13 +6294,11 @@ function arm(sl){if(!sl)return;sl.querySelectorAll('iframe[data-motion-base]').f
 function rest(sl){if(!sl)return;sl.querySelectorAll('iframe[data-motion-base]').forEach(f=>{f.setAttribute('src',f.dataset.motionBase+'?static');});}
 let last=null;new MutationObserver(()=>{const a=document.querySelector('#deck .slide.active');if(a!==last){rest(last);arm(a);last=a;}}).observe(document.getElementById('deck'),{subtree:true,attributes:true,attributeFilter:['class']});
 const a0=document.querySelector('#deck .slide.active');if(a0){arm(a0);last=a0;}
-// Sound cues: a motion graphic on a live play posts {sdMotionSfx:[{t,kind,pitch}]} (lane-traffic's honks). They are scheduled on the
-// deck's own audio clock (sfxCtx), so goTo() -> _killAllSfx() silences the rest when you leave the slide; ?reduced never plays them.
-addEventListener('message',e=>{const c=e.data&&e.data.sdMotionSfx;if(!Array.isArray(c)||reduced)return;
-  const f=[...document.querySelectorAll('#deck .slide.active iframe')].find(x=>x.contentWindow===e.source);if(!f)return;
-  try{const ctx=sfxCtx(),t0=ctx.currentTime+.05;c.forEach(q=>{if(q.kind!=='honk')return;const p=q.pitch||1,s=t0+q.t,g=ctx.createGain(),lp=ctx.createBiquadFilter();
-    lp.type='lowpass';lp.frequency.value=2200;lp.connect(g);g.connect(ctx.destination);g.gain.setValueAtTime(0,s);g.gain.linearRampToValueAtTime(.09,s+.012);g.gain.setValueAtTime(.09,s+.23);g.gain.linearRampToValueAtTime(0,s+.28);
-    [350,440].forEach(f0=>{const o=ctx.createOscillator();o.type='square';o.frequency.value=f0*p;o.connect(lp);o.start(s);o.stop(s+.3);});});}catch(err){}});
+// Only the active frame may schedule original procedural cues on the deck audio clock.
+addEventListener('message',e=>{const cues=e.data&&e.data.sdMotionSfx;if(!Array.isArray(cues)||reduced||!window._sdSoundAllowed())return;
+ const f=[...document.querySelectorAll('#deck .slide.active iframe')].find(x=>x.contentWindow===e.source);if(!f)return;
+ try{const ctx=sfxCtx();if(!ctx)return;const start=ctx.currentTime+.02;for(const q of cues){const pcm=SDMotionSfx.samples(q,ctx.sampleRate),buf=ctx.createBuffer(1,pcm.length,ctx.sampleRate);buf.copyToChannel(pcm,0);const src=ctx.createBufferSource();src.buffer=buf;src.connect(ctx.destination);src.start(start+q.t);}}catch(_){}
+});
 })();
 </script>
 </body>

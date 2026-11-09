@@ -1,3 +1,4 @@
+import { writeMotionSfx } from './motion_sfx.mjs';
 // Render seekable HTML motion graphics (media/motion/*.html, or iframe slide modules used in talk/sections.js, exposing
 // window.seek(sec) + window.MOTION_END) to MP4 + poster PNG.
 // Deterministic: every frame is seek()-ed, never screen-recorded, so output is identical run to run.
@@ -56,18 +57,12 @@ for (const n of names) {
   fs.copyFileSync(path.join(tmp, String(frames).padStart(5, '0') + '.png'), poster);
   // Sound cues (window.MOTION_SFX = [{ t, kind: 'honk', pitch }]): synthesized with ffmpeg (no audio assets), mixed at their times.
   const sfx = await page.evaluate(() => window.MOTION_SFX || null);
-  const aud = sfx && sfx.length ? path.join(tmp, 'sfx.m4a') : null;
+  const aud = sfx && sfx.length ? path.join(tmp, 'sfx.wav') : null;
   if (aud) {
-    const dur = frames / FPS + HOLD, ins = [], fl = [];
-    sfx.forEach((c, i) => {  // a car horn: two detuned square tones, 0.28 s, soft attack/release, low-passed
-      const f1 = (350 * (c.pitch || 1)).toFixed(1), f2 = (440 * (c.pitch || 1)).toFixed(1);
-      ins.push('-f', 'lavfi', '-i', `aevalsrc=0.16*(sgn(sin(2*PI*${f1}*t))+sgn(sin(2*PI*${f2}*t)))*min(1\\,t/0.012)*min(1\\,(0.28-t)/0.05):s=48000:d=0.28`);
-      fl.push(`[${i}]lowpass=f=2200,adelay=${Math.round(c.t * 1000)}:all=1[a${i}]`);
-    });
-    execFileSync('ffmpeg', ['-y', '-loglevel', 'error', ...ins, '-filter_complex', fl.join(';') + ';' + sfx.map((_, i) => `[a${i}]`).join('') + `amix=inputs=${sfx.length}:normalize=0,apad,atrim=0:${dur.toFixed(3)}[out]`, '-map', '[out]', '-c:a', 'aac', '-b:a', '128k', aud]);
+    writeMotionSfx(aud,sfx,frames/FPS+HOLD);
   }
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', String(FPS), '-i', path.join(tmp, '%05d.png'), ...(aud ? ['-i', aud] : []),
-    '-vf', `tpad=stop_mode=clone:stop_duration=${HOLD},format=yuv420p`, '-c:v', 'libx264', '-preset', 'slow', '-crf', '20', ...(aud ? ['-c:a', 'copy', '-shortest'] : []), '-movflags', '+faststart', mp4]);
+    '-vf', `tpad=stop_mode=clone:stop_duration=${HOLD},format=yuv420p`, '-c:v', 'libx264', '-preset', 'slow', '-crf', '20', ...(aud ? ['-c:a','aac','-b:a','160k','-shortest'] : []), '-movflags', '+faststart', mp4]);
   fs.rmSync(tmp, { recursive: true, force: true });
   console.log(`${n}: ${frames + 1} frames @${FPS}fps -> ${path.relative(ROOT, mp4)} (${(fs.statSync(mp4).size / 1e6).toFixed(1)} MB)`);
 }

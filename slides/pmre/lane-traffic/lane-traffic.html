@@ -157,19 +157,23 @@ cars.forEach((c,i)=>{
   const outer=E('g',{},cg),v=PX.vehicle(outer,c.kind,c.col,CS);
   const sw=t=>{if(c.swerve==null)return 0;const k=(t-c.swerve)/.6;return k<0||k>1?0:Math.sin(Math.PI*k);};
   track(outer,END,t=>{const x=X(c,t),s=sw(t);return{transform:`translate(${x.toFixed(1)}px,${(c.y-26*s).toFixed(1)}px) rotate(${(-6*s*c.dir).toFixed(2)}deg) scale(${c.dir},1)`};});
-  c.honks.forEach((h,j)=>{const b=PX.honkBubble(hg,c.kind==='truck'&&j===0?'HONK':'HONK!');
-    track(b,END,t0=>{const k0=(t0-h)/.8,t=clamp(t0,h,h+.8),k=clamp(k0,0,1);  // hidden frames park at the nearest visible pose, so no in-between frame flies
-      if(k0<0||k0>1)return{opacity:0,transform:pose(t,k)};return{opacity:k>.8?+((1-k)/.2).toFixed(3):1,transform:pose(t,k)};});
-    function pose(t,k){const x=clamp(X(c,t)+c.dir*(c.len/2-10),288+70,1632-70),pop=  // bubbles stay in the safe zone
-      k<.15?.6+.4*k/.15+.15*Math.sin(k/.15*Math.PI):1;
-      return`translate(${x.toFixed(1)}px,${(c.y-62-26*sw(t)).toFixed(1)}px) scale(${pop.toFixed(3)})`;}
-    SFX.push({t:+h.toFixed(2),kind:'honk',pitch:c.kind==='truck'?.8:1});});
+  const speechIndex=[0,1,3,4].indexOf(i);if(speechIndex>=0){const h=[10.62,12.6,14.9,17.45][speechIndex],label=['Honk!','Stay in your lane!','What are you doing here?!','You suck!'][speechIndex],width=[172,420,610,270][speechIndex];
+    const b=E('g',{'data-speech':label},hg);
+    E('rect',{x:-width/2,y:-74,width,height:62,rx:10,fill:'#eee2cf',stroke:'#141110','stroke-width':4},b);
+    E('path',{d:'M-15-14L0 5L15-14',fill:'#eee2cf',stroke:'#141110','stroke-width':3},b);
+    const text=E('text',{x:0,y:-31,'text-anchor':'middle',fill:'#141110','font-size':36,'font-weight':800},b);text.textContent=label;
+    const anchor=clamp(X(c,h)+c.dir*(c.len/2-10),288+width/2+25,1632-width/2-25),y=c.y-62;
+    track(b,END,t=>{const k=(t-h)/1.8,pop=1+.08*Math.sin(Math.PI*clamp(k/.1,0,1));return{opacity:k<0||k>1?0:k>.88?(1-k)/.12:1,transform:`translate(${anchor}px,${y}px) scale(${pop})`};});
+    SFX.push({t:h,kind:'honk',pitch:c.kind==='truck'?.8:1});
+  }
+  if(i<6)SFX.push({t:c.tc-.45,kind:'pass',pitch:c.kind==='truck'?.8:1,gain:.7});
 });
 // ── Beat 6: the venn-sprite sequence, verbatim, starting at T0 ──
 PX.vennScene(document.getElementById('venn'),{END,T0,curl:true,handoff:true,big:true});
 const hero=PX.sprite(document.getElementById('hero'),{withBeard:false});
 PX.drive(hero,END,at,t=>SC*(1-(1-VS)*ease(clamp((t-27)/2,0,1))));  // shrinks to the venn hero's size during the curl hop
 track(hero.wrap,END,t=>({opacity:t<0.3?0:t<0.9?+((t-.3)/.6).toFixed(3):t<T0+2.6?1:0}));  // hands over to the venn hero at the temple
+SFX.push({t:21.6,kind:'merge'},{t:26.6,kind:'merge'},{t:29.7,kind:'pop'},{t:39.4,kind:'pop'});
 window.MOTION_END=END; window.MOTION_SFX=SFX.sort((a,b)=>a.t-b.t);
 })();
 </script>

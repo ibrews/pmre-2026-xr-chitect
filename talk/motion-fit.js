@@ -16,7 +16,7 @@ window.MOTION_FIT = {
    0.7069,
    0.96
   ],
-  "src": "3cf64b32f1e01385"
+  "src": "dccce3fc3621b691"
  },
  "frame-to-room": {
   "box": [
@@ -70,7 +70,7 @@ window.MOTION_FIT = {
    0.9265,
    0.9454
   ],
-  "src": "378101681501d63c"
+  "src": "4bf3b0ed3f9aed44"
  },
  "lane-traffic": {
   "box": [
@@ -79,7 +79,7 @@ window.MOTION_FIT = {
    1,
    0.6702
   ],
-  "src": "13c85f1e4b13491c"
+  "src": "b458b497d7e1b05a"
  },
  "mexico-scale": {
   "box": [
@@ -142,7 +142,7 @@ window.MOTION_FIT = {
    0.8344,
    0.8602
   ],
-  "src": "5bd1cd02a1995101"
+  "src": "d2dace3e75910289"
  },
  "timeline": {
   "box": [
@@ -160,7 +160,7 @@ window.MOTION_FIT = {
    0.68,
    0.9328
   ],
-  "src": "511a43e3ab20f46c"
+  "src": "830bbfe3907513f3"
  },
  "venn-sprite": {
   "box": [

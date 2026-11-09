@@ -26,7 +26,7 @@ if SYNC_GUARD + "const r=await fetch('notes-config.json'" not in s:
 # Sound is optional; absorb that asynchronous close/resume race just like synchronous audio failures.
 s = s.replace("_sfxCtx.resume();", "_sfxCtx.resume().catch(()=>{});")
 s = s.replace("_audio.resume();", "_audio.resume().catch(()=>{});")
-talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "journey.js", "motion-fit.js", "safezone.js", "media-fit.js", "story.js"))
+talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "journey.js", "motion-fit.js", "safezone.js", "media-fit.js", "story.js", "motion-sfx.js"))
 
 def patch(marker, anchor, new, count=1):
     """Replace anchor with new unless marker already present."""
@@ -152,13 +152,11 @@ function arm(sl){if(!sl)return;sl.querySelectorAll('iframe[data-motion-base]').f
 function rest(sl){if(!sl)return;sl.querySelectorAll('iframe[data-motion-base]').forEach(f=>{f.setAttribute('src',f.dataset.motionBase+'?static');});}
 let last=null;new MutationObserver(()=>{const a=document.querySelector('#deck .slide.active');if(a!==last){rest(last);arm(a);last=a;}}).observe(document.getElementById('deck'),{subtree:true,attributes:true,attributeFilter:['class']});
 const a0=document.querySelector('#deck .slide.active');if(a0){arm(a0);last=a0;}
-// Sound cues: a motion graphic on a live play posts {sdMotionSfx:[{t,kind,pitch}]} (lane-traffic's honks). They are scheduled on the
-// deck's own audio clock (sfxCtx), so goTo() -> _killAllSfx() silences the rest when you leave the slide; ?reduced never plays them.
-addEventListener('message',e=>{const c=e.data&&e.data.sdMotionSfx;if(!Array.isArray(c)||reduced)return;
-  const f=[...document.querySelectorAll('#deck .slide.active iframe')].find(x=>x.contentWindow===e.source);if(!f)return;
-  try{const ctx=sfxCtx(),t0=ctx.currentTime+.05;c.forEach(q=>{if(q.kind!=='honk')return;const p=q.pitch||1,s=t0+q.t,g=ctx.createGain(),lp=ctx.createBiquadFilter();
-    lp.type='lowpass';lp.frequency.value=2200;lp.connect(g);g.connect(ctx.destination);g.gain.setValueAtTime(0,s);g.gain.linearRampToValueAtTime(.09,s+.012);g.gain.setValueAtTime(.09,s+.23);g.gain.linearRampToValueAtTime(0,s+.28);
-    [350,440].forEach(f0=>{const o=ctx.createOscillator();o.type='square';o.frequency.value=f0*p;o.connect(lp);o.start(s);o.stop(s+.3);});});}catch(err){}});
+// Only the active frame may schedule original procedural cues on the deck audio clock.
+addEventListener('message',e=>{const cues=e.data&&e.data.sdMotionSfx;if(!Array.isArray(cues)||reduced||!window._sdSoundAllowed())return;
+ const f=[...document.querySelectorAll('#deck .slide.active iframe')].find(x=>x.contentWindow===e.source);if(!f)return;
+ try{const ctx=sfxCtx();if(!ctx)return;const start=ctx.currentTime+.02;for(const q of cues){const pcm=SDMotionSfx.samples(q,ctx.sampleRate),buf=ctx.createBuffer(1,pcm.length,ctx.sampleRate);buf.copyToChannel(pcm,0);const src=ctx.createBufferSource();src.buffer=buf;src.connect(ctx.destination);src.start(start+q.t);}}catch(_){}
+});
 })();
 </script>
 """

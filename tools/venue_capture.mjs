@@ -20,6 +20,7 @@ import { createRequire } from 'module';
 import { execFileSync } from 'child_process';
 import crypto from 'crypto'; import fs from 'fs'; import path from 'path'; import os from 'os';
 import { fileURLToPath, pathToFileURL } from 'url';
+import { writeMotionSfx } from './motion_sfx.mjs';
 import { motionHash, motionSource } from './motion_sources.mjs';
 
 const require = createRequire(import.meta.url);
@@ -417,7 +418,7 @@ export function renderLocalVideoSet(videos,st,opts,cache){
 // Deterministic render of a seekable motion graphic, composited into its on-slide (safe-zone) rect over the deck bg.
 async function renderIframeMotion(p, fr, st, opts, cache) {
   const srcPath = fileURLToPath(fr.abs.split(/[?#]/)[0]);
-  const deps = [srcPath, ...fs.readdirSync(path.dirname(srcPath)).filter(f => f.endsWith('.js')).map(f => path.join(path.dirname(srcPath), f))].filter(f => fs.existsSync(f));
+  const deps = [path.join(ROOT,'talk/motion-sfx.js'),srcPath, ...fs.readdirSync(path.dirname(srcPath)).filter(f => f.endsWith('.js')).map(f => path.join(path.dirname(srcPath), f))].filter(f => fs.existsSync(f));
   const key = sha(JSON.stringify([deps.map(f => sha(fs.readFileSync(f))), sha(fs.readFileSync(st.bg)), st.motionChrome?sha(fs.readFileSync(st.motionChrome)):null, fr.box.map(Math.round), new URL(fr.abs).search, new URL(fr.abs).hash, opts.fps, Object.fromEntries(Object.entries(st.picks||{}).filter(([k])=>k!=='cut')), 'seek-v3-chrome']));
   const cdir = path.join(cache, 'video', 'seek-' + key.slice(0, 24)); const mp4 = path.join(cdir, 'video.mp4'), poster = path.join(cdir, 'poster.png'), metaF = path.join(cdir, 'meta.json');
   if (fs.existsSync(mp4) && fs.existsSync(poster) && fs.existsSync(metaF)) return { cache: mp4, poster, duration: probeDur(mp4), cached: true, ...JSON.parse(fs.readFileSync(metaF, 'utf8')) };
@@ -444,19 +445,15 @@ async function renderIframeMotion(p, fr, st, opts, cache) {
   const sfx = await p.evaluate(() => window.MOTION_SFX || null); const HOLD = 1;
   let aud = null;
   if (sfx && sfx.length) {
-    aud = path.join(tmp, 'sfx.m4a'); const dur = frames / opts.fps + HOLD, ins = [], fl = [];
-    sfx.forEach((c, i) => { const f1 = (350 * (c.pitch || 1)).toFixed(1), f2 = (440 * (c.pitch || 1)).toFixed(1);
-      ins.push('-f', 'lavfi', '-i', `aevalsrc=0.16*(sgn(sin(2*PI*${f1}*t))+sgn(sin(2*PI*${f2}*t)))*min(1\\,t/0.012)*min(1\\,(0.28-t)/0.05):s=48000:d=0.28`);
-      fl.push(`[${i}]lowpass=f=2200,adelay=${Math.round(c.t * 1000)}:all=1[a${i}]`); });
-    execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-threads', '4', ...ins, '-filter_complex', fl.join(';') + ';' + sfx.map((_, i) => `[a${i}]`).join('') + `amix=inputs=${sfx.length}:normalize=0,apad,atrim=0:${dur.toFixed(3)}[out]`, '-map', '[out]', '-c:a', 'aac', '-b:a', '128k', aud]);
+    aud=path.join(tmp,'sfx.wav');writeMotionSfx(aud,sfx,frames/opts.fps+HOLD);
   }
   fs.mkdirSync(cdir, { recursive: true });
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-threads', '4', '-loop', '1', '-framerate', String(opts.fps), '-i', st.bg, '-framerate', String(opts.fps), '-i', path.join(tmp, '%05d.png'), ...(st.motionChrome?['-loop','1','-framerate',String(opts.fps),'-i',st.motionChrome]:[]), ...(aud ? ['-i', aud] : []),
-    '-filter_complex', `[1:v]scale=${w}:${h}:flags=lanczos[f];[0:v][f]overlay=${x}:${y}:shortest=1${st.motionChrome?'[base];[base][2:v]overlay=0:0:shortest=1':''},tpad=stop_mode=clone:stop_duration=${HOLD},format=yuv420p[v]`, '-map', '[v]', ...(aud ? ['-map', st.motionChrome?'3:a':'2:a', '-c:a', 'copy'] : []),
+    '-filter_complex', `[1:v]scale=${w}:${h}:flags=lanczos[f];[0:v][f]overlay=${x}:${y}:shortest=1${st.motionChrome?'[base];[base][2:v]overlay=0:0:shortest=1':''},tpad=stop_mode=clone:stop_duration=${HOLD},format=yuv420p[v]`, '-map', '[v]', ...(aud ? ['-map', st.motionChrome?'3:a':'2:a', '-c:a','aac','-b:a','160k'] : []),
     '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-r', String(opts.fps), ...(aud ? ['-shortest'] : []), '-movflags', '+faststart', mp4]);
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-threads', '4', '-sseof', '-0.2', '-i', mp4, '-update', '1', '-frames:v', '1', poster]);  // = the held final frame
   fs.rmSync(tmp, { recursive: true, force: true });
-  const meta = { motionEnd: end, audio: !!aud, sfx: sfx ? sfx.length : 0, textAudit: audit };
+  const meta = { motionEnd: end, audio: !!aud, audioKind: aud?'original procedural motion SFX':'silent', sfx: sfx ? sfx.length : 0, textAudit: audit };
   fs.writeFileSync(metaF, JSON.stringify(meta));
   return { cache: mp4, poster, duration: probeDur(mp4), ...meta };
 }
