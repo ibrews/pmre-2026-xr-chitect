@@ -235,6 +235,13 @@ function pageHideNative(on) {
     [...N.i.map(i => `[data-vx-img="${i}"]`), ...N.s.map(i => `[data-vx-svg="${i}"]`)].join(',') + (N.i.length + N.s.length ? '{visibility:hidden!important}' : '') + (N.f ? '#deck .slide.active iframe{visibility:hidden!important}' : '') + (N.v ? '#deck .slide.active video{visibility:hidden!important}' : '');
 }
 
+// Source sequences advance on their own clock; freeze the requested beat before export settlement.
+// Otherwise a still first beat can advance into the next video while the recorder waits for stability.
+export async function settleSourceSequence(page, id) {
+  if (id !== 'pmre/source-sequence') return;
+  await page.evaluate(() => SD.completeCurrent(allSlides[current]));
+}
+
 // ---------- node side ----------
 export async function capture(opts) {
   const { chromium } = loadPlaywright();
@@ -268,6 +275,7 @@ export async function capture(opts) {
     const nStates = sl.steps + 1;
     for (let k = 0; k < nStates; k++) {
       if (k > 0) await page.evaluate(()=>{const ss=slideSteps.get(allSlides[current]);if(ss&&ss.current<ss.steps.length){ss.steps[ss.current++]();updateStepIndicator();}});
+      await settleSourceSequence(page, sl.module?.id);
       n++; const NN = String(n).padStart(2, '0'), letter = 'abcdefghijklmnopqrstuvwxyz'[k];
       const st = { n, NN, letter, deckIndex: sl.index, step: k, nSteps: sl.steps, type: sl.type, title: sl.title, kind: 'static' };
       const probe = await page.evaluate(() => { const s = allSlides[current]; return { html: s.outerHTML.length > 2e6 ? s.outerHTML.slice(0, 2e6) : s.outerHTML, iframe: [...s.querySelectorAll('iframe')].some(f => /media\/motion\/|#sdp=|\/slides\//.test(f.dataset.motionBase || f.getAttribute('src') || '')) }; });
