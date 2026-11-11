@@ -1,8 +1,10 @@
+> November 11 Elizabeth review: full **80:00**, medium **40:55**, 20/20t **33:30** (48:30 including 15 minutes Q&A). Family footage, the queue selfie, built museum photo, AI placeholder callbacks and all niche examples are removed from every cut. Credits distinguish photography, visualization, venue and project roles; Brockman uses Rice’s Brandon Martin photograph. The final QR reads “Explore our immersive projects · agilelens.com”. See [review decisions and source map](talk/ELIZABETH-REVIEW.md).
+
 # Architect to XR-chitect
 
 Alex Coulombe Presents at PMRE 2026, November 19, Las Vegas. A chronological story about architecture, theater and emerging technology becoming one career. Source lives on `story/v3-chronological`; main remains unchanged.
 
-Full is the default **80:00** rehearsal. Medium (`30`) is **45:05**, short (`20` / `20t`) **34:35**. Short plus 15 minutes Q&A is **49:35**. These are authored budgets, including media playback, not a measured rehearsal. AI off gives full **76:55**, medium **43:25**, short unchanged. [Running order and notes](talk/REHEARSAL.md) · [V3 source guide](talk/STORY-V3.md).
+Full is the default **80:00** rehearsal. Medium (`30`) is **40:55**, short (`20` / `20t`) **33:30**. Short plus 15 minutes Q&A is **48:30**. These are authored budgets, including media playback, not a measured rehearsal. AI and niche callback slides/options are removed in this revision. [Running order and notes](talk/REHEARSAL.md) · [V3 source guide](talk/STORY-V3.md).
 
 ## Quickstart
 
@@ -18,7 +20,7 @@ Open `http://127.0.0.1:8791/?cut=full&safe=70&theme=house`. Arrow keys advance s
 
 1. Follow the year and weighted architecture/theater/technology icons through the story.
 2. At Picasso, reveal the 1896 self-portrait, then the catalog-matched color *Facing Death*, then dates and ages 14–15 and 90. Notes connect this to deliberate practice.
-3. Press **O** to select the short cut, choose a real-person niche example (`niche=devon|miranda|natalia|matt`), skip AI, or include the two extra Designing Naturally workflow demonstrations (`workflows=extended`).
+3. Press **O** to select the short cut, include the two extra Designing Naturally workflow demonstrations (`workflows=extended`).
 4. Press **X** to hide or restore a slide locally. **Shift+X** includes hidden slides for review. These choices never alter source or exports.
 5. Press **N** for presenter notes or **Shift+N** for the notes drawer. `?safe=70&safezone` shows the venue safe box.
 
@@ -52,12 +54,12 @@ The cover omits the year/Venn tracker. Picasso’s three-click-state comparison 
 
 Motion sound design is original procedural synthesis by Alex Coulombe Presents (2026), with no sampled or third-party audio. `talk/motion-sfx.js` generates the same PCM samples for live WebAudio and `tools/motion_sfx.mjs` offline WAV generation. Both MP4 renderers mix those cues into their separate venue videos: car/engine passes and honks, road merges, Venn pops, projector clatter and hard-cut snaps. Live sounds require a trusted pointer/touch/key interaction, stop on slide exit and stay silent in static/reduced/export views. Add `?mute` or `?audio=off` to silence all deck SFX; `window.setMotionMuted(true)` also stops pending cues. This does not change source videos’ existing muted playback. Venue cue sheets identify the baked SFX audio tracks.
 
-The traffic graphic includes four staggered car speech bubbles, each held 1.8 seconds with a paired horn. Timings remain full80:00 / medium45:05 / short34:35.
+The traffic graphic includes four staggered car speech bubbles, each held 1.8 seconds with a paired horn. Timings remain full80:00 / medium40:55 / short33:30.
 
 Venue export captures transparent title/credit/tracker chrome above video-backed canvases as well as normal videos, preserving the complete source credit on sequence movie posters and playback. Captured overlays exclude presenter navigation and step controls.
 
 ## November 9 verified facts
 
-Speaker notes cite career dates, the Miranda quotation, AU 2017, TCG 2017 in Portland with the Brockman model, Perfect Day Mexico 2025, RSC rehearsal R&D in 2024–2025, SIGGRAPH 2025/2026 and FMX 2026 roles, the California/Miami 2026 tour, and the Sina Bernini Bristol hotel scan. The supplied monochrome 1972 Picasso was a different work. The displayed color *Facing Death* matches the June 30, 1972 catalog. [Additional source and portrait manifest](media/v3-fix3/manifest.json). Exact dates of the first Princeton appointment and Yu-Jun Yeh’s hiring are omitted because they remain undocumented. No relative PMRE speaker order is claimed.
+Speaker notes cite career dates, the Miranda quotation, AU 2017, TCG 2017 in Portland with the Brockman model, Perfect Day Mexico 2025, RSC rehearsal R&D in 2024–2025, SIGGRAPH 2025/2026 and FMX 2026 roles, the California/Miami 2026 tour, and the Sina Bernini Bristol hotel scan. The supplied monochrome 1972 Picasso was a different work. The displayed color *Facing Death* matches the June 30, 1972 catalog. [Additional source and portrait manifest](media/v3-fix3/manifest.json). Princeton teaching is dated 2021 by the presenter. Yu-Jun Yeh’s hiring year remains undocumented and omitted. No relative PMRE speaker order is claimed.
 
 Niche options replace the default 65-second example at the same budget. The sourced combinations are facts; “best at X-plus-Y” and the Sondheim comparison are presenter opinion. Miranda is an outside example. Devon, Natalia and Matt are listed PMRE 2026 participants. `talk/story-baseline*.json` and `talk/story-plan.json` are historical source snapshots, rather than current fact status. Current wording lives in `talk/sections.js` and the generated rehearsal notes.

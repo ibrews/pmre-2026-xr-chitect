@@ -157,7 +157,7 @@ cars.forEach((c,i)=>{
   const outer=E('g',{},cg),v=PX.vehicle(outer,c.kind,c.col,CS);
   const sw=t=>{if(c.swerve==null)return 0;const k=(t-c.swerve)/.6;return k<0||k>1?0:Math.sin(Math.PI*k);};
   track(outer,END,t=>{const x=X(c,t),s=sw(t);return{transform:`translate(${x.toFixed(1)}px,${(c.y-26*s).toFixed(1)}px) rotate(${(-6*s*c.dir).toFixed(2)}deg) scale(${c.dir},1)`};});
-  const speechIndex=[0,1,3,4].indexOf(i);if(speechIndex>=0){const h=[10.62,12.6,14.9,17.45][speechIndex],label=['Honk!','Stay in your lane!','What are you doing here?!','You suck!'][speechIndex],width=[172,420,610,270][speechIndex];
+  const speechIndex=[0,1,3,4].indexOf(i);if(speechIndex>=0){const h=[10.62,12.6,14.9,17.45][speechIndex],label=['Honk!','Stay in your lane!','What are you doing here?!','Go home!'][speechIndex],width=[172,420,610,270][speechIndex];
     const b=E('g',{'data-speech':label},hg);
     E('rect',{x:-width/2,y:-74,width,height:62,rx:10,fill:'#eee2cf',stroke:'#141110','stroke-width':4},b);
     E('path',{d:'M-15-14L0 5L15-14',fill:'#eee2cf',stroke:'#141110','stroke-width':3},b);

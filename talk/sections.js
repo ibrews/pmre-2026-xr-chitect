@@ -1,4 +1,4 @@
-// PMRE v3: chronological story; verified presenter facts.
+// PMRE v3: chronological story; Elizabeth review applied.
 const TALK = {
   "coverEvent": "",
   "coverTitle": "Architect to <span class=\"xr\">XR</span>-chitect",
@@ -16,7 +16,7 @@ const TALK = {
   "closeSub": "",
   "web": "agilelens.com",
   "qr": "https://agilelens.com",
-  "qrLabel": "",
+  "qrLabel": "Explore our immersive projects · agilelens.com",
   "options": {
     "cut": {
       "label": "Length",
@@ -68,30 +68,12 @@ const TALK = {
         "off": "Off"
       }
     },
-    "ai": {
-      "label": "Current AI excitement",
-      "default": "on",
-      "choices": {
-        "on": "Include",
-        "off": "Skip"
-      }
-    },
     "workflows": {
       "label": "Extra design demonstrations",
       "default": "core",
       "choices": {
         "core": "Core story",
         "extended": "Include Designing Naturally s45 + s53"
-      }
-    },
-    "niche": {
-      "label": "Niche example",
-      "default": "devon",
-      "choices": {
-        "devon": "Devon: property media + performance",
-        "miranda": "Miranda: musical theatre + hip-hop",
-        "natalia": "Natalia: interiors + architecture + community",
-        "matt": "Matt: property media + agent branding"
       }
     }
   },
@@ -204,7 +186,7 @@ const SECTIONS = [
         "id": "hand",
         "use": "pmre/the-hand",
         "props": {},
-        "title": "One deliberate line",
+        "title": "Drawing taught me to look",
         "keep": 30,
         "year": "2005",
         "venn": [
@@ -213,7 +195,7 @@ const SECTIONS = [
           0.1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAt Syracuse we were not allowed to touch a computer for the first year. At the time it was excruciating. It made me think deliberately about every line and every line weight. With Revit you make a wall, and the lines are a byproduct. Clarity can get lost.\n\nYear: 2005. Venn weights: 1 / 0 / 0.1.\n",
+        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAt Syracuse we were not allowed to touch a computer for the first year. At the time it was excruciating. It made me think deliberately about every line and every line weight. With Revit you make a wall, and the lines are a byproduct. Clarity can get lost.\n\nYear: 2005. Venn weights: 1 / 0 / 0.1.\n\n\nElizabeth review, November 11: The diagram contrasts a carefully drawn stair opening with a generated slab that blocks the stair. Ask the audience to spot the headroom problem. The point is that learning a tool also means learning to judge its output. The building/error is an original schematic, not a real failed project. Retain because this establishes the trained eye before the software workflow.",
         "motion": "the-hand"
       },
       {
@@ -451,7 +433,7 @@ const SECTIONS = [
           "brightness": 1,
           "alt": "Xiqu Centre"
         },
-        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s9. Bing Thom Architects render of Xiqu Centre. Source notes describe testing railing height and the swoop of a wall at human scale. Paraphrase the recorded Venelin Kokalov response; do not invent a new quotation. The source places this work in the 2013–2015 FDA era; no exact contract date is asserted."
+        "notes": "⏱ ~100s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s9. Bing Thom Architects render of Xiqu Centre. Source notes describe testing railing height and the swoop of a wall at human scale. Paraphrase the recorded Venelin Kokalov response; do not invent a new quotation. The source places this work in the 2013–2015 FDA era; no exact contract date is asserted.\n\nFull-cut delivery space: Walk through one seating decision: identify the audience viewpoint, the obstruction and what a client can test at eye level. Contrast that with explaining the same question from a plan. Invite the audience to think of a view their own client cannot yet picture. Do not assert a quantified result."
       },
       {
         "id": "sightlines",
@@ -478,7 +460,7 @@ const SECTIONS = [
       {
         "id": "macbeth-built",
         "year": "2014",
-        "title": "Macbeth, in the Armory",
+        "title": "Kenneth Branagh’s Macbeth at the Park Avenue Armory",
         "use": "pmre/story-media",
         "keep": 99,
         "venn": [
@@ -489,13 +471,13 @@ const SECTIONS = [
         "storyRole": "content",
         "props": {
           "mode": "content",
-          "title": "Macbeth, in the Armory",
+          "title": "Kenneth Branagh’s Macbeth at the Park Avenue Armory",
           "src": "media/pmre/fda-macbeth-armory-vr-demo.jpg",
-          "credit": "Park Avenue Armory · Macbeth, 2014",
+          "credit": "Kenneth Branagh’s Macbeth · Park Avenue Armory · production photo from supplied deck",
           "brightness": 1,
           "alt": "Macbeth, in the Armory"
         },
-        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s37 / AU2017 s20. Separate production photo after the virtual Stonehenge model. Alex supplied early Macbeth/Park Avenue Armory work; credit production photo to Park Avenue Armory as the source deck does. Describe testing stage/audience relationships. No invented production outcome."
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s37 / AU2017 s20. Separate production photo after the virtual Stonehenge model. Alex supplied early Macbeth/Park Avenue Armory work; credit production photo to Park Avenue Armory as the source deck does. Describe testing stage/audience relationships. No invented production outcome.\n\nElizabeth review, November 11: Requested production identity, including Kenneth Branagh, is explicit. The supplied deck is the photo source; do not infer its individual photographer."
       },
       {
         "id": "shed",
@@ -545,19 +527,19 @@ const SECTIONS = [
       },
       {
         "id": "late-show",
-        "title": "Ed Sullivan Theater",
+        "title": "The Late Show at Ed Sullivan Theater by Bravo Media",
         "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
-          "title": "Ed Sullivan Theater",
+          "title": "The Late Show at Ed Sullivan Theater by Bravo Media",
           "src": "media/pmre/fda-ed-sullivan-vr-capture.mp4",
-          "credit": "Alex Coulombe / Fisher Dachs Associates",
+          "credit": "The Late Show · Ed Sullivan Theater · Bravo Media",
           "alt": "Lighting the Late Show",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~105s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nSightlines for people became sightlines for projectors at the Late Show. Architecture, theater and technology all in the same job. Tell the transition, rather than explain the technical pipeline.\n\nYear: 2015. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~105s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nSightlines for people became sightlines for projectors at the Late Show. Architecture, theater and technology all in the same job. Tell the transition, rather than explain the technical pipeline.\n\nYear: 2015. Venn weights: 1 / 1 / 1.\n\n\nElizabeth review, November 11: Bravo Media credit and requested title supplied by Elizabeth. Alex/FDA sightline role remains in the delivery context; do not present this video as solely authored by Alex.",
         "year": "2015",
         "venn": [
           1,
@@ -628,11 +610,11 @@ const SECTIONS = [
           "mode": "content",
           "title": "Equinox / just the lobby",
           "src": "media/v3-fix1/equinox.jpg",
-          "credit": "Alex Coulombe · supplied portfolio",
+          "credit": "Equinox lobby study · visualization: Alex Coulombe",
           "brightness": 1,
           "alt": "Equinox / just the lobby"
         },
-        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s34. Presenter identifies Equinox2015. Sometimes a sketch or a single panorama tells you everything you need. Do not imply a full building model was necessary. The supplied source establishes the project era, without an exact contract date."
+        "notes": "⏱ ~70s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s34. Presenter identifies Equinox2015. Sometimes a sketch or a single panorama tells you everything you need. Do not imply a full building model was necessary. The supplied source establishes the project era, without an exact contract date.\n\nElizabeth review, November 11: No architect/design firm for this specific 2015 lobby study could be established from semantic KB searches, Agile Lens portfolio, personal appearances/about pages, or targeted web searches. Do not borrow the 2019 Equinox Hotel’s Rockwell/Joyce Wang credits for an unidentified earlier lobby. Omit an unverified design-firm credit rather than guess. The visualization is from Alex’s supplied Designing Naturally s34.\n\nFull-cut delivery space: Use this as the counterexample to overbuilding: identify the lobby decision, then explain why one panorama can answer a bounded question. Let the audience compare this still with the previous full model."
       }
     ]
   },
@@ -729,7 +711,7 @@ const SECTIONS = [
           0.6
         ],
         "storyRole": "content",
-        "notes": "⏱ ~75s.\n\nThree deliberate reveals: (0) left painting only, ask “Anyone know who painted this?” (1) reveal right painting, ask “And this one?” (2) reveal dates and ages: 1896 / age 14–15, 1972 / age 90. Both are Picasso. Let the room answer before revealing the next image or the dates.\n\nAfter the hiring/curiosity story: learn the disciplines before changing their rules. Passion benefits from deliberate practice. Psychologist K. Anders Ericsson, with Ralf Krampe and Clemens Tesch-Römer, developed the deliberate-practice framework in 1993: focused, effortful work on specific weaknesses, tasks just beyond current ability, feedback and correction, often guided by a qualified teacher. Repetition alone is not the definition. Ericsson and Robert Pool explain the framework in Peak (2016); it is not a term originating in Atomic Habits.\n\nSources: Ericsson, Krampe & Tesch-Römer (1993), The Role of Deliberate Practice in the Acquisition of Expert Performance, Psychological Review100(3),363–406, https://doi.org/10.1037/0033-295X.100.3.363 and original paper https://www.moodle.is.ed.ac.uk/pluginfile.php/29313/mod_resource/content/2/ericsson%201993.pdf; Peak (Ericsson & Pool,2016). Early image: supplied Virtual Architecture RTC2021 s18, losslessly separated. Full-resolution identity review found the supplied monochrome 1972 image was a different self-portrait. The later image has been replaced by the color Self Portrait Facing Death, matched visually to the catalog below. Early work: Pablo Picasso, Self-Portrait, Barcelona, 1896, oil on canvas, Museu Picasso, MPB 110.076 (gift of Picasso, 1970). Museum catalog supplies only the year; born October 25, 1881, he was 14–15 in 1896, not 16. https://museupicassobcn.cat/en/collection/artwork/self-portrait-8 . Later work: Self Portrait Facing Death, Mougins, June 30, 1972, pencil and crayon on paper, Fuji Television Gallery, Tokyo, cataloged by Bridgeman Images, FIA6437065. He was 90 on that date. https://www.bridgemanimages.com/en-US/picasso/self-portrait-facing-death-mougins-30-june-1972-pencil-and-crayon-on-paper/pencil-and-crayon-on-paper/asset/6437065 . Artwork © Succession Picasso. Early reproduction comes from the presenter-supplied deck. Later reproduction source: https://mgpandersen.files.wordpress.com/2010/04/pablopicasso-self-portrait-1972.jpg (also indexed with the Guardian’s September 4, 2014 self-portraits article). Catalog source establishes identity; no new image license is claimed. Avoid “first and last” because these are selected works, not proof of his complete self-portrait chronology."
+        "notes": "⏱ ~75s.\n\nThree deliberate reveals: (0) left painting only, ask “Anyone know who painted this?” (1) reveal right painting, ask “And this one?” (2) reveal dates and ages: 1896 / age 14–15, 1972 / age 90. Both are Picasso. Let the room answer before revealing the next image or the dates.\n\nAfter the hiring/curiosity story: learn the disciplines before changing their rules. Passion benefits from deliberate practice. Psychologist K. Anders Ericsson, with Ralf Krampe and Clemens Tesch-Römer, developed the deliberate-practice framework in 1993: focused, effortful work on specific weaknesses, tasks just beyond current ability, feedback and correction, often guided by a qualified teacher. Repetition alone is not the definition. Ericsson and Robert Pool explain the framework in Peak (2016); it is not a term originating in Atomic Habits.\n\nSources: Ericsson, Krampe & Tesch-Römer (1993), The Role of Deliberate Practice in the Acquisition of Expert Performance, Psychological Review100(3),363–406, https://doi.org/10.1037/0033-295X.100.3.363 and original paper https://www.moodle.is.ed.ac.uk/pluginfile.php/29313/mod_resource/content/2/ericsson%201993.pdf; Peak (Ericsson & Pool,2016). Early image: supplied Virtual Architecture RTC2021 s18, losslessly separated. Full-resolution identity review found the supplied monochrome 1972 image was a different self-portrait. The later image has been replaced by the color Self Portrait Facing Death, matched visually to the catalog below. Early work: Pablo Picasso, Self-Portrait, Barcelona, 1896, oil on canvas, Museu Picasso, MPB 110.076 (gift of Picasso, 1970). Museum catalog supplies only the year; born October 25, 1881, he was 14–15 in 1896, not 16. https://museupicassobcn.cat/en/collection/artwork/self-portrait-8 . Later work: Self Portrait Facing Death, Mougins, June 30, 1972, pencil and crayon on paper, Fuji Television Gallery, Tokyo, cataloged by Bridgeman Images, FIA6437065. He was 90 on that date. https://www.bridgemanimages.com/en-US/picasso/self-portrait-facing-death-mougins-30-june-1972-pencil-and-crayon-on-paper/pencil-and-crayon-on-paper/asset/6437065 . Artwork © Succession Picasso. Early reproduction comes from the presenter-supplied deck. Later reproduction source: https://mgpandersen.files.wordpress.com/2010/04/pablopicasso-self-portrait-1972.jpg (also indexed with the Guardian’s September 4, 2014 self-portraits article). Catalog source establishes identity; no new image license is claimed. Avoid “first and last” because these are selected works, not proof of his complete self-portrait chronology.\n\nElizabeth review, November 11: Keep as a brief curiosity/practice illustration after hiring. The two paintings show a change in visual choices, not scientific proof of deliberate practice or a ranking of early vs late skill. Explicit bridge: practice develops choices; curiosity keeps them changing. The Ericsson research is the separate source for the definition of deliberate practice."
       }
     ]
   },
@@ -752,11 +734,11 @@ const SECTIONS = [
         "use": "pmre/story-media",
         "props": {
           "mode": "content",
-          "title": "The right one or two people",
+          "title": "Sharing work led to speaking",
           "src": "media/v3/au-panel.jpeg",
-          "credit": "Autodesk University 2017 · AS129811"
+          "credit": "Autodesk University 2017 · expert panel AS129811"
         },
-        "title": "The right one or two people",
+        "title": "Sharing work led to speaking",
         "keep": 19,
         "year": "2017",
         "venn": [
@@ -765,27 +747,7 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~110s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBusiness development took off when I stopped cold calling and started speaking. Jeff Mottle invited me to Autodesk University after a YouTube video with few views. It did not need to go viral. It needed to reach the right person. Separate channels are fine if that helps you put work out there. Name corrected against official Autodesk panel credits.\n\nYear: 2017. Venn weights: 0.4 / 0.6 / 1.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017\n\nShort-cut story context (full version has separate visuals):\nI got to sit on a panel of experts, several still friends today. It helped with my imposter syndrome: maybe this combination of knowledge really was useful. Official thumbnail shows two participants, not the whole panel.\n\nAutodesk University 2017, Las Vegas. This is the line outside my talk, as I confirmed on November 9, 2026. The old Agile Lens homepage archive establishes earlier publication, not the event date. I remember how exciting this was, and I am happy to be back in Vegas.\nSources: presenter confirmation, November 9, 2026; https://alexcoulombepresents.com/appearances; https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017 .\n\nTeaching followed: NYU Tisch, fall 2020; Syracuse ARC 682: Media, 2020; guest criticism at Columbia Architecture and NYU ITP, 2021. These are dated engagements, not first-ever appointments.\nSources: https://alexcoulombepresents.com/appearances; https://www.brendanabradley.com/nyu .\n\nMerged delivery context:\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI got to sit on a panel of experts, several still friends today. It helped with my imposter syndrome: maybe this combination of knowledge really was useful. Official thumbnail shows two participants, not the whole panel.\n\nYear: 2017. Venn weights: 0.5 / 0.7 / 1.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017"
-      },
-      {
-        "id": "au-line",
-        "use": "pmre/story-media",
-        "props": {
-          "mode": "content",
-          "title": "Happy to be back in Vegas",
-          "src": "media/v3/au-line.jpg",
-          "credit": "Alex Coulombe / Agile Lens · Autodesk University 2017"
-        },
-        "title": "Happy to be back in Vegas",
-        "keep": 30,
-        "year": "2017",
-        "venn": [
-          0.3,
-          1,
-          0.8
-        ],
-        "storyRole": "content",
-        "notes": "⏱ ~85s.\n\nAutodesk University 2017, Las Vegas. This is the line outside my talk, as I confirmed on November 9, 2026. The old Agile Lens homepage archive establishes earlier publication, not the event date. I remember how exciting this was, and I am happy to be back in Vegas.\nSources: presenter confirmation, November 9, 2026; https://alexcoulombepresents.com/appearances; https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017 ."
+        "notes": "⏱ ~110s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBusiness development took off when I stopped cold calling and started speaking. Jeff Mottle invited me to Autodesk University after a YouTube video with few views. It did not need to go viral. It needed to reach the right person. Separate channels are fine if that helps you put work out there. Name corrected against official Autodesk panel credits.\n\nYear: 2017. Venn weights: 0.4 / 0.6 / 1.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017\n\nA low-view YouTube video reached Jeff Mottle, leading to a speaking invitation. This picture shows the resulting Autodesk expert panel, not a screenshot of the video. Speaking made the work visible to potential collaborators. Source: presenter recollection and official Autodesk 2017 panel https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017 . The separate Vegas crowd selfie is removed; it obscures this cause-and-effect story."
       },
       {
         "id": "napkin-scale",
@@ -874,39 +836,6 @@ const SECTIONS = [
         "opt": "workflows:extended"
       },
       {
-        "id": "kids-space",
-        "year": "2017",
-        "title": "Playing with space",
-        "use": "pmre/source-sequence",
-        "keep": 99,
-        "venn": [
-          0.5,
-          0.2,
-          1
-        ],
-        "storyRole": "content",
-        "props": {
-          "title": "Playing with space",
-          "line": "",
-          "credit": "Family footage: Alex Coulombe",
-          "media": [
-            {
-              "src": "../../../media/v3-fix1/kids-drawing.mp4",
-              "seconds": 5,
-              "loop": false,
-              "brightness": 0.75
-            },
-            {
-              "src": "../../../media/v3-fix1/kids-vr.mp4",
-              "seconds": 5,
-              "loop": false,
-              "brightness": 0.75
-            }
-          ]
-        },
-        "notes": "⏱ ~35s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s36, personal2017 beat supplied by Alex. Children drawing, then trying VR. Starting early to explore spatial reasoning is Alex’s motivation here; do not claim this footage proves a measured cognitive benefit. Keep it short."
-      },
-      {
         "id": "set-designers",
         "year": "2017",
         "title": "Set design, at scale",
@@ -929,28 +858,6 @@ const SECTIONS = [
           "poster": "media/v3-fix1/set-designers-poster.png"
         },
         "notes": "⏱ ~65s.\n\nTCG National Conference, June 2017, Portland, Oregon. I showed set designers how useful it is to sketch their designs at full scale inside the virtual Brockman Hall for Opera at Rice University, then see their designs in the space. The conference was in Portland; the building model was in Houston. This is the Virtual Reality Petting Zoo workshop, not a workshop held at Rice. PLAY MUTED; the shipped derivative has no audio stream.\nSources: presenter confirmation November 9, 2026; https://alexcoulombepresents.com/appearances; Alex’s first-person account https://medium.com/alive-in-plasticland/virtual-theatre-in-high-fidelity-6702fd2f1171 ; supplied Designing Naturally s38."
-      },
-      {
-        "id": "statue-built",
-        "year": "2019",
-        "title": "VR, while decisions can still change",
-        "use": "pmre/story-media",
-        "keep": 99,
-        "venn": [
-          1,
-          0.3,
-          1
-        ],
-        "storyRole": "content",
-        "props": {
-          "mode": "content",
-          "title": "VR, while decisions can still change",
-          "src": "media/v3-fix1/museum-built.jpg",
-          "credit": "FXCollaborative · photographer uncredited in supplied source",
-          "brightness": 0.85,
-          "alt": "VR, while decisions can still change"
-        },
-        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nCompleted Statue of Liberty Museum image from FXCollaborative’s project page. Opening2019 is verified there. Recall the earlier design-visualization story: the lesson is timing, not a claimed causal benefit from a late VR review. The “basically for free” and FXCollaborative reaction are Alex’s supplied recollections. https://www.fxcollaborative.com/projects/filter/175/the-statue-of-liberty-museum/ ."
       },
       {
         "id": "unreal",
@@ -981,7 +888,7 @@ const SECTIONS = [
           "mode": "content",
           "title": "Teaching",
           "src": "media/v3-fix1/student-review.jpg",
-          "credit": "Alex Coulombe · Syracuse review, 2015–2017",
+          "credit": "Alex Coulombe · Syracuse studio review",
           "brightness": 1,
           "alt": "Teaching"
         },
@@ -1012,15 +919,15 @@ const SECTIONS = [
           "mode": "content",
           "title": "Brockman / virtual and construction",
           "src": "media/v3-fix1/brockman-virtual.mp4",
-          "credit": "Allan Greenberg Architect / Fisher Dachs Associates",
+          "credit": "Design: Allan Greenberg Architect · theater: Fisher Dachs Associates",
           "brightness": 1,
           "alt": "Brockman / virtual and construction"
         },
-        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nVirtual Architecture RTC2021 s45. This is the virtual/construction comparison from the supplied deck, following the2015–2016 design work. Let the comparison play before advancing to the built-hall photo. Allan Greenberg Architect; theater design Fisher Dachs Associates; acoustic design Threshold Acoustics. Project roles verified by Rice https://music.rice.edu/news/built-brilliance-brockman-hall-opera ."
+        "notes": "⏱ ~100s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nVirtual Architecture RTC2021 s45. This is the virtual/construction comparison from the supplied deck, following the2015–2016 design work. Let the comparison play before advancing to the built-hall photo. Allan Greenberg Architect; theater design Fisher Dachs Associates; acoustic design Threshold Acoustics. Project roles verified by Rice https://music.rice.edu/news/built-brilliance-brockman-hall-opera .\n\nElizabeth review, November 11: This supplied RTC2021 virtual/construction video is project visualization, separate from a built photograph. The on-slide design/theater credits describe project roles. Acoustic design: Threshold Acoustics. Rice’s official firm name is Allan Greenberg Architect LLC (Allan, two l’s). Source: https://music.rice.edu/news/built-brilliance-brockman-hall-opera .\n\nFull-cut delivery space: Let the virtual/construction comparison play. Point out a balcony, stage relationship and audience viewpoint that can be inspected before construction. Distinguish a visual decision from acoustic engineering. Ask what each specialist contributes."
       },
       {
         "id": "brockman-real",
-        "year": "2021",
+        "year": "2022",
         "title": "Brockman / built",
         "use": "pmre/story-media",
         "keep": 99,
@@ -1033,12 +940,12 @@ const SECTIONS = [
         "props": {
           "mode": "content",
           "title": "Brockman / built",
-          "src": "media/v3-fix1/brockman-real.jpg",
-          "credit": "RTC 2021 source photograph · photographer unconfirmed",
+          "src": "media/v3-fix4/brockman-brandon-martin.jpg",
+          "credit": "Rice University / Shepherd School · photo: Brandon Martin",
           "brightness": 1,
           "alt": "Brockman / built"
         },
-        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nVirtual Architecture RTC2021 s46, actual built hall photograph supplied in that deck. Alex’s contemporaneous notes say the building opened during the pandemic and imagine virtual performances if digital rights were licensed. Frame that as an idea from2021, not an existing agreement or NFT product. Rice dates the public opening and first in-person public performances to April2022; distinguish that from the pandemic construction/access recollection. https://news.rice.edu/news/2022/it-feels-walking-versailles-rices-new-opera-hall-officially-opens-mozarts-legendary-don . Photographer is uncredited in the supplied source. The 2021 deck shows this view; no public opening in 2021 is claimed."
+        "notes": "⏱ ~100s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nVirtual Architecture RTC2021 s46, actual built hall photograph supplied in that deck. Alex’s contemporaneous notes say the building opened during the pandemic and imagine virtual performances if digital rights were licensed. Frame that as an idea from2021, not an existing agreement or NFT product. Rice dates the public opening and first in-person public performances to April2022; distinguish that from the pandemic construction/access recollection. https://news.rice.edu/news/2022/it-feels-walking-versailles-rices-new-opera-hall-officially-opens-mozarts-legendary-don . Photographer is uncredited in the supplied source. The 2021 deck shows this view; no public opening in 2021 is claimed.\n\nElizabeth review, November 11: Replaced unresolved RTC photograph with Rice’s inline Martin46 photograph, captioned “Photo by Brandon Martin” on https://news.rice.edu/news/2022/story-brockman-hall-operas-one-kind-space. Venue: Lucian and Nancy Morrison Theater, Brockman Hall for Opera, Rice University / Shepherd School of Music. Tracker 2022 is the Rice publication/public-opening context, not an inferred capture date. The image filename encodes July 2020, which is not claimed as a verified photographic date. Architecture: Allan Greenberg Architect LLC; theater design: Fisher Dachs Associates; acoustics: Threshold Acoustics. Correct firm spelling verified by Rice https://music.rice.edu/news/built-brilliance-brockman-hall-opera .\n\nFull-cut delivery space: Compare the built room with the preceding virtual view. Identify what can be recognized and what a photograph still cannot communicate about being inside. Explain that the 2022 public opening is distinct from the earlier design/construction work."
       },
       {
         "id": "geffen",
@@ -1054,7 +961,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~60s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother chance to bring theater expertise into a real architectural decision at eye level. Image and project credits: Agile Lens / Fisher Dachs Associates.\n\nYear: 2022. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~105s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother chance to bring theater expertise into a real architectural decision at eye level. Image and project credits: Agile Lens / Fisher Dachs Associates.\n\nYear: 2022. Venn weights: 1 / 1 / 1.\n\n\nFull-cut delivery space: Use the on-site headset photograph to distinguish a design model, the actual room and a human judging the relationship. Describe the need to communicate across architecture, theater and technology, without claiming an undocumented measured benefit.",
         "year": "2022",
         "venn": [
           1,
@@ -1129,12 +1036,12 @@ const SECTIONS = [
         "props": {
           "title": "",
           "src": "media/pmre/re-holodeck-tablet-guests.jpg",
-          "credit": "Photo: Agile Lens",
+          "credit": "Four Seasons Lake Austin · photo: Agile Lens",
           "alt": "Buyers walk the future home",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~67s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBuyers walk the future home together. A guide and physical stagecraft make this a shared visit.\n\nYear: 2023. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~117s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBuyers walk the future home together. A guide and physical stagecraft make this a shared visit.\n\nYear: 2023. Venn weights: 1 / 1 / 1.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\n\nFull-cut delivery space: Describe the visitor journey: briefing, headset, shared walk and sitting in a real seat at the end. Explain the guide’s role and why other people in the room change the visit. Ask which part of a property story needs more than a camera.",
         "year": "2023",
         "venn": [
           1,
@@ -1173,12 +1080,12 @@ const SECTIONS = [
         "props": {
           "title": "Spike tape",
           "src": "media/pmre/re-holodeck-fiducial-floor.jpg",
-          "credit": "Photo: Agile Lens",
+          "credit": "Four Seasons Lake Austin · photo: Agile Lens",
           "alt": "The floor becomes the set",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~115s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nKevin Laibson story. Jonathan wished there were a way to remember where the furniture belonged so it could go back in exactly the same place. Theater already has that: spike tape. I hire a lot of theater people. They bring things like this. The photograph shows the room setup, not a claimed close-up of theatrical spike tape.\n\nYear: 2023. Venn weights: 0.8 / 1 / 0.8.\n",
+        "notes": "⏱ ~115s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nKevin Laibson story. Jonathan wished there were a way to remember where the furniture belonged so it could go back in exactly the same place. Theater already has that: spike tape. I hire a lot of theater people. They bring things like this. The photograph shows the room setup, not a claimed close-up of theatrical spike tape.\n\nYear: 2023. Venn weights: 0.8 / 1 / 0.8.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.",
         "year": "2023",
         "venn": [
           0.8,
@@ -1195,12 +1102,12 @@ const SECTIONS = [
         "props": {
           "title": "$500M+ in presales",
           "src": "media/pmre/fs-v2/lake-05.jpg",
-          "credit": "Photo: Agile Lens",
+          "credit": "Four Seasons Lake Austin · photo: Agile Lens",
           "alt": "$500M+ in presales",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter-approved project context. Do not turn the figure into a measured causal return on VR.\n\nYear: 2023–2026. Venn weights: 1 / 0.5 / 1.\n",
+        "notes": "⏱ ~96s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter-approved project context. Do not turn the figure into a measured causal return on VR.\n\nYear: 2023–2026. Venn weights: 1 / 0.5 / 1.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\n\nFull-cut delivery space: Separate the evidence of buyer adoption from causality. The presales figure is project context; ask what additional evidence would be needed to attribute sales to VR alone. Return to the customer’s ability to judge an unbuilt home.",
         "year": "2023–2026",
         "venn": [
           1,
@@ -1217,12 +1124,12 @@ const SECTIONS = [
         "props": {
           "title": "$870M construction loan",
           "src": "media/pmre/fs-v2/lake-06.jpg",
-          "credit": "Photo: Agile Lens",
+          "credit": "Four Seasons Lake Austin · photo: Agile Lens",
           "alt": "$870M investment",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter previously called this investment. The public June 2, 2026 TYKO announcement specifies a construction loan. Do not add it to presales or imply VR caused financing.\n\nYear: 2023–2026. Venn weights: 1 / 0.4 / 0.8.\n",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter previously called this investment. The public June 2, 2026 TYKO announcement specifies a construction loan. Do not add it to presales or imply VR caused financing.\n\nYear: 2023–2026. Venn weights: 1 / 0.4 / 0.8.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.",
         "year": "2023–2026",
         "venn": [
           1,
@@ -1239,12 +1146,12 @@ const SECTIONS = [
         "props": {
           "title": "Austin",
           "src": "media/pmre/re-fourseasons-holodeck-session.jpg",
-          "credit": "Photo: Agile Lens",
+          "credit": "Four Seasons Lake Austin · photo: Agile Lens",
           "alt": "First, Austin",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThe experience could travel. Locations shown next are not a claimed dated itinerary.\n\nYear: 2023–2026. Venn weights: 1 / 0.8 / 1.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017",
+        "notes": "⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThe experience could travel. Locations shown next are not a claimed dated itinerary.\n\nYear: 2023–2026. Venn weights: 1 / 0.8 / 1.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.",
         "year": "2023–2026",
         "venn": [
           1,
@@ -1263,12 +1170,12 @@ const SECTIONS = [
           "src": "media/pmre/fs-v2/holo-aspen.mp4",
           "poster": "media/story/aspen-poster.jpg",
           "posterTime": 7,
-          "credit": "Video: Agile Lens",
+          "credit": "Four Seasons Lake Austin Holodeck · video: Agile Lens",
           "alt": "Then, Aspen",
           "mode": "content",
           "brightness": 0.94
         },
-        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThe full Aspen setup clip. Let the real room and people show the stagecraft. Preserve source audio.\n\nYear: 2023–2026. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThe full Aspen setup clip. Let the real room and people show the stagecraft. Preserve source audio.\n\nYear: 2023–2026. Venn weights: 1 / 1 / 1.\n\n\nElizabeth review, November 11: Four Seasons Lake Austin touring/setup footage. Project partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. Agile Lens is the supplied footage source; the Aspen clip retains source audio. Rendered project content, when visible: DBOX for Austin Capital Partners; Pureblink visualization and Agile Lens interactive experience. https://agilelens.com/portfolio/four-seasons-lake-austin. The build clip does not establish an exact venue/date; no unsupported location credit is added.",
         "year": "2023–2026",
         "venn": [
           1,
@@ -1285,13 +1192,13 @@ const SECTIONS = [
         "props": {
           "title": "",
           "src": "media/story/holodeck-build.mp4",
-          "credit": "Video: Agile Lens",
+          "credit": "Four Seasons Lake Austin Holodeck · video: Agile Lens",
           "alt": "Building the walkable room",
           "mode": "content",
           "brightness": 1,
           "posterTime": 8
         },
-        "notes": "⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBuilding the walkable room. Actual setup footage, Agile Lens.\n\nYear: 2023–2026. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBuilding the walkable room. Actual setup footage, Agile Lens.\n\nYear: 2023–2026. Venn weights: 1 / 1 / 1.\n\n\nElizabeth review, November 11: Four Seasons Lake Austin touring/setup footage. Project partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. Agile Lens is the supplied footage source; the Aspen clip retains source audio. Rendered project content, when visible: DBOX for Austin Capital Partners; Pureblink visualization and Agile Lens interactive experience. https://agilelens.com/portfolio/four-seasons-lake-austin. The build clip does not establish an exact venue/date; no unsupported location credit is added.",
         "year": "2023–2026",
         "venn": [
           1,
@@ -1301,20 +1208,20 @@ const SECTIONS = [
       },
       {
         "id": "dbox",
-        "title": "DBOX",
+        "title": "DBOX New York / VR showroom",
         "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
-          "title": "DBOX",
+          "title": "DBOX New York / VR showroom",
           "src": "media/pmre/fs-v2/dbox-01.jpg",
-          "credit": "Photo: Agile Lens",
+          "credit": "DBOX NYC · photo: Agile Lens · displayed render: DBOX for Austin Capital Partners",
           "alt": "Inside the DBOX space",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~48s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nA real physical place to experience the digital one.\n\nYear: 2023–2026. Venn weights: 1 / 0.8 / 1.\n",
-        "year": "2023–2026",
+        "notes": "⏱ ~48s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nA real physical place to experience the digital one.\n\nYear: 2023–2026. Venn weights: 1 / 0.8 / 1.\n\n\nElizabeth review, November 11: This is DBOX’s Manhattan headquarters showroom, not a full-frame rendering or an Austin venue photo. Photo source: Agile Lens. DBOX/Impossible Ventures are project partners; displayed Four Seasons rendering is credited to DBOX for Austin Capital Partners, distinct from the photograph. The permanent installation opened in 2025 per https://www.agilelens.com/portfolio/ny-dbox-space .",
+        "year": "2025",
         "venn": [
           1,
           0.8,
@@ -1330,12 +1237,12 @@ const SECTIONS = [
         "props": {
           "title": "New York / investor pop-up",
           "src": "media/pmre/fs-v2/nyc-pop-up.jpg",
-          "credit": "Photo: Agile Lens",
+          "credit": "Four Seasons investor pop-up · NYC, 57th Street · photo: Agile Lens",
           "alt": "57th Street, for investors",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~45s.\n\nNew York investor pop-up on 57th Street, confirmed November 9, 2026. The existing Austin Holodeck was adapted to a 5,000-square-foot NYC space for an Apollo Global Management investor demonstration, completed January 2026. Different pillars and quadrants meant changing layout and teleport points, not just copying Austin.\nSource: KB intelligence/meetings/2026-04-06-henry-keyser-project-archive-interview.md, section 1; presenter confirmation November 9, 2026. The later 440 West 57th Street project email is a separate dated record and should not be silently conflated with this investor pop-up.",
+        "notes": "⏱ ~45s.\n\nNew York investor pop-up on 57th Street, confirmed November 9, 2026. The existing Austin Holodeck was adapted to a 5,000-square-foot NYC space for an Apollo Global Management investor demonstration, completed January 2026. Different pillars and quadrants meant changing layout and teleport points, not just copying Austin.\nSource: KB intelligence/meetings/2026-04-06-henry-keyser-project-archive-interview.md, section 1; presenter confirmation November 9, 2026. The later 440 West 57th Street project email is a separate dated record and should not be silently conflated with this investor pop-up.\n\nElizabeth review, November 11: Photo source: Agile Lens’s Four Seasons Lake Austin NYC VR Experience Pop-up portfolio. Client: Impossible Ventures; investor demonstration venue: Apollo Global Management, per presenter and April 6 Henry interview. DBOX source renderings / Pureblink visualization / Agile Lens interactive experience. Do not conflate with permanent DBOX NYC headquarters. https://agilelens.com/portfolio/four-seasons-lake-austin.",
         "year": "2026",
         "venn": [
           1,
@@ -1345,19 +1252,19 @@ const SECTIONS = [
       },
       {
         "id": "california",
-        "title": "California, then Miami",
+        "title": "California / summer 2026",
         "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
-          "title": "California, then Miami",
+          "title": "California / summer 2026",
           "src": "media/pmre/round4/california.png",
-          "credit": "California photo: summer 2026 · Tour now in Miami: November 2026",
-          "alt": "California tour photograph, summer 2026. The tour is in Miami in November 2026.",
+          "credit": "Four Seasons Holodeck tour · California, summer 2026 · photo: Agile Lens",
+          "alt": "Four Seasons Holodeck touring room in California, summer 2026",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~45s.\n\nCalifornia was the summer 2026 tour. The Holodeck is in Miami now, in November 2026. This photograph shows California, not Miami. Touring turns a destination experience into something people can encounter near home.\nSources: presenter confirmation November 9, 2026; KB projects/four-seasons/overview.md (August 20 Miami preparation); agilelens.com establishes the Four Seasons partnership, not these exact tour stops/dates.",
+        "notes": "⏱ ~45s.\n\nCalifornia was the summer 2026 tour. The Holodeck is in Miami now, in November 2026. This photograph shows California, not Miami. Touring turns a destination experience into something people can encounter near home.\nSources: presenter confirmation November 9, 2026; KB projects/four-seasons/overview.md (August 20 Miami preparation); agilelens.com establishes the Four Seasons partnership, not these exact tour stops/dates.\n\nElizabeth review, November 11: Photo and title now name the pictured California stop. Miami in November 2026 is spoken follow-on context, not the pictured venue. Credits: photo Agile Lens; Four Seasons / Impossible Ventures, DBOX source renderings, Pureblink visualization, Agile Lens interactive experience. Exact California city/photographer are undocumented and omitted. https://agilelens.com/portfolio/four-seasons-lake-austin.",
         "year": "2026",
         "venn": [
           1,
@@ -1443,7 +1350,7 @@ const SECTIONS = [
           "brightness": 1,
           "alt": "Royal Shakespeare Company / rehearsal"
         },
-        "notes": "⏱ ~40s.\n\nRoyal Shakespeare Company VR Rehearsal Tool, 2024–2025 R&D, funded by XR Network+ with Royal Central School. Agile Lens built a virtual Swan Theatre so remote actors in London, Stratford-upon-Avon, New York and Los Angeles could rehearse together. Actors sharing a room use mixed reality passthrough; remote performers appear as avatars. Quest 3 performers can call up scripts and blocking cues. Directors, designers and stage managers use a Windows laptop app to ingest scripts, place blocking notes and monitor positions. A custom backend persists shared state. This is rehearsal research and tool development, not a claim that Agile Lens produced an RSC stage production.\nSource: https://agilelens.com/portfolio/virtual-rehearsal-room; https://xrnetworkplus.xrstories.co.uk/xr-network-announces-royal-shakespeare-company-rd-challenge-projects/ .\nSecond distinct supplied RSC rehearsal research photograph, HarvardXR #7 rsc_02.jpg. Show performers testing rehearsal interactions. Do not imply the photograph records a named production."
+        "notes": "⏱ ~100s.\n\nRoyal Shakespeare Company VR Rehearsal Tool, 2024–2025 R&D, funded by XR Network+ with Royal Central School. Agile Lens built a virtual Swan Theatre so remote actors in London, Stratford-upon-Avon, New York and Los Angeles could rehearse together. Actors sharing a room use mixed reality passthrough; remote performers appear as avatars. Quest 3 performers can call up scripts and blocking cues. Directors, designers and stage managers use a Windows laptop app to ingest scripts, place blocking notes and monitor positions. A custom backend persists shared state. This is rehearsal research and tool development, not a claim that Agile Lens produced an RSC stage production.\nSource: https://agilelens.com/portfolio/virtual-rehearsal-room; https://xrnetworkplus.xrstories.co.uk/xr-network-announces-royal-shakespeare-company-rd-challenge-projects/ .\nSecond distinct supplied RSC rehearsal research photograph, HarvardXR #7 rsc_02.jpg. Show performers testing rehearsal interactions. Do not imply the photograph records a named production.\n\nFull-cut delivery space: Explain one rehearsal loop: director gives a note, performers try blocking at scale, stage manager saves the state. Contrast remote participants and people sharing a room. Discuss why a repeatable tool matters beyond one polished demo; do not name an unverified stage production."
       },
       {
         "id": "blueprint",
@@ -1670,7 +1577,7 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~150s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOne camera films an action. Then cuts connect angles and time: the next day. Montage makes relationships. A close-up feels different from a wide. Tilting the camera can make us uneasy. That language developed over time. VR is still young. Dated milestones, not first-invention claims: Lumière 1895 (ACMI); Porter 1903 (MoMA/LOC); Pig Alley 1912 (MoMA); Intolerance 1916 (BFI); expressionist geometry 1920s (Deutsche Kinemathek); Eisenstein 1925 (MoMA). No first use of a Dutch tilt is asserted.\n\nYear: 2026. Venn weights: 0.2 / 1 / 1.\nHistorical milestones: https://www.acmi.net.au/works/91927--lumiere-programme-silent-version/\nhttps://www.moma.org/collection/works/304708\nhttps://www.moma.org/collection/works/306011\nhttps://www.bfi.org.uk/lists/10-great-silent-epics\nhttps://www.deutsche-kinemathek.de/en/visit/exhibitions/be-caligari-virtual-cabinet\nhttps://www.moma.org/collection/works/305815\n\nShort-cut story context:\nAt SIGGRAPH 2025 I co-authored and presented “Seeing Yourself on Stage: Multi-Avatar Performance and the Evolution of Self-Monitoring in VR” in Spatial Storytelling (August 14, Vancouver). In 2026 I returned for “Stage Presence: Design and Testing of a Virtual Rehearsal Room Toolset” and the “Virtual Theatre: Producing Live Theatre on Virtual Stages” panel. At FMX 2026 I curated its first Spatial Storytelling track and presented with David Gochfeld. The final FMX program title was “Ghosts of Performances Past: Five Years of A Christmas Carol VR,” May 7, 2026. The appearances page retains an earlier working title. Work toward a second FMX edition in 2027 is planning, not a completed second curatorship.\nSources: https://s2025.conference-schedule.org/presenter/?uid=645453 ; https://blog.siggraph.org/2024/11/siggraph-2025-innovation-and-community-meet-in-the-heart-of-vancouver.html/ ; https://doi.org/10.1145/3721244.3742445 ; https://alexcoulombepresents.com/appearances ; https://fmx.de/en/news/latest-news/news-23-04-2026 ; https://fmx.de/en/program/program-2026/detail/event/35067 ; KB intelligence/emails/2026-08-25-fmx-2027-spatial-storytelling.md. Visual is an Unreal NYC discussion, not a SIGGRAPH/FMX photograph.",
+        "notes": "⏱ ~150s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOne camera films an action. Then cuts connect angles and time: the next day. Montage makes relationships. A close-up feels different from a wide. Tilting the camera can make us uneasy. That language developed over time. VR is still young. Dated milestones, not first-invention claims: Lumière 1895 (ACMI); Porter 1903 (MoMA/LOC); Pig Alley 1912 (MoMA); Intolerance 1916 (BFI); expressionist geometry 1920s (Deutsche Kinemathek); Eisenstein 1925 (MoMA). No first use of a Dutch tilt is asserted.\n\nYear: 2026. Venn weights: 0.2 / 1 / 1.\nHistorical milestones: https://www.acmi.net.au/works/91927--lumiere-programme-silent-version/\nhttps://www.moma.org/collection/works/304708\nhttps://www.moma.org/collection/works/306011\nhttps://www.bfi.org.uk/lists/10-great-silent-epics\nhttps://www.deutsche-kinemathek.de/en/visit/exhibitions/be-caligari-virtual-cabinet\nhttps://www.moma.org/collection/works/305815\n\nShort-cut story context:\nAt SIGGRAPH 2025 I co-authored and presented “Seeing Yourself on Stage: Multi-Avatar Performance and the Evolution of Self-Monitoring in VR” in Spatial Storytelling (August 14, Vancouver). In 2026 I returned for “Stage Presence: Design and Testing of a Virtual Rehearsal Room Toolset” and the “Virtual Theatre: Producing Live Theatre on Virtual Stages” panel. At FMX 2026 I curated its first Spatial Storytelling track and presented with David Gochfeld. The final FMX program title was “Ghosts of Performances Past: Five Years of A Christmas Carol VR,” May 7, 2026. The appearances page retains an earlier working title. Work toward a second FMX edition in 2027 is planning, not a completed second curatorship.\nSources: https://s2025.conference-schedule.org/presenter/?uid=645453 ; https://blog.siggraph.org/2024/11/siggraph-2025-innovation-and-community-meet-in-the-heart-of-vancouver.html/ ; https://doi.org/10.1145/3721244.3742445 ; https://alexcoulombepresents.com/appearances ; https://fmx.de/en/news/latest-news/news-23-04-2026 ; https://fmx.de/en/program/program-2026/detail/event/35067 ; KB intelligence/emails/2026-08-25-fmx-2027-spatial-storytelling.md. Visual is an Unreal NYC discussion, not a SIGGRAPH/FMX photograph.\n\nElizabeth review, November 11: At baseline hash #75 this is film grammar, not the legacy career timeline. Simplified to an undated schematic sequence of framing/cuts/close-up/time/angle/montage, avoiding implied first-invention chronology. The historical source links above are background only. The retained per-slide career years were cross-checked against presenter-career-facts.md: Syracuse2005–2010, Viñoly2010, ZGF2010–2012, FDA2012–2017, Agile Lens public2016, instructor2020, teaching2020–2022 including Princeton2021, RSC2024–2025, SIGGRAPH2025/2026 and FMX2026. Yu-Jun Yeh hiring year remains omitted. No legacy career-timeline module is used in any cut.",
         "motion": "film-language"
       },
       {
@@ -1739,138 +1646,6 @@ const SECTIONS = [
           0.3,
           1
         ]
-      },
-      {
-        "id": "ai",
-        "use": "pmre/story-media",
-        "props": {
-          "mode": "content",
-          "title": "What excites me now",
-          "src": "media/pmre/round4/zgf-nyu-lab.jpg"
-        },
-        "title": "What excites me now",
-        "keep": 30,
-        "year": "2026",
-        "venn": [
-          0.6,
-          0.3,
-          1
-        ],
-        "storyRole": "content",
-        "notes": "⏱ ~100s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOptional current excitement. I may skip this if the room has heard enough AI this week. Connect it to the things I already love, rather than presenting a lesson about tools. My architectural training helps me judge the output.\n\nYear: 2026. Venn weights: 0.6 / 0.3 / 1.\n",
-        "opt": "ai:on"
-      },
-      {
-        "id": "ai-hand",
-        "use": "pmre/story-media",
-        "props": {
-          "mode": "content",
-          "title": "Your eye still matters",
-          "src": "media/pmre/round4/thesis-earlyatrium.jpg"
-        },
-        "title": "Your eye still matters",
-        "keep": 99,
-        "year": "2026",
-        "venn": [
-          0.9,
-          0.2,
-          1
-        ],
-        "storyRole": "content",
-        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nRevisit the hand-trained eye. The tools can make more things, but I still have to decide what is worth making. Avoid claiming a specific unverified product demo.\n\nYear: 2026. Venn weights: 0.9 / 0.2 / 1.\n",
-        "opt": "ai:on"
-      },
-      {
-        "id": "niche",
-        "title": "Devon Pastorius",
-        "use": "pmre/story-media",
-        "keep": 19,
-        "storyRole": "content",
-        "props": {
-          "mode": "content",
-          "title": "Property media + performance",
-          "src": "media/v3-fix1/devon.png",
-          "credit": "Devon Pastorius · Narwhal Creative · PMRE 2026",
-          "brightness": 1,
-          "alt": "Devon Pastorius"
-        },
-        "notes": "⏱ ~65s.\n\nMaybe not the best X of all time, but the best at X-plus-Y. That is a way to find your distinctive combination, not a measured global ranking or a factual claim that anyone here is less talented. Devon Pastorius, Creative Director and Principal Photographer of Narwhal Creative, combines real-estate media with rap music videos, cinematic one-takes and sketch comedy. Maybe not the greatest photographer of all time, but the person you call for property media plus performance. The combination is observable in his work; “best” is my rhetorical framing. He is listed as a PMRE 2026 presenter. I am not claiming he has already spoken.\nSources: https://www.pmreconference.com/presenters ; https://narwhalcreative.ca/ .",
-        "year": "2026",
-        "venn": [
-          1,
-          1,
-          1
-        ],
-        "opt": "niche:devon"
-      },
-      {
-        "id": "niche-miranda",
-        "title": "Lin-Manuel Miranda",
-        "use": "pmre/story-media",
-        "keep": 19,
-        "storyRole": "content",
-        "props": {
-          "mode": "takeaway",
-          "title": "Musical theatre + hip-hop",
-          "src": "",
-          "credit": "Lin-Manuel Miranda · Hamilton · MacArthur Fellow 2015",
-          "brightness": 1,
-          "alt": "Lin-Manuel Miranda"
-        },
-        "notes": "⏱ ~65s.\n\nMaybe not the best X of all time, but the best at X-plus-Y. That is a way to find your distinctive combination, not a measured global ranking or a factual claim that anyone here is less talented. Maybe not the greatest musical lyricist of all time; I might argue for Sondheim. But Miranda is my example of the best at infusing musical theatre with rap and hip-hop. This is explicitly my opinion about a distinctive combination, not an objective ranking. His MacArthur profile documents Hamilton’s blending of musical theatre and hip-hop. Jennifer Vanasco’s NPR biography review describes Sondheim as his mentor. Miranda is an outside illustration, not a claimed PMRE attendee.\nSources: https://www.macfound.org/fellows/class-of-2015/lin-manuel-miranda ; https://www.capradio.org/news/npr/story?storyid=nx-s1-5532081 .",
-        "year": "2026",
-        "venn": [
-          1,
-          1,
-          1
-        ],
-        "opt": "niche:miranda"
-      },
-      {
-        "id": "niche-natalia",
-        "title": "Natalia Robert",
-        "use": "pmre/story-media",
-        "keep": 19,
-        "storyRole": "content",
-        "props": {
-          "mode": "content",
-          "title": "Interiors + architecture",
-          "src": "media/v3-fix3/natalia.webp",
-          "credit": "Natalia Robert · The Grove · PMRE 2026",
-          "brightness": 1,
-          "alt": "Natalia Robert"
-        },
-        "notes": "⏱ ~65s.\n\nMaybe not the best X of all time, but the best at X-plus-Y. That is a way to find your distinctive combination, not a measured global ranking or a factual claim that anyone here is less talented. Natalia Robert is a former architect and interior photographer. She combines architectural training with interior photography and founded The Grove in 2019 to support women in architectural and interior photography. This is a concrete example of a photographic eye plus design knowledge plus community-building. “Best at her combination” is the presenter’s invitation to think about a niche, not a competitive ranking. PMRE lists her as Ladies Luncheon Host; do not call her an earlier speaker.\nSources: https://www.pmreconference.com/presenters ; https://www.nataliarobert.com/about ; https://www.wearegrovestrong.com/about .",
-        "year": "2026",
-        "venn": [
-          1,
-          1,
-          1
-        ],
-        "opt": "niche:natalia"
-      },
-      {
-        "id": "niche-matt",
-        "title": "Matt Feddermann",
-        "use": "pmre/story-media",
-        "keep": 19,
-        "storyRole": "content",
-        "props": {
-          "mode": "content",
-          "title": "Property media + agent branding",
-          "src": "media/v3-fix3/matt.png",
-          "credit": "Matt Feddermann · Real Snap Media · PMRE 2026",
-          "brightness": 1,
-          "alt": "Matt Feddermann"
-        },
-        "notes": "⏱ ~65s.\n\nMaybe not the best X of all time, but the best at X-plus-Y. That is a way to find your distinctive combination, not a measured global ranking or a factual claim that anyone here is less talented. Matt Feddermann founded Real Snap Media in Chicagoland. His work combines real-estate photography/video with brand strategy, lead generation and agent marketing. The niche is helping an agent’s business, beyond documenting the building. “Best at X-plus-Y” is an editorial example, not an evidence-backed ranking. PMRE lists him as a 2026 panelist; the order of sessions is unknown.\nSources: https://www.pmreconference.com/presenters ; https://realsnapmedia.com/ .",
-        "year": "2026",
-        "venn": [
-          1,
-          1,
-          1
-        ],
-        "opt": "niche:matt"
       }
     ]
   }

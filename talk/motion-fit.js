@@ -16,7 +16,7 @@ window.MOTION_FIT = {
    0.7069,
    0.96
   ],
-  "src": "dccce3fc3621b691"
+  "src": "a95d88dc54949101"
  },
  "frame-to-room": {
   "box": [
@@ -79,7 +79,7 @@ window.MOTION_FIT = {
    1,
    0.6702
   ],
-  "src": "b458b497d7e1b05a"
+  "src": "76ae1b0a00d0351a"
  },
  "mexico-scale": {
   "box": [
@@ -142,7 +142,7 @@ window.MOTION_FIT = {
    0.8344,
    0.8602
   ],
-  "src": "d2dace3e75910289"
+  "src": "df2ab6807a86154b"
  },
  "timeline": {
   "box": [
