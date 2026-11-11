@@ -1,0 +1,32 @@
+{
+  "id": "pmre/hxr-shed",
+  "source": "https://ibrews.github.io/harvardxr-keynote/#6",
+  "source_commit": "811042a2a87476a045be69f8c2e2aafa50cca12c",
+  "source_steps": 0,
+  "steps": 2,
+  "duration": 26.4,
+  "year": 2016,
+  "title": "The Shed",
+  "line": "VR design options for a cultural venue",
+  "notes": "The Shed at Hudson Yards used custom internal VR design apps and parametric design options for Fisher Dachs. The work focused on stagecraft and practical design decisions.",
+  "media": [
+    {
+      "src": "media/shed/Shed_Photo.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/shed/Shed_Video.mp4",
+      "seconds": 6.0,
+      "loop": false
+    },
+    {
+      "src": "media/shed/Shed_Axon.png",
+      "seconds": 6,
+      "loop": false
+    }
+  ],
+  "kind": "gallery",
+  "suggested_placement": "2016 / early theatre and spatial design, after the FDA introduction",
+  "adaptation": "Source automatic media sequence preserved; added ArrowRight stops expose each item for inspection."
+}

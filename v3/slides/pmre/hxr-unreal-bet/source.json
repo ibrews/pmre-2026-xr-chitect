@@ -1,0 +1,22 @@
+{
+  "id": "pmre/hxr-unreal-bet",
+  "source": "https://ibrews.github.io/harvardxr-keynote/#23",
+  "source_commit": "811042a2a87476a045be69f8c2e2aafa50cca12c",
+  "source_steps": 0,
+  "steps": 0,
+  "duration": 8.572,
+  "year": 2020,
+  "title": "The Unreal Engine bet",
+  "line": "Brockman Hall for Opera",
+  "notes": "The team focused on Unreal Engine and pursued Gold Authorized Instructor certification. This built a common foundation for bespoke projects and a reusable pipeline. The looping clip is Brockman Hall for Opera, as captioned in the source.",
+  "media": [
+    {
+      "src": "media/onboardxr/brockman.mp4",
+      "seconds": 5.772433,
+      "loop": true
+    }
+  ],
+  "kind": "gallery",
+  "suggested_placement": "2020 source chapter / choosing Unreal Engine as the shared tool",
+  "adaptation": "Source automatic media sequence preserved; added ArrowRight stops expose each item for inspection."
+}

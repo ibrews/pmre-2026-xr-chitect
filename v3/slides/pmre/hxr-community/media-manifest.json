@@ -1,0 +1,30 @@
+[
+  {
+    "file": "media/community/community03_unrealnyc.jpg",
+    "sha256": "82504444a2f42200f88c90f6d7c549656bc2947685f00d81ef62f34bb51f50ac",
+    "source_path": "media/community/community03_unrealnyc.jpg",
+    "source_sha256": "82504444a2f42200f88c90f6d7c549656bc2947685f00d81ef62f34bb51f50ac",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/community/community04_unrealnyc_peeps.jpg",
+    "sha256": "318da5e6deee7603b29ef7558e90afdc84b0eab35923178e3dd84428bc53e8bb",
+    "source_path": "media/community/community04_unrealnyc_peeps.jpg",
+    "source_sha256": "318da5e6deee7603b29ef7558e90afdc84b0eab35923178e3dd84428bc53e8bb",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/community/community05_halcyonvr.jpg",
+    "sha256": "86b044d9aafb1b1b14ec1f5a27023f9814958d000e43c9c6194d5ae1a17212ea",
+    "source_path": "media/community/community05_halcyonvr.jpg",
+    "source_sha256": "86b044d9aafb1b1b14ec1f5a27023f9814958d000e43c9c6194d5ae1a17212ea",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/community/community06_halcyon_collage.jpg",
+    "sha256": "b09ab32a221e235b24928b8dbfe0eaeeeb1bb240980ac4ee9445a94af091d229",
+    "source_path": "media/community/community06_halcyon_collage.jpg",
+    "source_sha256": "b09ab32a221e235b24928b8dbfe0eaeeeb1bb240980ac4ee9445a94af091d229",
+    "transformation": "Byte-identical source copy"
+  }
+]

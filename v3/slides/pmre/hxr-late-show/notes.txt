@@ -1,0 +1,3 @@
+Bravo Media reused the sightline code for The Late Show at the Ed Sullivan Theater. The design had to work without damaging the historic dome. The source describes time saved but gives no measured amount.
+
+Source: https://ibrews.github.io/harvardxr-keynote/#8 @ 811042a2a87476a045be69f8c2e2aafa50cca12c

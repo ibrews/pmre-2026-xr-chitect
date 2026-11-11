@@ -1,0 +1,25 @@
+[
+  {
+    "path": "media/v3-fix5/ai-theatre-concept.jpg",
+    "source": "OpenAI built-in image generation, November 11, 2026",
+    "credit": "AI-generated concept illustration · OpenAI / Alex Coulombe Presents",
+    "identity": "Speculative illustration, not a building, client project or product demonstration",
+    "prompt": "Use case: stylized-concept. Asset type: one wide 16:9 architectural concept illustration for a conference slide titled What excites me now, about AI expanding architectural and theatrical imagination. Create a beautiful clearly speculative axonometric cutaway of an intimate theatre in a light-filled architectural atrium, with a stage, warm wood seating terraces, slender structural ribs, and layered translucent spatial studies floating subtly above. Mix crisp architectural sketch lines with luminous painterly rendered material. Human-scale, warm amber and cool violet accents on a charcoal setting, visually coherent and restrained. Composition: single continuous scene, no panels, no UI. It must read as an imaginative AI concept, not a photo of a built place. No logos, watermarks, text or words. Do not depict real people or an existing identifiable building. The slide will add the credit AI-generated concept illustration separately.",
+    "sha256": "851d4b1f5be320d3f495b4c7606a30d9c41b8fcf47e809d0fde4d40a0dc50248"
+  },
+  {
+    "path": "media/v3-fix5/miranda.jpg",
+    "source": "https://www.macfound.org/media/photos/miranda_2015_hi-res-download_1.jpg",
+    "context": "https://www.macfound.org/fellows/class-of-2015/lin-manuel-miranda",
+    "credit": "John D. and Catherine T. MacArthur Foundation",
+    "treatment": "Original portrait resized proportionally to max 1600px; no crop or other edits",
+    "sha256": "384ef2d92b4067ddd348dbeda5608112f14628901aba67164d224d0a0e64e06e"
+  },
+  {
+    "path": "media/v3-fix1/napkin.jpg",
+    "source": "Designing Naturally, slide 49; media/v3-fix1/manifest.json",
+    "credit": "Alex Coulombe",
+    "treatment": "Existing image unchanged; deliberate callback to earlier sketch-to-VR beat",
+    "sha256": "f51f605e076138d8692993d071863093188907dae45758b23970b7e3750ed382"
+  }
+]
