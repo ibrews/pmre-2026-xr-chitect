@@ -52,7 +52,7 @@
    'IFRAME:'  Prefix c.img with 'IFRAME:' to embed a URL (YouTube, etc.)
    ======================================================================= */
 // ── TALK START ──
-// PMRE v3: chronological story; Elizabeth review applied.
+// PMRE v3: chronological story; Elizabeth review with presenter closing restoration.
 const TALK = {
   "coverEvent": "",
   "coverTitle": "Architect to <span class=\"xr\">XR</span>-chitect",
@@ -128,6 +128,24 @@ const TALK = {
       "choices": {
         "core": "Core story",
         "extended": "Include Designing Naturally s45 + s53"
+      }
+    },
+    "ai": {
+      "label": "Current AI excitement",
+      "default": "on",
+      "choices": {
+        "on": "Include",
+        "off": "Skip"
+      }
+    },
+    "niche": {
+      "label": "Niche example",
+      "default": "devon",
+      "choices": {
+        "devon": "Devon: photography + performance",
+        "miranda": "Miranda: theatre + hip-hop",
+        "natalia": "Natalia: interiors + architecture",
+        "matt": "Matt: photography + branding"
       }
     }
   },
@@ -487,7 +505,7 @@ const SECTIONS = [
           "brightness": 1,
           "alt": "Xiqu Centre"
         },
-        "notes": "⏱ ~100s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s9. Bing Thom Architects render of Xiqu Centre. Source notes describe testing railing height and the swoop of a wall at human scale. Paraphrase the recorded Venelin Kokalov response; do not invent a new quotation. The source places this work in the 2013–2015 FDA era; no exact contract date is asserted.\n\nFull-cut delivery space: Walk through one seating decision: identify the audience viewpoint, the obstruction and what a client can test at eye level. Contrast that with explaining the same question from a plan. Invite the audience to think of a view their own client cannot yet picture. Do not assert a quantified result."
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s9. Bing Thom Architects render of Xiqu Centre. Source notes describe testing railing height and the swoop of a wall at human scale. Paraphrase the recorded Venelin Kokalov response; do not invent a new quotation. The source places this work in the 2013–2015 FDA era; no exact contract date is asserted.\n\nFull-cut delivery space: Walk through one seating decision: identify the audience viewpoint, the obstruction and what a client can test at eye level. Contrast that with explaining the same question from a plan. Invite the audience to think of a view their own client cannot yet picture. Do not assert a quantified result."
       },
       {
         "id": "sightlines",
@@ -668,7 +686,7 @@ const SECTIONS = [
           "brightness": 1,
           "alt": "Equinox / just the lobby"
         },
-        "notes": "⏱ ~70s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s34. Presenter identifies Equinox2015. Sometimes a sketch or a single panorama tells you everything you need. Do not imply a full building model was necessary. The supplied source establishes the project era, without an exact contract date.\n\nElizabeth review, November 11: No architect/design firm for this specific 2015 lobby study could be established from semantic KB searches, Agile Lens portfolio, personal appearances/about pages, or targeted web searches. Do not borrow the 2019 Equinox Hotel’s Rockwell/Joyce Wang credits for an unidentified earlier lobby. Omit an unverified design-firm credit rather than guess. The visualization is from Alex’s supplied Designing Naturally s34.\n\nFull-cut delivery space: Use this as the counterexample to overbuilding: identify the lobby decision, then explain why one panorama can answer a bounded question. Let the audience compare this still with the previous full model."
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s34. Presenter identifies Equinox2015. Sometimes a sketch or a single panorama tells you everything you need. Do not imply a full building model was necessary. The supplied source establishes the project era, without an exact contract date.\n\nElizabeth review, November 11: No architect/design firm for this specific 2015 lobby study could be established from semantic KB searches, Agile Lens portfolio, personal appearances/about pages, or targeted web searches. Do not borrow the 2019 Equinox Hotel’s Rockwell/Joyce Wang credits for an unidentified earlier lobby. Omit an unverified design-firm credit rather than guess. The visualization is from Alex’s supplied Designing Naturally s34.\n\nFull-cut delivery space: Use this as the counterexample to overbuilding: identify the lobby decision, then explain why one panorama can answer a bounded question. Let the audience compare this still with the previous full model."
       }
     ]
   },
@@ -977,7 +995,7 @@ const SECTIONS = [
           "brightness": 1,
           "alt": "Brockman / virtual and construction"
         },
-        "notes": "⏱ ~100s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nVirtual Architecture RTC2021 s45. This is the virtual/construction comparison from the supplied deck, following the2015–2016 design work. Let the comparison play before advancing to the built-hall photo. Allan Greenberg Architect; theater design Fisher Dachs Associates; acoustic design Threshold Acoustics. Project roles verified by Rice https://music.rice.edu/news/built-brilliance-brockman-hall-opera .\n\nElizabeth review, November 11: This supplied RTC2021 virtual/construction video is project visualization, separate from a built photograph. The on-slide design/theater credits describe project roles. Acoustic design: Threshold Acoustics. Rice’s official firm name is Allan Greenberg Architect LLC (Allan, two l’s). Source: https://music.rice.edu/news/built-brilliance-brockman-hall-opera .\n\nFull-cut delivery space: Let the virtual/construction comparison play. Point out a balcony, stage relationship and audience viewpoint that can be inspected before construction. Distinguish a visual decision from acoustic engineering. Ask what each specialist contributes."
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nVirtual Architecture RTC2021 s45. This is the virtual/construction comparison from the supplied deck, following the2015–2016 design work. Let the comparison play before advancing to the built-hall photo. Allan Greenberg Architect; theater design Fisher Dachs Associates; acoustic design Threshold Acoustics. Project roles verified by Rice https://music.rice.edu/news/built-brilliance-brockman-hall-opera .\n\nElizabeth review, November 11: This supplied RTC2021 virtual/construction video is project visualization, separate from a built photograph. The on-slide design/theater credits describe project roles. Acoustic design: Threshold Acoustics. Rice’s official firm name is Allan Greenberg Architect LLC (Allan, two l’s). Source: https://music.rice.edu/news/built-brilliance-brockman-hall-opera .\n\nFull-cut delivery space: Let the virtual/construction comparison play. Point out a balcony, stage relationship and audience viewpoint that can be inspected before construction. Distinguish a visual decision from acoustic engineering. Ask what each specialist contributes."
       },
       {
         "id": "brockman-real",
@@ -999,7 +1017,7 @@ const SECTIONS = [
           "brightness": 1,
           "alt": "Brockman / built"
         },
-        "notes": "⏱ ~100s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nVirtual Architecture RTC2021 s46, actual built hall photograph supplied in that deck. Alex’s contemporaneous notes say the building opened during the pandemic and imagine virtual performances if digital rights were licensed. Frame that as an idea from2021, not an existing agreement or NFT product. Rice dates the public opening and first in-person public performances to April2022; distinguish that from the pandemic construction/access recollection. https://news.rice.edu/news/2022/it-feels-walking-versailles-rices-new-opera-hall-officially-opens-mozarts-legendary-don . Photographer is uncredited in the supplied source. The 2021 deck shows this view; no public opening in 2021 is claimed.\n\nElizabeth review, November 11: Replaced unresolved RTC photograph with Rice’s inline Martin46 photograph, captioned “Photo by Brandon Martin” on https://news.rice.edu/news/2022/story-brockman-hall-operas-one-kind-space. Venue: Lucian and Nancy Morrison Theater, Brockman Hall for Opera, Rice University / Shepherd School of Music. Tracker 2022 is the Rice publication/public-opening context, not an inferred capture date. The image filename encodes July 2020, which is not claimed as a verified photographic date. Architecture: Allan Greenberg Architect LLC; theater design: Fisher Dachs Associates; acoustics: Threshold Acoustics. Correct firm spelling verified by Rice https://music.rice.edu/news/built-brilliance-brockman-hall-opera .\n\nFull-cut delivery space: Compare the built room with the preceding virtual view. Identify what can be recognized and what a photograph still cannot communicate about being inside. Explain that the 2022 public opening is distinct from the earlier design/construction work."
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nVirtual Architecture RTC2021 s46, actual built hall photograph supplied in that deck. Alex’s contemporaneous notes say the building opened during the pandemic and imagine virtual performances if digital rights were licensed. Frame that as an idea from2021, not an existing agreement or NFT product. Rice dates the public opening and first in-person public performances to April2022; distinguish that from the pandemic construction/access recollection. https://news.rice.edu/news/2022/it-feels-walking-versailles-rices-new-opera-hall-officially-opens-mozarts-legendary-don . Photographer is uncredited in the supplied source. The 2021 deck shows this view; no public opening in 2021 is claimed.\n\nElizabeth review, November 11: Replaced unresolved RTC photograph with Rice’s inline Martin46 photograph, captioned “Photo by Brandon Martin” on https://news.rice.edu/news/2022/story-brockman-hall-operas-one-kind-space. Venue: Lucian and Nancy Morrison Theater, Brockman Hall for Opera, Rice University / Shepherd School of Music. Tracker 2022 is the Rice publication/public-opening context, not an inferred capture date. The image filename encodes July 2020, which is not claimed as a verified photographic date. Architecture: Allan Greenberg Architect LLC; theater design: Fisher Dachs Associates; acoustics: Threshold Acoustics. Correct firm spelling verified by Rice https://music.rice.edu/news/built-brilliance-brockman-hall-opera .\n\nFull-cut delivery space: Compare the built room with the preceding virtual view. Identify what can be recognized and what a photograph still cannot communicate about being inside. Explain that the 2022 public opening is distinct from the earlier design/construction work."
       },
       {
         "id": "geffen",
@@ -1015,7 +1033,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~105s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother chance to bring theater expertise into a real architectural decision at eye level. Image and project credits: Agile Lens / Fisher Dachs Associates.\n\nYear: 2022. Venn weights: 1 / 1 / 1.\n\n\nFull-cut delivery space: Use the on-site headset photograph to distinguish a design model, the actual room and a human judging the relationship. Describe the need to communicate across architecture, theater and technology, without claiming an undocumented measured benefit.",
+        "notes": "⏱ ~65s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother chance to bring theater expertise into a real architectural decision at eye level. Image and project credits: Agile Lens / Fisher Dachs Associates.\n\nYear: 2022. Venn weights: 1 / 1 / 1.\n\n\nFull-cut delivery space: Use the on-site headset photograph to distinguish a design model, the actual room and a human judging the relationship. Describe the need to communicate across architecture, theater and technology, without claiming an undocumented measured benefit.",
         "year": "2022",
         "venn": [
           1,
@@ -1700,6 +1718,146 @@ const SECTIONS = [
           0.3,
           1
         ]
+      },
+      {
+        "id": "ai",
+        "use": "pmre/story-media",
+        "props": {
+          "mode": "content",
+          "title": "What excites me now",
+          "src": "media/v3-fix5/ai-theatre-concept.jpg",
+          "credit": "AI-generated concept illustration · OpenAI / Alex Coulombe Presents",
+          "alt": "Speculative AI-generated theatre and architectural atrium concept"
+        },
+        "title": "What excites me now",
+        "keep": 30,
+        "year": "2026",
+        "venn": [
+          0.6,
+          0.3,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~100s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOptional current excitement. I may skip this if the room has heard enough AI this week. Connect it to the things I already love, rather than presenting a lesson about tools. My architectural training helps me judge the output.\n\nYear: 2026. Venn weights: 0.6 / 0.3 / 1.\n\nRestored November 11 at presenter request. Image is a newly AI-generated speculative theatre/architecture concept for this slide, not an existing building, client commission, product screenshot or measured demo. Use it to discuss rapid exploration at the intersection of architecture, theatre and technology. Credit: OpenAI image generation / Alex Coulombe Presents, November 11, 2026. Full generation prompt and file hash: media/v3-fix5/manifest.json.",
+        "opt": "ai:on"
+      },
+      {
+        "id": "ai-hand",
+        "use": "pmre/story-media",
+        "props": {
+          "mode": "content",
+          "title": "Your eye still matters",
+          "src": "media/v3-fix1/napkin.jpg",
+          "credit": "Hand sketch: Alex Coulombe · Designing Naturally, slide 49",
+          "alt": "Alex Coulombe’s hand-drawn room plan in a sketchbook"
+        },
+        "title": "Your eye still matters",
+        "keep": 99,
+        "year": "2026",
+        "venn": [
+          0.9,
+          0.2,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nRevisit the hand-trained eye. The tools can make more things, but I still have to decide what is worth making. Avoid claiming a specific unverified product demo.\n\nYear: 2026. Venn weights: 0.9 / 0.2 / 1.\n\nRestored November 11 at presenter request. This is Alex’s actual hand-drawn room plan from Designing Naturally s49, the same sketch introduced earlier in the sketch-to-VR sequence. Deliberate visual callback: judgment begins with seeing and choosing, regardless of the tool. It is not AI output or a 2026 project. Image provenance and original byte identity: media/v3-fix1/manifest.json.",
+        "opt": "ai:on"
+      },
+      {
+        "id": "niche",
+        "title": "Devon Pastorius",
+        "use": "pmre/niche-example",
+        "keep": 19,
+        "storyRole": "content",
+        "props": {
+          "src": "media/v3-fix1/devon.png",
+          "credit": "Devon Pastorius · Narwhal Creative · PMRE 2026",
+          "brightness": 1,
+          "alt": "Devon Pastorius",
+          "headline": "Not the best X —\nthe best at X + Y",
+          "name": "Devon Pastorius",
+          "combination": "Photography + Performance"
+        },
+        "notes": "⏱ ~65s.\n\nMaybe not the best X of all time, but the best at X-plus-Y. That is a way to find your distinctive combination, not a measured global ranking or a factual claim that anyone here is less talented. Devon Pastorius, Creative Director and Principal Photographer of Narwhal Creative, combines real-estate media with rap music videos, cinematic one-takes and sketch comedy. Maybe not the greatest photographer of all time, but the person you call for property media plus performance. The combination is observable in his work; “best” is my rhetorical framing. He is listed as a PMRE 2026 presenter. I am not claiming he has already spoken.\nSources: https://www.pmreconference.com/presenters ; https://narwhalcreative.ca/ .\nRestored November 11 at presenter request. On-screen paired terms summarize the sourced combination; the headline is rhetorical presenter opinion, not an objective ranking. The name and portrait identify the example without relying on narration.",
+        "year": "2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "opt": "niche:devon"
+      },
+      {
+        "id": "niche-miranda",
+        "title": "Lin-Manuel Miranda",
+        "use": "pmre/niche-example",
+        "keep": 19,
+        "storyRole": "content",
+        "props": {
+          "src": "media/v3-fix5/miranda.jpg",
+          "credit": "Portrait: John D. and Catherine T. MacArthur Foundation",
+          "brightness": 1,
+          "alt": "Lin-Manuel Miranda",
+          "headline": "Not the best X —\nthe best at X + Y",
+          "name": "Lin-Manuel Miranda",
+          "combination": "Theatre + Hip-hop"
+        },
+        "notes": "⏱ ~65s.\n\nMaybe not the best X of all time, but the best at X-plus-Y. That is a way to find your distinctive combination, not a measured global ranking or a factual claim that anyone here is less talented. Maybe not the greatest musical lyricist of all time; I might argue for Sondheim. But Miranda is my example of the best at infusing musical theatre with rap and hip-hop. This is explicitly my opinion about a distinctive combination, not an objective ranking. His MacArthur profile documents Hamilton’s blending of musical theatre and hip-hop. Jennifer Vanasco’s NPR biography review describes Sondheim as his mentor. Miranda is an outside illustration, not a claimed PMRE attendee.\nSources: https://www.macfound.org/fellows/class-of-2015/lin-manuel-miranda ; https://www.capradio.org/news/npr/story?storyid=nx-s1-5532081 .\nRestored November 11 at presenter request. On-screen paired terms summarize the sourced combination; the headline is rhetorical presenter opinion, not an objective ranking. The name and portrait identify the example without relying on narration. Portrait: https://www.macfound.org/media/photos/miranda_2015_hi-res-download_1.jpg ; source and requested credit: https://www.macfound.org/fellows/class-of-2015/lin-manuel-miranda .",
+        "year": "2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "opt": "niche:miranda"
+      },
+      {
+        "id": "niche-natalia",
+        "title": "Natalia Robert",
+        "use": "pmre/niche-example",
+        "keep": 19,
+        "storyRole": "content",
+        "props": {
+          "src": "media/v3-fix3/natalia.webp",
+          "credit": "Natalia Robert · The Grove · PMRE 2026",
+          "brightness": 1,
+          "alt": "Natalia Robert",
+          "headline": "Not the best X —\nthe best at X + Y",
+          "name": "Natalia Robert",
+          "combination": "Interiors + Architecture"
+        },
+        "notes": "⏱ ~65s.\n\nMaybe not the best X of all time, but the best at X-plus-Y. That is a way to find your distinctive combination, not a measured global ranking or a factual claim that anyone here is less talented. Natalia Robert is a former architect and interior photographer. She combines architectural training with interior photography and founded The Grove in 2019 to support women in architectural and interior photography. This is a concrete example of a photographic eye plus design knowledge plus community-building. “Best at her combination” is the presenter’s invitation to think about a niche, not a competitive ranking. PMRE lists her as Ladies Luncheon Host; do not call her an earlier speaker.\nSources: https://www.pmreconference.com/presenters ; https://www.nataliarobert.com/about ; https://www.wearegrovestrong.com/about .\nRestored November 11 at presenter request. On-screen paired terms summarize the sourced combination; the headline is rhetorical presenter opinion, not an objective ranking. The name and portrait identify the example without relying on narration.",
+        "year": "2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "opt": "niche:natalia"
+      },
+      {
+        "id": "niche-matt",
+        "title": "Matt Feddermann",
+        "use": "pmre/niche-example",
+        "keep": 19,
+        "storyRole": "content",
+        "props": {
+          "src": "media/v3-fix3/matt.png",
+          "credit": "Matt Feddermann · Real Snap Media · PMRE 2026",
+          "brightness": 1,
+          "alt": "Matt Feddermann",
+          "headline": "Not the best X —\nthe best at X + Y",
+          "name": "Matt Feddermann",
+          "combination": "Photography + Branding"
+        },
+        "notes": "⏱ ~65s.\n\nMaybe not the best X of all time, but the best at X-plus-Y. That is a way to find your distinctive combination, not a measured global ranking or a factual claim that anyone here is less talented. Matt Feddermann founded Real Snap Media in Chicagoland. His work combines real-estate photography/video with brand strategy, lead generation and agent marketing. The niche is helping an agent’s business, beyond documenting the building. “Best at X-plus-Y” is an editorial example, not an evidence-backed ranking. PMRE lists him as a 2026 panelist; the order of sessions is unknown.\nSources: https://www.pmreconference.com/presenters ; https://realsnapmedia.com/ .\nRestored November 11 at presenter request. On-screen paired terms summarize the sourced combination; the headline is rhetorical presenter opinion, not an objective ranking. The name and portrait identify the example without relying on narration.",
+        "year": "2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "opt": "niche:matt"
       }
     ]
   }
@@ -2341,6 +2499,7 @@ window.SD=window.SD||{};
 <script src="slides/pmre/lane-to-venn/slide.js"></script>
 <script src="slides/pmre/lane-traffic/slide.js"></script>
 <script src="slides/pmre/mexico-scale/slide.js"></script>
+<script src="slides/pmre/niche-example/slide.js"></script>
 <script src="slides/pmre/nxt-blueprint-immersive/slide.js"></script>
 <script src="slides/pmre/nxt-floor-tour/slide.js"></script>
 <script src="slides/pmre/nxt-four-seasons-production/slide.js"></script>

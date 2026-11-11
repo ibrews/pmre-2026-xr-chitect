@@ -43,3 +43,7 @@ tools/palette-*.css
 # PMRE 2026 verified public presenter portraits
 !media/v3-fix3/
 !media/v3-fix3/**
+
+# Presenter-restored closing illustration and credited Miranda portrait
+!media/v3-fix5/
+!media/v3-fix5/**
