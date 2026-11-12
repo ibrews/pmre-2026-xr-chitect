@@ -6,8 +6,8 @@
     "download": "../AD8d6CHDbGo-source.mp4",
     "sha256": "c813a20c0d6065a4c4a41d8648cdef1b19248e6699582f913a746d1386f5a9dc",
     "excerpts": {
-      "colosseum-vr.mp4": "08:45\u201309:03",
-      "hotel-vr.mp4": "08:05\u201308:17",
+      "colosseum-vr.mp4": "10:10\u201310:28",
+      "hotel-vr.mp4": "08:30\u201308:42",
       "rome-headset.mp4": "Concatenation of those two excerpts"
     }
   },
@@ -30,24 +30,24 @@
     },
     {
       "path": "media/v3-fix6/colosseum-vr.mp4",
-      "sha256": "0a31ab95f72c8da7962ecc452b49187087070af49d6a24415495d4ce19d764a8",
-      "duration": 18.029771,
+      "sha256": "cf41cc28dc3f317c35906db05836917ea90ec87f1678a2a9daf3a2f56e90e5fa",
+      "duration": 18.0,
       "width": 1920,
       "height": 1080,
       "audio": false
     },
     {
       "path": "media/v3-fix6/hotel-vr.mp4",
-      "sha256": "6939b9ce9568f11863c34d10840c7c3359a466c457e89b5b82e2b8dbc34eafa7",
-      "duration": 11.975247,
+      "sha256": "9a5415af6a0448ccc640c2c4ae3c1e50c7e246152f5f8dad24e890c398e86e9d",
+      "duration": 12.0,
       "width": 1920,
       "height": 1080,
       "audio": false
     },
     {
       "path": "media/v3-fix6/rome-headset.mp4",
-      "sha256": "bc5be2ad409393f5c875aa9ce7f7d98111f2980cab261b1c06a3f9c77f276b83",
-      "duration": 30.005018,
+      "sha256": "f5e94dd83bd04bd905f28173d30bc919a03bd7e4a7de8f22735618d01bf5c11c",
+      "duration": 30.0,
       "width": 1920,
       "height": 1080,
       "audio": false
