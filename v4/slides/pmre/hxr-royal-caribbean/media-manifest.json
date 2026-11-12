@@ -1,0 +1,23 @@
+[
+  {
+    "file": "media/royal-caribbean/rc_01.jpg",
+    "sha256": "39bef953cd038ab81ac4b88e8621746cbd1cbb39a38feb1ced979cad37d17058",
+    "source_path": "media/royal-caribbean/rc_01.jpg",
+    "source_sha256": "39bef953cd038ab81ac4b88e8621746cbd1cbb39a38feb1ced979cad37d17058",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/royal-caribbean/rc_02.jpg",
+    "sha256": "a5ad262a9ac9ef38dc27eb4be23de73265a9c2533f56a31d649f1b175bc16a7b",
+    "source_path": "media/royal-caribbean/rc_02.jpg",
+    "source_sha256": "a5ad262a9ac9ef38dc27eb4be23de73265a9c2533f56a31d649f1b175bc16a7b",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/royal-caribbean/rc_03.jpg",
+    "sha256": "8517aecb4a761f358460be254a2941a917a5ec24ef2a614866b242797c4f0fdc",
+    "source_path": "media/royal-caribbean/rc_03.jpg",
+    "source_sha256": "8517aecb4a761f358460be254a2941a917a5ec24ef2a614866b242797c4f0fdc",
+    "transformation": "Byte-identical source copy"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "file": "media/nxtbld/bp-asset-35-a.mp4",
+    "sha256": "aeafc0c9f1953d14affbb70acdee5180f3102437fef09c43f016383592d15c5a",
+    "source_path": "media/nxtbld/bp-asset-35-a.mp4",
+    "source_sha256": "aeafc0c9f1953d14affbb70acdee5180f3102437fef09c43f016383592d15c5a",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/nxtbld/bp-asset-35-b.mp4",
+    "sha256": "846899ac20aec727c6523c5d73a8a61724b9e6a4d486666ce9999dd9f41136f1",
+    "source_path": "media/nxtbld/bp-asset-35-b.mp4",
+    "source_sha256": "846899ac20aec727c6523c5d73a8a61724b9e6a4d486666ce9999dd9f41136f1",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/nxtbld/bp-asset-36.png",
+    "sha256": "4868b9c93056f551cf67c2f6caaf5c061417f048838e08bcf2ba5871480ef3e7",
+    "source_path": "media/nxtbld/bp-asset-36.png",
+    "source_sha256": "4868b9c93056f551cf67c2f6caaf5c061417f048838e08bcf2ba5871480ef3e7",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/nxtbld/bp-asset-37.png",
+    "sha256": "315d5d031521ff6af8b64daac34bd1f54548cb7fabb47cdf84a8bad0b171564d",
+    "source_path": "media/nxtbld/bp-asset-37.png",
+    "source_sha256": "315d5d031521ff6af8b64daac34bd1f54548cb7fabb47cdf84a8bad0b171564d",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/nxtbld/bp-asset-38.png",
+    "sha256": "f12f63f33edf2b9258faba44a92ecb341e408dd7b6d4687853e35af0518d8123",
+    "source_path": "media/nxtbld/bp-asset-38.png",
+    "source_sha256": "f12f63f33edf2b9258faba44a92ecb341e408dd7b6d4687853e35af0518d8123",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/nxtbld/bp-asset-39.png",
+    "sha256": "b9dd5c6f19d5033778727a0029f4db564bed4397d4cbac55ae668652d9fa2b1c",
+    "source_path": "media/nxtbld/bp-asset-39.png",
+    "source_sha256": "b9dd5c6f19d5033778727a0029f4db564bed4397d4cbac55ae668652d9fa2b1c",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/nxtbld/bp-asset-40.jpg",
+    "sha256": "fc5a147f1345003f967b0f5b9b95445baab6389f72cc36ee3570e1bc60902adf",
+    "source_path": "media/nxtbld/bp-asset-40.jpg",
+    "source_sha256": "fc5a147f1345003f967b0f5b9b95445baab6389f72cc36ee3570e1bc60902adf",
+    "transformation": "Byte-identical source copy"
+  }
+]

@@ -1,0 +1,518 @@
+[
+  {
+    "year": "2005",
+    "range": "2005–2010",
+    "lesson": "Ignore the lane",
+    "alts": [
+      "Follow the overlap",
+      "Keep your interests together"
+    ],
+    "take": "Your interests can share a job",
+    "backs": [
+      "media/pmre/pre-fda-equus-syracuse-portfolio.png",
+      "media/pmre/round4/thesis-earlyatrium.jpg"
+    ],
+    "cases": [
+      [
+        "rosa",
+        "“Pick a lane”",
+        "media/pmre/pre-fda-equus-syracuse-portfolio.png",
+        40,
+        "Richard Rosa, Syracuse professor. Presenter-approved remembered advice: “pick a lane”. Do not invent a longer quotation. The image is Alex’s student theater artifact, not a photograph of Rosa.",
+        "Student work: Alex Coulombe"
+      ],
+      [
+        "london",
+        "London, 2008: theater opens up",
+        "media/pmre/pre-fda-connective-corridor-2008.jpg",
+        45,
+        "London2008 with Michael Barclay. Presenter: Michael Barclay helped him expand his love of theater, spatial storytelling and live shows. Visual is a contemporary student project; it is not labeled as a London photograph.",
+        "Student work: Alex Coulombe"
+      ],
+      [
+        "thesis",
+        "Governors Island, 2009",
+        "media/pmre/round4/thesis-earlyatrium.jpg",
+        80,
+        "Governors Island thesis: theater + architecture + AR. Graduation2010 follows. Alex’s original portfolio artifact, not newly generated evidence.",
+        "Thesis: Alex Coulombe"
+      ],
+      [
+        "graduation",
+        "I DON’T THINK MY JOB EXISTS YET",
+        "media/pmre/round4/thesis-earlyatrium.jpg",
+        35,
+        "Presenter-approved remembered quote, Alex Coulombe2010: “I don’t think my job exists yet.” Keep the original wording in notes.",
+        "Alex Coulombe, 2010"
+      ],
+      [
+        "equus",
+        "Equus: a theater problem",
+        "media/pmre/pre-fda-equus-syracuse-portfolio.png",
+        60,
+        "Expanded: Alex’s Equus student work,2008.",
+        "Student work: Alex Coulombe",
+        30
+      ],
+      [
+        "corridor",
+        "Architecture became a stage",
+        "media/pmre/pre-fda-connective-corridor-2008.jpg",
+        45,
+        "Expanded: Connective Corridor student work,2008.",
+        "Student work: Alex Coulombe",
+        30
+      ]
+    ]
+  },
+  {
+    "year": "2010",
+    "range": "2010–2016",
+    "lesson": "Your skills travel",
+    "alts": [
+      "Bring your old skills",
+      "Carry your craft forward"
+    ],
+    "take": "Your skills travel with you",
+    "backs": [
+      "media/pmre/round4/zgf-nyu-lobby.jpg",
+      "media/pmre/fda-dk1-office-demo.jpg"
+    ],
+    "cases": [
+      [
+        "archviz",
+        "Viñoly, ZGF, and visualization",
+        "media/pmre/round4/zgf-nyu-lobby.jpg",
+        45,
+        "After graduation: Viñoly/ZGF archviz. This particular image is Alex’s ZGF design/visualization, not Viñoly work.",
+        "Alex Coulombe / ZGF Architects"
+      ],
+      [
+        "dk1",
+        "2013: a headset at work",
+        "media/pmre/fda-dk1-office-demo.jpg",
+        50,
+        "Oculus DK1 at Fisher Dachs Associates,2013. Actual office photograph.",
+        "Photo: Alex Coulombe / Fisher Dachs Associates"
+      ],
+      [
+        "sightlines",
+        "Could everyone see the stage?",
+        "media/pmre/fda-sightline-unity-capture-macbeth-folder.mp4",
+        60,
+        "Sightlines in VR: actual theater work capture. File historically lives in the Macbeth folder; do not infer a different venue identity.",
+        "Capture: Alex Coulombe / Fisher Dachs Associates"
+      ],
+      [
+        "agile",
+        "2016: Agile Lens",
+        "media/pmre/fda-macbeth-armory-vr-demo.jpg",
+        40,
+        "Agile Lens founding year2016 is supplied by presenter. No alternate founding date inferred from web copy.",
+        "Photo: Agile Lens / Fisher Dachs Associates"
+      ],
+      [
+        "theater",
+        "Theater people got VR first",
+        "media/pmre/xmas-carol-01.jpg",
+        45,
+        "Presenter’s lesson. This later A Christmas Carol VR image illustrates the theatrical craft continuing into VR; it is not dated2016.",
+        "A Christmas Carol VR: Agile Lens"
+      ],
+      [
+        "shed",
+        "The Shed, seen before opening",
+        "media/pmre/fda-shed-unity-axon.png",
+        60,
+        "Expanded: preserve the source project context in the original notes below.",
+        "Alex Coulombe / Fisher Dachs Associates",
+        30
+      ],
+      [
+        "late-show",
+        "Lighting the Late Show",
+        "media/pmre/fda-ed-sullivan-vr-capture.mp4",
+        60,
+        "Expanded: actual Ed Sullivan theater capture.",
+        "Alex Coulombe / Fisher Dachs Associates",
+        30
+      ]
+    ]
+  },
+  {
+    "year": "2020",
+    "range": "2020 onward",
+    "lesson": "Teach to learn",
+    "alts": [
+      "Learn by explaining",
+      "Let teaching stretch you"
+    ],
+    "take": "Teaching makes you learn",
+    "backs": [
+      "media/pmre/GoldAuthorized.png",
+      "media/pmre/fda-geffen-hall-vr-onsite.jpg"
+    ],
+    "cases": [
+      [
+        "unreal",
+        "2020: the Unreal Engine bet",
+        "media/pmre/GoldAuthorized.png",
+        60,
+        "Presenter-approved:2020 Unreal bet and Gold Authorized Instructor. Teaching made him learn. Badge is the real credential.",
+        "Credential: Epic Games"
+      ],
+      [
+        "waldorf",
+        "Waldorf Astoria, before construction",
+        "slides/pmre/hxr-waldorf-astoria/media/waldorf-astoria-miami/01.jpg",
+        45,
+        "Actual Waldorf Astoria Miami project image from HarvardXR source, preserving its source notes and credit.",
+        "Project media: Agile Lens"
+      ],
+      [
+        "geffen",
+        "David Geffen Hall, at eye level",
+        "media/pmre/fda-geffen-hall-vr-onsite.jpg",
+        45,
+        "Actual Geffen Hall VR onsite photograph.",
+        "Photo: Agile Lens / Fisher Dachs Associates"
+      ],
+      [
+        "geffen-inside",
+        "A seat inside Geffen Hall",
+        "slides/pmre/hxr-david-geffen-hall/media/dgh/DavidGeffenHall02.jpg",
+        45,
+        "Expanded: actual Geffen Hall project media.",
+        "Project media: Agile Lens / Fisher Dachs Associates",
+        30
+      ]
+    ]
+  },
+  {
+    "year": "2023",
+    "range": "2023 onward",
+    "lesson": "Work at human scale",
+    "alts": [
+      "Stand inside the idea",
+      "Feel the place"
+    ],
+    "take": "Human scale makes places feel real",
+    "backs": [
+      "media/pmre/re-holodeck-fiducial-floor.jpg",
+      "media/pmre/fs-v2/lake-05.jpg"
+    ],
+    "cases": [
+      [
+        "mexico",
+        "A flyby keeps you outside",
+        "media/pmre/fs-v2/mexico-01.jpg",
+        65,
+        "Royal Caribbean Perfect Day Mexico: six-person VR balloon preview on a cruise ship. Compare distant flyby with human scale. Resort approval is a separate question; never imply flyby caused rejection. Source https://agilelens.com/portfolio/perfect-day-mexico",
+        "Agile Lens / Royal Caribbean"
+      ],
+      [
+        "fs-render",
+        "Four Seasons Lake Austin",
+        "media/pmre/fs-v2/intro-render.jpg",
+        30,
+        "Human-scale Four Seasons holodeck is the payoff. Rendering supplied via prior round provenance.",
+        "Rendering: DBOX for Austin Capital Partners"
+      ],
+      [
+        "buyers",
+        "Buyers walk the future home",
+        "media/pmre/re-holodeck-tablet-guests.jpg",
+        60,
+        "Actual physical holodeck guest experience. Do not claim every photographed guest bought a residence.",
+        "Photo: Agile Lens"
+      ],
+      [
+        "presales",
+        "$500M+ in presales",
+        "media/pmre/fs-v2/lake-05.jpg",
+        35,
+        "Presenter-approved $500M+ presales. No audited causal return on VR claim.",
+        "Photo: Agile Lens"
+      ],
+      [
+        "investment",
+        "$870M investment",
+        "media/pmre/fs-v2/lake-06.jpg",
+        30,
+        "Presenter-approved $870M investment. Preserve the construction-loan qualifier in the original notes. Do not add this to presales; they describe different quantities.",
+        "Photo: Agile Lens"
+      ],
+      [
+        "spike",
+        "The floor becomes the set",
+        "media/pmre/re-holodeck-fiducial-floor.jpg",
+        45,
+        "Spike tape, physical alignment, buyer choreography. Actual setup photograph.",
+        "Photo: Agile Lens"
+      ],
+      [
+        "austin",
+        "First, Austin",
+        "media/pmre/re-holodeck-lakeaustin-room.jpg",
+        25,
+        "Presenter-confirmed travel sequence starts in Austin.",
+        "Photo: Agile Lens"
+      ],
+      [
+        "aspen",
+        "Then, Aspen",
+        "media/pmre/fs-v2/holo-aspen.mp4",
+        70,
+        "Complete source Aspen clip with original audio63.62s; time budget includes playback. Use house audio.",
+        "Video: Agile Lens"
+      ],
+      [
+        "dbox",
+        "Inside the DBOX space",
+        "media/pmre/fs-v2/dbox-01.jpg",
+        25,
+        "Presenter-confirmed DBOX NY space. Photograph is not a DBOX rendering.",
+        "Photo: Agile Lens"
+      ],
+      [
+        "ny57",
+        "57th Street, for investors",
+        "media/pmre/fs-v2/nyc-pop-up.jpg",
+        25,
+        "Four Seasons Lake Austin NYC VR experience investor pop-up on57th Street, presenter-confirmed.",
+        "Photo: Agile Lens"
+      ],
+      [
+        "california",
+        "Then, the California tour",
+        "media/pmre/round4/california.png",
+        25,
+        "Actual California tour photograph supplied by Alex in round4. Specific cities/dates remain unconfirmed.",
+        "Photo: Agile Lens"
+      ],
+      [
+        "build",
+        "Building the walkable room",
+        "media/story/holodeck-build.mp4",
+        50,
+        "Expanded: actual Four Seasons holodeck build footage from MIA.",
+        "Video: Agile Lens",
+        30
+      ],
+      [
+        "aspen-setup",
+        "A room becomes a holodeck",
+        "media/pmre/fs-v2/aspen-setup.png",
+        30,
+        "Expanded: explicitly labeled Aspen setup photograph from NXT BLD.",
+        "Photo: Agile Lens",
+        30
+      ]
+    ]
+  },
+  {
+    "year": "2024",
+    "range": "Productization",
+    "lesson": "Make it repeatable",
+    "alts": [
+      "Build tools from patterns",
+      "Reuse what keeps working"
+    ],
+    "take": "Turn repeated work into tools",
+    "backs": [
+      "media/story/blueprint-screen.png",
+      "media/story/uoxr-workshop.jpg"
+    ],
+    "cases": [
+      [
+        "floor",
+        "Floor Tour, in use",
+        "media/story/floor-tour-screen.png",
+        35,
+        "Actual product VR screenshot. Visual inspection confirms floor-26-vr.png is the VR view and floor-26-plan.jpg is the plan; source comments claiming the reverse are stale. https://agilelens.com/products/floor-tour",
+        "Product media: Agile Lens"
+      ],
+      [
+        "floor-demo",
+        "A plan becomes walkable",
+        "media/story/floor-tour-demo.mp4",
+        45,
+        "Actual Floor Tour product demonstration from NXT BLD. Preserve source image proportions. No public/free pricing claim.",
+        "Product demo: Agile Lens"
+      ],
+      [
+        "blueprint",
+        "Blueprint Immersive seat check",
+        "media/story/blueprint-seat-demo.mp4",
+        55,
+        "Actual seat-jump product demo, NXT BLD. https://agilelens.com/products/blueprint-immersive",
+        "Product demo: Agile Lens"
+      ],
+      [
+        "uoxr",
+        "UOXR: a reusable starting point",
+        "media/story/uoxr-simulator.mp4",
+        45,
+        "Actual UOXR simulator trailer from Alex Coulombe Presents. Simulator windows/labels preserved. This is not physical-device performance evidence.",
+        "UOXR: Alex Coulombe Presents · Simulator footage"
+      ],
+      [
+        "bp-design",
+        "Blueprint Immersive design options",
+        "media/story/blueprint-design-demo.mp4",
+        45,
+        "Expanded: actual product demo from NXT BLD.",
+        "Product demo: Agile Lens",
+        30
+      ]
+    ]
+  },
+  {
+    "year": "2025",
+    "range": "2025–2026",
+    "lesson": "Capture impossible places",
+    "alts": [
+      "Keep the moment walkable",
+      "Let places live again"
+    ],
+    "take": "A place can outlive its moment",
+    "backs": [
+      "slides/pmre/rome-splats/media/rome-colosseum-poster.jpg",
+      "media/pmre/xmas-carol-replay-marley.jpg"
+    ],
+    "cases": [
+      [
+        "carol",
+        "A Christmas Carol, in VR",
+        "media/story/carol-show.mp4",
+        35,
+        "Actual A Christmas Carol VR show footage from MIA. Film lesson: XR records performances spatially; do not describe this as a new conventional film release.",
+        "A Christmas Carol VR: Agile Lens"
+      ],
+      [
+        "replay",
+        "The show ends. Cameras keep moving",
+        "media/story/carol-replay.mp4",
+        45,
+        "Actual recorded performance replay with free camera controls. Cinematographer build captures new camera coverage after the show; do not substitute concept browser toy for product evidence.",
+        "Replay: Agile Lens / Yu-Jun Yeh"
+      ],
+      [
+        "working-cut",
+        "A cinematographer’s working cut",
+        "media/story/carol-working-cut.mp4",
+        45,
+        "Actual class edit_final.mp4, from VR Cinematics for UE5.8. Working cut demonstration, not an announced finished film.",
+        "Working cut: Alex Coulombe Presents"
+      ],
+      [
+        "rome",
+        "Rome, captured as splats",
+        "slides/pmre/rome-splats/media/rome-colosseum-flythrough-15s-1080p.mp4",
+        40,
+        "Josette Seitz / Agile Lens PortalCam scan, rendered in web viewer. This footage is not captured in a headset.",
+        "Josette Seitz / Agile Lens · Web-rendered scan"
+      ],
+      [
+        "splatdiorama",
+        "SplatDiorama opens the same place",
+        "media/story/splatdiorama-rome.png",
+        30,
+        "Actual SplatDiorama build77 simulator screenshot with Colosseum LCC2 streaming. This is an app screenshot, separate from the web-rendered Rome clip. It does not establish headset acceptance or final reconstruction quality.",
+        "SplatDiorama build77 · Simulator screenshot"
+      ],
+      [
+        "hotel",
+        "A hotel becomes a location",
+        "slides/pmre/rome-splats/media/rome-hotel-flythrough-10s-1080p.mp4",
+        35,
+        "Expanded: actual web-rendered whole-hotel scan. Hotel name unconfirmed.",
+        "Josette Seitz / Agile Lens · Web-rendered scan",
+        30
+      ],
+      [
+        "camera-coverage",
+        "One performance, several camera positions",
+        "media/story/carol-cameras.mp4",
+        35,
+        "Expanded: actual class all_cameras.mp4, source disclosure preserved.",
+        "Camera coverage: Alex Coulombe Presents",
+        30
+      ]
+    ]
+  },
+  {
+    "year": "2026",
+    "range": "Community",
+    "lesson": "Share your niche",
+    "alts": [
+      "Teach what you discover",
+      "Grow through your community"
+    ],
+    "take": "Your niche grows when you share",
+    "backs": [
+      "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg",
+      "slides/pmre/hxr-community/media/community/community05_halcyonvr.jpg"
+    ],
+    "cases": [
+      [
+        "community",
+        "Speaking, teaching, curating, sharing",
+        "slides/pmre/hxr-community/media/community/community03_unrealnyc.jpg",
+        45,
+        "Presenter-approved: speaking, teaching, curating FMX and RealTime Conference tracks. The photograph shows Unreal NYC, not an asserted FMX/RTC event.",
+        "Photo: Agile Lens"
+      ],
+      [
+        "niche",
+        "Be the best at your niche",
+        "slides/pmre/hxr-community/media/community/community04_unrealnyc_peeps.jpg",
+        45,
+        "Presenter lesson: be the best in the world at your particular niche. No claim of a measured global ranking.",
+        "Photo: Agile Lens"
+      ],
+      [
+        "meetup",
+        "Your community sees different things",
+        "slides/pmre/hxr-community/media/community/community05_halcyonvr.jpg",
+        35,
+        "Expanded: actual HalcyonVR event source image.",
+        "Photo: Agile Lens",
+        30
+      ]
+    ]
+  },
+  {
+    "year": "YOU",
+    "range": "Your next step",
+    "lesson": "Find your weird intersection",
+    "alts": [
+      "What’s your weird intersection?",
+      "Make your own job"
+    ],
+    "take": "What’s your weird intersection?",
+    "backs": [
+      "media/pmre/round4/thesis-earlyatrium.jpg",
+      "media/pmre/fda-dk1-office-demo.jpg"
+    ],
+    "cases": [
+      [
+        "intersection",
+        "Your experience is the starting point",
+        "media/pmre/fda-macbeth-armory-vr-demo.jpg",
+        25,
+        "Return to Alex’s architecture/theater/technology overlap and invite the audience to find its own. No new biographical claims.",
+        "Photo: Agile Lens / Fisher Dachs Associates"
+      ],
+      [
+        "eye",
+        "Your eye still matters",
+        "media/pmre/round4/zgf-nyu-lab.jpg",
+        30,
+        "Expanded callback to the hand-trained judgment material, retained verbatim below.",
+        "Alex Coulombe / ZGF Architects",
+        30
+      ]
+    ]
+  }
+]

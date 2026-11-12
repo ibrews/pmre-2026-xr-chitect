@@ -1,0 +1,59 @@
+{
+  "id": "pmre/nxt-blueprint-immersive",
+  "source": "https://ibrews.github.io/nxtbld-2026-productizing-xr/#20",
+  "source_commit": "9736254f9099037e9a1155a242b0c4b27fb13ffb",
+  "source_steps": 0,
+  "steps": 7,
+  "duration": 23.5,
+  "year": "2013\u20132023 / 2026",
+  "title": "Blueprint Immersive",
+  "line": "Runtime Datasmith imports and design options",
+  "notes": "The first attempt grew from FDA Theatre Planning work. The tool used Datasmith runtime importing and option toggles. The seven-item belt shows both videos and five stills. In the source, the text fades to 50% and the belt enters after 3.5 seconds, moves for 20 seconds, and leaves the final image centered.",
+  "media": [
+    {
+      "src": "media/nxtbld/bp-asset-35-a.mp4",
+      "seconds": 4.8,
+      "loop": false,
+      "ratio": 1.7826086956521738
+    },
+    {
+      "src": "media/nxtbld/bp-asset-35-b.mp4",
+      "seconds": 18.985633,
+      "loop": false,
+      "ratio": 1.7777777777777777
+    },
+    {
+      "src": "media/nxtbld/bp-asset-36.png",
+      "seconds": 6,
+      "loop": false,
+      "ratio": 1.9409937888198758
+    },
+    {
+      "src": "media/nxtbld/bp-asset-37.png",
+      "seconds": 6,
+      "loop": false,
+      "ratio": 1.600942655145326
+    },
+    {
+      "src": "media/nxtbld/bp-asset-38.png",
+      "seconds": 6,
+      "loop": false,
+      "ratio": 1.7279411764705883
+    },
+    {
+      "src": "media/nxtbld/bp-asset-39.png",
+      "seconds": 6,
+      "loop": false,
+      "ratio": 1.8618181818181818
+    },
+    {
+      "src": "media/nxtbld/bp-asset-40.jpg",
+      "seconds": 6,
+      "loop": false,
+      "ratio": 1.7768301350390903
+    }
+  ],
+  "kind": "belt",
+  "suggested_placement": "2013\u20132023 origins / productization chapter; 2026 source talk",
+  "adaptation": "Source conveyor timing retained (3.5s delay + 20s movement); added seven media inspection stops; headline moved above media."
+}

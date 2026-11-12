@@ -1,0 +1,53 @@
+.DS_Store
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+.claude/launch.json
+.codex/
+node_modules/
+__pycache__/
+*.pyc
+.nano-banana-config.json
+notes-config.json
+
+# sync_gslides.py — manifest + per-slide JSON are committed; binaries are not
+source/deck.pptx
+source/deck.pptx.tmp
+source/media/
+
+# fleet_client.py — local LLM provider config (copy from tools/providers.json.example)
+tools/providers.json
+
+# deck import/roundtrip tool outputs — regenerated on demand
+media/*
+# PMRE 2026 talk branch: curated, provenance-tracked talk media + motion graphics are content
+!media/pmre/
+!media/motion/
+!media/journey/
+tools/imported-*.json
+tools/palette-*.css
+
+# Curated story-v1 real project media, with talk/story-media.json provenance
+!media/story/
+
+# Chronological v3 research media
+!media/v3/
+!media/v3/**
+
+# Presenter-supplied v3 source deck selections and corrected media
+!media/v3-fix1/
+!media/v3-fix1/**
+
+# PMRE 2026 verified public presenter portraits
+!media/v3-fix3/
+!media/v3-fix3/**
+
+# Presenter-restored closing illustration and credited Miranda portrait
+!media/v3-fix5/
+!media/v3-fix5/**
+
+# PMRE real-estate thread and silent Rome headset excerpts
+!media/v3-fix6/
+!media/v3-fix6/**

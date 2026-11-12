@@ -1,0 +1,23 @@
+[
+  {
+    "file": "media/intel/Intel01.jpg",
+    "sha256": "3340aa30c82c681d386d3a4f7b5f3b37b3bbd421aa216078f0fbf247a5f7ef57",
+    "source_path": "media/intel/Intel01.jpg",
+    "source_sha256": "3340aa30c82c681d386d3a4f7b5f3b37b3bbd421aa216078f0fbf247a5f7ef57",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/intel/Intel02.jpg",
+    "sha256": "782d9b0d319ff9f52c503315981910f8a155b82135cca8d95effc00384590ed4",
+    "source_path": "media/intel/Intel02.jpg",
+    "source_sha256": "782d9b0d319ff9f52c503315981910f8a155b82135cca8d95effc00384590ed4",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/intel/Intel03.png",
+    "sha256": "09b686fbf2e04eb0aea9a7db727c7a41049f3e865bc1be6b5eb18edba8a6d257",
+    "source_path": "media/intel/Intel03.png",
+    "source_sha256": "09b686fbf2e04eb0aea9a7db727c7a41049f3e865bc1be6b5eb18edba8a6d257",
+    "transformation": "Byte-identical source copy"
+  }
+]

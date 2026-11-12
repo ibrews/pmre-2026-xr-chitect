@@ -1,0 +1,23 @@
+[
+  {
+    "file": "media/ny-dbox-holodeck/02.jpg",
+    "sha256": "59196c287e0a3b59f9f9957c1723f68b309253bcb2aa0e5049096def5ef9a247",
+    "source_path": "media/ny-dbox-holodeck/02.jpg",
+    "source_sha256": "c1786d9f0d6c12da5c2d449a24173e5d0cdcea14068d0e4414cf0b09e01b1a31",
+    "transformation": "Resized to maximum dimension 2560, preserved aspect ratio"
+  },
+  {
+    "file": "media/ny-dbox-holodeck/04.jpg",
+    "sha256": "69154b39d9c5ff9a079e41262e3bac413d629cfbcb484eb0cf28d4aff3ff9479",
+    "source_path": "media/ny-dbox-holodeck/04.jpg",
+    "source_sha256": "69154b39d9c5ff9a079e41262e3bac413d629cfbcb484eb0cf28d4aff3ff9479",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/ny-dbox-holodeck/05.jpg",
+    "sha256": "ef2ace9d1a874cc508683e570ea2fce7f11ee42f7a4e9d571746b66103c44111",
+    "source_path": "media/ny-dbox-holodeck/05.jpg",
+    "source_sha256": "ef2ace9d1a874cc508683e570ea2fce7f11ee42f7a4e9d571746b66103c44111",
+    "transformation": "Byte-identical source copy"
+  }
+]
