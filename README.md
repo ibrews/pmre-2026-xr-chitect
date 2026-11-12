@@ -1,4 +1,4 @@
-> November 11 Elizabeth review: full **80:00**, medium **43:40**, 20/20t **34:35** (49:35 including 15 minutes Q&A). The presenter’s closing trio is restored before the QR: “What excites me now”, “Your eye still matters” and the four-way niche picker. The AI image is a labeled concept illustration; the trained-eye slide returns to Alex’s credited hand sketch. Family footage, the queue selfie and built museum photo remain removed. Credits distinguish photography, visualization, venue and project roles; Brockman uses Rice’s Brandon Martin photograph. The final QR reads “Explore our immersive projects · agilelens.com”. See [review decisions and source map](talk/ELIZABETH-REVIEW.md).
+> November 11 PMRE v4: full **80:00**, medium **43:34**, 20/20t **34:29** (49:29 with 15 minutes Q&A). Real estate media takeaways now connect Four Seasons, DBOX, Blueprint Immersive and Floor Tour. Four splat beats include Rome web renders, actual silent Vision Pro excerpts and MIA footage; **The next few years** covers capture-to-walkthrough, VR/AR viewing, AI-assisted staging and services to sell. The presenter-restored AI/niche ending remains. See [v4 editorial decisions, trims and sources](talk/REAL-ESTATE-V4.md).
 
 # Architect to XR-chitect
 
@@ -39,10 +39,10 @@ python3 tools/check_branding.py
 python3 tools/slide.py check .
 node tools/qa_v3.mjs http://127.0.0.1:8791/ ../qa-runtime
 node tools/sweep_deck.mjs 'http://127.0.0.1:8791/?cut=full&safe=70&theme=house' ../sweep 1920 1080 v3-fix1 --steps
-node tools/export_venue_package.mjs --cuts full,30 --label 2026-11-09-v3-fix1 --no-keynote
+node tools/export_venue_package.mjs --cuts full,30,20t --label property-media-v4 --no-keynote
 ```
 
-Run heavy capture only after host admission. For admitted fleet capture, use `tools/venue_capture.mjs`, then pass `--captured DIR --cache DIR` to the same exporter. [Venue pipeline](README-VENUE.md). Each PowerPoint has its own separate numbered MP4 cues. No movies are embedded or linked. Full and medium are rehearsal cuts exceeding the venue slot; the web short cut fits the 50-minute talk-plus-Q&A budget. No organizer upload, email or submission is authorized.
+Run heavy capture only after host admission. For admitted fleet capture, use `tools/venue_capture.mjs`, then pass `--captured DIR --cache DIR` to the same exporter. [Venue pipeline](README-VENUE.md). Each PowerPoint has its own separate numbered MP4 cues. No movies are embedded or linked. Full and medium are rehearsal cuts exceeding the venue slot; the web short cut fits the 50-minute talk-plus-Q&A budget. Publishing this source under GitHub Pages `/v4/` is authorized; root and `/v3/` must remain unchanged. No email or Drive upload.
 
 ## Credits
 

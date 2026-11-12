@@ -47,3 +47,7 @@ tools/palette-*.css
 # Presenter-restored closing illustration and credited Miranda portrait
 !media/v3-fix5/
 !media/v3-fix5/**
+
+# PMRE real-estate thread and silent Rome headset excerpts
+!media/v3-fix6/
+!media/v3-fix6/**

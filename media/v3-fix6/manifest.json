@@ -1,0 +1,56 @@
+{
+  "sourceYoutube": {
+    "url": "https://youtu.be/AD8d6CHDbGo",
+    "title": "Gaussian Splats on Apple Vision Pro with XGRIDS LCC2 Streaming",
+    "channel": "Alex Coulombe Presents",
+    "download": "../AD8d6CHDbGo-source.mp4",
+    "sha256": "c813a20c0d6065a4c4a41d8648cdef1b19248e6699582f913a746d1386f5a9dc",
+    "excerpts": {
+      "colosseum-vr.mp4": "08:45\u201309:03",
+      "hotel-vr.mp4": "08:05\u201308:17",
+      "rome-headset.mp4": "Concatenation of those two excerpts"
+    }
+  },
+  "miaReuse": {
+    "source": "/Users/alex/GH/mia-2026-collective-pitch/media/video/splat-walkthrough.mp4",
+    "sha256": "5658685ebf3d54c5bbb82c7c5c9adaf5807a3d5301cf0652ec66988b52b61960",
+    "credit": "Alex Coulombe; as credited in MIA talk/pitch.json",
+    "excerpt": "00:03\u201300:12",
+    "subject": "Fountain scan walkthrough; no new location or camera attribution inferred"
+  },
+  "romeCapture": "PortalCam: Josette Seitz / Agile Lens, October 2026 MIA trip; presenter-career-facts.md",
+  "files": [
+    {
+      "path": "media/v3-fix6/mia-fountain.mp4",
+      "sha256": "1dc1edd7a3d958a352b818797315124bd29c8bbf3744e26f3c76a9bbd736781c",
+      "duration": 9.0,
+      "width": 608,
+      "height": 1080,
+      "audio": false
+    },
+    {
+      "path": "media/v3-fix6/colosseum-vr.mp4",
+      "sha256": "0a31ab95f72c8da7962ecc452b49187087070af49d6a24415495d4ce19d764a8",
+      "duration": 18.029771,
+      "width": 1920,
+      "height": 1080,
+      "audio": false
+    },
+    {
+      "path": "media/v3-fix6/hotel-vr.mp4",
+      "sha256": "6939b9ce9568f11863c34d10840c7c3359a466c457e89b5b82e2b8dbc34eafa7",
+      "duration": 11.975247,
+      "width": 1920,
+      "height": 1080,
+      "audio": false
+    },
+    {
+      "path": "media/v3-fix6/rome-headset.mp4",
+      "sha256": "bc5be2ad409393f5c875aa9ce7f7d98111f2980cab261b1c06a3f9c77f276b83",
+      "duration": 30.005018,
+      "width": 1920,
+      "height": 1080,
+      "audio": false
+    }
+  ]
+}

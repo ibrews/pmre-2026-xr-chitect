@@ -1,3 +1,5 @@
+> Current PMRE v4 decisions, timing, trims and new media: [Real estate thread](REAL-ESTATE-V4.md). This supersedes older timing/cut statements below; restored AI/niche ending remains.
+
 > November 11 review supersedes the older budgets/options below: **80:00 / 40:55 / 33:30**, with 20t + Q&A **48:30**. AI and niche picker groups and their slides are removed; legacy ai/niche URL values cannot restore them. Full-cut time goes into existing design/rehearsal/client examples. [Review decisions](ELIZABETH-REVIEW.md).
 
 # PMRE v3 chronological story

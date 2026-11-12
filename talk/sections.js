@@ -1,11 +1,11 @@
-// PMRE v3: chronological story; Elizabeth review with presenter closing restoration.
+// PMRE v4: chronological story with a real-estate-media thread.
 const TALK = {
   "coverEvent": "",
   "coverTitle": "Architect to <span class=\"xr\">XR</span>-chitect",
   "coverSub": "",
   "speaker": "Alex Coulombe",
   "speakerCo": "",
-  "coverNotes": "⏱ ~30s.\n\nI want to tell you how architecture, theater and emerging technology became one job. I hope this sparks an idea about the things you love. Full is the primary rehearsal cut. Select 20t for the venue time limit.",
+  "coverNotes": "⏱ ~30s.\n\nI want to tell you how architecture, theater and emerging technology became one job. I hope this sparks an idea about the things you love. Full is the primary rehearsal cut. Select 20t for the venue time limit.\n\nFor this room: I make spaces understandable before people can be there. You already do that with property photographs and films. I want to show you what you might sell when the buyer can step inside the media.",
   "mapCenter": [
     "ARCHITECT",
     "TO XR-CHITECT"
@@ -318,7 +318,7 @@ const SECTIONS = [
           "brightness": 1,
           "alt": "New York"
         },
-        "notes": "⏱ ~90s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nTeaching myself Revit helped me get the Rafael Viñoly job that brought me to New York. The image shown is my later ZGF work, not a Viñoly project.\n\nYear: 2010. Venn weights: 1 / 0.1 / 0.8.\n",
+        "notes": "⏱ ~90s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nTeaching myself Revit helped me get the Rafael Viñoly job that brought me to New York. The image shown is my later ZGF work, not a Viñoly project.\n\nYear: 2010. Venn weights: 1 / 0.1 / 0.8.\n\n\nProperty-media connection — presenter interpretation: The photograph or render is still an invitation. I want the next step to let the buyer judge a place at human scale.",
         "year": "2010",
         "venn": [
           1,
@@ -467,7 +467,7 @@ const SECTIONS = [
           "brightness": 1,
           "alt": "Macbeth / Park Avenue Armory"
         },
-        "notes": "⏱ ~100s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nEarly Macbeth work at the Park Avenue Armory. Could everyone see? Now I could stand in a theater before it existed, at a human eye height. Source: KB Macbeth overview dates this previs work to 2014.\n\nYear: 2014. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~100s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nEarly Macbeth work at the Park Avenue Armory. Could everyone see? Now I could stand in a theater before it existed, at a human eye height. Source: KB Macbeth overview dates this previs work to 2014.\n\nYear: 2014. Venn weights: 1 / 1 / 1.\n\n\nProperty-media connection — presenter interpretation: That same eye-level question matters in a home: can I see the garden from the kitchen, and what is the view from the sofa? Media makers already know how to tell that story with a lens.",
         "year": "2014",
         "venn": [
           1,
@@ -557,7 +557,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~105s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nSightlines for people became sightlines for projectors at the Late Show. Architecture, theater and technology all in the same job. Tell the transition, rather than explain the technical pipeline.\n\nYear: 2015. Venn weights: 1 / 1 / 1.\n\n\nElizabeth review, November 11: Bravo Media credit and requested title supplied by Elizabeth. Alex/FDA sightline role remains in the delivery context; do not present this video as solely authored by Alex.",
+        "notes": "⏱ ~105s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nSightlines for people became sightlines for projectors at the Late Show. Architecture, theater and technology all in the same job. Tell the transition, rather than explain the technical pipeline.\n\nYear: 2015. Venn weights: 1 / 1 / 1.\n\n\nElizabeth review, November 11: Bravo Media credit and requested title supplied by Elizabeth. Alex/FDA sightline role remains in the delivery context; do not present this video as solely authored by Alex.\n\nProperty-media connection — presenter interpretation: We used a digital place to make a real-world decision. When you market a property, ask which uncertainty the next piece of media should remove.",
         "year": "2015",
         "venn": [
           1,
@@ -664,7 +664,7 @@ const SECTIONS = [
           "brightness": 0.85,
           "alt": "“We should do it together”"
         },
-        "notes": "⏱ ~210s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThen Josh said that if I really wanted to start a VR company, we should do it together. That was the surprise. We founded Agile Lens later in 2016. Ten years now. Show people how passionate you are, including what you do off-hours because you love it. That is how they come to believe in you.\n\nYear: 2016. Venn weights: 0.7 / 0.8 / 1.\n\n\nMerged delivery context:\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nEarly 2016: Josh pulled me in and said he felt I was thinking of leaving to start a VR company. My reaction was, What? No! I will work here till I die. Then he said I was not much of a business manager, not organized, with creative wildfire but not much direction. I thought he was trying to convince me not to leave. These are paraphrased delivery prompts from the walk, not a verbatim historical transcript.\n\nYear: 2016. Venn weights: 0.5 / 0.7 / 1.\n\n\nTell the early-2016 Josh office story first, then the invitation to become partners and the later-2016 founding. The logo is company identity, not a photo of that conversation.",
+        "notes": "⏱ ~165s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThen Josh said that if I really wanted to start a VR company, we should do it together. That was the surprise. We founded Agile Lens later in 2016. Ten years now. Show people how passionate you are, including what you do off-hours because you love it. That is how they come to believe in you.\n\nYear: 2016. Venn weights: 0.7 / 0.8 / 1.\n\n\nMerged delivery context:\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nEarly 2016: Josh pulled me in and said he felt I was thinking of leaving to start a VR company. My reaction was, What? No! I will work here till I die. Then he said I was not much of a business manager, not organized, with creative wildfire but not much direction. I thought he was trying to convince me not to leave. These are paraphrased delivery prompts from the walk, not a verbatim historical transcript.\n\nYear: 2016. Venn weights: 0.5 / 0.7 / 1.\n\n\nTell the early-2016 Josh office story first, then the invitation to become partners and the later-2016 founding. The logo is company identity, not a photo of that conversation.",
         "year": "2016",
         "venn": [
           0.7,
@@ -706,7 +706,7 @@ const SECTIONS = [
           "alt": "Curiosity"
         },
         "title": "Curiosity",
-        "keep": 19,
+        "keep": 99,
         "year": "2016",
         "venn": [
           0.5,
@@ -721,7 +721,7 @@ const SECTIONS = [
         "use": "pmre/picasso",
         "props": {},
         "title": "Who painted this?",
-        "keep": 19,
+        "keep": 99,
         "year": "2016",
         "venn": [
           0.4,
@@ -827,7 +827,7 @@ const SECTIONS = [
           "alt": "Sketch to design workflow",
           "posterTime": 22.6
         },
-        "notes": "⏱ ~155s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s45. Suggested placement after napkin sketch: bring the spatial sketch back into the Autodesk workflow as an overlay for the resolved model and documents. This is the original2017-era limitation described by Alex, not a claim about all present-day software. Optional extension; the precise recording day is not asserted.",
+        "notes": "⏱ ~105s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s45. Suggested placement after napkin sketch: bring the spatial sketch back into the Autodesk workflow as an overlay for the resolved model and documents. This is the original2017-era limitation described by Alex, not a claim about all present-day software. Optional extension; the precise recording day is not asserted.",
         "opt": "workflows:extended"
       },
       {
@@ -881,7 +881,7 @@ const SECTIONS = [
         "id": "unreal",
         "title": "Unreal Authorized Instructor",
         "use": "pmre/story-media",
-        "keep": 19,
+        "keep": 99,
         "storyRole": "content",
         "props": {
           "title": "Unreal Authorized Instructor",
@@ -1059,7 +1059,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~117s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBuyers walk the future home together. A guide and physical stagecraft make this a shared visit.\n\nYear: 2023. Venn weights: 1 / 1 / 1.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\n\nFull-cut delivery space: Describe the visitor journey: briefing, headset, shared walk and sitting in a real seat at the end. Explain the guide’s role and why other people in the room change the visit. Ask which part of a property story needs more than a camera.",
+        "notes": "⏱ ~67s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBuyers walk the future home together. A guide and physical stagecraft make this a shared visit.\n\nYear: 2023. Venn weights: 1 / 1 / 1.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\n\nFull-cut delivery space: Describe the visitor journey: briefing, headset, shared walk and sitting in a real seat at the end. Explain the guide’s role and why other people in the room change the visit. Ask which part of a property story needs more than a camera.",
         "year": "2023",
         "venn": [
           1,
@@ -1079,9 +1079,10 @@ const SECTIONS = [
           "alt": "Actual in-headset VR tour of Four Seasons Lake Austin",
           "credit": "Rendering: DBOX for Austin Capital Partners",
           "mode": "content",
-          "brightness": 1
+          "brightness": 1,
+          "takeaway": "Market the home before it exists"
         },
-        "notes": "⏱ ~90s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nActual in-headset tour. We end in a theater, which feels fitting. Rendering: DBOX for Austin Capital Partners. PureBlink: project visualization collaborator; Agile Lens: interactive experience.\n\nYear: 2023. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~90s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nActual in-headset tour. We end in a theater, which feels fitting. Rendering: DBOX for Austin Capital Partners. PureBlink: project visualization collaborator; Agile Lens: interactive experience.\n\nYear: 2023. Venn weights: 1 / 1 / 1.\n\n\nFor your business — presenter proposal: For an off-plan sale, a photograph cannot show the finished home. Partner with the architect and visualization team to create a guided, human-scale sales visit. Your job is still choosing the views and helping someone imagine living there. Project context is evidence of use, not proof of a sales lift caused by VR.",
         "year": "2023",
         "venn": [
           1,
@@ -1123,9 +1124,10 @@ const SECTIONS = [
           "credit": "Four Seasons Lake Austin · photo: Agile Lens",
           "alt": "$500M+ in presales",
           "mode": "content",
-          "brightness": 1
+          "brightness": 1,
+          "takeaway": "Sell the visit as well as the image"
         },
-        "notes": "⏱ ~96s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter-approved project context. Do not turn the figure into a measured causal return on VR.\n\nYear: 2023–2026. Venn weights: 1 / 0.5 / 1.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\n\nFull-cut delivery space: Separate the evidence of buyer adoption from causality. The presales figure is project context; ask what additional evidence would be needed to attribute sales to VR alone. Return to the customer’s ability to judge an unbuilt home.",
+        "notes": "⏱ ~46s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter-approved project context. Do not turn the figure into a measured causal return on VR.\n\nYear: 2023–2026. Venn weights: 1 / 0.5 / 1.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\n\nFull-cut delivery space: Separate the evidence of buyer adoption from causality. The presales figure is project context; ask what additional evidence would be needed to attribute sales to VR alone. Return to the customer’s ability to judge an unbuilt home.\n\nFor your business — presenter proposal: I would offer an ongoing showroom service: keep views current, train the sales team, and produce the flat media that gets buyers into the experience. The presales figure is sourced project context, not a measured return on VR.",
         "year": "2023–2026",
         "venn": [
           1,
@@ -1228,7 +1230,7 @@ const SECTIONS = [
         "id": "dbox",
         "title": "DBOX New York / VR showroom",
         "use": "pmre/story-media",
-        "keep": 99,
+        "keep": 19,
         "storyRole": "content",
         "props": {
           "title": "DBOX New York / VR showroom",
@@ -1236,9 +1238,10 @@ const SECTIONS = [
           "credit": "DBOX NYC · photo: Agile Lens · displayed render: DBOX for Austin Capital Partners",
           "alt": "Inside the DBOX space",
           "mode": "content",
-          "brightness": 1
+          "brightness": 1,
+          "takeaway": "Bring the property to the buyer"
         },
-        "notes": "⏱ ~48s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nA real physical place to experience the digital one.\n\nYear: 2023–2026. Venn weights: 1 / 0.8 / 1.\n\n\nElizabeth review, November 11: This is DBOX’s Manhattan headquarters showroom, not a full-frame rendering or an Austin venue photo. Photo source: Agile Lens. DBOX/Impossible Ventures are project partners; displayed Four Seasons rendering is credited to DBOX for Austin Capital Partners, distinct from the photograph. The permanent installation opened in 2025 per https://www.agilelens.com/portfolio/ny-dbox-space .",
+        "notes": "⏱ ~48s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nA real physical place to experience the digital one.\n\nYear: 2023–2026. Venn weights: 1 / 0.8 / 1.\n\n\nElizabeth review, November 11: This is DBOX’s Manhattan headquarters showroom, not a full-frame rendering or an Austin venue photo. Photo source: Agile Lens. DBOX/Impossible Ventures are project partners; displayed Four Seasons rendering is credited to DBOX for Austin Capital Partners, distinct from the photograph. The permanent installation opened in 2025 per https://www.agilelens.com/portfolio/ny-dbox-space .\n\nFor your business — presenter proposal: Imagine a sales team showing several unbuilt homes in one city showroom. Media makers can curate the route, make campaign imagery and help operate the experience. This is my proposed business application. This actual DBOX installation opened in 2025; it is distinct from the investor pop-up.",
         "year": "2025",
         "venn": [
           1,
@@ -1346,7 +1349,7 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~105s.\n\nRoyal Shakespeare Company VR Rehearsal Tool, 2024–2025 R&D, funded by XR Network+ with Royal Central School. Agile Lens built a virtual Swan Theatre so remote actors in London, Stratford-upon-Avon, New York and Los Angeles could rehearse together. Actors sharing a room use mixed reality passthrough; remote performers appear as avatars. Quest 3 performers can call up scripts and blocking cues. Directors, designers and stage managers use a Windows laptop app to ingest scripts, place blocking notes and monitor positions. A custom backend persists shared state. This is rehearsal research and tool development, not a claim that Agile Lens produced an RSC stage production.\nSource: https://agilelens.com/portfolio/virtual-rehearsal-room; https://xrnetworkplus.xrstories.co.uk/xr-network-announces-royal-shakespeare-company-rd-challenge-projects/ .\nThe supplied photograph is from this RSC research strand, also shown in the July 2025 London Adventures account. Do not assign the pictured session an exact date or name individual participants without a caption."
+        "notes": "⏱ ~105s.\n\nRoyal Shakespeare Company VR Rehearsal Tool, 2024–2025 R&D, funded by XR Network+ with Royal Central School. Agile Lens built a virtual Swan Theatre so remote actors in London, Stratford-upon-Avon, New York and Los Angeles could rehearse together. Actors sharing a room use mixed reality passthrough; remote performers appear as avatars. Quest 3 performers can call up scripts and blocking cues. Directors, designers and stage managers use a Windows laptop app to ingest scripts, place blocking notes and monitor positions. A custom backend persists shared state. This is rehearsal research and tool development, not a claim that Agile Lens produced an RSC stage production.\nSource: https://agilelens.com/portfolio/virtual-rehearsal-room; https://xrnetworkplus.xrstories.co.uk/xr-network-announces-royal-shakespeare-company-rd-challenge-projects/ .\nThe supplied photograph is from this RSC research strand, also shown in the July 2025 London Adventures account. Do not assign the pictured session an exact date or name individual participants without a caption.\n\nProperty-media connection — presenter interpretation: This rehearsal work is not a residential case study. My prediction is that shared viewing will make remote property conversations more useful: walk through together and ask questions in the same place."
       },
       {
         "id": "rsc-workshop",
@@ -1368,7 +1371,7 @@ const SECTIONS = [
           "brightness": 1,
           "alt": "Royal Shakespeare Company / rehearsal"
         },
-        "notes": "⏱ ~100s.\n\nRoyal Shakespeare Company VR Rehearsal Tool, 2024–2025 R&D, funded by XR Network+ with Royal Central School. Agile Lens built a virtual Swan Theatre so remote actors in London, Stratford-upon-Avon, New York and Los Angeles could rehearse together. Actors sharing a room use mixed reality passthrough; remote performers appear as avatars. Quest 3 performers can call up scripts and blocking cues. Directors, designers and stage managers use a Windows laptop app to ingest scripts, place blocking notes and monitor positions. A custom backend persists shared state. This is rehearsal research and tool development, not a claim that Agile Lens produced an RSC stage production.\nSource: https://agilelens.com/portfolio/virtual-rehearsal-room; https://xrnetworkplus.xrstories.co.uk/xr-network-announces-royal-shakespeare-company-rd-challenge-projects/ .\nSecond distinct supplied RSC rehearsal research photograph, HarvardXR #7 rsc_02.jpg. Show performers testing rehearsal interactions. Do not imply the photograph records a named production.\n\nFull-cut delivery space: Explain one rehearsal loop: director gives a note, performers try blocking at scale, stage manager saves the state. Contrast remote participants and people sharing a room. Discuss why a repeatable tool matters beyond one polished demo; do not name an unverified stage production."
+        "notes": "⏱ ~60s.\n\nRoyal Shakespeare Company VR Rehearsal Tool, 2024–2025 R&D, funded by XR Network+ with Royal Central School. Agile Lens built a virtual Swan Theatre so remote actors in London, Stratford-upon-Avon, New York and Los Angeles could rehearse together. Actors sharing a room use mixed reality passthrough; remote performers appear as avatars. Quest 3 performers can call up scripts and blocking cues. Directors, designers and stage managers use a Windows laptop app to ingest scripts, place blocking notes and monitor positions. A custom backend persists shared state. This is rehearsal research and tool development, not a claim that Agile Lens produced an RSC stage production.\nSource: https://agilelens.com/portfolio/virtual-rehearsal-room; https://xrnetworkplus.xrstories.co.uk/xr-network-announces-royal-shakespeare-company-rd-challenge-projects/ .\nSecond distinct supplied RSC rehearsal research photograph, HarvardXR #7 rsc_02.jpg. Show performers testing rehearsal interactions. Do not imply the photograph records a named production.\n\nFull-cut delivery space: Explain one rehearsal loop: director gives a note, performers try blocking at scale, stage manager saves the state. Contrast remote participants and people sharing a room. Discuss why a repeatable tool matters beyond one polished demo; do not name an unverified stage production."
       },
       {
         "id": "blueprint",
@@ -1382,9 +1385,10 @@ const SECTIONS = [
           "credit": "Product demo: Agile Lens",
           "alt": "Blueprint Immersive seat check",
           "mode": "content",
-          "brightness": 1
+          "brightness": 1,
+          "takeaway": "Make your expertise repeatable"
         },
-        "notes": "⏱ ~105s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThis product takes the one-off bespoke theater VR workflow I built for Fisher Dachs and lets them do it themselves. Disseminating expertise can mean teaching, software, a platform, or a talk.\n\nYear: 2025–2026. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~105s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThis product takes the one-off bespoke theater VR workflow I built for Fisher Dachs and lets them do it themselves. Disseminating expertise can mean teaching, software, a platform, or a talk.\n\nYear: 2025–2026. Venn weights: 1 / 1 / 1.\n\n\nFor your business — presenter proposal: This is a theatre tool, not a property-marketing product claim. The transferable lesson: package what you know into a repeatable buyer experience. Build a template for the questions every buyer asks: what can I see, how does it connect, where would my furniture go?",
         "year": "2025–2026",
         "venn": [
           1,
@@ -1418,7 +1422,7 @@ const SECTIONS = [
         "id": "floor-demo",
         "title": "Floor Tour",
         "use": "pmre/story-media",
-        "keep": 99,
+        "keep": 19,
         "storyRole": "content",
         "props": {
           "title": "Floor Tour",
@@ -1426,9 +1430,10 @@ const SECTIONS = [
           "credit": "Product demo: Agile Lens",
           "alt": "A plan becomes walkable",
           "mode": "content",
-          "brightness": 0.65
+          "brightness": 0.65,
+          "takeaway": "Let buyers feel the floor plan"
         },
-        "notes": "⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother repeatable tool: walk an architectural plan at human scale. Product demonstration, not a current price or availability claim.\n\nYear: 2025–2026. Venn weights: 1 / 0.3 / 1.\n",
+        "notes": "⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother repeatable tool: walk an architectural plan at human scale. Product demonstration, not a current price or availability claim.\n\nYear: 2025–2026. Venn weights: 1 / 0.3 / 1.\n\n\nFor your business — presenter proposal: A floor plan is obvious to an architect and unfamiliar to many buyers. I would sell a guided plan walkthrough beside the photographs, especially before a home is built. This clip demonstrates Floor Tour; it does not establish a price, availability or measured conversion rate.",
         "year": "2025–2026",
         "venn": [
           1,
@@ -1488,7 +1493,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nSpatial storytelling is another place theater and emerging technology meet. Show actual production footage. Production began earlier; 2026 is the present-day storytelling discussion, not a premiere claim.\n\nYear: 2026. Venn weights: 0.4 / 1 / 1.\n",
+        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nSpatial storytelling is another place theater and emerging technology meet. Show actual production footage. Production began earlier; 2026 is the present-day storytelling discussion, not a premiere claim.\n\nYear: 2026. Venn weights: 0.4 / 1 / 1.\n\n\nProperty-media connection — presenter interpretation: Choosing a camera position inside a recorded world is still cinematography. I think property photographers will increasingly create the world and then choose how to film it.",
         "year": "2026",
         "venn": [
           0.4,
@@ -1580,14 +1585,14 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~65s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nActual teaching footage from August 2026 illustrates the continuing practice. It is not footage of my 2020 certification or of the named private client trainings.\n\nYear: 2020–2026. Venn weights: 0.6 / 0.5 / 1.\n"
+        "notes": "⏱ ~26s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nActual teaching footage from August 2026 illustrates the continuing practice. It is not footage of my 2020 certification or of the named private client trainings.\n\nYear: 2020–2026. Venn weights: 0.6 / 0.5 / 1.\n"
       },
       {
         "id": "film-language",
         "use": "pmre/film-language",
         "props": {},
         "title": "VR is like the early days of film",
-        "keep": 19,
+        "keep": 99,
         "year": "2026",
         "venn": [
           0.2,
@@ -1600,19 +1605,20 @@ const SECTIONS = [
       },
       {
         "id": "rome",
-        "title": "Rome / web-rendered scan",
+        "title": "Walk around the Colosseum",
         "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
-          "title": "Rome / web-rendered scan",
+          "title": "Walk around the Colosseum",
           "src": "slides/pmre/rome-splats/media/rome-colosseum-flythrough-15s-1080p.mp4",
           "credit": "Josette Seitz / Agile Lens · Web-rendered scan",
           "alt": "Rome, captured as splats",
           "mode": "content",
-          "brightness": 1
+          "brightness": 1,
+          "takeaway": "A captured place you can move through"
         },
-        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThis is what is exciting me now: places captured from photographs that you can move through. Josette Seitz / Agile Lens scan. Web-rendered footage, not headset footage.\n\nYear: 2026. Venn weights: 1 / 0.3 / 1.\n",
+        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThis is what is exciting me now: places captured from photographs that you can move through. Josette Seitz / Agile Lens scan. Web-rendered footage, not headset footage.\n\nYear: 2026. Venn weights: 1 / 0.3 / 1.\n\n\nGaussian splats are a way to reconstruct the appearance of a place from overlapping photographs/video, so a viewer can choose a new viewpoint. This clip is a web-rendered camera path through our Rome scan; the next headset clip shows the difference between watching that path and choosing your own. The thing that gets me is walking around the Colosseum and looking back at a detail. For a property, that could be a buyer choosing to look back through the living room. Do not describe this Rome capture as a phone or drone scan: the Rome examples use PortalCam. Background: Kerbl, Kopanas, Leimkühler and Drettakis, SIGGRAPH 2023, https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/ . No performance number or equivalence to a measured survey is asserted.",
         "year": "2026",
         "venn": [
           1,
@@ -1624,7 +1630,7 @@ const SECTIONS = [
         "id": "hotel",
         "title": "Sina Bernini Bristol",
         "use": "pmre/story-media",
-        "keep": 99,
+        "keep": 19,
         "storyRole": "content",
         "props": {
           "title": "Sina Bernini Bristol",
@@ -1633,9 +1639,10 @@ const SECTIONS = [
           "alt": "Gaussian splat of Sina Bernini Bristol, Autograph Collection, Rome",
           "mode": "content",
           "brightness": 1,
-          "posterTime": 3
+          "posterTime": 3,
+          "takeaway": "Now imagine this as your next listing"
         },
-        "notes": "⏱ ~45s.\n\nSina Bernini Bristol, Autograph Collection, Rome. Josette Seitz captured this hotel with XGRIDS PortalCam during the October 2026 MIA trip. This is the existing slow 10-second web-rendered Gaussian-splat flythrough of the whole-scene LOD scan, not headset footage and not a hotel-supplied marketing film. Credit capture to Josette Seitz / Agile Lens; rendering uses GaussianSplats3D / Three.js.\nSources: presenter identification November 9, 2026; KB daily/2026-10-21-alex-mbp.md (12:25Z scan receipt, RomaHotelMIA files copied to Fort H:/XR/UOXRShowcase/data/RomaHotelMIA), daily/2026-10-22-alex-mbp.md (SplatDiorama scan lineage); https://www.marriott.com/en-us/hotels/romab-sina-bernini-bristol-autograph-collection/overview/ . Existing shipped clip: slides/pmre/rome-splats/media/rome-hotel-flythrough-10s-1080p.mp4. The brand identity source does not imply that Marriott commissioned this scan.",
+        "notes": "⏱ ~45s.\n\nSina Bernini Bristol, Autograph Collection, Rome. Josette Seitz captured this hotel with XGRIDS PortalCam during the October 2026 MIA trip. This is the existing slow 10-second web-rendered Gaussian-splat flythrough of the whole-scene LOD scan, not headset footage and not a hotel-supplied marketing film. Credit capture to Josette Seitz / Agile Lens; rendering uses GaussianSplats3D / Three.js.\nSources: presenter identification November 9, 2026; KB daily/2026-10-21-alex-mbp.md (12:25Z scan receipt, RomaHotelMIA files copied to Fort H:/XR/UOXRShowcase/data/RomaHotelMIA), daily/2026-10-22-alex-mbp.md (SplatDiorama scan lineage); https://www.marriott.com/en-us/hotels/romab-sina-bernini-bristol-autograph-collection/overview/ . Existing shipped clip: slides/pmre/rome-splats/media/rome-hotel-flythrough-10s-1080p.mp4. The brand identity source does not imply that Marriott commissioned this scan.\n\nI love the Colosseum, but this is the bridge to your business: an actual hotel interior. Let someone look around the arrival space before they book or buy. The same idea applies to a home, amenity floor or event venue. You would still capture good photographs; I would sell the walkable place as an additional deliverable. This is my proposal, not a Marriott endorsement.",
         "year": "2026",
         "venn": [
           1,
@@ -1644,26 +1651,113 @@ const SECTIONS = [
         ]
       },
       {
-        "id": "splatdiorama",
-        "title": "SplatDiorama / simulator",
+        "id": "splat-vr",
+        "title": "Rome, inside the headset",
         "use": "pmre/story-media",
-        "keep": 99,
+        "keep": 19,
         "storyRole": "content",
         "props": {
-          "title": "SplatDiorama / simulator",
-          "src": "media/story/splatdiorama-rome.png",
-          "credit": "SplatDiorama build77 · Simulator screenshot",
-          "alt": "SplatDiorama opens the same place",
           "mode": "content",
-          "brightness": 1
+          "title": "Rome, inside the headset",
+          "src": "media/v3-fix6/rome-headset.mp4",
+          "alt": "First-person Vision Pro recording moving through the Colosseum Gaussian splat, with hands and SplatDiorama controls visible",
+          "credit": "Headset recording: Alex Coulombe Presents · scan: Josette Seitz / Agile Lens",
+          "posterTime": 7,
+          "takeaway": "Let the buyer choose where to look"
         },
-        "notes": "⏱ ~56s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nSame scan in the actual app simulator. Maintain simulator label.\n\nYear: 2026. Venn weights: 1 / 0.3 / 1.\n",
+        "notes": "⏱ ~70s.\n\n(over video) This is two short excerpts of my actual first-person Apple Vision Pro recording, not the simulator still we used earlier. Look at the hands and the change of viewpoint. You are inside a captured place, deciding where to look. I think that is extraordinary. You do not have to convince every buyer to own a headset: start with a link, then offer a guided headset visit when it helps.\n\nSource: Alex Coulombe Presents, “Gaussian Splats on Apple Vision Pro with XGRIDS LCC2 Streaming”, https://youtu.be/AD8d6CHDbGo . Excerpts 08:45–09:03 (Colosseum) and 08:05–08:17 (hotel), rendered to 1920×1080 H.264 with all audio stripped. Rome PortalCam scan: Josette Seitz / Agile Lens, October 2026 MIA trip. This recording demonstrates this app and dataset; it is not a claim that every splat viewer or headset supports the same workflow. Native control labels in the recording are retained for honest context. The separate venue cue is silent too.\n\nFor your business — presenter proposal: build a scene that can support a buyer-controlled tour and a photographer-directed film. You can sell the capture, cleanup, route, publication and future updates as distinct parts of the job.",
         "year": "2026",
         "venn": [
           1,
           0.3,
           1
         ]
+      },
+      {
+        "id": "capture-to-tour",
+        "use": "pmre/property-future",
+        "title": "Your shoot becomes a place",
+        "keep": 19,
+        "year": "2026+",
+        "venn": [
+          1,
+          0.4,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "chapter": "The next few years",
+          "title": "Your shoot becomes a place",
+          "labels": [
+            "Phone / drone",
+            "Gaussian splat",
+            "Walkthrough"
+          ],
+          "icons": [
+            "capture",
+            "splat",
+            "walk"
+          ],
+          "src": "media/v3-fix6/mia-fountain.mp4",
+          "credit": "MIA deck fountain walkthrough: Alex Coulombe · prerecorded splat view"
+        },
+        "notes": "⏱ ~75s.\n\nPresenter forecast/proposal, November 2026.\n\nMy bet: the deliverable expands from a set of views to a place the buyer can explore. On a phone or drone shoot, plan overlapping coverage for reconstruction alongside the hero shots. Process the images, clean the scan, choose the start point, then publish a walkthrough and a short film. That is a capture-to-walkthrough service you can begin testing on a property you control. A drone covers the outside; a phone or handheld capture covers the inside. This is an additional capture plan, not a promise that every ordinary real-estate shoot will reconstruct well.\n\nThe Rome examples are PortalCam captures. The phone/drone route is a separate workflow. Polycam documents Gaussian splats from existing overlapping photos or video, including drone captures; this is a supported input route, not a promised turnaround or quality guarantee. Sources: https://learn.poly.cam/hc/en-us/articles/30549134403860-How-to-Create-Drone-3D-Models-in-Polycam ; https://learn.poly.cam/hc/en-us/articles/30549121659412-How-to-Create-Photogrammetry-and-Gaussian-splats-from-Existing-Images-and-Videos-on-Mobile-and-Web . Use overlap and coverage, inspect glass/mirrors/moving subjects, clean the result and test the actual viewer. Price the work, not an assumed one-click conversion.\n\nThe portrait movie is reused from the MIA deck: media/video/splat-walkthrough.mp4, credited there to Alex Coulombe. It shows a fountain scan viewed from a moving virtual camera, not a new Rome hotel capture and not a recording of a phone actively scanning. PMRE derivative uses 00:03–00:12, audio removed, height 1080. It illustrates the middle (reconstructed scene) stage; the phone/drone input route is described separately above."
+      },
+      {
+        "id": "view-before-visit",
+        "use": "pmre/property-future",
+        "title": "Choose how to live there",
+        "keep": 19,
+        "year": "2026+",
+        "venn": [
+          1,
+          0.4,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "chapter": "The next few years",
+          "title": "Choose how to live there",
+          "labels": [
+            "Browse at home",
+            "Meet in VR",
+            "Place it in AR"
+          ],
+          "icons": [
+            "home",
+            "headset",
+            "ar"
+          ]
+        },
+        "notes": "⏱ ~60s.\n\nPresenter forecast/proposal, November 2026.\n\nMy prediction: the first viewing happens wherever the buyer is. Browse the captured home on a screen; join an agent in a VR showroom for an unbuilt apartment; use AR to explore a furniture or layout choice in the room you are standing in. Think about the ordinary decisions: does the dining table fit our life, how does the kitchen connect to the garden, could this room work as an office? AR and VR can help people discuss those questions before a trip and after moving in.\n\nSeparate the assets: a splat preserves captured appearance; off-plan sales need a design model or visualization; an AR furniture placement needs an appropriate object model and supported viewer. I am describing the direction I want to build toward, not announcing a universal property platform, seamless file compatibility, or an adoption forecast. The Four Seasons/DBOX work earlier in the talk is the actual example of a VR sales setting. Your service can be the guided experience and the media that brings people to it."
+      },
+      {
+        "id": "sell-next",
+        "use": "pmre/property-future",
+        "title": "What I’d sell next",
+        "keep": 19,
+        "year": "2026+",
+        "venn": [
+          1,
+          0.4,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "chapter": "The next few years",
+          "title": "What I’d sell next",
+          "labels": [
+            "Capture + tour",
+            "Staging + options",
+            "Launch + updates"
+          ],
+          "icons": [
+            "camera",
+            "room",
+            "refresh"
+          ]
+        },
+        "notes": "⏱ ~75s.\n\nPresenter forecast/proposal, November 2026.\n\nMy opinion: do not wait to become a headset company. Sell a small, clear addition to your existing property package: a cleaned walkable capture, a guided route and a film from the same scene. For an unbuilt project, partner with the visualization team and offer a staffed showroom session. For an existing home, offer labeled AI-assisted staging concepts and a path back to the original capture. Keep the actual space visible and distinguish a proposal from what is there.\n\nAI can help explore furniture and finishes, but your eye still has to judge scale, light, continuity and whether the result tells the truth about the property. A beautiful invented doorway is a bad listing image. I would sell the art direction and review, not the number of generated pictures. Offer updates when the space or campaign changes. No revenue forecast, price, or sales-lift statistic is implied. My bet is that the photographer who knows how to make people care about a place will be valuable across all of these formats.\n\nTransition into the restored closing trio: that is why this technology excites me, why your trained eye still matters, and why your own combination of interests is the opportunity."
       },
       {
         "id": "ai",
