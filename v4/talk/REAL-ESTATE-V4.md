@@ -37,4 +37,4 @@ To preserve full80:00, replace the56s simulator still with70s actual headset foo
 
 ## Publication
 
-After verification, publish this branch tree under `/v4/` on main, excluding `.git` and pre-existing deployment directories. Preserve all root and `/v3/` bytes. Do not email or upload to Drive. The checked package contains separate silent MP4 cues, not embedded movies. Keynote remains skipped under the documented limitation.
+After verification, publish this branch tree under `/v4/` on main, excluding `.git` and pre-existing deployment directories. Preserve all root and `/v3/` bytes. Do not email or upload to Drive. The checked package contains separate MP4 cues, not embedded movies; the new Rome/MIA cues are silent, while existing source-video and procedural SFX audio policies remain. Keynote remains skipped under the documented limitation.
