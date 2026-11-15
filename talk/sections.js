@@ -1,10 +1,10 @@
-// PMRE v4: chronological story with a real-estate-media thread.
+// PMRE v5: presenter-dictated opening and Syracuse arc, ring+Venn tracker, chronological story with a real-estate-media thread.
 const TALK = {
-  "coverEvent": "",
+  "coverEvent": "PMRE 2026 &middot; Las Vegas &middot; Thursday, Nov 19",
   "coverTitle": "Architect to <span class=\"xr\">XR</span>-chitect",
-  "coverSub": "",
+  "coverSub": "The Best Career Advice I Ever Ignored",
   "speaker": "Alex Coulombe",
-  "speakerCo": "",
+  "speakerCo": "Founder, Agile Lens &middot; New York City",
   "coverNotes": "⏱ ~30s.\n\nI want to tell you how architecture, theater and emerging technology became one job. I hope this sparks an idea about the things you love. Full is the primary rehearsal cut. Select 20t for the venue time limit.\n\nFor this room: I make spaces understandable before people can be there. You already do that with property photographs and films. I want to show you what you might sell when the buyer can step inside the media.",
   "mapCenter": [
     "ARCHITECT",
@@ -104,10 +104,10 @@ const SECTIONS = [
     "year": "2026",
     "accent": "teal",
     "storyChapter": 1,
-    "storyLesson": "Interests",
+    "storyLesson": "Hello",
     "lesson": {
-      "title": "Interests",
-      "short": "Interests",
+      "title": "Hello",
+      "short": "Hello",
       "tagline": "",
       "tags": "",
       "opt": "chapter:off",
@@ -115,10 +115,19 @@ const SECTIONS = [
     },
     "cases": [
       {
-        "id": "interests",
-        "use": "pmre/venn",
-        "props": {},
-        "title": "Architecture. Theater. Emerging technology.",
+        "id": "hello",
+        "use": "pmre/text-card",
+        "props": {
+          "kicker": "Agile Lens Immersive Design · New York City",
+          "title": "An XR studio",
+          "lines": [
+            "Architecture",
+            "Real estate",
+            "Entertainment",
+            "…and much more"
+          ]
+        },
+        "title": "An XR studio",
         "keep": 19,
         "year": "2026",
         "venn": [
@@ -127,8 +136,84 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nHere are the things I love. This is the story of how they became interesting to me, and how they became a job. I hope it sparks an idea about the things you love.\n\nYear: 2026. Venn weights: 1 / 1 / 1.\n",
-        "motion": "venn"
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nMy name is Alex Coulombe. I run a little company in New York City called Agile Lens Immersive Design: an XR studio working across architecture, real estate, entertainment and much more.\n\nThank you to Brandon. Thank you to PMRE. I am particularly excited to be in Vegas, as you will hear later: about ten years ago something really cool happened here, and what happened in Vegas did not stay in Vegas. (Pays off at the Autodesk University 2017, Las Vegas slide.)\n\nYear: 2026. Venn weights: 1 / 1 / 1.\n",
+        "hideTracker": true
+      },
+      {
+        "id": "goals",
+        "use": "pmre/text-card",
+        "props": {
+          "kicker": "Two goals for today",
+          "title": "",
+          "lines": [
+            "<b>1.</b> Find the expertise you haven’t tapped yet",
+            "<b>2.</b> Step inside real estate that isn’t built yet: at full scale, photoreal, in VR, AR and Gaussian splats"
+          ]
+        },
+        "title": "",
+        "keep": 19,
+        "year": "2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~60s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nToday is mostly story time. I will go roughly chronologically. Two goals.\n\nOne: tell a good yarn, and maybe get you thinking about what it means to develop expertise in a niche, and about the special abilities, interests or passions you have that are so far untapped.\n\nTwo: get you excited about what virtual, augmented and mixed reality can do in architecture and real estate. You may be thinking, I have worked with Matterport. This is more about projects that do not exist yet: Gaussian splatting for unbuilt properties, walking through something completely at scale, photorealistic, in a way that amazes and inspires.\n\nYear: 2026. Venn weights: 1 / 1 / 1.\n",
+        "hideTracker": true
+      },
+      {
+        "id": "teaser",
+        "use": "pmre/text-card",
+        "props": {
+          "kicker": "Where this story ends",
+          "big": "$2 billion",
+          "quote": "“It was binary.”",
+          "attr": "Without our VR, the project would not have happened."
+        },
+        "title": "",
+        "keep": 19,
+        "year": "2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~35s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nSpoiler alert for where this is headed. By the end I will tell you how a crazy professional journey led me and my company to a $2 billion real estate project (a billion with a B), and to being a crucial lever in making it happen. What the client later told us: it was binary. The project would not have happened without our virtual reality. Stick around for the whole story.\n\nVerified: Four Seasons Lake Austin, $2 billion development (KB project record). Alex’s own wording on Voices of VR #1481 (2024): “It’s binary. Without this VR experience, this project would not be happening.” Say it as the client’s verdict, as dictated; the later presales and construction-loan slides carry the detail.\n\nYear: 2026. Venn weights: 1 / 1 / 1.\n",
+        "hideTracker": true
+      },
+      {
+        "id": "rewind",
+        "use": "pmre/ring-chapter",
+        "props": {
+          "from": 2026,
+          "year": 2005,
+          "kicker": "REWIND",
+          "label": "2005",
+          "sub": "Fresh out of high school,\nstarting architecture school\nat Syracuse University",
+          "venn": [
+            1,
+            1,
+            1
+          ],
+          "vennFrom": [
+            1,
+            1,
+            1
+          ]
+        },
+        "title": "",
+        "keep": 19,
+        "year": "2005",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "hideTracker": true,
+        "notes": "⏱ ~15s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nLet’s rewind. 2005. I am fresh out of high school, starting architecture school at Syracuse University. (Skip why architecture and the degree; dive right in.)\n\nThe outer ring is the years of this story; my marker travels around it. The Venn inside is the mix of architecture, theater and emerging technology at each point. A compact version lives in the corner of every slide.\n\nYear: 2005. Venn weights: 1 / 1 / 1.\n"
       }
     ]
   },
@@ -147,28 +232,6 @@ const SECTIONS = [
     },
     "cases": [
       {
-        "id": "rosa",
-        "title": "“Pick a lane”",
-        "use": "pmre/story-media",
-        "keep": 19,
-        "storyRole": "content",
-        "props": {
-          "title": "“Pick a lane”",
-          "src": "media/pmre/pre-fda-equus-syracuse-portfolio.png",
-          "credit": "Student work: Alex Coulombe",
-          "alt": "“Pick a lane”",
-          "mode": "content",
-          "brightness": 1
-        },
-        "notes": "⏱ ~75s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nRichard Rosa told me to pick a lane. I think people who tell you to focus on one thing are telling you what worked for their brain. They are trying to help. My brain was excited to jump between things.\n\nYear: 2005. Venn weights: 1 / 0.5 / 0.2.\n\n\nShort-cut story context (full version has separate visuals):\nAt Syracuse we were not allowed to touch a computer for the first year. At the time it was excruciating. It made me think deliberately about every line and every line weight. With Revit you make a wall, and the lines are a byproduct. Clarity can get lost.\n\nIn third-year comprehensive studio Brian Lonsway was teaching MicroStation. He let me teach myself Revit instead. That led to internships at VIP Structures and Breadloaf Corporation. Breadloaf spelling corrected by Alex. Visual is my architectural work, not a photograph of Brian or the internship.\n\nMerged delivery context:\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nSet design was already a place where architecture and theater could meet. Student work, not professional client work.\n\nYear: 2008. Venn weights: 0.8 / 1 / 0.1.\n",
-        "year": "2005",
-        "venn": [
-          1,
-          0.5,
-          0.2
-        ]
-      },
-      {
         "id": "lanes",
         "use": "pmre/lane-traffic",
         "props": {},
@@ -181,7 +244,7 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nMy interests kept pulling in different directions. Architecture, theater, emerging technology.\n\nYear: 2005. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nMy interests kept pulling in different directions. Architecture, theater, emerging technology.\n\nYear: 2005. Venn weights: 1 / 1 / 1.\n\n2026-11-14 dictation:\nI came in with three major interests. Architecture, of course. Theater: I was a theater nerd in high school, writing my own plays and quasi-musicals, and I loved the typology of theater. And emerging technology: I was trying to get my hands on any 3D modeling tool, excited to model crazy buildings in Rhino and a new application called SketchUp. The icons appear here for the first time.\n",
         "motion": "lane-traffic"
       },
       {
@@ -197,8 +260,28 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI was looking for places where those interests could work together. Establish cyan architecture, rose theater and violet technology, matching the tracker.\n\nYear: 2005. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI was looking for places where those interests could work together. Establish cyan architecture, rose theater and violet technology, matching the tracker.\n\nYear: 2005. Venn weights: 1 / 1 / 1.\n\n2026-11-14 dictation:\nI was looking for overlaps. The structure of a play would inform the structure of my architecture project; creative energy fed from one project into another.\n",
         "motion": "lane-to-venn"
+      },
+      {
+        "id": "rosa",
+        "use": "pmre/text-card",
+        "props": {
+          "kicker": "First year",
+          "title": "",
+          "quote": "“You’re spread too thin. Pick one.”",
+          "attr": "A first-year studio professor"
+        },
+        "title": "",
+        "keep": 19,
+        "year": "2005",
+        "venn": [
+          1,
+          0.5,
+          0.2
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~60s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nFirst year, a professor asked what I was interested in. I told him. He said: you’re spread too thin. You can’t do all those things; there is no way to have a successful career with that variety of interests. This is a brutal program and a lot of people drop out. Commit, focus on architecture, forget about theater and whatever you want to do with video games. I said okay.\n\nEarlier walk: the professor was Richard Rosa. People who tell you to focus on one thing are telling you what worked for their brain.\n\nYear: 2005. Venn weights: 1 / 0.5 / 0.2.\n"
       },
       {
         "id": "hand",
@@ -217,13 +300,112 @@ const SECTIONS = [
         "motion": "the-hand"
       },
       {
+        "id": "craft",
+        "use": "pmre/text-card",
+        "props": {
+          "kicker": "Year one: no computers",
+          "title": "Great ideas. Shaky craftsmanship.",
+          "placeholder": "A first-year study model or hand drawing from my portfolio"
+        },
+        "title": "Great ideas. Shaky craftsmanship.",
+        "keep": 30,
+        "year": "2005",
+        "venn": [
+          1,
+          0,
+          0.1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nTwo problems that first year. One: no computers. Everything was hand drawn. Two, as if my insecurity wasn’t high enough: the craftsmanship. Great ideas, but my line work and study models were not clean. I was told to work on my craft.\n\nI was not a wunderkind. Worth saying: a lot of the wunderkinds I knew did not end up becoming architects, or became architects who did not seem happy about it. Good at it, not enjoying it.\n\nPHOTO NEEDED from Alex: a first-year study model or drawing from the portfolio (Cornell summer program work also works).\n\nYear: 2005. Venn weights: 1 / 0 / 0.1.\n"
+      },
+      {
+        "id": "anything-goes",
+        "use": "pmre/text-card",
+        "props": {
+          "kicker": "The next day",
+          "title": "I auditioned for Anything Goes",
+          "placeholder": "Moonface Martin in <i>Anything Goes</i>, First Year Players: poster or DVD still"
+        },
+        "title": "I auditioned for Anything Goes",
+        "keep": 19,
+        "year": "2005",
+        "venn": [
+          0.6,
+          1,
+          0.1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~60s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nHow did I respond? I was already a drama minor and could have dropped it. Instead, the next day I auditioned for a musical open to all students: Anything Goes. I assumed there was no way I’d get it; it would be fun to hang out with theater people for a moment. I was cast as one of the leads, Moonface Martin.\n\nThen a decision: drop it, or find a way to make it work? I made it work. I slept very little that year, going to rehearsals no architecture student was doing, sneaking back into studio and certainly not telling my professors. A few friends knew. A lot of them had done theater in high school, and they were a little jealous.\n\nVerified: Anything Goes, Moonface Martin, First Year Players (KB bio). PHOTO NEEDED from Alex: poster photo or DVD still.\n\nYear: 2005. Venn weights: 0.6 / 1 / 0.1.\n"
+      },
+      {
+        "id": "dress",
+        "use": "pmre/text-card",
+        "props": {
+          "kicker": "Final review week",
+          "title": "Dress rehearsal, or studio review?",
+          "quote": "“If that’s what’s important to you.”",
+          "attr": ""
+        },
+        "title": "Dress rehearsal, or studio review?",
+        "keep": 30,
+        "year": "2005",
+        "venn": [
+          0.8,
+          1,
+          0.1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nI kept it secret until final reviews. Our final dress rehearsal landed at the same time as the dress rehearsal for our studio final review. So I had to tell the professor who told me to focus on architecture that I would miss it. He paused, and said: all right, if that’s what’s important to you. It was so cold.\n\nThe show was great. I had such a fun time.\n\nOPTIONAL, say only if it feels right: I got a B- in that studio. (Notes only, by Alex’s choice; not on screen.)\n\nYear: 2005. Venn weights: 0.8 / 1 / 0.1.\n"
+      },
+      {
+        "id": "what",
+        "use": "pmre/text-card",
+        "props": {
+          "kicker": "2006 · a theater company for architecture students",
+          "title": "Warehouse Architecture Theatre",
+          "placeholder": "A 2 AM WhAT rehearsal, in studio"
+        },
+        "title": "Warehouse Architecture Theatre",
+        "keep": 19,
+        "year": "2006",
+        "venn": [
+          0.8,
+          1,
+          0.3
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~60s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nThat summer, going into sophomore year, more conversations with classmates. What would it look like to start an organization at Syracuse that catered to architecture students? It meant really weird rehearsal times: sometimes 2 AM, running from studio into a classroom to rehearse.\n\nWe called it the Warehouse Architecture Theatre: WhAT. It activated my entrepreneurial spirit. How do we run this? Budgets, wearing lots of hats. Remember this when we get to Agile Lens: I had grown a little theater group; I knew a few things.\n\nVerified: co-founded with Danton Spina and Ian Nicholson (KB bio; spelled WhAT there). PHOTO NEEDED from Alex: a 2 AM rehearsal in studio.\n\nYear: 2006. Venn weights: 0.8 / 1 / 0.3.\n"
+      },
+      {
+        "id": "overlaps",
+        "use": "pmre/venn-grow",
+        "props": {
+          "feeds": [
+            "a play’s structure → a building’s structure",
+            "restaurant studio → dinner theater",
+            "park studio → Shakespeare amphitheater"
+          ],
+          "caption": "Each interest made the others stronger"
+        },
+        "title": "",
+        "keep": 19,
+        "year": "2007",
+        "venn": [
+          1,
+          1,
+          0.6
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nEvery studio became a theater project. This semester we’re designing a restaurant? Great: dinner theater. A park? Cool, can I put an amphitheater for Shakespeare in the park in the middle? The structure of a play informed the structure of the building.\n\nEach bubble got stronger because of the overlap. It keeps happening: something learned on one project feeds the next. Use this as the segue language between later projects: we took the technology and what we learned there, and brought it here.\n\nYear: 2007. Venn weights: 1 / 1 / 0.6.\n"
+      },
+      {
         "id": "revit",
         "use": "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Learning Revit",
           "src": "media/v3-fix1/revit-example.jpg",
-          "credit": "Alex Coulombe / Agile Lens · later workflow example",
+          "credit": "",
           "brightness": 0.68,
           "alt": "Learning Revit"
         },
@@ -236,23 +418,23 @@ const SECTIONS = [
           0.8
         ],
         "storyRole": "content",
-        "notes": "⏱ ~100s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nIn third-year comprehensive studio Brian Lonsway was teaching MicroStation. He let me teach myself Revit instead. That led to internships at VIP Structures and Breadloaf Corporation. Breadloaf Corporation spelling supplied by Alex.\n Visual is my architectural work, not a photograph of Brian or the internship.\n\nYear: 2007. Venn weights: 1 / 0 / 0.8.\n\n\nImage: Designing Naturally s44, a later Revit workflow example, not an image of the 2007 studio. Breadloaf Corporation is the corrected internship name supplied by Alex (November 8 addition)."
+        "notes": "⏱ ~100s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nIn third-year comprehensive studio Brian Lonsway was teaching MicroStation. He let me teach myself Revit instead. That led to internships at VIP Structures and Breadloaf Corporation. Breadloaf Corporation spelling supplied by Alex.\n Visual is my architectural work, not a photograph of Brian or the internship.\n\nYear: 2007. Venn weights: 1 / 0 / 0.8.\n\n\nImage: Designing Naturally s44, a later Revit workflow example, not an image of the 2007 studio. Breadloaf Corporation is the corrected internship name supplied by Alex (November 8 addition).\n\n2026-11-14 dictation:\nSecond year is where I hit my stride with computers: Rhino, SketchUp, 3ds Max. I took to them quickly. Before I knew it I was teaching myself Revit and BIM. As beautiful as my portfolio was, what stood out to internships was: you know Revit? Fantastic. Let’s hire you.\n"
       },
       {
         "id": "london",
-        "title": "Architecture became a stage",
+        "title": "2008: Equus, London, a design charrette",
         "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
           "mode": "content",
-          "title": "Architecture became a stage",
-          "src": "media/pmre/pre-fda-connective-corridor-2008.jpg",
-          "credit": "Student work: Alex Coulombe",
+          "title": "2008: Equus, London, a design charrette",
+          "src": "media/pmre/pre-fda-equus-syracuse-portfolio.png",
+          "credit": "",
           "brightness": 1,
-          "alt": "Architecture became a stage"
+          "alt": "2008: Equus, London, a design charrette"
         },
-        "notes": "⏱ ~54s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nMichael Barclay helped expand my love of theater, spatial storytelling and live shows. This image is my student work.\n\nYear: 2008. Venn weights: 0.7 / 1 / 0.2.\n\n\nMerged delivery context:\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nStudent work: architecture, civic technology and performance were already overlapping.\n\nYear: 2008. Venn weights: 1 / 0.6 / 0.6.\n\n\nVisual is the Connective Corridor student model, not a photograph of London. The London/Barclay story is delivery context.",
+        "notes": "⏱ ~54s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nMichael Barclay helped expand my love of theater, spatial storytelling and live shows. This image is my student work.\n\nYear: 2008. Venn weights: 0.7 / 1 / 0.2.\n\n\nMerged delivery context:\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nStudent work: architecture, civic technology and performance were already overlapping.\n\nYear: 2008. Venn weights: 1 / 0.6 / 0.6.\n\n\nVisual is the Connective Corridor student model, not a photograph of London. The London/Barclay story is delivery context.\n\n2026-11-14 dictation:\nWhiz through 2008; easy to cut. Equus had an emergency: they needed a set designer, saw my theater work and asked. Mr. Nice Guy. The Connective Corridor interdisciplinary design charrette. And most importantly, London, for architecture and theater, seeing amazing shows.\n\nOpportunities come from having a weird reputation. When you’re the weird person doing a weird combination of things, you stick in people’s heads. They remember you. That happened with Equus, and it will happen again with Connie Caldwell. Honor to Connie, who did so much for the alumni and for me.\n",
         "year": "2008",
         "venn": [
           0.7,
@@ -261,20 +443,39 @@ const SECTIONS = [
         ]
       },
       {
+        "id": "weird",
+        "use": "pmre/text-card",
+        "props": {
+          "kicker": "What 2008 taught me",
+          "quote": "“When you’re the weird person doing a weird combination of things, you stick in people’s heads.”",
+          "attr": "They remember you."
+        },
+        "title": "",
+        "keep": 30,
+        "year": "2008",
+        "venn": [
+          0.8,
+          1,
+          0.4
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~25s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nOpportunities come from having a weird reputation. When you’re the weird person doing a weird combination of things, you stick in people’s heads. They remember you. It happened with Equus, and it happens again in 2012 with Connie Caldwell.\n\nYear: 2008. Venn weights: 0.8 / 1 / 0.4.\n"
+      },
+      {
         "id": "thesis",
-        "title": "Governors Island",
+        "title": "Thesis: an immersive theater",
         "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
           "mode": "content",
-          "title": "Governors Island",
+          "title": "Thesis: an immersive theater",
           "src": "media/v3-fix1/thesis-atrium.jpg",
-          "credit": "Alex Coulombe · Designing Naturally s57",
+          "credit": "",
           "brightness": 1,
-          "alt": "Governors Island"
+          "alt": "Thesis: an immersive theater"
         },
-        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOptional, brief thesis image. Describe the project only as far as I want to take it in rehearsal.\n\nYear: 2009. Venn weights: 1 / 0.5 / 0.6.\n",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nOptional, brief thesis image. Describe the project only as far as I want to take it in rehearsal.\n\nYear: 2009. Venn weights: 1 / 0.5 / 0.6.\n\n2026-11-14 dictation:\n2009–2010 thesis. I took Fort Jay on Governors Island and, you’ll never guess, did a theater. I wrote a play that would take place inside my weird immersive theater; there was a submarine in the middle. (If I’d known about telescopic seating then, I could have leaned into that.) Title: Scopic Operations in Military Theatre.\n",
         "year": "2009",
         "venn": [
           1,
@@ -283,26 +484,92 @@ const SECTIONS = [
         ]
       },
       {
+        "id": "ar-webcam",
+        "use": "pmre/text-card",
+        "props": {
+          "kicker": "2009",
+          "title": "Augmented reality, with a webcam",
+          "placeholder": "The live-webcam AR view of my thesis model"
+        },
+        "title": "Augmented reality, with a webcam",
+        "keep": 30,
+        "year": "2009",
+        "venn": [
+          1,
+          0.6,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~40s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nI had trouble helping people understand what it would feel like to be inside this project. I had already been playing with real-time technology (maybe show Quest 3D), and I started doing early augmented reality. This is my only image of what that looked like, I promise: a live webcam showing an augmented reality version of my project.\n\nVerified: thesis used early webcam/marker AR, 2009 (KB bio). PHOTO NEEDED from Alex: the webcam AR image.\n\nYear: 2009. Venn weights: 1 / 0.6 / 1.\n"
+      },
+      {
         "id": "graduation",
-        "title": "I don’t think my job exists yet",
+        "title": "“The job I’ll have in five years doesn’t exist yet”",
         "use": "pmre/story-media",
-        "keep": 99,
+        "keep": 30,
         "storyRole": "content",
         "props": {
           "mode": "content",
-          "title": "I don’t think my job exists yet",
+          "title": "“The job I’ll have in five years doesn’t exist yet”",
           "src": "media/v3-fix1/thesis-model.jpg",
-          "credit": "Alex Coulombe · thesis model, Designing Naturally s57",
+          "credit": "",
           "brightness": 1,
-          "alt": "I don’t think my job exists yet"
+          "alt": "“The job I’ll have in five years doesn’t exist yet”"
         },
-        "notes": "⏱ ~40s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI did not think a traditional architecture partner ladder was going to make me happy. I was interested in too many other things.\n\nYear: 2010. Venn weights: 1 / 0.5 / 0.5.\n",
+        "notes": "⏱ ~40s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI did not think a traditional architecture partner ladder was going to make me happy. I was interested in too many other things.\n\nYear: 2010. Venn weights: 1 / 0.5 / 0.5.\n\n2026-11-14 dictation:\nI did well at the end of school; the thesis was in super jury. People asked: Alex, where do you think you’ll be in five years? I knew my interests weren’t taking me up a proper career ladder. In a rare moment of foresight I said: honestly, I feel like the job I’ll have in five years doesn’t exist yet. So: 2010 to 2015, let’s see where that goes.\n",
         "year": "2010",
         "venn": [
           1,
           0.5,
           0.5
         ]
+      },
+      {
+        "id": "ring-2010",
+        "use": "pmre/ring-chapter",
+        "props": {
+          "from": 2009,
+          "year": 2010,
+          "kicker": "GRADUATION",
+          "label": "2010",
+          "sub": "Out of school,\ninto a recession",
+          "venn": [
+            1,
+            0.5,
+            0.6
+          ],
+          "vennFrom": [
+            1,
+            0.5,
+            0.6
+          ]
+        },
+        "title": "",
+        "keep": 19,
+        "year": "2010",
+        "venn": [
+          1,
+          0.5,
+          0.6
+        ],
+        "storyRole": "content",
+        "hideTracker": true,
+        "notes": "⏱ ~10s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nGraduation, 2010.\n\nYear: 2010. Venn weights: 1 / 0.5 / 0.6.\n"
+      },
+      {
+        "id": "career-map",
+        "use": "pmre/career-map",
+        "props": {},
+        "title": "Where the work was",
+        "keep": 19,
+        "year": "2010",
+        "venn": [
+          1,
+          0.3,
+          0.8
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~75s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nMy internships were small firms: VIP Structures in Syracuse, and Bread Loaf in Vermont. I really liked the vibe of a small architecture firm in Vermont (my wife is from Vermont too) and planned to work there. But after the 2008 recession there were not a lot of architecture jobs or buildings going up. Who remembers that? My early jobs came largely because I knew Revit and a wide range of other software: the technology side coming out.\n\nSo I went to New York for a job with Rafael Viñoly. A starchitect. That is a whole other talk; a mixed bag, a lot of control. (Notes only: I once saw Viñoly yell at someone for photographing one of his buildings wrong.) I learned a lot about how a design firm runs, and what I might do differently if I were ever lucky enough to run a company.\n\nThen Zimmer Gunsul Frasca (ZGF), where I developed a taste for architectural visualization.\n\nVerified dates: Viñoly June–September 2010; ZGF September 2010–March 2012; Fisher Dachs from March 2012. Bread Loaf Corporation is in Middlebury, VT (public listings).\n\nYear: 2010. Venn weights: 1 / 0.3 / 0.8.\n"
       },
       {
         "id": "archviz",
@@ -349,7 +616,7 @@ const SECTIONS = [
           "mode": "content",
           "title": "Sightlines, before VR",
           "src": "media/v3-fix1/fda-sightlines.jpg",
-          "credit": "Fisher Dachs Associates · historical drawing",
+          "credit": "Fisher Dachs Associates",
           "brightness": 0.68,
           "alt": "Sightlines, before VR"
         },
@@ -362,7 +629,7 @@ const SECTIONS = [
           0.1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~67s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI got to be an architect specializing in theaters. Two of my interests in one job. And still I felt a gap: where was the emerging technology? It felt like complaining about the sheen of the gold on the wall. A very first-world problem.\n\nYear: 2012. Venn weights: 1 / 1 / 0.1.\n\n\nSource: Designing Naturally s7. FDA sightline work predates my arrival and VR, going back to the 1980s per Alex. Do not assign an exact year to this scanned drawing without confirmation."
+        "notes": "⏱ ~67s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI got to be an architect specializing in theaters. Two of my interests in one job. And still I felt a gap: where was the emerging technology? It felt like complaining about the sheen of the gold on the wall. A very first-world problem.\n\nYear: 2012. Venn weights: 1 / 1 / 0.1.\n\n\nSource: Designing Naturally s7. FDA sightline work predates my arrival and VR, going back to the 1980s per Alex. Do not assign an exact year to this scanned drawing without confirmation.\n\n2026-11-14 dictation:\n2012: Connie Caldwell from Syracuse alumni services remembered me and recommended I apply to Fisher Dachs Associates, Theatre Planning and Design. The benefit of being a weird person with niche interests: people remember you. A job for a theater architect? I remember that kid who loves architecture and theater. I showed my thesis, Scopic Operations in Military Theatre, and was thrilled. Everything was great except it was a fairly low-tech firm: no Revit, just AutoCAD and a little SketchUp. But in 2013… the Oculus Rift DK1.\n"
       },
       {
         "id": "early-vr",
@@ -416,7 +683,7 @@ const SECTIONS = [
           "mode": "content",
           "title": "An extension of the workflow",
           "src": "media/v3-fix1/workflow.jpg",
-          "credit": "Alex Coulombe · Designing Naturally s18–20",
+          "credit": "",
           "brightness": 0.62,
           "alt": "An extension of the workflow"
         },
@@ -491,7 +758,7 @@ const SECTIONS = [
           "mode": "content",
           "title": "Kenneth Branagh’s Macbeth at the Park Avenue Armory",
           "src": "media/pmre/fda-macbeth-armory-vr-demo.jpg",
-          "credit": "Kenneth Branagh’s Macbeth · Park Avenue Armory · production photo from supplied deck",
+          "credit": "Kenneth Branagh’s Macbeth · Park Avenue Armory",
           "brightness": 1,
           "alt": "Macbeth, in the Armory"
         },
@@ -628,7 +895,7 @@ const SECTIONS = [
           "mode": "content",
           "title": "Equinox / just the lobby",
           "src": "media/v3-fix1/equinox.jpg",
-          "credit": "Equinox lobby study · visualization: Alex Coulombe",
+          "credit": "Equinox lobby study",
           "brightness": 1,
           "alt": "Equinox / just the lobby"
         },
@@ -651,6 +918,38 @@ const SECTIONS = [
     },
     "cases": [
       {
+        "id": "ring-2016",
+        "use": "pmre/ring-chapter",
+        "props": {
+          "from": 2013,
+          "year": 2016,
+          "kicker": "A COMPANY",
+          "label": "2016",
+          "sub": "Agile Lens",
+          "venn": [
+            0.7,
+            0.8,
+            1
+          ],
+          "vennFrom": [
+            1,
+            0.8,
+            1
+          ]
+        },
+        "title": "",
+        "keep": 19,
+        "year": "2016",
+        "venn": [
+          0.7,
+          0.8,
+          1
+        ],
+        "storyRole": "content",
+        "hideTracker": true,
+        "notes": "⏱ ~10s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nChapter break: founding Agile Lens. Callback: the theater group taught me budgets and wearing many hats.\n\nYear: 2016. Venn weights: 0.7 / 0.8 / 1.\n"
+      },
+      {
         "id": "agile",
         "title": "“We should do it together”",
         "use": "pmre/story-media",
@@ -660,7 +959,7 @@ const SECTIONS = [
           "mode": "content",
           "title": "“We should do it together”",
           "src": "media/v3-fix1/agile-lens-logo.jpg",
-          "credit": "Agile Lens · founded 2016",
+          "credit": "",
           "brightness": 0.85,
           "alt": "“We should do it together”"
         },
@@ -701,7 +1000,7 @@ const SECTIONS = [
           "mode": "content",
           "title": "Curiosity",
           "src": "media/v3-fix1/student-crit.mp4",
-          "credit": "Alex Coulombe · Syracuse studio review, 2015–2017",
+          "credit": "Alex Coulombe · Syracuse studio review",
           "brightness": 1,
           "alt": "Curiosity"
         },
@@ -754,7 +1053,7 @@ const SECTIONS = [
           "mode": "content",
           "title": "Sharing work led to speaking",
           "src": "media/v3/au-panel.jpeg",
-          "credit": "Autodesk University 2017 · expert panel AS129811"
+          "credit": "Autodesk University 2017 · Las Vegas"
         },
         "title": "Sharing work led to speaking",
         "keep": 19,
@@ -1004,13 +1303,45 @@ const SECTIONS = [
     },
     "cases": [
       {
+        "id": "ring-2023",
+        "use": "pmre/ring-chapter",
+        "props": {
+          "from": 2022,
+          "year": 2023,
+          "kicker": "REAL ESTATE",
+          "label": "2023",
+          "sub": "Before it’s built",
+          "venn": [
+            1,
+            0.7,
+            1
+          ],
+          "vennFrom": [
+            0.8,
+            0.6,
+            1
+          ]
+        },
+        "title": "",
+        "keep": 19,
+        "year": "2023",
+        "venn": [
+          1,
+          0.7,
+          1
+        ],
+        "storyRole": "content",
+        "hideTracker": true,
+        "notes": "⏱ ~10s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nChapter break: the Four Seasons Lake Austin story, the $2 billion project from the opening teaser.\n\nYear: 2023. Venn weights: 1 / 0.7 / 1.\n"
+      },
+      {
         "id": "referrals",
         "use": "pmre/story-media",
         "props": {
           "mode": "content",
           "title": "Getting the brief",
           "src": "media/v3/referrals.jpg",
-          "credit": "Alex Coulombe / Agile Lens · Epic / Unreal Fest 2023"
+          "credit": "Unreal Fest 2023"
         },
         "title": "Getting the brief",
         "keep": 30,
@@ -1458,6 +1789,38 @@ const SECTIONS = [
     },
     "cases": [
       {
+        "id": "ring-2026",
+        "use": "pmre/ring-chapter",
+        "props": {
+          "from": 2025,
+          "year": 2026,
+          "kicker": "NOW",
+          "label": "2026",
+          "sub": "What excites me",
+          "venn": [
+            0.6,
+            0.5,
+            1
+          ],
+          "vennFrom": [
+            1,
+            0.8,
+            1
+          ]
+        },
+        "title": "",
+        "keep": 19,
+        "year": "2026",
+        "venn": [
+          0.6,
+          0.5,
+          1
+        ],
+        "storyRole": "content",
+        "hideTracker": true,
+        "notes": "⏱ ~10s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nChapter break: where things are now.\n\nYear: 2026. Venn weights: 0.6 / 0.5 / 1.\n"
+      },
+      {
         "id": "uoxr",
         "title": "UOXR / simulator footage",
         "use": "pmre/story-media",
@@ -1699,7 +2062,7 @@ const SECTIONS = [
             "walk"
           ],
           "src": "media/v3-fix6/mia-fountain.mp4",
-          "credit": "MIA deck fountain walkthrough: Alex Coulombe · prerecorded splat view"
+          "credit": "Gaussian splat walkthrough: Alex Coulombe"
         },
         "notes": "⏱ ~75s.\n\nPresenter forecast/proposal, November 2026.\n\nMy bet: the deliverable expands from a set of views to a place the buyer can explore. On a phone or drone shoot, plan overlapping coverage for reconstruction alongside the hero shots. Process the images, clean the scan, choose the start point, then publish a walkthrough and a short film. That is a capture-to-walkthrough service you can begin testing on a property you control. A drone covers the outside; a phone or handheld capture covers the inside. This is an additional capture plan, not a promise that every ordinary real-estate shoot will reconstruct well.\n\nThe Rome examples are PortalCam captures. The phone/drone route is a separate workflow. Polycam documents Gaussian splats from existing overlapping photos or video, including drone captures; this is a supported input route, not a promised turnaround or quality guarantee. Sources: https://learn.poly.cam/hc/en-us/articles/30549134403860-How-to-Create-Drone-3D-Models-in-Polycam ; https://learn.poly.cam/hc/en-us/articles/30549121659412-How-to-Create-Photogrammetry-and-Gaussian-splats-from-Existing-Images-and-Videos-on-Mobile-and-Web . Use overlap and coverage, inspect glass/mirrors/moving subjects, clean the result and test the actual viewer. Price the work, not an assumed one-click conversion.\n\nThe portrait movie is reused from the MIA deck: media/video/splat-walkthrough.mp4, credited there to Alex Coulombe. It shows a fountain scan viewed from a moving virtual camera, not a new Rome hotel capture and not a recording of a phone actively scanning. PMRE derivative uses 00:03–00:12, audio removed, height 1080. It illustrates the middle (reconstructed scene) stage; the phone/drone input route is described separately above."
       },
@@ -1766,7 +2129,7 @@ const SECTIONS = [
           "mode": "content",
           "title": "What excites me now",
           "src": "media/v3-fix5/ai-theatre-concept.jpg",
-          "credit": "AI-generated concept illustration · OpenAI / Alex Coulombe Presents",
+          "credit": "AI-generated concept illustration",
           "alt": "Speculative AI-generated theatre and architectural atrium concept"
         },
         "title": "What excites me now",
@@ -1788,7 +2151,7 @@ const SECTIONS = [
           "mode": "content",
           "title": "Your eye still matters",
           "src": "media/v3-fix1/napkin.jpg",
-          "credit": "Hand sketch: Alex Coulombe · Designing Naturally, slide 49",
+          "credit": "Hand sketch: Alex Coulombe",
           "alt": "Alex Coulombe’s hand-drawn room plan in a sketchbook"
         },
         "title": "Your eye still matters",

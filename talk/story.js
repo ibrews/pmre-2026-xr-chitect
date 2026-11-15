@@ -10,16 +10,16 @@ function applyStorySpine(){
   if(['bonus','map','lesson'].includes(ty))sl.dataset.hidden='1';
   if(ty==='settings')return;
   const year=cfg?.year||'2026',weights=cfg?.venn||[1,1,1];sl.dataset.year=year;sl.dataset.venn=JSON.stringify(weights);
-  const old=sl.querySelector('.v3-tracker');if(old)old.remove();if(ty==='cover')return;
+  const old=sl.querySelector('.v3-tracker');if(old)old.remove();if(ty==='cover'||cfg?.hideTracker)return;
   const tracker=document.createElement('div');tracker.className='v3-tracker';tracker.setAttribute('aria-label',year+': architecture '+weights[0]+', theater '+weights[1]+', technology '+weights[2]);
-  tracker.innerHTML='<span class="v3-year">'+year.replace('–','–<br>')+'</span><svg viewBox="0 0 190 115" aria-hidden="true">'+weights.map((w,i)=>{const x=[66,118,92][i],y=[40,40,77][i],r=12+24*Math.sqrt(w);return `<circle cx="${x}" cy="${y}" r="${r}" fill="${colors[i]}" fill-opacity=".15" stroke="${colors[i]}" stroke-width="2"/><g transform="translate(${x},${y}) scale(${.4+.65*Math.sqrt(w)})" style="shape-rendering:crispEdges">${icons[i]}</g>`;}).join('')+'</svg>';sl.append(tracker);
+  const y0=parseInt(year,10)||2026,fr=Math.min(Math.max((y0-2005)/21,0),1),SW=330,R=54,cx=65,cy=65,L=2*Math.PI*R*SW/360,a=(-90+SW*fr)*Math.PI/180;
+  tracker.innerHTML='<span class="v3-year">'+year.replace('–','–<br>')+'</span><svg viewBox="0 0 130 130" aria-hidden="true"><circle cx="65" cy="65" r="'+R+'" fill="none" stroke="rgba(224,215,202,.18)" stroke-width="5"/><circle cx="65" cy="65" r="'+R+'" fill="none" stroke="#e0d7ca" stroke-width="5" stroke-linecap="round" transform="rotate(-90 65 65)" stroke-dasharray="'+(L*fr).toFixed(1)+' 999"/><circle cx="'+(cx+R*Math.cos(a)).toFixed(1)+'" cy="'+(cy+R*Math.sin(a)).toFixed(1)+'" r="7" fill="#fff"/>'+weights.map((w,i)=>{const x=[54,76,65][i],y=[58,58,77][i],r=8+11*Math.sqrt(w);return `<circle cx="${x}" cy="${y}" r="${r}" fill="${colors[i]}" fill-opacity=".18" stroke="${colors[i]}" stroke-width="1.6"/><g transform="translate(${x+[-4,4,0][i]},${y+[-3,-3,4][i]}) scale(${(.2+.28*Math.sqrt(w)).toFixed(2)})" style="shape-rendering:crispEdges">${icons[i]}</g>`;}).join('')+'</svg>';sl.append(tracker);
  });
  if(!document.getElementById('v3-style')){const st=document.createElement('style');st.id='v3-style';st.textContent=`
  #journey,.journey-print,.story-chapter-label{display:none!important}
  .slide[data-type="cover"] .v3-tracker{display:none!important}
  .v3-tracker{position:absolute;right:2.5%;bottom:2.5%;width:260px;height:130px;display:flex;align-items:center;justify-content:flex-end;gap:8px;background:rgba(17,14,13,.9);border-radius:12px;padding:4px 10px;box-sizing:border-box;z-index:20;pointer-events:none}
- .v3-tracker svg{width:150px;height:115px;flex-shrink:0}.v3-year{color:#e0d7ca;font:500 28px/1.1 var(--font);max-width:96px;text-align:right}
- .story-v3 .slide[data-type="cover"] .event-tag,.story-v3 .slide[data-type="cover"] .talk-subtitle,.story-v3 .slide[data-type="cover"] .speaker-co{display:none}
+ .v3-tracker svg{width:122px;height:122px;flex-shrink:0}.v3-year{color:#e0d7ca;font:500 28px/1.1 var(--font);max-width:96px;text-align:right}
  .story-v3 .slide[data-type="close"] .close-ey,.story-v3 .slide[data-type="close"] .close-sub,.story-v3 .slide[data-type="close"] .qr-badge,.story-v3 .slide[data-type="close"] .contact-row{display:none}
  .story-v3 .slide[data-type="close"] .qr-label{display:block!important;font-size:32px!important;letter-spacing:0!important;width:480px;max-width:none;line-height:1.3;align-self:center;flex-shrink:0}
  .story-v3 .slide[data-type="close"] .close-title{font-size:108px!important;white-space:nowrap}
