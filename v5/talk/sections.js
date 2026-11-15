@@ -2169,6 +2169,28 @@ const SECTIONS = [
         "opt": "ai:on"
       },
       {
+        "id": "be-the",
+        "use": "pmre/text-card",
+        "props": {
+          "kicker": "A shortcut to your X + Y",
+          "title": "Don’t become a worse version of your hero",
+          "lines": [
+            "Copy them in <i>their</i> field: you’re the knockoff.",
+            "Be them for a <b>different industry</b>: that’s a niche.",
+            "“The MrBeast of real estate.”"
+          ]
+        },
+        "title": "Don’t become a worse version of your hero",
+        "keep": 19,
+        "year": "2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "notes": "⏱ ~30s.\n\nLead-in to the X + Y examples. The idea is from The Internet Stamp, “the YouTube guru lie.” (2026-10-26, https://www.youtube.com/watch?v=gov_q0rbKz8), and Alex flagged it for this talk on 2026-11-15.\n\nIf you just emulate the person you admire, in their own field, people see you as a worse version of them. The video's line is that you become the knockoff, always compared with the real thing. Instead, be that person for a totally different industry. Their example was ‘the MrBeast of real estate’. That's a fast way to find a niche nobody else holds.\n\nThen: here's what that looks like in practice → the X + Y example.\n\nOptional, only if true for you: name the person you'd be ‘the ___ of ___’ for. Don't improvise a claim.\n\nSource summary: media/youtube/the-youtube-guru-lie.md in the KB (from the transcript). The video also names Ryan Serhant as the MrBeast of real estate for New York; that is their framing, not a fact to repeat as ours.\n\nYear: 2026. Venn weights: 1 / 1 / 1.\n"
+      },
+      {
         "id": "niche",
         "title": "Devon Pastorius",
         "use": "pmre/niche-example",
