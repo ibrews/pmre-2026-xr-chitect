@@ -575,7 +575,7 @@ const SECTIONS = [
         "id": "archviz",
         "title": "New York",
         "use": "pmre/story-media",
-        "keep": 19,
+        "keep": 30,
         "storyRole": "content",
         "props": {
           "mode": "content",
@@ -814,7 +814,7 @@ const SECTIONS = [
         "id": "late-show",
         "title": "The Late Show at Ed Sullivan Theater by Bravo Media",
         "use": "pmre/story-media",
-        "keep": 19,
+        "keep": 30,
         "storyRole": "content",
         "props": {
           "title": "The Late Show at Ed Sullivan Theater by Bravo Media",
@@ -1644,7 +1644,7 @@ const SECTIONS = [
         "id": "mexico",
         "title": "Royal Caribbean / Perfect Day Mexico",
         "use": "pmre/story-media",
-        "keep": 19,
+        "keep": 30,
         "storyRole": "content",
         "props": {
           "title": "Royal Caribbean / Perfect Day Mexico",
@@ -1672,7 +1672,7 @@ const SECTIONS = [
           "credit": "Royal Shakespeare Company / Agile Lens"
         },
         "title": "Royal Shakespeare Company",
-        "keep": 19,
+        "keep": 30,
         "year": "2024–2025",
         "venn": [
           0.7,
