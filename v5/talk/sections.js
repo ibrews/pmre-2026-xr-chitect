@@ -1759,14 +1759,14 @@ const SECTIONS = [
         "storyRole": "content",
         "props": {
           "title": "Floor Tour",
-          "src": "media/story/floor-tour-demo.mp4",
+          "src": "media/story/floor-tour-1min.mp4",
           "credit": "Product demo: Agile Lens",
           "alt": "A plan becomes walkable",
           "mode": "content",
           "brightness": 0.65,
           "takeaway": "Let buyers feel the floor plan"
         },
-        "notes": "⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother repeatable tool: walk an architectural plan at human scale. Product demonstration, not a current price or availability claim.\n\nYear: 2025–2026. Venn weights: 1 / 0.3 / 1.\n\n\nFor your business — presenter proposal: A floor plan is obvious to an architect and unfamiliar to many buyers. I would sell a guided plan walkthrough beside the photographs, especially before a home is built. This clip demonstrates Floor Tour; it does not establish a price, availability or measured conversion rate.",
+        "notes": "⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother repeatable tool: walk an architectural plan at human scale. Product demonstration, not a current price or availability claim.\n\nYear: 2025–2026. Venn weights: 1 / 0.3 / 1.\n\n\nFor your business — presenter proposal: A floor plan is obvious to an architect and unfamiliar to many buyers. I would sell a guided plan walkthrough beside the photographs, especially before a home is built. This clip demonstrates Floor Tour; it does not establish a price, availability or measured conversion rate.\n\nClip: FloorTour_1Min (55 s, supplied by Alex 2026-11-14): plan in the headset, mixed-reality pass-through, then the rendered interior. Video only (the deck plays clips muted); re-encoded 1080p H.264.",
         "year": "2025–2026",
         "venn": [
           1,

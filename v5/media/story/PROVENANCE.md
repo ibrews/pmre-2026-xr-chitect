@@ -6,6 +6,7 @@ Actual project assets, no generated illustrations. Source repository snapshots: 
 |---|---|---|
 | media/story/floor-tour-screen.png | ibrews/nxtbld-2026-productizing-xr media/nxtbld/floor-26-vr.png | Product media: Agile Lens |
 | media/story/floor-tour-demo.mp4 | /Users/alex/git/nxtbld-2026-productizing-xr/media/nxtbld/floor-30-b.mp4 | Product demo: Agile Lens |
+| media/story/floor-tour-1min.mp4 | FloorTour_1Min.mp4 (supplied by Alex 2026-11-14; 55 s, audio removed, 1080p H.264 CRF 23; v5 floor-demo) | Product demo: Agile Lens |
 | media/story/blueprint-seat-demo.mp4 | /Users/alex/git/nxtbld-2026-productizing-xr/media/nxtbld/bp-p62.mp4 | Product demo: Agile Lens |
 | media/story/blueprint-design-demo.mp4 | /Users/alex/git/nxtbld-2026-productizing-xr/media/nxtbld/bp-p64.mp4 | Product demo: Agile Lens |
 | media/story/blueprint-screen.png | /Users/alex/git/nxtbld-2026-productizing-xr/media/nxtbld/bp-p63-still.png | Product media: Agile Lens |
