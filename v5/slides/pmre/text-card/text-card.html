@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Text card — motion</title>
 <!-- Spatial Deck slide module pmre/text-card (PMRE v5). Type-led beats: kicker, title, short lines, an optional big figure,
-     an optional pull quote and an optional labeled photo placeholder (until the presenter supplies the image).
+     an optional pull quote, presenter photos (layout side | row | mosaic), or a labeled placeholder until a photo exists.
      Everything sits inside the PMRE safe70 box (1344×756 centered). ?static / reduced motion = final frame. -->
 <style>
 :root{--bg:#060810;--text:#f0f4ff;--dim:rgba(240,244,255,.6);--accent:#d7b668}
@@ -23,17 +23,55 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 .ph .tag{font-size:3.4cqh;letter-spacing:.3em;color:var(--dim);font-weight:700}
 .ph .what{font-size:5.6cqh;max-width:80%;line-height:1.25}
 .has-ph .title{font-size:9.5cqh}.has-ph .kick{font-size:3.6cqh}
+/* photos: side = text left, photo(s) right; row/mosaic = text on top, photos below */
+.gal{position:relative;min-height:0;display:flex;gap:1.4cqh}
+.gal figure{margin:0;min-width:0;min-height:0;display:flex;flex-direction:column;gap:.8cqh}
+.gal img{display:block;width:100%;flex:1 1 0;min-height:0;object-fit:contain;border-radius:.8cqh}
+.gal figcaption{font-size:2.6cqh;color:var(--dim);line-height:1.25}
+.has-ph.side{display:grid;grid-template-columns:38% minmax(0,1fr);grid-template-rows:1fr;column-gap:3%;align-items:center}
+.side .txt{display:flex;flex-direction:column;gap:2.2cqh}
+.side .title{font-size:9cqh}.side .gal{height:100%;min-width:0}.side .gal figure{flex:1 1 0}
+.row .gal,.mosaic .gal{flex:1 1 0;min-height:0}
+.row .gal{justify-content:center;align-items:flex-start;gap:3cqh}.row .gal figure{flex:none}.row .gal img{flex:none;height:auto;aspect-ratio:var(--r,1.5)}
+.row .title,.mosaic .title{font-size:8.5cqh}
+.mosaic .gal{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);gap:1.4cqh}.mosaic .gal>figure{height:100%}
+.mosaic .gal .rest{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:1.4cqh;min-height:0}
+.mosaic .gal .rest img{object-fit:cover}
 </style></head><body>
 <div class="stage"><div class="safe" id="safe"></div></div>
 <script src="../../sd-frame.js"></script>
 <script>
-const P=SDFrame.props({kicker:'',title:'',lines:[],big:'',quote:'',attr:'',placeholder:''});
+const P=SDFrame.props({kicker:'',title:'',lines:[],big:'',quote:'',attr:'',placeholder:'',photos:[],layout:'side'});
 const safe=document.getElementById('safe');let t=.1;
-const add=(cls,html)=>{if(!html)return;const d=document.createElement('div');d.className=cls+' fade';d.style.setProperty('--t',t.toFixed(2)+'s');t+=.35;d.innerHTML=html;safe.append(d);return d;};
-if(P.placeholder){safe.classList.add('has-ph');add('ph','<div class="tag">PHOTO TO COME</div><div class="what">'+P.placeholder+'</div>');}
+// photos: [{src (deck-root relative), alt, cap, r (width/height, row layout)}]
+const photos=(P.photos||[]).filter(p=>p&&p.src);
+const url=s=>/^(https?:|data:|\/|\.\.\/)/.test(s)?s:'../../../'+s;
+const fig=p=>{const f=document.createElement('figure');f.className='fade';if(p.r)f.style.setProperty('--r',p.r);const i=document.createElement('img');i.src=url(p.src);i.alt=p.alt||'';i.decoding='sync';f.append(i);if(p.cap){const c=document.createElement('figcaption');c.innerHTML=p.cap;f.append(c);}return f;};
+let host=safe;
+const add=(cls,html)=>{if(!html)return;const d=document.createElement('div');d.className=cls+' fade';d.style.setProperty('--t',t.toFixed(2)+'s');t+=.35;d.innerHTML=html;host.append(d);return d;};
+let gal=null;
+if(photos.length){
+  const lay=photos.length===1?'side':(P.layout||'side');safe.classList.add('has-ph',lay);
+  if(lay==='side'){host=document.createElement('div');host.className='txt';safe.append(host);}
+  gal=document.createElement('div');gal.className='gal';
+}else if(P.placeholder){safe.classList.add('has-ph');add('ph','<div class="tag">PHOTO TO COME</div><div class="what">'+P.placeholder+'</div>');}
 add('kick',P.kicker);add('big',P.big);add('title',P.title);
 if(P.lines.length){const box=document.createElement('div');box.className='lines';safe.append(box);P.lines.forEach(l=>{const d=document.createElement('div');d.className='line fade';d.style.setProperty('--t',t.toFixed(2)+'s');t+=.45;d.innerHTML=l;box.append(d);});}
 add('quote',P.quote);add('attr',P.attr);
+if(gal){
+  const stag=f=>{f.style.setProperty('--t',t.toFixed(2)+'s');t+=.3;return f;};
+  if(safe.classList.contains('mosaic')){gal.append(stag(fig(photos[0])));const rest=document.createElement('div');rest.className='rest';photos.slice(1,5).forEach(p=>rest.append(stag(fig(p))));gal.append(rest);}
+  else photos.forEach(p=>gal.append(stag(fig(p))));
+  safe.append(gal);
+  // row: size each photo to the shared height its aspect ratio (r) allows, so the set stays centered with no dead space
+  if(safe.classList.contains('row')){
+    const fit=()=>{const figs=[...gal.children],gap=parseFloat(getComputedStyle(gal).columnGap)||0,cap=Math.max(0,...figs.map(f=>{const c=f.querySelector('figcaption');return c?c.offsetHeight+8:0}));
+      let h=gal.clientHeight-cap;const rs=photos.map(p=>+p.r||1.5),w=rs.reduce((a,r)=>a+r,0)*h+gap*(figs.length-1);
+      if(w>gal.clientWidth)h*=(gal.clientWidth-gap*(figs.length-1))/(w-gap*(figs.length-1));
+      figs.forEach((f,i)=>{f.style.width=(h*rs[i]).toFixed(1)+'px';});};
+    fit();addEventListener('resize',fit);
+  }
+}
 document.title=(P.title||P.big||P.quote||'').replace(/<[^>]+>/g,'');
 window.MOTION_SFX=[];
 SDFrame.init({duration:4,steps:0});
