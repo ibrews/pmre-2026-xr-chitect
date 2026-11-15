@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Four Seasons Lake Austin project figures</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#101014;color:#f0eadc;font-family:Inter,Arial,sans-serif}
+#stage{position:absolute;width:1920px;height:1080px;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--scale,1));transform-origin:center}
+h1,h2,p{margin:0}h1{font:500 64px/1.1 Georgia,serif;letter-spacing:-1px}.small{font:24px/1.4 Arial,sans-serif;color:#bcb7ae}.credit{font:20px/1.4 Arial,sans-serif;color:#aaa49a}
+h1{position:absolute;left:240px;top:180px}.stat{position:absolute;top:440px}.value{font:600 154px/1.04 Arial,sans-serif;letter-spacing:-8px;color:#e8b95b}.value span{font-size:100px}.stat p{font:40px/1.5 Georgia,serif}#sales{left:240px}#investment{left:1050px}#investment .small{margin-top:12px}.credit{position:absolute;left:240px;top:850px}</style><div id="stage"><h1>Four Seasons Private Residences<br>Lake Austin</h1>
+<div class="stat" id="sales"><div class="value">$500M<span>+</span></div><p>presales</p></div>
+<div class="stat" id="investment"><div class="value">$870M</div><p>investment</p><div class="small">TYKO construction loan · June 2026</div></div>
+<p class="credit">Project figures. Presales and financing measure different things.</p></div><script src="../../sd-frame.js"></script><script>
+function fit(){document.documentElement.style.setProperty('--scale',Math.min(innerWidth/1920,innerHeight/1080));}fit();addEventListener('resize',fit);
+document.querySelector('#sales').animate([{opacity:0,transform:'translateY(24px)'},{opacity:1,transform:'translateY(0)'}],{duration:900,delay:400,fill:'both'});
+document.querySelector('#investment').animate([{opacity:0,transform:'translateY(24px)'},{opacity:1,transform:'translateY(0)'}],{duration:900,delay:3600,fill:'both'});
+document.querySelector('.credit').animate([{opacity:0},{opacity:1}],{duration:700,delay:6000,fill:'both'});
+SDFrame.init({duration:8,steps:0});
+</script></html>

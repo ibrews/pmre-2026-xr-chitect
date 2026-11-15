@@ -1,0 +1,32 @@
+{
+  "id": "pmre/hxr-four-seasons",
+  "source": "https://ibrews.github.io/harvardxr-keynote/#36",
+  "source_commit": "811042a2a87476a045be69f8c2e2aafa50cca12c",
+  "source_steps": 0,
+  "steps": 2,
+  "duration": 26.4,
+  "year": 2023,
+  "title": "Four Seasons Lake Austin",
+  "line": "A wireless space for shared tours",
+  "notes": "The source describes $300M of amenities in an 82\u00d765-foot wireless holodeck, with Optitrack and Antilatency tracking for shared room-scale tours. Keep technology choices tied to the spatial design and agreed scope. These are HXR source claims; the main pass should reconcile any current PMRE figures before using them.",
+  "media": [
+    {
+      "src": "media/fsla/fsla_01.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/fsla/fsla_02.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/fsla/fsla_03.jpg",
+      "seconds": 6,
+      "loop": false
+    }
+  ],
+  "kind": "gallery",
+  "suggested_placement": "2023 source chapter / Four Seasons shared wireless holodeck",
+  "adaptation": "Source automatic media sequence preserved; added ArrowRight stops expose each item for inspection."
+}

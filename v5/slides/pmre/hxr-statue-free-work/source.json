@@ -1,0 +1,47 @@
+{
+  "id": "pmre/hxr-statue-free-work",
+  "source": "https://ibrews.github.io/harvardxr-keynote/#10",
+  "source_commit": "811042a2a87476a045be69f8c2e2aafa50cca12c",
+  "source_steps": 0,
+  "steps": 5,
+  "duration": 65.479,
+  "year": 2017,
+  "title": "ArchViz & R&D",
+  "line": "Unreal Engine tests and Tilt Brush experiments",
+  "notes": "This sequence begins with the Statue of Liberty image, then architectural experiments in Unreal Engine, Tilt Brush R&D, Autodesk University and an article. These experiments led to speaking opportunities and a relationship with Epic Games. Alex requested this as the free-work beat; the source slide does not specify a fee or the Statue of Liberty scope, so do not add either.",
+  "media": [
+    {
+      "src": "media/pivot/00_StatueOfLiberty.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/pivot/pivot01_academy65.mp4",
+      "seconds": 7.746,
+      "loop": false
+    },
+    {
+      "src": "media/pivot/pivot02_avenueMain360.mp4",
+      "seconds": 10.75455,
+      "loop": false
+    },
+    {
+      "src": "media/pivot/pivot03_tiltbrush.mp4",
+      "seconds": 12.178767,
+      "loop": false
+    },
+    {
+      "src": "media/pivot/pivot04_autodeskuniversity2017.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/pivot/pivot05_article.jpg",
+      "seconds": 6,
+      "loop": false
+    }
+  ],
+  "kind": "gallery",
+  "suggested_placement": "2017 source chapter / early experiments and free work; confirm PMRE chronology",
+  "adaptation": "Source automatic media sequence preserved; added ArrowRight stops expose each item for inspection."
+}

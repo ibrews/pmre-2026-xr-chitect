@@ -1,0 +1,16 @@
+{
+  "id": "pmre/nxt-floor-tour",
+  "source": "https://ibrews.github.io/nxtbld-2026-productizing-xr/#12",
+  "source_commit": "9736254f9099037e9a1155a242b0c4b27fb13ffb",
+  "source_steps": 0,
+  "steps": 0,
+  "duration": 1.2,
+  "year": 2026,
+  "title": "Floor Tour",
+  "line": "Will this space fit our needs?",
+  "notes": "VR walkthroughs of unbuilt spaces made from a floor plan and a few renderings. This is the Floor Tour chapter introduction; the requested #12 has no image or video. Use before the product examples.",
+  "media": [],
+  "kind": "title",
+  "suggested_placement": "2026 talk / product introduction, before Floor Tour examples",
+  "adaptation": "Original zero-click introduction; fade retained."
+}

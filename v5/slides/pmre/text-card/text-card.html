@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Text card — motion</title>
+<!-- Spatial Deck slide module pmre/text-card (PMRE v5). Type-led beats: kicker, title, short lines, an optional big figure,
+     an optional pull quote and an optional labeled photo placeholder (until the presenter supplies the image).
+     Everything sits inside the PMRE safe70 box (1344×756 centered). ?static / reduced motion = final frame. -->
+<style>
+:root{--bg:#060810;--text:#f0f4ff;--dim:rgba(240,244,255,.6);--accent:#d7b668}
+html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:'Space Grotesk','Inter','Avenir Next','Helvetica Neue',system-ui,sans-serif;color:var(--text)}
+.stage{position:absolute;inset:0;container-type:size}
+.safe{position:absolute;left:4%;top:4%;width:92%;height:80%;display:flex;flex-direction:column;justify-content:center;gap:2.2cqh}
+.fade{opacity:0;animation:fade .8s ease var(--t,0s) forwards}
+@keyframes fade{from{opacity:0;transform:translateY(1.2cqh)}to{opacity:1;transform:none}}
+.kick{font-size:4cqh;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);font-weight:600}
+.title{font-size:14cqh;line-height:1.05;font-weight:800;letter-spacing:-.01em}
+.lines{display:flex;flex-direction:column;gap:1.6cqh;margin-top:1cqh}
+.line{font-size:7.4cqh;line-height:1.2;color:var(--text)}
+.line b{color:var(--accent);font-weight:700}
+.big{font-size:30cqh;line-height:.95;font-weight:800;letter-spacing:-.03em;background:linear-gradient(90deg,#00d4ff,#a78bfa,#f43f5e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.quote{font-size:12cqh;line-height:1.1;font-weight:700;color:var(--accent)}
+.attr{font-size:5.2cqh;color:var(--dim)}
+.ph{position:relative;flex:1;min-height:0;border:.4cqh dashed rgba(240,244,255,.45);border-radius:1.4cqh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4cqh;background:rgba(240,244,255,.04);text-align:center;padding:2cqh}
+.ph .tag{font-size:3.4cqh;letter-spacing:.3em;color:var(--dim);font-weight:700}
+.ph .what{font-size:5.6cqh;max-width:80%;line-height:1.25}
+.has-ph .title{font-size:9.5cqh}.has-ph .kick{font-size:3.6cqh}
+</style></head><body>
+<div class="stage"><div class="safe" id="safe"></div></div>
+<script src="../../sd-frame.js"></script>
+<script>
+const P=SDFrame.props({kicker:'',title:'',lines:[],big:'',quote:'',attr:'',placeholder:''});
+const safe=document.getElementById('safe');let t=.1;
+const add=(cls,html)=>{if(!html)return;const d=document.createElement('div');d.className=cls+' fade';d.style.setProperty('--t',t.toFixed(2)+'s');t+=.35;d.innerHTML=html;safe.append(d);return d;};
+if(P.placeholder){safe.classList.add('has-ph');add('ph','<div class="tag">PHOTO TO COME</div><div class="what">'+P.placeholder+'</div>');}
+add('kick',P.kicker);add('big',P.big);add('title',P.title);
+if(P.lines.length){const box=document.createElement('div');box.className='lines';safe.append(box);P.lines.forEach(l=>{const d=document.createElement('div');d.className='line fade';d.style.setProperty('--t',t.toFixed(2)+'s');t+=.45;d.innerHTML=l;box.append(d);});}
+add('quote',P.quote);add('attr',P.attr);
+document.title=(P.title||P.big||P.quote||'').replace(/<[^>]+>/g,'');
+window.MOTION_SFX=[];
+SDFrame.init({duration:4,steps:0});
+</script>
+</body></html>

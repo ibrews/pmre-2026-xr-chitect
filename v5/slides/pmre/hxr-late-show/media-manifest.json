@@ -1,0 +1,30 @@
+[
+  {
+    "file": "media/lateshow/lateshow01_early-oculus-rift_orig.jpg",
+    "sha256": "fcef4bb5a0ecd19e13fd27a55a95a2323af4c2b17a2cecbb422a66476e6e39c7",
+    "source_path": "media/lateshow/lateshow01_early-oculus-rift_orig.jpg",
+    "source_sha256": "fcef4bb5a0ecd19e13fd27a55a95a2323af4c2b17a2cecbb422a66476e6e39c7",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/lateshow/lateshow02_unity.png",
+    "sha256": "4adba245e10041e04b95dbda9285b39f4ff05ed0a1cc85da8501638cb10cf9a8",
+    "source_path": "media/lateshow/lateshow02_unity.png",
+    "source_sha256": "4adba245e10041e04b95dbda9285b39f4ff05ed0a1cc85da8501638cb10cf9a8",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/lateshow/lateshow03_mag.png",
+    "sha256": "694ec03e892489278eec196b897f6403b288f1567a356cea78593939ac64b5b3",
+    "source_path": "media/lateshow/lateshow03_mag.png",
+    "source_sha256": "694ec03e892489278eec196b897f6403b288f1567a356cea78593939ac64b5b3",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/lateshow/lateshow04_vid.mp4",
+    "sha256": "841b2cb9710391371bbd53ac3ad41b71abd8937a28044c9c7ff1a90be1767ff6",
+    "source_path": "media/lateshow/lateshow04_vid.mp4",
+    "source_sha256": "841b2cb9710391371bbd53ac3ad41b71abd8937a28044c9c7ff1a90be1767ff6",
+    "transformation": "Byte-identical source copy"
+  }
+]

@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Film language / a young medium</title><style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#141110;color:#eee2cf;font-family:'Avenir Next',Arial,sans-serif}svg{width:100%;height:100%}.beat{opacity:0}.frame{fill:#201b19;stroke:#bf9d67;stroke-width:3}.line{fill:none;stroke:#cbbda5;stroke-width:5;stroke-linecap:round}text{fill:#eee2cf;font-size:42px}h1{position:absolute;left:9%;top:4%;font-size:56px;font-weight:600;margin:0}.date{fill:#c5a577;font-size:28px}.person{fill:#cbbda5}.small{font-size:30px;fill:#b8a58b}
+</style></head><body><h1>VR is like the early days of film</h1><svg viewBox="0 0 1920 1080" aria-label="A schematic stage moves from one static shot to cuts, close-ups, time jumps, expressive angles and montage"><defs>
+<g id="actor"><circle class="person" cy="-95" r="27"/><path class="line" d="M0-65V30M0-40L-45-10M0-40L45-5M0 30L-30 100M0 30L40 100"/></g>
+<g id="set"><path class="line" d="M450 650H1470M510 650V340H1410V650"/><rect x="1030" y="470" width="170" height="180" fill="#49392a"/><use id="performer" href="#actor" transform="translate(800 540)"/><use href="#actor" transform="translate(1260 540)"/></g>
+<clipPath id="crop"><rect x="390" y="270" width="1140" height="460"/></clipPath></defs>
+<g class="beat"><rect class="frame" x="390" y="270" width="1140" height="460"/><use href="#set"/><text x="390" y="825">One camera. One action.</text></g>
+<g class="beat"><rect class="frame" x="390" y="270" width="1140" height="460"/><g clip-path="url(#crop)"><use id="reverse" href="#set" transform="translate(1920 0) scale(-1 1)"/></g><text x="390" y="825">The cut changes our point of view</text></g>
+<g class="beat"><rect class="frame" x="390" y="270" width="1140" height="460"/><g clip-path="url(#crop)"><use href="#actor" transform="translate(960 830) scale(3.7)"/></g><text x="390" y="825">A close-up changes what we feel</text></g>
+<g class="beat"><rect class="frame" x="390" y="270" width="1140" height="460"/><use href="#set"/><circle cx="1310" cy="370" r="38" fill="#c5a577"/><text x="490" y="400" style="font-size:68px">The next day</text><text x="390" y="825">A cut can cross time</text></g>
+<g class="beat"><rect class="frame" x="390" y="270" width="1140" height="460"/><g clip-path="url(#crop)"><use href="#set" transform="rotate(-12 960 500)"/></g><text x="390" y="825">The frame can make us uneasy</text></g>
+<g class="beat"><rect class="frame" x="390" y="270" width="1140" height="460"/><path class="line" d="M770 270V730M1150 270V730"/><use href="#actor" transform="translate(570 560)"/><path class="line" d="M820 650L1090 370M850 650H1090M875 610H1090M920 565H1090M965 520H1090M1010 475H1090"/><use href="#actor" transform="translate(1340 650) scale(1.5)"/><text x="390" y="825">Meaning between images</text></g>
+<g class="beat"><use href="#set" opacity=".22"/><text x="960" y="490" text-anchor="middle" style="font-size:76px">What can only VR say?</text><text x="960" y="580" text-anchor="middle" class="small">We are still discovering its language</text></g>
+</svg><script src="../../sd-frame.js"></script><script>
+const beats=[...document.querySelectorAll('.beat')],END=28;
+beats.forEach((g,i)=>{const start=i/7,end=(i+1)/7;const k=[{opacity:i===0?1:0,offset:0}];if(i>0)k.push({opacity:0,offset:start-.00001},{opacity:1,offset:start});if(i<6)k.push({opacity:1,offset:end-.00001},{opacity:0,offset:end});k.push({opacity:i===6?1:0,offset:1});g.animate(k,{duration:END*1000,fill:'both'});});
+// Within the cut beat, the reverse angle arrives on a hard edit.
+document.querySelector('#reverse').animate([{transform:'translate(0px,0px)',offset:0},{transform:'translate(0px,0px)',offset:.2},{transform:'translate(1920px,0px) scale(-1,1)',offset:.20001},{transform:'translate(1920px,0px) scale(-1,1)',offset:1}],{duration:END*1000,fill:'both'});
+document.querySelector('#performer').animate([{transform:'translate(760px,540px)',offset:0},{transform:'translate(930px,540px)',offset:1/7},{transform:'translate(930px,540px)',offset:1}],{duration:END*1000,fill:'both'});
+window.MOTION_SFX=[{t:0,kind:'projector'},{t:4,kind:'snap'},{t:5.6,kind:'snap'},{t:8,kind:'pop',gain:.5},{t:12,kind:'snap'},{t:16,kind:'merge',gain:.5},{t:20,kind:'snap'},{t:20.18,kind:'snap',gain:.5},{t:20.36,kind:'snap',gain:.4},{t:24,kind:'pop'}];
+SDFrame.init({duration:END,steps:0, onEnter(){parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}});
+</script></body></html>
