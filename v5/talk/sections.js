@@ -1773,6 +1773,29 @@ const SECTIONS = [
           0.3,
           1
         ]
+      },
+      {
+        "id": "walkthrough-demo",
+        "title": "Walkthrough",
+        "use": "pmre/story-media",
+        "keep": 30,
+        "storyRole": "content",
+        "props": {
+          "title": "Walkthrough",
+          "src": "media/story/walkthrough-fern-cottage.mp4",
+          "credit": "Prototype: Agile Lens",
+          "alt": "A dollhouse plan opens into a furnished cottage interior",
+          "mode": "content",
+          "brightness": 0.65,
+          "takeaway": "Finished sample app vs. open system"
+        },
+        "notes": "⏱ ~30s.\n\nAlex’s framing (2026-11-15): Walkthrough is a finished, vibe-coded sample app; Floor Tour is the more open and deliberate system.\n\nWalkthrough: a PICO prototype from Agile Lens’s November 2026 vibe-lab sprint, written in Kotlin largely by AI coding agents. Drop a floor plan on your real floor, look at it as a dollhouse, then raise its walls around you at full size in mixed reality. It ships with a few sample houses (this clip is Fern Cottage).\n\nContrast to land: an AI-built app can look done in days, but it only does what it was built to do. Floor Tour is built on our shared-spatial-anchor template: multi-user and co-located, with tools to draw walls over your own floor plan. Both are useful; know which one you are buying.\n\nClip: “Walkthrough - Fern Cottage floor plan to interior” (10.6 s, non-headset capture from the Nov 6–7 filming selects, 960×540), upscaled to 1080p with Lanczos, video only. Not a store release; no price or availability claim.",
+        "year": "2026",
+        "venn": [
+          1,
+          0.3,
+          1
+        ]
       }
     ]
   },
