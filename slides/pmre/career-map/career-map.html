@@ -70,7 +70,7 @@ addEventListener('load',()=>domainAttrs.forEach(([el,a,v])=>el.setAttribute(a,v)
 // Follow the firm name's actual font metrics in every deck look.
 function fitCircle(){const b=document.getElementById('fisher-dachs').getBBox(),x=b.x-14,y=b.y-10,w=b.width+28,h=b.height+20;document.getElementById('fisher-circle').setAttribute('d',`M${x+w*.08} ${y+h*.1} C${x+w*.3} ${y-h*.08} ${x+w*.91} ${y-h*.05} ${x+w} ${y+h*.3} C${x+w*1.08} ${y+h*.86} ${x+w*.77} ${y+h*1.07} ${x+w*.48} ${y+h} C${x+w*.1} ${y+h*1.1} ${x-w*.06} ${y+h*.8} ${x} ${y+h*.42} Q${x+w*.01} ${y+h*.12} ${x+w*.15} ${y+h*.08}`);}
 document.fonts.ready.then(fitCircle);addEventListener('resize',fitCircle);
-window.MOTION_SFX=[{t:.8,kind:'pop'},{t:2.8,kind:'pop'},{t:5.8,kind:'pop'}];
+window.MOTION_SFX=[{t:.8,kind:'pop',gain:.13},{t:2.8,kind:'pop',gain:.13},{t:5.8,kind:'pop',gain:.13}];// gain .13 = ~46% of the whoosh peak (Alex: boops too loud, 2026-11-19)
 SDFrame.init({duration:8,steps:2,stepTimes:[8,8,8],onStep(n,instant){if(n)window.seek(8);const im=document.getElementById('fda-website');im.style.transition=instant?'none':'opacity 650ms ease';im.style.opacity=n>=2?'1':'0';im.setAttribute('aria-hidden',String(n<2));},onEnter(){parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}});
 </script>
 </body></html>
