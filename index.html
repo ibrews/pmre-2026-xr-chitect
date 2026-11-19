@@ -1284,17 +1284,32 @@ const SECTIONS = [
           1
         ],
         "keep": 19,
-        "use": "pmre/story-media",
+        "use": "pmre/v6-gallery",
         "props": {
           "title": "Waldorf Astoria Miami",
-          "src": "slides/pmre/hxr-waldorf-astoria/media/waldorf-astoria-miami/concierge-loop.mp4",
-          "poster": "slides/pmre/hxr-waldorf-astoria/media/waldorf-astoria-miami/02.jpg",
-          "alt": "Live virtual concierge in the Waldorf Astoria Miami lobby",
-          "mode": "content",
-          "flat": true,
-          "brightness": 1.1111111111
+          "line": "",
+          "layout": "grid",
+          "steps": false,
+          "media": [
+            {
+              "src": "slides/pmre/hxr-waldorf-astoria/media/waldorf-astoria-miami/01.jpg",
+              "alt": "Waldorf Astoria Miami virtual lobby"
+            },
+            {
+              "src": "slides/pmre/hxr-waldorf-astoria/media/waldorf-astoria-miami/concierge-loop.mp4",
+              "alt": "Live virtual concierge in the Waldorf Astoria Miami lobby (silent loop)"
+            },
+            {
+              "src": "slides/pmre/hxr-waldorf-astoria/media/waldorf-astoria-miami/02.jpg",
+              "alt": "Waldorf Astoria Miami virtual lobby, second view"
+            },
+            {
+              "src": "slides/pmre/hxr-waldorf-astoria/media/waldorf-astoria-miami/waldorf_concierge.png",
+              "label": "Live motion-capture host"
+            }
+          ]
         },
-        "notes": "⏱ ~50s.\n\nRoot deck #45 media, without pixel cycling. Alex’s talkthrough: someone saw his VR theater presentation at SIGGRAPH in Vancouver and imagined a live-host architectural tour for Waldorf Astoria Miami. Present as his recollection; do not infer a specific SIGGRAPH year from “a few years ago.”"
+        "notes": "⏱ ~50s.\n\nRoot deck #45 media, without pixel cycling. Alex’s talkthrough: someone saw his VR theater presentation at SIGGRAPH in Vancouver and imagined a live-host architectural tour for Waldorf Astoria Miami. Present as his recollection; do not infer a specific SIGGRAPH year from “a few years ago.”\n\nAlex, 2026-11-19: the original stills are back (01, 02, motion-capture host, restored from git 4143c73^) with the silent concierge loop playing among them."
       },
       {
         "id": "expectations",
