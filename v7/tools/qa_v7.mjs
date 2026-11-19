@@ -1,0 +1,27 @@
+// V7 acceptance: ordinary file:// Chrome, no server, no flags weakening browser security.
+import fs from 'node:fs';import path from 'node:path';import {pathToFileURL} from 'node:url';import {loadPlaywright,CHROME} from './venue_capture.mjs';
+const root=path.resolve(process.argv[2]||'.'),out=path.resolve(process.argv[3]||'../qa-file');fs.mkdirSync(out,{recursive:true});
+const engine=process.argv[4]||'chrome',{chromium,firefox}=loadPlaywright(),b=await (engine==='firefox'?firefox.launch():chromium.launch({executablePath:CHROME})),cx=await b.newContext({viewport:{width:1920,height:1080}}),p=await cx.newPage();
+const rep={root,protocol:'file:',engine,errors:[],console:[],external:[],failed:[],abortedMedia:[],slides:[],cuts:[]};let index=-1;
+await cx.route('**/*',r=>{if(/^https?:/.test(r.request().url())){rep.external.push({index,url:r.request().url()});return r.abort();}return r.continue();});
+p.on('pageerror',e=>rep.errors.push({index,error:String(e)}));p.on('console',m=>{if(m.type()==='error')rep.console.push({index,error:m.text()})});p.on('requestfailed',r=>{const item={index,url:r.url(),error:r.failure()?.errorText};if(['net::ERR_ABORTED','NS_BINDING_ABORTED'].includes(item.error)&&/\.(mp4|webm)(?:[?#]|$)/i.test(item.url))rep.abortedMedia.push(item);else rep.failed.push(item);});
+const settleFonts=async()=>{for(const f of p.frames()){await f.waitForLoadState('load');await f.evaluate(()=>document.fonts.ready);}};
+const base=pathToFileURL(path.join(root,'index.html')).href;
+const inspect=()=>({images:[...document.images].filter(i=>!i.complete||!i.naturalWidth).map(i=>i.getAttribute('src')),videos:[...document.querySelectorAll('video')].map(v=>({src:v.getAttribute('src'),ready:v.readyState,error:v.error?.message,muted:v.muted,loop:v.loop,controls:v.controls,duration:v.duration}))});
+try{
+ for(const cut of ['full','30','20','20t'])for(const ai of ['on','off']){await p.goto(base+`?cut=${cut}&ai=${ai}&safe=70&theme=house&reduced`,{waitUntil:'domcontentloaded'});await p.waitForTimeout(300);await settleFonts();rep.cuts.push(await p.evaluate(({cut,ai})=>{const a=allSlides.filter(s=>s.dataset.hidden!=='1'&&s.dataset.type!=='settings');return{cut,ai,count:a.length,seconds:a.reduce((n,s)=>n+(+(getSlideNotes(allSlides.indexOf(s)).match(/⏱\s*~?(\d+)s/)||[])[1]||0),0),ids:a.map(s=>s.dataset.storyId)}},{cut,ai}));}
+ await p.goto(base+'?cut=full&ai=on&safe=70&theme=house',{waitUntil:'domcontentloaded'});await p.waitForTimeout(400);await settleFonts();
+ const slides=await p.evaluate(()=>allSlides.map((s,i)=>({index:i,id:s.dataset.storyId,type:s.dataset.type,hidden:s.dataset.hidden==='1',steps:+s.dataset.sdSteps||0})));
+ for(const s of slides){index=s.index;await p.evaluate(i=>goTo(i),index);await p.waitForTimeout(250);await p.evaluate(()=>window.SD?.completeCurrent?.(allSlides[current]));await p.waitForTimeout(250);
+  const sl=p.locator('#deck .slide').nth(index);await sl.locator('img').evaluateAll(async imgs=>{await Promise.all(imgs.map(i=>i.complete?null:new Promise(r=>{i.onload=i.onerror=r;setTimeout(r,5000)})))});
+  await sl.locator('video[src]').evaluateAll(async vs=>{await Promise.all(vs.map(v=>v.readyState>=2?null:new Promise(r=>{v.addEventListener('loadeddata',r,{once:true});v.addEventListener('error',r,{once:true});setTimeout(r,5000)})))});
+  let frames=[];for(const el of await sl.locator('iframe').elementHandles()){const f=await el.contentFrame();if(!f)continue;await f.waitForLoadState('domcontentloaded');await f.evaluate(()=>{if(window.seek)window.seek(window.MOTION_END||30)});await f.waitForTimeout(100);frames.push(await f.evaluate(inspect));}
+  const media=await sl.evaluate(el=>({images:[...el.querySelectorAll('img')].filter(i=>!i.complete||!i.naturalWidth).map(i=>i.getAttribute('src')),videos:[...el.querySelectorAll('video')].map(v=>({src:v.getAttribute('src'),ready:v.readyState,error:v.error?.message,muted:v.muted,loop:v.loop,controls:v.controls,duration:v.duration}))}));rep.slides.push({...s,media,frames});
+  if(!s.hidden&&s.type!=='settings')await p.screenshot({path:path.join(out,`${String(index).padStart(3,'0')}-${s.id}.png`)});
+ }
+ rep.navigation=await p.evaluate(()=>{const a=allSlides.filter(s=>s.dataset.hidden!=='1'&&s.dataset.type!=='settings');return {last:a.at(-1).dataset.storyId,qr:a.at(-1).querySelectorAll('.qr-card img').length,qrDestination:TALK.qr,caption:a.at(-1).querySelector('.qr-label').textContent}});
+ rep.missing=rep.slides.flatMap(s=>[s.media,...s.frames].flatMap(m=>m.images.map(src=>({index:s.index,id:s.id,src}))));
+ rep.videoFailures=rep.slides.flatMap(s=>[s.media,...s.frames].flatMap(m=>m.videos.filter(v=>v.src&&(v.error||v.ready<1||!v.muted||!v.loop||v.controls)).map(v=>({id:s.id,...v}))));
+ for(const c of rep.cuts){if(c.ids.at(-1)!=='close'||!['future-brief','package-table','plan-to-presence','headset-comparison','educate-client','start-now','premium-proof','pixie-dust'].every(x=>c.ids.includes(x)))throw Error('Closing arc missing in '+c.cut);}
+ rep.pass=![rep.errors,rep.console,rep.external,rep.failed,rep.missing,rep.videoFailures].some(a=>a.length)&&rep.navigation.qr===1;
+}catch(e){rep.failure=e.stack;rep.pass=false;}finally{await b.close();fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(rep,null,2));console.log(JSON.stringify({pass:rep.pass,slides:rep.slides.length,cuts:rep.cuts.map(x=>[x.cut,x.ai,x.count,x.seconds]),errors:rep.errors,console:rep.console,external:rep.external,failed:rep.failed,missing:rep.missing,videoFailures:rep.videoFailures,failure:rep.failure},null,2));if(!rep.pass)process.exitCode=1;}

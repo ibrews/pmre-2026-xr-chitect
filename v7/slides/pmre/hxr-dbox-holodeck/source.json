@@ -1,0 +1,32 @@
+{
+  "id": "pmre/hxr-dbox-holodeck",
+  "source": "https://ibrews.github.io/harvardxr-keynote/#41",
+  "source_commit": "811042a2a87476a045be69f8c2e2aafa50cca12c",
+  "source_steps": 0,
+  "steps": 2,
+  "duration": 26.4,
+  "year": 2024,
+  "title": "DBOX Holodeck",
+  "line": "Focus on the client\u2019s experience",
+  "notes": "The source slide is DBOX Holodeck \u2014 The 98% Incident, not titled Four Seasons. A partner was about to apologize for imperfections; the client\u2019s notes concerned their own work. Discuss the experience the client actually has. The source does not identify this as the Four Seasons project, so do not silently relabel it.",
+  "media": [
+    {
+      "src": "media/ny-dbox-holodeck/02.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/ny-dbox-holodeck/04.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/ny-dbox-holodeck/05.jpg",
+      "seconds": 6,
+      "loop": false
+    }
+  ],
+  "kind": "gallery",
+  "suggested_placement": "2024 source chapter / client experience; do not relabel as Four Seasons",
+  "adaptation": "Source automatic media sequence preserved; added ArrowRight stops expose each item for inspection."
+}

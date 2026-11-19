@@ -1,0 +1,23 @@
+[
+  {
+    "file": "media/nxtbld/holo-prod-a.mp4",
+    "sha256": "93d5a83b33b846104debfb70f39db90a096af46e0ff3c4de36356562bc5068fd",
+    "source_path": "media/nxtbld/holo-prod-a.mp4",
+    "source_sha256": "93d5a83b33b846104debfb70f39db90a096af46e0ff3c4de36356562bc5068fd",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/nxtbld/holo-prod-b.mp4",
+    "sha256": "be5bd652c1433e44d020412b74ccda0fabc6f40d76bfc47ad0a858abf6335a36",
+    "source_path": "media/nxtbld/holo-prod-b.mp4",
+    "source_sha256": "be5bd652c1433e44d020412b74ccda0fabc6f40d76bfc47ad0a858abf6335a36",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/nxtbld/holo-prod-c.mp4",
+    "sha256": "161e6dd30c4de6009fab790ae0cb057734b17354d88be4a5eb8f814d75785a47",
+    "source_path": "media/nxtbld/holo-prod-c.mp4",
+    "source_sha256": "161e6dd30c4de6009fab790ae0cb057734b17354d88be4a5eb8f814d75785a47",
+    "transformation": "Byte-identical source copy"
+  }
+]

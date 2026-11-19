@@ -1,0 +1,32 @@
+{
+  "id": "pmre/hxr-intel-paid-experiments",
+  "source": "https://ibrews.github.io/harvardxr-keynote/#12",
+  "source_commit": "811042a2a87476a045be69f8c2e2aafa50cca12c",
+  "source_steps": 0,
+  "steps": 2,
+  "duration": 26.4,
+  "year": 2018,
+  "title": "Intel \u2014 Project Arena",
+  "line": "A virtual arena for the Intel i9 demonstration",
+  "notes": "The Glimpse Group subcontracted the Intel Project Arena work. The virtual arena used thousands of attendees and complex particle effects to demonstrate the i9 before its public release. The source says there was no follow-up or repeat contract. A paid experiment can build capability without becoming a recurring pipeline.",
+  "media": [
+    {
+      "src": "media/intel/Intel01.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/intel/Intel02.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/intel/Intel03.png",
+      "seconds": 6,
+      "loop": false
+    }
+  ],
+  "kind": "gallery",
+  "suggested_placement": "2018 source chapter / paid experiments, before the Unreal focus",
+  "adaptation": "Source automatic media sequence preserved; added ArrowRight stops expose each item for inspection."
+}

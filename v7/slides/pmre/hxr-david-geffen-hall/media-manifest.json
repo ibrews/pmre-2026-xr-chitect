@@ -1,0 +1,23 @@
+[
+  {
+    "file": "media/dgh/DavidGeffenHall01.jpg",
+    "sha256": "253b91e5f76def8376888bafe1e7d859b383c07080c976269dd1452730a5ae07",
+    "source_path": "media/dgh/DavidGeffenHall01.jpg",
+    "source_sha256": "253b91e5f76def8376888bafe1e7d859b383c07080c976269dd1452730a5ae07",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/dgh/DavidGeffenHall02.jpg",
+    "sha256": "25f4dd2c61e66923c83f0c23c4741aa0a07e31724c4cf0d402f30d957dc14c07",
+    "source_path": "media/dgh/DavidGeffenHall02.jpg",
+    "source_sha256": "25f4dd2c61e66923c83f0c23c4741aa0a07e31724c4cf0d402f30d957dc14c07",
+    "transformation": "Byte-identical source copy"
+  },
+  {
+    "file": "media/dgh/DavidGeffenHall03.jpeg",
+    "sha256": "43ed41cb8e489eb1aee0cb4f2f2f7593883ca3535efbdc00f5a8555a7bb9987c",
+    "source_path": "media/dgh/DavidGeffenHall03.jpeg",
+    "source_sha256": "43ed41cb8e489eb1aee0cb4f2f2f7593883ca3535efbdc00f5a8555a7bb9987c",
+    "transformation": "Byte-identical source copy"
+  }
+]

@@ -1,0 +1,3 @@
+The Shed at Hudson Yards used custom internal VR design apps and parametric design options for Fisher Dachs. The work focused on stagecraft and practical design decisions.
+
+Source: https://ibrews.github.io/harvardxr-keynote/#6 @ 811042a2a87476a045be69f8c2e2aafa50cca12c
