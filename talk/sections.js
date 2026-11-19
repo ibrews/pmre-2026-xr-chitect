@@ -1942,6 +1942,21 @@ const SECTIONS = [
         "notes": "⏱ ~35s.\n\nPresenter proposal. The virtual-camera concept demo follows; it is schematic, not a promised product or captured client deliverable."
       },
       {
+        "id": "unbuilt-shutter",
+        "title": "Photograph a place that doesn’t exist yet",
+        "use": "pmre/unbuilt-shutter",
+        "props": {},
+        "keep": 99,
+        "year": "2026",
+        "venn": [
+          1,
+          0.5,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~35s. NEW concept slide (Claude, Nov 19 overnight). Two clicks; the second fires a quiet shutter.\n\nStart: plan linework draws on. This is where every project you'll never get to shoot begins.\n\nClick 1: it tilts into 3D and the floors rise. Now it's a model. Developers already pay for this step.\n\nClick 2: shutter. It resolves into a photoreal aerial: Four Seasons Lake Austin, marketed before it was built (rendering by DBOX for Austin Capital Partners). In effect, a drone shot of a building that wasn't there yet.\n\nPoint: your eye for light, angle and lens doesn't need the building to exist. The next slide lets us choose the lens.\n\nLinework is schematic, drawn for this slide: not the project's drawings."
+      },
+      {
         "id": "camera-demo",
         "title": "Photograph an unbuilt space",
         "year": "2026+",
