@@ -1,0 +1,36 @@
+{
+  "purpose": "PMRE v6 additions, November 18 2026",
+  "assets": {
+    "sharp-overview.jpg": {
+      "source": "https://apple-aiml-research.github.io/ml-sharp/",
+      "kind": "official SHARP research illustration; downloaded in initial v6 attempt",
+      "bytes": 494763,
+      "sha256": "174bcb98cb362298c70435004cc901bea14411f21e81540c0a28d43688b92bc1"
+    },
+    "sharp-courtyard.mp4": {
+      "source": "https://apple-aiml-research.github.io/ml-sharp/",
+      "kind": "official SHARP research nearby-viewpoint example; downloaded in initial v6 attempt",
+      "bytes": 706104,
+      "sha256": "3b9e2c651528141f470ae9b2fa1acf13e563f1fe230ce5851e3ecb8059002718"
+    },
+    "four-seasons-unreal-tour.mp4": {
+      "source": "media/pmre/fs-v2/holo-aspen.mp4",
+      "kind": "Agile Lens interactive tour, seconds 30 through end; silent 1920px H.264 derivative; original collaborators credited in notes",
+      "bytes": 22484678,
+      "sha256": "d0bb4b3261bc3b3698b200659d49a39ac5f5d894eabb211164db2fa8d671fdec"
+    },
+    "aspen-setup-30s.mp4": {
+      "source": "media/pmre/fs-v2/holo-aspen.mp4",
+      "kind": "first 30 seconds of setup; silent 1280px H.264 derivative",
+      "bytes": 5902536,
+      "sha256": "1804dfde9daa09143e347164a59a8b145addd79c77f74ca2092fcf772511768e"
+    },
+    "agile-lens-dark.png": {
+      "source": "media/v3-fix1/agile-lens-logo.jpg",
+      "kind": "invert grayscale pixels only to remove white background; green identity preserved",
+      "bytes": 184979,
+      "sha256": "a8811bae86568edadfdabd63962010e4ac493b32093066be5be932d6c23fec27"
+    }
+  },
+  "notes": "Existing project/media credits remain in speaker notes. No new media license or client permission is asserted."
+}

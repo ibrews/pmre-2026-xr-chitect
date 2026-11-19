@@ -1,0 +1,44 @@
+ARCHITECT TO XR-CHITECT — FREE SPATIAL MEDIA STARTER GUIDE
+Alex Coulombe Presents · PMRE 2026 · November 19, Las Vegas
+
+1. Choose one room you can legally capture and share. Start with a space you
+   know well so you can spot missing details, scale errors and misleading views.
+2. Capture overlapping views of the room, moving slowly with steady light.
+   Try Scaniverse for capture; Polycam is another option (plan limits apply).
+   Read the vendor's current capture instructions and privacy settings first.
+3. Review the result from several viewpoints. Check thin objects, mirrors,
+   windows, doorways, missing surfaces and anything that could mislead a buyer.
+4. Use SuperSplat to review, clean up and frame a small Gaussian-splat scene.
+   Keep your original capture. Export a browser-deliverable version, then test
+   it on the client's actual phone or computer before promising compatibility.
+5. Build one useful deliverable: a browser tour, a short orbit film or a set of
+   additional views. Never use generated content to invent a property's facts.
+6. For VR or mixed reality, check viewer/file support, scale, performance,
+   comfort, permissions and device controls. A browser tour is not automatically
+   a polished multi-user headset app. Test the exact target viewer and headset.
+7. Price the complete service: capture + processing + review + hosting + delivery
+   + revisions. Package it with the photography or film you already sell.
+8. For unbuilt luxury projects, hosted VR, photoreal Unreal, physical stagecraft
+   or custom interaction: talk to Agile Lens about collaborating.
+
+TOOLS AND FURTHER READING (internet needed to visit these links)
+Scaniverse: https://scaniverse.nianticspatial.com/
+SuperSplat (free open-source editor): https://superspl.at/editor/
+Polycam: https://poly.cam/object-capture
+Luma (creative image/video workflows): https://lumalabs.ai/
+Apple SHARP research: https://apple-aiml-research.github.io/ml-sharp/
+CubiCasa: https://www.cubi.casa/
+iGuide: https://goiguide.com/
+Giraffe360: https://giraffe360.com/
+Nucleus: https://www.nucleus4d.com/
+Zillow SkyTour: https://www.zillow.com/news/skytour-is-pushing-the-tech-boundaries-of-real-estate-visualization/
+
+SkyTour is a Zillow exterior experience for eligible Showcase listings. It is
+not a general uploader for any splat. SHARP predicts nearby viewpoints from one
+photo; it is not a measured survey. Vendor plans and licensing can change.
+
+No second-brain signup or course entitlement is promised here. For training,
+updates or collaboration, use https://alexcoulombepresents.com/contact or
+https://agilelens.com .
+
+Talk: https://ibrews.github.io/pmre-2026-xr-chitect/v6/

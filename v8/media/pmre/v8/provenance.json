@@ -1,0 +1,62 @@
+{
+  "created_utc": "2026-11-18",
+  "conference_quotes": "Exact wording/attribution supplied by Alex in the v8 task; Jen wording cross-checked against canonical raw notes. yesterday is authorized presenter-relative wording.",
+  "dave": {
+    "sources": [
+      "https://aviationaircraftphoto.com/"
+    ],
+    "verified": "aviation photography, aircraft interiors/exteriors and 3D aircraft tours",
+    "venn": "Editorial grouping: photography, aviation, spatial media"
+  },
+  "devon": {
+    "sources": [
+      "https://www.pmreconference.com/presenters",
+      "https://narwhalcreative.ca/about/",
+      "https://windsorrealestatephotography.com/about/"
+    ],
+    "verified": "Narwhal Creative director/principal photographer; PMRE bio describes rap videos, cinematic one takes, sketches and agent visibility.",
+    "venn": "Editorial grouping: photography, performance, marketing"
+  },
+  "via": {
+    "status": "Company NOT VERIFIED; omit company and corporate role",
+    "shown": "Via Lloyd-George, Charleston, architect \u2014 supplied by Alex",
+    "queries": [
+      "Via Lloyd-George",
+      "Via Lloyd George Charleston",
+      "Via Mi Design",
+      "Via architect Giraffe360"
+    ],
+    "note": "Earlier raw note says Giraffe360; latest task says unsure. Neither published."
+  },
+  "nucleus": {
+    "status": "RESOLVED \u2014 visibly attributed vendor claim, per Alex",
+    "quote": "first 3DGS platform approved to publish immersive experiences directly into Zillow's 3D tour ecosystem",
+    "source": "https://www.nucleus4d.com/",
+    "scope": "Exact wording supplied by Alex; current rendered homepage confirms Zillow/realtor.com publication but does not contain the exact first sentence. Not an independent priority finding."
+  },
+  "article": {
+    "url": "https://arinsider.co/2026/06/10/lake-austin-luxury-how-a-developer-presold-500m-in-real-estate-with-vr/",
+    "method": "Playwright headless Google Chrome; actual article title hero bounding-box screenshot; no image reconstruction",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "clip": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 573.53125,
+      "top": 0,
+      "right": 1440,
+      "bottom": 573.53125,
+      "left": 0
+    },
+    "captured_utc": "2026-11-19T07:19:44.044Z",
+    "asset": "media/pmre/v8/emily-olman-arinsider-four-seasons.png",
+    "bytes": 501015,
+    "sha256": "b99f33f203e2d19cd43642c1db26682e45266a404e831753109d666131f2a139",
+    "credit": "Emily Olman / AR Insider",
+    "published": "2026-06-10",
+    "updated": "2026-08-03"
+  }
+}

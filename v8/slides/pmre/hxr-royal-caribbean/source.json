@@ -1,0 +1,32 @@
+{
+  "id": "pmre/hxr-royal-caribbean",
+  "source": "https://ibrews.github.io/harvardxr-keynote/#39",
+  "source_commit": "811042a2a87476a045be69f8c2e2aafa50cca12c",
+  "source_steps": 0,
+  "steps": 2,
+  "duration": 26.4,
+  "year": 2024,
+  "title": "Royal Caribbean",
+  "line": "Plan for the demo to fail gracefully",
+  "notes": "The Royal Caribbean work deployed XR experiences on a cruise ship. The source highlights constrained connectivity and the need for contingencies and graceful fallbacks. Show what works and keep the experience moving when a planned moment fails.",
+  "media": [
+    {
+      "src": "media/royal-caribbean/rc_01.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/royal-caribbean/rc_02.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/royal-caribbean/rc_03.jpg",
+      "seconds": 6,
+      "loop": false
+    }
+  ],
+  "kind": "gallery",
+  "suggested_placement": "2024 source chapter / contingency and graceful fallback",
+  "adaptation": "Source automatic media sequence preserved; added ArrowRight stops expose each item for inspection."
+}

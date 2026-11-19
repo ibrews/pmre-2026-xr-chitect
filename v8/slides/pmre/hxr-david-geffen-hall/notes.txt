@@ -1,0 +1,3 @@
+A physical railing was included in the VR experience so stakeholders could lean on something real while seeing the virtual space. The source reports fewer downstream change orders without a count; do not attach an invented metric.
+
+Source: https://ibrews.github.io/harvardxr-keynote/#31 @ 811042a2a87476a045be69f8c2e2aafa50cca12c

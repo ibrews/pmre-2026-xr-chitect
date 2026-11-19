@@ -1,0 +1,359 @@
+{
+  "checked": "2026-11-18",
+  "bpi": {
+    "old": {
+      "path": "media/story/blueprint-seat-demo.mp4",
+      "sha256": "0050a1acd41010e53a03561018d741bcf718364a153b9635ad76951b4bd31799",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.640020",
+            "width": 1280,
+            "height": 766,
+            "coded_width": 1280,
+            "coded_height": 766,
+            "has_b_frames": 2,
+            "sample_aspect_ratio": "766:765",
+            "display_aspect_ratio": "256:153",
+            "pix_fmt": "yuv420p",
+            "level": 32,
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 761344,
+            "duration": "49.566667",
+            "bit_rate": "1018478",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "1487",
+            "extradata_size": 51,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc62.28.101 libx264"
+            }
+          }
+        ],
+        "format": {
+          "filename": "media/story/blueprint-seat-demo.mp4",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "49.566667",
+          "size": "6327947",
+          "bit_rate": "1021322",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf62.12.101"
+          }
+        }
+      }
+    },
+    "supplied": {
+      "path": "/Users/alex/Desktop/Latest BPI Trailer V2.mp4",
+      "sha256": "605d6e7a4e5ce9a78b5ac01bcce0e3ff190a68603c23b8857198935db9bb0f50",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.640032",
+            "width": 2068,
+            "height": 1272,
+            "coded_width": 2068,
+            "coded_height": 1272,
+            "has_b_frames": 2,
+            "pix_fmt": "yuv420p",
+            "level": 50,
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 750080,
+            "duration": "48.833333",
+            "bit_rate": "4354683",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "1465",
+            "extradata_size": 49,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng",
+              "handler_name": "\u001fMainconcept Video Media Handler",
+              "encoder": "Lavc63.1.101 libx264"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/alex/Desktop/Latest BPI Trailer V2.mp4",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "48.833333",
+          "size": "26599498",
+          "bit_rate": "4357596",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    "match": false,
+    "derivative": {
+      "path": "media/pmre/v7/bpi-latest-trailer-v2.mp4",
+      "sha256": "fc199d5c33f687ee73c421d3bd0205727ccb80e38d085f8015f0629cc2ac2264",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.640032",
+            "width": 1920,
+            "height": 1180,
+            "coded_width": 1920,
+            "coded_height": 1180,
+            "has_b_frames": 2,
+            "pix_fmt": "yuv420p",
+            "level": 50,
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 750080,
+            "duration": "48.833333",
+            "bit_rate": "3398279",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "1465",
+            "extradata_size": 49,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "eng",
+              "handler_name": "\u001fMainconcept Video Media Handler",
+              "encoder": "Lavc63.1.101 libx264"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/alex/Archives/pmre2026-2026-10/v7/deck/media/pmre/v7/bpi-latest-trailer-v2.mp4",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "48.833333",
+          "size": "20761335",
+          "bit_rate": "3401174",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    "command": "ffmpeg -i \"Latest BPI Trailer V2.mp4\" -an -vf scale=1920:-2 -c:v libx264 -preset fast -crf 23 -pix_fmt yuv420p -movflags +faststart bpi-latest-trailer-v2.mp4",
+    "runtime": "muted autoplay, loop, inline, controls hidden"
+  },
+  "cotton": {
+    "source": "/Users/alex/Downloads/cotton.png",
+    "source_sha256": "d510b61fb567b8a6a7f71fb23080ca9fa3b0d526ebb9c9b36159df76a7f5a21e",
+    "path": "media/pmre/v7/cotton-placeholder.png",
+    "status": "Presenter-supplied placeholder still; video coming later."
+  },
+  "hardware": {
+    "vision_pro_m5": {
+      "base_launch_usd": 3499,
+      "configuration": "256GB",
+      "head_weight_g": [
+        750,
+        800
+      ],
+      "separate_battery_g": 353,
+      "chip": "M5 + R1",
+      "sources": [
+        "https://www.apple.com/apple-vision-pro/specs/",
+        "https://www.apple.com/newsroom/2025/10/apple-vision-pro-upgraded-with-the-m5-chip-and-dual-knit-band/"
+      ]
+    },
+    "quest_3": {
+      "base_launch_usd": 499.99,
+      "configuration": "128GB at original 2023 launch, not current retail",
+      "head_weight_g": 515,
+      "chip": "Snapdragon XR2 Gen 2",
+      "sources": [
+        "https://www.meta.com/quest/quest-3/",
+        "https://about.fb.com/news/2023/09/meet-meta-quest-3-mixed-reality-headset/"
+      ]
+    },
+    "xreal_aura": {
+      "base_launch_offer_usd": 1099,
+      "regular_announced_base_usd": 1279,
+      "configuration": "12GB/256GB; limited launch offer through end 2026",
+      "glasses_weight_g": 95,
+      "compute_puck_g": 265,
+      "chip": "Snapdragon Reality Elite + X1S",
+      "sources": [
+        "https://www.xreal.com/aura",
+        "https://us.shop.xreal.com/blogs/guides/xreal-aura-price-preorder-us"
+      ]
+    },
+    "ranking": {
+      "order": [
+        "Vision Pro M5",
+        "XREAL AURA",
+        "Meta Quest 3"
+      ],
+      "status": "Editorial qualitative compute-headroom inference, not a measured cross-device benchmark or electrical-power ranking",
+      "basis": [
+        "Public chip specifications",
+        "https://www.qualcomm.com/news/releases/2026/06/qualcomm-takes-spatial-computing-into-the-ai-era-with-snapdragon"
+      ]
+    },
+    "nda": "PICO Space Pro: generic invented silhouette only. No actual product image, specs, price, weight or rank."
+  },
+  "product_images": {
+    "vision-pro-m5.jpg": "https://www.apple.com/v/apple-vision-pro/l/images/specs/hero__cvgr5aj1ttsi_large_2x.jpg",
+    "quest-3.png": "https://about.fb.com/wp-content/uploads/2025/09/Meta-Quest-3.png?w=960",
+    "xreal-aura.webp": "https://resource.xreal.com/www-xreal-com/images/aura/AuraPic_Mobile.webp"
+  },
+  "nucleus": {
+    "supported": "Tours publish into Zillow/realtor.com 3D tour ecosystems",
+    "priority": "First company with splats on Zillow remains unverified; neutral wording used",
+    "sources": [
+      "https://www.nucleus4d.com/",
+      "https://www.zillow.com/news/skytour-is-pushing-the-tech-boundaries-of-real-estate-visualization/"
+    ]
+  },
+  "matt": {
+    "credit": "Matt Michalski, PMRE 2026 day-1 product/package discussion",
+    "inputs": "Two supplied JPG photographs under /Users/alex/Downloads/PMRE Packages",
+    "treatment": "Original design and hypothetical teaching add-on prices; confidential Aryeo data not reproduced. Credit in package-table and plan-to-presence speaker notes."
+  },
+  "training": {
+    "offer": "20% off 1:1 and company training",
+    "code": "PMRE20",
+    "status": "TODO placeholder, contact Alex to confirm and apply",
+    "coupon_platform_changes": false
+  },
+  "gate": "pixie; playful client-side pixie-dust reference, not security. Download files are public.",
+  "no_drive_uploads": true
+}
