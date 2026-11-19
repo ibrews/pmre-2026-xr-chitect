@@ -30,6 +30,8 @@ el.innerHTML=`<div class="pk-s" data-s="-1"><h2>The top shelf of what you alread
 <div class="base"></div><div class="brk today">What you sell today</div><div class="brk xr">Spatial tiers: higher value per listing</div>
 <div class="arrow">CLIENT<br>VALUE<i></i></div></div>`;
 const root=el.querySelector('.pk-s'),sts=[...el.querySelectorAll('.st')];
+// Soft rising chime per tier (Alex 2026-11-19: 'little light sounds'); kept well under the slide-change whoosh.
+const chime=n=>{if(ctx.instant)return;const a=ctx.audio&&ctx.audio();if(!a)return;const t=a.currentTime,f=[660,784,880,988,1175][n]||880;[1,2].forEach((m,k)=>{const o=a.createOscillator(),g=a.createGain();o.type='sine';o.frequency.value=f*m;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(k?.006:.02,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+.7);o.connect(g).connect(a.destination);o.start(t);o.stop(t+.72);});};
 const set=n=>{root.dataset.s=n;sts.forEach(s=>s.classList.toggle('on',n>=0&&+s.dataset.at<=n));};
 return{enter(){root.classList.add('noanim');set(-1);void root.offsetWidth;root.classList.remove('noanim');if(ctx.instant)set(0);else ctx.clock.after(60,()=>set(0));},
-step(n){set(n)},complete(n){set(n)},restore(n){set(n)},staticFrame(){set(4)}};}});
+step(n){set(n);chime(n)},complete(n){set(n)},restore(n){set(n)},staticFrame(){set(4)}};}});

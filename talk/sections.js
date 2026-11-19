@@ -2117,9 +2117,11 @@ const SECTIONS = [
               "alt": "People in headsets at camera stations filming A Christmas Carol VR, over the video village of camera angles"
             }
           ],
-          "steps": false
+          "steps": false,
+          "playOnStep": true,
+          "revealOnStep": true
         },
-        "notes": "⏱ ~30s. Christmas Carol replacement requested by Alex, using the MIA spatial deck’s existing show and replay media. Real live-performed virtual theater, not a property model. The transferable skill is composing a view inside a place. The preceding plan/model/photo example supplies the architectural application. First: stand inside the scene. Click: another point of view. These are existing show/replay recordings, not footage of the MIA prototype UI.\nSource: local mia-src/index.html carol-inside and media/video/carol-replay-marley.mp4; MIA 9ee2493. Exact #79 at e5876b3 is camera-demo; older note numbering called the Nucleus card #79. Nucleus remains covered by the niche sequence.\n\nAlex, 2026-11-19: media is YouTube W52ZACgezqw 0:18\u20130:50 (people in headsets at camera stations; burned-in captions), silent loop, over the MIA video-village composition (MIA slide 23 camera-angles wall) as the backdrop. Clip re-encoded to 720p H.264 (6.3 MB, was 16.6 MB at 1080p) for venue Wi-Fi."
+        "notes": "⏱ ~30s. Alex, 2026-11-19 10:30: opens on the video-village composition only; click once and the headset-camera clip fades in and starts playing.\n\nChristmas Carol replacement requested by Alex, using the MIA spatial deck’s existing show and replay media. Real live-performed virtual theater, not a property model. The transferable skill is composing a view inside a place. The preceding plan/model/photo example supplies the architectural application. First: stand inside the scene. Click: another point of view. These are existing show/replay recordings, not footage of the MIA prototype UI.\nSource: local mia-src/index.html carol-inside and media/video/carol-replay-marley.mp4; MIA 9ee2493. Exact #79 at e5876b3 is camera-demo; older note numbering called the Nucleus card #79. Nucleus remains covered by the niche sequence.\n\nAlex, 2026-11-19: media is YouTube W52ZACgezqw 0:18\u20130:50 (people in headsets at camera stations; burned-in captions), silent loop, over the MIA video-village composition (MIA slide 23 camera-angles wall) as the backdrop. Clip re-encoded to 720p H.264 (6.3 MB, was 16.6 MB at 1080p) for venue Wi-Fi."
       },
       {
         "id": "ai",
