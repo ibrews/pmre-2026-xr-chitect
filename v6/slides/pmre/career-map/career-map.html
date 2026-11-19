@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Where the work was — motion</title>
+<!-- Spatial Deck slide module pmre/career-map (PMRE v5). Schematic map (pins placed by real latitude/longitude, no
+     coastline): Syracuse school + VIP Structures internship, Bread Loaf in Middlebury VT, then New York City after the
+     2008 recession (Rafael Viñoly 2010, ZGF 2010–2012, Fisher Dachs Associates 2012). ?static = final frame. -->
+<style>
+:root{--bg:#060810;--text:#f0f4ff;--dim:rgba(240,244,255,.55);--accent:#d7b668}
+html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:'Space Grotesk','Inter','Avenir Next','Helvetica Neue',system-ui,sans-serif}
+svg{width:100%;height:100%;display:block}
+.fade{opacity:0;animation:fade .8s ease var(--t,0s) forwards}
+@keyframes fade{to{opacity:1}}
+.pop{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .7s cubic-bezier(.2,1.4,.4,1) var(--t) forwards}
+@keyframes pop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+.draw{stroke-dasharray:1000;stroke-dashoffset:1000;animation:draw 1.4s ease var(--t) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.place{font-size:40px;font-weight:700;fill:var(--text)}
+.what{font-size:28px;fill:var(--dim)}
+.yr{font-size:28px;fill:var(--accent);font-weight:600}
+.head{font-size:58px;font-weight:800;fill:var(--text)}
+.note{font-size:30px;fill:var(--dim);letter-spacing:.06em}
+</style></head><body>
+<svg viewBox="240 135 1440 810" preserveAspectRatio="xMidYMid meet" aria-label="Map: Syracuse, New York (school and VIP Structures internship); Middlebury, Vermont (Bread Loaf internship); New York City (Rafael Viñoly, ZGF, Fisher Dachs Associates).">
+<g stroke="rgba(240,244,255,.06)" stroke-width="2">
+ <line x1="300" y1="300" x2="1640" y2="300"/><line x1="300" y1="500" x2="1640" y2="500"/><line x1="300" y1="700" x2="1640" y2="700"/>
+ <line x1="600" y1="170" x2="600" y2="910"/><line x1="950" y1="170" x2="950" y2="910"/><line x1="1300" y1="170" x2="1300" y2="910"/>
+</g>
+<text x="300" y="235" class="head fade" style="--t:.1s">Where the work was</text>
+<!-- routes -->
+<path d="M693 498 Q1040 330 1385 364" fill="none" stroke="#00d4ff" stroke-width="5" stroke-dasharray="14 12" class="fade" style="--t:2.2s" opacity=".7"/>
+<path d="M693 498 Q900 760 1192 823" fill="none" stroke="#f0f4ff" stroke-width="6" class="draw" style="--t:4.6s"/>
+<!-- Syracuse -->
+<g class="pop" style="--t:.8s"><circle cx="693" cy="498" r="20" fill="#00d4ff"/><circle cx="693" cy="498" r="34" fill="none" stroke="#00d4ff" stroke-opacity=".4" stroke-width="4"/></g>
+<text x="420" y="452" class="place fade" text-anchor="start" style="--t:1s">Syracuse, NY</text>
+<text x="420" y="560" class="yr fade" style="--t:1.2s">2005–2010</text>
+<text x="420" y="600" class="what fade" style="--t:1.3s">Syracuse University</text>
+<text x="420" y="640" class="what fade" style="--t:1.5s">VIP Structures (internship)</text>
+<!-- Vermont -->
+<g class="pop" style="--t:2.8s"><circle cx="1385" cy="364" r="20" fill="#00d4ff"/><circle cx="1385" cy="364" r="34" fill="none" stroke="#00d4ff" stroke-opacity=".4" stroke-width="4"/></g>
+<text x="1385" y="440" class="place fade" text-anchor="middle" style="--t:3s">Middlebury, VT</text>
+<text x="1385" y="480" class="what fade" text-anchor="middle" style="--t:3.2s">Bread Loaf (internship)</text>
+<text x="1385" y="520" class="yr fade" text-anchor="middle" style="--t:3.4s">the plan: a small firm in Vermont</text>
+<!-- 2008 -->
+<text x="960" y="640" class="note fade" text-anchor="middle" style="--t:4.1s">2008: the recession</text>
+<!-- NYC -->
+<g class="pop" style="--t:5.8s"><circle cx="1192" cy="823" r="22" fill="#f0f4ff"/><circle cx="1192" cy="823" r="38" fill="none" stroke="#f0f4ff" stroke-opacity=".4" stroke-width="4"/></g>
+<text x="1250" y="660" class="place fade" style="--t:6s">New York City</text>
+<text x="1250" y="706" class="what fade" style="--t:6.3s"><tspan class="yr">2010</tspan>  Rafael Viñoly</text>
+<text x="1250" y="746" class="what fade" style="--t:6.6s"><tspan class="yr">2010</tspan>  ZGF Architects</text>
+<text x="1250" y="786" class="what fade" style="--t:6.9s"><tspan class="yr">2012</tspan>  Fisher Dachs Associates</text>
+</svg>
+<script src="../../sd-frame.js"></script>
+<script>
+const domainAttrs=[];document.querySelectorAll('svg *').forEach(el=>['fill','stroke'].forEach(a=>{const v=el.getAttribute(a);if(v&&/#00d4ff/i.test(v))domainAttrs.push([el,a,v]);}));
+addEventListener('load',()=>domainAttrs.forEach(([el,a,v])=>el.setAttribute(a,v)),{once:true});
+window.MOTION_SFX=[{t:.8,kind:'pop'},{t:2.8,kind:'pop'},{t:5.8,kind:'pop'}];
+SDFrame.init({duration:8,steps:0,onEnter(){parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}});
+</script>
+</body></html>

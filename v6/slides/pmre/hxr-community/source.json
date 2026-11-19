@@ -1,0 +1,37 @@
+{
+  "id": "pmre/hxr-community",
+  "source": "https://ibrews.github.io/harvardxr-keynote/#44",
+  "source_commit": "811042a2a87476a045be69f8c2e2aafa50cca12c",
+  "source_steps": 0,
+  "steps": 3,
+  "duration": 35.2,
+  "year": 2025,
+  "title": "Unreal NYC & HalcyonVR",
+  "line": "Put the work in front of people",
+  "notes": "The team co-founded the ACC VR community and helped launch Unreal Engine NYC. Meetups, open studios and informal demos brought developers, artists and first-time headset users into the feedback process. The four images show Unreal NYC and HalcyonVR.",
+  "media": [
+    {
+      "src": "media/community/community03_unrealnyc.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/community/community04_unrealnyc_peeps.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/community/community05_halcyonvr.jpg",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "src": "media/community/community06_halcyon_collage.jpg",
+      "seconds": 6,
+      "loop": false
+    }
+  ],
+  "kind": "gallery",
+  "suggested_placement": "2025 source chapter / community and feedback before wrap-up",
+  "adaptation": "Source automatic media sequence preserved; added ArrowRight stops expose each item for inspection."
+}

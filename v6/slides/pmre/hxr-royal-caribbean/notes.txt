@@ -1,0 +1,3 @@
+The Royal Caribbean work deployed XR experiences on a cruise ship. The source highlights constrained connectivity and the need for contingencies and graceful fallbacks. Show what works and keep the experience moving when a planned moment fails.
+
+Source: https://ibrews.github.io/harvardxr-keynote/#39 @ 811042a2a87476a045be69f8c2e2aafa50cca12c
