@@ -4,7 +4,7 @@ Source: `story/v8`; publish only the `/v8/` subtree. Root and `/v3/` through `/v
 
 November 19: slide #2 reuses the MIA speaker intro (Co-Founder; 350+ classes), including a bulky first headset replaced by the compact VR power-up. Slide #3 restores v5’s exact studio copy beside MIA’s silent 18-client wheel. Presenter-supplied AU queue, Wisconsin theater and speaking photos are web optimized without visible provenance captions. There are 92 absolute slide slots; three new visible beats add to the default full story.
 
-Package with `python3 tools/package_offline.py --out <organizer-package>`; verify the extracted ZIP using `node tools/qa_v8.mjs ROOT OUT chrome|firefox` and `tools/qa_v7_resources.mjs`. No Drive upload.
+Package with `python3 tools/package_offline.py --out <organizer-package>`; verify the extracted ZIP using `node tools/qa_v8.mjs ROOT OUT chrome|firefox` and `tools/qa_v7_resources.mjs`. No Drive upload. The existing main-only PMRE20 offer update is retained.
 
 # Architect to XR-chitect
 
@@ -16,7 +16,7 @@ Alex Coulombe Presents at PMRE 2026, November 19, Las Vegas. V8 extends v7 and f
 
 Extract **all** files from the offline ZIP, then double-click `index.html` and open it in Chrome or Firefox. No Python, server or internet is required for the presentation. Keep its folders together. Press F11 for full screen; arrows advance; O opens the cut/theme options; Shift+N shows notes. The QR destination and external resource links need internet on the viewer’s device.
 
-Full is the default; medium and short cuts remain selectable. These are authored rehearsal budgets, not a measured performance; see `talk/REHEARSAL.md` for the current order and timing. All length cuts retain the three-beat ending: how spatial media changes property work; start building and selling; collaborate on premium briefs. The final slide has one QR plus Q&A. The final QR opens the Welcome PMRE Attendees hub (password `pixie`, a playful client-side gate, not security), including a real Markdown/ZIP second-brain kit, 1:1/company training offer (20% off; `PMRE20` is a TODO placeholder, contact Alex to confirm), project details and the full deck.
+Full is the default; medium and short cuts remain selectable. These are authored rehearsal budgets, not a measured performance; see `talk/REHEARSAL.md` for the current order and timing. All length cuts retain the three-beat ending: how spatial media changes property work; start building and selling; collaborate on premium briefs. The final slide has one QR plus Q&A. The final QR opens the Welcome PMRE Attendees hub (password `pixie`, a playful client-side gate, not security), including a real Markdown/ZIP second-brain kit, 1:1/company training offer (20% off; use `PMRE20` at alexcoulombepresents.com/pmre), project details and the full deck.
 
 ## Author and package
 
