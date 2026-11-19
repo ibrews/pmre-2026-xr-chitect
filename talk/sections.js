@@ -2040,6 +2040,21 @@ const SECTIONS = [
         "opt": "ai:on"
       },
       {
+        "id": "package-shelf",
+        "title": "The top shelf of what you already sell",
+        "use": "pmre/package-shelf",
+        "props": {},
+        "keep": 99,
+        "year": "2026",
+        "venn": [
+          1,
+          0.4,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~45s. NEW concept slide (Claude, Nov 19 overnight). Four clicks; sits right before the package table.\n\nStart: photos, video, drone. What you sell today.\n\nClick 1: 3D tour and floor plan. Many of you already sell this.\n\nClick 2: splat walkthrough. Same shoot, a little more overlap coverage, and now it's a place.\n\nClick 3: a VR or MR visit. The splat or the plan, delivered at human scale in a headset.\n\nClick 4: premium Unreal at the top shelf. Unbuilt space, custom interaction, scoped project fee: that's where we collaborate.\n\nPoint: I'm not asking you to change careers. Each step reuses the capture below it. You're adding shelves, not replacing the store. Heights are illustrative, not measured value; the next slide puts example numbers on it."
+      },
+      {
         "id": "package-table",
         "title": "Your package has room to grow",
         "year": "2026+",
