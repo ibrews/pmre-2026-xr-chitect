@@ -188,30 +188,29 @@ const SECTIONS = [
         "use": "pmre/text-card",
         "props": {
           "title": "Have you tried VR?",
-          "lines": [
-            "Hands up if you have tried a VR headset.",
-            "Hands down if it was Google Cardboard.",
-            "Keep them up if it was in the past three years."
-          ],
+          "lines": [],
           "quote": "",
           "attr": "",
-          "kicker": ""
+          "kicker": "",
+          "centered": true
         },
-        "notes": "⏱ ~35s.\n\nPresenter audience poll, in this order. Pause for each response. Ask what they remember; no audience percentages are asserted."
+        "notes": "⏱ ~35s.\n\nPresenter audience poll, in this order. Pause for each response. Ask what they remember; no audience percentages are asserted.\n\nHands up if you have tried a VR headset.\nHands down if it was Google Cardboard.\nKeep them up if it was in the past three years.",
+        "hideTracker": true
       },
       {
         "id": "goals",
         "use": "pmre/text-card",
         "props": {
-          "kicker": "Three things to take home",
-          "title": "",
+          "kicker": "",
+          "title": "What I hope this talk provides for you:",
           "lines": [
-            "<b>1.</b> Find the value in your unusual mix",
-            "<b>2.</b> Create media people can step inside",
-            "<b>3.</b> Sell the next tier of your package"
-          ]
+            "<b>1.</b> A value on your weird mix of skills and interests",
+            "<b>2.</b> A reason &amp; roadmap to create media you can step inside",
+            "<b>3.</b> A good yarn"
+          ],
+          "lineSteps": true
         },
-        "title": "Three things to take home",
+        "title": "What I hope this talk provides for you:",
         "keep": 19,
         "year": "2026",
         "venn": [
@@ -220,19 +219,19 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~40s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nToday is mostly story time. I will go roughly chronologically. Two goals.\n\nOne: tell a good yarn, and maybe get you thinking about what it means to develop expertise in a niche, and about the special abilities, interests or passions you have that are so far untapped.\n\nTwo: get you excited about what virtual, augmented and mixed reality can do in architecture and real estate. You may be thinking, I have worked with Matterport. This is more about projects that do not exist yet: Gaussian splatting for unbuilt properties, walking through something completely at scale, photorealistic, in a way that amazes and inspires.\n\nYear: 2026. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~40s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nToday is mostly story time. I will go roughly chronologically. Two goals.\n\nOne: tell a good yarn, and maybe get you thinking about what it means to develop expertise in a niche, and about the special abilities, interests or passions you have that are so far untapped.\n\nTwo: get you excited about what virtual, augmented and mixed reality can do in architecture and real estate. You may be thinking, I have worked with Matterport. This is more about projects that do not exist yet: Gaussian splatting for unbuilt properties, walking through something completely at scale, photorealistic, in a way that amazes and inspires.\n\nYear: 2026. Venn weights: 1 / 1 / 1.\n\n\nItem 2: Sell the next tier of your package.",
         "hideTracker": true
       },
       {
         "id": "teaser",
         "use": "pmre/text-card",
         "props": {
-          "kicker": "Where this story ends",
+          "kicker": "Where this story leads",
           "big": "$2 billion",
-          "quote": "“It was binary.”",
-          "attr": "Without our VR, the project would not have happened."
+          "quote": "",
+          "attr": "Without VR, an ambitious luxury real estate project would not be happening"
         },
-        "title": "Where this story ends",
+        "title": "Where this story leads",
         "keep": 19,
         "year": "2026",
         "venn": [
@@ -306,7 +305,7 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~50s.\n\nAlex’s November 18 direction: retain the fuller traffic/road opening (v5 #8) and omit the simpler variant (#9). Traffic vamps until the presenter clicks. Then four clicks take the scene through theater planning, live VR theater, archviz and the XR-chitect intersection. Keep the original Alex sprite and domain colors. No timed transition forces the presenter to finish speaking.",
+        "notes": "⏱ ~50s.\n\nAlex’s November 18 direction: retain the fuller traffic/road opening (v5 #8) and omit the simpler variant (#9). Traffic vamps until the presenter clicks. Then four clicks take the scene through theater planning, live VR theater, archviz and the XR-chitect intersection. Keep the original Alex sprite and domain colors. No timed transition forces the presenter to finish speaking.\n\nRecalled advice: Pick a lane. Master one craft. Richard Rosa, Syracuse University. Entry holds one road; step 1 adds the other lanes; step 2 starts traffic. Then four steps reveal the overlaps.",
         "motion": "lane-traffic"
       },
       {
@@ -378,7 +377,7 @@ const SECTIONS = [
         "id": "hand",
         "use": "pmre/the-hand",
         "props": {},
-        "title": "Drafting by hand taught me taste",
+        "title": "Drafting by hand taught me to work with intention.",
         "keep": 30,
         "year": "2005",
         "venn": [
@@ -387,24 +386,8 @@ const SECTIONS = [
           0.1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAt Syracuse we were not allowed to touch a computer for the first year. At the time it was excruciating. It made me think deliberately about every line and every line weight. With Revit you make a wall, and the lines are a byproduct. Clarity can get lost.\n\nYear: 2005. Venn weights: 1 / 0 / 0.1.\n\n\nElizabeth review, November 11: The diagram contrasts a carefully drawn stair opening with a generated slab that blocks the stair. Ask the audience to spot the headroom problem. The point is that learning a tool also means learning to judge its output. The building/error is an original schematic, not a real failed project. Retain because this establishes the trained eye before the software workflow.",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAt Syracuse we were not allowed to touch a computer for the first year. At the time it was excruciating. It made me think deliberately about every line and every line weight. With Revit you make a wall, and the lines are a byproduct. Clarity can get lost.\n\nYear: 2005. Venn weights: 1 / 0 / 0.1.\n\n\nElizabeth review, November 11: The diagram contrasts a carefully drawn stair opening with a generated slab that blocks the stair. Ask the audience to spot the headroom problem. The point is that learning a tool also means learning to judge its output. The building/error is an original schematic, not a real failed project. Retain because this establishes the trained eye before the software workflow.\n\nTalkthrough 07:40: “It taught me how to do things with intention, deliberately.”\nSubstep: generated plans, sections, elevations and schedules stack on the right. Left = slow and deliberate; right = very fast, but not necessarily clean.\n⏱ ~35s.\n\nIllustrative BIM drawing sheets, not scans of Alex’s student work. After making a model, plans, sections, elevations and schedules become byproducts. You still need the eye to review the output. This prepared me for AI: a few crucial decisions, lots of output, then checking emails, photographs, marketing copy and 3D models. The diagram deliberately contains a stair headroom clash.",
         "motion": "the-hand"
-      },
-      {
-        "id": "drawing-byproducts",
-        "title": "A few decisions. A lot of drawings.",
-        "year": "2007",
-        "venn": [
-          1,
-          0.3,
-          1
-        ],
-        "keep": 19,
-        "use": "pmre/drawing-review",
-        "props": {
-          "review": false
-        },
-        "notes": "⏱ ~35s.\n\nIllustrative BIM drawing sheets, not scans of Alex’s student work. After making a model, plans, sections, elevations and schedules become byproducts. You still need the eye to review the output. This prepared me for AI: a few crucial decisions, lots of output, then checking emails, photographs, marketing copy and 3D models. The diagram deliberately contains a stair headroom clash."
       },
       {
         "id": "drawing-judgment",

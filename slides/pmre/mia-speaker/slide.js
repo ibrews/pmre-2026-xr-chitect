@@ -31,7 +31,7 @@ function tiClock() {
   };
 }
 function tiFade(els, on, instant, stagger) {
-  els.forEach((el, i) => { if (!el) return; if (instant || !on) { el.style.transition = 'none'; el.classList.toggle('on', on); void el.offsetWidth; el.style.transition = ''; } else setTimeout(() => el.classList.add('on'), (stagger || 0) * i); });
+  els.forEach((el, i) => { if (!el) return; if (instant || !on) { el.style.transition = 'none'; el.classList.toggle('on', on); void el.offsetWidth; el.style.transition = ''; } else ctx.clock.after((stagger || 0) * i,() => el.classList.add('on')); });
 }
 
 // ── Pixel avatar (FMX buildAvatar, from HXR) ──
@@ -230,7 +230,7 @@ function tiBuildAlex(s, I) {
       S.raf(frame);
     }));
   }
-  return {enter:play,leave:stop,staticFrame(){this.complete();},step(n){[showBio,iconHops,showTallies][n-1]();},complete(){stop();entranceFinal();tiHeadset(avBody);ICONS.forEach(o=>o.pos.style.opacity='0');uPos.style.opacity='0';tiFade([...bioEls,ue5Text,statsRow],true,true);nums.forEach(n=>n.textContent=n.dataset.tally);setAnim('none','translate(90px,0) scale(2)');}};
+  return {enter:play,leave:stop,staticFrame(){this.complete();},step(n){[showBio,iconHops,showTallies][n-1]();},complete(n=3){stop();play();stop();entranceFinal();if(n>=1)tiFade(bioEls,true,true);if(n>=2){tiHeadset(avBody);ICONS.forEach(o=>o.pos.style.opacity='0');uPos.style.opacity='0';tiFade([ue5Text],true,true);setAnim('none','translate(90px,0) scale(2)');}if(n>=3){tiFade([statsRow],true,true);nums.forEach(x=>x.textContent=x.dataset.tally);}}};
 }
 
 

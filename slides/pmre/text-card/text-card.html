@@ -37,12 +37,13 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 .mosaic .gal{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);gap:1.4cqh}.mosaic .gal>figure{height:100%}
 .mosaic .gal .rest{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:1.4cqh;min-height:0}
 .mosaic .gal .rest img{object-fit:cover}
+.centered{top:0;height:100%;justify-content:center;text-align:center}.centered .title{font-size:15cqh}.stepped .title{font-size:7.6cqh;line-height:1.12}.stepped .line{font-size:5.7cqh;line-height:1.24}.stepped .lines{gap:4cqh}.stepped .line{opacity:0;visibility:hidden;animation:none}.stepped .line.revealed{opacity:1;visibility:visible}
 </style></head><body>
 <div class="stage"><div class="safe" id="safe"></div></div>
 <script src="../../sd-frame.js"></script>
 <script>
 const P=SDFrame.props({kicker:'',title:'',lines:[],big:'',quote:'',attr:'',placeholder:'',photos:[],layout:'side'});
-const safe=document.getElementById('safe');let t=.1;
+const safe=document.getElementById('safe');if(P.centered)safe.classList.add('centered');if(P.lineSteps)safe.classList.add('stepped');let t=.1;
 // photos: [{src (deck-root relative), alt, cap, r (width/height, row layout)}]
 const photos=(P.photos||[]).filter(p=>p&&p.src);
 const url=s=>/^(https?:|data:|\/|\.\.\/)/.test(s)?s:'../../../'+s;
@@ -74,6 +75,6 @@ if(gal){
 }
 document.title=(P.title||P.big||P.quote||'').replace(/<[^>]+>/g,'');
 window.MOTION_SFX=[];
-SDFrame.init({duration:4,steps:0});
+SDFrame.init({duration:4,steps:P.lineSteps?P.lines.length:0,onStep(n){if(P.lineSteps)document.querySelectorAll('.line').forEach((el,i)=>el.classList.toggle('revealed',i<n));}});
 </script>
 </body></html>

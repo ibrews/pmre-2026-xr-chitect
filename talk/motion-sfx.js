@@ -14,6 +14,8 @@
    if(c.kind==='honk'){const f=350*pitch;v=.09*(Math.sin(TAU*f*t)+.65*Math.sin(TAU*440*pitch*t)+.15*Math.sin(TAU*3*f*t))*Math.min(1,t/.012,(dur-t)/.05);}
    else if(c.kind==='pass'||c.kind==='merge'){phase+=TAU*(c.kind==='pass'?150-80*u:90+100*u)/rate;v=(.055*Math.sin(phase)+.08*low)*Math.sin(Math.PI*u)**2;}
    else if(c.kind==='projector'){const pulse=Math.exp(-((t*18)%1)*17);v=.06*(noise-low)*pulse*Math.min(1,t/.12,(dur-t)/.2);}
+   else if(c.kind==='rewind'){phase+=TAU*(180+100*(1-u)+25*Math.sin(t*30))/rate;v=(.06*Math.sin(phase)+.03*low)*Math.sin(Math.PI*u)**2;}
+   else if(c.kind==='bounce'){phase+=TAU*(380*Math.exp(-t*18)+90)/rate;v=.08*Math.sin(phase)*Math.exp(-t*24)*Math.min(1,t/.006);}
    else if(c.kind==='pop'){phase+=TAU*(950*Math.exp(-t*22)+130)/rate;v=.15*Math.sin(phase)*Math.exp(-t*34)*Math.min(1,t/.004);}
    else if(c.kind==='snap'){v=.15*(noise-low)*Math.exp(-t*70)*Math.min(1,t/.002);}
    a[i]=v*(c.gain??1);

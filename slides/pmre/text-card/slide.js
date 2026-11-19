@@ -2,7 +2,8 @@
 SD.defineSlide({
   id: 'pmre/text-card',
   frame: 'text-card.html',
-  steps: 0,
+  manualSteps: true,
+  steps: p => p.lineSteps ? p.lines.length : 0,
   duration: 4,
   props: {kicker: '', title: '', lines: [], big: '', quote: '', attr: '', placeholder: '', photos: [], layout: 'side'},
   assets: ['text-card.html'],

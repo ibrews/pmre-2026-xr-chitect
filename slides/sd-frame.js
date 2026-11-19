@@ -25,7 +25,7 @@
     // Defaults merged with the deck's props (shallow, like the deck): the frame must build from these before init().
     props:function(defaults){var o={},k;for(k in defaults||{})o[k]=defaults[k];for(k in props)o[k]=props[k];return o;},
     init:function(c){
-      cfg={duration:+c.duration||0,steps:Math.max(0,c.steps|0),onEnter:c.onEnter,onStep:c.onStep,onLeave:c.onLeave,onSeek:c.onSeek};
+      cfg={duration:+c.duration||0,steps:Math.max(0,c.steps|0),onEnter:c.onEnter,onStep:c.onStep,onLeave:c.onLeave,onSeek:c.onSeek,stepTimes:c.stepTimes};
       window.MOTION_END=cfg.duration;window.seek=seek;window.SDFrame.config=cfg;
       // A non-noir look recolors the frame with slides/look.js (written by tools/apply_look.py). document.write keeps it
       // synchronous: it runs right after the frame's build script, before anything is captured.
@@ -40,8 +40,8 @@
   addEventListener('message',function(e){
     var d=e.data;if(!d||d.sd!==MSG||!cfg||e.source!==window.parent)return;
     var instant=!!d.instant||rm;
-    if(d.type==='enter'){if(instant){setStep(0,true);seek(cfg.duration);}else play();}
-    else if(d.type==='complete'){setStep(d.n|0,true);seek(cfg.duration);}
+    if(d.type==='enter'){if(instant){seek(cfg.stepTimes?.[0]??cfg.duration);setStep(0,true);}else play();}
+    else if(d.type==='complete'||d.type==='restore'){if(cfg.onLeave)cfg.onLeave();var n=Math.max(0,Math.min(cfg.steps,d.n|0));seek(cfg.stepTimes?.[n]??cfg.duration);setStep(n,true);}
     else if(d.type==='step')setStep(d.n|0,instant);
     else if(d.type==='leave'){if(cfg.onLeave)cfg.onLeave();finalFrame();}
     else if(d.type==='seek')seek(+d.t||0);

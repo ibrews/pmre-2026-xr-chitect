@@ -36,6 +36,7 @@ svg{width:100%;height:100%;display:block}
 .cap{font-size:30px;fill:var(--dim);letter-spacing:.3em}
 .reframe{stroke:#060810;stroke-width:18px;stroke-linejoin:round;paint-order:stroke fill}
 .core{font-size:44px;font-weight:700;fill:#060810;letter-spacing:.06em}
+html[data-step="0"] #cars,html[data-step="1"] #cars,html[data-step="0"] #honks,html[data-step="1"] #honks{visibility:hidden}
 </style></head><body>
 <svg id="s" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" aria-label="A pixel-art Alex walks one road labeled Architecture. Theater and Technology lanes appear, traffic floods in, and he hops lane to lane dodging honking, swerving cars. The roads braid, then curl into three overlapping circles: reframe it. He bounces through the Venn diagram (theater planning, live VR theater, archviz) and lands on XR-chitect.">
 <defs>
@@ -46,11 +47,7 @@ svg{width:100%;height:100%;display:block}
   <filter id="glow" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
 <!-- Beat 1 copy: advice is Alex’s recollection; no professor quotation is claimed. -->
-<g class="fadeout" style="--t:5.0s">
-  <text x="960" y="300" text-anchor="middle" class="big rise" style="--t:1.4s">Pick a lane.</text>
-  <text x="960" y="380" text-anchor="middle" class="label rise" style="--t:1.6s">Richard Rosa · Syracuse University</text>
-  <text x="960" y="840" text-anchor="middle" class="label rise" style="--t:2.6s">STAY IN IT &#183; MASTER ONE CRAFT</text>
-</g>
+<g id="advice"><text x="960" y="190" text-anchor="middle" class="big">Pick a lane.</text></g>
 <g id="bands"></g>
 <g id="strands" filter="url(#glow)" fill="none" stroke-linecap="round"></g>
 <g id="lanelabels"></g>
@@ -162,18 +159,22 @@ cars.forEach((c,i)=>{
     E('rect',{x:-width/2,y:-74,width,height:62,rx:10,fill:'#eee2cf',stroke:'#141110','stroke-width':4},b);
     E('path',{d:'M-15-14L0 5L15-14',fill:'#eee2cf',stroke:'#141110','stroke-width':3},b);
     const text=E('text',{x:0,y:-31,'text-anchor':'middle',fill:'#141110','font-size':36,'font-weight':800},b);text.textContent=label;
-    const anchor=clamp(X(c,h)+c.dir*(c.len/2-10),288+width/2+25,1632-width/2-25),y=c.y-62;
-    track(b,END,t=>{const k=(t-h)/1.8,pop=1+.08*Math.sin(Math.PI*clamp(k/.1,0,1));return{opacity:k<0||k>1?0:k>.88?(1-k)/.12:1,transform:`translate(${anchor}px,${y}px) scale(${pop})`};});
-    SFX.push({t:h,kind:'honk',pitch:c.kind==='truck'?.8:1});
+    const exit=c.tc+((c.dir>0?1920+c.len/2:-c.len/2)-c.xc)/(c.dir*c.v);
+    b.dataset.car=String(i);outer.dataset.car=String(i);b.dataset.cue=String(h);b.dataset.exit=String(exit);
+    track(b,END,t=>{const y=c.y-62-26*sw(Math.min(t,exit)),x=clamp(X(c,Math.min(t,exit))+c.dir*(c.len/2-10),width/2+25,1920-width/2-25),fade=clamp((t-exit-.25)/.55,0,1);return{opacity:t<h?0:1-fade,transform:`translate(${x.toFixed(1)}px,${y}px)`};});
+    SFX.push({t:h,kind:'honk',pitch:c.kind==='truck'?.8:1,gain:.045});
   }
-  if(i<6)SFX.push({t:c.tc-.45,kind:'pass',pitch:c.kind==='truck'?.8:1,gain:.7});
+  if(i<6)SFX.push({t:c.tc-.45,kind:'pass',pitch:c.kind==='truck'?.8:1,gain:.025});
 });
 // ── Beat 6: the venn-sprite sequence, verbatim, starting at T0 ──
 PX.vennScene(document.getElementById('venn'),{END,T0,curl:true,handoff:true,big:true});
+document.querySelector('#venn .cap')?.remove(); // The persistent Pick a lane title owns the top line.
 const hero=PX.sprite(document.getElementById('hero'),{withBeard:false});
 PX.drive(hero,END,at,t=>SC*(1-(1-VS)*ease(clamp((t-27)/2,0,1))));  // shrinks to the venn hero's size during the curl hop
 track(hero.wrap,END,t=>({opacity:t<0.3?0:t<0.9?+((t-.3)/.6).toFixed(3):t<T0+2.6?1:0}));  // hands over to the venn hero at the temple
-SFX.push({t:21.6,kind:'merge'},{t:26.6,kind:'merge'},{t:29.7,kind:'pop'},{t:39.4,kind:'pop'});
+SFX.push({t:21.6,kind:'merge',gain:.04},{t:26.6,kind:'merge',gain:.04});
+segs.filter(s=>s.type==='hop').forEach(s=>SFX.push({t:s.t0,kind:'bounce',gain:.07}));
+[3.4,4.3,5.6,6.4,7.6,8.9].forEach(t=>SFX.push({t:T0+t,kind:'bounce',gain:.07}));
 window.MOTION_END=END; window.MOTION_SFX=SFX.sort((a,b)=>a.t-b.t);
 })();
 </script>
@@ -185,9 +186,14 @@ window.MOTION_END=END; window.MOTION_SFX=SFX.sort((a,b)=>a.t-b.t);
 const domainAttrs=[];document.querySelectorAll('svg *').forEach(el=>['fill','stroke','stop-color','style'].forEach(a=>{const v=el.getAttribute(a);if(v&&/#00d4ff|#f43f5e|#a78bfa/i.test(v))domainAttrs.push([el,a,v]);}));
 addEventListener('load',()=>domainAttrs.forEach(([el,a,v])=>el.setAttribute(a,v)),{once:true});
 // The road keeps moving until Alex chooses the reframe. Each overlap then holds for a click.
-const stops=[20.4,34.7,36.9,38.9,window.MOTION_END];let phase=0,active=false,raf=0;
-function setTime(t,play){document.getAnimations().forEach(a=>{a.pause();a.currentTime=t*1000;if(play)a.play();});}
-function watch(){if(!active)return;const t=Math.max(0,...document.getAnimations().map(a=>+a.currentTime||0))/1000;if(t>=stops[phase])setTime(phase===0?9.4:stops[phase],phase===0);raf=requestAnimationFrame(watch);}
-SDFrame.init({duration:window.MOTION_END,steps:4,onEnter(){phase=0;active=true;cancelAnimationFrame(raf);raf=requestAnimationFrame(watch);},onStep(n,instant){if(!n)return;phase=Math.min(n,4);setTime(instant?stops[phase]:stops[phase-1],!instant);},onLeave(){active=false;cancelAnimationFrame(raf);}});
+const stops=[5.6,9.4,20.4,34.7,36.9,38.9,window.MOTION_END];let phase=0,active=false,raf=0,last=0;
+function setTime(t,play){document.getAnimations().forEach(a=>{a.pause();a.currentTime=t*1000;if(play)a.play();});last=t;}
+function watch(){if(!active)return;let t=Math.max(0,...document.getAnimations().map(a=>+a.currentTime||0))/1000;
+ if(t>last&&t-last<.3){const cues=window.MOTION_SFX.filter(c=>c.t>last&&c.t<=t).map(c=>({...c,t:0}));if(cues.length)parent.postMessage({sdMotionSfx:cues},'*');}last=t;
+ if(t>=stops[phase]){if(phase===2){setTime(9.4,true);}else{setTime(stops[phase],false);active=false;}}
+ if(active)raf=requestAnimationFrame(watch);
+}
+function startWatch(){cancelAnimationFrame(raf);active=true;raf=requestAnimationFrame(watch);}
+SDFrame.init({duration:window.MOTION_END,steps:6,onEnter(){phase=0;last=0;startWatch();},onStep(n,instant){phase=Math.min(n,6);cancelAnimationFrame(raf);active=false;if(instant)setTime(phase===2?12:stops[phase],false);else{setTime(phase===2?9.4:stops[Math.max(0,phase-1)],true);startWatch();}},onLeave(){active=false;cancelAnimationFrame(raf);}});
 </script>
 </body></html>

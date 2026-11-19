@@ -29,7 +29,7 @@ const el=(t,a,p=S)=>{const e=document.createElementNS(NS,t);for(const k in a)e.s
 S.setAttribute('aria-label',`Career ring: ${P.label}. Architecture ${P.venn[0]}, theater ${P.venn[1]}, technology ${P.venn[2]}.`);
 // track + year ticks
 el('circle',{cx:C[0],cy:C[1],r:R,fill:'none',stroke:'rgba(240,244,255,.14)','stroke-width':10});
-for(let y=Y0;y<=Y1;y++){const a=ang(y),major=[2005,2010,2016,2023,2026].includes(y),[x1,y1]=pt(a,R-(major?26:14)),[x2,y2]=pt(a,R+(major?26:14));
+for(let y=Y0;y<=Y1;y++){const a=ang(y),major=[2005,2008,2010,2013,2016,2020,2023,2026].includes(y),[x1,y1]=pt(a,R-(major?26:14)),[x2,y2]=pt(a,R+(major?26:14));
  el('line',{x1,y1,x2,y2,stroke:major?'rgba(240,244,255,.7)':'rgba(240,244,255,.3)','stroke-width':major?4:2});
  if(major){const [tx,ty]=pt(a,R+62);el('text',{x:tx,y:ty+8,'text-anchor':'middle',class:'tick'}).textContent=y;}}
 // progress arc (dash) from 2005 to the marker, animated from `from` to `year`
@@ -53,7 +53,7 @@ t(1100,370,'kick',P.kicker,.1);t(1090,580,'yr',P.label,P.dur*.75);
 String(P.sub).split('\n').forEach((line,i)=>t(1100,670+i*60,'sub',line,P.dur*.9));
 const domainAttrs=[];document.querySelectorAll('svg *').forEach(e=>['fill','stroke','stop-color'].forEach(a=>{const v=e.getAttribute(a);if(v&&/#00d4ff|#f43f5e|#a78bfa/i.test(v))domainAttrs.push([e,a,v]);}));
 addEventListener('load',()=>domainAttrs.forEach(([e,a,v])=>e.setAttribute(a,v)),{once:true});
-window.MOTION_SFX=[];
-SDFrame.init({duration:P.dur+1.2,steps:0});
+window.MOTION_SFX=P.year<P.from?[{t:.3,kind:'rewind',gain:.08,duration:2.6}]:[];
+SDFrame.init({duration:P.dur+1.2,steps:0,onEnter(){if(window.MOTION_SFX.length)parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}});
 </script>
 </body></html>

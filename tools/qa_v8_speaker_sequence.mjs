@@ -3,7 +3,7 @@ import fs from 'node:fs';import path from 'node:path';import {loadPlaywright,CHR
 const out=path.resolve(process.argv[2]),base=process.argv[3]||'http://localhost:8765/';fs.mkdirSync(out,{recursive:true});
 const {chromium}=loadPlaywright(),b=await chromium.launch({executablePath:CHROME,headless:true}),p=await b.newPage({viewport:{width:1920,height:1080}}),r={errors:[],samples:[]};p.on('pageerror',e=>r.errors.push(String(e)));
 try{
- await p.clock.install();await p.goto(base+'?cut=full&ai=on&safe=70&theme=house',{waitUntil:'domcontentloaded'});await p.evaluate(()=>document.fonts.ready);await p.clock.runFor(600);
+ await p.clock.install({time:new Date('2026-01-01T00:00:00Z')});await p.clock.pauseAt(new Date('2026-01-01T00:00:01Z'));await p.goto(base+'?cut=full&ai=on&safe=70&theme=house',{waitUntil:'domcontentloaded'});await p.evaluate(()=>document.fonts.ready);await p.clock.runFor(600);
  await p.evaluate(()=>goTo(2));await p.clock.runFor(600);
  r.block=await p.locator('.active .block-headset').evaluate(e=>({blue:!!e.querySelector('[fill="#00d4ff"]'),rect:[e.getBBox().x,e.getBBox().y,e.getBBox().width,e.getBBox().height]}));
  await p.screenshot({path:path.join(out,'002-headset-box.png')});await p.clock.runFor(3900);

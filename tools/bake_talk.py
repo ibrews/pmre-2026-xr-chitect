@@ -23,7 +23,18 @@ if SYNC_GUARD + "const r=await fetch('notes-config.json'" not in s:
     s = s.replace("const r=await fetch('notes-config.json'", SYNC_GUARD + "const r=await fetch('notes-config.json'", 1)
 
 # Explicit presenter steps must not be consumed by the generic finish-animation shortcut.
-s = s.replace("const r=recs.get(sl),aa=sl.getAnimations", "const r=recs.get(sl);if(r?.def.manualSteps)return false;const aa=sl.getAnimations")
+s = s.replace("const r=recs.get(sl),aa=sl.getAnimations", "const r=recs.get(sl);if(r?.def.manualSteps&&r.steps>0)return false;const aa=sl.getAnimations")
+
+# Reversible builds: the baked runtime owns this state restoration contract.
+RESTORE_BUILD = "  // Restore a build from its authored state, rather than leaving animation fill effects and timers behind.\n  SD.restoreStep=function(sl,n){\n    const r=recs.get(sl),ss=slideSteps.get(sl);if(!r||!ss||r.frozen)return false;\n    n=Math.max(0,Math.min(r.steps,n|0));window._killAllSfx();r.ctx.clock.stop();call(r,'leave');\n    sl.getAnimations({subtree:true}).forEach(a=>{if(a.effect?.target!==sl)try{a.cancel();}catch(_){}});\n    const old=r.ctx.instant;r.ctx.instant=true;\n    if(typeof r.inst.restore==='function')call(r,'restore',n);\n    else{call(r,'enter');for(let k=1;k<=n;k++)call(r,'step',k);if(typeof r.inst.complete==='function')call(r,'complete',n);}\n    r.ctx.clock.stop();r.ctx.instant=old;r.cur=n;r.on=true;r.settled=true;r.started=performance.now();ss.current=n;\n    sl.dataset.sdCompletedStep=String(n);sl.classList.add('sd-beat-complete');return true;\n  };\n"
+if 'SD.restoreStep=function' not in s:
+    s=s.replace('  SD.seekSlide=function(i,t)',RESTORE_BUILD+'  SD.seekSlide=function(i,t)',1)
+s=s.replace("return{complete(n){post({type:'complete',n,instant:true});}","return{restore(n){post({type:'restore',n,instant:true});},complete(n){post({type:'complete',n,instant:true});}",1)
+s=s.replace("if(r.on){post({type:'enter'});for(let i=1;i<=r.cur;i++)post({type:'step',n:i,instant:true});}","if(r.on){if(r.settled)post({type:'restore',n:r.cur,instant:true});else{post({type:'enter'});for(let i=1;i<=r.cur;i++)post({type:'step',n:i,instant:true});}}",1)
+s=s.replace('function goPrev(){goTo(nextVisible(current,-1),false);}','function restoreBuild(sl,n){if(window.SD?.restoreStep?.(sl,n))return;const ss=slideSteps.get(sl);if(!ss)return;ss.reset?.();for(let k=0;k<n;k++)ss.steps[k]();ss.current=n;sl.getAnimations({subtree:true}).forEach(a=>{if(isFinite(a.effect?.getComputedTiming().endTime))try{a.finish();}catch(_){}});}\nfunction goPrev(){const ss=slideSteps.get(allSlides[current]);if(window._arrowSubstep!==false&&ss?.current>0){restoreBuild(allSlides[current],ss.current-1);updateStepIndicator();return;}const prev=nextVisible(current,-1);goTo(prev,false);if(window._arrowSubstep!==false)queueMicrotask(()=>{const sl=allSlides[current],st=slideSteps.get(sl);if(st){restoreBuild(sl,st.steps.length);updateStepIndicator();}});}',1)
+
+# A hashchange echoes goTo(current); it must not reset the restored build count.
+s=s.replace('{const _og=goTo;goTo=function(n){window._hidePlaying();','{const _og=goTo;goTo=function(n){if(n===current)return;window._hidePlaying();',1)
 
 # Navigation may close a suspended context before Chrome resolves its pending resume promise.
 # Sound is optional; absorb that asynchronous close/resume race just like synchronous audio failures.

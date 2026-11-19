@@ -242,30 +242,29 @@ const SECTIONS = [
         "use": "pmre/text-card",
         "props": {
           "title": "Have you tried VR?",
-          "lines": [
-            "Hands up if you have tried a VR headset.",
-            "Hands down if it was Google Cardboard.",
-            "Keep them up if it was in the past three years."
-          ],
+          "lines": [],
           "quote": "",
           "attr": "",
-          "kicker": ""
+          "kicker": "",
+          "centered": true
         },
-        "notes": "⏱ ~35s.\n\nPresenter audience poll, in this order. Pause for each response. Ask what they remember; no audience percentages are asserted."
+        "notes": "⏱ ~35s.\n\nPresenter audience poll, in this order. Pause for each response. Ask what they remember; no audience percentages are asserted.\n\nHands up if you have tried a VR headset.\nHands down if it was Google Cardboard.\nKeep them up if it was in the past three years.",
+        "hideTracker": true
       },
       {
         "id": "goals",
         "use": "pmre/text-card",
         "props": {
-          "kicker": "Three things to take home",
-          "title": "",
+          "kicker": "",
+          "title": "What I hope this talk provides for you:",
           "lines": [
-            "<b>1.</b> Find the value in your unusual mix",
-            "<b>2.</b> Create media people can step inside",
-            "<b>3.</b> Sell the next tier of your package"
-          ]
+            "<b>1.</b> A value on your weird mix of skills and interests",
+            "<b>2.</b> A reason &amp; roadmap to create media you can step inside",
+            "<b>3.</b> A good yarn"
+          ],
+          "lineSteps": true
         },
-        "title": "Three things to take home",
+        "title": "What I hope this talk provides for you:",
         "keep": 19,
         "year": "2026",
         "venn": [
@@ -274,19 +273,19 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~40s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nToday is mostly story time. I will go roughly chronologically. Two goals.\n\nOne: tell a good yarn, and maybe get you thinking about what it means to develop expertise in a niche, and about the special abilities, interests or passions you have that are so far untapped.\n\nTwo: get you excited about what virtual, augmented and mixed reality can do in architecture and real estate. You may be thinking, I have worked with Matterport. This is more about projects that do not exist yet: Gaussian splatting for unbuilt properties, walking through something completely at scale, photorealistic, in a way that amazes and inspires.\n\nYear: 2026. Venn weights: 1 / 1 / 1.\n",
+        "notes": "⏱ ~40s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nToday is mostly story time. I will go roughly chronologically. Two goals.\n\nOne: tell a good yarn, and maybe get you thinking about what it means to develop expertise in a niche, and about the special abilities, interests or passions you have that are so far untapped.\n\nTwo: get you excited about what virtual, augmented and mixed reality can do in architecture and real estate. You may be thinking, I have worked with Matterport. This is more about projects that do not exist yet: Gaussian splatting for unbuilt properties, walking through something completely at scale, photorealistic, in a way that amazes and inspires.\n\nYear: 2026. Venn weights: 1 / 1 / 1.\n\n\nItem 2: Sell the next tier of your package.",
         "hideTracker": true
       },
       {
         "id": "teaser",
         "use": "pmre/text-card",
         "props": {
-          "kicker": "Where this story ends",
+          "kicker": "Where this story leads",
           "big": "$2 billion",
-          "quote": "“It was binary.”",
-          "attr": "Without our VR, the project would not have happened."
+          "quote": "",
+          "attr": "Without VR, an ambitious luxury real estate project would not be happening"
         },
-        "title": "Where this story ends",
+        "title": "Where this story leads",
         "keep": 19,
         "year": "2026",
         "venn": [
@@ -360,7 +359,7 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~50s.\n\nAlex’s November 18 direction: retain the fuller traffic/road opening (v5 #8) and omit the simpler variant (#9). Traffic vamps until the presenter clicks. Then four clicks take the scene through theater planning, live VR theater, archviz and the XR-chitect intersection. Keep the original Alex sprite and domain colors. No timed transition forces the presenter to finish speaking.",
+        "notes": "⏱ ~50s.\n\nAlex’s November 18 direction: retain the fuller traffic/road opening (v5 #8) and omit the simpler variant (#9). Traffic vamps until the presenter clicks. Then four clicks take the scene through theater planning, live VR theater, archviz and the XR-chitect intersection. Keep the original Alex sprite and domain colors. No timed transition forces the presenter to finish speaking.\n\nRecalled advice: Pick a lane. Master one craft. Richard Rosa, Syracuse University. Entry holds one road; step 1 adds the other lanes; step 2 starts traffic. Then four steps reveal the overlaps.",
         "motion": "lane-traffic"
       },
       {
@@ -432,7 +431,7 @@ const SECTIONS = [
         "id": "hand",
         "use": "pmre/the-hand",
         "props": {},
-        "title": "Drafting by hand taught me taste",
+        "title": "Drafting by hand taught me to work with intention.",
         "keep": 30,
         "year": "2005",
         "venn": [
@@ -441,24 +440,8 @@ const SECTIONS = [
           0.1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAt Syracuse we were not allowed to touch a computer for the first year. At the time it was excruciating. It made me think deliberately about every line and every line weight. With Revit you make a wall, and the lines are a byproduct. Clarity can get lost.\n\nYear: 2005. Venn weights: 1 / 0 / 0.1.\n\n\nElizabeth review, November 11: The diagram contrasts a carefully drawn stair opening with a generated slab that blocks the stair. Ask the audience to spot the headroom problem. The point is that learning a tool also means learning to judge its output. The building/error is an original schematic, not a real failed project. Retain because this establishes the trained eye before the software workflow.",
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAt Syracuse we were not allowed to touch a computer for the first year. At the time it was excruciating. It made me think deliberately about every line and every line weight. With Revit you make a wall, and the lines are a byproduct. Clarity can get lost.\n\nYear: 2005. Venn weights: 1 / 0 / 0.1.\n\n\nElizabeth review, November 11: The diagram contrasts a carefully drawn stair opening with a generated slab that blocks the stair. Ask the audience to spot the headroom problem. The point is that learning a tool also means learning to judge its output. The building/error is an original schematic, not a real failed project. Retain because this establishes the trained eye before the software workflow.\n\nTalkthrough 07:40: “It taught me how to do things with intention, deliberately.”\nSubstep: generated plans, sections, elevations and schedules stack on the right. Left = slow and deliberate; right = very fast, but not necessarily clean.\n⏱ ~35s.\n\nIllustrative BIM drawing sheets, not scans of Alex’s student work. After making a model, plans, sections, elevations and schedules become byproducts. You still need the eye to review the output. This prepared me for AI: a few crucial decisions, lots of output, then checking emails, photographs, marketing copy and 3D models. The diagram deliberately contains a stair headroom clash.",
         "motion": "the-hand"
-      },
-      {
-        "id": "drawing-byproducts",
-        "title": "A few decisions. A lot of drawings.",
-        "year": "2007",
-        "venn": [
-          1,
-          0.3,
-          1
-        ],
-        "keep": 19,
-        "use": "pmre/drawing-review",
-        "props": {
-          "review": false
-        },
-        "notes": "⏱ ~35s.\n\nIllustrative BIM drawing sheets, not scans of Alex’s student work. After making a model, plans, sections, elevations and schedules become byproducts. You still need the eye to review the output. This prepared me for AI: a few crucial decisions, lots of output, then checking emails, photographs, marketing copy and 3D models. The diagram deliberately contains a stair headroom clash."
       },
       {
         "id": "drawing-judgment",
@@ -2836,6 +2819,8 @@ function applyStorySpine(){
    if(c.kind==='honk'){const f=350*pitch;v=.09*(Math.sin(TAU*f*t)+.65*Math.sin(TAU*440*pitch*t)+.15*Math.sin(TAU*3*f*t))*Math.min(1,t/.012,(dur-t)/.05);}
    else if(c.kind==='pass'||c.kind==='merge'){phase+=TAU*(c.kind==='pass'?150-80*u:90+100*u)/rate;v=(.055*Math.sin(phase)+.08*low)*Math.sin(Math.PI*u)**2;}
    else if(c.kind==='projector'){const pulse=Math.exp(-((t*18)%1)*17);v=.06*(noise-low)*pulse*Math.min(1,t/.12,(dur-t)/.2);}
+   else if(c.kind==='rewind'){phase+=TAU*(180+100*(1-u)+25*Math.sin(t*30))/rate;v=(.06*Math.sin(phase)+.03*low)*Math.sin(Math.PI*u)**2;}
+   else if(c.kind==='bounce'){phase+=TAU*(380*Math.exp(-t*18)+90)/rate;v=.08*Math.sin(phase)*Math.exp(-t*24)*Math.min(1,t/.006);}
    else if(c.kind==='pop'){phase+=TAU*(950*Math.exp(-t*22)+130)/rate;v=.15*Math.sin(phase)*Math.exp(-t*34)*Math.min(1,t/.004);}
    else if(c.kind==='snap'){v=.15*(noise-low)*Math.exp(-t*70)*Math.min(1,t/.002);}
    a[i]=v*(c.gain??1);
@@ -4588,18 +4573,18 @@ function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),
       s.querySelector('.sd-frame-stage').appendChild(f);};
     if(!poster){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go,{once:true});else go();}
     const post=m=>{if(!ready||!f||!f.contentWindow)return;f.contentWindow.postMessage(Object.assign({sd:MSG,v:1,instant:r.ctx.instant},m),'*');};
-    const sync=()=>{if(r.frozen){post({type:'static'});return;}if(r.on){post({type:'enter'});for(let i=1;i<=r.cur;i++)post({type:'step',n:i,instant:true});}else post({type:'leave'});};
+    const sync=()=>{if(r.frozen){post({type:'static'});return;}if(r.on){if(r.settled)post({type:'restore',n:r.cur,instant:true});else{post({type:'enter'});for(let i=1;i<=r.cur;i++)post({type:'step',n:i,instant:true});}}else post({type:'leave'});};
     r.frameReady=d=>{ready=true;s.dataset.sdFrameSteps=d.steps|0;if(d.duration)s.dataset.sdDuration=d.duration;
       if((d.steps|0)!==r.steps)console.warn(`SD: ${r.id} frame reports ${d.steps|0} step(s) but the deck asks for ${r.steps}`);sync();};
     // A frame that reloads (look change, src reassigned) sends ready again and is resynced to the current step.
-    return{complete(n){post({type:'complete',n,instant:true});},enter(){post({type:'enter'});},step(n){post({type:'step',n});},leave(){post({type:'leave'});},staticFrame(){post({type:'static'});},seek(t){post({type:'seek',t});}};
+    return{restore(n){post({type:'restore',n,instant:true});},complete(n){post({type:'complete',n,instant:true});},enter(){post({type:'enter'});},step(n){post({type:'step',n});},leave(){post({type:'leave'});},staticFrame(){post({type:'static'});},seek(t){post({type:'seek',t});}};
   }
   // ── Tool hooks (sweep, lint, slide.py list, render_motion) ──
   SD.list=function(){const out=[];allSlides.forEach((s,i)=>{const r=recs.get(s);if(r)out.push({index:i,id:r.id,name:r.c.motion||null,src:r.frameEl?r.frameEl.getAttribute('src'):null,steps:r.steps,duration:r.def.duration||null,frame:r.def.frame||null,frameSteps:s.dataset.sdFrameSteps!=null?+s.dataset.sdFrameSteps:null,hidden:s.dataset.hidden==='1',seekable:typeof r.inst.seek==='function'});});return out;};
   // A forward press completes the current beat; only the following press advances.
   SD.completeCurrent=function(sl){
     if(INSTANT)return false;
-    const r=recs.get(sl);if(r?.def.manualSteps)return false;const aa=sl.getAnimations({subtree:true}).filter(a=>a.playState==='running'&&isFinite(a.effect?.getComputedTiming().endTime));
+    const r=recs.get(sl);if(r?.def.manualSteps&&r.steps>0)return false;const aa=sl.getAnimations({subtree:true}).filter(a=>a.playState==='running'&&isFinite(a.effect?.getComputedTiming().endTime));
     if(!r){if(!aa.length)return false;aa.forEach(a=>{try{a.finish();}catch(_){}});return true;}
     if(r.settled)return false;
     const elapsed=performance.now()-(r.started||0),hold=(+sl.dataset.sdDuration||r.def.duration||3)*1000;
@@ -4610,6 +4595,17 @@ function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),
     r.ctx.instant=old;r.settled=true;sl.dataset.sdCompletedStep=String(r.cur);
     const finish=()=>sl.getAnimations({subtree:true}).forEach(a=>{if(isFinite(a.effect?.getComputedTiming().endTime))try{a.finish();}catch(_){}});finish();requestAnimationFrame(finish);
     return true;
+  };
+  // Restore a build from its authored state, rather than leaving animation fill effects and timers behind.
+  SD.restoreStep=function(sl,n){
+    const r=recs.get(sl),ss=slideSteps.get(sl);if(!r||!ss||r.frozen)return false;
+    n=Math.max(0,Math.min(r.steps,n|0));window._killAllSfx();r.ctx.clock.stop();call(r,'leave');
+    sl.getAnimations({subtree:true}).forEach(a=>{if(a.effect?.target!==sl)try{a.cancel();}catch(_){}});
+    const old=r.ctx.instant;r.ctx.instant=true;
+    if(typeof r.inst.restore==='function')call(r,'restore',n);
+    else{call(r,'enter');for(let k=1;k<=n;k++)call(r,'step',k);if(typeof r.inst.complete==='function')call(r,'complete',n);}
+    r.ctx.clock.stop();r.ctx.instant=old;r.cur=n;r.on=true;r.settled=true;r.started=performance.now();ss.current=n;
+    sl.dataset.sdCompletedStep=String(n);sl.classList.add('sd-beat-complete');return true;
   };
   SD.seekSlide=function(i,t){window._killAllSfx();const r=recs.get(allSlides[i]);if(!r||typeof r.inst.seek!=='function')return false;r.ctx.clock.stop();call(r,'seek',t);return true;};
 })(window.SD);
@@ -4895,7 +4891,8 @@ let current=1,total=allSlides.length,direction=1;
 function nextVisible(f,d){let i=f;for(let n=0;n<total;n++){i=(i+d+total)%total;if(presenterNavigable(allSlides[i]))return i;}return f;}
 function goTo(n,fwd){if(n<0||n>=total||n===current)return;window._killAllSfx();const dir=fwd!==undefined?fwd:n>current;direction=dir?1:-1;if(window._verticalMode){const prev=allSlides[current];if(prev)prev.classList.remove('active');current=n;_primeSlideMedia(n);const next=allSlides[current];next.classList.add('active');try{next.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){next.scrollIntoView();}updateHUD();updateHash();if(typeof gridEnsureSlide==='function')gridEnsureSlide();if(window.kfOnSlideEnter)window.kfOnSlideEnter();return;}const trans=(window._sdCfg||JSON.parse(localStorage.getItem('sd-cfg')||'{}')).transition||'slide';const prev=allSlides[current];prev.classList.remove('active');if(trans==='none'){prev.style.animation='';}else{let exitAnim;if(trans==='fade')exitAnim='fadeOut';else if(trans==='zoom')exitAnim=dir?'zoomOutFwd':'zoomOutBwd';else exitAnim=dir?'slideOutFwd':'slideOutBwd';prev.style.animation=exitAnim+' .4s ease forwards';setTimeout(()=>{prev.style.animation='';},450);}current=n;_primeSlideMedia(n);const next=allSlides[current];next.classList.add('active');if(trans==='none'){next.style.animation='';}else{let enterAnim;if(trans==='fade')enterAnim='fadeIn';else if(trans==='zoom')enterAnim=dir?'zoomInFwd':'zoomInBwd';else enterAnim=dir?'slideInFwd':'slideInBwd';next.style.animation=enterAnim+' .4s ease forwards';setTimeout(()=>{next.style.animation='';},450);}updateHUD();updateHash();playWhoosh();if(typeof gridEnsureSlide==='function')gridEnsureSlide();if(window.kfOnSlideEnter)window.kfOnSlideEnter();}
 function goNext(){goTo(nextVisible(current,1),true);}
-function goPrev(){goTo(nextVisible(current,-1),false);}
+function restoreBuild(sl,n){if(window.SD?.restoreStep?.(sl,n))return;const ss=slideSteps.get(sl);if(!ss)return;ss.reset?.();for(let k=0;k<n;k++)ss.steps[k]();ss.current=n;sl.getAnimations({subtree:true}).forEach(a=>{if(isFinite(a.effect?.getComputedTiming().endTime))try{a.finish();}catch(_){}});}
+function goPrev(){const ss=slideSteps.get(allSlides[current]);if(window._arrowSubstep!==false&&ss?.current>0){restoreBuild(allSlides[current],ss.current-1);updateStepIndicator();return;}const prev=nextVisible(current,-1);goTo(prev,false);if(window._arrowSubstep!==false)queueMicrotask(()=>{const sl=allSlides[current],st=slideSteps.get(sl);if(st){restoreBuild(sl,st.steps.length);updateStepIndicator();}});}
 function advanceStep(){if(window.SD?.completeCurrent?.(allSlides[current]))return true;const ss=slideSteps.get(allSlides[current]);if(ss&&ss.current<ss.steps.length){ss.steps[ss.current]();ss.current++;updateStepIndicator();return true;}return false;}
 function updateStepIndicator(){const el=document.getElementById('step-indicator');const ss=slideSteps.get(allSlides[current]);el.textContent=(ss&&ss.current<ss.steps.length)?`Step ${ss.current+1}/${ss.steps.length}`:'';}
 function updateHUD(){document.getElementById('counter').textContent=`${String(current).padStart(2,'0')} / ${String(total-1).padStart(2,'0')}`;updateStepIndicator();buildGrid();}
@@ -4911,7 +4908,7 @@ const _navSpinner=document.getElementById('nav-playing');
 let _playingTimer=null;
 window._showPlaying=function(ms){if(_playingTimer)clearTimeout(_playingTimer);_navSpinner.classList.add('active');_playingTimer=setTimeout(()=>{_navSpinner.classList.remove('active');_playingTimer=null;},ms);};
 window._hidePlaying=function(){if(_playingTimer){clearTimeout(_playingTimer);_playingTimer=null;}_navSpinner.classList.remove('active');};
-{const _og=goTo;goTo=function(n){window._hidePlaying();_og(n);const t=allSlides[current]?.dataset.type;const sd=slideSteps.get(allSlides[current]);const hasSteps=sd&&sd.steps.length>0;if(hasSteps){try{sd.reset&&sd.reset();}catch(e){}sd.current=0;}if(t==='map')window._showPlaying(6000);else if(hasSteps)window._showPlaying(2000);else if(t==='case'||t==='lesson')window._showPlaying(2500);};
+{const _og=goTo;goTo=function(n){if(n===current)return;window._hidePlaying();_og(n);const t=allSlides[current]?.dataset.type;const sd=slideSteps.get(allSlides[current]);const hasSteps=sd&&sd.steps.length>0;if(hasSteps){try{sd.reset&&sd.reset();}catch(e){}sd.current=0;}if(t==='map')window._showPlaying(6000);else if(hasSteps)window._showPlaying(2000);else if(t==='case'||t==='lesson')window._showPlaying(2500);};
 const _oa=advanceStep;advanceStep=function(){const r=_oa();if(r)window._showPlaying(3000);else window._hidePlaying();return r;};}
 let _apt=null;const _apc=document.getElementById('autoplay-cb');
 function _apTick(){if(!_apc.checked)return;if(!advanceStep()){const n=nextVisible(current,1);if(n>=0)goTo(n);else{_apc.checked=false;return;}}const t=allSlides[current]?.dataset.type;_apt=setTimeout(_apTick,t==='lesson'||t==='bonus'?8000:t==='case'?12000:6000);}
