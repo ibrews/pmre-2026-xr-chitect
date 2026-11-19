@@ -1,9 +1,10 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Film language / a young medium</title>
-<!-- Slide module pmre/film-language. Three presenter beats (Alex, 2026-11-19):
+<!-- Slide module pmre/film-language. Four presenter beats (Alex, 2026-11-19):
      0  one shot: the two characters move around in a loop, fully in frame ("VR is still a new medium")
-     1  cuts and montage: hard cuts through every angle with its label, then a contact sheet of all of them;
-        the title becomes "Think of the early days of film". One quiet cut sound per cut, no other sound.
-     2  the title fades away completely, then "What can only VR say?" + "Space. Presence. A story we experience together."
+     1  title only: becomes "Think of the early days of film"; the wide shot keeps looping
+     2  cuts and montage: hard cuts through every angle with its label, then a contact sheet of all of them;
+        One quiet cut sound per cut, no other sound.
+     3  the title fades away completely, then "What can only VR say?" + "Space. Presence. A story we experience together."
      Every step can be restored instantly (backward / re-entry) from onStep(n, instant). -->
 <style>
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#141110;color:#eee2cf;font-family:'Avenir Next',Arial,sans-serif}
@@ -46,12 +47,13 @@ function loop(){own($('#w-perf').animate([{transform:'translate(640px,540px)'},{
 const aud=$('#audience');for(let r=0;r<2;r++)for(let c=0;c<10;c++){const u=document.createElementNS('http://www.w3.org/2000/svg','use');u.setAttribute('href','#actor');u.setAttribute('transform',`translate(${440+c*115+(r?57:0)} ${690+r*70}) scale(.75)`);u.setAttribute('opacity',r?'.55':'.8');aud.append(u);}
 function grid(){shots.forEach(sh=>{set(sh,1);pic(sh).style.transformOrigin='0 0';pic(sh).style.transform=sh.dataset.tile;set(lbl(sh),0);});tileLabels.forEach(t=>set(t,1));}
 const HOLD=1.35;  // seconds per angle in the cut sequence
+// Alex 2026-11-19 (second pass): click 1 ONLY swaps the title; the cuts start on click 2; click 3 = title out, closing in.
 function beat(n,instant){reset();loop();
  if(n===0){set(wide,1);return;}
- if(n>=1){set(ttl1,0);set(ttl2,1);}
- if(n===1){
+ set(ttl1,0);set(ttl2,1);
+ if(n===1){set(wide,1);if(!instant){own(ttl1.animate([{opacity:1},{opacity:0}],{duration:500,fill:'backwards'}));own(ttl2.animate([{opacity:0},{opacity:1}],{duration:500,delay:300,fill:'backwards'}));}return;}
+ if(n===2){
   if(instant){grid();return;}
-  own(ttl1.animate([{opacity:1},{opacity:0}],{duration:500,fill:'backwards'}));own(ttl2.animate([{opacity:0},{opacity:1}],{duration:500,delay:300,fill:'backwards'}));
   // hard cuts: each angle is on screen for HOLD seconds, then the contact sheet
   // End state is the contact sheet; until gt each angle is hidden except in its own full-frame window
   // (the window animation is added after the hide, so it wins while active).
@@ -61,12 +63,12 @@ function beat(n,instant){reset();loop();
    own(sh.animate([{opacity:1},{opacity:1}],{duration:HOLD*1000,delay:t0}));own(lbl(sh).animate([{opacity:1},{opacity:1}],{duration:HOLD*1000,delay:t0}));});
   tileLabels.forEach(t=>own(t.animate([{opacity:0},{opacity:0}],{duration:gt*1000})));cuts.push(gt);
   parent.postMessage({sdMotionSfx:cuts.map(t=>({t,kind:'snap',gain:.2}))},'*');return;}
- // n===2: the title (and the contact sheet) leave completely, THEN the closing text arrives
+ // n===3: the title (and the contact sheet) leave completely, THEN the closing text arrives
  set(ttl2,0);set(closing,1);
  if(instant)return;
  own(ttl2.animate([{opacity:1},{opacity:0}],{duration:600,fill:'forwards'}));
  grid();shots.forEach(sh=>own(sh.animate([{opacity:1},{opacity:0}],{duration:600,fill:'forwards'})));tileLabels.forEach(t=>own(t.animate([{opacity:1},{opacity:0}],{duration:600,fill:'forwards'})));
  own(closing.animate([{opacity:0,transform:'translateY(16px)'},{opacity:1,transform:'none'}],{duration:800,delay:900,fill:'backwards',easing:'ease-out'}));}
 window.MOTION_SFX=[];
-SDFrame.init({duration:3,steps:2,stepTimes:[3,3,3],onStep:(n,instant)=>beat(n,instant),onLeave(){reset();}});
+SDFrame.init({duration:3,steps:3,stepTimes:[3,3,3,3],onStep:(n,instant)=>beat(n,instant),onLeave(){reset();}});
 </script></body></html>
