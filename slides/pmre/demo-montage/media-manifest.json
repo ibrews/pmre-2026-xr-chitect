@@ -1,64 +1,312 @@
 {
   "source_folder": "/Users/alex/Desktop/PMRE VR/Photos-1-001",
   "supplied_by": "Alex Coulombe",
-  "scope": "People trying demos during PMRE week, November 2026; selected from the newly modified folder. Attendee names and individual photo authors are not asserted.",
-  "derivative": "sips JPEG, maximum dimension 1280, quality 80; source files preserved",
+  "scope": "Replacement for v8d demo-montage at the same story id and position. Every supplied image reviewed; four frames per video inspected. No attendee identity or device-model claims.",
+  "derivative": "EXIF-normalized JPEG, max 1440x1200; selected muted video frames max width1280; untrimmed H.264 yuv420p/AAC faststart opening; AAC music excerpt",
   "files": [
+    {
+      "source_file": "IMG_9173.jpeg",
+      "file": "media/IMG_9173.jpg",
+      "source_sha256": "5a0c08f86f304855365d189fbcca951c61a45f1d4aec08803efd7ace894a2caa",
+      "sha256": "716173b751079145b51e47f0e57d6022c91c188471327bc29d7bb6e39c5f041a",
+      "bytes": 275622,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
+    },
+    {
+      "source_file": "IMG_9221.HEIC",
+      "file": "media/IMG_9221.jpg",
+      "source_sha256": "94a086f16964e1109ba2273284950c397ecdbe4839353ce3ce8397c917c6f112",
+      "sha256": "9454337dee497d4a2bf2a9382322fb8104c23f61128b539cd74bfc403cf066c2",
+      "bytes": 100635,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
+    },
     {
       "source_file": "IMG_9234.jpeg",
       "file": "media/IMG_9234.jpg",
       "source_sha256": "5fb383a25415caeaf462f55b8bdfb5119dab32521d56b348f98b86b1be72631e",
-      "sha256": "9ff78c305803fad8d6044bf2deac031ba9615b1ef9a5be1bb88e5ac57bc904b6",
-      "bytes": 258687
+      "sha256": "a87ddb98635fe94eae791568e7575ef3213c76ba389af916d4663d2feb3cac13",
+      "bytes": 177043,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
+    },
+    {
+      "source_file": "IMG_9236.HEIC",
+      "file": "media/IMG_9236.jpg",
+      "source_sha256": "60828476410f79b83dfb45ecac314c63ced1081074d27b4f7c3e9b27a67093e2",
+      "sha256": "cd3d361001ae64caf84ea52db200ffa55e90557b5771ac8f30495fa34ee8bdb8",
+      "bytes": 181916,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
     },
     {
       "source_file": "IMG_9241.jpeg",
       "file": "media/IMG_9241.jpg",
       "source_sha256": "ad8582101aceb2b6f567c22971acfd2f8f5f7036ec5ba54101d74319d9718026",
-      "sha256": "44c15427287718e8ceee8b58d7cbd420b2094ba91b747939dd59ae7033179c9a",
-      "bytes": 267671
+      "sha256": "0ecdb756a5d83c560ae1be2106c65350b9991eb03c228b27f1a6f19d79992b3a",
+      "bytes": 179681,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
+    },
+    {
+      "source_file": "IMG_9250.HEIC",
+      "file": "media/IMG_9250.jpg",
+      "source_sha256": "d948f88448ac5da4741d7a4a8f295b566e12e0d6427766f6525b0580abc2b3ab",
+      "sha256": "91354c531ecd1317668ac615547c6db8f0af119a65d9cea6a92cfe7d4baeac45",
+      "bytes": 90978,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
     },
     {
       "source_file": "IMG_9255.jpeg",
       "file": "media/IMG_9255.jpg",
       "source_sha256": "18b43c4696b619c3f2559c7c0a5ba7039ba2be1c92ec86067b3e3e392d9cb907",
-      "sha256": "c30b848266cd708b1f21e218873bf8ffd62edc49a460d971c05a4b32139d1f3a",
-      "bytes": 273488
+      "sha256": "4deb7be5ac2c2987a9f40eb9531fb7a8ed7d6971f5807bcd801f39ee06d3d58b",
+      "bytes": 189775,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
+    },
+    {
+      "source_file": "IMG_9259.HEIC",
+      "file": "media/IMG_9259.jpg",
+      "source_sha256": "4cfb5a49a56e1d1bac2522990c4d22b1994ecc679df1d8d5f565e6d7edead956",
+      "sha256": "ae44a77200a8e08a370ce3ac417396b3ad7e4758b3b562e0cb61b26cb6286ac5",
+      "bytes": 206628,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
+    },
+    {
+      "source_file": "IMG_9261.HEIC",
+      "file": "media/IMG_9261.jpg",
+      "source_sha256": "9deabe9e4a928eac4bd58fcf876a239e5fd47cfe046014a7ed0cf3b665fc127e",
+      "sha256": "ee07ece68c259f77a2ccfbc1956388b6fedf8a1483299adebe94c8d115f6c80f",
+      "bytes": 171203,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
+    },
+    {
+      "source_file": "IMG_9263.HEIC",
+      "file": "media/IMG_9263.jpg",
+      "source_sha256": "16601a622ac48216bbce6fd02898aa5df34ea99bebd1fb24fbd5c81bdf84f21f",
+      "sha256": "7d5025114c98c4ee704dc1f029293d2723a3d604e737f0640be0ba6efd9331b3",
+      "bytes": 71703,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
     },
     {
       "source_file": "IMG_9265.HEIC",
       "file": "media/IMG_9265.jpg",
       "source_sha256": "42f7579e83e9bfc24cc8f31bdf3ae510e8192a4bdac2f7926698c181211126ac",
-      "sha256": "1077f7c28c5f5fced817d326ecd4c503d5d79f76c3918439cdf798ea72fb28e0",
-      "bytes": 246615
+      "sha256": "82cd01e8e04345ca30c6d41f38182d0c1548f9cb9d96a786d228eae676b054d7",
+      "bytes": 165280,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
+    },
+    {
+      "source_file": "IMG_9268.HEIC",
+      "file": "media/IMG_9268.jpg",
+      "source_sha256": "8af1ac47e7721ea1149c1b903d81e31be7a718235c08c65cd73042b61084165c",
+      "sha256": "8f8760c3e37c8c1a179fc6b8161361c925b44c3cc3dbb1d1233321a3e4d2e561",
+      "bytes": 187900,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
+    },
+    {
+      "source_file": "IMG_9285.jpeg",
+      "file": "media/IMG_9285.jpg",
+      "source_sha256": "132aa0551a979bec1a0fc58c3adf33ff406124a6cf9a42fa108edfa8ad47da56",
+      "sha256": "39c92f20d0f8b3c595f3e27d0dd388ff1d98feee576ec4c36b65f233129b69f9",
+      "bytes": 211577,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
+    },
+    {
+      "source_file": "IMG_9324.HEIC",
+      "file": "media/IMG_9324.jpg",
+      "source_sha256": "1a121aef57190b02413e23a73078ebeaa3d00712e7a84c0b21085954b87149ac",
+      "sha256": "6c4c986bd91b3bd5b8e30b2f2294da27cbaa194a939727e92a6c0c9638209b5f",
+      "bytes": 95487,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
+    },
+    {
+      "source_file": "IMG_9327.HEIC",
+      "file": "media/IMG_9327.jpg",
+      "source_sha256": "c369f68ea7403506cb7c88d4deb2ebbdbbab21028600fa9f8869286b2a204ea3",
+      "sha256": "f4189de3d37d9229cd261f88bba352762447334f0c51cf4372229e99d22387e6",
+      "bytes": 101463,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
+    },
+    {
+      "source_file": "IMG_9330.HEIC",
+      "file": "media/IMG_9330.jpg",
+      "source_sha256": "369129af671f97c4326e54845ba037b24d568b07d77fbccfe000d724a1a0eaf4",
+      "sha256": "260b918419f6af007fd8967a128bc627d19e46b63e9a329ce97168e20ae2e77b",
+      "bytes": 244149,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
     },
     {
       "source_file": "IMG_9333.HEIC",
       "file": "media/IMG_9333.jpg",
       "source_sha256": "c7671a46c6cf57f6a697df2bc52245394e3e81057ab88b4e91d1a6ddac65263e",
-      "sha256": "7b6551cd4f6c2bd7023ea5cc6f053f210bdfccd0e1cf59b8d3d3065258b8c88d",
-      "bytes": 381028
+      "sha256": "38b4551c5708804d912035b7dc47fc9fd9381990885badd181a5b726efa24113",
+      "bytes": 273404,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
     },
     {
-      "source_file": "IMG_9335.HEIC",
-      "file": "media/IMG_9335.jpg",
-      "source_sha256": "6072d4d621e5baf7177d6c2731b89939e7d310704a8f97bbc1c0d40a264d98df",
-      "sha256": "291be8fb7c55edf70ab7985d5d23b90930dfef245103ea04b4f57c775ff3bb85",
-      "bytes": 324151
+      "source_file": "IMG_9336.HEIC",
+      "file": "media/IMG_9336.jpg",
+      "source_sha256": "b87204b2cf2053c462994777ee60f050836652daf6289513f50724cf4b806524",
+      "sha256": "df1ffb2ee14bd9918ee1fcab5b0df4ab8fca79404c26fbcf86dea1b50a39ed54",
+      "bytes": 257835,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
     },
     {
-      "source_file": "IMG_9341.HEIC",
-      "file": "media/IMG_9341.jpg",
-      "source_sha256": "3afcb6395453f1a4e68401e8178cd1f29be1fb9a4bcd3c7525db82c7df8e8049",
-      "sha256": "9c8e0f8549206e6d8f134dc83731bb9644e6ca711824433d5f63fe27617ff4ef",
-      "bytes": 231657
+      "source_file": "IMG_9340.HEIC",
+      "file": "media/IMG_9340.jpg",
+      "source_sha256": "cd0e276917b15f2ac7898622d227062d5fc7ea37be02165eb3a8e38d6bbd12f4",
+      "sha256": "d9063153d864eddec25d802058de7faeab98a7f7dd66e19337bed99a32471b22",
+      "bytes": 141789,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
     },
     {
-      "source_file": "IMG_9346.HEIC",
-      "file": "media/IMG_9346.jpg",
-      "source_sha256": "b24b18fcba069ccaaf18bc88ec6fa058963476380e93c0bdea1e0bd350fa99bc",
-      "sha256": "0b5bc456cfd093c277bb29f0ace886cabb4b8835037c7d625d3d9270591e9b39",
-      "bytes": 242371
+      "source_file": "IMG_9344.HEIC",
+      "file": "media/IMG_9344.jpg",
+      "source_sha256": "e0e2341abdd0ff0127d60dfadcd1024d5562abca01c0cac87b77def1655ecbf6",
+      "sha256": "95c0fca69b6f2afb0866bbfea2cd44356b5cf388253e5cb317842c48eb5af045",
+      "bytes": 197496,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
+    },
+    {
+      "source_file": "meta vr glasses.jpg",
+      "file": "media/meta-vr-glasses.jpg",
+      "source_sha256": "49148b9392f61381e5735641ab3e483a7b9f14e3962e900b2d0534c296f94f41",
+      "sha256": "77657b1166fb85d6e0ac82b80251ff3f2c73943f4b7cae5246ebab630dbd4f6c",
+      "bytes": 68740,
+      "kind": "photo",
+      "orientation": "EXIF applied to pixels"
+    },
+    {
+      "source_file": "IMG_9245.mp4",
+      "file": "media/IMG_9245.jpg",
+      "source_sha256": "0e6c9f9b3fa6e8db60268fcaa5f52fa32f66e05d532d9d94922f20f91c20c276",
+      "sha256": "aa80ab732ee4e2d81f46a2c6e4bd289617081d04ae46ecc67798b03dfa64a1a6",
+      "bytes": 122975,
+      "kind": "video-still",
+      "time_seconds": 3.15,
+      "selection": "Visually reviewed frame showing the attendee wearing the headset or glasses; silent JPEG"
+    },
+    {
+      "source_file": "IMG_9266.mp4",
+      "file": "media/IMG_9266.jpg",
+      "source_sha256": "6a02d1fd526d7ed9048273ad01a0486bfc07f2676664063de878d58896a5730e",
+      "sha256": "f3b4aba6badb4e37c6dc1f52cb6441a2095af29a2e6b886ae54ccc381eba007f",
+      "bytes": 104580,
+      "kind": "video-still",
+      "time_seconds": 6.15,
+      "selection": "Visually reviewed frame showing the attendee wearing the headset or glasses; silent JPEG"
+    },
+    {
+      "source_file": "IMG_9270.mp4",
+      "file": "media/IMG_9270.jpg",
+      "source_sha256": "bcb80c04c72d4134d628d3e70b1ef149c00fbca1452a7b39544a9c48ce16f056",
+      "sha256": "bbefaedbab429f5b3726a26dda6a13722d1dcba0413c168752a9125c09be756b",
+      "bytes": 89512,
+      "kind": "video-still",
+      "time_seconds": 1.4,
+      "selection": "Visually reviewed frame showing the attendee wearing the headset or glasses; silent JPEG"
+    },
+    {
+      "source_file": "IMG_9328.mp4",
+      "file": "media/IMG_9328.jpg",
+      "source_sha256": "a568043a003356ddb7d5deb5bd0b283ba7be560c0a228accb1df21c93be58755",
+      "sha256": "147bcefa5b390ee0181f12cb90e4a8cd82117a8cb24a635fa47f4a2bcb4b09d1",
+      "bytes": 76688,
+      "kind": "video-still",
+      "time_seconds": 1.5,
+      "selection": "Visually reviewed frame showing the attendee wearing the headset or glasses; silent JPEG"
+    },
+    {
+      "source_file": "IMG_9351.mp4",
+      "file": "media/IMG_9351.jpg",
+      "source_sha256": "8f417584455de571810325bdb38aaa3f406a4e403f7fbba03e1c6b337d161f4a",
+      "sha256": "0baa30b2253706fa93bc05677225a1ac98dd1f64d9f6f3b1ba0268ba7f35a98f",
+      "bytes": 117279,
+      "kind": "video-still",
+      "time_seconds": 3.9,
+      "selection": "Visually reviewed frame showing the attendee wearing the headset or glasses; silent JPEG"
+    },
+    {
+      "source_file": "IMG_9352.mp4",
+      "file": "media/IMG_9352.jpg",
+      "source_sha256": "ae8ddf0d010a342f2e0d0f3524c80a5e00342649696830ece0ad4e7f38f50463",
+      "sha256": "f5bc6f0e84458283f840d674796c12b260a17894a558fdca58e61284422f8c4d",
+      "bytes": 67812,
+      "kind": "video-still",
+      "time_seconds": 9.0,
+      "selection": "Visually reviewed frame showing the attendee wearing the headset or glasses; silent JPEG"
+    },
+    {
+      "source_file": "IMG_9353.mp4",
+      "file": "media/IMG_9353.jpg",
+      "source_sha256": "f4bb1ba038f3a3036204a706c811ae59c0ecf0d0ea8c8bcb32341ef554cdc82c",
+      "sha256": "b89eb7371f7f9e5cc52328b3eae4db2243663349fc20349cd0e10deef56699ab",
+      "bytes": 78630,
+      "kind": "video-still",
+      "time_seconds": 3.5,
+      "selection": "Visually reviewed frame showing the attendee wearing the headset or glasses; silent JPEG"
+    },
+    {
+      "source_file": "IMG_9350.mp4",
+      "file": "media/IMG_9350.mp4",
+      "source_sha256": "053bf7268be4359d5b594991c7bad921215d0070c47fabe4e9ce9e32e71880a9",
+      "sha256": "1a97cfd736681a4cb150d569317242eb4b2c08a5ac0c0cd14ca220930e17d920",
+      "bytes": 6823865,
+      "kind": "opening-video",
+      "trim": "none",
+      "duration": 20.481933
+    },
+    {
+      "source_file": "Urban Chomp Funk.mp3",
+      "file": "media/urban-chomp-funk.m4a",
+      "source_sha256": "15291f4fcc902ac7df9060baa9ee2ddda82821057a2c859b327275b2918cc72d",
+      "sha256": "13438bdefffc7b1b8ca794adf644dbe8e5ad70f9db9e4c9ccaa0be0b10cf9791",
+      "bytes": 462786,
+      "kind": "music",
+      "excerpt": "First 28 seconds; 1.5s fade in, 5s fade out"
+    },
+    {
+      "source_file": "IMG_9350.mp4",
+      "file": "media/IMG_9350-poster.jpg",
+      "source_sha256": "053bf7268be4359d5b594991c7bad921215d0070c47fabe4e9ce9e32e71880a9",
+      "sha256": "0ccda0684458c4defedba14bf90a938c7ed5586fb63327bc7491efd0bf96a52b",
+      "bytes": 106524,
+      "kind": "opening-poster",
+      "time_seconds": 8.2
     }
+  ],
+  "excluded": {
+    "IMG_9174.jpeg": "Soft face detail",
+    "IMG_9182.jpeg": "Social meal selfie, no VR demo; weaker composition",
+    "IMG_9307.HEIC": "Tight distorted selfie with open-mouth expression; less flattering",
+    "picogemini.jpeg": "Redacted faces and tabletop devices distract from attendee memories",
+    "screen-20261117-201222.mp4": "Interior screen recording, no attendee trying a headset"
+  },
+  "scrapbook": [
+    "IMG_9234",
+    "IMG_9265",
+    "IMG_9324",
+    "IMG_9336",
+    "IMG_9344",
+    "IMG_9241",
+    "IMG_9351",
+    "IMG_9261"
   ]
 }
