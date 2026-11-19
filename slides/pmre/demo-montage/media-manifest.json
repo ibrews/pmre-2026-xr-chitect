@@ -1,0 +1,64 @@
+{
+  "source_folder": "/Users/alex/Desktop/PMRE VR/Photos-1-001",
+  "supplied_by": "Alex Coulombe",
+  "scope": "People trying demos during PMRE week, November 2026; selected from the newly modified folder. Attendee names and individual photo authors are not asserted.",
+  "derivative": "sips JPEG, maximum dimension 1280, quality 80; source files preserved",
+  "files": [
+    {
+      "source_file": "IMG_9234.jpeg",
+      "file": "media/IMG_9234.jpg",
+      "source_sha256": "5fb383a25415caeaf462f55b8bdfb5119dab32521d56b348f98b86b1be72631e",
+      "sha256": "9ff78c305803fad8d6044bf2deac031ba9615b1ef9a5be1bb88e5ac57bc904b6",
+      "bytes": 258687
+    },
+    {
+      "source_file": "IMG_9241.jpeg",
+      "file": "media/IMG_9241.jpg",
+      "source_sha256": "ad8582101aceb2b6f567c22971acfd2f8f5f7036ec5ba54101d74319d9718026",
+      "sha256": "44c15427287718e8ceee8b58d7cbd420b2094ba91b747939dd59ae7033179c9a",
+      "bytes": 267671
+    },
+    {
+      "source_file": "IMG_9255.jpeg",
+      "file": "media/IMG_9255.jpg",
+      "source_sha256": "18b43c4696b619c3f2559c7c0a5ba7039ba2be1c92ec86067b3e3e392d9cb907",
+      "sha256": "c30b848266cd708b1f21e218873bf8ffd62edc49a460d971c05a4b32139d1f3a",
+      "bytes": 273488
+    },
+    {
+      "source_file": "IMG_9265.HEIC",
+      "file": "media/IMG_9265.jpg",
+      "source_sha256": "42f7579e83e9bfc24cc8f31bdf3ae510e8192a4bdac2f7926698c181211126ac",
+      "sha256": "1077f7c28c5f5fced817d326ecd4c503d5d79f76c3918439cdf798ea72fb28e0",
+      "bytes": 246615
+    },
+    {
+      "source_file": "IMG_9333.HEIC",
+      "file": "media/IMG_9333.jpg",
+      "source_sha256": "c7671a46c6cf57f6a697df2bc52245394e3e81057ab88b4e91d1a6ddac65263e",
+      "sha256": "7b6551cd4f6c2bd7023ea5cc6f053f210bdfccd0e1cf59b8d3d3065258b8c88d",
+      "bytes": 381028
+    },
+    {
+      "source_file": "IMG_9335.HEIC",
+      "file": "media/IMG_9335.jpg",
+      "source_sha256": "6072d4d621e5baf7177d6c2731b89939e7d310704a8f97bbc1c0d40a264d98df",
+      "sha256": "291be8fb7c55edf70ab7985d5d23b90930dfef245103ea04b4f57c775ff3bb85",
+      "bytes": 324151
+    },
+    {
+      "source_file": "IMG_9341.HEIC",
+      "file": "media/IMG_9341.jpg",
+      "source_sha256": "3afcb6395453f1a4e68401e8178cd1f29be1fb9a4bcd3c7525db82c7df8e8049",
+      "sha256": "9c8e0f8549206e6d8f134dc83731bb9644e6ca711824433d5f63fe27617ff4ef",
+      "bytes": 231657
+    },
+    {
+      "source_file": "IMG_9346.HEIC",
+      "file": "media/IMG_9346.jpg",
+      "source_sha256": "b24b18fcba069ccaaf18bc88ec6fa058963476380e93c0bdea1e0bd350fa99bc",
+      "sha256": "0b5bc456cfd093c277bb29f0ace886cabb4b8835037c7d625d3d9270591e9b39",
+      "bytes": 242371
+    }
+  ]
+}
