@@ -4,7 +4,7 @@ SD.defineSlide({
   frame: 'ring-chapter.html',
   steps: 0,
   duration: 3.8,
-  props: {from: 2026, year: 2005, kicker: 'REWIND', label: '2005', sub: '', venn: [1, 1, 1], vennFrom: null, dur: 2.6, sfx: ''},
+  props: {from: 2026, year: 2005, kicker: 'REWIND', label: '2005', sub: '', venn: [1, 1, 1], vennFrom: null, dur: 2.6, sfx: '', noVenn: false},
   assets: ['ring-chapter.html'],
   shared: ['kit/sprite.js'],
   provenance: ['PMRE v5 (2026-11-14): presenter-requested year ring + Venn progress indicator'],
