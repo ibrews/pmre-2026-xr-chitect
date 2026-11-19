@@ -1502,6 +1502,7 @@ const SECTIONS = [
       },
       {
         "id": "spike",
+        "hidden": true,
         "title": "Spike tape",
         "use": "pmre/story-media",
         "keep": 19,
@@ -1514,7 +1515,7 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~115s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nKevin Laibson story. Jonathan wished there were a way to remember where the furniture belonged so it could go back in exactly the same place. Theater already has that: spike tape. I hire a lot of theater people. They bring things like this. The photograph shows the room setup, not a claimed close-up of theatrical spike tape.\n\nYear: 2023. Venn weights: 0.8 / 1 / 0.8.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\nCreative/source credit retained in notes: Four Seasons Lake Austin · photo: Agile Lens",
+        "notes": "⏱ ~115s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nKevin Laibson story. Jonathan wished there were a way to remember where the furniture belonged so it could go back in exactly the same place. Theater already has that: spike tape. I hire a lot of theater people. They bring things like this. The photograph shows the room setup, not a claimed close-up of theatrical spike tape.\n\nYear: 2023. Venn weights: 0.8 / 1 / 0.8.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\nCreative/source credit retained in notes: Four Seasons Lake Austin · photo: Agile Lens\n\nHidden 2026-11-19 at Alex's request (the D-BOX holodeck slide); kept in source.",
         "year": "2023",
         "venn": [
           0.8,
@@ -1657,6 +1658,7 @@ const SECTIONS = [
     "cases": [
       {
         "id": "mexico",
+        "hidden": true,
         "title": "Perfect Day Mexico",
         "year": "2025–2026",
         "venn": [
@@ -1682,7 +1684,7 @@ const SECTIONS = [
           "steps": false,
           "layout": "row"
         },
-        "notes": "⏱ ~35s.\n\n⏱ ~100s.\n\nPerfect Day Mexico was commissioned in 2025. Our six-person standalone VR balloon ride previewed Royal Caribbean’s future destination, using a physical hot-air-balloon installation aboard the 2025 President’s Cruise. Distinguish this 2025 commission/demo from the resort’s later opening. Compare the flyby to being there at human scale. The immersive preview is the result I can describe; it is not evidence that the visualization caused a planning decision.\nSources: presenter confirmation November 9, 2026; KB projects/perfect-day-mexico/overview.md (completed 2025, updated for 2026); https://agilelens.com/portfolio/perfect-day-mexico .\nRoot #49 media restored. Commission/demo in 2025, updated for 2026; not an opened resort. Keep human scale and the ability to communicate an unbuilt destination as the lesson."
+        "notes": "⏱ ~35s.\n\n⏱ ~100s.\n\nPerfect Day Mexico was commissioned in 2025. Our six-person standalone VR balloon ride previewed Royal Caribbean’s future destination, using a physical hot-air-balloon installation aboard the 2025 President’s Cruise. Distinguish this 2025 commission/demo from the resort’s later opening. Compare the flyby to being there at human scale. The immersive preview is the result I can describe; it is not evidence that the visualization caused a planning decision.\nSources: presenter confirmation November 9, 2026; KB projects/perfect-day-mexico/overview.md (completed 2025, updated for 2026); https://agilelens.com/portfolio/perfect-day-mexico .\nRoot #49 media restored. Commission/demo in 2025, updated for 2026; not an opened resort. Keep human scale and the ability to communicate an unbuilt destination as the lesson.\n\nHidden 2026-11-19 at Alex's request: Perfect Day Mexico already appears on another slide; kept in source."
       },
       {
         "id": "project-family",
