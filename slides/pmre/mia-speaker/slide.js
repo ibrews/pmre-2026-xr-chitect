@@ -119,7 +119,7 @@ function tiBuildAlex(s, I) {
   const stats = (I.stats || []).map(x => `<div class="intro-stat"><span class="num" data-tally="${x.n}">${x.n}</span><span class="lbl">${x.l}</span></div>`).join('');
   s.innerHTML = `<div class="intro-grid"><div class="intro-stage"><svg viewBox="0 0 400 400" aria-hidden="true"></svg></div><div class="intro-content"><div class="intro-eyebrow ti-fade">${I.eyebrow || ''}</div><h1 class="intro-title ti-fade">${I.name || ''}</h1>${I.role ? `<p class="intro-role ti-fade">${I.role}</p>` : ''}<p class="intro-sub ti-fade">${I.bio || ''}</p><p class="intro-sub intro-sub-ue5 ti-fade">${(I.ue5 || '').replace(/\n/g, '<br>')}</p><div class="intro-stats ti-fade">${stats}</div></div></div>`;
   const svg = s.querySelector('svg'), q = sel => s.querySelector(sel);
-  [['.intro-title',104],['.intro-role',32],['.intro-sub',34],['.intro-stat .lbl',24],['.intro-stat .num',52]].forEach(([sel,size])=>s.querySelectorAll(sel).forEach(e=>e.style.setProperty('font-size',size+'px','important')));
+  [['.intro-title',104],['.intro-role',32],['.intro-sub',34],['.intro-stat .lbl',22],['.intro-stat .num',52]].forEach(([sel,size])=>s.querySelectorAll(sel).forEach(e=>e.style.setProperty('font-size',size+'px','important')));
   const bioEls = [q('.intro-eyebrow'), q('.intro-title'), q('.intro-role'), q('.intro-sub:not(.intro-sub-ue5)')].filter(Boolean);
   const ue5Text = q('.intro-sub-ue5'), statsRow = q('.intro-stats');
   svg.appendChild(svgE('rect', { x: 30, y: 300, width: 340, height: 6, class: 'stage-floor', rx: '2' }));
