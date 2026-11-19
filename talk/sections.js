@@ -926,6 +926,8 @@ const SECTIONS = [
           "src": "media/pmre/v7/bpi-latest-trailer-v2.mp4",
           "credit": "",
           "alt": "Blueprint Immersive, latest BPI trailer V2 supplied by Alex",
+          "poster": "media/pmre/v7/bpi-latest-trailer-poster.jpg",
+          "posterTime": 8,
           "mode": "content",
           "brightness": 1,
           "takeaway": "Make your expertise repeatable"
@@ -1296,7 +1298,8 @@ const SECTIONS = [
           ],
           "steps": false,
           "layout": "row",
-          "railCallout": true
+          "railCallout": true,
+          "equalHeights": true
         },
         "notes": "⏱ ~50s.\n\n⏱ ~65s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother chance to bring theater expertise into a real architectural decision at eye level. Image and project credits: Agile Lens / Fisher Dachs Associates.\n\nYear: 2022. Venn weights: 1 / 1 / 1.\n\n\nFull-cut delivery space: Use the on-site headset photograph to distinguish a design model, the actual room and a human judging the relationship. Describe the need to communicate across architecture, theater and technology, without claiming an undocumented measured benefit.\nRoot #46 restored as simultaneous media. Talkthrough: physical railing with swappable heights. Discuss testing comfort and vertigo with physical stagecraft. No invented measurements."
       }

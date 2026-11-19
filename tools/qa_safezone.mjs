@@ -68,7 +68,7 @@ try{
    await f.locator(f===page?'.slide.active video':'video').evaluateAll(async vs=>Promise.all(vs.map(async v=>{
     if(!v.getBoundingClientRect().width)return;
     v.preload='auto';if(v.readyState<2)await new Promise(r=>{v.addEventListener('loadeddata',r,{once:true});setTimeout(r,5000);});
-    if(isFinite(v.duration)&&v.duration>0){await new Promise(r=>{v.addEventListener('seeked',r,{once:true});v.currentTime=Math.min(2,v.duration/2);setTimeout(r,1500);});v.pause();}
+    if(isFinite(v.duration)&&v.duration>0){await new Promise(r=>{v.addEventListener('seeked',r,{once:true});v.currentTime=Math.min(+v.dataset.posterTime||2,v.duration-.05);setTimeout(r,1500);});v.pause();}
    })));
   }
   const file=String(s.index).padStart(3,'0')+'-'+s.id+'.png';await page.screenshot({path:path.join(out,file)});

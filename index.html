@@ -980,6 +980,8 @@ const SECTIONS = [
           "src": "media/pmre/v7/bpi-latest-trailer-v2.mp4",
           "credit": "",
           "alt": "Blueprint Immersive, latest BPI trailer V2 supplied by Alex",
+          "poster": "media/pmre/v7/bpi-latest-trailer-poster.jpg",
+          "posterTime": 8,
           "mode": "content",
           "brightness": 1,
           "takeaway": "Make your expertise repeatable"
@@ -1350,7 +1352,8 @@ const SECTIONS = [
           ],
           "steps": false,
           "layout": "row",
-          "railCallout": true
+          "railCallout": true,
+          "equalHeights": true
         },
         "notes": "⏱ ~50s.\n\n⏱ ~65s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother chance to bring theater expertise into a real architectural decision at eye level. Image and project credits: Agile Lens / Fisher Dachs Associates.\n\nYear: 2022. Venn weights: 1 / 1 / 1.\n\n\nFull-cut delivery space: Use the on-site headset photograph to distinguish a design model, the actual room and a human judging the relationship. Describe the need to communicate across architecture, theater and technology, without claiming an undocumented measured benefit.\nRoot #46 restored as simultaneous media. Talkthrough: physical railing with swappable heights. Discuss testing comfort and vertigo with physical stagecraft. No invented measurements."
       }
@@ -4069,7 +4072,8 @@ body[data-look="house"]:not(#_) .full-overlay{background:linear-gradient(transpa
 body[data-look="house"]:not(#_) .grid-stage{gap:8px;padding-top:calc(clamp(30px,calc(3.4*var(--vh)),44px) + 8px)}
 body[data-look="house"]:not(#_) .grid-label{background:var(--gold);color:#141110;padding:4px 10px;font-size:var(--t-label);left:0;top:0}
 
-body[data-look="house"]:not(#_) .slide[data-type="close"]{background:linear-gradient(90deg,var(--curtain) 0 3.5%,transparent 3.5% 96.5%,var(--curtain) 96.5%)}
+body[data-look="house"]:not(#_) .slide[data-type="close"]{background:none}
+body[data-look="house"]:not(#_):has(.slide[data-type="close"].active)::before{content:"";position:fixed;inset:0;z-index:14;pointer-events:none;background:linear-gradient(90deg,var(--curtain) 0 3.5%,transparent 3.5% 96.5%,var(--curtain) 96.5%)}
 body[data-look="house"]:not(#_) .close-ey{color:var(--gold);opacity:1;font-size:var(--t-lead)}
 body[data-look="house"]:not(#_) .close-title{font-size:calc(var(--t-display)*1.1)}
 body[data-look="house"]:not(#_) .close-sub{font-style:italic;font-size:var(--t-lead)}
@@ -4710,16 +4714,14 @@ function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),
   }
   // ── Tool hooks (sweep, lint, slide.py list, render_motion) ──
   SD.list=function(){const out=[];allSlides.forEach((s,i)=>{const r=recs.get(s);if(r)out.push({index:i,id:r.id,name:r.c.motion||null,src:r.frameEl?r.frameEl.getAttribute('src'):null,steps:r.steps,duration:r.def.duration||null,frame:r.def.frame||null,frameSteps:s.dataset.sdFrameSteps!=null?+s.dataset.sdFrameSteps:null,hidden:s.dataset.hidden==='1',seekable:typeof r.inst.seek==='function'});});return out;};
-  // A forward press completes the current beat; only the following press advances.
+  // Explicit framed/manual builds advance on every press, including during their entrance.
   SD.completeCurrent=function(sl){
     if(INSTANT)return false;
-    const r=recs.get(sl);if(r?.def.manualSteps&&r.steps>0)return false;const aa=sl.getAnimations({subtree:true}).filter(a=>a.playState==='running'&&isFinite(a.effect?.getComputedTiming().endTime));
+    const r=recs.get(sl);if(r?.steps>0&&(r.frameEl||r.def.manualSteps))return false;const aa=sl.getAnimations({subtree:true}).filter(a=>a.playState==='running'&&isFinite(a.effect?.getComputedTiming().endTime));
     if(!r){if(!aa.length)return false;aa.forEach(a=>{try{a.finish();}catch(_){}});return true;}
     if(r.settled)return false;
     const elapsed=performance.now()-(r.started||0),hold=(+sl.dataset.sdDuration||r.def.duration||3)*1000;
-    /* A build click on a framed slide must not be swallowed for the whole 8s intro duration: after a step has been issued, a short hold is enough to let its fade finish. */
-    const holdMs=r.frameEl&&r.cur>0?Math.min(hold,2200):hold;
-    if(!aa.length&&!r.ctx.clock.busy()&&elapsed>=holdMs)return false;
+    if(!aa.length&&!r.ctx.clock.busy()&&elapsed>=hold)return false;
     sl.classList.add('sd-beat-complete');window._killAllSfx();r.ctx.clock.stop();const old=r.ctx.instant;r.ctx.instant=true;
     if(typeof r.inst.complete==='function'){call(r,'complete',r.cur);}
     else {call(r,'leave');call(r,'enter');for(let n=1;n<=r.cur;n++)call(r,'step',n);r.ctx.clock.stop();}
