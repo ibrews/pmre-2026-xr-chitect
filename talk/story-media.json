@@ -312,5 +312,13 @@
     "source": "media/pmre/fs-v2/holo-aspen.mp4 at7seconds",
     "credit": "Video: Agile Lens",
     "sha256": "9325a3306b728666a828a3dc638549523a11e0a22ff52336fee0a3fd7ea93fb7"
+  },
+  {
+    "path": "media/pmre/v7/bpi-latest-trailer-v2.mp4",
+    "source": "/Users/alex/Desktop/Latest BPI Trailer V2.mp4",
+    "credit": "Product demo: Agile Lens",
+    "sha256": "fc199d5c33f687ee73c421d3bd0205727ccb80e38d085f8015f0629cc2ac2264",
+    "supersedes_in_deck": "media/story/blueprint-seat-demo.mp4",
+    "duration": "48.833333"
   }
 ]

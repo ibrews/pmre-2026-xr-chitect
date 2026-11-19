@@ -38,7 +38,7 @@ export function parseArgs(argv) {
 }
 
 export function loadPlaywright() {
-  const cands = [process.env.PLAYWRIGHT_CORE, '/Users/alex/GH/xrsim/node_modules/playwright-core',
+  const cands = [process.env.PLAYWRIGHT_CORE, '/Users/alex/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core', '/Users/alex/GH/xrsim/node_modules/playwright-core',
     path.join(os.homedir(), '.cache/spatial-deck/video-deps/node_modules/playwright-core')].filter(Boolean);
   const p = cands.find(c => fs.existsSync(path.join(c, 'package.json')));
   if (!p) { console.error('playwright-core not found: set PLAYWRIGHT_CORE=/abs/path/node_modules/playwright-core'); process.exit(2); }

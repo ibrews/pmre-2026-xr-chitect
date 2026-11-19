@@ -52,7 +52,7 @@
    'IFRAME:'  Prefix c.img with 'IFRAME:' to embed a URL (YouTube, etc.)
    ======================================================================= */
 // ── TALK START ──
-// PMRE v6 — Alex’s November 18 notes and local talkthrough; ending follows Brandon’s brief.
+// PMRE v7: attendee hub, XR services and verified public hardware.
 const TALK = {
   "coverEvent": "PMRE 2026 &middot; Las Vegas &middot; Thursday, Nov 19",
   "coverTitle": "Architect to <span class=\"xr\">XR</span>-chitect",
@@ -68,9 +68,9 @@ const TALK = {
   "closeEyebrow": "",
   "closeTitle": "Build it together. Q&A",
   "closeSub": "Start small. Make it valuable. Bring us the ambitious ones.",
-  "web": "ibrews.github.io/pmre-2026-xr-chitect/v6/resources/",
-  "qr": "https://ibrews.github.io/pmre-2026-xr-chitect/v6/resources/",
-  "qrLabel": "This talk · free starter guide\nAlex Coulombe Presents · Agile Lens",
+  "web": "ibrews.github.io/pmre-2026-xr-chitect/v7/resources/",
+  "qr": "https://ibrews.github.io/pmre-2026-xr-chitect/v7/resources/",
+  "qrLabel": "Welcome PMRE Attendees! · password: pixie\nFree starter kit · training · projects · this deck",
   "options": {
     "cut": {
       "label": "Length",
@@ -78,7 +78,7 @@ const TALK = {
       "choices": {
         "20": "Short rehearsal",
         "30": "Medium rehearsal",
-        "full": "Full v6 story",
+        "full": "Full v7 story",
         "20t": "Venue short + Q&A"
       }
     },
@@ -151,7 +151,7 @@ const TALK = {
   },
   "thesisAlts": {},
   "closeAlts": {},
-  "closeNotes": "⏱ ~30s.\n\nQ&A stays on screen with one QR. The page links to this talk, agilelens.com and alexcoulombepresents.com, and contains a free getting-started checklist. No second-brain signup or course-access entitlement is live or promised. Use the Alex Coulombe Presents contact page to ask for updates. Invite people to discuss a headset demo; confirm which devices may be shown, and never name or show the NDA headset."
+  "closeNotes": "⏱ ~30s.\n\nOne QR opens the Welcome PMRE Attendees hub. Password: pixie, a playful pixie-dust reference, not security. Free downloadable Markdown/ZIP second-brain starter kit, 1:1/company training (20% off; PMRE20 is a TODO placeholder, contact Alex to apply), Agile Lens, project context and the full deck. Public training is wrapping up. No coupons have been created. PICO Space Pro is represented only by a generic silhouette and name under NDA; no specs or product imagery."
 };
 const SECTIONS = [
   {
@@ -854,14 +854,14 @@ const SECTIONS = [
         "storyRole": "content",
         "props": {
           "title": "Blueprint Immersive",
-          "src": "media/story/blueprint-seat-demo.mp4",
+          "src": "media/pmre/v7/bpi-latest-trailer-v2.mp4",
           "credit": "Product demo: Agile Lens",
-          "alt": "Blueprint Immersive seat check",
+          "alt": "Blueprint Immersive, latest BPI trailer V2 supplied by Alex",
           "mode": "content",
           "brightness": 1,
           "takeaway": "Make your expertise repeatable"
         },
-        "notes": "⏱ ~35s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThis product takes the one-off bespoke theater VR workflow I built for Fisher Dachs and lets them do it themselves. Disseminating expertise can mean teaching, software, a platform, or a talk.\n\nYear: 2025–2026. Venn weights: 1 / 1 / 1.\n\n\nFor your business — presenter proposal: This is a theatre tool, not a property-marketing product claim. The transferable lesson: package what you know into a repeatable buyer experience. Build a template for the questions every buyer asks: what can I see, how does it connect, where would my furniture go?\n\nV6 direction (Alex, November 18): Deliberate flash-forward: Blueprint Immersive 2023–2026. Place beside the Rice white model to connect repeatable seat and design-option tools. Do not imply this product existed in 2015.",
+        "notes": "⏱ ~35s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThis product takes the one-off bespoke theater VR workflow I built for Fisher Dachs and lets them do it themselves. Disseminating expertise can mean teaching, software, a platform, or a talk.\n\nYear: 2025–2026. Venn weights: 1 / 1 / 1.\n\n\nFor your business — presenter proposal: This is a theatre tool, not a property-marketing product claim. The transferable lesson: package what you know into a repeatable buyer experience. Build a template for the questions every buyer asks: what can I see, how does it connect, where would my furniture go?\n\nV6 direction (Alex, November 18): Deliberate flash-forward: Blueprint Immersive 2023–2026. Place beside the Rice white model to connect repeatable seat and design-option tools. Do not imply this product existed in 2015.\n\nV7: replaced the 49.566667s seat-demo derivative with Alex’s Latest BPI Trailer V2.mp4 (48.833333s). Different SHA-256 and duration; H.264 web derivative, no audio, silent autoplay/loop. Source comparison and derivative hashes are in v7 evidence.",
         "year": "2023–2026",
         "venn": [
           1,
@@ -1544,12 +1544,16 @@ const SECTIONS = [
             {
               "src": "media/v3/rsc.jpg",
               "label": "Royal Shakespeare Company"
+            },
+            {
+              "src": "media/pmre/v7/cotton-placeholder.png",
+              "label": "U.S. Cotton · preview still"
             }
           ],
           "steps": false,
-          "layout": "row"
+          "layout": "grid"
         },
-        "notes": "⏱ ~45s.\n\nHalcyon root #79 shares the slide with Royal Caribbean. RSC is rehearsal-tool research, not a production credit. U.S. Cotton is named by Alex in the November 18 notes, but no verified approved Cotton media was found, so show its name as part of this project family without invented visuals. Joby work remains undisclosed; do not show actual client material.\n\nUnreal NYC, speaker note only: suggested as a natural fit; now among the first people people think of for enterprise virtual experiences in NYC. Alex’s anecdote: someone new to the city wanted to “come say hi and kiss the ring”.\n\nFurther speaker recollection: The Orchard Off-Broadway and Mikhail Baryshnikov. Omit unverified dates."
+        "notes": "⏱ ~45s.\n\nHalcyon root #79 shares the slide with Royal Caribbean. RSC is rehearsal-tool research, not a production credit. U.S. Cotton: Alex supplied cotton.png on November 18; this is a placeholder still, with video coming later. No invented footage. Joby work remains undisclosed; do not show actual client material.\n\nUnreal NYC, speaker note only: suggested as a natural fit; now among the first people people think of for enterprise virtual experiences in NYC. Alex’s anecdote: someone new to the city wanted to “come say hi and kiss the ring”.\n\nFurther speaker recollection: The Orchard Off-Broadway and Mikhail Baryshnikov. Omit unverified dates."
       }
     ]
   },
@@ -1671,6 +1675,20 @@ const SECTIONS = [
         ]
       },
       {
+        "id": "headset-comparison",
+        "title": "Pick the experience, then the hardware",
+        "year": "2026",
+        "venn": [
+          1,
+          0.3,
+          1
+        ],
+        "keep": 19,
+        "use": "pmre/headset-comparison",
+        "props": {},
+        "notes": "⏱ ~60s.\n\nPublic specs verified November 18, 2026. USD base launch prices: Vision Pro M5 $3,499 (256GB); Quest 3 $499.99 (128GB, original 2023 launch, not current 512GB retail); XREAL AURA $1,099 limited-time launch offer through end 2026 (12GB/256GB), regular announced base $1,279.\n\nWeights: Vision Pro M5 750–800g includes Light Seal/cushion and Dual Knit Band; separate battery 353g. Quest 3 515g headset. AURA 95g glasses plus 265g compute puck. These are different wearing/compute designs, not equivalent payload measurements.\n\nCompute headroom ordering is an editorial, qualitative inference: 1 M5, 2 Reality Elite, 3 XR2 Gen 2. It is not a measured cross-device benchmark, battery/power-draw ranking, or promise an app works on every headset. Official specifications identify the chips; Qualcomm describes Reality Elite as the next generation beyond XR2+ Gen 2. Test the actual scene and target viewer.\n\nSources: https://www.apple.com/apple-vision-pro/specs/ ; https://www.apple.com/newsroom/2025/10/apple-vision-pro-upgraded-with-the-m5-chip-and-dual-knit-band/ ; https://www.meta.com/quest/quest-3/ ; https://about.fb.com/news/2023/09/meet-meta-quest-3-mixed-reality-headset/ ; https://www.xreal.com/aura ; https://us.shop.xreal.com/blogs/guides/xreal-aura-price-preorder-us ; https://www.qualcomm.com/news/releases/2026/06/qualcomm-takes-spatial-computing-into-the-ai-era-with-snapdragon .\n\nPICO Space Pro: generic, invented headset silhouette ONLY, not a product likeness. Name authorized by Alex for this slide. NDA: no specs, rank, image, price, weight or performance claim."
+      },
+      {
         "id": "future-brief",
         "title": "Your next shoot can become a place",
         "year": "2026+",
@@ -1737,7 +1755,7 @@ const SECTIONS = [
             ]
           }
         },
-        "notes": "Sponsor nod (one sentence, not a pitch): the walkable-tour step is already a product category in this room. Giraffe360 (camera plus AI: HDR photos, floor plans, 360 tours) and Nucleus (one capture to self-guided 3D tours, live showings, video, floor plans) are PMRE 2026 sponsors. Do not imply either sponsor produced the example scan on this slide. Nucleus now documents radiance-field and Gaussian-splat delivery separately on its official site; no unsupported feature or priority claim is needed for this sponsor nod. Source: pmreconference.com/sponsors and each sponsor’s own site, checked 2026-11-17.\n\n⏱ ~75s.\n\nPresenter forecast/proposal, November 2026.\n\nMy bet: the deliverable expands from a set of views to a place the buyer can explore. On a phone or drone shoot, plan overlapping coverage for reconstruction alongside the hero shots. Process the images, clean the scan, choose the start point, then publish a walkthrough and a short film. That is a capture-to-walkthrough service you can begin testing on a property you control. A drone covers the outside; a phone or handheld capture covers the inside. This is an additional capture plan, not a promise that every ordinary real-estate shoot will reconstruct well.\n\nThe Rome examples are PortalCam captures. The phone/drone route is a separate workflow. Polycam documents Gaussian splats from existing overlapping photos or video, including drone captures; this is a supported input route, not a promised turnaround or quality guarantee. Sources: https://learn.poly.cam/hc/en-us/articles/30549134403860-How-to-Create-Drone-3D-Models-in-Polycam ; https://learn.poly.cam/hc/en-us/articles/30549121659412-How-to-Create-Photogrammetry-and-Gaussian-splats-from-Existing-Images-and-Videos-on-Mobile-and-Web . Use overlap and coverage, inspect glass/mirrors/moving subjects, clean the result and test the actual viewer. Price the work, not an assumed one-click conversion.\n\nThe portrait movie is reused from the MIA deck: media/video/splat-walkthrough.mp4, credited there to Alex Coulombe. It shows a fountain scan viewed from a moving virtual camera, not a new Rome hotel capture and not a recording of a phone actively scanning. PMRE derivative uses 00:03–00:12, audio removed, height 1080. It illustrates the middle (reconstructed scene) stage; the phone/drone input route is described separately above."
+        "notes": "Sponsor nod (one sentence, not a pitch): the walkable-tour step is already a product category in this room. Giraffe360 (camera plus AI: HDR photos, floor plans, 360 tours) and Nucleus (one capture to self-guided 3D tours, live showings, video, floor plans) are PMRE 2026 sponsors. Do not imply either sponsor produced the example scan on this slide. Nucleus now documents radiance-field and Gaussian-splat delivery separately on its official site; no unsupported feature or priority claim is needed for this sponsor nod. Source: pmreconference.com/sponsors and each sponsor’s own site, checked 2026-11-17.\n\n⏱ ~75s.\n\nPresenter forecast/proposal, November 2026.\n\nMy bet: the deliverable expands from a set of views to a place the buyer can explore. On a phone or drone shoot, plan overlapping coverage for reconstruction alongside the hero shots. Process the images, clean the scan, choose the start point, then publish a walkthrough and a short film. That is a capture-to-walkthrough service you can begin testing on a property you control. A drone covers the outside; a phone or handheld capture covers the inside. This is an additional capture plan, not a promise that every ordinary real-estate shoot will reconstruct well.\n\nThe Rome examples are PortalCam captures. The phone/drone route is a separate workflow. Polycam documents Gaussian splats from existing overlapping photos or video, including drone captures; this is a supported input route, not a promised turnaround or quality guarantee. Sources: https://learn.poly.cam/hc/en-us/articles/30549134403860-How-to-Create-Drone-3D-Models-in-Polycam ; https://learn.poly.cam/hc/en-us/articles/30549121659412-How-to-Create-Photogrammetry-and-Gaussian-splats-from-Existing-Images-and-Videos-on-Mobile-and-Web . Use overlap and coverage, inspect glass/mirrors/moving subjects, clean the result and test the actual viewer. Price the work, not an assumed one-click conversion.\n\nThe portrait movie is reused from the MIA deck: media/video/splat-walkthrough.mp4, credited there to Alex Coulombe. It shows a fountain scan viewed from a moving virtual camera, not a new Rome hotel capture and not a recording of a phone actively scanning. PMRE derivative uses 00:03–00:12, audio removed, height 1080. It illustrates the middle (reconstructed scene) stage; the phone/drone input route is described separately above.\n\nV7 verified wording: Nucleus4D publishes tours into Zillow’s 3D tour ecosystem. Alex believes it was first with splats on Zillow; public evidence found does not establish priority, so the talk makes no first-company claim."
       },
       {
         "id": "view-before-visit",
@@ -1885,7 +1903,7 @@ const SECTIONS = [
       },
       {
         "id": "package-table",
-        "title": "The top shelf of your package",
+        "title": "Your package has room to grow",
         "year": "2026+",
         "venn": [
           1,
@@ -1895,7 +1913,21 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/package-table",
         "props": {},
-        "notes": "⏱ ~60s.\n\nIllustrative USD teaching example only, not market rates, vendor prices, or an Agile Lens quote. Start from your base rate and price capture, processing, hosting, delivery and QA. Tell the room: position it as part of your package. It is OK to be expensive. Compare against the value and scope of the client’s project. CubiCasa/iGuide provide plans; Giraffe360/Nucleus provide tours. Polycam supports splat capture (current Gaussian splat processing is on paid plans). Luma currently emphasizes creative image/video workflows; do not imply its free tier guarantees property splat production. Zillow SkyTour is a verified exterior-splat integration on eligible Showcase listings, not a general upload destination for arbitrary splats. The unnamed “first splats on Zillow” company is unverified; ask Alex before claiming priority.\n\nSources: https://www.pmreconference.com/sponsors ; https://www.cubi.casa/ ; https://goiguide.com/ ; https://giraffe360.com/ ; https://www.nucleus4d.com/ ; https://learn.poly.cam/hc/en-us/articles/27425185907348-How-to-Use-Object-Mode ; https://lumalabs.ai/ ; https://www.zillow.com/news/skytour-is-pushing-the-tech-boundaries-of-real-estate-visualization/"
+        "notes": "⏱ ~70s.\n\nIdea credit: Matt Michalski, PMRE 2026 day-1 package/product slides, supplied by Alex as two photographs in Downloads/PMRE Packages. This is our original design, with our own hypothetical add-on figures and scope, not a reproduction of his slides or confidential Aryeo data.\n\nFor this room: keep photos, video, aerials, plans and existing 3D tours. Add a splat tour, guided VR walkthrough, mixed reality on site, then a bespoke Unreal premium. The example add-on prices are teaching proposals, NOT market medians, vendor rates, Agile Lens quotes or guaranteed margins. Scope revisions, travel, hosting and device support separately. A reusable template can reduce marginal setup work; a client pays for a reliable visit and decision, not the number of clicks. Custom Unreal and MR alignment still take real production and QA.\n\nNucleus4D officially confirms Zillow/realtor.com 3D tour publication (https://www.nucleus4d.com/). First-company priority for splats on Zillow remains unverified as of November 18, 2026; do not claim it."
+      },
+      {
+        "id": "plan-to-presence",
+        "title": "A floor plan is already a starting point",
+        "year": "2026+",
+        "venn": [
+          1,
+          0.3,
+          1
+        ],
+        "keep": 19,
+        "use": "pmre/plan-to-presence",
+        "props": {},
+        "notes": "⏱ ~45s.\n\nIdea credit: Matt Michalski’s day-1 PMRE slide on products becoming easier to make, supplied by Alex. This original diagram extends that idea to spatial delivery without repeating confidential adoption statistics or claiming a five-minute VR build.\n\nStart with a plan you already deliver. Confirm scale against a known dimension. Put it on the floor, trace walls, add a few useful viewpoints, then test a guided walk. Our Floor Tour demonstration shows a deliberate multi-user, co-located system; Walkthrough is the focused AI-built sample prototype shown earlier. Neither is promised as a free public download. The free starter-kit route uses A-Frame/WebXR or Unreal basics instead. Reuse the template; price setup, QA, hosting, device support and the client outcome. A bespoke home is still a bespoke job."
       },
       {
         "id": "educate-client",
@@ -1933,13 +1965,13 @@ const SECTIONS = [
           "lines": [
             "Capture it. Review it. Deliver a useful tour.",
             "Try a small paid add-on. Learn from the client.",
-            "Free starter guide via the final QR."
+            "Free second-brain starter kit via the final QR."
           ],
           "quote": "",
           "attr": "",
           "kicker": ""
         },
-        "notes": "⏱ ~40s.\n\nThe resources page includes a real downloadable free guide and links to free Scaniverse / SuperSplat tools. Vendor subscriptions and hardware may cost money. No invented toolkit URL or live second-brain signup. Ask via alexcoulombepresents.com for training and updates. Quotes as Alex wrote them, SPEAKER NOTES ONLY: Vince: “be so good they can’t ignore you.”; “Sam drafts, I approve (Vince)”; Dave Koch : “I am the photographer who takes your ideas and turns them into the media you need.”; Jen: ‘recovering people pleaser’. Do not expand names or invent what anyone said."
+        "notes": "⏱ ~40s.\n\nThe resources page includes a real downloadable free guide and links to free Scaniverse / SuperSplat tools. Vendor subscriptions and hardware may cost money. The repo-hosted second-brain kit is a real Markdown/ZIP download; no signup required. Ask via alexcoulombepresents.com for training and updates. Quotes as Alex wrote them, SPEAKER NOTES ONLY: Vince: “be so good they can’t ignore you.”; “Sam drafts, I approve (Vince)”; Dave Koch : “I am the photographer who takes your ideas and turns them into the media you need.”; Jen: ‘recovering people pleaser’. Do not expand names or invent what anyone said."
       },
       {
         "id": "premium-proof",
@@ -2630,6 +2662,7 @@ window.SD=window.SD||{};
 <script src="slides/pmre/frame-to-room/slide.js"></script>
 <script src="slides/pmre/fs-stats/slide.js"></script>
 <script src="slides/pmre/fs-travels/slide.js"></script>
+<script src="slides/pmre/headset-comparison/slide.js"></script>
 <script src="slides/pmre/hxr-community/slide.js"></script>
 <script src="slides/pmre/hxr-david-geffen-hall/slide.js"></script>
 <script src="slides/pmre/hxr-dbox-holodeck/slide.js"></script>
@@ -2653,6 +2686,7 @@ window.SD=window.SD||{};
 <script src="slides/pmre/one-talk/slide.js"></script>
 <script src="slides/pmre/package-table/slide.js"></script>
 <script src="slides/pmre/picasso/slide.js"></script>
+<script src="slides/pmre/plan-to-presence/slide.js"></script>
 <script src="slides/pmre/property-future/slide.js"></script>
 <script src="slides/pmre/questions-dissolve/slide.js"></script>
 <script src="slides/pmre/ring-chapter/slide.js"></script>

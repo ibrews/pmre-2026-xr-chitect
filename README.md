@@ -1,18 +1,18 @@
 # Architect to XR-chitect
 
-Alex Coulombe Presents at PMRE 2026, November 19, Las Vegas. V6 follows Alex’s November 18 notes and local talkthrough, from architecture/theater/technology to practical spatial-media services and premium collaboration with Agile Lens.
+Alex Coulombe Presents at PMRE 2026, November 19, Las Vegas. V7 extends v6 and follows Alex’s November 18 notes and local talkthrough, from architecture/theater/technology to practical spatial-media services and premium collaboration with Agile Lens.
 
-[Present v6](https://ibrews.github.io/pmre-2026-xr-chitect/v6/) · [Free starter guide and links](https://ibrews.github.io/pmre-2026-xr-chitect/v6/resources/)
+[Present v7](https://ibrews.github.io/pmre-2026-xr-chitect/v7/) · [Free starter guide and links](https://ibrews.github.io/pmre-2026-xr-chitect/v7/resources/)
 
 ## Present locally on Windows
 
 Extract **all** files from the offline ZIP, then double-click `index.html` and open it in Chrome or Firefox. No Python, server or internet is required for the presentation. Keep its folders together. Press F11 for full screen; arrows advance; O opens the cut/theme options; Shift+N shows notes. The QR destination and external resource links need internet on the viewer’s device.
 
-Full is the default; medium and short cuts remain selectable. These are authored rehearsal budgets, not a measured performance; see `talk/REHEARSAL.md` for the current order and timing. All length cuts retain the three-beat ending: how spatial media changes property work; start building and selling; collaborate on premium briefs. The final slide has one QR plus Q&A. There is a real downloadable starter guide, with no promised second-brain signup or course entitlement.
+Full is the default; medium and short cuts remain selectable. These are authored rehearsal budgets, not a measured performance; see `talk/REHEARSAL.md` for the current order and timing. All length cuts retain the three-beat ending: how spatial media changes property work; start building and selling; collaborate on premium briefs. The final slide has one QR plus Q&A. The final QR opens the Welcome PMRE Attendees hub (password `pixie`, a playful client-side gate, not security), including a real Markdown/ZIP second-brain kit, 1:1/company training offer (20% off; `PMRE20` is a TODO placeholder, contact Alex to confirm), project details and the full deck.
 
 ## Author and package
 
-Source branch: `story/v6`. Edit `talk/sections.js` and slide modules, then run:
+Source branch: `story/v7`. Edit `talk/sections.js` and slide modules, then run:
 
 ```sh
 python3 tools/bake_talk.py
@@ -26,12 +26,14 @@ After committing all required runtime assets (including media ignored by `.gitig
 
 ```sh
 python3 tools/package_offline.py --out /absolute/path/to/organizer-package
-node tools/qa_v6.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-output
+node tools/qa_v7.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-chrome chrome
+node tools/qa_v7.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-firefox firefox
+node tools/qa_v7_resources.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-hub chrome
 ```
 
-`qa_v6.mjs` uses system Chrome and installed `playwright-core` (set `PLAYWRIGHT_CORE` if needed). It checks every absolute slide, including hidden structural slides, over ordinary `file://`, records console/page/network/media failures, captures visible slides and checks all length/AI combinations. It does not pass security-bypass flags. ZIPs include a file-hash manifest, opening instructions and an external SHA-256 sidecar. Do not upload to Drive until Alex requests it.
+`qa_v7.mjs` uses system Chrome and installed `playwright-core` (set `PLAYWRIGHT_CORE` if needed). It checks every absolute slide, including hidden structural slides, over ordinary `file://`, records console/page/network/media failures, captures visible slides and checks all length/AI combinations. It does not pass security-bypass flags. ZIPs include a file-hash manifest, opening instructions and an external SHA-256 sidecar. Do not upload to Drive until Alex requests it.
 
-Publish by copying the committed source tree into a **new `/v6/` directory on main**, preserving root, `/v3/`, `/v4/`, `/v5/`. Compare source and destination tracked paths after copying: nested `.gitignore` rules can silently omit force-tracked media. Public project credits remain in notes and meaningful media credits; no source-deck captions are added.
+Publish by copying the committed source tree into a **new `/v7/` directory on main**, preserving root, `/v3/`, `/v4/`, `/v5/`, `/v6/`. Compare source and destination tracked paths after copying: nested `.gitignore` rules can silently omit force-tracked media. Public project credits remain in notes and meaningful media credits; no source-deck captions are added.
 
 ## Things to Try
 
@@ -44,3 +46,5 @@ Publish by copying the committed source tree into a **new `/v6/` directory on ma
 ## Source and attribution
 
 This talk is built with [Spatial Deck](https://github.com/ibrews/spatial-deck). Media credits and claim sources live in presenter notes and the existing project manifests. New Apple SHARP examples come from the [official research page](https://apple-aiml-research.github.io/ml-sharp/), not a commissioned property survey. Pricing figures are illustrative teaching examples, not vendor rates or Agile Lens quotes.
+
+V7 adds original XR tiers and plan-to-presence diagrams inspired by Matt Michalski (credited in notes); public product imagery/official specs for Vision Pro M5, Quest 3 and XREAL AURA, plus a generic NDA silhouette for PICO Space Pro; Alex’s Cotton placeholder still and Latest BPI Trailer V2 derivative. Source hashes, number sources and qualifications are in `media/pmre/v7/provenance.json` and the canonical KB v7 receipt. No Drive uploads.
