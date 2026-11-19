@@ -1819,14 +1819,14 @@ const SECTIONS = [
       },
       {
         "id": "hotel",
-        "title": "Captured in minutes",
+        "title": "Olympics – Josette Seitz",
         "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
-          "title": "Captured in minutes",
+          "title": "Olympics – Josette Seitz",
           "src": "media/pmre/v8/josette-portalcam-reel.mp4",
-          "credit": "XGRIDS PortalCam captures: Josette Seitz / Agile Lens",
+          "credit": "",
           "alt": "Reel of Gaussian-splat captures by Josette Seitz with XGRIDS PortalCam",
           "mode": "content",
           "brightness": 1,
