@@ -1,26 +1,72 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Film language / a young medium</title><style>
-h1{text-wrap:balance}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#141110;color:#eee2cf;font-family:'Avenir Next',Arial,sans-serif}svg{width:100%;height:100%}.beat{opacity:0}.frame{fill:#201b19;stroke:#bf9d67;stroke-width:3}.line{fill:none;stroke:#cbbda5;stroke-width:5;stroke-linecap:round}text{fill:#eee2cf;font-size:42px}h1{position:absolute;left:9%;top:3.5%;font-size:84px;font-weight:700;margin:0}.date{fill:#c5a577;font-size:28px}.person{fill:#cbbda5}.small{font-size:30px;fill:#b8a58b}
-</style></head><body><h1>VR is still a new medium</h1><svg viewBox="0 0 1920 1080" aria-label="A schematic stage moves from one static shot to cuts, close-ups, time jumps, expressive angles and montage"><defs>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Film language / a young medium</title>
+<!-- Slide module pmre/film-language. Three presenter beats (Alex, 2026-11-19):
+     0  one shot: the two characters move around in a loop, fully in frame ("VR is still a new medium")
+     1  cuts and montage: hard cuts through every angle with its label, then a contact sheet of all of them;
+        the title becomes "Think of the early days of film". One quiet cut sound per cut, no other sound.
+     2  the title fades away completely, then "What can only VR say?" + "Space. Presence. A story we experience together."
+     Every step can be restored instantly (backward / re-entry) from onStep(n, instant). -->
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#141110;color:#eee2cf;font-family:'Avenir Next',Arial,sans-serif}
+svg{position:absolute;inset:0;width:100%;height:100%}
+.frame{fill:#201b19;stroke:#bf9d67;stroke-width:3}.line{fill:none;stroke:#cbbda5;stroke-width:5;stroke-linecap:round}
+text{fill:#eee2cf;font-size:42px}.person{fill:#cbbda5}.small{font-size:30px;fill:#b8a58b}
+.ttl{position:absolute;left:9%;top:3.5%;font-size:84px;font-weight:700;margin:0;text-wrap:balance}
+.shot,.tile-label,#closing,#ttl2{opacity:0}
+</style></head><body>
+<h1 class="ttl" id="ttl1">VR is still a new medium</h1><h1 class="ttl" id="ttl2">Think of the early days of film</h1>
+<svg viewBox="0 0 1920 1080" aria-label="One wide shot of a stage, then hard cuts through camera angles with their labels, then the question: what can only VR say?"><defs>
 <g id="actor"><circle class="person" cy="-95" r="27"/><path class="person" d="M-31-60Q0-77 31-60L58 15Q61 35 42 34L22-14L24 95Q20 112 4 101L0 36L-7 101Q-23 113-28 96L-24-15L-45 34Q-63 39-60 17Z"/></g>
-<g id="set"><path class="line" d="M450 650H1470M510 650V340H1410V650"/><rect x="1030" y="470" width="170" height="180" fill="#49392a"/><use id="performer" href="#actor" transform="translate(800 540)"/><use href="#actor" transform="translate(1260 540)"/></g>
-<clipPath id="crop"><rect x="390" y="270" width="1140" height="460"/></clipPath><clipPath id="balcony-crop"><rect x="390" y="220" width="1140" height="470"/></clipPath></defs>
-<g class="beat"><rect class="frame" x="390" y="270" width="1140" height="460"/><use href="#set"/><text x="390" y="825">One camera. One action.</text></g>
-<g class="beat"><rect class="frame" x="390" y="270" width="1140" height="460"/><g clip-path="url(#crop)"><use id="reverse" href="#set" transform="translate(1920 0) scale(-1 1)"/></g><text x="390" y="825">The cut changes our point of view</text></g>
-<g class="beat"><rect class="frame" x="390" y="270" width="1140" height="460"/><g clip-path="url(#crop)"><use href="#actor" transform="translate(960 830) scale(3.7)"/></g><text x="390" y="825">A close-up changes what we feel</text></g>
-<g class="beat"><rect class="frame" x="390" y="270" width="1140" height="460"/><use href="#set"/><circle cx="1310" cy="370" r="38" fill="#c5a577"/><text x="490" y="400" style="font-size:68px">The next day</text><text x="390" y="825">A cut can cross time</text></g>
-<g class="beat"><rect class="frame" x="390" y="270" width="1140" height="460"/><g clip-path="url(#crop)"><use href="#set" transform="rotate(-12 960 500)"/></g><text x="390" y="825">The frame can make us uneasy</text></g>
-<g class="beat"><rect class="frame" x="390" y="270" width="1140" height="460"/><path class="line" d="M770 270V730M1150 270V730"/><use href="#actor" transform="translate(570 560)"/><path class="line" d="M820 650L1090 370M850 650H1090M875 610H1090M920 565H1090M965 520H1090M1010 475H1090"/><use href="#actor" transform="translate(1340 530) scale(1.2)"/><text x="390" y="825">Meaning between images</text></g>
-<g class="beat"><rect class="frame" x="390" y="220" width="1140" height="470"/><text x="960" y="290" text-anchor="middle" class="small">THE BALCONY</text><g clip-path="url(#balcony-crop)"><use id="balcony-wide" href="#set" transform="translate(0 -60)"/><use id="balcony-close" href="#actor" transform="translate(960 600) scale(2.8)" opacity="0"/></g><g id="audience"></g><text x="960" y="1015" text-anchor="middle" style="font-size:46px">An audience watches the cuts together</text></g>
-<g class="beat"><text x="960" y="450" text-anchor="middle" style="font-size:116px">What can only VR say?</text><text x="960" y="590" text-anchor="middle" style="font-size:48px">Space. Presence. A story we experience together.</text></g>
+<g id="set"><path class="line" d="M450 650H1470M510 650V340H1410V650"/><rect x="1030" y="470" width="170" height="180" fill="#49392a"/><use id="performer" href="#actor" transform="translate(800 540)"/><use id="partner" href="#actor" transform="translate(1260 540)"/></g>
+<clipPath id="crop"><rect x="390" y="270" width="1140" height="460"/></clipPath>
+</defs>
+<!-- shot 0: the single wide shot -->
+<g class="shot" id="wide"><g class="pic"><rect class="frame" x="390" y="270" width="1140" height="460"/><g clip-path="url(#crop)"><path class="line" d="M450 650H1470M510 650V340H1410V650"/><rect x="1030" y="470" width="170" height="180" fill="#49392a"/><use id="w-perf" href="#actor"/><use id="w-part" href="#actor"/></g></g><text class="lbl" x="390" y="825">One camera. One action.</text></g>
+<!-- shots 1-6: the angles, each with its note -->
+<g class="shot cut"><g class="pic"><rect class="frame" x="390" y="270" width="1140" height="460"/><g clip-path="url(#crop)"><use href="#set" transform="translate(1920 0) scale(-1 1)"/></g></g><text class="lbl" x="390" y="825">The cut changes our point of view</text></g>
+<g class="shot cut"><g class="pic"><rect class="frame" x="390" y="270" width="1140" height="460"/><g clip-path="url(#crop)"><use href="#actor" transform="translate(960 830) scale(3.7)"/></g></g><text class="lbl" x="390" y="825">A close-up changes what we feel</text></g>
+<g class="shot cut"><g class="pic"><rect class="frame" x="390" y="270" width="1140" height="460"/><g clip-path="url(#crop)"><use href="#set"/></g><circle cx="1310" cy="370" r="38" fill="#c5a577"/><text x="490" y="400" style="font-size:68px">The next day</text></g><text class="lbl" x="390" y="825">A cut can cross time</text></g>
+<g class="shot cut"><g class="pic"><rect class="frame" x="390" y="270" width="1140" height="460"/><g clip-path="url(#crop)"><use href="#set" transform="rotate(-12 960 500)"/></g></g><text class="lbl" x="390" y="825">The frame can make us uneasy</text></g>
+<g class="shot cut"><g class="pic"><rect class="frame" x="390" y="270" width="1140" height="460"/><path class="line" d="M770 270V730M1150 270V730"/><use href="#actor" transform="translate(570 560)"/><path class="line" d="M820 650L1090 370M850 650H1090M875 610H1090M920 565H1090M965 520H1090M1010 475H1090"/><use href="#actor" transform="translate(1340 530) scale(1.2)"/></g><text class="lbl" x="390" y="825">Meaning between images</text></g>
+<g class="shot cut"><g class="pic"><rect class="frame" x="390" y="270" width="1140" height="460"/><g clip-path="url(#crop)"><use href="#set" transform="translate(480 230) scale(.5)"/><g id="audience"></g></g><text x="960" y="320" text-anchor="middle" class="small">THE BALCONY</text></g><text class="lbl" x="390" y="825">An audience watches the cuts together</text></g>
+<g id="tiles"></g>
+<g id="closing"><text x="960" y="470" text-anchor="middle" style="font-size:116px">What can only VR say?</text><text x="960" y="600" text-anchor="middle" style="font-size:48px">Space. Presence. A story we experience together.</text></g>
 </svg><script src="../../sd-frame.js"></script><script>
-const beats=[...document.querySelectorAll('.beat')],END=36;
-beats.forEach((g,i)=>{const start=i/8,end=(i+1)/8;const k=[{opacity:i===0?1:0,offset:0}];if(i>0)k.push({opacity:0,offset:start-.00001},{opacity:1,offset:start});if(i<7)k.push({opacity:1,offset:end-.00001},{opacity:0,offset:end});k.push({opacity:i===7?1:0,offset:1});g.animate(k,{duration:END*1000,fill:'both'});});
-// Within the cut beat, the reverse angle arrives on a hard edit.
-document.querySelector('#reverse').animate([{transform:'translate(0px,0px)',offset:0},{transform:'translate(0px,0px)',offset:.2},{transform:'translate(1920px,0px) scale(-1,1)',offset:.20001},{transform:'translate(1920px,0px) scale(-1,1)',offset:1}],{duration:END*1000,fill:'both'});
-document.querySelector('#performer').animate([{transform:'translate(760px,540px)',offset:0},{transform:'translate(930px,540px)',offset:1/7},{transform:'translate(930px,540px)',offset:1}],{duration:END*1000,fill:'both'});
-window.MOTION_SFX=[{t:4,kind:'snap'},{t:5.6,kind:'snap'},{t:12,kind:'snap'},{t:20,kind:'snap'},{t:20.18,kind:'snap',gain:.5},{t:20.36,kind:'snap',gain:.4}];
-const NS='http://www.w3.org/2000/svg',aud=document.getElementById('audience');
-for(let row=0;row<2;row++)for(let col=0;col<9;col++){const g=document.createElementNS(NS,'g');g.setAttribute('transform',`translate(${455+col*126} ${790+row*115}) scale(.45)`);g.innerHTML='<rect x="-47" y="-10" width="94" height="130" rx="18" fill="#483b34"/><use href="#actor"/>';aud.append(g);}
-for(const [id,invert] of [['balcony-wide',false],['balcony-close',true]])document.getElementById(id).animate([{opacity:invert?0:1,offset:0},{opacity:invert?0:1,offset:.79},{opacity:invert?1:0,offset:.79001},{opacity:invert?1:0,offset:.84},{opacity:invert?0:1,offset:.84001},{opacity:invert?0:1,offset:1}],{duration:END*1000,fill:'both'});
-SDFrame.init({duration:END,steps:0, onEnter(){parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}});
+const $=s=>document.querySelector(s),shots=[...document.querySelectorAll('.cut')],wide=$('#wide'),ttl1=$('#ttl1'),ttl2=$('#ttl2'),closing=$('#closing');
+// Contact sheet: every angle as a tile with its label (3 x 2, clear of the corner tracker).
+const S=.456,TX=[130,700,1270],TY=[250,600],tiles=$('#tiles'),NS='http://www.w3.org/2000/svg',tileLabels=[];
+shots.forEach((sh,i)=>{const x=TX[i%3],y=TY[Math.floor(i/3)],t=document.createElementNS(NS,'text');t.setAttribute('x',x);t.setAttribute('y',y+210+44);t.setAttribute('class','tile-label');t.style.fontSize='30px';t.textContent=sh.querySelector('.lbl').textContent;tiles.append(t);tileLabels.push(t);sh.dataset.tile=`translate(${x-390*S}px,${y-270*S}px) scale(${S})`;});
+let mine=[];const own=a=>{mine.push(a);return a;};
+const set=(el,o)=>el.style.opacity=String(o),pic=sh=>sh.querySelector('.pic'),lbl=sh=>sh.querySelector('.lbl');
+function reset(){mine.forEach(a=>a.cancel());mine=[];[wide,...shots,...tileLabels,closing,ttl2].forEach(e=>set(e,0));set(ttl1,1);shots.forEach(sh=>{pic(sh).style.transform='';set(lbl(sh),1);});}
+// The two characters keep moving in a loop (they live in <defs>, so every angle shows the same motion).
+// WAAPI on <defs> content does not reach <use> instances, so the wide shot has its own two actors.
+function loop(){own($('#w-perf').animate([{transform:'translate(640px,540px)'},{transform:'translate(960px,540px)'}],{duration:2600,iterations:Infinity,direction:'alternate',easing:'ease-in-out'}));
+ own($('#w-part').animate([{transform:'translate(1360px,540px) scale(-1,1)'},{transform:'translate(1250px,540px) scale(-1,1)'}],{duration:1900,iterations:Infinity,direction:'alternate',easing:'ease-in-out'}));}
+// the balcony angle: a small stage seen over rows of heads
+const aud=$('#audience');for(let r=0;r<2;r++)for(let c=0;c<10;c++){const u=document.createElementNS('http://www.w3.org/2000/svg','use');u.setAttribute('href','#actor');u.setAttribute('transform',`translate(${440+c*115+(r?57:0)} ${690+r*70}) scale(.75)`);u.setAttribute('opacity',r?'.55':'.8');aud.append(u);}
+function grid(){shots.forEach(sh=>{set(sh,1);pic(sh).style.transformOrigin='0 0';pic(sh).style.transform=sh.dataset.tile;set(lbl(sh),0);});tileLabels.forEach(t=>set(t,1));}
+const HOLD=1.35;  // seconds per angle in the cut sequence
+function beat(n,instant){reset();loop();
+ if(n===0){set(wide,1);return;}
+ if(n>=1){set(ttl1,0);set(ttl2,1);}
+ if(n===1){
+  if(instant){grid();return;}
+  own(ttl1.animate([{opacity:1},{opacity:0}],{duration:500,fill:'backwards'}));own(ttl2.animate([{opacity:0},{opacity:1}],{duration:500,delay:300,fill:'backwards'}));
+  // hard cuts: each angle is on screen for HOLD seconds, then the contact sheet
+  // End state is the contact sheet; until gt each angle is hidden except in its own full-frame window
+  // (the window animation is added after the hide, so it wins while active).
+  const gt=.05+shots.length*HOLD,cuts=[];grid();
+  shots.forEach((sh,i)=>{const t0=(.05+i*HOLD)*1000;cuts.push(t0/1000);
+   own(sh.animate([{opacity:0},{opacity:0}],{duration:gt*1000}));own(pic(sh).animate([{transform:'none'},{transform:'none'}],{duration:gt*1000}));
+   own(sh.animate([{opacity:1},{opacity:1}],{duration:HOLD*1000,delay:t0}));own(lbl(sh).animate([{opacity:1},{opacity:1}],{duration:HOLD*1000,delay:t0}));});
+  tileLabels.forEach(t=>own(t.animate([{opacity:0},{opacity:0}],{duration:gt*1000})));cuts.push(gt);
+  parent.postMessage({sdMotionSfx:cuts.map(t=>({t,kind:'snap',gain:.2}))},'*');return;}
+ // n===2: the title (and the contact sheet) leave completely, THEN the closing text arrives
+ set(ttl2,0);set(closing,1);
+ if(instant)return;
+ own(ttl2.animate([{opacity:1},{opacity:0}],{duration:600,fill:'forwards'}));
+ grid();shots.forEach(sh=>own(sh.animate([{opacity:1},{opacity:0}],{duration:600,fill:'forwards'})));tileLabels.forEach(t=>own(t.animate([{opacity:1},{opacity:0}],{duration:600,fill:'forwards'})));
+ own(closing.animate([{opacity:0,transform:'translateY(16px)'},{opacity:1,transform:'none'}],{duration:800,delay:900,fill:'backwards',easing:'ease-out'}));}
+window.MOTION_SFX=[];
+SDFrame.init({duration:3,steps:2,stepTimes:[3,3,3],onStep:(n,instant)=>beat(n,instant),onLeave(){reset();}});
 </script></body></html>
