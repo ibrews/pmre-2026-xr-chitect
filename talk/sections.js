@@ -203,18 +203,8 @@ const SECTIONS = [
         "year": "2026+",
         "venn": [1, 1, 1],
         "keep": 19,
-        "use": "pmre/text-card",
-        "props": {
-          "kicker": "",
-          "title": "Quick vocabulary",
-          "lines": [
-            "<b>VR</b> Virtual reality replaces the world around you",
-            "<b>AR</b> Augmented reality adds to the world you see",
-            "<b>MR</b> Mixed reality blends both, aware of your real room",
-            "<b>XR</b> Extended reality is the umbrella for all of it"
-          ],
-          "lineSteps": true
-        },
+        "use": "pmre/xr-terms",
+        "props": {},
         "notes": "⏱ ~30s.\n\nKeep it brief: one click per term. VR: a headset fully replaces what you see. AR: digital content layered on your view of the real world, on a phone or glasses. MR: digital content that understands your real room, so a floor plan can sit on this floor or walls can rise around you. XR: the umbrella term. Most new headsets do all of it, so the labels matter less every year.",
         "hideTracker": true
       },
