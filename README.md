@@ -1,6 +1,6 @@
 ## PMRE v8 — speaker, studio wheel and story photos
 
-Source: `story/v8`; publish only the `/v8/` subtree. Root and `/v3/` through `/v7/` are preserved. Conference quotes now appear on slides; attendee Venn spotlights, Matt Gio’s cognitive-ladder idea, an attributed Nucleus4D claim and Emily Olman’s AR Insider Four Seasons header capture are included. Via’s company could not be verified and is omitted. Cotton now plays Alex’s supplied, audio-free H.264 clip without re-encoding, looping silently with the original still as poster. Source details: `media/pmre/v8/provenance.json`.
+Source: `story/v8`; publish only the `/v8/` subtree. Root and `/v3/` through `/v7/` are preserved. Conference quotes now appear on slides; attendee Venn spotlights, an attributed Nucleus4D claim and Emily Olman’s AR Insider Four Seasons header capture are included. Via’s company could not be verified and is omitted. Cotton now plays Alex’s supplied, audio-free H.264 clip without re-encoding, looping silently with the original still as poster. Source details: `media/pmre/v8/provenance.json`.
 
 November 19: slide #2 reuses the MIA speaker intro (Co-Founder; 350+ classes), including a bulky first headset replaced by the compact VR power-up. Slide #3 restores v5’s exact studio copy beside MIA’s silent 18-client wheel. Presenter-supplied AU queue, Wisconsin theater and speaking photos are web optimized without visible provenance captions. There are 92 absolute slide slots; three new visible beats add to the default full story.
 

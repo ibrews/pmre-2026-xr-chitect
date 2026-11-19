@@ -79,13 +79,13 @@
     {
       "id": "matt",
       "url": "https://knowledge.autohdr.com/faqs",
-      "confirmedScope": "CEO Matt with matt-gia demo URL. Identity tie to Alex’s cognitive-ladder speaker remains unverified; Matt Gio retained."
+      "confirmedScope": "CEO Matt with matt-gia demo URL. Conference-speaker identity was unverified; attribution removed at Alex’s request."
     }
   ],
   "limits": [
     "nextStep is Alex’s editorial proposal, not a native integration promise.",
     "Nucleus priority remains existing company-attributed wording, not independently verified.",
-    "Matt Gio to Matt Gia identity not confirmed; spelling retained.",
+    "Unverified conference-speaker attribution removed at Alex’s request.",
     "Perica name and in-room presence from Alex; Bubo product verified first-party.",
     "No third-party logo implies an affiliation.",
     "No new ZIP or publication; integration owner applies legacy-resources-pmre.patch at publication root, bakes/retests merged source and writes KB receipt."

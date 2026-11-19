@@ -13,7 +13,11 @@ function measure({rootSelector}){
  const roots=[root],result=[];
  const visible=el=>{let o=1;for(let e=el;e;e=e.parentElement){const c=getComputedStyle(e);if(c.display==='none'||c.visibility==='hidden')return false;o*=+c.opacity;}return o>.001;};
  const label=e=>e.tagName.toLowerCase()+(e.id?'#'+e.id:'')+(typeof e.className==='string'?'.'+e.className.trim().split(/\s+/).join('.'):e.className?.baseVal?'.'+e.className.baseVal.trim().split(/\s+/).join('.'):'');
- const add=(kind,e,r,text)=>{if(r.width<.1||r.height<.1||r.right<=0||r.bottom<=0||r.left>=innerWidth||r.top>=innerHeight)return;result.push({kind,selector:label(e),text:text?.trim().replace(/\s+/g,' ').slice(0,160),rect:[r.left,r.top,r.right,r.bottom].map(n=>+n.toFixed(2))});};
+ const add=(kind,e,r,text)=>{
+  // Measure painted content: stereo sources can be wider than their overflow-clipped eye viewport.
+  let l=r.left,t=r.top,rr=r.right,b=r.bottom;
+  for(let a=e.parentElement;a&&a!==document.body;a=a.parentElement){const c=getComputedStyle(a),q=a.getBoundingClientRect();if(/hidden|clip|scroll|auto/.test(c.overflowX)){l=Math.max(l,q.left);rr=Math.min(rr,q.right);}if(/hidden|clip|scroll|auto/.test(c.overflowY)){t=Math.max(t,q.top);b=Math.min(b,q.bottom);}}
+  if(rr-l<.1||b-t<.1||rr<=0||b<=0||l>=innerWidth||t>=innerHeight)return;result.push({kind,selector:label(e),text:text?.trim().replace(/\s+/g,' ').slice(0,160),rect:[l,t,rr,b].map(n=>+n.toFixed(2))});};
  for(const rr of roots){
   const walker=document.createTreeWalker(rr,NodeFilter.SHOW_TEXT);
   for(let n;(n=walker.nextNode());){const e=n.parentElement;if(!n.nodeValue.trim()||!e||e.closest('script,style,title,desc')||!visible(e))continue;

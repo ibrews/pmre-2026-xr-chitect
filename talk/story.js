@@ -20,6 +20,7 @@ function applyStorySpine(){
  const closing=allSlides.find(sl=>sl.dataset.type==='close');
  if(closing&&!closing.querySelector('.pmre-close-tools')){const strip=document.createElement('div');strip.className='pmre-close-tools';strip.innerHTML='<p>Built on the tools in this room — thank you.</p><div>'+PMRE_SPONSORS.filter(s=>s.logo).map(s=>`<img src="assets/pmre-sponsors/${s.logo}" alt="${s.name}" title="${s.name}">`).join('')+'</div>';closing.append(strip);}
  if(!document.getElementById('v3-style')){const st=document.createElement('style');st.id='v3-style';st.textContent=`
+ .story-v3 :is(h1,h2,h3,.case-title,.lesson-title,.close-title){text-wrap:balance}.story-v3 :is(p,li,td,figcaption,.tagline,.story-takeaway){text-wrap:pretty}
  .pmre-close-tools{position:absolute;top:12%;left:8%;right:8%;text-align:center}.pmre-close-tools p{font:25px var(--font);color:var(--dim);margin:0 0 12px}.pmre-close-tools>div{display:flex;justify-content:center;gap:12px}.pmre-close-tools img{width:88px;height:44px;object-fit:contain;background:#f6f1e8;border-radius:5px;padding:6px;box-sizing:border-box}
  #journey,.journey-print,.story-chapter-label{display:none!important}
  .slide[data-type="cover"] .v3-tracker{display:none!important}

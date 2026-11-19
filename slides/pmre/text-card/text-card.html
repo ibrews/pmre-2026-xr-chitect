@@ -12,12 +12,12 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 .fade{opacity:0;animation:fade .8s ease var(--t,0s) forwards}
 @keyframes fade{from{opacity:0;transform:translateY(1.2cqh)}to{opacity:1;transform:none}}
 .kick{font-size:4cqh;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);font-weight:600}
-.title{font-size:14cqh;line-height:1.05;font-weight:800;letter-spacing:-.01em}
+.title{text-wrap:balance;font-size:14cqh;line-height:1.05;font-weight:800;letter-spacing:-.01em}
 .lines{display:flex;flex-direction:column;gap:1.6cqh;margin-top:1cqh}
-.line{font-size:7.4cqh;line-height:1.2;color:var(--text)}
+.line{text-wrap:pretty;font-size:7.4cqh;line-height:1.2;color:var(--text)}
 .line b{color:var(--accent);font-weight:700}
 .big{font-size:30cqh;line-height:.95;font-weight:800;letter-spacing:-.03em;background:linear-gradient(90deg,#00d4ff,#a78bfa,#f43f5e);-webkit-background-clip:text;background-clip:text;color:transparent}
-.quote{font-size:12cqh;line-height:1.1;font-weight:700;color:var(--accent)}
+.quote{text-wrap:balance;font-size:12cqh;line-height:1.1;font-weight:700;color:var(--accent)}
 .attr{font-size:5.2cqh;color:var(--dim)}
 .ph{position:relative;flex:1;min-height:0;border:.4cqh dashed rgba(240,244,255,.45);border-radius:1.4cqh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4cqh;background:rgba(240,244,255,.04);text-align:center;padding:2cqh}
 .ph .tag{font-size:3.4cqh;letter-spacing:.3em;color:var(--dim);font-weight:700}
@@ -27,7 +27,7 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 .gal{position:relative;min-height:0;display:flex;gap:1.4cqh}
 .gal figure{margin:0;min-width:0;min-height:0;display:flex;flex-direction:column;gap:.8cqh}
 .gal img{display:block;width:100%;flex:1 1 0;min-height:0;object-fit:contain;border-radius:.8cqh}
-.gal figcaption{font-size:2.6cqh;color:var(--dim);line-height:1.25}
+.gal figcaption{text-wrap:pretty;font-size:2.6cqh;color:var(--dim);line-height:1.25}
 .has-ph.side{display:grid;grid-template-columns:38% minmax(0,1fr);grid-template-rows:1fr;column-gap:3%;align-items:center}
 .side .txt{display:flex;flex-direction:column;gap:2.2cqh}
 .side .title{font-size:9cqh}.side .gal{height:100%;min-width:0}.side .gal figure{flex:1 1 0}

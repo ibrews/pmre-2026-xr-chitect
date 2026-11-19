@@ -587,7 +587,10 @@ const SECTIONS = [
           "credit": "Fisher Dachs Associates",
           "brightness": 1,
           "alt": "Sightlines, before VR",
-          "overlay": {"src": "media/pmre/v8/fda-sightlines.webp", "alt": "Theater sightline study"}
+          "overlay": {
+            "src": "media/pmre/v8/fda-sightlines.webp",
+            "alt": "Theater sightline study"
+          }
         },
         "title": "Sightlines, before VR",
         "keep": 99,
@@ -705,27 +708,6 @@ const SECTIONS = [
         "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s9. Bing Thom Architects render of Xiqu Centre. Source notes describe testing railing height and the swoop of a wall at human scale. Paraphrase the recorded Venelin Kokalov response; do not invent a new quotation. The source places this work in the 2013–2015 FDA era; no exact contract date is asserted.\n\nFull-cut delivery space: Walk through one seating decision: identify the audience viewpoint, the obstruction and what a client can test at eye level. Contrast that with explaining the same question from a plan. Invite the audience to think of a view their own client cannot yet picture. Do not assert a quantified result.\n\nBing Thom Architects saw the benefit too. Michael Heeney, Principal at Bing Thom, describes the benefit as such: \"We understood the space in an entirely new way. It was one thing to be rotating around a 3D model. It was entirely something else to see the project at exactly the scale the audience would perceive it after construction.\""
       },
       {
-        "id": "wisconsin-detail",
-        "title": "I added too much detail",
-        "use": "pmre/story-media",
-        "keep": 19,
-        "year": "2013–2015",
-        "venn": [
-          1,
-          0.8,
-          1
-        ],
-        "props": {
-          "title": "I added too much detail",
-          "src": "media/pmre/v8/wisconsin-theater.jpg",
-          "credit": "",
-          "alt": "Wisconsin School of Music theater model",
-          "mode": "content",
-          "brightness": 1
-        },
-        "notes": "⏱ ~35s.\n\nAlex’s November 19 direction: Wisconsin School of Music, where I added too much detail. Use his supplied experiencing-a-theater image. Modeling for rendering did not automatically make an optimized VR experience."
-      },
-      {
         "id": "not-turnkey",
         "use": "pmre/story-media",
         "props": {
@@ -747,21 +729,6 @@ const SECTIONS = [
         ],
         "storyRole": "content",
         "notes": "⏱ ~65s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nIn 2013 there was no elegant turnkey way to do what I expected. I went home at night and learned JavaScript and C# on Codecademy, learned Unity, learned model optimization. Architecture school taught me modeling, not optimization. It was exactly the kind of challenge I loved going home to.\n\nYear: 2013. Venn weights: 0.8 / 0.4 / 1.\n\n\nDesigning Naturally s18–20: begin with existing drawings, modeling, texturing and lighting; add optimization and an interactive engine, then deliver human-scale experience. The s20 diagram incorporates the progression of s18 and s19. Keep the technical sequence in notes, not extra dense on-slide text. This is a later diagram explaining the 2013 learning story.\n\nV6 direction (Alex, November 18): A robust 3D model can also yield plans, images, 360s, tours and a headset experience. This is an extension of the workflow you already sell. Remove the dark overlay so the workflow remains readable."
-      },
-      {
-        "id": "cognitive-ladder",
-        "title": "The next step should feel familiar",
-        "use": "pmre/cognitive-ladder",
-        "props": {},
-        "keep": 19,
-        "year": "2014 → 2026",
-        "venn": [
-          1,
-          1,
-          1
-        ],
-        "storyRole": "content",
-        "notes": "⏱ ~25s.\n\nIdea credit: Matt Gio, PMRE 2026, as recorded in Alex’s Apple Note: cognitive ladder, acclimating to a new world, tell the story. This is an editorial diagram, not a quotation. Educate the client by connecting each new spatial deliverable to the work they already value. A photo shows the view; a tour connects views; VR lets them judge the place at human scale. Natural extension, not a demand to replace their existing media.\n\nIdentity check 2026-11-19: AutoHDR’s knowledge base confirms CEO Matt and links his matt-gia booking page; Matt Gia’s own profile confirms AutoHDR. This does not establish that Alex’s Matt Gio note names that same speaker. Keep the supplied attribution until Alex confirms. The four stages connect photographs, floor plans/tours, splats and a VR visit; CAPTURE → EDIT → DELIVER → STEP INSIDE is the business pipeline."
       },
       {
         "id": "macbeth-comparison",
@@ -833,7 +800,7 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/text-card",
         "props": {
-          "title": "A narrow niche can open wide doors",
+          "title": "A narrow niche can open wide&nbsp;doors",
           "lines": [
             "Get good at a particular combination.",
             "Let people imagine where else it could go."
@@ -842,28 +809,28 @@ const SECTIONS = [
           "attr": "",
           "kicker": ""
         },
-        "notes": "⏱ ~30s.\n\nPresenter’s lesson. The drone photographer’s identity in the audio is uncertain; omit the name rather than attribute it to Bobby."
+        "notes": "⏱ ~30s.\n\nPresenter’s lesson. The drone photographer’s identity in the audio is uncertain; omit the name rather than attribute it to Bobby.\n\nChoosing the work you want: “recovering people pleaser” — Jen Lueck, yesterday. Jen’s exact wording in Alex’s original Apple Note: recovering people pleaser. Attribution expanded to Jen Lueck by Alex’s v8 answer. This is a self-description; do not add a fabricated sentence, motive or personal story. Use it as a brief bridge to choosing the work and clients that fit. Source: canonical KB projects/pmre2026/2026-11-18-alex-notes-raw.md; yesterday wording expressly authorized by Alex."
       },
       {
-        "id": "people-pleaser",
-        "title": "Choosing the work you want",
-        "use": "pmre/text-card",
-        "props": {
-          "title": "Choosing the work you want",
-          "lines": [],
-          "quote": "“recovering people pleaser”",
-          "attr": "— Jen Lueck, yesterday.",
-          "kicker": ""
-        },
+        "id": "wisconsin-detail",
+        "title": "I added too much detail",
+        "use": "pmre/story-media",
         "keep": 19,
-        "year": "2026",
+        "year": "2013–2015",
         "venn": [
           1,
-          1,
+          0.8,
           1
         ],
-        "storyRole": "content",
-        "notes": "⏱ ~20s.\n\nJen’s exact wording in Alex’s original Apple Note: recovering people pleaser. Attribution expanded to Jen Lueck by Alex’s v8 answer. This is a self-description; do not add a fabricated sentence, motive or personal story. Use it as a brief bridge to choosing the work and clients that fit. Source: canonical KB projects/pmre2026/2026-11-18-alex-notes-raw.md; yesterday wording expressly authorized by Alex."
+        "props": {
+          "title": "I added too much detail",
+          "src": "media/pmre/v8/wisconsin-theater.jpg",
+          "credit": "",
+          "alt": "Wisconsin School of Music theater model",
+          "mode": "content",
+          "brightness": 1
+        },
+        "notes": "⏱ ~35s.\n\nAlex’s November 19 direction: Wisconsin School of Music, where I added too much detail. Use his supplied experiencing-a-theater image. Modeling for rendering did not automatically make an optimized VR experience."
       },
       {
         "id": "napkin-scale",
@@ -993,18 +960,19 @@ const SECTIONS = [
       },
       {
         "id": "agile",
-        "title": "“We should do it together”",
+        "title": "We should do it together",
         "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
           "mode": "content",
-          "title": "“We should do it together”",
-          "src": "media/pmre/v6/agile-lens-dark.png",
+          "title": "We should do it together",
+          "src": "media/pmre/v8/agile-lens-wide-white.png",
           "credit": "",
           "brightness": 1,
-          "alt": "“We should do it together”",
-          "flat": true
+          "alt": "Agile Lens Immersive Design",
+          "flat": true,
+          "brand": true
         },
         "notes": "⏱ ~100s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThen Josh said that if I really wanted to start a VR company, we should do it together. That was the surprise. We founded Agile Lens later in 2016. Ten years now. Show people how passionate you are, including what you do off-hours because you love it. That is how they come to believe in you.\n\nYear: 2016. Venn weights: 0.7 / 0.8 / 1.\n\n\nMerged delivery context:\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nEarly 2016: Josh pulled me in and said he felt I was thinking of leaving to start a VR company. My reaction was, What? No! I will work here till I die. Then he said I was not much of a business manager, not organized, with creative wildfire but not much direction. I thought he was trying to convince me not to leave. These are paraphrased delivery prompts from the walk, not a verbatim historical transcript.\n\nYear: 2016. Venn weights: 0.5 / 0.7 / 1.\n\n\nTell the early-2016 Josh office story first, then the invitation to become partners and the later-2016 founding. The logo is company identity, not a photo of that conversation.",
         "year": "2016",
@@ -1033,7 +1001,7 @@ const SECTIONS = [
         "id": "film-language",
         "use": "pmre/film-language",
         "props": {},
-        "title": "VR is like the early days of film",
+        "title": "VR is still a new medium",
         "keep": 99,
         "year": "2016",
         "venn": [
@@ -1743,10 +1711,10 @@ const SECTIONS = [
           "title": "Walk around the Colosseum",
           "src": "slides/pmre/rome-splats/media/rome-colosseum-flythrough-15s-1080p.mp4",
           "credit": "Josette Seitz / Agile Lens · Web-rendered scan",
-          "alt": "Rome, captured as splats",
+          "alt": "Colosseum: a photoreal 3D capture you can walk through",
           "mode": "content",
           "brightness": 1,
-          "takeaway": "A captured place you can move through"
+          "takeaway": "Splats: photoreal 3D captures you can walk through"
         },
         "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThis is what is exciting me now: places captured from photographs that you can move through. Josette Seitz / Agile Lens scan. Web-rendered footage, not headset footage.\n\nYear: 2026. Venn weights: 1 / 0.3 / 1.\n\n\nGaussian splats are a way to reconstruct the appearance of a place from overlapping photographs/video, so a viewer can choose a new viewpoint. This clip is a web-rendered camera path through our Rome scan; the next headset clip shows the difference between watching that path and choosing your own. The thing that gets me is walking around the Colosseum and looking back at a detail. For a property, that could be a buyer choosing to look back through the living room. Do not describe this Rome capture as a phone or drone scan: the Rome examples use PortalCam. Background: Kerbl, Kopanas, Leimkühler and Drettakis, SIGGRAPH 2023, https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/ . No performance number or equivalence to a measured survey is asserted.",
         "year": "2026",
@@ -1860,7 +1828,7 @@ const SECTIONS = [
         "props": {
           "title": "Your next shoot can become a place",
           "lines": [
-            "Splats: revisit and choose new views",
+            "3D models &amp; splats: revisit and choose new views",
             "VR tours: walk a property before traveling",
             "Mixed reality: test options on site",
             "Unbuilt property: photograph what could be"
@@ -1888,7 +1856,7 @@ const SECTIONS = [
           "title": "Your shoot becomes a place",
           "labels": [
             "Phone / drone",
-            "Gaussian splat",
+            "3D model / splat",
             "Walkthrough"
           ],
           "icons": [
@@ -2022,7 +1990,7 @@ const SECTIONS = [
       },
       {
         "id": "sharp",
-        "title": "One image → a Gaussian splat",
+        "title": "One image → a photoreal 3D model",
         "year": "2026",
         "venn": [
           1,
@@ -2032,7 +2000,7 @@ const SECTIONS = [
         "keep": 30,
         "use": "pmre/v6-gallery",
         "props": {
-          "title": "One image → a Gaussian splat",
+          "title": "One image → a photoreal 3D model",
           "line": "Apple ML SHARP · predicted geometry is not a measured survey",
           "media": [
             {
@@ -2090,7 +2058,7 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/package-table",
         "props": {},
-        "notes": "⏱ ~70s.\n\nIdea credit: Matt Michalski, PMRE 2026 day-1 package/product slides, supplied by Alex as two photographs in Downloads/PMRE Packages. This is our original design, with our own hypothetical add-on figures and scope, not a reproduction of his slides or confidential Aryeo data.\n\nFor this room: keep photos, video, aerials, plans and existing 3D tours. Add a splat tour, guided VR walkthrough, mixed reality on site, then a bespoke Unreal premium. The example add-on prices are teaching proposals, NOT market medians, vendor rates, Agile Lens quotes or guaranteed margins. Scope revisions, travel, hosting and device support separately. A reusable template can reduce marginal setup work; a client pays for a reliable visit and decision, not the number of clicks. Custom Unreal and MR alignment still take real production and QA.\n\nNucleus4D officially confirms Zillow/realtor.com 3D tour publication (https://www.nucleus4d.com/). V8 RESOLVED: Nucleus4D’s supplied priority wording is shown as a vendor claim, visibly attributed; independent priority is not asserted.\n\n[FLASH] Starting products are examples, not verified native imports. Plan reference: CubiCasa / iGUIDE. Capture category: Giraffe360 / Nucleus4D / Bubo². Sell through Aryeo / HDPhotoHub, publish a supported companion tour to Zillow; guided headset delivery and compatibility remain separate."
+        "notes": "⏱ ~70s.\n\nIdea credit: Matt Michalski, PMRE 2026 day-1 package/product slides, supplied by Alex as two photographs in Downloads/PMRE Packages. This is our original design, with our own hypothetical add-on figures and scope, not a reproduction of his slides or confidential Aryeo data.\n\nFor this room: keep photos, video, aerials, plans and existing 3D tours. Add a splat tour, guided VR walkthrough, mixed reality on site, then a bespoke Unreal premium. The example add-on prices are teaching proposals, NOT market medians, vendor rates, Agile Lens quotes or guaranteed margins. Scope revisions, travel, hosting and device support separately. A reusable template can reduce marginal setup work; a client pays for a reliable visit and decision, not the number of clicks. Custom Unreal and MR alignment still take real production and QA.\n\nNucleus4D officially confirms Zillow/realtor.com 3D tour publication (https://www.nucleus4d.com/). V8 RESOLVED: Nucleus4D’s supplied priority wording is shown as a vendor claim, visibly attributed; independent priority is not asserted.\n\n[FLASH] Starting products are examples, not verified native imports. Plan reference: CubiCasa / iGUIDE. Capture category: Giraffe360 / Nucleus4D / Bubo². Sell through Aryeo / HDPhotoHub, publish a supported companion tour to Zillow; guided headset delivery and compatibility remain separate.\n\nClient education: the next step should feel familiar. Connect each new spatial deliverable to work the client already values: a photograph chooses a view, a tour connects views, and a guided VR visit lets them judge the place at human scale. Introduce 3D models & splats as an additional deliverable, then price the useful client outcome. This folds the former cognitive-ladder slide into the business section."
       },
       {
         "id": "plan-to-presence",
