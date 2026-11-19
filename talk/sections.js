@@ -324,6 +324,21 @@ const SECTIONS = [
         "motion": "lane-traffic"
       },
       {
+        "id": "attendee-niches",
+        "title": "Great niches in this room",
+        "use": "pmre/attendee-niches",
+        "props": {},
+        "keep": 19,
+        "year": "2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~90s. Ten quick, one-click spotlights, then the whole room. These combinations are editorial summaries, not quoted biographies. Dave → Navjeet → Tom → Krisse & Rich → Devon → Via → Perica → Emily → Matt → Brandon. Sources and omitted claims: media/pmre/v8/niche-audit-sources.json. Via’s company is unverified and intentionally omitted. No six-figure production-cost, production-time, drone-first-history or product-priority claims. Brandon closes: you are standing in his overlap.\nFinal narrative audit: moved the audience niche sequence after the major projects, before the future-media chapter. This follows Alex’s current origin → projects → audience niche → next-tier/future → DIY/pricing → hire/QR order. The earlier typed placement was a suggestion, not a requirement to interrupt the 2005–2010 story.\n\nFraming: these people did not stumble into niches by following a dream. Each built real craft first, then stayed aligned (Oliver Ward’s word) when the opening came."
+      },
+      {
         "id": "what",
         "use": "pmre/text-card",
         "props": {
@@ -1745,21 +1760,6 @@ const SECTIONS = [
           "layout": "grid"
         },
         "notes": "⏱ ~45s.\n\nHalcyon root #79 shares the slide with Royal Caribbean. RSC is rehearsal-tool research, not a production credit. U.S. Cotton: Alex supplied cotton-muted.mp4 on November 18; original H.264 video copied without re-encoding, no audio, silent autoplay and loop. The supplied cotton.png still remains the poster. Joby work remains undisclosed; do not show actual client material.\n\nUnreal NYC, speaker note only: suggested as a natural fit; now among the first people people think of for enterprise virtual experiences in NYC. Alex’s anecdote: someone new to the city wanted to “come say hi and kiss the ring”.\n\nFurther speaker recollection: The Orchard Off-Broadway and Mikhail Baryshnikov. Omit unverified dates."
-      },
-      {
-        "id": "attendee-niches",
-        "title": "Great niches in this room",
-        "use": "pmre/attendee-niches",
-        "props": {},
-        "keep": 19,
-        "year": "2026",
-        "venn": [
-          1,
-          1,
-          1
-        ],
-        "storyRole": "content",
-        "notes": "⏱ ~90s. Ten quick, one-click spotlights, then the whole room. These combinations are editorial summaries, not quoted biographies. Dave → Navjeet → Tom → Krisse & Rich → Devon → Via → Perica → Emily → Matt → Brandon. Sources and omitted claims: media/pmre/v8/niche-audit-sources.json. Via’s company is unverified and intentionally omitted. No six-figure production-cost, production-time, drone-first-history or product-priority claims. Brandon closes: you are standing in his overlap.\nFinal narrative audit: moved the audience niche sequence after the major projects, before the future-media chapter. This follows Alex’s current origin → projects → audience niche → next-tier/future → DIY/pricing → hire/QR order. The earlier typed placement was a suggestion, not a requirement to interrupt the 2005–2010 story.\n\nFraming: these people did not stumble into niches by following a dream. Each built real craft first, then stayed aligned (Oliver Ward’s word) when the opening came."
       }
     ]
   },
