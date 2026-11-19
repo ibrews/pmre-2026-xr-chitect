@@ -847,7 +847,7 @@ const SECTIONS = [
           "line": "",
           "media": [
             {
-              "src": "slides/pmre/hxr-shed/media/shed/shed-flythrough-and-vr.mp4",
+              "src": "slides/pmre/hxr-shed/media/shed/shed-once-then-vr.mp4",
               "label": "The Shed at Hudson Yards",
               "alt": "The Shed's moving shell slides out and back, then a VR walk through its roof structure"
             },
