@@ -22,7 +22,7 @@ svg{width:100%;height:100%;display:block}
 .cap{font-size:46px;font-weight:600;fill:var(--text)}
 .tag{font-size:24px;letter-spacing:.28em;font-weight:600}
 .small{font-size:22px;fill:var(--dim);letter-spacing:.16em}
-#circle,#note{display:none} #outputs{display:none}html[data-step="1"] #outputs{display:block}html[data-step="1"] #cad{opacity:.18}.cap{font-size:43px}</style></head><body>
+#circle,#note{display:none} #outputs{display:none}html[data-step="1"] #outputs{display:block}.sheet{transform-box:fill-box;transform-origin:center}html[data-step="1"] #cad{opacity:.18}.cap{font-size:43px}</style></head><body>
 <svg id="s" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" aria-label="Left: a building section drawn slowly by hand. Right: the same section generated instantly by software, with a stair that runs into the floor slab. A hand-drawn circle catches the error.">
 <!-- sheets stack (the thousand drawings) -->
 <g id="sheets"></g>
@@ -81,8 +81,14 @@ document.getElementById('circle').setAttribute('d',d);
 })();
 // Generated drawing sheets arrive on the right as a presenter-controlled comparison.
 const outputs=document.getElementById('outputs'),names=['PLAN','SECTION','ELEVATION','SCHEDULE','ROOF PLAN','CROSS SECTION','DETAIL','AREA SCHEDULE'];
-names.forEach((name,i)=>{const g=document.createElementNS('http://www.w3.org/2000/svg','g');g.setAttribute('transform',`translate(${1080+i%2*365} ${225+Math.floor(i/2)*171}) rotate(${i%2?2:-2} 170 75)`);g.innerHTML=`<rect x="0" y="0" width="345" height="154" rx="4" fill="#141110" stroke="#796b54" stroke-width="2"/><text x="16" y="138" fill="#cbbda5" font-size="21">${name}</text>`;const ink=document.createElementNS('http://www.w3.org/2000/svg','path');ink.setAttribute('fill','none');ink.setAttribute('stroke','#cbbda5');ink.setAttribute('stroke-width','2');ink.setAttribute('d',i%4===3?'M20 20H320M20 40H320M20 60H320M20 80H320M20 100H320M130 20V100M220 20V100':i%4===0?'M65 15H280V110H65ZM150 15V70H65M220 70V110M80 85H125M80 95H125':'M40 110H300M65 110V45L170 10L280 45V110M65 65H280M65 73H280M100 110V98H120V86H140V74H160V62H180');g.append(ink);outputs.append(g);});
+names.forEach((name,i)=>{const g=document.createElementNS('http://www.w3.org/2000/svg','g');g.setAttribute('transform',`translate(${1080+i%2*365} ${225+Math.floor(i/2)*171}) rotate(${i%2?2:-2} 170 75)`);g.innerHTML=`<rect x="0" y="0" width="345" height="154" rx="4" fill="#141110" stroke="#796b54" stroke-width="2"/><text x="16" y="138" fill="#cbbda5" font-size="21">${name}</text>`;const ink=document.createElementNS('http://www.w3.org/2000/svg','path');ink.setAttribute('fill','none');ink.setAttribute('stroke','#cbbda5');ink.setAttribute('stroke-width','2');ink.setAttribute('d',i%4===3?'M20 20H320M20 40H320M20 60H320M20 80H320M20 100H320M130 20V100M220 20V100':i%4===0?'M65 15H280V110H65ZM150 15V70H65M220 70V110M80 85H125M80 95H125':'M40 110H300M65 110V45L170 10L280 45V110M65 65H280M65 73H280M100 110V98H120V86H140V74H160V62H180');const body=document.createElementNS('http://www.w3.org/2000/svg','g');body.setAttribute('class','sheet');while(g.firstChild)body.append(g.firstChild);body.append(ink);g.append(body);outputs.append(g);});
+// Step 1: the sheets are GENERATED, fast: each one flies out of the CAD section, one after another.
+const SRC=[1390,590];
+function spawnSheets(){[...outputs.children].forEach((g,i)=>{const ox=1080+i%2*365,oy=225+Math.floor(i/2)*171,b=g.firstChild;
+  b.animate([{transform:`translate(${SRC[0]-ox-172}px,${SRC[1]-oy-77}px) scale(.12)`,opacity:0},{opacity:1,offset:.2},{transform:'none',opacity:1}],
+    {duration:420,delay:i*110,easing:'cubic-bezier(.2,.8,.25,1)',fill:'backwards'});});
+  parent.postMessage({sdMotionSfx:[...outputs.children].map((_,i)=>({t:i*.11+.05,kind:'pop',gain:.05}))},'*');}
 window.MOTION_SFX=[{t:5.6,kind:'snap',gain:.04},{t:8.2,kind:'pop',gain:.05}];
-SDFrame.init({duration:12,steps:1,onEnter(){parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}});
+SDFrame.init({duration:12,steps:1,onEnter(){parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');},onStep(n,instant){if(n===1&&!instant)spawnSheets();}});
 </script>
 </body></html>
