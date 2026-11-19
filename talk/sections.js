@@ -371,21 +371,26 @@ const SECTIONS = [
           "line": "An early study model. Plenty of glue.",
           "media": [
             {
-              "src": "media/pmre/audit/craft-model-full.jpg",
-              "alt": "Alex’s cardboard study model, with the full glue bottle visible in the foreground"
+              "src": "media/pmre/audit/equus-sketches.jpg",
+              "alt": "Four pages of Alex’s sketchbook: set design studies for Equus, with a stage perspective, horse pens, a components list and a platform sketch"
+            },
+            {
+              "src": "media/pmre/audit/craft-model-crop.jpg",
+              "alt": "Alex’s cardboard study model with a glue bottle lying in front of it"
             }
-          ]
+          ],
+          "cols": "1.6fr 1fr"
         },
         "title": "Great ideas. Shaky craftsmanship.",
         "keep": 30,
-        "year": "2004",
+        "year": "2005",
         "venn": [
           1,
           0,
           0.1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nTwo problems that first year. One: no computers. Everything was hand drawn. Two, as if my insecurity wasn’t high enough: the craftsmanship. Great ideas, but my line work and study models were not clean. I was told to work on my craft.\n\nI was not a wunderkind. Worth saying: a lot of the wunderkinds I knew did not end up becoming architects, or became architects who did not seem happy about it. Good at it, not enjoying it.\n\nPhoto (supplied by Alex 2026-11-14): one of my cardboard study models. The camera stamp read 08/04/2004, before Syracuse, so it is probably Cornell summer program work (KB bio lists the program; confirm). The full dated original is shown. Say “my study models”, not “my first-year model”.\n\nPhoto year: 2004. Venn weights: 1 / 0 / 0.1.\n\nAudit: restored the uncropped original so the whole glue bottle is visible. The date stamp is truthful (2004); describe this as an example of my early study models, not a Syracuse first-year photograph."
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nTwo problems that first year. One: no computers. Everything was hand drawn. Two, as if my insecurity wasn’t high enough: the craftsmanship. Great ideas, but my line work and study models were not clean. I was told to work on my craft.\n\nI was not a wunderkind. Worth saying: a lot of the wunderkinds I knew did not end up becoming architects, or became architects who did not seem happy about it. Good at it, not enjoying it.\n\nPhoto (supplied by Alex 2026-11-14): one of my cardboard study models. The camera stamp read 08/04/2004, before Syracuse, so it is probably Cornell summer program work (KB bio lists the program; confirm). The slide shows a crop without the stamp. Say “my study models”, not “my first-year model”.\n\nSlide year: 2005 (Alex, 2026-11-19: present it as 2005; the photo itself is 2004). Venn weights: 1 / 0 / 0.1.\n\nAlex, 2026-11-19: crop to the model and glue bottle, larger; no date on the slide (camera stamp removed); his Equus sketchbook pages on the left (the scan's “© 2008” line removed). Describe these as examples of my early study work, not a Syracuse first-year photograph."
       },
       {
         "id": "hand",

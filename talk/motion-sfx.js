@@ -8,15 +8,19 @@
   for(const type of ['pointerdown','keydown','touchstart'])addEventListener(type,e=>{if(e.isTrusted)unlocked=true;},{capture:true,passive:true});
   window.setMotionMuted=value=>{window._sdSfxMuted=!!value;if(value)window._killAllSfx?.();};
  }
- const RATE=48000,TAU=2*Math.PI;
- function samples(c,rate=RATE){const dur=c.duration||({honk:.28,pass:1.2,merge:.85,pop:.18,snap:.09,projector:3.8}[c.kind]||.2),a=new Float32Array(Math.ceil(dur*rate));let seed=24681357,phase=0,low=0;const pitch=c.pitch||1;
+ const RATE=48000,TAU=2*Math.PI,FIREWORK=[[0,2400],[.07,3100],[.16,2000],[.22,2800],[.33,3500],[.41,2200],[.55,2900]];
+ function samples(c,rate=RATE){const dur=c.duration||({honk:.28,pass:1.2,merge:.85,pop:.18,snap:.09,projector:3.8,firework:.7}[c.kind]||.2),a=new Float32Array(Math.ceil(dur*rate));let seed=24681357,phase=0,low=0;const pitch=c.pitch||1;
   for(let i=0;i<a.length;i++){const t=i/rate,u=t/dur;seed=(Math.imul(seed,1664525)+1013904223)|0;const noise=(seed>>>0)/2147483648-1;low+=.14*(noise-low);let v=0;
    if(c.kind==='honk'){const f=350*pitch;v=.09*(Math.sin(TAU*f*t)+.65*Math.sin(TAU*440*pitch*t)+.15*Math.sin(TAU*3*f*t))*Math.min(1,t/.012,(dur-t)/.05);}
    else if(c.kind==='pass'||c.kind==='merge'){phase+=TAU*(c.kind==='pass'?150-80*u:90+100*u)/rate;v=(.055*Math.sin(phase)+.08*low)*Math.sin(Math.PI*u)**2;}
    else if(c.kind==='projector'){const pulse=Math.exp(-((t*18)%1)*17);v=.06*(noise-low)*pulse*Math.min(1,t/.12,(dur-t)/.2);}
-   else if(c.kind==='rewind'){phase+=TAU*(180+100*(1-u)+25*Math.sin(t*30))/rate;v=(.06*Math.sin(phase)+.03*low)*Math.sin(Math.PI*u)**2;}
+   // Tape rewind: a spool squeal that speeds up (620->1600 Hz, inside laptop-speaker range) with flutter, reel chatter and hiss.
+   // Gain 1 lands at ~65% of the slide-change whoosh's window RMS and well under its peak (checked with qa_opener.mjs stats).
+   else if(c.kind==='rewind'){const f=(620+980*u*u)*(1+.035*Math.sin(TAU*23*t));phase+=TAU*f/rate;const chat=.7+.3*Math.sin(TAU*(16+22*u)*t);v=.01*(.5*Math.sin(phase)+.22*Math.sin(2*phase)+.35*(noise-low))*chat*Math.min(1,t/.15,(dur-t)/.4);}
    else if(c.kind==='bounce'){phase+=TAU*(380*Math.exp(-t*18)+90)/rate;v=.08*Math.sin(phase)*Math.exp(-t*24)*Math.min(1,t/.006);}
    else if(c.kind==='pop'){phase+=TAU*(950*Math.exp(-t*22)+130)/rate;v=.15*Math.sin(phase)*Math.exp(-t*34)*Math.min(1,t/.004);}
+   // Tiny fireworks: a short run of soft crackles with a faint high ping each (lane-traffic XR-chitect landing).
+   else if(c.kind==='firework'){let w=0;for(const [o,f] of FIREWORK){const d=t-o;if(d>=0&&d<.07)w+=Math.exp(-d*80)*(.7*(noise-low)+.5*Math.sin(TAU*f*pitch*d));}v=.02*w;}
    else if(c.kind==='snap'){v=.15*(noise-low)*Math.exp(-t*70)*Math.min(1,t/.002);}
    a[i]=v*(c.gain??1);
   }return a;
