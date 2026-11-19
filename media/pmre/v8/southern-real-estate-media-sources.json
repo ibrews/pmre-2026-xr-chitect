@@ -1,0 +1,64 @@
+{
+  "checked_on": "2026-11-19",
+  "subject": "Krisse and Rich Newport — Southern Real Estate Media",
+  "slide": "attendee-niches",
+  "published_summary": "Photography + aerial media + Lake Martin; Lake Martin waterfront + full-service listing media",
+  "claims": [
+    {
+      "claim": "Krisse and Rich are the husband-and-wife team; Krisse handles photography/3D and Rich drone/interior video",
+      "status": "verified",
+      "url": "https://southernremedia.com/our-story/"
+    },
+    {
+      "claim": "Full-service listing photography, aerial/interior video, 3D tours, floor plans, virtual staging and marketing kits",
+      "status": "verified",
+      "urls": [
+        "https://southernremedia.com/",
+        "https://southernremedia.com/videography/"
+      ]
+    },
+    {
+      "claim": "Social media reels",
+      "status": "verified",
+      "url": "https://southernremedia.com/social-media-reels/"
+    },
+    {
+      "claim": "Lake Martin waterfront property media",
+      "status": "verified examples; editorial niche summary, no exclusive-specialty or market-leadership claim",
+      "urls": [
+        "https://vimeo.com/269775894",
+        "https://vimeo.com/274811628",
+        "https://southernremedia.com/2d-and-3d-property-photography-lake-martin-al/"
+      ]
+    },
+    {
+      "claim": "Started with aerial/drone work and later grew into full service",
+      "status": "unverified; omitted",
+      "reason": "Our Story verifies aviation background and current work, but does not establish company service chronology."
+    },
+    {
+      "claim": "4K aerial and interior video",
+      "status": "unverified; omitted",
+      "reason": "Videography service page specifies HD, not 4K.",
+      "url": "https://southernremedia.com/videography/"
+    }
+  ],
+  "integration_scope": "Source branch only. User override leaves main publication, ZIP rebuilding and KB receipt to integration owner.",
+  "verification": {
+    "browser": "Headless system Google Chrome over ordinary file://; external requests blocked; no security bypass flags",
+    "scope": "Changed attendee spotlight, all eight cut/AI combinations; 90 absolute slots retained, spotlight remains #31",
+    "result": "pass; zero page/console/external-request errors; four cards with no measured overflow",
+    "preview": "Required read-only agent review passed at 1920x1080, 1280x720 and 1440x900",
+    "static": "56 slide modules, 0 problems; branding, JS syntax and Git whitespace checks pass",
+    "unverified": "Full-deck media regression, physical venue playback, integration publication and rebuilt ZIP are outside this source-only follow-up.",
+    "evidence_root": "/Users/alex/Archives/pmre2026-2026-10/v8c-notes",
+    "evidence_files": [
+      "qa-spotlight.mjs",
+      "qa-spotlight.json",
+      "spotlight-1920.png",
+      "spotlight-1280.png",
+      "spotlight-1440.png",
+      "preflight.json"
+    ]
+  }
+}
