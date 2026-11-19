@@ -451,6 +451,7 @@ const SECTIONS = [
           ],
           "stepVideo": {
             "src": "media/pmre/v8/shipping-container-designer-2009.mp4",
+            "over": 1,
             "poster": "media/pmre/v8/shipping-container-designer-2009.jpg",
             "alt": "Alex's 2009 Shipping Container Prototype Designer: configuring a container restaurant in real time"
           }
