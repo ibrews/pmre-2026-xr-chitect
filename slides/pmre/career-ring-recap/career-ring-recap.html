@@ -15,7 +15,7 @@ svg{width:100%;height:100%;display:block}
 .tick{font-size:22px;fill:rgba(240,244,255,.45)}
 body.instant *{transition:none!important}
 </style></head><body>
-<svg id="s" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet"></svg>
+<svg id="s" viewBox="260 140 1400 788" preserveAspectRatio="xMidYMid meet"></svg>
 <script src="../../sd-frame.js"></script>
 <script src="../../kit/sprite.js"></script>
 <script>
@@ -25,7 +25,7 @@ const ang=y=>-90+SWEEP*(y-Y0)/(Y1-Y0),pt=(a,r)=>[C[0]+r*Math.cos(a*Math.PI/180),
 const el=(t,a,p=S)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p.append(e);return e;};
 const defs=el('defs',{}),g=el('linearGradient',{id:'g',x1:0,x2:1},defs);[['0','#00d4ff'],['.5','#a78bfa'],['1','#f43f5e']].forEach(([o,c])=>el('stop',{offset:o,'stop-color':c},g));
 el('circle',{cx:C[0],cy:C[1],r:R,fill:'none',stroke:'rgba(240,244,255,.14)','stroke-width':10});
-for(let y=Y0;y<=Y1;y++){const a=ang(y),major=[2010,2016,2020,2023].includes(y),[x1,y1]=pt(a,R-(major?22:12)),[x2,y2]=pt(a,R+(major?22:12));
+for(let y=Y0;y<=Y1;y++){const a=ang(y),major=[2010,2016,2020].includes(y),[x1,y1]=pt(a,R-(major?22:12)),[x2,y2]=pt(a,R+(major?22:12));
  el('line',{x1,y1,x2,y2,stroke:major?'rgba(240,244,255,.6)':'rgba(240,244,255,.25)','stroke-width':major?4:2});
  if(major){const [tx,ty]=pt(a,R+50);el('text',{x:tx,y:ty+8,'text-anchor':'middle',class:'tick'}).textContent=y;}}
 const L=2*Math.PI*R*SWEEP/360,frac=y=>(y-Y0)/(Y1-Y0);
