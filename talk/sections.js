@@ -700,12 +700,11 @@ const SECTIONS = [
           "mode": "content",
           "title": "Xiqu Centre",
           "src": "media/v3-fix1/xiqu.jpg",
-          "credit": "Rendering: Bing Thom Architects",
           "brightness": 1,
           "alt": "Xiqu Centre",
           "stereo": "media/pmre/v8/xiqu-stereo.webp"
         },
-        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s9. Bing Thom Architects render of Xiqu Centre. Source notes describe testing railing height and the swoop of a wall at human scale. Paraphrase the recorded Venelin Kokalov response; do not invent a new quotation. The source places this work in the 2013–2015 FDA era; no exact contract date is asserted.\n\nFull-cut delivery space: Walk through one seating decision: identify the audience viewpoint, the obstruction and what a client can test at eye level. Contrast that with explaining the same question from a plan. Invite the audience to think of a view their own client cannot yet picture. Do not assert a quantified result.\n\nBing Thom Architects saw the benefit too. Michael Heeney, Principal at Bing Thom, describes the benefit as such: \"We understood the space in an entirely new way. It was one thing to be rotating around a 3D model. It was entirely something else to see the project at exactly the scale the audience would perceive it after construction.\""
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s9. Architectural render of Xiqu Centre. Source notes describe testing railing height and the swoop of a wall at human scale. Paraphrase the recorded Venelin Kokalov response; do not invent a new quotation. The source places this work in the 2013–2015 FDA era; no exact contract date is asserted.\n\nFull-cut delivery space: Walk through one seating decision: identify the audience viewpoint, the obstruction and what a client can test at eye level. Contrast that with explaining the same question from a plan. Invite the audience to think of a view their own client cannot yet picture. Do not assert a quantified result.\n\nBing Thom Architects saw the benefit too. Michael Heeney, Principal at Bing Thom, describes the benefit as such: \"We understood the space in an entirely new way. It was one thing to be rotating around a 3D model. It was entirely something else to see the project at exactly the scale the audience would perceive it after construction.\""
       },
       {
         "id": "not-turnkey",
