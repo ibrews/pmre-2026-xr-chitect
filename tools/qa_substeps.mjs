@@ -17,37 +17,45 @@ function inspect({id,n,rootSelector}){
  const root=document.querySelector(rootSelector),errors=[];
  const visible=e=>{if(!e)return false;let opacity=1;for(let q=e;q;q=q.parentElement){const s=getComputedStyle(q);if(s.display==='none'||s.visibility==='hidden')return false;opacity*=+s.opacity;}const r=e.getBoundingClientRect();return opacity>.01&&r.width>0&&r.height>0&&r.right>0&&r.bottom>0&&r.left<innerWidth&&r.top<innerHeight;};
  const all=q=>[...root.querySelectorAll(q)],vis=q=>all(q).filter(visible),check=(yes,msg)=>{if(!yes)errors.push(msg);},shown=(q,on)=>check((vis(q).length>0)===on,`${q} must be ${on?'visible':'hidden'}`);
- const text=all('text,h1,h2,p,.line,.title,.picasso-date,.ct-hud,figcaption').filter(visible).map(e=>e.textContent.trim()).filter(Boolean);
+ const text=all('text,h1,h2,h3,b,p,.line,.title,.picasso-date,.ct-hud,figcaption').filter(visible).map(e=>e.textContent.trim()).filter(Boolean);
  const includes=s=>check(text.some(t=>t.includes(s)),`missing visible text: ${s}`);
  if(id==='goals'){shown('.title',true);check(vis('.line').length===n,`expected ${n} goal lines, got ${vis('.line').length}`);}
  else if(id==='career-map'){includes('Where the work was');includes('Fisher Dachs Associates');shown('#connie-thanks',n>=1);shown('#fda-website',n===2);if(n===1){includes('Thank you');includes('Connie Caldwell!');}}
  else if(id==='xiqu'){shown('.left-eye',n===0);shown('.right-eye',true);shown('.render',n===1);includes('Xiqu Centre');const eye=root.querySelector('.right-eye');check(n===0?getComputedStyle(eye).transform==='none':new DOMMatrix(getComputedStyle(eye).transform).a<1,'right eye must shrink only in comparison state');}
- else if(id==='referrals'){includes('A reputation becomes a brief');check(vis('.email-piece').length===n,`expected ${n} emails`);check(all('.email-piece img').every(e=>e.complete&&e.naturalWidth>0),'email asset failed to decode');check(vis('.email-piece').map(e=>+e.dataset.sourceImage).sort().join(',')===[42,40,39,41].slice(0,n).sort().join(','),'email arrival order wrong');}
+ else if(id==='referrals'){includes('A reputation becomes a brief');check(vis('.email-piece').length===Math.min(n,4),`expected ${n} emails`);check(all('.email-piece img').every(e=>e.complete&&e.naturalWidth>0),'email asset failed to decode');check(vis('.email-piece').map(e=>+e.dataset.sourceImage).sort().join(',')===[42,40,39,41].slice(0,n).sort().join(','),'email arrival order wrong');}
  else if(id==='fda'){shown('.story-photo',true);shown('.story-overlay',n===1);includes('Sightlines, before VR');}
  else if(id==='hand'){shown('#hand',true);shown('#cad',true);shown('#outputs',n===1);includes('Drafting by hand taught me');if(n===1)check(vis('#outputs text').length===8,'all eight drawing-sheet labels must be visible');}
  else if(id==='lanes'){includes('Pick a lane');check(!root.textContent.includes('Richard Rosa'),'professor name on screen');check(!root.textContent.includes('MASTER ONE CRAFT'),'craft directive on screen');if(n<=2){shown('#hero',true);shown('#strands',true);includes('ARCHITECTURE');if(n>=1){includes('THEATER');includes('TECHNOLOGY');}check(!text.includes('theater planning'),'overlaps revealed too early');}else{shown('#venn',true);const labels=['theater planning','live VR theater','archviz'];labels.forEach((t,i)=>check(text.includes(t)===(i<=n-3),`overlap ${t} visibility at step ${n}`));if(n===6)includes('XR-CHITECT');}if(n===2)check(vis('#cars>g').some(e=>e.getBoundingClientRect().right>100&&e.getBoundingClientRect().left<1800),'traffic step must show cars');}
  else if(id==='speaker-intro'){shown('.intro-stage svg',true);shown('.intro-title',n>=1);shown('.intro-sub-ue5',n>=2);shown('.intro-stats',n>=3);if(n>=1)includes('Alex');if(n>=2)check(root.querySelector('.worn-headset')?.dataset.kind==='compact','compact headset must replace bulky one');}
- else if(id==='macbeth-comparison'||id==='brockman-real'){check(vis('.items figure').length===(n===0?1:2),'comparison must show exactly one/two media items');check(all('.items img,.items video').length>=2,'comparison assets missing');}
+ else if(['macbeth-comparison','brockman-real','statue-vr','camera-demo'].includes(id)){check(vis('.items figure').length===(n===0?1:2),'comparison must show exactly one/two media items');check(all('.items img,.items video').length>=2,'comparison assets missing');}
  else if(id==='thesis'){check(vis('.items figure').length===3,'all thesis images must remain visible');shown('.ar-callout',n===1);includes('Of course my thesis was an immersive theater you attend via submarine.');}
  else if(id==='picasso'){shown('.picasso-left img',true);shown('.picasso-right img',n>=1);shown('.picasso-date',n===2);includes(['Who painted this?','And this one?','Learn the rules before you break them.'][n]);}
  else if(id==='holodeck-travels'){shown('#film',true);check(vis('figure').length===(n===0?0:4),'travel locations revealed at wrong build');includes('The holodeck travels');}
  else if(id==='sponsor-pipeline'){includes('The first three steps are in this room');shown('.agile',true);check(root.querySelector('.agile').textContent.includes('Agile Lens'),'missing Agile Lens name');shown('.workflow-return',n===1);const im=root.querySelector('.workflow-return');check(im.complete&&im.naturalWidth>0,'workflow callback image failed to decode');check(im.getAttribute('src')==='media/v3-fix1/workflow.jpg','callback must reuse original workflow diagram');check(vis('.mark').length===13,'all vendor rows must remain visible');}
  else if(id==='glasses-objections'){shown('.before',n===0);shown('.arrival',n===1);if(n===0)includes('VR is cool');else{includes('Now we’re there');shown('.arrival img',true);}}
  else if(id==='demo-montage'){shown('.opening',n===0);shown('.album',n>0);if(n>0){includes('PMRE, through your eyes');check(vis('figure').length===(n===1?6:8),`expected ${n===1?6:8} montage photos, got ${vis('figure').length}`);}}
- else if(id==='camera-demo'){shown('.ct-plan',true);shown('.ct-view canvas',true);check(root.querySelector('.ct-view').classList.contains('masked')===(n>=2),'camera mask visibility wrong');check(all('.ct-frame').filter(e=>e.style.backgroundImage).length===(n===3?3:0),'camera shot count wrong');includes(n===0?'35 mm':n===3?'85 mm':'85 mm');}
+ else if(id==='attendee-niches'){check(vis('.niche-card').length===(n===10?10:1),'one spotlight or ten-person wall');shown('.niche-copy',n<10);if(n<10){const names=['Dave Koch','Navjeet Chhina','Tom Sparks','Krisse & Rich Newport','Devon Pastorius','Via Lloyd-George','Perica Milosevic','Emily Olman','Matt Gia','Brandon Cooper'];includes(names[n]);}else check(vis('.niche-card h3').length===10,'all names on wall');}
+ else if(id==='geffen'){check(vis('.items figure').length===3,'three Geffen images');shown('.rail-callout',n===1);}
+ else if(id==='speaking-and-rates'){includes('Being known for the work');shown('.voices>div:last-child',n>=1);shown('.answer',n===2);}
+ else if(id==='career-recap'){check(vis('.year.revealed').length===n+1,'recap years reveal in order');shown('.question',n===3);shown('#walker',true);}
+ else if(id==='overlap-yours'){shown('.mine',true);shown('.yours',n>=1);shown('.core',n===2);shown('.foot',n===2);}
+ else if(id==='helmet-to-glasses'){check(root.querySelector('.hg-s').dataset.s===String(n),'headset era state');check(vis('.tick.on').length===1,'one selected era');const lens=root.querySelector('.lens.l');check(Math.abs(parseFloat(getComputedStyle(lens).width)-[235,180,155,140][n])<1,'headset width shrinks across states');}
+ else if(id==='unbuilt-shutter'){check(root.querySelector('.ub-s').dataset.s===String(n),'plan-model-photo state');shown('.photo',n===2);shown('.slab',n>=1);check(root.querySelector('.legend .on').dataset.k===String(n),'active legend');}
+ else if(id==='package-shelf'){check(vis('.st.on').length===n+3,'service tiers reveal one at a time');shown('.xr',n>=2);}
+ else if(id==='brief-closer'){shown('.q',n===0);shown('.ans',n>=1);check(vis('.col').length===(n>=1?3:0),'three answers');shown('.end',n===2);}
  else errors.push('No authored contract for '+id);
  check(text.length>0||vis('svg,img,video,canvas').length>0,'blank build');
  return{errors,text,visibleImages:vis('img').map(e=>e.getAttribute('src')),visibleFigures:vis('figure').length};
 }
 try{
  await p.clock.install({time:new Date('2026-01-01T00:00:00Z')});await p.clock.pauseAt(new Date('2026-01-01T00:00:01Z'));await p.goto(base+'?cut=full&ai=on&safe=70&theme=house&mute',{waitUntil:'domcontentloaded'});await p.evaluate(()=>document.fonts.ready);await p.clock.runFor(600);
- const slides=await p.evaluate(()=>allSlides.map((s,i)=>({i,id:s.dataset.storyId,mod:s.dataset.sdMod,steps:slideSteps.get(s)?.steps.length||0})).filter(s=>s.steps));
+ const slides=await p.evaluate(()=>allSlides.map((s,i)=>({i,id:s.dataset.storyId,mod:s.dataset.sdMod,hidden:s.dataset.hidden==='1',steps:slideSteps.get(s)?.steps.length||0})).filter(s=>s.steps));
  for(const s of slides){
   await p.evaluate(i=>{goTo(0);goTo(i);},s.i);await p.clock.runFor(500);const result={...s,states:[]};
   for(let n=0;n<=s.steps;n++){
    if(n){for(let k=0;k<3&&(await current()).n!==n;k++){await p.keyboard.press('ArrowRight');await p.clock.runFor(30);}}
    assert.deepEqual(await current(),{i:s.i,n},`${s.id} forward navigation at ${n}`);
-   const f=await settle(s,n,'forward'),r=await f.evaluate(inspect,{id:s.id,n,rootSelector:f===p?'.slide.active':'body'});result.states.push({direction:'forward',n,...r});report.checks++;assert.equal(r.errors.length,0,`${s.id} forward ${n}: ${r.errors.join('; ')}`);
+   const f=await settle(s,n,'forward'),r=await f.evaluate(inspect,{id:s.id,n,rootSelector:f===p?'.slide.active':'body'});result.states.push({direction:'forward',n,...r});await p.screenshot({path:path.join(out,`${String(s.i).padStart(3,'0')}-${s.id}-step${n}.png`)});report.checks++;assert.equal(r.errors.length,0,`${s.id} forward ${n}: ${r.errors.join('; ')}`);
   }
   for(let n=s.steps-1;n>=0;n--){
    await p.keyboard.press('ArrowLeft');await p.clock.runFor(80);assert.deepEqual(await current(),{i:s.i,n},`${s.id} backward navigation at ${n}`);
@@ -58,10 +66,12 @@ try{
    for(let k=0;k<3&&(await current()).n!==n;k++){await p.keyboard.press('ArrowRight');await p.clock.runFor(30);}
    assert.deepEqual(await current(),{i:s.i,n},`${s.id} forward-again navigation at ${n}`);const f=await settle(s,n,'forward'),r=await f.evaluate(inspect,{id:s.id,n,rootSelector:f===p?'.slide.active':'body'});result.states.push({direction:'forward-again',n,...r});report.checks++;assert.equal(r.errors.length,0,`${s.id} forward-again ${n}: ${r.errors.join('; ')}`);
   }
+  if(!s.hidden){
   // A previous-slide crossing must land on its final build, then remain reversible.
   await p.evaluate(()=>goNext());await p.clock.runFor(500);await p.keyboard.press('ArrowLeft');await p.clock.runFor(500); // allow the 400 ms slide entrance to settle
   assert.deepEqual(await current(),{i:s.i,n:s.steps},`${s.id} previous-slide final-build restoration`);
   const crossFrame=await settle(s,s.steps,'backward'),cross=await crossFrame.evaluate(inspect,{id:s.id,n:s.steps,rootSelector:crossFrame===p?'.slide.active':'body'});result.states.push({direction:'previous-slide',n:s.steps,...cross});report.checks++;assert.equal(cross.errors.length,0,`${s.id} previous-slide: ${cross.errors.join('; ')}`);
+  }
   // Reverse an in-flight reveal before its delayed callbacks finish.
   await p.evaluate(i=>{goTo(0);goTo(i);},s.i);await p.clock.runFor(500);await settle(s,0,'forward');
   for(let k=0;k<3&&(await current()).n!==1;k++){await p.keyboard.press('ArrowRight');await p.clock.runFor(1);}

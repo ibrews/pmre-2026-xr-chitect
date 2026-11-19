@@ -18,6 +18,7 @@ function applyStorySpine(){
   tracker.innerHTML='<span class="v3-year">'+year.replace('–','–<br>')+'</span><svg viewBox="0 0 130 130" aria-hidden="true"><circle cx="65" cy="65" r="'+R+'" fill="none" stroke="rgba(224,215,202,.18)" stroke-width="5"/><circle cx="65" cy="65" r="'+R+'" fill="none" stroke="#e0d7ca" stroke-width="5" stroke-linecap="round" transform="rotate(-90 65 65)" stroke-dasharray="'+(L*fr).toFixed(1)+' 999"/><circle cx="'+(cx+R*Math.cos(a)).toFixed(1)+'" cy="'+(cy+R*Math.sin(a)).toFixed(1)+'" r="7" fill="#fff"/>'+weights.map((w,i)=>{const x=[54,76,65][i],y=[58,58,77][i],r=8+11*Math.sqrt(w);return `<circle cx="${x}" cy="${y}" r="${r}" fill="${colors[i]}" fill-opacity=".18" stroke="${colors[i]}" stroke-width="1.6"/><g transform="translate(${x+[-4,4,0][i]},${y+[-3,-3,4][i]}) scale(${(.2+.28*Math.sqrt(w)).toFixed(2)})" style="shape-rendering:crispEdges">${icons[i]}</g>`;}).join('')+'</svg>';sl.append(tracker);
  });
  if(!document.getElementById('v3-style')){const st=document.createElement('style');st.id='v3-style';st.textContent=`
+ body.story-v3[data-look="house"]{--font:'Archivo',Arial,sans-serif!important;--font-body:'Archivo',Arial,sans-serif!important}
  .story-v3 :is(h1,h2,h3,.case-title,.lesson-title,.close-title){text-wrap:balance}.story-v3 :is(p,li,td,figcaption,.tagline,.story-takeaway){text-wrap:pretty}
  #journey,.journey-print,.story-chapter-label{display:none!important}
  .slide[data-type="cover"] .v3-tracker{display:none!important}

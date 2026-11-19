@@ -23,7 +23,7 @@ css:`.hg-s{position:absolute;inset:4% 4% 19%;color:var(--text)}
 render(el,props,ctx){
 // [lensW, lensH, gap, radius, top, strapH, bandOpacity, frameColor, shadow]
 const S=[[235,205,0,16,160,70,1,'#8d8a96',30],[180,140,0,42,190,40,1,'#8d8a96',18],[155,105,0,52,205,22,0,'#8d8a96',10],[140,84,30,40,218,8,0,'#d7b668',0]];
-const ticks=['Rift DK1 era<br>2012','Standalone<br>headsets','Lighter<br>headsets','Glasses<br>now'];
+const ticks=['Rift DK1 era<br>2013','Standalone<br>headsets','Lighter<br>headsets','Glasses<br>now'];
 el.innerHTML=`<div class="hg-s" data-s="-1"><h2>From helmet to sunglasses</h2><span class="note">Silhouettes illustrative</span>
 <div class="stage"><div class="neck"></div><div class="head"></div><div class="band"></div><div class="strap"></div><div class="lens l"></div><div class="lens r"></div></div>
 <div class="time"><div class="rail"></div><div class="fill"></div>${ticks.map((t,i)=>`<div class="tick" style="left:${i*100/3}%">${t}</div>`).join('')}</div></div>`;

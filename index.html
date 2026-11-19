@@ -52,7 +52,7 @@
    'IFRAME:'  Prefix c.img with 'IFRAME:' to embed a URL (YouTube, etc.)
    ======================================================================= */
 // ── TALK START ──
-// PMRE v8: conference voices, attendee niches and Four Seasons press.
+// PMRE v8: final local audit; authoring source.
 const TALK = {
   "coverEvent": "PMRE 2026 &middot; Las Vegas &middot; Thursday, Nov 19",
   "coverTitle": "Architect to <span class=\"xr\">XR</span>-chitect",
@@ -151,7 +151,7 @@ const TALK = {
   },
   "thesisAlts": {},
   "closeAlts": {},
-  "closeNotes": "⏱ ~30s.\n\nOne QR opens the Welcome PMRE Attendees hub. Password: pixie, a playful pixie-dust reference, not security. Free downloadable Markdown/ZIP second-brain starter kit, 1:1/company training (20% off; PMRE20 is a TODO placeholder, contact Alex to apply), Agile Lens, project context and the full deck. Public training is wrapping up. No coupons have been created. PICO Space Pro is represented only by a generic silhouette and name under NDA; no specs or product imagery."
+  "closeNotes": "⏱ ~30s.\nOne QR opens the existing v8 attendee resource hub; password pixie. Free second-brain starter kit, project context and the full deck. The hub links to alexcoulombepresents.com/pmre for private 1:1 and team training. Alex confirmed November 19 08:01 UTC: PMRE20 is live, 20% off once on private 1:1 and the 1-hour consultation; team training discounted manually in the quote. No public-class/voucher/stacked-code offer. The main /pmre page itself has no password. Invite questions and a hands-on headset demo. PICO Space Pro: name and generic silhouette only; no NDA specs or imagery."
 };
 const SECTIONS = [
   {
@@ -165,7 +165,7 @@ const SECTIONS = [
       "tagline": "",
       "tags": "",
       "opt": "",
-      "notes": "⏱ ~45s.\n\nMIA slide #2 reused per Alex, November 19. Co-Founder; 350+ classes. Three clicks: bio, five icon power-ups including replacement compact VR glasses, stat tallies. First headset covers the whole head; VR pickup replaces it.",
+      "notes": "⏱ ~45s.\n\nMIA slide #2 reused per Alex, November 19. Co-Founder; 350+ classes. Three clicks: bio, five icon power-ups including replacement compact VR glasses, stat tallies. First headset covers the whole head; VR pickup replaces it.\nFinal audit: 13 years in VR, counted from the confirmed DK1 start in 2013; 350+ classes and clients are presenter-supplied figures.",
       "id": "speaker-intro",
       "use": "pmre/mia-speaker",
       "props": {
@@ -173,11 +173,11 @@ const SECTIONS = [
         "name": "Alex<br>Coulombe",
         "role": "Co-Founder &amp; CEO, Agile Lens: Immersive Design",
         "withBeard": true,
-        "bio": "Architect turned XR-chitect who has spent the last decade building spatial experiences for the world’s most ambitious clients.",
-        "ue5": "Authorized Unreal Engine instructor since 2020:\n350+ clients\n40+ courses written.",
+        "bio": "Architect. Designer. Developer. Educator.",
+        "ue5": "Authorized Unreal Engine instructor since 2020\n350+ classes\n350+ clients",
         "stats": [
           {
-            "n": "16",
+            "n": "13",
             "l": "Years in XR"
           },
           {
@@ -405,14 +405,14 @@ const SECTIONS = [
       },
       {
         "id": "craft",
-        "use": "pmre/text-card",
+        "use": "pmre/v6-gallery",
         "props": {
-          "kicker": "Year one: no computers",
           "title": "Great ideas. Shaky craftsmanship.",
-          "photos": [
+          "line": "Year one: no computers. Glue everywhere.",
+          "media": [
             {
-              "src": "media/pmre/v5/craft-model.jpg",
-              "alt": "Alex's cardboard study model on a slanted base"
+              "src": "media/pmre/audit/craft-model-full.jpg",
+              "alt": "Alex’s cardboard study model, with the full glue bottle visible in the foreground"
             }
           ]
         },
@@ -425,7 +425,7 @@ const SECTIONS = [
           0.1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nTwo problems that first year. One: no computers. Everything was hand drawn. Two, as if my insecurity wasn’t high enough: the craftsmanship. Great ideas, but my line work and study models were not clean. I was told to work on my craft.\n\nI was not a wunderkind. Worth saying: a lot of the wunderkinds I knew did not end up becoming architects, or became architects who did not seem happy about it. Good at it, not enjoying it.\n\nPhoto (supplied by Alex 2026-11-14): one of my cardboard study models. The camera stamp read 08/04/2004, before Syracuse, so it is probably Cornell summer program work (KB bio lists the program; confirm). The stamp is cropped off and the image upscaled 2.5×. Say “my study models”, not “my first-year model”.\n\nYear: 2005. Venn weights: 1 / 0 / 0.1.\n"
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nTwo problems that first year. One: no computers. Everything was hand drawn. Two, as if my insecurity wasn’t high enough: the craftsmanship. Great ideas, but my line work and study models were not clean. I was told to work on my craft.\n\nI was not a wunderkind. Worth saying: a lot of the wunderkinds I knew did not end up becoming architects, or became architects who did not seem happy about it. Good at it, not enjoying it.\n\nPhoto (supplied by Alex 2026-11-14): one of my cardboard study models. The camera stamp read 08/04/2004, before Syracuse, so it is probably Cornell summer program work (KB bio lists the program; confirm). The stamp is cropped off and the image upscaled 2.5×. Say “my study models”, not “my first-year model”.\n\nYear: 2005. Venn weights: 1 / 0 / 0.1.\n\nAudit: restored the uncropped original so the whole glue bottle is visible. The date stamp is truthful (2004); describe this as an example of my early study models, not a Syracuse first-year photograph."
       },
       {
         "id": "hand",
@@ -548,7 +548,7 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~45s.\n\nThese little Venn diagrams apply the talk’s architecture/theater/technology visual language to attendees. Dave Koch: aviation photography, aircraft interiors/exteriors and 3D aircraft tours verified at https://aviationaircraftphoto.com/ . Devon Pastorius: Creative Director and Principal Photographer at Narwhal Creative; PMRE bio describes rap music videos, cinematic one takes and sketches that expand agent visibility: https://www.pmreconference.com/presenters ; corroborating company pages https://narwhalcreative.ca/about/ and https://windsorrealestatephotography.com/about/ . Circle labels are our editorial summaries, not self-descriptions or quotes. Via Lloyd-George: name, Charleston and architect supplied by Alex. Company NOT VERIFIED after exact-name, spelling/spacing, Charleston, Via Mi Design and Giraffe360 searches. Earlier raw note says Giraffe360, latest instruction says unsure; do not publish either company. Her minimal two-circle spotlight uses only Charleston and architect; no invented corporate role. Southern Real Estate Media: Krisse and Rich Newport. Photography + aerial media + Lake Martin is an editorial Venn, not a quotation. Their story confirms Krisse handles interior photography and 3D tours; Rich handles drone work and interior video: https://southernremedia.com/our-story/ . Current full-service offering includes listing photos, aerial/interior video, 3D tours, floor plans, virtual staging, social reels and marketing kits: https://southernremedia.com/ and https://southernremedia.com/social-media-reels/ . Lake Martin waterfront work is documented by their own portfolio: https://vimeo.com/269775894 and https://vimeo.com/274811628 . The niche is our summary of demonstrated work, not an exclusive specialty claim. UNVERIFIED / OMITTED: started with drone work then expanded; 4K delivery (service page specifies HD): https://southernremedia.com/videography/ . Claim-by-claim evidence: media/pmre/v8/southern-real-estate-media-sources.json.\n\nKrisse Newport: Southern Real Estate Media /our-story/ confirms owner, creative director and photographer, with husband Rich handling aerial work and video; first-party page checked 2026-11-19. Perica Milosevic: Alex’s in-room identity, Bubo²; its own /technology and /interiors pages verify a single Insta360 recording to Gaussian-splat browser tour. No speed, cheapest or universal headset claim."
+        "notes": "⏱ ~90s. Ten quick, one-click spotlights, then the whole room. These combinations are editorial summaries, not quoted biographies. Dave → Navjeet → Tom → Krisse & Rich → Devon → Via → Perica → Emily → Matt → Brandon. Sources and omitted claims: media/pmre/v8/niche-audit-sources.json. Via’s company is unverified and intentionally omitted. No six-figure production-cost, production-time, drone-first-history or product-priority claims. Brandon closes: you are standing in his overlap."
       },
       {
         "id": "overlap-yours",
@@ -563,7 +563,8 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~40s. NEW concept slide (Claude, Nov 19 overnight). Two clicks.\n\nStart: my three circles, architecture, theater, technology. The overlap became an XR studio. That professor told me to pick one; the overlap turned out to be the job.\n\nClick 1: my Venn shrinks into the corner. Yours grows. Photography is your circle. Spatial media is the one I'm offering you tonight. The third circle is YOURS: it cycles through niches from this room (aviation, Lake Martin, performance, architecture: the people on the previous slide). Ask: what's your third circle?\n\nClick 2: the center lights up: your lane. Anyone can be hired to shoot a listing; only you sit in your overlap. That's the part an app or a bundled Zillow shoot can't commoditize.\n\nNiche labels are editorial summaries reused from the sourced Great niches slide; no new claims."
+        "notes": "⏱ ~40s. NEW concept slide (Claude, Nov 19 overnight). Two clicks.\n\nStart: my three circles, architecture, theater, technology. The overlap became an XR studio. That professor told me to pick one; the overlap turned out to be the job.\n\nClick 1: my Venn shrinks into the corner. Yours grows. Photography is your circle. Spatial media is the one I'm offering you tonight. The third circle is YOURS: it cycles through niches from this room (aviation, Lake Martin, performance, architecture: the people on the previous slide). Ask: what's your third circle?\n\nClick 2: the center lights up: your lane. Anyone can be hired to shoot a listing; only you sit in your overlap. That's the part an app or a bundled Zillow shoot can't commoditize.\n\nNiche labels are editorial summaries reused from the sourced Great niches slide; no new claims.\nFinal audit: hidden, retained. Moves the audience exercise to the close, after the practical examples.",
+        "hidden": true
       },
       {
         "id": "graduation",
@@ -717,7 +718,7 @@ const SECTIONS = [
         "props": {
           "title": "Oculus Rift DK1",
           "src": "media/pmre/fda-dk1-office-demo.jpg",
-          "credit": "Photo: Alex Coulombe / Fisher Dachs Associates",
+          "credit": "",
           "alt": "2013: a headset at work",
           "mode": "content",
           "brightness": 1
@@ -746,7 +747,7 @@ const SECTIONS = [
           "mode": "content",
           "title": "Oculus Rift DK1 · Xiqu Centre",
           "src": "media/v3-fix1/fda-early-vr.mp4",
-          "credit": "Alex Coulombe / Fisher Dachs Associates",
+          "credit": "",
           "brightness": 1,
           "alt": "At eye level",
           "posterTime": 5
@@ -1085,7 +1086,7 @@ const SECTIONS = [
         "id": "statue-vr",
         "year": "2016",
         "title": "Statue of Liberty Museum",
-        "use": "pmre/story-media",
+        "use": "pmre/v6-gallery",
         "keep": 99,
         "venn": [
           1,
@@ -1094,14 +1095,21 @@ const SECTIONS = [
         ],
         "storyRole": "content",
         "props": {
-          "mode": "content",
           "title": "Statue of Liberty Museum",
-          "src": "slides/pmre/hxr-statue-free-work/media/pivot/00_StatueOfLiberty.jpg",
-          "credit": "FXCollaborative / Agile Lens · design visualization",
-          "brightness": 1,
-          "alt": "Statue of Liberty Museum"
+          "line": "Bring VR in while the design can still change.",
+          "steps": true,
+          "media": [
+            {
+              "src": "slides/pmre/hxr-statue-free-work/media/pivot/00_StatueOfLiberty.jpg",
+              "label": "Before it was built"
+            },
+            {
+              "src": "media/pmre/audit/statue-museum-built.jpg",
+              "label": "The completed museum"
+            }
+          ]
         },
-        "notes": "⏱ ~55s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nHarvardXR #10 source. Per Alex’s supplied brief, we did this basically for free and it became an important portfolio item. FXCollaborative were sad to experience it in VR only after the design decisions were settled. Bring VR into the process while it can still change decisions. This is the unbuilt render, not a completed-building photo. Work happened before the2019 opening; the shown year range is a source-deck era, not a contract date."
+        "notes": "⏱ ~55s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nHarvardXR #10 source. Per Alex’s supplied brief, we did this basically for free and it became an important portfolio item. FXCollaborative were sad to experience it in VR only after the design decisions were settled. Bring VR into the process while it can still change decisions. This is the unbuilt render, not a completed-building photo. Work happened before the2019 opening; the shown year range is a source-deck era, not a contract date.\nFinal audit: reveal the completed museum on click. Public project photograph from FXCollaborative https://www.fxcollaborative.com/projects/175/the-statue-of-liberty-museum/ (photo 3, downloaded 2026-11-19). Source page does not name an individual photographer; no attribution invented. The render and photograph are different viewpoints, not a registered before/after."
       }
     ]
   },
@@ -1312,11 +1320,11 @@ const SECTIONS = [
         "use": "pmre/v6-gallery",
         "props": {
           "title": "David Geffen Hall",
-          "line": "",
+          "line": "A physical railing. A virtual balcony. A decision you can feel.",
           "media": [
             {
               "src": "slides/pmre/hxr-david-geffen-hall/media/dgh/DavidGeffenHall01.jpg",
-              "label": ""
+              "label": "Try different railing heights"
             },
             {
               "src": "slides/pmre/hxr-david-geffen-hall/media/dgh/DavidGeffenHall02.jpg",
@@ -1324,11 +1332,12 @@ const SECTIONS = [
             },
             {
               "src": "slides/pmre/hxr-david-geffen-hall/media/dgh/DavidGeffenHall03.jpeg",
-              "label": "A railing you can actually touch"
+              "label": "The completed hall"
             }
           ],
           "steps": false,
-          "layout": "row"
+          "layout": "row",
+          "railCallout": true
         },
         "notes": "⏱ ~50s.\n\n⏱ ~65s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother chance to bring theater expertise into a real architectural decision at eye level. Image and project credits: Agile Lens / Fisher Dachs Associates.\n\nYear: 2022. Venn weights: 1 / 1 / 1.\n\n\nFull-cut delivery space: Use the on-site headset photograph to distinguish a design model, the actual room and a human judging the relationship. Describe the need to communicate across architecture, theater and technology, without claiming an undocumented measured benefit.\nRoot #46 restored as simultaneous media. Talkthrough: physical railing with swappable heights. Discuss testing comfort and vertigo with physical stagecraft. No invented measurements."
       }
@@ -1395,7 +1404,7 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~65s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nFour Seasons came through word of mouth. Original Unreal Fest 2023 slide and notes name Shane Scranton, Paul Debevec, Kim Baumann Larsen, Jeff Mottle, Vikas Reddy and Jeff Powers. Several contacts converged on an introduction to Jonathan Coon. Do not turn them into a made-up relay chain or say the slide lists 17 people. Original recording 9:10–9:43. Correspondence includes an October 2022 message.\n\nYear: 2023. Venn weights: 0.7 / 1 / 1.\nSource: https://www.youtube.com/watch?v=6la2yieiCG0&t=550s\n\nV6 direction (Alex, November 18): Use 2022 for the approach, consistent with October 2022 correspondence; the retained image comes from the later Unreal Fest 2023 presentation. No on-slide event date mislabel. $2 billion was the project-scale brief, not our fee."
+        "notes": "⏱ ~65s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nFour Seasons came through word of mouth. Original Unreal Fest 2023 slide and notes name Shane Scranton, Paul Debevec, Kim Baumann Larsen, Jeff Mottle, Vikas Reddy and Jeff Powers. Several contacts converged on an introduction to Jonathan Coon. Do not turn them into a made-up relay chain or say the slide lists 17 people. Original recording 9:10–9:43. Correspondence includes an October 2022 message.\n\nYear: 2023. Venn weights: 0.7 / 1 / 1.\nSource: https://www.youtube.com/watch?v=6la2yieiCG0&t=550s\n\nV6 direction (Alex, November 18): Use 2022 for the approach, consistent with October 2022 correspondence; the retained image comes from the later Unreal Fest 2023 presentation. No on-slide event date mislabel. $2 billion was the project-scale brief, not our fee.\nFinal audit: each email is spotlighted on its own click; earlier messages dock. Fifth click restores the full original collage."
       },
       {
         "id": "fs-render",
@@ -1832,7 +1841,8 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~30s. NEW concept slide (Claude, Nov 19 overnight). Three clicks; sits right after “Now we’re there.”\n\nStart: the developer-kit era. 2012, the Rift DK1 I showed you earlier: a box strapped to your face. That's the thing that messed up your hair and made you look like a doofus.\n\nClick 1: standalone headsets. No cable, no computer.\n\nClick 2: lighter headsets.\n\nClick 3: glasses. Same head, same idea: putting on a pair of glasses.\n\nPoint: the objection was never the idea, it was the form factor. That's changing, and your buyers will be wearing these. Silhouettes are generic and illustrative, not specific products; pass the real devices around instead."
+        "notes": "⏱ ~30s. NEW concept slide (Claude, Nov 19 overnight). Three clicks; sits right after “Now we’re there.”\n\nStart: the developer-kit era. 2012, the Rift DK1 I showed you earlier: a box strapped to your face. That's the thing that messed up your hair and made you look like a doofus.\n\nClick 1: standalone headsets. No cable, no computer.\n\nClick 2: lighter headsets.\n\nClick 3: glasses. Same head, same idea: putting on a pair of glasses.\n\nPoint: the objection was never the idea, it was the form factor. That's changing, and your buyers will be wearing these. Silhouettes are generic and illustrative, not specific products; pass the real devices around instead.\nFinal audit: hidden, retained. Duplicates the real product/glasses reveal and postpones the joyful montage.",
+        "hidden": true
       },
       {
         "id": "demo-montage",
@@ -1860,7 +1870,7 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/headset-comparison",
         "props": {},
-        "notes": "⏱ ~60s.\n\nPublic specs verified November 18, 2026. USD base launch prices: Vision Pro M5 $3,499 (256GB); Quest 3 $499.99 (128GB, original 2023 launch, not current 512GB retail); XREAL AURA $1,099 limited-time launch offer through end 2026 (12GB/256GB), regular announced base $1,279.\n\nWeights: Vision Pro M5 750–800g includes Light Seal/cushion and Dual Knit Band; separate battery 353g. Quest 3 515g headset. AURA 95g glasses plus 265g compute puck. These are different wearing/compute designs, not equivalent payload measurements.\n\nCompute headroom ordering is an editorial, qualitative inference: 1 M5, 2 Reality Elite, 3 XR2 Gen 2. It is not a measured cross-device benchmark, battery/power-draw ranking, or promise an app works on every headset. Official specifications identify the chips; Qualcomm describes Reality Elite as the next generation beyond XR2+ Gen 2. Test the actual scene and target viewer.\n\nSources: https://www.apple.com/apple-vision-pro/specs/ ; https://www.apple.com/newsroom/2025/10/apple-vision-pro-upgraded-with-the-m5-chip-and-dual-knit-band/ ; https://www.meta.com/quest/quest-3/ ; https://about.fb.com/news/2023/09/meet-meta-quest-3-mixed-reality-headset/ ; https://www.xreal.com/aura ; https://us.shop.xreal.com/blogs/guides/xreal-aura-price-preorder-us ; https://www.qualcomm.com/news/releases/2026/06/qualcomm-takes-spatial-computing-into-the-ai-era-with-snapdragon .\n\nPICO Space Pro: generic, invented headset silhouette ONLY, not a product likeness. Name authorized by Alex for this slide. NDA: no specs, rank, image, price, weight or performance claim."
+        "notes": "⏱ ~60s.\n\nPublic specs verified November 18, 2026. USD base launch prices: Vision Pro M5 $3,499 (256GB); Quest 3 $499.99 (128GB, original 2023 launch, not current 512GB retail); XREAL AURA $1,099 limited-time launch offer through end 2026 (12GB/256GB), regular announced base $1,279.\n\nWeights: Vision Pro M5 750–800g includes Light Seal/cushion and Dual Knit Band; separate battery 353g. Quest 3 515g headset. AURA 95g glasses plus 265g compute puck. These are different wearing/compute designs, not equivalent payload measurements.\n\nCompute headroom ordering is an editorial, qualitative inference: 1 M5, 2 Reality Elite, 3 XR2 Gen 2. It is not a measured cross-device benchmark, battery/power-draw ranking, or promise an app works on every headset. Official specifications identify the chips; Qualcomm describes Reality Elite as the next generation beyond XR2+ Gen 2. Test the actual scene and target viewer.\n\nSources: https://www.apple.com/apple-vision-pro/specs/ ; https://www.apple.com/newsroom/2025/10/apple-vision-pro-upgraded-with-the-m5-chip-and-dual-knit-band/ ; https://www.meta.com/quest/quest-3/ ; https://about.fb.com/news/2023/09/meet-meta-quest-3-mixed-reality-headset/ ; https://www.xreal.com/aura ; https://us.shop.xreal.com/blogs/guides/xreal-aura-price-preorder-us ; https://www.qualcomm.com/news/releases/2026/06/qualcomm-takes-spatial-computing-into-the-ai-era-with-snapdragon .\n\nPICO Space Pro: generic, invented headset silhouette ONLY, not a product likeness. Name authorized by Alex for this slide. NDA: no specs, rank, image, price, weight or performance claim.\nFinal audit: lightest/middle/heaviest refers only to on-head weight. Separate batteries and compute pucks are printed below the weight. Compute ranks remain editorial qualitative ordering, not measured benchmarks."
       },
       {
         "id": "future-brief",
@@ -1922,7 +1932,7 @@ const SECTIONS = [
           "inputLabel": "Capture tools in this room",
           "outputLabel": "A visit at human scale"
         },
-        "notes": "[FLASH] Capture tools in this room: Giraffe360 · Nucleus4D · Bubo². They did not produce this example scan. Compatible exports and viewer support must be checked per product; do not promise a one-click headset path. Sources: talk/sponsors.js.\n\n⏱ ~75s.\n\nPresenter forecast/proposal, November 2026.\n\nMy bet: the deliverable expands from a set of views to a place the buyer can explore. On a phone or drone shoot, plan overlapping coverage for reconstruction alongside the hero shots. Process the images, clean the scan, choose the start point, then publish a walkthrough and a short film. That is a capture-to-walkthrough service you can begin testing on a property you control. A drone covers the outside; a phone or handheld capture covers the inside. This is an additional capture plan, not a promise that every ordinary real-estate shoot will reconstruct well.\n\nThe Rome examples are PortalCam captures. The phone/drone route is a separate workflow. Polycam documents Gaussian splats from existing overlapping photos or video, including drone captures; this is a supported input route, not a promised turnaround or quality guarantee. Sources: https://learn.poly.cam/hc/en-us/articles/30549134403860-How-to-Create-Drone-3D-Models-in-Polycam ; https://learn.poly.cam/hc/en-us/articles/30549121659412-How-to-Create-Photogrammetry-and-Gaussian-splats-from-Existing-Images-and-Videos-on-Mobile-and-Web . Use overlap and coverage, inspect glass/mirrors/moving subjects, clean the result and test the actual viewer. Price the work, not an assumed one-click conversion.\n\nThe portrait movie is reused from the MIA deck: media/video/splat-walkthrough.mp4, credited there to Alex Coulombe. It shows a fountain scan viewed from a moving virtual camera, not a new Rome hotel capture and not a recording of a phone actively scanning. PMRE derivative uses 00:03–00:12, audio removed, height 1080. It illustrates the middle (reconstructed scene) stage; the phone/drone input route is described separately above.\n\nV8 RESOLVED: use the explicitly attributed Nucleus4D priority claim on the following slide, as supplied by Alex; do not state priority in the presenter’s own voice."
+        "notes": "[FLASH] Capture tools in this room: Giraffe360 · Nucleus4D · Bubo². They did not produce this example scan. Compatible exports and viewer support must be checked per product; do not promise a one-click headset path. Sources: talk/sponsors.js.\n\n⏱ ~75s.\n\nPresenter forecast/proposal, November 2026.\n\nMy bet: the deliverable expands from a set of views to a place the buyer can explore. On a phone or drone shoot, plan overlapping coverage for reconstruction alongside the hero shots. Process the images, clean the scan, choose the start point, then publish a walkthrough and a short film. That is a capture-to-walkthrough service you can begin testing on a property you control. A drone covers the outside; a phone or handheld capture covers the inside. This is an additional capture plan, not a promise that every ordinary real-estate shoot will reconstruct well.\n\nThe Rome examples are PortalCam captures. The phone/drone route is a separate workflow. Polycam documents Gaussian splats from existing overlapping photos or video, including drone captures; this is a supported input route, not a promised turnaround or quality guarantee. Sources: https://learn.poly.cam/hc/en-us/articles/30549134403860-How-to-Create-Drone-3D-Models-in-Polycam ; https://learn.poly.cam/hc/en-us/articles/30549121659412-How-to-Create-Photogrammetry-and-Gaussian-splats-from-Existing-Images-and-Videos-on-Mobile-and-Web . Use overlap and coverage, inspect glass/mirrors/moving subjects, clean the result and test the actual viewer. Price the work, not an assumed one-click conversion.\n\nThe portrait movie is reused from the MIA deck: media/video/splat-walkthrough.mp4, credited there to Alex Coulombe. It shows a fountain scan viewed from a moving virtual camera, not a new Rome hotel capture and not a recording of a phone actively scanning. PMRE derivative uses 00:03–00:12, audio removed, height 1080. It illustrates the middle (reconstructed scene) stage; the phone/drone input route is described separately above.\n\nV8 RESOLVED: use the explicitly attributed Nucleus4D priority claim in the source notes, as supplied by Alex; do not state priority in the presenter’s own voice."
       },
       {
         "id": "nucleus-zillow",
@@ -1967,7 +1977,11 @@ const SECTIONS = [
             "Test furniture in AR"
           ],
           "parallel": true,
-          "details": ["Explore the captured home", "Meet an agent at human scale", "See what fits in your room"],
+          "details": [
+            "Explore the captured home",
+            "Meet an agent at human scale",
+            "See what fits in your room"
+          ],
           "icons": [
             "home",
             "headset",
@@ -1997,14 +2011,15 @@ const SECTIONS = [
           "attr": "",
           "kicker": ""
         },
-        "notes": "⏱ ~35s.\n\nPresenter proposal. The virtual-camera concept demo follows; it is schematic, not a promised product or captured client deliverable."
+        "notes": "⏱ ~35s.\n\nPresenter proposal. The virtual-camera concept demo follows; it is schematic, not a promised product or captured client deliverable.\nFinal audit: hidden, retained. Its headline and message now lead the animated plan/model/photo demonstration.",
+        "hidden": true
       },
       {
         "id": "unbuilt-shutter",
         "title": "Photograph a place that doesn’t exist yet",
         "use": "pmre/unbuilt-shutter",
         "props": {},
-        "keep": 99,
+        "keep": 19,
         "year": "2026",
         "venn": [
           1,
@@ -2016,7 +2031,7 @@ const SECTIONS = [
       },
       {
         "id": "camera-demo",
-        "title": "Photograph an unbuilt space",
+        "title": "A virtual set. Your point of view.",
         "year": "2026+",
         "venn": [
           1,
@@ -2024,13 +2039,26 @@ const SECTIONS = [
           1
         ],
         "keep": 30,
-        "use": "pmre/camera-toy",
+        "use": "pmre/v6-gallery",
         "props": {
-          "title": "Photograph an unbuilt space",
-          "architecture": "media/v3-fix1/xiqu.jpg",
-          "architectureLabel": "Xiqu Centre · Bing Thom Architects rendering"
+          "title": "A virtual set. Your point of view.",
+          "line": "A Christmas Carol VR · the performance is a place you can film",
+          "media": [
+            {
+              "src": "media/pmre/audit/carol-trailer-dance.mp4",
+              "poster": "media/pmre/audit/carol-trailer-dance.jpg",
+              "label": "Stand inside the story"
+            },
+            {
+              "src": "media/pmre/audit/carol-replay-marley.mp4",
+              "poster": "media/pmre/audit/carol-replay-marley.jpg",
+              "label": "Choose another point of view"
+            }
+          ],
+          "steps": true,
+          "shutter": true
         },
-        "notes": "⏱ ~40s.\n\nClick-through framing exercise on the actual Xiqu Centre architectural visualization. Three clicks: reframe, choose the film crop, collect three compositions. This uses crops of the supplied render, not a new navigable 3D building or measured camera calibration. Each click has a quiet procedural shutter."
+        "notes": "⏱ ~30s. Christmas Carol replacement requested by Alex, using the MIA spatial deck’s existing show and replay media. Real live-performed virtual theater, not a property model. The transferable skill is composing a view inside a place. The preceding plan/model/photo example supplies the architectural application. First: stand inside the scene. Click: another point of view. These are existing show/replay recordings, not footage of the MIA prototype UI.\nSource: local mia-src/index.html carol-inside and media/video/carol-replay-marley.mp4; MIA 9ee2493. Exact #79 at e5876b3 is camera-demo; older note numbering called the Nucleus card #79. Nucleus remains covered by the niche sequence."
       },
       {
         "id": "ai",
@@ -2120,7 +2148,7 @@ const SECTIONS = [
         "title": "The top shelf of what you already sell",
         "use": "pmre/package-shelf",
         "props": {},
-        "keep": 99,
+        "keep": 19,
         "year": "2026",
         "venn": [
           1,
@@ -2128,7 +2156,7 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~45s. NEW concept slide (Claude, Nov 19 overnight). Four clicks; sits right before the package table.\n\nStart: photos, video, drone. What you sell today.\n\nClick 1: 3D tour and floor plan. Many of you already sell this.\n\nClick 2: splat walkthrough. Same shoot, a little more overlap coverage, and now it's a place.\n\nClick 3: a VR or MR visit. The splat or the plan, delivered at human scale in a headset.\n\nClick 4: premium Unreal at the top shelf. Unbuilt space, custom interaction, scoped project fee: that's where we collaborate.\n\nPoint: I'm not asking you to change careers. Each step reuses the capture below it. You're adding shelves, not replacing the store. Heights are illustrative, not measured value; the next slide puts example numbers on it."
+        "notes": "⏱ ~45s. NEW concept slide (Claude, Nov 19 overnight). Four clicks; sits right before the package table.\n\nStart: photos, video, drone. What you sell today.\n\nClick 1: 3D tour and floor plan. Many of you already sell this.\n\nClick 2: splat walkthrough. Same shoot, a little more overlap coverage, and now it's a place.\n\nClick 3: a VR or MR visit. The splat or the plan, delivered at human scale in a headset.\n\nClick 4: premium Unreal at the top shelf. Unbuilt space, custom interaction, scoped project fee: that's where we collaborate.\n\nPoint: I'm not asking you to change careers. Each step reuses the capture below it. You're adding shelves, not replacing the store. Heights are illustrative, not measured value; the next slide puts example numbers on it.\nThe shelf is a menu of possible services, not a universal progression; choose what solves a client need."
       },
       {
         "id": "package-table",
@@ -2142,7 +2170,7 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/package-table",
         "props": {},
-        "notes": "⏱ ~70s.\n\nIdea credit: Matt Michalski, PMRE 2026 day-1 package/product slides, supplied by Alex as two photographs in Downloads/PMRE Packages. This is our original design, with our own hypothetical add-on figures and scope, not a reproduction of his slides or confidential Aryeo data.\n\nFor this room: keep photos, video, aerials, plans and existing 3D tours. Add a splat tour, guided VR walkthrough, mixed reality on site, then a bespoke Unreal premium. The example add-on prices are teaching proposals, NOT market medians, vendor rates, Agile Lens quotes or guaranteed margins. Scope revisions, travel, hosting and device support separately. A reusable template can reduce marginal setup work; a client pays for a reliable visit and decision, not the number of clicks. Custom Unreal and MR alignment still take real production and QA.\n\nNucleus4D officially confirms Zillow/realtor.com 3D tour publication (https://www.nucleus4d.com/). V8 RESOLVED: Nucleus4D’s supplied priority wording is shown as a vendor claim, visibly attributed; independent priority is not asserted.\n\n[FLASH] Starting products are examples, not verified native imports. Plan reference: CubiCasa / iGUIDE. Capture category: Giraffe360 / Nucleus4D / Bubo². Sell through Aryeo / HDPhotoHub, publish a supported companion tour to Zillow; guided headset delivery and compatibility remain separate.\n\nClient education: the next step should feel familiar. Connect each new spatial deliverable to work the client already values: a photograph chooses a view, a tour connects views, and a guided VR visit lets them judge the place at human scale. Introduce 3D models & splats as an additional deliverable, then price the useful client outcome. This folds the former cognitive-ladder slide into the business section."
+        "notes": "⏱ ~70s.\n\nIdea credit: Matt Michalski, PMRE 2026 day-1 package/product slides, supplied by Alex as two photographs in Downloads/PMRE Packages. This is our original design, with our own hypothetical add-on figures and scope, not a reproduction of his slides or confidential Aryeo data.\n\nFor this room: keep photos, video, aerials, plans and existing 3D tours. Add a splat tour, guided VR walkthrough, mixed reality on site, then a bespoke Unreal premium. The example add-on prices are teaching proposals, NOT market medians, vendor rates, Agile Lens quotes or guaranteed margins. Scope revisions, travel, hosting and device support separately. A reusable template can reduce marginal setup work; a client pays for a reliable visit and decision, not the number of clicks. Custom Unreal and MR alignment still take real production and QA.\n\nNucleus4D officially confirms Zillow/realtor.com 3D tour publication (https://www.nucleus4d.com/). V8 RESOLVED: Nucleus4D’s supplied priority wording is shown as a vendor claim, visibly attributed; independent priority is not asserted.\n\n[FLASH] Starting products are examples, not verified native imports. Plan reference: CubiCasa / iGUIDE. Capture category: Giraffe360 / Nucleus4D / Bubo². Sell through Aryeo / HDPhotoHub, publish a supported companion tour to Zillow; guided headset delivery and compatibility remain separate.\n\nClient education: the next step should feel familiar. Connect each new spatial deliverable to work the client already values: a photograph chooses a view, a tour connects views, and a guided VR visit lets them judge the place at human scale. Introduce 3D models & splats as an additional deliverable, then price the useful client outcome. This folds the former cognitive-ladder slide into the business section.\nProduction scope moved offscreen for readability: plan/tour = capture, check dimensions, publish; splat = coverage, cleanup, hosting; VR = template, scale and headset QA; MR = alignment, options and hosted session; Unreal = model, lighting, optimization, deployment. No guaranteed file conversion or platform compatibility."
       },
       {
         "id": "plan-to-presence",
@@ -2160,10 +2188,10 @@ const SECTIONS = [
       },
       {
         "id": "brief-closer",
-        "title": "The brief, answered",
+        "title": "Your next tier is a place",
         "use": "pmre/brief-closer",
         "props": {},
-        "keep": 99,
+        "keep": 19,
         "year": "2026+",
         "venn": [
           1,
@@ -2192,6 +2220,21 @@ const SECTIONS = [
           "kicker": ""
         },
         "notes": "⏱ ~30s.\n\nExact quote and attribution supplied by Alex in this task. The earlier raw note used the typographic apostrophe and lowercase name; V8: conference quotations now appear visibly, with Alex’s exact attributions."
+      },
+      {
+        "id": "career-recap",
+        "use": "pmre/career-recap",
+        "title": "Keep the whole mix",
+        "keep": 19,
+        "year": "2005–2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "hideTracker": true,
+        "props": {},
+        "notes": "⏱ ~30s. Talkthrough 54:27–54:40 asked for the years and key lessons to return. 2005: work with intention. 2006: theater makes an experience for people. 2013: experiment with a new medium. 2026: combine those skills into something valuable for your clients. Your own overlap will be different."
       },
       {
         "id": "start-now",
@@ -2837,6 +2880,7 @@ function applyStorySpine(){
   tracker.innerHTML='<span class="v3-year">'+year.replace('–','–<br>')+'</span><svg viewBox="0 0 130 130" aria-hidden="true"><circle cx="65" cy="65" r="'+R+'" fill="none" stroke="rgba(224,215,202,.18)" stroke-width="5"/><circle cx="65" cy="65" r="'+R+'" fill="none" stroke="#e0d7ca" stroke-width="5" stroke-linecap="round" transform="rotate(-90 65 65)" stroke-dasharray="'+(L*fr).toFixed(1)+' 999"/><circle cx="'+(cx+R*Math.cos(a)).toFixed(1)+'" cy="'+(cy+R*Math.sin(a)).toFixed(1)+'" r="7" fill="#fff"/>'+weights.map((w,i)=>{const x=[54,76,65][i],y=[58,58,77][i],r=8+11*Math.sqrt(w);return `<circle cx="${x}" cy="${y}" r="${r}" fill="${colors[i]}" fill-opacity=".18" stroke="${colors[i]}" stroke-width="1.6"/><g transform="translate(${x+[-4,4,0][i]},${y+[-3,-3,4][i]}) scale(${(.2+.28*Math.sqrt(w)).toFixed(2)})" style="shape-rendering:crispEdges">${icons[i]}</g>`;}).join('')+'</svg>';sl.append(tracker);
  });
  if(!document.getElementById('v3-style')){const st=document.createElement('style');st.id='v3-style';st.textContent=`
+ body.story-v3[data-look="house"]{--font:'Archivo',Arial,sans-serif!important;--font-body:'Archivo',Arial,sans-serif!important}
  .story-v3 :is(h1,h2,h3,.case-title,.lesson-title,.close-title){text-wrap:balance}.story-v3 :is(p,li,td,figcaption,.tagline,.story-takeaway){text-wrap:pretty}
  #journey,.journey-print,.story-chapter-label{display:none!important}
  .slide[data-type="cover"] .v3-tracker{display:none!important}
@@ -2911,6 +2955,7 @@ window.SD=window.SD||{};
 <script src="slides/pmre/brief-closer/slide.js"></script>
 <script src="slides/pmre/camera-toy/slide.js"></script>
 <script src="slides/pmre/career-map/slide.js"></script>
+<script src="slides/pmre/career-recap/slide.js"></script>
 <script src="slides/pmre/cognitive-ladder/slide.js"></script>
 <script src="slides/pmre/conference-voices/slide.js"></script>
 <script src="slides/pmre/demo-montage/slide.js"></script>

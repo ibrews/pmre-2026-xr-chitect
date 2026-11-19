@@ -1,0 +1,180 @@
+{
+  "checked": "2026-11-19",
+  "people": [
+    {
+      "name": "Dave Koch",
+      "company": "AeroMedia",
+      "left": [
+        "Photography"
+      ],
+      "right": [
+        "Aviation"
+      ],
+      "line": "Aircraft photography + 3D cabin tours",
+      "kind": "Craft + craft",
+      "sources": [
+        "https://aviationaircraftphoto.com/"
+      ]
+    },
+    {
+      "name": "Navjeet Chhina",
+      "company": "Nucleus4D",
+      "left": [
+        "Property",
+        "media"
+      ],
+      "right": [
+        "3D",
+        "technology"
+      ],
+      "line": "Photoreal spaces become a product",
+      "kind": "Craft + technology",
+      "sources": [
+        "https://www.awexr.com/usa-2026/speakers/1598-navjeet-chhina",
+        "https://www.nucleus4d.com/"
+      ]
+    },
+    {
+      "name": "Tom Sparks",
+      "company": "Sparks Media Group · WGAN",
+      "left": [
+        "Property",
+        "media"
+      ],
+      "right": [
+        "Community"
+      ],
+      "line": "A photographer who connects the industry",
+      "kind": "Craft + community",
+      "sources": [
+        "https://www.wegetaroundnetwork.com/about-us/"
+      ]
+    },
+    {
+      "name": "Krisse & Rich Newport",
+      "company": "Southern Real Estate Media",
+      "left": [
+        "Interiors"
+      ],
+      "right": [
+        "Aerials"
+      ],
+      "line": "Two perspectives on Lake Martin properties",
+      "kind": "Two people + complementary crafts",
+      "sources": [
+        "https://southernremedia.com/our-story/",
+        "https://southernremedia.com/2d-and-3d-property-photography-lake-martin-al/"
+      ]
+    },
+    {
+      "name": "Devon Pastorius",
+      "company": "Narwhal Creative",
+      "left": [
+        "Property",
+        "media"
+      ],
+      "right": [
+        "Performance"
+      ],
+      "line": "Listing films that make agents memorable",
+      "kind": "Craft + performance",
+      "sources": [
+        "https://narwhalcreative.ca/about/",
+        "https://www.pmreconference.com/presenters"
+      ]
+    },
+    {
+      "name": "Via Lloyd-George",
+      "company": "Charleston",
+      "left": [
+        "Architecture"
+      ],
+      "right": [
+        "Property",
+        "media"
+      ],
+      "line": "An architectural eye in property media",
+      "kind": "Design + visual storytelling",
+      "sources": [
+        "Alex, 2026-11-19 07:12 UTC; company deliberately omitted"
+      ]
+    },
+    {
+      "name": "Perica Milosevic",
+      "company": "Bubo²",
+      "left": [
+        "360°",
+        "capture"
+      ],
+      "right": [
+        "3D",
+        "software"
+      ],
+      "line": "An Insta360 recording becomes a browser tour",
+      "kind": "Capture + software",
+      "sources": [
+        "https://bubo2.com/technology",
+        "Alex’s identification; existing verified PMRE sponsor record"
+      ]
+    },
+    {
+      "name": "Emily Olman",
+      "company": "Hopscotch Interactive",
+      "left": [
+        "Property",
+        "photography"
+      ],
+      "right": [
+        "Spatial",
+        "media"
+      ],
+      "line": "Property marketing, explored in AR and VR",
+      "kind": "Craft + a new medium",
+      "sources": [
+        "https://www.hopscotchinteractive.com/blog",
+        "https://www.awexr.com/usa-2026/speakers/3392-emily-olman"
+      ]
+    },
+    {
+      "name": "Matt Gia",
+      "company": "AutoHDR",
+      "left": [
+        "Photography"
+      ],
+      "right": [
+        "AI",
+        "product"
+      ],
+      "line": "A photographer builds an editing product",
+      "kind": "Craft + product",
+      "sources": [
+        "https://www.linkedin.com/in/mattgia",
+        "https://www.autohdr.com/",
+        "https://www.pmreconference.com/workshops"
+      ]
+    },
+    {
+      "name": "Brandon Cooper",
+      "company": "Realpics · PMRE",
+      "left": [
+        "Photography"
+      ],
+      "right": [
+        "Community"
+      ],
+      "line": "You’re standing in his overlap",
+      "kind": "Craft + bringing people together",
+      "sources": [
+        "https://realpics.ca/about",
+        "https://www.pmreconference.com/",
+        "https://www.upmarketpod.com/ (Road to PMRE 2026 #12)"
+      ]
+    }
+  ],
+  "omitted": [
+    "Navjeet six-figure / 6–8 month production figures: not verified",
+    "Newport drone-first founding and 4K claim: not verified",
+    "Via company: not verified",
+    "Nucleus first priority: only vendor-attributed wording in notes"
+  ]
+}

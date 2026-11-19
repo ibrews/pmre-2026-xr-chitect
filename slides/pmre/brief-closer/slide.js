@@ -16,18 +16,18 @@ css:`.bc-s{position:absolute;inset:4% 4% 19%;color:var(--text)}
 .bc-s[data-s="1"] .col,.bc-s[data-s="2"] .col{opacity:1;transform:none}
 .bc-s .col svg{width:110px;height:110px;color:var(--c);display:block;margin-bottom:18px}
 .bc-s .col h3{margin:0 0 16px;font:800 72px/1 var(--font-display,var(--font));color:var(--c)}
-.bc-s .col p{margin:0;font:500 46px/1.25 var(--font)}
-.bc-s .end{position:absolute;left:0;right:0;bottom:0;text-align:center;font:800 64px/1.1 var(--font-display,var(--font));color:#d7b668;opacity:0;transform:scale(.94);transition:opacity .8s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.bc-s .col p{margin:0;font:500 42px/1.25 var(--font)}
+.bc-s .end{position:absolute;left:0;right:0;bottom:0;text-align:center;font:800 58px/1.1 var(--font-display,var(--font));color:#d7b668;opacity:0;transform:scale(.94);transition:opacity .8s,transform .9s cubic-bezier(.2,.8,.2,1)}
 .bc-s[data-s="2"] .end{opacity:1;transform:none}
 .bc-s.noanim *{transition:none!important}`,
 render(el,props,ctx){
 const ic={live:'<path d="M10 46 L45 16 L80 46 M20 38 V78 H70 V38 M38 78 V56 H52 V78" />',biz:'<circle cx="30" cy="28" r="11"/><circle cx="62" cy="28" r="11"/><path d="M10 76 C12 54 48 54 46 76 M44 76 C42 54 80 54 82 76"/>',media:'<rect x="10" y="26" width="58" height="44" rx="6"/><circle cx="39" cy="48" r="12"/><path d="M68 40 L84 30 V66 L68 56"/>'};
 const svg=k=>`<svg viewBox="0 0 92 92" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">${ic[k]}</svg>`;
-el.innerHTML=`<div class="bc-s" data-s="-1"><div class="q">“How AR and VR could change the way we <em>live</em> and <em>do&nbsp;business</em> … connected to how you <em>create&nbsp;media</em> and <em>market&nbsp;properties</em>.”<small>The brief Brandon gave me for this talk</small></div>
-<h2 class="ans">The brief, answered</h2><div class="cols">
-<div class="col" style="--c:#00d4ff">${svg('live')}<h3>Live</h3><p>Visit a home before you fly in, or before it’s built.</p></div>
-<div class="col" style="--c:#a78bfa">${svg('biz')}<h3>Do business</h3><p>Decide layouts and finishes inside the space, together.</p></div>
-<div class="col" style="--c:#f43f5e">${svg('media')}<h3>Your media</h3><p>Every shoot can become a place buyers step inside.</p></div></div>
+el.innerHTML=`<div class="bc-s" data-s="-1"><div class="q">How will AR and VR change the way we <em>live</em>, <em>do&nbsp;business</em>, and <em>market&nbsp;properties</em>?<small>Brandon’s challenge for this talk</small></div>
+<h2 class="ans">Your next tier is a place</h2><div class="cols">
+<div class="col" style="--c:#00d4ff">${svg('live')}<h3>Live</h3><p>Try the layout before you renovate. Visit before you fly.</p></div>
+<div class="col" style="--c:#a78bfa">${svg('biz')}<h3>Do business</h3><p>Bring remote clients into the same space. Decide together.</p></div>
+<div class="col" style="--c:#f43f5e">${svg('media')}<h3>Your media</h3><p>Capture once. Offer a visit, more views and a reason to choose the property.</p></div></div>
 <div class="end">So start building. Bring us the ambitious ones.</div></div>`;
 const root=el.querySelector('.bc-s');const set=n=>{root.dataset.s=n;};
 return{enter(){root.classList.add('noanim');set(-1);void root.offsetWidth;root.classList.remove('noanim');if(ctx.instant)set(0);else ctx.clock.after(60,()=>set(0));},
