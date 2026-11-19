@@ -1,6 +1,6 @@
 ## PMRE v8 — conference voices and attendee niches
 
-Source: `story/v8`; publish only the new `/v8/` subtree. Root and `/v3/` through `/v7/` are preserved. Conference quotes now appear on slides; attendee Venn spotlights, Matt Gio’s cognitive-ladder idea, an attributed Nucleus4D claim and Emily Olman’s AR Insider Four Seasons header capture are included. Via’s company could not be verified and is omitted. Source details: `media/pmre/v8/provenance.json`.
+Source: `story/v8`; publish only the `/v8/` subtree. Root and `/v3/` through `/v7/` are preserved. Conference quotes now appear on slides; attendee Venn spotlights, Matt Gio’s cognitive-ladder idea, an attributed Nucleus4D claim and Emily Olman’s AR Insider Four Seasons header capture are included. Via’s company could not be verified and is omitted. Cotton now plays Alex’s supplied, audio-free H.264 clip without re-encoding, looping silently with the original still as poster. Source details: `media/pmre/v8/provenance.json`.
 
 Package with `python3 tools/package_offline.py --out <organizer-package>`; verify the extracted ZIP using `node tools/qa_v8.mjs ROOT OUT chrome|firefox` and `tools/qa_v7_resources.mjs`. No Drive upload.
 
@@ -39,7 +39,7 @@ node tools/qa_v7_resources.mjs /absolute/path/to/extracted-package /absolute/pat
 
 `qa_v8.mjs` uses system Chrome and installed `playwright-core` (set `PLAYWRIGHT_CORE` if needed). It checks every absolute slide, including hidden structural slides, over ordinary `file://`, records console/page/network/media failures, captures visible slides and checks all length/AI combinations. It does not pass security-bypass flags. ZIPs include a file-hash manifest, opening instructions and an external SHA-256 sidecar. Do not upload to Drive until Alex requests it.
 
-Publish by copying the committed source tree into a **new `/v8/` directory on main**, preserving root and `/v3/` through `/v7/`. Compare source and destination tracked paths after copying: nested `.gitignore` rules can silently omit force-tracked media. Public project credits remain in notes and meaningful media credits; no source-deck captions are added.
+Publish by copying the committed source tree into the **`/v8/` directory on main**, preserving root and `/v3/` through `/v7/`. Compare source and destination tracked paths after copying: nested `.gitignore` rules can silently omit force-tracked media. Public project credits remain in notes and meaningful media credits; no source-deck captions are added.
 
 ## Things to Try
 

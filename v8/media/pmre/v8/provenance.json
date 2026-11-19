@@ -19,7 +19,7 @@
   },
   "via": {
     "status": "Company NOT VERIFIED; omit company and corporate role",
-    "shown": "Via Lloyd-George, Charleston, architect \u2014 supplied by Alex",
+    "shown": "Via Lloyd-George, Charleston, architect — supplied by Alex",
     "queries": [
       "Via Lloyd-George",
       "Via Lloyd George Charleston",
@@ -29,7 +29,7 @@
     "note": "Earlier raw note says Giraffe360; latest task says unsure. Neither published."
   },
   "nucleus": {
-    "status": "RESOLVED \u2014 visibly attributed vendor claim, per Alex",
+    "status": "RESOLVED — visibly attributed vendor claim, per Alex",
     "quote": "first 3DGS platform approved to publish immersive experiences directly into Zillow's 3D tour ecosystem",
     "source": "https://www.nucleus4d.com/",
     "scope": "Exact wording supplied by Alex; current rendered homepage confirms Zillow/realtor.com publication but does not contain the exact first sentence. Not an independent priority finding."
@@ -58,5 +58,16 @@
     "credit": "Emily Olman / AR Insider",
     "published": "2026-06-10",
     "updated": "2026-08-03"
+  },
+  "cotton_video_followup": {
+    "source": "/Users/alex/Archives/pmre2026-2026-10/cotton-muted.mp4",
+    "packaged": "media/pmre/v8/cotton-muted.mp4",
+    "sha256": "04f0d9d3c37833fa79b3d1998f5efc12df2b790ec2325d82c6a78727267b250b",
+    "bytes": 16413671,
+    "duration_seconds": 56.8,
+    "codec": "h264",
+    "audio_streams": 0,
+    "processing": "Byte-for-byte copy; no re-encode",
+    "playback": "Silent autoplay on slide entry; loop; existing still retained as poster"
   }
 }
