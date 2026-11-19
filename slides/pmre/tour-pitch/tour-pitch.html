@@ -31,9 +31,9 @@ C.forEach((c,i)=>{const arr=T0+HOP*i,at=arr+.68,g=E('g',{transform:`translate(${
  const lerp=(a,b,k)=>a+(b-a)*k,ez=k=>k<0?0:k>1?1:1-Math.pow(1-k,3);
  // face (small, at his head) -> held out in front -> set down on the pin
  track(dot,END,t=>{if(t<arr)return{opacity:0};const u=t-arr;let x,y,sc;
-  if(u<.16){x=0;y=-62;sc=.45;}
-  else if(u<.4){const k=ez((u-.16)/.24);x=lerp(0,34,k);y=lerp(-62,-52,k);sc=lerp(.45,.72,k);}
-  else{const k=ez((u-.4)/.25);x=lerp(34,0,k);y=lerp(-52,10,k);sc=lerp(.72,1.25,k);}
+  if(u<.16){x=0;y=-74;sc=.45;}
+  else if(u<.4){const k=ez((u-.16)/.24);x=lerp(0,34,k);y=lerp(-74,-58,k);sc=lerp(.45,.72,k);}
+  else{const k=ez((u-.4)/.25);x=lerp(34,0,k);y=lerp(-58,10,k);sc=lerp(.72,1.25,k);}
   return{opacity:1,transform:`translate(${x.toFixed(1)}px,${y.toFixed(1)}px) scale(${sc.toFixed(3)})`};});
  const x=E('path',{d:'M14 -62 L44 -32 M44 -62 L14 -32',stroke:'#f43f5e','stroke-width':8,'stroke-linecap':'round',fill:'none'},g);
  track(x,END,t=>{const k=clamp((t-at)/.18,0,1);return{opacity:+k.toFixed(2),transform:`scale(${(1.6-.6*k).toFixed(3)})`};});});
