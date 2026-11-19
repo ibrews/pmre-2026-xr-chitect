@@ -601,27 +601,40 @@ const SECTIONS = [
         "notes": "⏱ ~67s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI got to be an architect specializing in theaters. Two of my interests in one job. And still I felt a gap: where was the emerging technology? It felt like complaining about the sheen of the gold on the wall. A very first-world problem.\n\nYear: 2012. Venn weights: 1 / 1 / 0.1.\n\n\nSource: Designing Naturally s7. FDA sightline work predates my arrival and VR, going back to the 1980s per Alex. Do not assign an exact year to this scanned drawing without confirmation.\n\n2026-11-14 dictation:\n2012: Connie Caldwell from Syracuse alumni services remembered me and recommended I apply to Fisher Dachs Associates, Theatre Planning and Design. The benefit of being a weird person with niche interests: people remember you. A job for a theater architect? I remember that kid who loves architecture and theater. I showed my thesis, Scopic Operations in Military Theatre, and was thrilled. Everything was great except it was a fairly low-tech firm: no Revit, just AutoCAD and a little SketchUp. But in 2013… the Oculus Rift DK1.\n"
       },
       {
-        "id": "early-vr",
-        "year": "2013",
-        "title": "Oculus Rift DK1 · Xiqu Centre",
-        "use": "pmre/story-media",
+        "id": "sightline-views",
+        "title": "Testing the view",
+        "use": "pmre/v6-gallery",
         "keep": 99,
+        "year": "2012",
         "venn": [
           1,
           1,
-          1
+          0.1
         ],
         "storyRole": "content",
         "props": {
-          "mode": "content",
-          "title": "Oculus Rift DK1 · Xiqu Centre",
-          "src": "media/v3-fix1/fda-early-vr.mp4",
-          "credit": "Alex Coulombe / Fisher Dachs Associates",
-          "brightness": 1,
-          "alt": "At eye level",
-          "posterTime": 5
+          "title": "Testing the view",
+          "layout": "grid",
+          "media": [
+            {
+              "src": "media/pmre/v8/sightline-02-left.webp",
+              "alt": "Theater sightline study, position B, first view"
+            },
+            {
+              "src": "media/pmre/v8/sightline-02-right.webp",
+              "alt": "Theater sightline study, position B, second view"
+            },
+            {
+              "src": "media/pmre/v8/sightline-03-left.webp",
+              "alt": "Theater sightline study, position C, first view"
+            },
+            {
+              "src": "media/pmre/v8/sightline-03-right.webp",
+              "alt": "Theater sightline study, position C, second view"
+            }
+          ]
         },
-        "notes": "⏱ ~45s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s8. Early FDA work: plans and renders could not answer whether a seat felt good. VR made that experience discussable. Source recording is a later demonstration of the early workflow; do not call it a dated2013 recording."
+        "notes": "Presenter-supplied 02.jpg and 03.jpg: two views from each sheet, arranged as a 2×2 grid. Margins and source sheet text omitted to emphasize the sightlines."
       },
       {
         "id": "dk1",
@@ -646,6 +659,52 @@ const SECTIONS = [
         ]
       },
       {
+        "id": "early-vr",
+        "year": "2013",
+        "title": "Oculus Rift DK1 · Xiqu Centre",
+        "use": "pmre/story-media",
+        "keep": 99,
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "Oculus Rift DK1 · Xiqu Centre",
+          "src": "media/v3-fix1/fda-early-vr.mp4",
+          "credit": "Alex Coulombe / Fisher Dachs Associates",
+          "brightness": 1,
+          "alt": "At eye level",
+          "posterTime": 5
+        },
+        "notes": "⏱ ~45s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s8. Early FDA work: plans and renders could not answer whether a seat felt good. VR made that experience discussable. Source recording is a later demonstration of the early workflow; do not call it a dated2013 recording."
+      },
+      {
+        "id": "xiqu",
+        "year": "2014",
+        "title": "Xiqu Centre",
+        "use": "pmre/xiqu-comparison",
+        "keep": 99,
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "props": {
+          "mode": "content",
+          "title": "Xiqu Centre",
+          "src": "media/v3-fix1/xiqu.jpg",
+          "credit": "Rendering: Bing Thom Architects",
+          "brightness": 1,
+          "alt": "Xiqu Centre",
+          "stereo": "media/pmre/v8/xiqu-stereo.webp"
+        },
+        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s9. Bing Thom Architects render of Xiqu Centre. Source notes describe testing railing height and the swoop of a wall at human scale. Paraphrase the recorded Venelin Kokalov response; do not invent a new quotation. The source places this work in the 2013–2015 FDA era; no exact contract date is asserted.\n\nFull-cut delivery space: Walk through one seating decision: identify the audience viewpoint, the obstruction and what a client can test at eye level. Contrast that with explaining the same question from a plan. Invite the audience to think of a view their own client cannot yet picture. Do not assert a quantified result.\n\nBing Thom Architects saw the benefit too. Michael Heeney, Principal at Bing Thom, describes the benefit as such: \"We understood the space in an entirely new way. It was one thing to be rotating around a 3D model. It was entirely something else to see the project at exactly the scale the audience would perceive it after construction.\""
+      },
+      {
         "id": "wisconsin-detail",
         "title": "I added too much detail",
         "use": "pmre/story-media",
@@ -665,28 +724,6 @@ const SECTIONS = [
           "brightness": 1
         },
         "notes": "⏱ ~35s.\n\nAlex’s November 19 direction: Wisconsin School of Music, where I added too much detail. Use his supplied experiencing-a-theater image. Modeling for rendering did not automatically make an optimized VR experience."
-      },
-      {
-        "id": "xiqu",
-        "year": "2014",
-        "title": "Xiqu Centre",
-        "use": "pmre/story-media",
-        "keep": 99,
-        "venn": [
-          1,
-          1,
-          1
-        ],
-        "storyRole": "content",
-        "props": {
-          "mode": "content",
-          "title": "Xiqu Centre",
-          "src": "media/v3-fix1/xiqu.jpg",
-          "credit": "Rendering: Bing Thom Architects",
-          "brightness": 1,
-          "alt": "Xiqu Centre"
-        },
-        "notes": "⏱ ~40s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nSource: Designing Naturally s9. Bing Thom Architects render of Xiqu Centre. Source notes describe testing railing height and the swoop of a wall at human scale. Paraphrase the recorded Venelin Kokalov response; do not invent a new quotation. The source places this work in the 2013–2015 FDA era; no exact contract date is asserted.\n\nFull-cut delivery space: Walk through one seating decision: identify the audience viewpoint, the obstruction and what a client can test at eye level. Contrast that with explaining the same question from a plan. Invite the audience to think of a view their own client cannot yet picture. Do not assert a quantified result."
       },
       {
         "id": "not-turnkey",
