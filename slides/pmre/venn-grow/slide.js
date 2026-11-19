@@ -6,5 +6,6 @@ SD.defineSlide({
   duration: 8.8,
   props: {feeds: ['a play’s structure → a building’s structure', 'restaurant studio → dinner theater', 'park studio → Shakespeare amphitheater'], caption: 'Each interest made the others stronger'},
   assets: ['venn-grow.html'],
+  shared: ['kit/sprite.js'],
   provenance: ['PMRE v5 (2026-11-14): presenter-requested overlap motion'],
 });
