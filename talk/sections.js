@@ -354,7 +354,7 @@ const SECTIONS = [
         "use": "pmre/v6-gallery",
         "props": {
           "title": "Great ideas. Shaky craftsmanship.",
-          "line": "Year one: no computers. Glue everywhere.",
+          "line": "An early study model. Plenty of glue.",
           "media": [
             {
               "src": "media/pmre/audit/craft-model-full.jpg",
@@ -364,14 +364,14 @@ const SECTIONS = [
         },
         "title": "Great ideas. Shaky craftsmanship.",
         "keep": 30,
-        "year": "2005",
+        "year": "2004",
         "venn": [
           1,
           0,
           0.1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nTwo problems that first year. One: no computers. Everything was hand drawn. Two, as if my insecurity wasn’t high enough: the craftsmanship. Great ideas, but my line work and study models were not clean. I was told to work on my craft.\n\nI was not a wunderkind. Worth saying: a lot of the wunderkinds I knew did not end up becoming architects, or became architects who did not seem happy about it. Good at it, not enjoying it.\n\nPhoto (supplied by Alex 2026-11-14): one of my cardboard study models. The camera stamp read 08/04/2004, before Syracuse, so it is probably Cornell summer program work (KB bio lists the program; confirm). The stamp is cropped off and the image upscaled 2.5×. Say “my study models”, not “my first-year model”.\n\nYear: 2005. Venn weights: 1 / 0 / 0.1.\n\nAudit: restored the uncropped original so the whole glue bottle is visible. The date stamp is truthful (2004); describe this as an example of my early study models, not a Syracuse first-year photograph."
+        "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nTwo problems that first year. One: no computers. Everything was hand drawn. Two, as if my insecurity wasn’t high enough: the craftsmanship. Great ideas, but my line work and study models were not clean. I was told to work on my craft.\n\nI was not a wunderkind. Worth saying: a lot of the wunderkinds I knew did not end up becoming architects, or became architects who did not seem happy about it. Good at it, not enjoying it.\n\nPhoto (supplied by Alex 2026-11-14): one of my cardboard study models. The camera stamp read 08/04/2004, before Syracuse, so it is probably Cornell summer program work (KB bio lists the program; confirm). The full dated original is shown. Say “my study models”, not “my first-year model”.\n\nPhoto year: 2004. Venn weights: 1 / 0 / 0.1.\n\nAudit: restored the uncropped original so the whole glue bottle is visible. The date stamp is truthful (2004); describe this as an example of my early study models, not a Syracuse first-year photograph."
       },
       {
         "id": "hand",
@@ -388,6 +388,34 @@ const SECTIONS = [
         "storyRole": "content",
         "notes": "⏱ ~45s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAt Syracuse we were not allowed to touch a computer for the first year. At the time it was excruciating. It made me think deliberately about every line and every line weight. With Revit you make a wall, and the lines are a byproduct. Clarity can get lost.\n\nYear: 2005. Venn weights: 1 / 0 / 0.1.\n\n\nElizabeth review, November 11: The diagram contrasts a carefully drawn stair opening with a generated slab that blocks the stair. Ask the audience to spot the headroom problem. The point is that learning a tool also means learning to judge its output. The building/error is an original schematic, not a real failed project. Retain because this establishes the trained eye before the software workflow.\n\nTalkthrough 07:40: “It taught me how to do things with intention, deliberately.”\nSubstep: generated plans, sections, elevations and schedules stack on the right. Left = slow and deliberate; right = very fast, but not necessarily clean.\n⏱ ~35s.\n\nIllustrative BIM drawing sheets, not scans of Alex’s student work. After making a model, plans, sections, elevations and schedules become byproducts. You still need the eye to review the output. This prepared me for AI: a few crucial decisions, lots of output, then checking emails, photographs, marketing copy and 3D models. The diagram deliberately contains a stair headroom clash.",
         "motion": "the-hand"
+      },
+      {
+        "id": "early-model",
+        "title": "From drawings to places",
+        "use": "pmre/v6-gallery",
+        "year": "2005–2010",
+        "tags": [
+          "20",
+          "30",
+          "full",
+          "20t"
+        ],
+        "props": {
+          "title": "From drawings to places",
+          "line": "I wanted to build spaces you could explore.",
+          "media": [
+            {
+              "src": "media/pmre/audit/infobox-study.mp4",
+              "poster": "media/pmre/audit/infobox-study.jpg",
+              "label": "infoBox · a digital building study"
+            },
+            {
+              "src": "media/pmre/audit/greenbox-model.jpg",
+              "label": "Greenbox · a restaurant in a container"
+            }
+          ]
+        },
+        "notes": "⏱ ~20s. Early experiments with digital and physical models. This infoBox is a study of Schneider + Schumacher’s Berlin building (1995), not a building Alex designed. Alex’s original student animation assembles the model. Greenbox is Alex’s 2009 shipping-container restaurant project. The original portfolio also linked interactive executables; none are run here.\nRecovered from Alex’s original public portfolio: http://alexcoulombe.com/architecture/portfolio/infobox.htm and greenbox.htm. infoBox embedded video https://www.youtube.com/watch?v=-JAI83fIYWY; source 00:20–01:10, sped up 2.5x, muted. Greenbox interior model photograph: http://alexcoulombe.com/architecture/portfolio/images/greenbox_interior.jpg. Period is the student chapter; no unverified exact infoBox production year claimed."
       },
       {
         "id": "drawing-judgment",
@@ -911,13 +939,13 @@ const SECTIONS = [
         "props": {
           "title": "Blueprint Immersive",
           "src": "media/pmre/v7/bpi-latest-trailer-v2.mp4",
-          "credit": "Product demo: Agile Lens",
+          "credit": "",
           "alt": "Blueprint Immersive, latest BPI trailer V2 supplied by Alex",
           "mode": "content",
           "brightness": 1,
           "takeaway": "Make your expertise repeatable"
         },
-        "notes": "⏱ ~35s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThis product takes the one-off bespoke theater VR workflow I built for Fisher Dachs and lets them do it themselves. Disseminating expertise can mean teaching, software, a platform, or a talk.\n\nYear: 2025–2026. Venn weights: 1 / 1 / 1.\n\n\nFor your business — presenter proposal: This is a theatre tool, not a property-marketing product claim. The transferable lesson: package what you know into a repeatable buyer experience. Build a template for the questions every buyer asks: what can I see, how does it connect, where would my furniture go?\n\nV6 direction (Alex, November 18): Deliberate flash-forward: Blueprint Immersive 2023–2026. Place beside the Rice white model to connect repeatable seat and design-option tools. Do not imply this product existed in 2015.\n\nV7: replaced the 49.566667s seat-demo derivative with Alex’s Latest BPI Trailer V2.mp4 (48.833333s). Different SHA-256 and duration; H.264 web derivative, no audio, silent autoplay/loop. Source comparison and derivative hashes are in v7 evidence.",
+        "notes": "⏱ ~35s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThis product takes the one-off bespoke theater VR workflow I built for Fisher Dachs and lets them do it themselves. Disseminating expertise can mean teaching, software, a platform, or a talk.\n\nYear: 2025–2026. Venn weights: 1 / 1 / 1.\n\n\nFor your business — presenter proposal: This is a theatre tool, not a property-marketing product claim. The transferable lesson: package what you know into a repeatable buyer experience. Build a template for the questions every buyer asks: what can I see, how does it connect, where would my furniture go?\n\nV6 direction (Alex, November 18): Deliberate flash-forward: Blueprint Immersive 2023–2026. Place beside the Rice white model to connect repeatable seat and design-option tools. Do not imply this product existed in 2015.\n\nV7: replaced the 49.566667s seat-demo derivative with Alex’s Latest BPI Trailer V2.mp4 (48.833333s). Different SHA-256 and duration; H.264 web derivative, no audio, silent autoplay/loop. Source comparison and derivative hashes are in v7 evidence.\nCreative/source credit retained in notes: Product demo: Agile Lens",
         "year": "2023–2026",
         "venn": [
           1,
@@ -1383,12 +1411,12 @@ const SECTIONS = [
         "props": {
           "title": "A holodeck",
           "src": "media/pmre/fs-v2/lake-06.jpg",
-          "credit": "Four Seasons Lake Austin · photo: Agile Lens",
+          "credit": "",
           "alt": "Visitors share a room-scale VR tour in the Four Seasons Lake Austin Holodeck",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~67s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBuyers walk the future home together. A guide and physical stagecraft make this a shared visit.\n\nYear: 2023. Venn weights: 1 / 1 / 1.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\n\nFull-cut delivery space: Describe the visitor journey: briefing, headset, shared walk and sitting in a real seat at the end. Explain the guide’s role and why other people in the room change the visit. Ask which part of a property story needs more than a camera.\n\nAlex talkthrough 45:18–45:40: introduce the Holodeck room photo here, between the DBOX rendering and the Unreal tour. Call it A holodeck; do not pair this introductory image with the $870M construction-loan headline.",
+        "notes": "⏱ ~67s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBuyers walk the future home together. A guide and physical stagecraft make this a shared visit.\n\nYear: 2023. Venn weights: 1 / 1 / 1.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\n\nFull-cut delivery space: Describe the visitor journey: briefing, headset, shared walk and sitting in a real seat at the end. Explain the guide’s role and why other people in the room change the visit. Ask which part of a property story needs more than a camera.\n\nAlex talkthrough 45:18–45:40: introduce the Holodeck room photo here, between the DBOX rendering and the Unreal tour. Call it A holodeck; do not pair this introductory image with the $870M construction-loan headline.\nCreative/source credit retained in notes: Four Seasons Lake Austin · photo: Agile Lens",
         "year": "2023",
         "venn": [
           1,
@@ -1406,12 +1434,12 @@ const SECTIONS = [
           "title": "Market the property before it exists",
           "src": "media/pmre/v6/four-seasons-unreal-tour.mp4",
           "alt": "Actual in-headset VR tour of Four Seasons Lake Austin",
-          "credit": "Agile Lens · interactive experience",
+          "credit": "",
           "mode": "content",
           "brightness": 1,
           "takeaway": ""
         },
-        "notes": "⏱ ~90s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nActual in-headset tour. We end in a theater, which feels fitting. Rendering: DBOX for Austin Capital Partners. PureBlink: project visualization collaborator; Agile Lens: interactive experience.\n\nYear: 2023. Venn weights: 1 / 1 / 1.\n\n\nFor your business — presenter proposal: For an off-plan sale, a photograph cannot show the finished home. Partner with the architect and visualization team to create a guided, human-scale sales visit. Your job is still choosing the views and helping someone imagine living there. Project context is evidence of use, not proof of a sales lift caused by VR.\n\nV6 direction (Alex, November 18): Play the Unreal portion of the complete Aspen film from 30 seconds onward, no Aspen setup yet, silently looping. DBOX and Pureblink remain credited in these notes as visualization collaborators; this is the Agile Lens interactive experience, not a static DBOX rendering.",
+        "notes": "⏱ ~90s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nActual in-headset tour. We end in a theater, which feels fitting. Rendering: DBOX for Austin Capital Partners. PureBlink: project visualization collaborator; Agile Lens: interactive experience.\n\nYear: 2023. Venn weights: 1 / 1 / 1.\n\n\nFor your business — presenter proposal: For an off-plan sale, a photograph cannot show the finished home. Partner with the architect and visualization team to create a guided, human-scale sales visit. Your job is still choosing the views and helping someone imagine living there. Project context is evidence of use, not proof of a sales lift caused by VR.\n\nV6 direction (Alex, November 18): Play the Unreal portion of the complete Aspen film from 30 seconds onward, no Aspen setup yet, silently looping. DBOX and Pureblink remain credited in these notes as visualization collaborators; this is the Agile Lens interactive experience, not a static DBOX rendering.\nCreative/source credit retained in notes: Agile Lens · interactive experience",
         "year": "2023",
         "venn": [
           1,
@@ -1428,12 +1456,12 @@ const SECTIONS = [
         "props": {
           "title": "Spike tape",
           "src": "media/pmre/re-holodeck-fiducial-floor.jpg",
-          "credit": "Four Seasons Lake Austin · photo: Agile Lens",
+          "credit": "",
           "alt": "The floor becomes the set",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~115s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nKevin Laibson story. Jonathan wished there were a way to remember where the furniture belonged so it could go back in exactly the same place. Theater already has that: spike tape. I hire a lot of theater people. They bring things like this. The photograph shows the room setup, not a claimed close-up of theatrical spike tape.\n\nYear: 2023. Venn weights: 0.8 / 1 / 0.8.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.",
+        "notes": "⏱ ~115s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nKevin Laibson story. Jonathan wished there were a way to remember where the furniture belonged so it could go back in exactly the same place. Theater already has that: spike tape. I hire a lot of theater people. They bring things like this. The photograph shows the room setup, not a claimed close-up of theatrical spike tape.\n\nYear: 2023. Venn weights: 0.8 / 1 / 0.8.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\nCreative/source credit retained in notes: Four Seasons Lake Austin · photo: Agile Lens",
         "year": "2023",
         "venn": [
           0.8,
@@ -1450,13 +1478,13 @@ const SECTIONS = [
         "props": {
           "title": "$500M+ in presales",
           "src": "media/pmre/fs-v2/lake-05.jpg",
-          "credit": "Four Seasons Lake Austin · photo: Agile Lens",
+          "credit": "",
           "alt": "$500M+ in presales",
           "mode": "content",
           "brightness": 1,
           "takeaway": "Sell the visit as well as the image"
         },
-        "notes": "⏱ ~35s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter-approved project context. Do not turn the figure into a measured causal return on VR.\n\nYear: 2023–2026. Venn weights: 1 / 0.5 / 1.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\n\nFull-cut delivery space: Separate the evidence of buyer adoption from causality. The presales figure is project context; ask what additional evidence would be needed to attribute sales to VR alone. Return to the customer’s ability to judge an unbuilt home.\n\nFor your business — presenter proposal: I would offer an ongoing showroom service: keep views current, train the sales team, and produce the flat media that gets buyers into the experience. The presales figure is sourced project context, not a measured return on VR.",
+        "notes": "⏱ ~35s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter-approved project context. Do not turn the figure into a measured causal return on VR.\n\nYear: 2023–2026. Venn weights: 1 / 0.5 / 1.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\n\nFull-cut delivery space: Separate the evidence of buyer adoption from causality. The presales figure is project context; ask what additional evidence would be needed to attribute sales to VR alone. Return to the customer’s ability to judge an unbuilt home.\n\nFor your business — presenter proposal: I would offer an ongoing showroom service: keep views current, train the sales team, and produce the flat media that gets buyers into the experience. The presales figure is sourced project context, not a measured return on VR.\nCreative/source credit retained in notes: Four Seasons Lake Austin · photo: Agile Lens",
         "year": "2023–2026",
         "venn": [
           1,
@@ -1544,13 +1572,13 @@ const SECTIONS = [
         "props": {
           "title": "Walkthrough",
           "src": "media/story/walkthrough-fern-cottage.mp4",
-          "credit": "Prototype: Agile Lens",
+          "credit": "",
           "alt": "A dollhouse plan opens into a furnished cottage interior",
           "mode": "content",
           "brightness": 1,
           "takeaway": "Finished sample app vs. open system"
         },
-        "notes": "⏱ ~30s.\n\nAlex’s framing (2026-11-15): Walkthrough is a finished, vibe-coded sample app; Floor Tour is the more open and deliberate system.\n\nWalkthrough: a PICO prototype from Agile Lens’s November 2026 vibe-lab sprint, written in Kotlin largely by AI coding agents. Drop a floor plan on your real floor, look at it as a dollhouse, then raise its walls around you at full size in mixed reality. It ships with a few sample houses (this clip is Fern Cottage).\n\nContrast to land: an AI-built app can look done in days, but it only does what it was built to do. Floor Tour is built on our shared-spatial-anchor template: multi-user and co-located, with tools to draw walls over your own floor plan. Both are useful; know which one you are buying.\n\nClip: “Walkthrough - Fern Cottage floor plan to interior” (10.6 s, non-headset capture from the Nov 6–7 filming selects, 960×540), upscaled to 1080p with Lanczos, video only. Not a store release; no price or availability claim.",
+        "notes": "⏱ ~30s.\n\nAlex’s framing (2026-11-15): Walkthrough is a finished, vibe-coded sample app; Floor Tour is the more open and deliberate system.\n\nWalkthrough: a PICO prototype from Agile Lens’s November 2026 vibe-lab sprint, written in Kotlin largely by AI coding agents. Drop a floor plan on your real floor, look at it as a dollhouse, then raise its walls around you at full size in mixed reality. It ships with a few sample houses (this clip is Fern Cottage).\n\nContrast to land: an AI-built app can look done in days, but it only does what it was built to do. Floor Tour is built on our shared-spatial-anchor template: multi-user and co-located, with tools to draw walls over your own floor plan. Both are useful; know which one you are buying.\n\nClip: “Walkthrough - Fern Cottage floor plan to interior” (10.6 s, non-headset capture from the Nov 6–7 filming selects, 960×540), upscaled to 1080p with Lanczos, video only. Not a store release; no price or availability claim.\nCreative/source credit retained in notes: Prototype: Agile Lens",
         "year": "2026",
         "venn": [
           1,
@@ -1816,7 +1844,7 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/headset-comparison",
         "props": {},
-        "notes": "⏱ ~60s.\n\nPublic specs verified November 18, 2026. USD base launch prices: Vision Pro M5 $3,499 (256GB); Quest 3 $499.99 (128GB, original 2023 launch, not current 512GB retail); XREAL AURA $1,099 limited-time launch offer through end 2026 (12GB/256GB), regular announced base $1,279.\n\nWeights: Vision Pro M5 750–800g includes Light Seal/cushion and Dual Knit Band; separate battery 353g. Quest 3 515g headset. AURA 95g glasses plus 265g compute puck. These are different wearing/compute designs, not equivalent payload measurements.\n\nCompute headroom ordering is an editorial, qualitative inference: 1 M5, 2 Reality Elite, 3 XR2 Gen 2. It is not a measured cross-device benchmark, battery/power-draw ranking, or promise an app works on every headset. Official specifications identify the chips; Qualcomm describes Reality Elite as the next generation beyond XR2+ Gen 2. Test the actual scene and target viewer.\n\nSources: https://www.apple.com/apple-vision-pro/specs/ ; https://www.apple.com/newsroom/2025/10/apple-vision-pro-upgraded-with-the-m5-chip-and-dual-knit-band/ ; https://www.meta.com/quest/quest-3/ ; https://about.fb.com/news/2023/09/meet-meta-quest-3-mixed-reality-headset/ ; https://www.xreal.com/aura ; https://us.shop.xreal.com/blogs/guides/xreal-aura-price-preorder-us ; https://www.qualcomm.com/news/releases/2026/06/qualcomm-takes-spatial-computing-into-the-ai-era-with-snapdragon .\n\nPICO Space Pro: generic, invented headset silhouette ONLY, not a product likeness. Name authorized by Alex for this slide. NDA: no specs, rank, image, price, weight or performance claim.\nFinal audit: lightest/middle/heaviest refers only to on-head weight. Separate batteries and compute pucks are printed below the weight. Compute ranks remain editorial qualitative ordering, not measured benchmarks."
+        "notes": "⏱ ~60s.\n\nPublic specs verified November 18, 2026. USD base launch prices: Vision Pro M5 $3,499 (256GB); Quest 3 $499.99 (128GB, original 2023 launch, not current 512GB retail); XREAL AURA $1,099 limited-time launch offer through end 2026 (12GB/256GB), regular announced base $1,279.\n\nWeights: Vision Pro M5 750–800g includes Light Seal/cushion and Dual Knit Band; separate battery 353g. Quest 3 515g headset. AURA 95g glasses plus 265g compute puck. These are different wearing/compute designs, not equivalent payload measurements.\n\nCompute headroom ordering is an editorial, qualitative inference: 1 M5, 2 Reality Elite, 3 XR2 Gen 2. It is not a measured cross-device benchmark, battery/power-draw ranking, or promise an app works on every headset. Official specifications identify the chips; Qualcomm describes Reality Elite as the next generation beyond XR2+ Gen 2. Test the actual scene and target viewer.\n\nSources: https://www.apple.com/apple-vision-pro/specs/ ; https://www.apple.com/newsroom/2025/10/apple-vision-pro-upgraded-with-the-m5-chip-and-dual-knit-band/ ; https://www.meta.com/quest/quest-3/ ; https://about.fb.com/news/2023/09/meet-meta-quest-3-mixed-reality-headset/ ; https://www.xreal.com/aura ; https://us.shop.xreal.com/blogs/guides/xreal-aura-price-preorder-us ; https://www.qualcomm.com/news/releases/2026/06/qualcomm-takes-spatial-computing-into-the-ai-era-with-snapdragon .\n\nPICO Space Pro: generic, invented headset silhouette ONLY, not a product likeness. Name authorized by Alex for this slide. NDA: no specs, rank, image, price, weight or performance claim.\nFinal audit: lightest/middle/heaviest refers only to on-head weight. Separate batteries and compute pucks are printed below the weight. Compute ranks remain editorial qualitative ordering, not measured benchmarks.\nNovember 19 final audit recheck: Meta official store now lists Quest 3 512GB $599.99 (515g), superseding the old $499.99 128GB launch figure. https://www.meta.com/quest/quest-3/ and https://www.meta.com/quest/quest-3/buy-now/?sku=B0CD1JTBSC . AURA official Google product page https://store.google.com/magazine/xreal_aura?hl=en-US confirms $1099 limited offer and 95g; XREAL FAQ https://tutorials.xreal.com/docs/aura/troubleshooting/faq/ confirms 265g compute puck. Apple official specs https://support.apple.com/en-us/125436 confirm M5 750–800g plus353g battery; Apple launch announcement https://www.apple.com/newsroom/2025/10/apple-vision-pro-upgraded-with-the-m5-chip-and-dual-knit-band/ confirms $3499. No benchmark claim is made for qualitative compute ordering."
       },
       {
         "id": "future-brief",
@@ -2073,7 +2101,7 @@ const SECTIONS = [
           "mode": "content",
           "title": "Your eye still matters",
           "src": "media/v3-fix1/napkin.jpg",
-          "credit": "Hand sketch: Alex Coulombe",
+          "credit": "",
           "alt": "Alex Coulombe’s hand-drawn room plan in a sketchbook",
           "brightness": 1
         },
@@ -2086,7 +2114,7 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nRevisit the hand-trained eye. The tools can make more things, but I still have to decide what is worth making. Avoid claiming a specific unverified product demo.\n\nYear: 2026. Venn weights: 0.9 / 0.2 / 1.\n\nRestored November 11 at presenter request. This is Alex’s actual hand-drawn room plan from Designing Naturally s49, the same sketch introduced earlier in the sketch-to-VR sequence. Deliberate visual callback: judgment begins with seeing and choosing, regardless of the tool. It is not AI output or a 2026 project. Image provenance and original byte identity: media/v3-fix1/manifest.json.",
+        "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nRevisit the hand-trained eye. The tools can make more things, but I still have to decide what is worth making. Avoid claiming a specific unverified product demo.\n\nYear: 2026. Venn weights: 0.9 / 0.2 / 1.\n\nRestored November 11 at presenter request. This is Alex’s actual hand-drawn room plan from Designing Naturally s49, the same sketch introduced earlier in the sketch-to-VR sequence. Deliberate visual callback: judgment begins with seeing and choosing, regardless of the tool. It is not AI output or a 2026 project. Image provenance and original byte identity: media/v3-fix1/manifest.json.\nCreative/source credit retained in notes: Hand sketch: Alex Coulombe",
         "opt": "ai:on"
       },
       {

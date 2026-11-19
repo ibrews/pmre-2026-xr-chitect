@@ -63,6 +63,14 @@ try{
   if(s.id==='hello'){
    const wheel=await page.evaluate(()=>{const sl=allSlides[current];SD._recs.get(sl).inst.staticFrame();const a=[];for(let d=0;d<360;d+=2){sl._wheelPhase(d*Math.PI/180);for(const e of sl.querySelectorAll('.client-label')){const r=e.getBoundingClientRect();a.push({kind:'wheel-rotation',text:e.textContent,phase:d,rect:[r.left,r.top,r.right,r.bottom].map(n=>+n.toFixed(2))});}}sl._wheelPhase(0);return a;});items.push(...wheel);
   }
+  // Static clocks can stop video before its first decoded frame. Capture a real frame, not a black placeholder.
+  for(const f of [page,...page.frames().filter(f=>f!==page.mainFrame()&&frames.some(x=>x.url===f.url()))]){
+   await f.locator(f===page?'.slide.active video':'video').evaluateAll(async vs=>Promise.all(vs.map(async v=>{
+    if(!v.getBoundingClientRect().width)return;
+    v.preload='auto';if(v.readyState<2)await new Promise(r=>{v.addEventListener('loadeddata',r,{once:true});setTimeout(r,5000);});
+    if(isFinite(v.duration)&&v.duration>0){await new Promise(r=>{v.addEventListener('seeked',r,{once:true});v.currentTime=Math.min(2,v.duration/2);setTimeout(r,1500);});v.pause();}
+   })));
+  }
   const file=String(s.index).padStart(3,'0')+'-'+s.id+'.png';await page.screenshot({path:path.join(out,file)});
   const bad=violations(items);report.slides.push({...s,file,frames,items,violations:bad});
   if(bad.length)console.log(JSON.stringify({index:s.index,id:s.id,count:bad.length,examples:bad.slice(0,5)}));

@@ -8,7 +8,7 @@ function tiCtx() {
 }
 function tiTone(freq, start, dur, type, vol) {
   const c = tiCtx(); if (!c) return;
-  try { const now = c.currentTime, o = c.createOscillator(), g = c.createGain(); o.type = type || 'square'; o.frequency.value = freq; o.connect(g); g.connect(c.destination); g.gain.setValueAtTime(vol * .12, now + start); g.gain.exponentialRampToValueAtTime(0.001, now + start + dur); o.start(now + start); o.stop(now + start + dur + 0.01); } catch (e) {}
+  try { const now = c.currentTime, o = c.createOscillator(), g = c.createGain(); o.type = type || 'square'; o.frequency.value = freq; o.connect(g); g.connect(c.destination); g.gain.setValueAtTime(vol * .05, now + start); g.gain.exponentialRampToValueAtTime(0.0001, now + start + dur); o.start(now + start); o.stop(now + start + dur + 0.01); } catch (e) {}
 }
 const tiSfx = {
   powerUp() { [[130, 0, .09], [196, .08, .09], [262, .16, .09], [349, .24, .09], [523, .32, .09], [698, .40, .09], [1047, .48, .12], [784, .61, .18, 'sine', .08], [1047, .80, .25, 'sine', .1]].forEach(([f, s, d, t, v]) => tiTone(f, s, d, t || 'square', v || .12)); },

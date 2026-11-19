@@ -60,6 +60,15 @@ s = s.replace(VIDEO_OLD, VIDEO_NEW, 1)
 if 'PMRE_ASPEN_DARK' not in s:
     s=s.replace('</head>', '<style id="PMRE_ASPEN_DARK">video.full-media[src*="holo-aspen.mp4"]{filter:brightness(.94)}</style>\n</head>',1)
 
+# PMRE_FRAME_ZOOM: use the same viewport lightbox for image-rich slide frames.
+if 'window._pmreZoomFrameImage=' not in s:
+    s=s.replace('  function exitFs(){', "  function fsRect(el,frame){const r=el.getBoundingClientRect();if(!frame)return r;const f=frame.getBoundingClientRect(),sx=f.width/frame.contentWindow.innerWidth,sy=f.height/frame.contentWindow.innerHeight;return{left:f.left+r.left*sx,top:f.top+r.top*sy,width:r.width*sx,height:r.height*sy};}\n  function exitFs(){", 1)
+    s=s.replace('const live=a.placeholder.getBoundingClientRect();','const live=fsRect(a.placeholder,a.frame);',1)
+    s=s.replace('function enterFs(el){','function enterFs(el,frame=null){',1)
+    s=s.replace('    const r=el.getBoundingClientRect();\n    const origStyle=', '    const r=fsRect(el,frame);\n    const origStyle=',1)
+    s=s.replace('origRect:r};','origRect:r,frame};',1)
+    s=s.replace("  addEventListener('resize',fitFs);", "  window._pmreZoomFrameImage=function(el,source){const frame=[...document.querySelectorAll('.slide.active iframe')].find(f=>f.contentWindow===source);if(!frame||el.tagName!=='IMG'||!el.complete||activeFs||closingFs||window._moveMode||document.body.classList.contains('annotate-mode'))return false;enterFs(el,frame);return true;};\n  addEventListener('resize',fitFs);",1)
+
 # 1. Content block: first bake replaces the template's SECTIONS..BONUS; later bakes replace between sentinels.
 START, END = "// ── TALK START ──", "// ── TALK END ──"
 block = f"{START}\n{talk}\n{END}"

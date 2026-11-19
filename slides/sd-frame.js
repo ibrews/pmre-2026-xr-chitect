@@ -17,6 +17,8 @@
   function lookId(){var l=P.get('look');if(!l){var n=/sd-look:([\w-]+)/.exec(window.name||'');if(n)l=n[1];}
     if(!l){try{if(inDeck)l=parent.document.body.dataset.look;}catch(e){}}return l||'noir';}
   if(document.readyState==='loading')document.write('<script src="'+here+'kit/step-motion.js"><\/script>');
+  // Route actual frame images through the parent's centered lightbox; the same node is restored on close.
+  if(inDeck&&matchMedia('(hover:hover)').matches)document.addEventListener('click',e=>{const el=e.target;if(el.tagName!=='IMG'||el.closest('a,button'))return;try{if(parent._pmreZoomFrameImage?.(el,window)){e.preventDefault();e.stopPropagation();}}catch{}});
   function anims(){return document.getAnimations().filter(a=>!window.SDStepMotion?.owns(a));}
   function seek(t){anims().forEach(function(a){a.pause();a.currentTime=t*1000;});if(cfg&&cfg.onSeek)cfg.onSeek(t);}
   function setStep(n,instant){document.documentElement.dataset.step=String(n);if(cfg&&cfg.onStep)cfg.onStep(n,!!instant);}
