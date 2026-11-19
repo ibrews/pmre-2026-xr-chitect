@@ -1,12 +1,14 @@
 // pmre/unbuilt-shutter: plan linework draws on, tilts into 3D while floors extrude, then a camera shutter fires and
-// the photoreal rendering of the then-unbuilt Four Seasons Lake Austin resolves in a viewfinder. 2 clicks.
+// the photoreal rendering of the then-unbuilt Four Seasons Lake Austin resolves in a viewfinder. 3 clicks.
+// Alex 2026-11-19: it now OPENS on the MIA 'Find the Shot' camera-toy idea (top-down camera frustum sweeping a set),
+// with architecture (walls, columns, stair, door) added, then flows into Plan -> Model -> Photograph.
 // Linework is schematic (not the project's drawings); the rendering reuses the deck's credited DBOX image.
-SD.defineSlide({id:'pmre/unbuilt-shutter',manualSteps:true,steps:2,props:{},assets:[],
+SD.defineSlide({id:'pmre/unbuilt-shutter',manualSteps:true,steps:3,props:{},assets:[],
 provenance:['Claude concept slide 2026-11-19; schematic linework is invented and labeled; photo media/pmre/fs-v2/intro-render.jpg is already used and credited in the deck (Rendering: DBOX for Austin Capital Partners).'],
 css:`.ub-s{position:absolute;inset:4% 4% 19%;color:var(--text)}
 .ub-s h2{margin:0;font:800 100px/1.05 var(--font-display,var(--font))}
-.ub-s .legend{position:absolute;left:0;top:190px;width:340px;display:flex;flex-direction:column;gap:34px}
-.ub-s .legend div{font:700 56px/1.1 var(--font);color:var(--dim);opacity:.45;transition:opacity .6s,color .6s,transform .6s;transform-origin:left}
+.ub-s .legend{position:absolute;left:0;top:180px;width:340px;display:flex;flex-direction:column;gap:22px}
+.ub-s .legend div{font:700 50px/1.1 var(--font);color:var(--dim);opacity:.45;transition:opacity .6s,color .6s,transform .6s;transform-origin:left}
 .ub-s .legend b{display:block;font:800 30px var(--font);color:#d7b668;letter-spacing:.12em;margin-bottom:6px}
 .ub-s .legend div.on{opacity:1;color:var(--text);transform:scale(1.04)}
 .ub-s .legend p{font:500 34px/1.3 var(--font);color:var(--dim);margin:10px 0 0;opacity:0;transition:opacity .8s .6s}
@@ -37,13 +39,29 @@ css:`.ub-s{position:absolute;inset:4% 4% 19%;color:var(--text)}
 @keyframes ubflash{0%{opacity:0}12%{opacity:.95}100%{opacity:0}}
 .ub-s .credit{position:absolute;right:100px;bottom:36px;font:500 26px var(--font);color:#fff;text-shadow:0 1px 6px #000;opacity:0;transition:opacity .8s 1s}
 .ub-s[data-s="2"] .credit{opacity:.9}.ub-s .tag{transition:opacity .4s}.ub-s[data-s="1"] .tag,.ub-s[data-s="2"] .tag{opacity:0}
-.ub-s.noanim *{transition:none!important}`,
+.ub-s.noanim *{transition:none!important}
+.ub-s .plane{transition:transform 1.6s cubic-bezier(.65,0,.25,1),opacity .8s ease}.ub-s[data-s="pre"] .plane,.ub-s[data-s="-1"] .plane{opacity:0}
+.ub-s .pre{position:absolute;inset:0;width:100%;height:100%;transition:opacity .9s ease}.ub-s:not([data-s="pre"]) .pre{opacity:0}
+.ub-s .pre .wall{fill:none;stroke:#7fe6ff;stroke-width:6;stroke-linecap:square}.ub-s .pre .thin{fill:none;stroke:#3b82c4;stroke-width:2.5}
+.ub-s .pre .col{fill:#7fe6ff}.ub-s .pre text{font:700 22px var(--font);letter-spacing:.14em;fill:#7fe6ffaa}
+.ub-s .pre .cone{transform-box:view-box;transform-origin:693px 520px;animation:ubsweep 3.6s ease-in-out infinite alternate}
+@keyframes ubsweep{from{transform:rotate(-13deg)}to{transform:rotate(13deg)}}
+.ub-s .pre .cone path{fill:#00d4ff22;stroke:#00d4ff;stroke-width:3}.ub-s[data-s="pre"] .tag{opacity:0}`,
 render(el,props,ctx){
 const B=[[60,50,620,80,6],[110,200,170,64,3],[320,186,170,64,3],[530,200,170,64,3],[170,312,170,64,2],[390,300,170,64,2],[610,318,170,64,2]];
 const slabs=(n)=>Array.from({length:n},(_,k)=>`<div class="slab" style="--z:${(k+1)*26}px"></div>`).join('');
 el.innerHTML=`<div class="ub-s" data-s="-1"><h2>Photograph a place that doesn’t exist yet</h2>
-<div class="legend"><div data-k="0"><b>01</b>Plan</div><div data-k="1"><b>02</b>Model</div><div data-k="2"><b>03</b>Photograph</div><p>Same eye for light, angle and lens.<br>No building required.</p></div>
-<div class="stage"><div class="plane"><svg viewBox="0 0 900 520">
+<div class="legend"><div data-k="pre"><b>00</b>Shot</div><div data-k="0"><b>01</b>Plan</div><div data-k="1"><b>02</b>Model</div><div data-k="2"><b>03</b>Photograph</div><p>Same eye for light, angle and lens.<br>No building required.</p></div>
+<div class="stage"><svg class="pre" viewBox="0 0 1386 586" preserveAspectRatio="xMidYMid meet" aria-label="Top-down set: walls, columns, a stair and three performers; a camera at the bottom sweeps its frame across the room">
+<rect class="thin" x="240" y="40" width="906" height="430"/>
+<path class="wall" d="M240 40 H1146 V470 H760 M626 470 H240 Z"/><path class="thin" d="M626 470 A134 134 0 0 1 760 336"/>
+${[[420,170],[693,170],[966,170],[420,340],[966,340]].map(c=>`<rect class="col" x="${c[0]-14}" y="${c[1]-14}" width="28" height="28"/>`).join('')}
+<g class="thin">${Array.from({length:7},(_,k)=>`<path d="M${1000+k*18} 60 V160"/>`).join('')}<path d="M1000 60 H1126 V160 H1000"/></g>
+<text x="270" y="78">BACKDROP</text><path class="thin" d="M270 92 H700" stroke-dasharray="10 8"/>
+<circle cx="560" cy="250" r="16" fill="#e5bb61"/><circle cx="700" cy="300" r="18" fill="#f97316"/><circle cx="830" cy="240" r="18" fill="#f43f5e"/>
+<g class="cone"><path d="M693 520 L470 40 H916 Z"/></g>
+<rect x="676" y="506" width="34" height="28" rx="5" fill="#00d4ff"/><circle cx="693" cy="520" r="7" fill="#0b1622"/>
+<text x="24" y="566">FIND THE SHOT · CAMERA TOP VIEW</text></svg><div class="plane"><svg viewBox="0 0 900 520">
 <path class="ln w" d="M0 450 C200 425 420 470 620 440 S860 430 900 445"/>
 ${B.map(b=>`<rect class="ln" x="${b[0]}" y="${b[1]}" width="${b[2]}" height="${b[3]}"/>`).join('')}
 <path class="ln" d="M380 130 L410 186 M440 264 L470 300 M300 376 L330 440"/></svg>
@@ -53,7 +71,8 @@ ${B.map(b=>`<div class="bld" style="left:${b[0]}px;top:${b[1]}px;width:${b[2]}px
 <div class="vf"><i></i><i></i><i></i><i></i><em>REC</em></div><div class="flash"></div>
 <span class="credit">Four Seasons Lake Austin, before it was built · Rendering: DBOX for Austin Capital Partners</span></div></div>`;
 const root=el.querySelector('.ub-s'),leg=[...el.querySelectorAll('.legend div')],flash=el.querySelector('.flash');
-const set=n=>{root.dataset.s=n;leg.forEach(d=>d.classList.toggle('on',+d.dataset.k===n));};
+// deck step 0 = the camera-toy prelude ('pre'); steps 1-3 = the original Plan / Model / Photograph states 0-2
+const S=n=>n<=0?'pre':n-1,set=v=>{root.dataset.s=v;leg.forEach(d=>d.classList.toggle('on',d.dataset.k===String(v)));};
 const shutter=()=>{flash.classList.remove('go');void flash.offsetWidth;flash.classList.add('go');const c=ctx.audio&&ctx.audio();if(!c)return;try{const t=c.currentTime,len=c.sampleRate*.09,b=c.createBuffer(1,len,c.sampleRate),d=b.getChannelData(0);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,3);const s=c.createBufferSource();s.buffer=b;const f=c.createBiquadFilter();f.type='highpass';f.frequency.value=1800;const g=c.createGain();g.gain.value=.012;s.connect(f);f.connect(g);g.connect(c.destination);s.start(t);const s2=c.createBufferSource();s2.buffer=b;const g2=c.createGain();g2.gain.value=.008;s2.connect(f);f.connect(g2);g2.connect(c.destination);s2.start(t+.07);}catch(e){}};
-return{enter(){root.classList.add('noanim');set(-1);void root.offsetWidth;root.classList.remove('noanim');if(ctx.instant)set(0);else ctx.clock.after(60,()=>set(0));},
-step(n){set(n);if(n===2&&!ctx.instant)shutter();},complete(n){set(n)},restore(n){set(n)},staticFrame(){root.classList.add('noanim');set(2);void root.offsetWidth;root.classList.remove('noanim');}};}});
+return{enter(){root.classList.add('noanim');set(-1);void root.offsetWidth;root.classList.remove('noanim');if(ctx.instant)set('pre');else ctx.clock.after(60,()=>set('pre'));},
+step(n){set(S(n));if(n===3&&!ctx.instant)shutter();},complete(n){set(S(n))},restore(n){set(S(n))},staticFrame(){root.classList.add('noanim');set(2);void root.offsetWidth;root.classList.remove('noanim');}};}});
