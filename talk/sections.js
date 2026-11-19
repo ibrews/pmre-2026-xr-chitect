@@ -120,7 +120,7 @@ const SECTIONS = [
         "role": "Co-Founder &amp; CEO, Agile Lens: Immersive Design",
         "withBeard": true,
         "bio": "Architect turned XR-chitect who has spent the last decade building spatial experiences for the world’s most ambitious clients.",
-        "ue5": "Authorized Unreal Engine instructor since 2020: 350+ classes taught, 40+ courses written.",
+        "ue5": "Authorized Unreal Engine instructor since 2020:\n350+ clients\n40+ courses written.",
         "stats": [
           {
             "n": "16",
@@ -131,8 +131,8 @@ const SECTIONS = [
             "l": "Years of Agile Lens"
           },
           {
-            "n": "10",
-            "l": "Years in Unreal"
+            "n": "8+",
+            "l": "Years in Unreal Engine"
           },
           {
             "n": "100+",

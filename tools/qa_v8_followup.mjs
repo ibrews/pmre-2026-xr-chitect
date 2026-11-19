@@ -12,11 +12,11 @@ try{
  await p.evaluate(()=>goTo(2));await p.waitForTimeout(4400);await shot('002-speaker-first-headset');
  r.first=await p.locator('.active .worn-headset').evaluateAll(a=>a.map(e=>({kind:e.dataset.kind,box:{w:e.getBBox().width,h:e.getBBox().height},transform:e.getAttribute('transform')})));
  if(r.first.length!==1||r.first[0].kind!=='bulky')throw Error('First headset must be one bulky set');
- await p.keyboard.press('ArrowRight');await p.waitForTimeout(650);await p.keyboard.press('ArrowRight');await p.waitForTimeout(6600);
+ await p.keyboard.press('ArrowRight');await p.waitForTimeout(650);await p.keyboard.press('ArrowRight');await p.waitForTimeout(10200);
  r.second=await p.locator('.active .worn-headset').evaluateAll(a=>a.map(e=>({kind:e.dataset.kind,transform:e.getAttribute('transform')})));
  if(r.second.length!==1||r.second[0].kind!=='compact')throw Error('Second VR pickup must replace the bulky headset');await shot('002-speaker-second-headset');
  await p.keyboard.press('ArrowRight');await p.waitForTimeout(5000);await p.evaluate(()=>SD._recs.get(allSlides[current]).inst.complete());await shot('002-speaker-complete');
- const t=await p.locator('.slide.active').innerText();if(!t.includes('Co-Founder')||!t.includes('350+ classes'))throw Error('Speaker text missing');
+ const t=await p.locator('.slide.active').innerText();if(!t.includes('Co-Founder')||!t.includes('350+ clients'))throw Error('Speaker text missing');
  await p.evaluate(()=>goTo(3));await p.waitForTimeout(600);await shot('003-studio-wheel');
  const before=await p.locator('.client-label').first().getAttribute('transform');await p.waitForTimeout(500);r.wheelSpins=before!==await p.locator('.client-label').first().getAttribute('transform');if(!r.wheelSpins)throw Error('Wheel is not spinning');
  r.left=await p.locator('.studio-copy').textContent();const expected=['Agile Lens Immersive Design · New York City','An XR studio','Architecture','Real estate','Entertainment','…and much more'];for(const t of expected)if(!r.left.includes(t))throw Error('v5 studio text missing: '+t);

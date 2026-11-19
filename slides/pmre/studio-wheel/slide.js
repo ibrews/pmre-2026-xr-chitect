@@ -19,7 +19,7 @@ SD.defineSlide({id:'pmre/studio-wheel',steps:0,props:{},assets:[],css:".slide.sd
   function place(a=angle){clients.forEach(t=>{const rad=+t.dataset.a+a,deg=rad*180/Math.PI,flip=Math.cos(rad)<0;t.setAttribute('text-anchor',flip?'end':'start');t.setAttribute('x',CX+Math.cos(rad)*oR);t.setAttribute('y',CY+Math.sin(rad)*oR);t.setAttribute('transform',`rotate(${deg+(flip?180:0)} ${CX+Math.cos(rad)*oR} ${CY+Math.sin(rad)*oR})`);});}
   // Deterministic phase hook also permits checking a complete rotation in offline QA.
   s._wheelPhase=a=>{place(a);};
-  let last=0;function orbit(now){angle+=(last?Math.min(now-last,50):0)*.00016;last=now;place();pulseImg.setAttribute('opacity',(.09+.035*Math.sin(angle*6)).toFixed(3));raf=requestAnimationFrame(orbit);}
+  let last=0;function orbit(now){angle+=(last?Math.min(now-last,50):0)*.00016;last=now;place();pulseImg.setAttribute('opacity',(.475+.425*Math.sin(angle*6)).toFixed(3));raf=requestAnimationFrame(orbit);}
   document.fonts.ready.then(()=>{fit();place();});
-  return {enter(){cancelAnimationFrame(raf);angle=0;last=0;fit();place();pulseImg.setAttribute('opacity','.12');if(!ctx.instant)raf=requestAnimationFrame(orbit);},leave(){cancelAnimationFrame(raf);},complete(){fit();},staticFrame(){cancelAnimationFrame(raf);fit();place(0);}};
+  return {enter(){cancelAnimationFrame(raf);angle=0;last=0;fit();place();pulseImg.setAttribute('opacity','.475');if(!ctx.instant)raf=requestAnimationFrame(orbit);},leave(){cancelAnimationFrame(raf);},complete(){fit();},staticFrame(){cancelAnimationFrame(raf);fit();place(0);}};
 }});

@@ -174,7 +174,7 @@ const SECTIONS = [
         "role": "Co-Founder &amp; CEO, Agile Lens: Immersive Design",
         "withBeard": true,
         "bio": "Architect turned XR-chitect who has spent the last decade building spatial experiences for the world’s most ambitious clients.",
-        "ue5": "Authorized Unreal Engine instructor since 2020: 350+ classes taught, 40+ courses written.",
+        "ue5": "Authorized Unreal Engine instructor since 2020:\n350+ clients\n40+ courses written.",
         "stats": [
           {
             "n": "16",
@@ -185,8 +185,8 @@ const SECTIONS = [
             "l": "Years of Agile Lens"
           },
           {
-            "n": "10",
-            "l": "Years in Unreal"
+            "n": "8+",
+            "l": "Years in Unreal Engine"
           },
           {
             "n": "100+",
@@ -2727,6 +2727,8 @@ function applySafeZone(pick){
       'body.sd-safe #deck .slide{transform-origin:0 0}'+  /* scale/translate set per slide; individual props compose with the deck's transform animations */
       'body.sd-safe #brand{left:calc(var(--safe-box-inset-x) + 24px);bottom:calc(var(--safe-box-inset-y) + 18px)}'+
       'body.sd-safe #counter{right:calc(var(--safe-box-inset-x) + 24px);bottom:calc(var(--safe-box-inset-y) + 18px)}'+
+      'body.sd-safe .nav-arrows{right:calc(var(--safe-box-inset-x) + 24px)!important;bottom:calc(var(--safe-box-inset-y) + 24px)!important}'+
+      'body.sd-safe #step-indicator{right:calc(var(--safe-box-inset-x) + 24px)!important;bottom:calc(var(--safe-box-inset-y) + 82px)!important}'+
       '#sd-safezone{position:fixed;left:15vw;top:15vh;width:70vw;height:70vh;box-sizing:border-box;border:2px dashed #ff2d55;z-index:2147483000;pointer-events:none;'+
       'box-shadow:0 0 0 100vmax rgba(255,45,85,.10)}'+
       '#sd-safezone span{position:absolute;left:8px;top:6px;font:600 13px/1 system-ui,sans-serif;color:#ff2d55;letter-spacing:.04em}';

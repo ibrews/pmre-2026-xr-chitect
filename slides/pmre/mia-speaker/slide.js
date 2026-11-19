@@ -66,10 +66,21 @@ function tiHeadset(body, bulky=false) {
   body.querySelector('.worn-headset')?.remove();
   const hs = svgE('g', { class: 'worn-headset' }); hs.style.shapeRendering = 'crispEdges';
   const px = (x, y, w, h, fill) => hs.appendChild(svgE('rect', { x, y, width: w, height: h, fill }));
-  px(-13, -27, 26, 1, '#0a0a14'); px(-13, -26, 26, 9, '#1a1a26'); px(-13, -17, 26, 1, '#0a0a14');
-  px(-8, -24, 5, 5, '#00d4ff'); px(3, -24, 5, 5, '#00d4ff'); px(-7, -23, 1, 1, '#fff'); px(4, -23, 1, 1, '#fff');
-  px(-13, -23, 1, 3, '#3a3a4e'); px(12, -23, 1, 3, '#3a3a4e');
-  if(bulky){hs.dataset.kind='bulky';hs.setAttribute('transform','translate(0,54) scale(2,3.7)');}else hs.dataset.kind='compact';
+  if(bulky){
+    // Opaque DK1-era enclosure: only the crown of the hair remains above it.
+    hs.dataset.kind='bulky';
+    px(-27,-39,54,32,'#08090d');px(-29,-35,58,25,'#17191f');
+    px(-25,-37,50,25,'#24272d');px(-23,-35,46,21,'#111318');
+    px(-23,-35,46,3,'#343840');px(-23,-17,46,3,'#090a0d');
+    px(-29,-32,4,18,'#3b3e45');px(25,-32,4,18,'#3b3e45');
+    px(-21,-31,2,2,'#555962');px(19,-31,2,2,'#555962');
+    px(-21,-20,2,2,'#555962');px(19,-20,2,2,'#555962');
+  }else{
+    hs.dataset.kind='compact';
+    px(-13, -27, 26, 1, '#0a0a14'); px(-13, -26, 26, 9, '#1a1a26'); px(-13, -17, 26, 1, '#0a0a14');
+    px(-8, -24, 5, 5, '#00d4ff'); px(3, -24, 5, 5, '#00d4ff'); px(-7, -23, 1, 1, '#fff'); px(4, -23, 1, 1, '#fff');
+    px(-13, -23, 1, 3, '#3a3a4e'); px(12, -23, 1, 3, '#3a3a4e');
+  }
   body.appendChild(hs);
 }
 // Pixel clapperboard (the film power-up on intro-alex) and pixel stars (the earlier stand-in for the Unreal-logo fireballs, now unused)
@@ -127,16 +138,15 @@ function tiBuildAlex(s, I) {
   const bPos = svgE('g', { transform: 'translate(240,200)' }), bAnim = svgE('g', { class: 'ti-block' }); bPos.appendChild(bAnim);
   bAnim.appendChild(svgE('rect', { x: -22, y: -22, width: 44, height: 44, fill: '#f59e0b', stroke: '#b45309', 'stroke-width': '2', rx: '3' }));
   bAnim.appendChild(svgE('rect', { x: -18, y: -18, width: 36, height: 36, fill: 'none', stroke: '#fde68a', 'stroke-width': '1', rx: '1' }));
-  bAnim.appendChild(svgE('rect', { x: -13, y: -7, width: 26, height: 14, rx: '5', fill: '#1a1a26' }));
-  bAnim.appendChild(svgE('circle', { cx: -6, cy: 0, r: '3', fill: '#00d4ff' })); bAnim.appendChild(svgE('circle', { cx: 6, cy: 0, r: '3', fill: '#00d4ff' }));
-  bAnim.appendChild(svgE('rect', { x: -13, y: -9, width: 26, height: 2, fill: '#0a0a14' }));
+  // Same opaque headset in the power-up box; no glowing lenses.
+  const blockHead=svgE('g',{transform:'translate(0,14) scale(.52)'});tiHeadset(blockHead,true);blockHead.firstElementChild.setAttribute('class','block-headset');bAnim.appendChild(blockHead);
   svg.appendChild(bPos);
   // Clapperboard block at (80,140), hit in step 2
   const uPos = svgE('g', { transform: 'translate(80,140)' }), uAnim = svgE('g', { class: 'ti-block' }); uPos.appendChild(uAnim);
   uAnim.appendChild(svgE('image', { href: I.badge || 'media/pmre/v8/GoldAuthorized.png', x: -22, y: -22, width: 44, height: 44 }));
   svg.appendChild(uPos);
   // Power-up icons (HarvardXR Venn icons), hit one after another before the Unreal block
-  const ICONS = (I.icons || []).map((kind, i, all) => { const x = all.length > 1 ? 120 + i * (220 / (all.length - 1)) : 240; const pos = svgE('g', { transform: `translate(${x},150)` }), a = svgE('g', { class: 'ti-block' }); pos.appendChild(a); if (kind === 'film') { const k = svgE('g', { transform: 'scale(.8)' }); a.appendChild(k); tiClapper(k); } else tiIcon(kind, a, 1.0); pos.style.opacity = '0'; svg.appendChild(pos); return { x, pos, a, kind }; });
+  const ICONS = (I.icons || []).map((kind, i, all) => { const x = all.length > 1 ? 120 + i * (220 / (all.length - 1)) : 240; const pos = svgE('g', { transform: `translate(${x},150)`, 'data-powerup':kind }), a = svgE('g', { class: 'ti-block' }); pos.appendChild(a); if (kind === 'film') { const k = svgE('g', { transform: 'scale(.8)' }); a.appendChild(k); tiClapper(k); } else tiIcon(kind, a, 1.0); pos.style.opacity = '0'; svg.appendChild(pos); return { x, pos, a, kind }; });
   // Walker
   const walker = svgE('g', { class: 'stage-walker', transform: 'translate(80,270)' }), anim = svgE('g', { class: 'ti-anim' });
   walker.appendChild(anim); svg.appendChild(walker);
@@ -180,16 +190,17 @@ function tiBuildAlex(s, I) {
   }
   // Icon power-ups: walk under each icon, jump, grab it (flash + chime), land; then hand over to the Unreal block
   function iconHops() {
-    entranceFinal(); ICONS.forEach(o => { o.pos.style.opacity = '1'; o.a.style.animation = 'none'; o.a.style.opacity = '1'; });
+    S.stop(); entranceFinal(); ICONS.forEach(o => { o.pos.style.opacity = '0'; o.a.style.animation = 'none'; o.a.style.opacity = '1'; });
     if (TI.instant || !ICONS.length) { ICONS.forEach(o => o.pos.style.opacity = '0'); ue5PowerUp(); tiHeadset(avBody); return; }
     let tAt = 200;
     ICONS.forEach(o => {
       const dx = o.x - 80;
-      S.after(tAt, () => { anim.style.animation = 'none'; anim.style.transition = 'transform .45s ease-in-out'; anim.style.transform = `translate(${dx}px,0) scale(1.5)`; });
+      S.after(tAt, () => { o.pos.style.opacity = '1'; anim.style.animation = 'none'; anim.style.transition = 'transform .45s ease-in-out'; anim.style.transform = `translate(${dx}px,0) scale(1.5)`; });
       S.after(tAt + 470, () => { anim.style.transition = 'transform .3s cubic-bezier(.3,.7,.4,1)'; anim.style.transform = `translate(${dx}px,-74px) scale(1.5)`; });
       S.after(tAt + 770, () => { o.a.style.animation = 'introHeadsetGrab .5s ease-out forwards'; if(o.kind==='vr')tiHeadset(avBody); anim.style.filter = 'brightness(1.8)'; tiSfx.powerUp(); anim.style.transition = 'transform .28s cubic-bezier(.55,0,.8,1)'; anim.style.transform = `translate(${dx}px,0) scale(1.5)`; });
       S.after(tAt + 1000, () => { anim.style.filter = ''; });
-      tAt += 1100;
+      S.after(tAt + 1300, () => { o.pos.style.opacity = '0'; });
+      tAt += 1900;
     });
     S.after(tAt, () => { ICONS.forEach(o => o.pos.style.opacity = '0'); ue5PowerUp(true); });
   }
