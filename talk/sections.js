@@ -1,4 +1,4 @@
-// PMRE v7: attendee hub, XR services and verified public hardware.
+// PMRE v8: conference voices, attendee niches and Four Seasons press.
 const TALK = {
   "coverEvent": "PMRE 2026 &middot; Las Vegas &middot; Thursday, Nov 19",
   "coverTitle": "Architect to <span class=\"xr\">XR</span>-chitect",
@@ -14,8 +14,8 @@ const TALK = {
   "closeEyebrow": "",
   "closeTitle": "Build it together. Q&A",
   "closeSub": "Start small. Make it valuable. Bring us the ambitious ones.",
-  "web": "ibrews.github.io/pmre-2026-xr-chitect/v7/resources/",
-  "qr": "https://ibrews.github.io/pmre-2026-xr-chitect/v7/resources/",
+  "web": "ibrews.github.io/pmre-2026-xr-chitect/v8/resources/",
+  "qr": "https://ibrews.github.io/pmre-2026-xr-chitect/v8/resources/",
   "qrLabel": "Welcome PMRE Attendees! · password: pixie\nFree starter kit · training · projects · this deck",
   "options": {
     "cut": {
@@ -24,7 +24,7 @@ const TALK = {
       "choices": {
         "20": "Short rehearsal",
         "30": "Medium rehearsal",
-        "full": "Full v7 story",
+        "full": "Full v8 story",
         "20t": "Venue short + Q&A"
       }
     },
@@ -657,6 +657,21 @@ const SECTIONS = [
         "notes": "⏱ ~65s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nIn 2013 there was no elegant turnkey way to do what I expected. I went home at night and learned JavaScript and C# on Codecademy, learned Unity, learned model optimization. Architecture school taught me modeling, not optimization. It was exactly the kind of challenge I loved going home to.\n\nYear: 2013. Venn weights: 0.8 / 0.4 / 1.\n\n\nDesigning Naturally s18–20: begin with existing drawings, modeling, texturing and lighting; add optimization and an interactive engine, then deliver human-scale experience. The s20 diagram incorporates the progression of s18 and s19. Keep the technical sequence in notes, not extra dense on-slide text. This is a later diagram explaining the 2013 learning story.\n\nV6 direction (Alex, November 18): A robust 3D model can also yield plans, images, 360s, tours and a headset experience. This is an extension of the workflow you already sell. Remove the dark overlay so the workflow remains readable."
       },
       {
+        "id": "cognitive-ladder",
+        "title": "The next step should feel familiar",
+        "use": "pmre/cognitive-ladder",
+        "props": {},
+        "keep": 19,
+        "year": "2014 → 2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~25s.\n\nIdea credit: Matt Gio, PMRE 2026, as recorded in Alex’s Apple Note: cognitive ladder, acclimating to a new world, tell the story. This is an editorial diagram, not a quotation. Educate the client by connecting each new spatial deliverable to the work they already value. A photo shows the view; a tour connects views; VR lets them judge the place at human scale. Natural extension, not a demand to replace their existing media."
+      },
+      {
         "id": "macbeth-comparison",
         "title": "Macbeth · virtual to built",
         "year": "2014",
@@ -736,6 +751,42 @@ const SECTIONS = [
           "kicker": ""
         },
         "notes": "⏱ ~30s.\n\nPresenter’s lesson. The drone photographer’s identity in the audio is uncertain; omit the name rather than attribute it to Bobby."
+      },
+      {
+        "id": "attendee-niches",
+        "title": "Great niches in this room",
+        "use": "pmre/attendee-niches",
+        "props": {},
+        "keep": 19,
+        "year": "2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~45s.\n\nThese little Venn diagrams apply the talk’s architecture/theater/technology visual language to attendees. Dave Koch: aviation photography, aircraft interiors/exteriors and 3D aircraft tours verified at https://aviationaircraftphoto.com/ . Devon Pastorius: Creative Director and Principal Photographer at Narwhal Creative; PMRE bio describes rap music videos, cinematic one takes and sketches that expand agent visibility: https://www.pmreconference.com/presenters ; corroborating company pages https://narwhalcreative.ca/about/ and https://windsorrealestatephotography.com/about/ . Circle labels are our editorial summaries, not self-descriptions or quotes. Via Lloyd-George: name, Charleston and architect supplied by Alex. Company NOT VERIFIED after exact-name, spelling/spacing, Charleston, Via Mi Design and Giraffe360 searches. Earlier raw note says Giraffe360, latest instruction says unsure; do not publish either company. Her minimal two-circle spotlight uses only Charleston and architect; no invented corporate role."
+      },
+      {
+        "id": "people-pleaser",
+        "title": "Choosing the work you want",
+        "use": "pmre/text-card",
+        "props": {
+          "title": "Choosing the work you want",
+          "lines": [],
+          "quote": "“recovering people pleaser”",
+          "attr": "— Jen Lueck, yesterday.",
+          "kicker": ""
+        },
+        "keep": 19,
+        "year": "2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~20s.\n\nJen’s exact wording in Alex’s original Apple Note: recovering people pleaser. Attribution expanded to Jen Lueck by Alex’s v8 answer. This is a self-description; do not add a fabricated sentence, motive or personal story. Use it as a brief bridge to choosing the work and clients that fit. Source: canonical KB projects/pmre2026/2026-11-18-alex-notes-raw.md; yesterday wording expressly authorized by Alex."
       },
       {
         "id": "napkin-scale",
@@ -987,6 +1038,21 @@ const SECTIONS = [
           "layout": "row"
         },
         "notes": "⏱ ~70s.\n\n⏱ ~110s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBusiness development took off when I stopped cold calling and started speaking. Jeff Mottle invited me to Autodesk University after a YouTube video with few views. It did not need to go viral. It needed to reach the right person. Separate channels are fine if that helps you put work out there. Name corrected against official Autodesk panel credits.\n\nYear: 2017. Venn weights: 0.4 / 0.6 / 1.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017\n\nA low-view YouTube video reached Jeff Mottle, leading to a speaking invitation. This picture shows the resulting Autodesk expert panel, not a screenshot of the video. Speaking made the work visible to potential collaborators. Source: presenter recollection and official Autodesk 2017 panel https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017 . The separate Vegas crowd selfie is removed; it obscures this cause-and-effect story.\n\nVegas callback (Alex, 2026-11-14): this is the Vegas moment from the opening. Autodesk University 2017, Las Vegas, about ten years ago. What happened in Vegas did not stay in Vegas.\n"
+      },
+      {
+        "id": "speaking-and-rates",
+        "title": "Being known for the work",
+        "use": "pmre/conference-voices",
+        "props": {},
+        "keep": 19,
+        "year": "2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~45s.\n\nAlex’s v8 direction: connect touring the country selling services to becoming a regular speaker who commands higher rates. This progression is his account, not a measured attribution of revenue to a talk. The three conference quotations and speaker identities are supplied by Alex: Vince Collura, Reed, Alex Aaron. Vince’s phrase was popularized by Steve Martin and Cal Newport; preserve this context in speaker notes without changing Alex’s requested conference attribution. Reed asks “How do you deal with the race to the bottom?” Alex Aaron answers “Raising my prices.” Yesterday is the presenter’s authorized relative day wording, not a web-verified schedule."
       },
       {
         "id": "waldorf",
@@ -1344,7 +1410,7 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/fs-stats",
         "props": {},
-        "notes": "⏱ ~30s.\n\nRoot deck #53 stands alone: $500M+ presales and $870M construction loan are different project measures. June 2026 TYKO announcement verifies the construction loan. Never add them together or claim VR alone caused either result. These are public project figures, not Agile Lens fees."
+        "notes": "⏱ ~30s.\n\nRoot deck #53 stands alone: $500M+ presales and $870M construction loan are different project measures. June 2026 TYKO announcement verifies the construction loan. Never add them together or claim VR alone caused either result. These are public project figures, not Agile Lens fees.\n\nV8 screenshot: Emily Olman / AR Insider, June 10, 2026 (updated August 3). https://arinsider.co/2026/06/10/lake-austin-luxury-how-a-developer-presold-500m-in-real-estate-with-vr/ . Actual article-header screenshot captured with headless Google Chrome and cropped to site-header hero, preserving masthead, headline and byline. The article headline is the publisher’s wording; it does not establish a causal measurement. Screenshot credit is visible on this same Four Seasons figures slide."
       },
       {
         "id": "holodeck-travels",
@@ -1701,7 +1767,28 @@ const SECTIONS = [
             ]
           }
         },
-        "notes": "Sponsor nod (one sentence, not a pitch): the walkable-tour step is already a product category in this room. Giraffe360 (camera plus AI: HDR photos, floor plans, 360 tours) and Nucleus (one capture to self-guided 3D tours, live showings, video, floor plans) are PMRE 2026 sponsors. Do not imply either sponsor produced the example scan on this slide. Nucleus now documents radiance-field and Gaussian-splat delivery separately on its official site; no unsupported feature or priority claim is needed for this sponsor nod. Source: pmreconference.com/sponsors and each sponsor’s own site, checked 2026-11-17.\n\n⏱ ~75s.\n\nPresenter forecast/proposal, November 2026.\n\nMy bet: the deliverable expands from a set of views to a place the buyer can explore. On a phone or drone shoot, plan overlapping coverage for reconstruction alongside the hero shots. Process the images, clean the scan, choose the start point, then publish a walkthrough and a short film. That is a capture-to-walkthrough service you can begin testing on a property you control. A drone covers the outside; a phone or handheld capture covers the inside. This is an additional capture plan, not a promise that every ordinary real-estate shoot will reconstruct well.\n\nThe Rome examples are PortalCam captures. The phone/drone route is a separate workflow. Polycam documents Gaussian splats from existing overlapping photos or video, including drone captures; this is a supported input route, not a promised turnaround or quality guarantee. Sources: https://learn.poly.cam/hc/en-us/articles/30549134403860-How-to-Create-Drone-3D-Models-in-Polycam ; https://learn.poly.cam/hc/en-us/articles/30549121659412-How-to-Create-Photogrammetry-and-Gaussian-splats-from-Existing-Images-and-Videos-on-Mobile-and-Web . Use overlap and coverage, inspect glass/mirrors/moving subjects, clean the result and test the actual viewer. Price the work, not an assumed one-click conversion.\n\nThe portrait movie is reused from the MIA deck: media/video/splat-walkthrough.mp4, credited there to Alex Coulombe. It shows a fountain scan viewed from a moving virtual camera, not a new Rome hotel capture and not a recording of a phone actively scanning. PMRE derivative uses 00:03–00:12, audio removed, height 1080. It illustrates the middle (reconstructed scene) stage; the phone/drone input route is described separately above.\n\nV7 verified wording: Nucleus4D publishes tours into Zillow’s 3D tour ecosystem. Alex believes it was first with splats on Zillow; public evidence found does not establish priority, so the talk makes no first-company claim."
+        "notes": "Sponsor nod (one sentence, not a pitch): the walkable-tour step is already a product category in this room. Giraffe360 (camera plus AI: HDR photos, floor plans, 360 tours) and Nucleus (one capture to self-guided 3D tours, live showings, video, floor plans) are PMRE 2026 sponsors. Do not imply either sponsor produced the example scan on this slide. Nucleus now documents radiance-field and Gaussian-splat delivery separately on its official site; no unsupported feature or priority claim is needed for this sponsor nod. Source: pmreconference.com/sponsors and each sponsor’s own site, checked 2026-11-17.\n\n⏱ ~75s.\n\nPresenter forecast/proposal, November 2026.\n\nMy bet: the deliverable expands from a set of views to a place the buyer can explore. On a phone or drone shoot, plan overlapping coverage for reconstruction alongside the hero shots. Process the images, clean the scan, choose the start point, then publish a walkthrough and a short film. That is a capture-to-walkthrough service you can begin testing on a property you control. A drone covers the outside; a phone or handheld capture covers the inside. This is an additional capture plan, not a promise that every ordinary real-estate shoot will reconstruct well.\n\nThe Rome examples are PortalCam captures. The phone/drone route is a separate workflow. Polycam documents Gaussian splats from existing overlapping photos or video, including drone captures; this is a supported input route, not a promised turnaround or quality guarantee. Sources: https://learn.poly.cam/hc/en-us/articles/30549134403860-How-to-Create-Drone-3D-Models-in-Polycam ; https://learn.poly.cam/hc/en-us/articles/30549121659412-How-to-Create-Photogrammetry-and-Gaussian-splats-from-Existing-Images-and-Videos-on-Mobile-and-Web . Use overlap and coverage, inspect glass/mirrors/moving subjects, clean the result and test the actual viewer. Price the work, not an assumed one-click conversion.\n\nThe portrait movie is reused from the MIA deck: media/video/splat-walkthrough.mp4, credited there to Alex Coulombe. It shows a fountain scan viewed from a moving virtual camera, not a new Rome hotel capture and not a recording of a phone actively scanning. PMRE derivative uses 00:03–00:12, audio removed, height 1080. It illustrates the middle (reconstructed scene) stage; the phone/drone input route is described separately above.\n\nV8 RESOLVED: use the explicitly attributed Nucleus4D priority claim on the following slide, as supplied by Alex; do not state priority in the presenter’s own voice."
+      },
+      {
+        "id": "nucleus-zillow",
+        "title": "Splats in the listing ecosystem",
+        "use": "pmre/text-card",
+        "props": {
+          "title": "Splats in the listing ecosystem",
+          "lines": [],
+          "quote": "“first 3DGS platform approved to publish immersive experiences directly into Zillow's 3D tour ecosystem”",
+          "attr": "— Nucleus4D · nucleus4d.com",
+          "kicker": "Nucleus4D’s claim"
+        },
+        "keep": 19,
+        "year": "2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~25s.\n\nRESOLVED: Alex explicitly authorized this vendor-attributed wording for v8: first 3DGS platform approved to publish immersive experiences directly into Zillow's 3D tour ecosystem. Source: https://www.nucleus4d.com/ . Treat priority as the company’s claim, not an independently established industry first. Live homepage checked November 18 confirms tours publish into Zillow and realtor.com 3D tour ecosystems; its current rendered copy did not expose the exact first sentence supplied by Alex. Do not broaden this to arbitrary splat uploads to Zillow or confuse it with Zillow SkyTour. Vendor attribution is visible on the slide."
       },
       {
         "id": "view-before-visit",
@@ -1859,7 +1946,7 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/package-table",
         "props": {},
-        "notes": "⏱ ~70s.\n\nIdea credit: Matt Michalski, PMRE 2026 day-1 package/product slides, supplied by Alex as two photographs in Downloads/PMRE Packages. This is our original design, with our own hypothetical add-on figures and scope, not a reproduction of his slides or confidential Aryeo data.\n\nFor this room: keep photos, video, aerials, plans and existing 3D tours. Add a splat tour, guided VR walkthrough, mixed reality on site, then a bespoke Unreal premium. The example add-on prices are teaching proposals, NOT market medians, vendor rates, Agile Lens quotes or guaranteed margins. Scope revisions, travel, hosting and device support separately. A reusable template can reduce marginal setup work; a client pays for a reliable visit and decision, not the number of clicks. Custom Unreal and MR alignment still take real production and QA.\n\nNucleus4D officially confirms Zillow/realtor.com 3D tour publication (https://www.nucleus4d.com/). First-company priority for splats on Zillow remains unverified as of November 18, 2026; do not claim it."
+        "notes": "⏱ ~70s.\n\nIdea credit: Matt Michalski, PMRE 2026 day-1 package/product slides, supplied by Alex as two photographs in Downloads/PMRE Packages. This is our original design, with our own hypothetical add-on figures and scope, not a reproduction of his slides or confidential Aryeo data.\n\nFor this room: keep photos, video, aerials, plans and existing 3D tours. Add a splat tour, guided VR walkthrough, mixed reality on site, then a bespoke Unreal premium. The example add-on prices are teaching proposals, NOT market medians, vendor rates, Agile Lens quotes or guaranteed margins. Scope revisions, travel, hosting and device support separately. A reusable template can reduce marginal setup work; a client pays for a reliable visit and decision, not the number of clicks. Custom Unreal and MR alignment still take real production and QA.\n\nNucleus4D officially confirms Zillow/realtor.com 3D tour publication (https://www.nucleus4d.com/). V8 RESOLVED: Nucleus4D’s supplied priority wording is shown as a vendor claim, visibly attributed; independent priority is not asserted."
       },
       {
         "id": "plan-to-presence",
@@ -1890,10 +1977,10 @@ const SECTIONS = [
           "title": "",
           "lines": [],
           "quote": "“If no one is asking for it then you're not educating your client properly.”",
-          "attr": "Jonathan Lee",
+          "attr": "— Jonathan Lee, yesterday.",
           "kicker": ""
         },
-        "notes": "⏱ ~30s.\n\nExact quote and attribution supplied by Alex in this task. The earlier raw note used the typographic apostrophe and lowercase name; no other conference quote goes on a slide."
+        "notes": "⏱ ~30s.\n\nExact quote and attribution supplied by Alex in this task. The earlier raw note used the typographic apostrophe and lowercase name; V8: conference quotations now appear visibly, with Alex’s exact attributions."
       },
       {
         "id": "start-now",
@@ -1917,7 +2004,7 @@ const SECTIONS = [
           "attr": "",
           "kicker": ""
         },
-        "notes": "⏱ ~40s.\n\nThe resources page includes a real downloadable free guide and links to free Scaniverse / SuperSplat tools. Vendor subscriptions and hardware may cost money. The repo-hosted second-brain kit is a real Markdown/ZIP download; no signup required. Ask via alexcoulombepresents.com for training and updates. Quotes as Alex wrote them, SPEAKER NOTES ONLY: Vince: “be so good they can’t ignore you.”; “Sam drafts, I approve (Vince)”; Dave Koch : “I am the photographer who takes your ideas and turns them into the media you need.”; Jen: ‘recovering people pleaser’. Do not expand names or invent what anyone said."
+        "notes": "⏱ ~40s.\n\nThe resources page includes a real downloadable free guide and links to free Scaniverse / SuperSplat tools. Vendor subscriptions and hardware may cost money. The repo-hosted second-brain kit is a real Markdown/ZIP download; no signup required. Ask via alexcoulombepresents.com for training and updates. V8 moves the approved conference quotes onto slides. Other raw-note fragments remain unused. V8 moves the approved conference quotes onto slides. Other raw-note fragments remain unused."
       },
       {
         "id": "premium-proof",

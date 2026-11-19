@@ -14,8 +14,8 @@ A small second brain you can keep as plain Markdown in any notes app or folder. 
 Make one folder per property. Keep the brief, known dimension, original capture, export settings, tested devices, delivery URL and client feedback together. Link every claim to its source and date. Save a thumbnail locally; never treat an untested viewer link as a delivered VR tour.
 
 ## The talk and next steps
-Full deck: https://ibrews.github.io/pmre-2026-xr-chitect/v7/
-Attendee hub (password pixie): https://ibrews.github.io/pmre-2026-xr-chitect/v7/resources/
+Full deck: https://ibrews.github.io/pmre-2026-xr-chitect/v8/
+Attendee hub (password pixie): https://ibrews.github.io/pmre-2026-xr-chitect/v8/resources/
 1:1 and company training: https://alexcoulombepresents.com
 Ambitious spatial projects: https://agilelens.com
 
@@ -38,7 +38,7 @@ Checked 2026-11-18. These are official project/vendor links. Plans and browser s
 - A captured splat reproduces appearance. Glass, fine structure, unseen rooms and scale need inspection. It is not a measured survey.
 - A browser flythrough, a headset video and a buyer-controlled VR experience are different deliverables.
 - [WebXR](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API) needs a supported browser/device and a secure context, normally HTTPS. Do not promise your VR project will run by double-clicking a local HTML file.
-- [Nucleus4D](https://www.nucleus4d.com/) documents tours publishing into Zillow/realtor.com’s tour ecosystems. A “first company” claim for Zillow splats has not been established here.
+- [Nucleus4D](https://www.nucleus4d.com/) documents tours publishing into Zillow/realtor.com’s tour ecosystems. Nucleus4D’s own claim, supplied by Alex: “first 3DGS platform approved to publish immersive experiences directly into Zillow's 3D tour ecosystem” (company claim; source nucleus4d.com).
 - [Zillow SkyTour](https://www.zillow.com/news/skytour-is-pushing-the-tech-boundaries-of-real-estate-visualization/) is an exterior-splat workflow for eligible Showcase listings, not an arbitrary splat upload destination.
 
 

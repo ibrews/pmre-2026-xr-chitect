@@ -14,7 +14,7 @@ A small second brain you can keep as plain Markdown in any notes app or folder. 
 Make one folder per property. Keep the brief, known dimension, original capture, export settings, tested devices, delivery URL and client feedback together. Link every claim to its source and date. Save a thumbnail locally; never treat an untested viewer link as a delivered VR tour.
 
 ## The talk and next steps
-Full deck: https://ibrews.github.io/pmre-2026-xr-chitect/v7/
-Attendee hub (password pixie): https://ibrews.github.io/pmre-2026-xr-chitect/v7/resources/
+Full deck: https://ibrews.github.io/pmre-2026-xr-chitect/v8/
+Attendee hub (password pixie): https://ibrews.github.io/pmre-2026-xr-chitect/v8/resources/
 1:1 and company training: https://alexcoulombepresents.com
 Ambitious spatial projects: https://agilelens.com

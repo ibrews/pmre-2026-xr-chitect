@@ -18,8 +18,8 @@ A small second brain you can keep as plain Markdown in any notes app or folder. 
 Make one folder per property. Keep the brief, known dimension, original capture, export settings, tested devices, delivery URL and client feedback together. Link every claim to its source and date. Save a thumbnail locally; never treat an untested viewer link as a delivered VR tour.
 
 ## The talk and next steps
-Full deck: https://ibrews.github.io/pmre-2026-xr-chitect/v7/
-Attendee hub (password pixie): https://ibrews.github.io/pmre-2026-xr-chitect/v7/resources/
+Full deck: https://ibrews.github.io/pmre-2026-xr-chitect/v8/
+Attendee hub (password pixie): https://ibrews.github.io/pmre-2026-xr-chitect/v8/resources/
 1:1 and company training: https://alexcoulombepresents.com
 Ambitious spatial projects: https://agilelens.com
 ''',
@@ -39,7 +39,7 @@ Checked 2026-11-18. These are official project/vendor links. Plans and browser s
 - A captured splat reproduces appearance. Glass, fine structure, unseen rooms and scale need inspection. It is not a measured survey.
 - A browser flythrough, a headset video and a buyer-controlled VR experience are different deliverables.
 - [WebXR](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API) needs a supported browser/device and a secure context, normally HTTPS. Do not promise your VR project will run by double-clicking a local HTML file.
-- [Nucleus4D](https://www.nucleus4d.com/) documents tours publishing into Zillow/realtor.com’s tour ecosystems. A “first company” claim for Zillow splats has not been established here.
+- [Nucleus4D](https://www.nucleus4d.com/) documents tours publishing into Zillow/realtor.com’s tour ecosystems. Nucleus4D’s own claim, supplied by Alex: “first 3DGS platform approved to publish immersive experiences directly into Zillow's 3D tour ecosystem” (company claim; source nucleus4d.com).
 - [Zillow SkyTour](https://www.zillow.com/news/skytour-is-pushing-the-tech-boundaries-of-real-estate-visualization/) is an exterior-splat workflow for eligible Showcase listings, not an arbitrary splat upload destination.
 ''',
 '02-property-brief.md':'''# Property brief: duplicate this file
@@ -149,7 +149,7 @@ Link this to the property brief and delivery evidence. Keep observed facts separ
 for n,t in docs.items():(kit/n).write_text(t)
 combined='\n\n---\n\n'.join(docs.values());(r/'pmre2026-second-brain-starter-kit.md').write_text(combined)
 # Explicit user-requested downloadable ZIP kit, with intact relative Markdown links.
-manifest={'display_name':'PMRE 2026: free-tools VR real estate second-brain starter kit','purpose':'Editable learning notes and reusable property/QA/scope templates.','project':'PMRE 2026','subject':'Building VR real estate experiences with free tools','status':'starter kit; checked 2026-11-18; training code remains a placeholder','included':list(docs),'omitted':'No client assets, software installers, paid entitlements, or secrets.','source_repository':'https://github.com/ibrews/pmre-2026-xr-chitect','source_branch':'story/v7','creation_tool':'tools/build_starter_kit.py','archive_exception':'User explicitly requested a downloadable Markdown/ZIP kit; complete kit preserves relative links.','open_instructions':'Extract and open 00-start-here.md in any text/Markdown editor. External links need internet.','files':[{'path':n,'bytes':len(t.encode()),'sha256':hashlib.sha256(t.encode()).hexdigest()} for n,t in docs.items()]}
+manifest={'display_name':'PMRE 2026: free-tools VR real estate second-brain starter kit','purpose':'Editable learning notes and reusable property/QA/scope templates.','project':'PMRE 2026','subject':'Building VR real estate experiences with free tools','status':'starter kit; checked 2026-11-18; training code remains a placeholder','included':list(docs),'omitted':'No client assets, software installers, paid entitlements, or secrets.','source_repository':'https://github.com/ibrews/pmre-2026-xr-chitect','source_branch':'story/v8','creation_tool':'tools/build_starter_kit.py','archive_exception':'User explicitly requested a downloadable Markdown/ZIP kit; complete kit preserves relative links.','open_instructions':'Extract and open 00-start-here.md in any text/Markdown editor. External links need internet.','files':[{'path':n,'bytes':len(t.encode()),'sha256':hashlib.sha256(t.encode()).hexdigest()} for n,t in docs.items()]}
 manifest['payload_file_count']=len(docs);manifest['payload_byte_count']=sum(f['bytes'] for f in manifest['files']);manifest['whole_archive_checksum']='SHA-256 in adjacent .zip.sha256 sidecar.'
 (r/'starter-kit-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 zpath=r/'pmre2026-vr-real-estate-starter-kit-2026-11-18.zip'

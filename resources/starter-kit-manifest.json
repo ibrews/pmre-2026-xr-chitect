@@ -15,7 +15,7 @@
   ],
   "omitted": "No client assets, software installers, paid entitlements, or secrets.",
   "source_repository": "https://github.com/ibrews/pmre-2026-xr-chitect",
-  "source_branch": "story/v7",
+  "source_branch": "story/v8",
   "creation_tool": "tools/build_starter_kit.py",
   "archive_exception": "User explicitly requested a downloadable Markdown/ZIP kit; complete kit preserves relative links.",
   "open_instructions": "Extract and open 00-start-here.md in any text/Markdown editor. External links need internet.",
@@ -23,12 +23,12 @@
     {
       "path": "00-start-here.md",
       "bytes": 1618,
-      "sha256": "e62239c837bb41bf4963346666b6b00a376030fbc42599225dc1d8ef3070730b"
+      "sha256": "3a30a8f3aead3cdd07cac3c71b6266f865558b84d4bcf4c00473b49abc5d6ccb"
     },
     {
       "path": "01-tools-and-links.md",
-      "bytes": 2659,
-      "sha256": "d5f73f36f8a5ae18bad822c0b806a8839086cb1f756ea45fd4d85c40bb2df473"
+      "bytes": 2773,
+      "sha256": "7eadd01ea2904ea74dea71830deb12a7b2187ec7b466f098a0a0acebe8411377"
     },
     {
       "path": "02-property-brief.md",
@@ -57,6 +57,6 @@
     }
   ],
   "payload_file_count": 7,
-  "payload_byte_count": 10131,
+  "payload_byte_count": 10245,
   "whole_archive_checksum": "SHA-256 in adjacent .zip.sha256 sidecar."
 }

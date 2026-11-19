@@ -1,3 +1,9 @@
+## PMRE v8 — conference voices and attendee niches
+
+Source: `story/v8`; publish only the new `/v8/` subtree. Root and `/v3/` through `/v7/` are preserved. Conference quotes now appear on slides; attendee Venn spotlights, Matt Gio’s cognitive-ladder idea, an attributed Nucleus4D claim and Emily Olman’s AR Insider Four Seasons header capture are included. Via’s company could not be verified and is omitted. Source details: `media/pmre/v8/provenance.json`.
+
+Package with `python3 tools/package_offline.py --out <organizer-package>`; verify the extracted ZIP using `node tools/qa_v8.mjs ROOT OUT chrome|firefox` and `tools/qa_v7_resources.mjs`. No Drive upload.
+
 # Architect to XR-chitect
 
 Alex Coulombe Presents at PMRE 2026, November 19, Las Vegas. V7 extends v6 and follows Alex’s November 18 notes and local talkthrough, from architecture/theater/technology to practical spatial-media services and premium collaboration with Agile Lens.
