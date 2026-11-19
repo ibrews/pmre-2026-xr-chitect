@@ -1366,19 +1366,19 @@ const SECTIONS = [
       },
       {
         "id": "buyers",
-        "title": "buyers",
+        "title": "A holodeck",
         "use": "pmre/story-media",
         "keep": 99,
         "storyRole": "content",
         "props": {
-          "title": "",
-          "src": "media/pmre/re-holodeck-tablet-guests.jpg",
+          "title": "A holodeck",
+          "src": "media/pmre/fs-v2/lake-06.jpg",
           "credit": "Four Seasons Lake Austin · photo: Agile Lens",
-          "alt": "Buyers walk the future home",
+          "alt": "Visitors share a room-scale VR tour in the Four Seasons Lake Austin Holodeck",
           "mode": "content",
           "brightness": 1
         },
-        "notes": "⏱ ~67s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBuyers walk the future home together. A guide and physical stagecraft make this a shared visit.\n\nYear: 2023. Venn weights: 1 / 1 / 1.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\n\nFull-cut delivery space: Describe the visitor journey: briefing, headset, shared walk and sitting in a real seat at the end. Explain the guide’s role and why other people in the room change the visit. Ask which part of a property story needs more than a camera.",
+        "notes": "⏱ ~67s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBuyers walk the future home together. A guide and physical stagecraft make this a shared visit.\n\nYear: 2023. Venn weights: 1 / 1 / 1.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.\n\nFull-cut delivery space: Describe the visitor journey: briefing, headset, shared walk and sitting in a real seat at the end. Explain the guide’s role and why other people in the room change the visit. Ask which part of a property story needs more than a camera.\n\nAlex talkthrough 45:18–45:40: introduce the Holodeck room photo here, between the DBOX rendering and the Unreal tour. Call it A holodeck; do not pair this introductory image with the $870M construction-loan headline.",
         "year": "2023",
         "venn": [
           1,
@@ -1455,28 +1455,6 @@ const SECTIONS = [
         ]
       },
       {
-        "id": "investment",
-        "title": "$870M construction loan",
-        "use": "pmre/story-media",
-        "keep": 99,
-        "storyRole": "content",
-        "props": {
-          "title": "$870M construction loan",
-          "src": "media/pmre/fs-v2/lake-06.jpg",
-          "credit": "Four Seasons Lake Austin · photo: Agile Lens",
-          "alt": "$870M investment",
-          "mode": "content",
-          "brightness": 1
-        },
-        "notes": "⏱ ~35s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nPresenter previously called this investment. The public June 2, 2026 TYKO announcement specifies a construction loan. Do not add it to presales or imply VR caused financing.\n\nYear: 2023–2026. Venn weights: 1 / 0.4 / 0.8.\n\n\nElizabeth review, November 11: Project: Four Seasons Private Residences Lake Austin. Client/partners: Four Seasons, Impossible Ventures, DBOX, Pureblink. DBOX supplied source renderings; Pureblink built visualization levels; Agile Lens optimized and assembled the interactive experience and installed/operated the Holodeck. This image is a real-room photograph from Agile Lens, not a DBOX render. Source: https://agilelens.com/portfolio/four-seasons-lake-austin. No individual photographer is named by the source, so none is invented.",
-        "year": "2023–2026",
-        "venn": [
-          1,
-          0.4,
-          0.8
-        ]
-      },
-      {
         "id": "fs-stats",
         "title": "Four Seasons · project figures",
         "year": "2026",
@@ -1488,7 +1466,7 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/fs-stats",
         "props": {},
-        "notes": "⏱ ~30s.\n\nRoot deck #53 stands alone: $500M+ presales and $870M construction loan are different project measures. June 2026 TYKO announcement verifies the construction loan. Never add them together or claim VR alone caused either result. These are public project figures, not Agile Lens fees.\n\nV8 screenshot: Emily Olman / AR Insider, June 10, 2026 (updated August 3). https://arinsider.co/2026/06/10/lake-austin-luxury-how-a-developer-presold-500m-in-real-estate-with-vr/ . Actual article-header screenshot captured with headless Google Chrome and cropped to site-header hero, preserving masthead, headline and byline. The article headline is the publisher’s wording; it does not establish a causal measurement. Screenshot credit is visible on this same Four Seasons figures slide."
+        "notes": "⏱ ~65s.\n\nRoot deck #53 stands alone: $500M+ presales and $870M construction loan are different project measures. June 2026 TYKO announcement verifies the construction loan. Never add them together or claim VR alone caused either result. These are public project figures, not Agile Lens fees.\n\nV8 screenshot: Emily Olman / AR Insider, June 10, 2026 (updated August 3). https://arinsider.co/2026/06/10/lake-austin-luxury-how-a-developer-presold-500m-in-real-estate-with-vr/ . Actual article-header screenshot captured with headless Google Chrome and cropped to site-header hero, preserving masthead, headline and byline. The article headline is the publisher’s wording; it does not establish a causal measurement. Screenshot credit is visible on this same Four Seasons figures slide.\n\nThe investors came through the experience and understood the project. It all comes back to theater: the shared tour ends in real seats. Presenter previously called this investment; the public June 2, 2026 TYKO announcement specifies a construction loan. Do not add it to presales or imply VR caused financing."
       },
       {
         "id": "holodeck-travels",
