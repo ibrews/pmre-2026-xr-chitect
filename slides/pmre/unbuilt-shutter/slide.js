@@ -4,7 +4,7 @@
 // with architecture (walls, columns, stair, door) added, then flows into Plan -> Model -> Photograph.
 // Linework is schematic (not the project's drawings); the rendering reuses the deck's credited DBOX image.
 SD.defineSlide({id:'pmre/unbuilt-shutter',manualSteps:true,steps:4,props:{},assets:[],
-provenance:['Claude concept slide 2026-11-19; schematic linework is invented and labeled; photo media/pmre/fs-v2/intro-render.jpg is already used and credited in the deck (Rendering: DBOX for Austin Capital Partners).'],
+provenance:['Claude concept slide 2026-11-19; schematic linework is invented and labeled; before/after hillside images are conceptual illustrations made by Alex (2026-11-19), no project named.'],
 css:`.ub-s{position:absolute;inset:4% 4% 19%;color:var(--text)}
 .ub-s h2{margin:0;font:800 100px/1.05 var(--font-display,var(--font))}
 .ub-s .legend{position:absolute;left:0;top:180px;width:340px;display:flex;flex-direction:column;gap:22px}
@@ -12,7 +12,7 @@ css:`.ub-s{position:absolute;inset:4% 4% 19%;color:var(--text)}
 .ub-s .legend b{display:block;font:800 30px var(--font);color:#d7b668;letter-spacing:.12em;margin-bottom:6px}
 .ub-s .legend div.on{opacity:1;color:var(--text);transform:scale(1.04)}
 .ub-s .legend p{font:500 34px/1.3 var(--font);color:var(--dim);margin:10px 0 0;opacity:0;transition:opacity .8s .6s}
-.ub-s[data-s="2"] .legend p{opacity:1}
+.ub-s[data-s="2"] .legend p,.ub-s[data-s="3"] .legend p{opacity:1}
 .ub-s .stage{position:absolute;left:380px;right:0;top:170px;bottom:0;perspective:2200px;overflow:hidden;border-radius:14px;background:#0b1622}
 .ub-s .plane{position:absolute;left:50%;top:50%;width:900px;height:520px;margin:-260px 0 0 -450px;transform-style:preserve-3d;transition:transform 1.6s cubic-bezier(.65,0,.25,1);
  background-image:linear-gradient(#00d4ff18 1px,transparent 1px),linear-gradient(90deg,#00d4ff18 1px,transparent 1px);background-size:30px 30px;border:2px solid #00d4ff55;transform:scale(1.12)}
@@ -77,7 +77,7 @@ ${B.map(b=>`<div class="bld" style="left:${b[0]}px;top:${b[1]}px;width:${b[2]}px
 <span class="credit">Before</span><span class="credit after-tag">After</span></div></div>`;
 const root=el.querySelector('.ub-s'),leg=[...el.querySelectorAll('.legend div')],flash=el.querySelector('.flash');
 // deck step 0 = the camera-toy prelude ('pre'); steps 1-3 = the original Plan / Model / Photograph states 0-2
-const S=n=>n<=0?'pre':n-1,set=v=>{root.dataset.s=v;leg.forEach(d=>d.classList.toggle('on',d.dataset.k===String(v)));};
+const S=n=>n<=0?'pre':n-1,set=v=>{root.dataset.s=v;leg.forEach(d=>d.classList.toggle('on',d.dataset.k===String(v===3?2:v)));};
 const shutter=()=>{flash.classList.remove('go');void flash.offsetWidth;flash.classList.add('go');const c=ctx.audio&&ctx.audio();if(!c)return;try{const t=c.currentTime,len=c.sampleRate*.09,b=c.createBuffer(1,len,c.sampleRate),d=b.getChannelData(0);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,3);const s=c.createBufferSource();s.buffer=b;const f=c.createBiquadFilter();f.type='highpass';f.frequency.value=1800;const g=c.createGain();g.gain.value=.012;s.connect(f);f.connect(g);g.connect(c.destination);s.start(t);const s2=c.createBufferSource();s2.buffer=b;const g2=c.createGain();g2.gain.value=.008;s2.connect(f);f.connect(g2);g2.connect(c.destination);s2.start(t+.07);}catch(e){}};
 return{enter(){root.classList.add('noanim');set(-1);void root.offsetWidth;root.classList.remove('noanim');if(ctx.instant)set('pre');else ctx.clock.after(60,()=>set('pre'));},
 step(n){set(S(n));if(n===3&&!ctx.instant)shutter();},complete(n){set(S(n))},restore(n){set(S(n))},staticFrame(){root.classList.add('noanim');set(3);void root.offsetWidth;root.classList.remove('noanim');}};}});
