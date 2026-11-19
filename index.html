@@ -445,6 +445,7 @@ const SECTIONS = [
       },
       {
         "id": "drawing-judgment",
+        "hidden": true,
         "title": "Your eye is the bottleneck",
         "year": "2007",
         "venn": [
@@ -466,7 +467,7 @@ const SECTIONS = [
           "feeds": [
             "a play’s structure → a building’s structure",
             "restaurant project → dinner theater",
-            "park project → Shakespeare amphitheater"
+            "park project → modular amphitheater"
           ],
           "caption": "Each interest made the others stronger"
         },
@@ -482,27 +483,8 @@ const SECTIONS = [
         "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nEvery studio became a theater project. This semester we’re designing a restaurant? Great: dinner theater. A park? Cool, can I put an amphitheater for Shakespeare in the park in the middle? The structure of a play informed the structure of the building.\n\nEach bubble got stronger because of the overlap. It keeps happening: something learned on one project feeds the next. Use this as the segue language between later projects: we took the technology and what we learned there, and brought it here.\n\nYear: 2007. Venn weights: 1 / 1 / 0.6.\n"
       },
       {
-        "id": "weird",
-        "use": "pmre/text-card",
-        "props": {
-          "kicker": "",
-          "quote": "“When you’re the weird person doing a weird combination of things, you stick in people’s heads.”",
-          "attr": "They remember you."
-        },
-        "title": "“When you’re the weird person doing a weird combination of things, you stick in people’s heads.”",
-        "keep": 30,
-        "year": "2008",
-        "venn": [
-          0.8,
-          1,
-          0.4
-        ],
-        "storyRole": "content",
-        "notes": "⏱ ~25s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nOpportunities come from having a weird reputation. When you’re the weird person doing a weird combination of things, you stick in people’s heads. They remember you. It happened with Equus, and it happens again in 2012 with Connie Caldwell.\n\nYear: 2008. Venn weights: 0.8 / 1 / 0.4.\n"
-      },
-      {
         "id": "thesis",
-        "title": "Of course my thesis was a theater",
+        "title": "Of course my thesis was an immersive theater you attend via submarine.",
         "year": "2009",
         "venn": [
           1,
@@ -512,7 +494,7 @@ const SECTIONS = [
         "keep": 30,
         "use": "pmre/v6-gallery",
         "props": {
-          "title": "Of course my thesis was a theater",
+          "title": "Of course my thesis was an immersive theater you attend via submarine.",
           "line": "",
           "media": [
             {
@@ -529,23 +511,54 @@ const SECTIONS = [
             }
           ],
           "steps": false,
-          "layout": "row"
+          "layout": "row",
+          "arCallout": true
         },
         "notes": "⏱ ~55s.\n\nAlex’s thesis combined a script, immersive theater, physical model and webcam AR. Use the original superjury photo without the enlarged, contrast-enhanced inset. Presenter-supplied photos; no new date inferred from the camera stamp."
       },
       {
+        "id": "weird",
+        "use": "pmre/text-card",
+        "props": {
+          "kicker": "",
+          "quote": "When you’re the weird person with weird overlaps in interests, people remember you.",
+          "attr": ""
+        },
+        "title": "When you’re the weird person with weird overlaps in interests, people remember you.",
+        "keep": 30,
+        "year": "2008",
+        "venn": [
+          0.8,
+          1,
+          0.4
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~25s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nOpportunities come from having a weird reputation. When you’re the weird person doing a weird combination of things, you stick in people’s heads. They remember you. It happened with Equus, and it happens again in 2012 with Connie Caldwell.\n\nYear: 2008. Venn weights: 0.8 / 1 / 0.4.\n"
+      },
+      {
+        "id": "attendee-niches",
+        "title": "Great niches in this room",
+        "use": "pmre/attendee-niches",
+        "props": {},
+        "keep": 19,
+        "year": "2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~45s.\n\nThese little Venn diagrams apply the talk’s architecture/theater/technology visual language to attendees. Dave Koch: aviation photography, aircraft interiors/exteriors and 3D aircraft tours verified at https://aviationaircraftphoto.com/ . Devon Pastorius: Creative Director and Principal Photographer at Narwhal Creative; PMRE bio describes rap music videos, cinematic one takes and sketches that expand agent visibility: https://www.pmreconference.com/presenters ; corroborating company pages https://narwhalcreative.ca/about/ and https://windsorrealestatephotography.com/about/ . Circle labels are our editorial summaries, not self-descriptions or quotes. Via Lloyd-George: name, Charleston and architect supplied by Alex. Company NOT VERIFIED after exact-name, spelling/spacing, Charleston, Via Mi Design and Giraffe360 searches. Earlier raw note says Giraffe360, latest instruction says unsure; do not publish either company. Her minimal two-circle spotlight uses only Charleston and architect; no invented corporate role. Southern Real Estate Media: Krisse and Rich Newport. Photography + aerial media + Lake Martin is an editorial Venn, not a quotation. Their story confirms Krisse handles interior photography and 3D tours; Rich handles drone work and interior video: https://southernremedia.com/our-story/ . Current full-service offering includes listing photos, aerial/interior video, 3D tours, floor plans, virtual staging, social reels and marketing kits: https://southernremedia.com/ and https://southernremedia.com/social-media-reels/ . Lake Martin waterfront work is documented by their own portfolio: https://vimeo.com/269775894 and https://vimeo.com/274811628 . The niche is our summary of demonstrated work, not an exclusive specialty claim. UNVERIFIED / OMITTED: started with drone work then expanded; 4K delivery (service page specifies HD): https://southernremedia.com/videography/ . Claim-by-claim evidence: media/pmre/v8/southern-real-estate-media-sources.json.\n\nKrisse Newport: Southern Real Estate Media /our-story/ confirms owner, creative director and photographer, with husband Rich handling aerial work and video; first-party page checked 2026-11-19. Perica Milosevic: Alex’s in-room identity, Bubo²; its own /technology and /interiors pages verify a single Insta360 recording to Gaussian-splat browser tour. No speed, cheapest or universal headset claim."
+      },
+      {
         "id": "graduation",
-        "title": "“The job I’ll have in five years doesn’t exist yet”",
-        "use": "pmre/story-media",
+        "title": "The job I’ll have in five years doesn’t exist yet",
+        "use": "pmre/text-card",
         "keep": 30,
         "storyRole": "content",
         "props": {
-          "mode": "content",
-          "title": "“The job I’ll have in five years doesn’t exist yet”",
-          "src": "media/v3-fix1/thesis-model.jpg",
-          "credit": "",
-          "brightness": 1,
-          "alt": "“The job I’ll have in five years doesn’t exist yet”"
+          "quote": "The job I’ll have in five years doesn’t exist yet",
+          "centered": true
         },
         "notes": "⏱ ~40s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI did not think a traditional architecture partner ladder was going to make me happy. I was interested in too many other things.\n\nYear: 2010. Venn weights: 1 / 0.5 / 0.5.\n\n2026-11-14 dictation:\nI did well at the end of school; the thesis was in super jury. People asked: Alex, where do you think you’ll be in five years? I knew my interests weren’t taking me up a proper career ladder. In a rare moment of foresight I said: honestly, I feel like the job I’ll have in five years doesn’t exist yet. So: 2010 to 2015, let’s see where that goes.\n",
         "year": "2010",
@@ -563,7 +576,7 @@ const SECTIONS = [
           "year": 2010,
           "kicker": "GRADUATION",
           "label": "2010",
-          "sub": "Out of school,\ninto a recession",
+          "sub": "Out of school,\ncoming out of the\n2008 recession",
           "venn": [
             1,
             0.5,
@@ -585,7 +598,7 @@ const SECTIONS = [
         ],
         "storyRole": "content",
         "hideTracker": true,
-        "notes": "⏱ ~10s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nGraduation, 2010.\n\nYear: 2010. Venn weights: 1 / 0.5 / 0.6.\n"
+        "notes": "⏱ ~10s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nGraduation, 2010.\n\nYear: 2010. Venn weights: 1 / 0.5 / 0.6.\n\nTalkthrough 16:15–16:22: “Out of school, coming out.” / “We’re not into a recession. Coming out of the 2008 recession, not a lot of architecture jobs.”"
       },
       {
         "id": "career-map",
@@ -846,21 +859,6 @@ const SECTIONS = [
           "kicker": ""
         },
         "notes": "⏱ ~30s.\n\nPresenter’s lesson. The drone photographer’s identity in the audio is uncertain; omit the name rather than attribute it to Bobby."
-      },
-      {
-        "id": "attendee-niches",
-        "title": "Great niches in this room",
-        "use": "pmre/attendee-niches",
-        "props": {},
-        "keep": 19,
-        "year": "2026",
-        "venn": [
-          1,
-          1,
-          1
-        ],
-        "storyRole": "content",
-        "notes": "⏱ ~45s.\n\nThese little Venn diagrams apply the talk’s architecture/theater/technology visual language to attendees. Dave Koch: aviation photography, aircraft interiors/exteriors and 3D aircraft tours verified at https://aviationaircraftphoto.com/ . Devon Pastorius: Creative Director and Principal Photographer at Narwhal Creative; PMRE bio describes rap music videos, cinematic one takes and sketches that expand agent visibility: https://www.pmreconference.com/presenters ; corroborating company pages https://narwhalcreative.ca/about/ and https://windsorrealestatephotography.com/about/ . Circle labels are our editorial summaries, not self-descriptions or quotes. Via Lloyd-George: name, Charleston and architect supplied by Alex. Company NOT VERIFIED after exact-name, spelling/spacing, Charleston, Via Mi Design and Giraffe360 searches. Earlier raw note says Giraffe360, latest instruction says unsure; do not publish either company. Her minimal two-circle spotlight uses only Charleston and architect; no invented corporate role. Southern Real Estate Media: Krisse and Rich Newport. Photography + aerial media + Lake Martin is an editorial Venn, not a quotation. Their story confirms Krisse handles interior photography and 3D tours; Rich handles drone work and interior video: https://southernremedia.com/our-story/ . Current full-service offering includes listing photos, aerial/interior video, 3D tours, floor plans, virtual staging, social reels and marketing kits: https://southernremedia.com/ and https://southernremedia.com/social-media-reels/ . Lake Martin waterfront work is documented by their own portfolio: https://vimeo.com/269775894 and https://vimeo.com/274811628 . The niche is our summary of demonstrated work, not an exclusive specialty claim. UNVERIFIED / OMITTED: started with drone work then expanded; 4K delivery (service page specifies HD): https://southernremedia.com/videography/ . Claim-by-claim evidence: media/pmre/v8/southern-real-estate-media-sources.json.\n\nKrisse Newport: Southern Real Estate Media /our-story/ confirms owner, creative director and photographer, with husband Rich handling aerial work and video; first-party page checked 2026-11-19. Perica Milosevic: Alex’s in-room identity, Bubo²; its own /technology and /interiors pages verify a single Insta360 recording to Gaussian-splat browser tour. No speed, cheapest or universal headset claim."
       },
       {
         "id": "people-pleaser",
@@ -2779,6 +2777,7 @@ function applyStorySpine(){
   sl.dataset.storyId=cfg?.id||ty;sl.dataset.storyRole=cfg?.storyRole||ty;
   if(['bonus','map','lesson'].includes(ty))sl.dataset.hidden='1';
   if(ty==='lesson'&&SECTIONS[+sl.dataset.section].introLesson)sl.dataset.hidden='0';
+  if(cfg?.hidden)sl.dataset.hidden='1';
   if(ty==='settings')return;
   const year=cfg?.year||'2026',weights=cfg?.venn||[1,1,1];sl.dataset.year=year;sl.dataset.venn=JSON.stringify(weights);
   const old=sl.querySelector('.v3-tracker');if(old)old.remove();if(ty==='cover'||cfg?.hideTracker)return;

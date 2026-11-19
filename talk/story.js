@@ -9,6 +9,7 @@ function applyStorySpine(){
   sl.dataset.storyId=cfg?.id||ty;sl.dataset.storyRole=cfg?.storyRole||ty;
   if(['bonus','map','lesson'].includes(ty))sl.dataset.hidden='1';
   if(ty==='lesson'&&SECTIONS[+sl.dataset.section].introLesson)sl.dataset.hidden='0';
+  if(cfg?.hidden)sl.dataset.hidden='1';
   if(ty==='settings')return;
   const year=cfg?.year||'2026',weights=cfg?.venn||[1,1,1];sl.dataset.year=year;sl.dataset.venn=JSON.stringify(weights);
   const old=sl.querySelector('.v3-tracker');if(old)old.remove();if(ty==='cover'||cfg?.hideTracker)return;
