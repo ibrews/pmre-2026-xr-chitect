@@ -22,16 +22,22 @@ const {E,track,clamp}=PX,NS='http://www.w3.org/2000/svg';
 // lon/lat -> this map's screen space, fitted to the fs-travels pins (Austin, Aspen, New York)
 const P=(lon,lat)=>[1267.5+15.59*(lon+97.74),635-17.66*(lat-30.27)];
 const C=[[-74.0,40.71],[-71.06,42.36],[-75.17,39.95],[-77.04,38.9],[-84.39,33.75],[-87.63,41.88],[-96.8,32.78],[-104.99,39.74],[-118.24,34.05],[-122.42,37.77],[-122.33,47.61]].map(c=>P(...c));
-const T0=.8,HOP=.62,END=T0+HOP*C.length+1.6,pins=document.getElementById('pins');
-C.forEach((c,i)=>{const at=T0+HOP*i+HOP*.85,g=E('g',{transform:`translate(${c[0].toFixed(1)} ${c[1].toFixed(1)})`},pins);
+// Alex 2026-11-19: at every stop he takes the headset off his face and holds it out; then it sits on the pin and gets the X.
+const T0=.8,HOP=1.0,DW=.55,END=T0+HOP*C.length+1.0,pins=document.getElementById('pins');
+C.forEach((c,i)=>{const arr=T0+HOP*i,at=arr+.5,g=E('g',{transform:`translate(${c[0].toFixed(1)} ${c[1].toFixed(1)})`},pins);
  // the chunky DK1-era headset from the speaker-intro power-up (mia-speaker tiHeadset bulky), one per stop
  const dot=E('g',{transform:'translate(0 10) scale(1.25)','shape-rendering':'crispEdges'},g);E('rect',{x:-31,y:-43,width:62,height:40,fill:'#c5a577',rx:3},dot);
  [[-27,-39,54,32,'#08090d'],[-29,-35,58,25,'#2a2d34'],[-25,-37,50,25,'#3d414a'],[-23,-35,46,21,'#1b1d23'],[-23,-35,46,3,'#5b606b'],[-23,-17,46,3,'#090a0d'],[-29,-32,4,18,'#6b707b'],[25,-32,4,18,'#6b707b'],[-21,-31,2,2,'#8a8f99'],[19,-31,2,2,'#8a8f99'],[-21,-20,2,2,'#8a8f99'],[19,-20,2,2,'#8a8f99']].forEach(([x,y,w,h,f])=>E('rect',{x,y,width:w,height:h,fill:f},dot));
- track(dot,END,t=>({opacity:t<T0+HOP*i?0:1}));
+ const lerp=(a,b,k)=>a+(b-a)*k,ez=k=>k<0?0:k>1?1:1-Math.pow(1-k,3);
+ // face (small, at his head) -> held out in front -> set down on the pin
+ track(dot,END,t=>{if(t<arr)return{opacity:0};const u=t-arr;let x,y,sc;
+  if(u<.22){const k=ez(u/.22);x=lerp(0,34,k);y=lerp(-62,-52,k);sc=lerp(.45,.72,k);}
+  else{const k=ez((u-.22)/.25);x=lerp(34,0,k);y=lerp(-52,10,k);sc=lerp(.72,1.25,k);}
+  return{opacity:1,transform:`translate(${x.toFixed(1)}px,${y.toFixed(1)}px) scale(${sc.toFixed(3)})`};});
  const x=E('path',{d:'M14 -62 L44 -32 M44 -62 L14 -32',stroke:'#f43f5e','stroke-width':8,'stroke-linecap':'round',fill:'none'},g);
  track(x,END,t=>{const k=clamp((t-at)/.18,0,1);return{opacity:+k.toFixed(2),transform:`scale(${(1.6-.6*k).toFixed(3)})`};});});
 const hero=PX.sprite(document.getElementById('hero'),{withBeard:false}),segs=[{type:'idle',t0:0,t1:T0,a:C[0],face:1}];
-for(let i=1;i<C.length;i++)segs.push({type:'hop',t0:T0+HOP*(i-1)+HOP*.15,t1:T0+HOP*i,a:C[i-1],b:C[i],h:90});
+for(let i=1;i<C.length;i++)segs.push({type:'hop',t0:T0+HOP*(i-1)+DW,t1:T0+HOP*i,a:C[i-1],b:C[i],h:90});
 segs.push({type:'idle',t0:T0+HOP*(C.length-1),t1:END+1,a:C[C.length-1],face:-1});
 // stand just above each office pin
 PX.drive(hero,END,(f=>t=>{const s=f(t);return{...s,y:s.y-48};})(PX.route(segs)),.8);
