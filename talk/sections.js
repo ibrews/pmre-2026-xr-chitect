@@ -1465,7 +1465,7 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/fs-travels",
         "props": {},
-        "notes": "⏱ ~65s.\n\nRoot #60 America map style. Start with the Aspen setup timelapse; after about 12 seconds it shrinks beside the map. Presenter then reveals photos at Austin, Aspen, New York and California, with the timelapse still running. California summer 2026; New York 57th Street investor demonstration January 2026. DBOX is another New York location, not a separate city. Miami is current as of November 9 but no verified photograph is supplied here."
+        "notes": "⏱ ~65s.\n\nRoot #60 America map style. The Aspen setup timelapse loops on the left throughout. One presenter build starts the ten-second map tour: Austin, Aspen, New York, then California. The dotted route travels between stops; each photo grows into a spotlight, holds, then settles beside its pin before the next leg. Backward stepping resets the tour; returning from the next slide restores all four thumbnails. California summer 2026; New York 57th Street investor demonstration January 2026. DBOX is another New York location, not a separate city. Miami is current as of November 9 but no verified photograph is supplied here."
       },
       {
         "id": "sponsor-pipeline",
