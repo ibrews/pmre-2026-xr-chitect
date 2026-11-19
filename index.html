@@ -565,23 +565,22 @@ const SECTIONS = [
         "notes": "⏱ ~55s.\n\nAlex’s thesis combined a script, immersive theater, physical model and webcam AR. Use the original superjury photo without the enlarged, contrast-enhanced inset. Presenter-supplied photos; no new date inferred from the camera stamp."
       },
       {
-        "id": "weird",
+        "id": "graduation",
+        "title": "The job I’ll have in five years doesn’t exist yet",
         "use": "pmre/text-card",
-        "props": {
-          "kicker": "",
-          "quote": "When you’re the weird person with weird overlaps in interests, people remember you.",
-          "attr": ""
-        },
-        "title": "When you’re the weird person with weird overlaps in interests, people remember you.",
         "keep": 30,
-        "year": "2008",
-        "venn": [
-          0.8,
-          1,
-          0.4
-        ],
         "storyRole": "content",
-        "notes": "⏱ ~25s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nOpportunities come from having a weird reputation. When you’re the weird person doing a weird combination of things, you stick in people’s heads. They remember you. It happened with Equus, and it happens again in 2012 with Connie Caldwell.\n\nYear: 2008. Venn weights: 0.8 / 1 / 0.4.\n\n\nNot “follow your dream.” The niche came from deliberate practice: years of focused, effortful work on things just past my ability, with feedback. That does not guarantee a niche. What it does is put you in alignment (Oliver Ward’s word at PMRE yesterday) so that when a lucky opportunity shows up, you are ready to take it. Luck plus preparation, not a dream."
+        "props": {
+          "quote": "The job I’ll have in five years <b>doesn’t exist yet</b>",
+          "centered": true
+        },
+        "notes": "⏱ ~40s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI did not think a traditional architecture partner ladder was going to make me happy. I was interested in too many other things.\n\nYear: 2010. Venn weights: 1 / 0.5 / 0.5.\n\n2026-11-14 dictation:\nI did well at the end of school; the thesis was in super jury. People asked: Alex, where do you think you’ll be in five years? I knew my interests weren’t taking me up a proper career ladder. In a rare moment of foresight I said: honestly, I feel like the job I’ll have in five years doesn’t exist yet. So: 2010 to 2015, let’s see where that goes.\n",
+        "year": "2010",
+        "venn": [
+          1,
+          0.5,
+          0.5
+        ]
       },
       {
         "id": "overlap-yours",
@@ -600,22 +599,23 @@ const SECTIONS = [
         "hidden": true
       },
       {
-        "id": "graduation",
-        "title": "The job I’ll have in five years doesn’t exist yet",
+        "id": "weird",
         "use": "pmre/text-card",
-        "keep": 30,
-        "storyRole": "content",
         "props": {
-          "quote": "The job I’ll have in five years doesn’t exist yet",
-          "centered": true
+          "kicker": "",
+          "quote": "When you’re the weird person with weird overlaps in interests, <b>people remember you</b>.",
+          "attr": ""
         },
-        "notes": "⏱ ~40s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI did not think a traditional architecture partner ladder was going to make me happy. I was interested in too many other things.\n\nYear: 2010. Venn weights: 1 / 0.5 / 0.5.\n\n2026-11-14 dictation:\nI did well at the end of school; the thesis was in super jury. People asked: Alex, where do you think you’ll be in five years? I knew my interests weren’t taking me up a proper career ladder. In a rare moment of foresight I said: honestly, I feel like the job I’ll have in five years doesn’t exist yet. So: 2010 to 2015, let’s see where that goes.\n",
-        "year": "2010",
+        "title": "When you’re the weird person with weird overlaps in interests, people remember you.",
+        "keep": 30,
+        "year": "2008",
         "venn": [
+          0.8,
           1,
-          0.5,
-          0.5
-        ]
+          0.4
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~25s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nOpportunities come from having a weird reputation. When you’re the weird person doing a weird combination of things, you stick in people’s heads. They remember you. It happened with Equus, and it happens again in 2012 with Connie Caldwell.\n\nYear: 2008. Venn weights: 0.8 / 1 / 0.4.\n\n\nNot “follow your dream.” The niche came from deliberate practice: years of focused, effortful work on things just past my ability, with feedback. That does not guarantee a niche. What it does is put you in alignment (Oliver Ward’s word at PMRE yesterday) so that when a lucky opportunity shows up, you are ready to take it. Luck plus preparation, not a dream."
       },
       {
         "id": "ring-2010",
@@ -625,7 +625,8 @@ const SECTIONS = [
           "year": 2010,
           "kicker": "GRADUATION",
           "label": "2010",
-          "sub": "Out of school,\ncoming out of the\n2008 recession",
+          "sub": "Out of school, into the\npost-2008 recession\narchitecture economy.",
+          "sfx": "advance",
           "venn": [
             1,
             0.5,
@@ -2967,6 +2968,8 @@ function applyStorySpine(){
    else if(c.kind==='rewind'){const f=(620+980*u*u)*(1+.035*Math.sin(TAU*23*t));phase+=TAU*f/rate;const chat=.7+.3*Math.sin(TAU*(16+22*u)*t);v=.01*(.5*Math.sin(phase)+.22*Math.sin(2*phase)+.35*(noise-low))*chat*Math.min(1,t/.15,(dur-t)/.4);}
    else if(c.kind==='bounce'){phase+=TAU*(380*Math.exp(-t*18)+90)/rate;v=.08*Math.sin(phase)*Math.exp(-t*24)*Math.min(1,t/.006);}
    else if(c.kind==='pop'){phase+=TAU*(950*Math.exp(-t*22)+130)/rate;v=.15*Math.sin(phase)*Math.exp(-t*34)*Math.min(1,t/.004);}
+   // Forward progression (ring-chapter moving ahead in time): soft clock ticks that quicken over a faint rising tone.
+   else if(c.kind==='advance'){let tick=0;for(let n=0;n<10;n++){const d=t-.9*dur*(n/10)**.75;if(d>=0&&d<.05)tick+=Math.exp(-d*110)*Math.sin(TAU*(1500+60*n)*d);}phase+=TAU*(420+260*u)/rate;v=.012*(.9*tick+.18*Math.sin(phase)*Math.sin(Math.PI*u)**2);}
    // Tiny fireworks: a short run of soft crackles with a faint high ping each (lane-traffic XR-chitect landing).
    else if(c.kind==='firework'){let w=0;for(const [o,f] of FIREWORK){const d=t-o;if(d>=0&&d<.07)w+=Math.exp(-d*80)*(.7*(noise-low)+.5*Math.sin(TAU*f*pitch*d));}v=.02*w;}
    else if(c.kind==='snap'){v=.15*(noise-low)*Math.exp(-t*70)*Math.min(1,t/.002);}

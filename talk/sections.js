@@ -510,23 +510,22 @@ const SECTIONS = [
         "notes": "⏱ ~55s.\n\nAlex’s thesis combined a script, immersive theater, physical model and webcam AR. Use the original superjury photo without the enlarged, contrast-enhanced inset. Presenter-supplied photos; no new date inferred from the camera stamp."
       },
       {
-        "id": "weird",
+        "id": "graduation",
+        "title": "The job I’ll have in five years doesn’t exist yet",
         "use": "pmre/text-card",
-        "props": {
-          "kicker": "",
-          "quote": "When you’re the weird person with weird overlaps in interests, people remember you.",
-          "attr": ""
-        },
-        "title": "When you’re the weird person with weird overlaps in interests, people remember you.",
         "keep": 30,
-        "year": "2008",
-        "venn": [
-          0.8,
-          1,
-          0.4
-        ],
         "storyRole": "content",
-        "notes": "⏱ ~25s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nOpportunities come from having a weird reputation. When you’re the weird person doing a weird combination of things, you stick in people’s heads. They remember you. It happened with Equus, and it happens again in 2012 with Connie Caldwell.\n\nYear: 2008. Venn weights: 0.8 / 1 / 0.4.\n\n\nNot “follow your dream.” The niche came from deliberate practice: years of focused, effortful work on things just past my ability, with feedback. That does not guarantee a niche. What it does is put you in alignment (Oliver Ward’s word at PMRE yesterday) so that when a lucky opportunity shows up, you are ready to take it. Luck plus preparation, not a dream."
+        "props": {
+          "quote": "The job I’ll have in five years <b>doesn’t exist yet</b>",
+          "centered": true
+        },
+        "notes": "⏱ ~40s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI did not think a traditional architecture partner ladder was going to make me happy. I was interested in too many other things.\n\nYear: 2010. Venn weights: 1 / 0.5 / 0.5.\n\n2026-11-14 dictation:\nI did well at the end of school; the thesis was in super jury. People asked: Alex, where do you think you’ll be in five years? I knew my interests weren’t taking me up a proper career ladder. In a rare moment of foresight I said: honestly, I feel like the job I’ll have in five years doesn’t exist yet. So: 2010 to 2015, let’s see where that goes.\n",
+        "year": "2010",
+        "venn": [
+          1,
+          0.5,
+          0.5
+        ]
       },
       {
         "id": "overlap-yours",
@@ -545,22 +544,23 @@ const SECTIONS = [
         "hidden": true
       },
       {
-        "id": "graduation",
-        "title": "The job I’ll have in five years doesn’t exist yet",
+        "id": "weird",
         "use": "pmre/text-card",
-        "keep": 30,
-        "storyRole": "content",
         "props": {
-          "quote": "The job I’ll have in five years doesn’t exist yet",
-          "centered": true
+          "kicker": "",
+          "quote": "When you’re the weird person with weird overlaps in interests, <b>people remember you</b>.",
+          "attr": ""
         },
-        "notes": "⏱ ~40s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI did not think a traditional architecture partner ladder was going to make me happy. I was interested in too many other things.\n\nYear: 2010. Venn weights: 1 / 0.5 / 0.5.\n\n2026-11-14 dictation:\nI did well at the end of school; the thesis was in super jury. People asked: Alex, where do you think you’ll be in five years? I knew my interests weren’t taking me up a proper career ladder. In a rare moment of foresight I said: honestly, I feel like the job I’ll have in five years doesn’t exist yet. So: 2010 to 2015, let’s see where that goes.\n",
-        "year": "2010",
+        "title": "When you’re the weird person with weird overlaps in interests, people remember you.",
+        "keep": 30,
+        "year": "2008",
         "venn": [
+          0.8,
           1,
-          0.5,
-          0.5
-        ]
+          0.4
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~25s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nOpportunities come from having a weird reputation. When you’re the weird person doing a weird combination of things, you stick in people’s heads. They remember you. It happened with Equus, and it happens again in 2012 with Connie Caldwell.\n\nYear: 2008. Venn weights: 0.8 / 1 / 0.4.\n\n\nNot “follow your dream.” The niche came from deliberate practice: years of focused, effortful work on things just past my ability, with feedback. That does not guarantee a niche. What it does is put you in alignment (Oliver Ward’s word at PMRE yesterday) so that when a lucky opportunity shows up, you are ready to take it. Luck plus preparation, not a dream."
       },
       {
         "id": "ring-2010",
@@ -570,7 +570,8 @@ const SECTIONS = [
           "year": 2010,
           "kicker": "GRADUATION",
           "label": "2010",
-          "sub": "Out of school,\ncoming out of the\n2008 recession",
+          "sub": "Out of school, into the\npost-2008 recession\narchitecture economy.",
+          "sfx": "advance",
           "venn": [
             1,
             0.5,

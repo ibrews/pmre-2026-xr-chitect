@@ -19,6 +19,8 @@
    else if(c.kind==='rewind'){const f=(620+980*u*u)*(1+.035*Math.sin(TAU*23*t));phase+=TAU*f/rate;const chat=.7+.3*Math.sin(TAU*(16+22*u)*t);v=.01*(.5*Math.sin(phase)+.22*Math.sin(2*phase)+.35*(noise-low))*chat*Math.min(1,t/.15,(dur-t)/.4);}
    else if(c.kind==='bounce'){phase+=TAU*(380*Math.exp(-t*18)+90)/rate;v=.08*Math.sin(phase)*Math.exp(-t*24)*Math.min(1,t/.006);}
    else if(c.kind==='pop'){phase+=TAU*(950*Math.exp(-t*22)+130)/rate;v=.15*Math.sin(phase)*Math.exp(-t*34)*Math.min(1,t/.004);}
+   // Forward progression (ring-chapter moving ahead in time): soft clock ticks that quicken over a faint rising tone.
+   else if(c.kind==='advance'){let tick=0;for(let n=0;n<10;n++){const d=t-.9*dur*(n/10)**.75;if(d>=0&&d<.05)tick+=Math.exp(-d*110)*Math.sin(TAU*(1500+60*n)*d);}phase+=TAU*(420+260*u)/rate;v=.012*(.9*tick+.18*Math.sin(phase)*Math.sin(Math.PI*u)**2);}
    // Tiny fireworks: a short run of soft crackles with a faint high ping each (lane-traffic XR-chitect landing).
    else if(c.kind==='firework'){let w=0;for(const [o,f] of FIREWORK){const d=t-o;if(d>=0&&d<.07)w+=Math.exp(-d*80)*(.7*(noise-low)+.5*Math.sin(TAU*f*pitch*d));}v=.02*w;}
    else if(c.kind==='snap'){v=.15*(noise-low)*Math.exp(-t*70)*Math.min(1,t/.002);}
