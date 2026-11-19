@@ -1480,7 +1480,7 @@ const SECTIONS = [
         "props": {
           "title": "A holodeck",
           "src": "media/pmre/fs-v2/lake-06.jpg",
-          "credit": "",
+          "credit": "Visualization: Pureblink · Renderings: DBOX · Experience and Holodeck: Agile Lens",
           "alt": "Visitors share a room-scale VR tour in the Four Seasons Lake Austin Holodeck",
           "mode": "content",
           "brightness": 1
@@ -1503,7 +1503,7 @@ const SECTIONS = [
           "title": "Market the property before it exists",
           "src": "media/pmre/v6/four-seasons-unreal-tour.mp4",
           "alt": "Actual in-headset VR tour of Four Seasons Lake Austin",
-          "credit": "",
+          "credit": "Visualization: Pureblink · Renderings: DBOX · Experience and Holodeck: Agile Lens",
           "mode": "content",
           "brightness": 1,
           "takeaway": ""
@@ -1548,7 +1548,7 @@ const SECTIONS = [
         "props": {
           "title": "Our 96-seat theater with private pods",
           "src": "media/pmre/v8/fsla-theater-pods.jpg",
-          "credit": "",
+          "credit": "Visualization: Pureblink · Renderings: DBOX · Experience and Holodeck: Agile Lens",
           "alt": "Two guests in headsets on real theater pods in the holodeck, beside the virtual 96-seat Four Seasons theater they are sitting in",
           "mode": "content",
           "brightness": 1,
