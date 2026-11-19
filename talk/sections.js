@@ -1713,21 +1713,25 @@ const SECTIONS = [
           "media": [
             {
               "src": "media/pmre/v8/four/cotton-720.mp4",
+              "still": "media/pmre/v7/cotton-placeholder.png",
               "poster": "media/pmre/v8/four/cotton-720.jpg",
               "label": "US Cotton"
             },
             {
               "src": "media/pmre/v8/four/halcyon.mp4",
+              "still": "slides/pmre/hxr-community/media/community/community06_halcyon_collage.jpg",
               "poster": "media/pmre/v8/four/halcyon.jpg",
               "label": "Star Wars: The Halcyon Archive"
             },
             {
               "src": "media/pmre/v8/four/royal-caribbean.mp4",
+              "still": "slides/pmre/hxr-royal-caribbean/media/royal-caribbean/rc_01.jpg",
               "poster": "media/pmre/v8/four/royal-caribbean.jpg",
               "label": "Royal Caribbean"
             },
             {
               "src": "media/pmre/v8/four/rsc.mp4",
+              "still": "media/v3/rsc.jpg",
               "poster": "media/pmre/v8/four/rsc.jpg",
               "label": "RSC"
             }
@@ -1736,7 +1740,7 @@ const SECTIONS = [
           "playOnStep": true,
           "layout": "grid"
         },
-        "notes": "⏱ ~45s.\n\nHalcyon root #79 shares the slide with Royal Caribbean. RSC is rehearsal-tool research, not a production credit. U.S. Cotton: Alex supplied cotton-muted.mp4 on November 18; original H.264 video copied without re-encoding, no audio, silent autoplay and loop. The supplied cotton.png still remains the poster. Joby work remains undisclosed; do not show actual client material.\n\nUnreal NYC, speaker note only: suggested as a natural fit; now among the first people people think of for enterprise virtual experiences in NYC. Alex’s anecdote: someone new to the city wanted to “come say hi and kiss the ring”.\n\nFurther speaker recollection: The Orchard Off-Broadway and Mikhail Baryshnikov. Omit unverified dates.\n\nAlex, 2026-11-19: stills first; one click starts all four clips together (muted loops, \u2264720p). Credits: US Cotton = Alex's cotton-muted.mp4 (re-encoded 720p). Star Wars: The Halcyon Archive = YouTube unOS1mFxprM 0:16\u20131:07. Royal Caribbean = center 16:9 crop of Alex's portrait pdm.MOV. RSC = YouTube 4FcE75N6MLk 0:29\u20130:42."
+        "notes": "⏱ ~45s.\n\nHalcyon root #79 shares the slide with Royal Caribbean. RSC is rehearsal-tool research, not a production credit. U.S. Cotton: Alex supplied cotton-muted.mp4 on November 18; original H.264 video copied without re-encoding, no audio, silent autoplay and loop. The supplied cotton.png still remains the poster. Joby work remains undisclosed; do not show actual client material.\n\nUnreal NYC, speaker note only: suggested as a natural fit; now among the first people people think of for enterprise virtual experiences in NYC. Alex’s anecdote: someone new to the city wanted to “come say hi and kiss the ring”.\n\nFurther speaker recollection: The Orchard Off-Broadway and Mikhail Baryshnikov. Omit unverified dates.\n\nAlex, 2026-11-19 (10:20): step 0 shows the original four project images (RC rc_01, Halcyon collage, RSC still, Cotton still, as before the video change in 5bf42f1); one click fades them out and starts all four clips together. Royal Caribbean clip re-cropped higher (y=330 of the 1080x1920 portrait) so heads and headsets show. Earlier: stills first; one click starts all four clips together (muted loops, \u2264720p). Credits: US Cotton = Alex's cotton-muted.mp4 (re-encoded 720p). Star Wars: The Halcyon Archive = YouTube unOS1mFxprM 0:16\u20131:07. Royal Caribbean = center 16:9 crop of Alex's portrait pdm.MOV. RSC = YouTube 4FcE75N6MLk 0:29\u20130:42."
       }
     ]
   },
@@ -1891,7 +1895,7 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/glasses-objections",
         "props": {},
-        "notes": "⏱ ~45s.\n\nFor years, people told me: “VR is cool, but it makes me sick, messes up my hair, messes up my makeup, and makes me look like a doofus in front of friends and colleagues. Come back when it’s like putting on a pair of glasses.”\n\nHold on the objections. Then click once: “Now we’re there.” Lead into glasses-form devices like XREAL AURA, then the photos of people trying my demos this week, and the hardware comparison. This is Alex’s recurring personal story, supplied November 19, 2026, not a quotation attributed to a named attendee.\n\nThe punchline refers to the glasses form factor. It does not promise that every wearer avoids motion sickness or that every app, comfort concern, hairstyle or makeup concern is solved. Choose and test the actual experience. The official AURA product image and hardware sources are retained from the adjacent comparison: https://www.xreal.com/aura ; media/pmre/v7/product-image-sources.json."
+        "notes": "⏱ ~45s.\n\nClicks (Alex, 10:20): one objection per click (sick, hair, makeup, doofus), then the glasses line, then Now we’re there with Meta Ray-Ban Display and XREAL AURA.\n\nFor years, people told me: “VR is cool, but it makes me sick, messes up my hair, messes up my makeup, and makes me look like a doofus. Come back when it’s like putting on a pair of glasses.”\n\nHold on the objections. Then click once: “Now we’re there.” Lead into glasses-form devices like XREAL AURA, then the photos of people trying my demos this week, and the hardware comparison. This is Alex’s recurring personal story, supplied November 19, 2026, not a quotation attributed to a named attendee.\n\nThe punchline refers to the glasses form factor. It does not promise that every wearer avoids motion sickness or that every app, comfort concern, hairstyle or makeup concern is solved. Choose and test the actual experience. The official AURA product image and hardware sources are retained from the adjacent comparison: https://www.xreal.com/aura ; media/pmre/v7/product-image-sources.json."
       },
       {
         "id": "helmet-to-glasses",
