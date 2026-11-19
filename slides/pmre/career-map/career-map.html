@@ -19,6 +19,10 @@ svg{width:100%;height:100%;display:block}
 .yr{font-size:28px;fill:var(--accent);font-weight:600}
 .head{font-size:58px;font-weight:800;fill:var(--text)}
 .note{font-size:30px;fill:var(--dim);letter-spacing:.06em}
+#connie-thanks{opacity:0;pointer-events:none}
+html[data-step="1"] #connie-thanks{opacity:1}
+#connie-thanks path{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+#connie-thanks text{fill:var(--accent);font:italic 27px 'Chalkboard SE','Comic Sans MS',cursive}
 </style></head><body>
 <svg viewBox="240 135 1440 810" preserveAspectRatio="xMidYMid meet" aria-label="Map: Syracuse, New York (school and VIP Structures internship); Middlebury, Vermont (Bread Loaf internship); New York City (Rafael Viñoly, ZGF, Fisher Dachs Associates).">
 <g stroke="rgba(240,244,255,.06)" stroke-width="2">
@@ -47,13 +51,23 @@ svg{width:100%;height:100%;display:block}
 <text x="1250" y="660" class="place fade" style="--t:6s">New York City</text>
 <text x="1250" y="706" class="what fade" style="--t:6.3s"><tspan class="yr">2010</tspan>  Rafael Viñoly</text>
 <text x="1250" y="746" class="what fade" style="--t:6.6s"><tspan class="yr">2010</tspan>  ZGF Architects</text>
-<text x="1250" y="786" class="what fade" style="--t:6.9s"><tspan class="yr">2012</tspan>  Fisher Dachs Associates</text>
+<text x="1250" y="786" class="what fade" style="--t:6.9s"><tspan class="yr">2012</tspan>  <tspan id="fisher-dachs">Fisher Dachs Associates</tspan></text>
+<!-- A single manual build; the slightly uneven loop keeps the thank-you personal. -->
+<g id="connie-thanks" role="img" aria-label="Fisher Dachs Associates — Thank you Connie Caldwell!">
+ <path id="fisher-circle" d="M1330 755 C1400 742 1599 740 1650 758 C1685 783 1628 807 1508 808 C1392 812 1305 798 1314 777 C1316 764 1334 756 1353 753"/>
+ <path d="M1390 808 Q1380 835 1290 848 M1303 837 L1290 848 L1307 850"/>
+ <text x="1120" y="875">Thank you</text>
+ <text x="1120" y="908">Connie Caldwell!</text>
+</g>
 </svg>
 <script src="../../sd-frame.js"></script>
 <script>
 const domainAttrs=[];document.querySelectorAll('svg *').forEach(el=>['fill','stroke'].forEach(a=>{const v=el.getAttribute(a);if(v&&/#00d4ff/i.test(v))domainAttrs.push([el,a,v]);}));
 addEventListener('load',()=>domainAttrs.forEach(([el,a,v])=>el.setAttribute(a,v)),{once:true});
+// Follow the firm name's actual font metrics in every deck look.
+function fitCircle(){const b=document.getElementById('fisher-dachs').getBBox(),x=b.x-14,y=b.y-10,w=b.width+28,h=b.height+20;document.getElementById('fisher-circle').setAttribute('d',`M${x+w*.08} ${y+h*.1} C${x+w*.3} ${y-h*.08} ${x+w*.91} ${y-h*.05} ${x+w} ${y+h*.3} C${x+w*1.08} ${y+h*.86} ${x+w*.77} ${y+h*1.07} ${x+w*.48} ${y+h} C${x+w*.1} ${y+h*1.1} ${x-w*.06} ${y+h*.8} ${x} ${y+h*.42} Q${x+w*.01} ${y+h*.12} ${x+w*.15} ${y+h*.08}`);}
+document.fonts.ready.then(fitCircle);addEventListener('resize',fitCircle);
 window.MOTION_SFX=[{t:.8,kind:'pop'},{t:2.8,kind:'pop'},{t:5.8,kind:'pop'}];
-SDFrame.init({duration:8,steps:0,onEnter(){parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}});
+SDFrame.init({duration:8,steps:1,stepTimes:[8,8],onStep(n){if(n)window.seek(8);},onEnter(){parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}});
 </script>
 </body></html>

@@ -4,7 +4,7 @@ import fs from 'node:fs';import path from 'node:path';import assert from 'node:a
 const out=path.resolve(process.argv[2]),base=process.argv[3]||'http://localhost:8765/';fs.mkdirSync(out,{recursive:true});
 const b=await loadPlaywright().chromium.launch({executablePath:CHROME,headless:true}),p=await b.newPage({viewport:{width:1920,height:1080}}),report={base,slides:[],checks:0,errors:[]};
 p.on('pageerror',e=>report.errors.push(String(e)));
-const frameTime=(id,n)=>id==='lanes'?[5.6,9.4,12,34.7,36.9,38.9,42.9][n]:id==='holodeck-travels'?[12,22][n]:id==='hand'?12:4;
+const frameTime=(id,n)=>id==='lanes'?[5.6,9.4,12,34.7,36.9,38.9,42.9][n]:id==='holodeck-travels'?[12,22][n]:id==='hand'?12:id==='career-map'?8:4;
 async function current(){return p.evaluate(()=>({i:current,n:slideSteps.get(allSlides[current])?.current||0}));}
 async function settle(s,n,direction){
  const iframe=await p.locator('.slide.active iframe').count()?await p.locator('.slide.active iframe').elementHandle():null;
@@ -20,6 +20,7 @@ function inspect({id,n,rootSelector}){
  const text=all('text,h1,h2,p,.line,.title,.picasso-date,.ct-hud,figcaption').filter(visible).map(e=>e.textContent.trim()).filter(Boolean);
  const includes=s=>check(text.some(t=>t.includes(s)),`missing visible text: ${s}`);
  if(id==='goals'){shown('.title',true);check(vis('.line').length===n,`expected ${n} goal lines, got ${vis('.line').length}`);}
+ else if(id==='career-map'){includes('Where the work was');includes('Fisher Dachs Associates');shown('#connie-thanks',n===1);if(n===1){includes('Thank you');includes('Connie Caldwell!');}}
  else if(id==='hand'){shown('#hand',true);shown('#cad',true);shown('#outputs',n===1);includes('Drafting by hand taught me');if(n===1)check(vis('#outputs text').length===8,'all eight drawing-sheet labels must be visible');}
  else if(id==='lanes'){includes('Pick a lane');check(!root.textContent.includes('Richard Rosa'),'professor name on screen');check(!root.textContent.includes('MASTER ONE CRAFT'),'craft directive on screen');if(n<=2){shown('#hero',true);shown('#strands',true);includes('ARCHITECTURE');if(n>=1){includes('THEATER');includes('TECHNOLOGY');}check(!text.includes('theater planning'),'overlaps revealed too early');}else{shown('#venn',true);const labels=['theater planning','live VR theater','archviz'];labels.forEach((t,i)=>check(text.includes(t)===(i<=n-3),`overlap ${t} visibility at step ${n}`));if(n===6)includes('XR-CHITECT');}if(n===2)check(vis('#cars>g').some(e=>e.getBoundingClientRect().right>100&&e.getBoundingClientRect().left<1800),'traffic step must show cars');}
  else if(id==='speaker-intro'){shown('.intro-stage svg',true);shown('.intro-title',n>=1);shown('.intro-sub-ue5',n>=2);shown('.intro-stats',n>=3);if(n>=1)includes('Alex');if(n>=2)check(root.querySelector('.worn-headset')?.dataset.kind==='compact','compact headset must replace bulky one');}
