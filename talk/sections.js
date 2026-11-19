@@ -1107,12 +1107,13 @@ const SECTIONS = [
               "label": "Before it was built"
             },
             {
-              "src": "media/pmre/audit/statue-museum-built.jpg",
-              "label": "The completed museum"
+              "src": "media/pmre/v8/statue-museum-interior.jpg",
+              "label": "The completed museum",
+              "alt": "The finished Statue of Liberty Museum: the original torch inside a glass hall facing the statue"
             }
           ]
         },
-        "notes": "⏱ ~55s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nHarvardXR #10 source. Per Alex’s supplied brief, we did this basically for free and it became an important portfolio item. FXCollaborative were sad to experience it in VR only after the design decisions were settled. Bring VR into the process while it can still change decisions. This is the unbuilt render, not a completed-building photo. Work happened before the2019 opening; the shown year range is a source-deck era, not a contract date.\nFinal audit: reveal the completed museum on click. Public project photograph from FXCollaborative https://www.fxcollaborative.com/projects/175/the-statue-of-liberty-museum/ (photo 3, downloaded 2026-11-19). Source page does not name an individual photographer; no attribution invented. The render and photograph are different viewpoints, not a registered before/after."
+        "notes": "⏱ ~55s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nHarvardXR #10 source. Per Alex’s supplied brief, we did this basically for free and it became an important portfolio item. FXCollaborative were sad to experience it in VR only after the design decisions were settled. Bring VR into the process while it can still change decisions. This is the unbuilt render, not a completed-building photo. Work happened before the2019 opening; the shown year range is a source-deck era, not a contract date.\nFinal audit: reveal the completed museum on click. Public project photograph from FXCollaborative https://www.fxcollaborative.com/projects/175/the-statue-of-liberty-museum/ (photo 3, downloaded 2026-11-19). Source page does not name an individual photographer; no attribution invented. The render and photograph are different viewpoints, not a registered before/after.\n\nCompleted-museum photo (step 1) supplied by Alex 2026-11-19: the finished interior with the original torch, matching the VR view. Source/credit not recorded; confirm before any public reuse outside the talk."
       }
     ]
   },
@@ -1132,7 +1133,7 @@ const SECTIONS = [
     "cases": [
       {
         "id": "youtube",
-        "title": "The right people saw the work",
+        "title": "Be so good they can’t ignore you",
         "year": "2017",
         "venn": [
           1,
@@ -1142,8 +1143,14 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/v6-gallery",
         "props": {
-          "title": "The right people saw the work",
+          "title": "“Be so good they can’t ignore you.”",
           "line": "",
+          "reveal": [
+            "— Vince Collura",
+            "and also Steve Martin",
+            "and also Cal Newport"
+          ],
+          "footer": "Autodesk University, Las Vegas, 2017",
           "media": [
             {
               "src": "media/pmre/v8/au-queue.jpg",
@@ -1157,7 +1164,7 @@ const SECTIONS = [
           "steps": false,
           "layout": "row"
         },
-        "notes": "⏱ ~70s.\n\n⏱ ~110s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBusiness development took off when I stopped cold calling and started speaking. Jeff Mottle invited me to Autodesk University after a YouTube video with few views. It did not need to go viral. It needed to reach the right person. Separate channels are fine if that helps you put work out there. Name corrected against official Autodesk panel credits.\n\nYear: 2017. Venn weights: 0.4 / 0.6 / 1.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017\n\nA low-view YouTube video reached Jeff Mottle, leading to a speaking invitation. This picture shows the resulting Autodesk expert panel, not a screenshot of the video. Speaking made the work visible to potential collaborators. Source: presenter recollection and official Autodesk 2017 panel https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017 . The separate Vegas crowd selfie is removed; it obscures this cause-and-effect story.\n\nVegas callback (Alex, 2026-11-14): this is the Vegas moment from the opening. Autodesk University 2017, Las Vegas, about ten years ago. What happened in Vegas did not stay in Vegas.\n"
+        "notes": "⏱ ~70s.\n\n⏱ ~110s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBusiness development took off when I stopped cold calling and started speaking. Jeff Mottle invited me to Autodesk University after a YouTube video with few views. It did not need to go viral. It needed to reach the right person. Separate channels are fine if that helps you put work out there. Name corrected against official Autodesk panel credits.\n\nYear: 2017. Venn weights: 0.4 / 0.6 / 1.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017\n\nA low-view YouTube video reached Jeff Mottle, leading to a speaking invitation. This picture shows the resulting Autodesk expert panel, not a screenshot of the video. Speaking made the work visible to potential collaborators. Source: presenter recollection and official Autodesk 2017 panel https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017 . The separate Vegas crowd selfie is removed; it obscures this cause-and-effect story.\n\nVegas callback (Alex, 2026-11-14): this is the Vegas moment from the opening. Autodesk University 2017, Las Vegas, about ten years ago. What happened in Vegas did not stay in Vegas.\n\n\nAlex, 2026-11-19: title is the quote; three clicks reveal who said it: Vince Collura (yesterday), and also Steve Martin, and also Cal Newport (book of the same name). Footer: Autodesk University, Las Vegas, 2017."
       },
       {
         "id": "speaking-unlock",
@@ -1199,7 +1206,7 @@ const SECTIONS = [
       },
       {
         "id": "speaking-and-rates",
-        "title": "Being known for the work",
+        "title": "How do you deal with the race to the bottom?",
         "use": "pmre/conference-voices",
         "props": {},
         "keep": 19,
@@ -1210,7 +1217,7 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~45s.\n\nAlex’s v8 direction: connect touring the country selling services to becoming a regular speaker who commands higher rates. This progression is his account, not a measured attribution of revenue to a talk. The three conference quotations and speaker identities are supplied by Alex: Vince Collura, Reed, Alex Aaron. Vince’s phrase was popularized by Steve Martin and Cal Newport; preserve this context in speaker notes without changing Alex’s requested conference attribution. Reed asks “How do you deal with the race to the bottom?” Alex Aaron answers “Raising my prices.” Yesterday is the presenter’s authorized relative day wording, not a web-verified schedule."
+        "notes": "⏱ ~45s.\n\nAlex’s v8 direction: connect touring the country selling services to becoming a regular speaker who commands higher rates. This progression is his account, not a measured attribution of revenue to a talk. The three conference quotations and speaker identities are supplied by Alex: Vince Collura, Reed, Alex Aaron. Vince’s phrase was popularized by Steve Martin and Cal Newport; preserve this context in speaker notes without changing Alex’s requested conference attribution. Reed asks “How do you deal with the race to the bottom?” Alex Aaron answers “Raising my prices.” Yesterday is the presenter’s authorized relative day wording, not a web-verified schedule.\n\nAlex, 2026-11-19: only two lines on screen. Question (Reed Fish, yesterday), then one click for the answer (Alex Aaron, yesterday). The Be-so-good quote moved to the Autodesk University slide."
       },
       {
         "id": "waldorf",
