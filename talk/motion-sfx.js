@@ -8,8 +8,8 @@
   for(const type of ['pointerdown','keydown','touchstart'])addEventListener(type,e=>{if(e.isTrusted)unlocked=true;},{capture:true,passive:true});
   window.setMotionMuted=value=>{window._sdSfxMuted=!!value;if(value)window._killAllSfx?.();};
  }
- const RATE=48000,TAU=2*Math.PI,FIREWORK=[[0,2400],[.07,3100],[.16,2000],[.22,2800],[.33,3500],[.41,2200],[.55,2900]];
- function samples(c,rate=RATE){const dur=c.duration||({honk:.28,pass:1.2,merge:.85,pop:.18,snap:.09,projector:3.8,firework:.7,hooray:.36}[c.kind]||.2),a=new Float32Array(Math.ceil(dur*rate));let seed=24681357,phase=0,low=0;const pitch=c.pitch||1;
+ const RATE=48000,TAU=2*Math.PI,FANFARE=[[392,.1],[523.25,.1],[659.25,.1],[783.99,.13],[1046.5,.7]],FIREWORK=[[0,2400],[.07,3100],[.16,2000],[.22,2800],[.33,3500],[.41,2200],[.55,2900]];
+ function samples(c,rate=RATE){const dur=c.duration||({honk:.28,pass:1.2,merge:.85,pop:.18,snap:.09,projector:3.8,firework:.7,hooray:.36,achievement:1.13}[c.kind]||.2),a=new Float32Array(Math.ceil(dur*rate));let seed=24681357,phase=0,low=0;const pitch=c.pitch||1;
   for(let i=0;i<a.length;i++){const t=i/rate,u=t/dur;seed=(Math.imul(seed,1664525)+1013904223)|0;const noise=(seed>>>0)/2147483648-1;low+=.14*(noise-low);let v=0;
    if(c.kind==='honk'){const f=350*pitch;v=.09*(Math.sin(TAU*f*t)+.65*Math.sin(TAU*440*pitch*t)+.15*Math.sin(TAU*3*f*t))*Math.min(1,t/.012,(dur-t)/.05);}
    else if(c.kind==='pass'||c.kind==='merge'){phase+=TAU*(c.kind==='pass'?150-80*u:90+100*u)/rate;v=(.055*Math.sin(phase)+.08*low)*Math.sin(Math.PI*u)**2;}
@@ -23,6 +23,9 @@
    else if(c.kind==='advance'){let tick=0;for(let n=0;n<10;n++){const d=t-.9*dur*(n/10)**.75;if(d>=0&&d<.05)tick+=Math.exp(-d*110)*Math.sin(TAU*(1500+60*n)*d);}phase+=TAU*(420+260*u)/rate;v=.012*(.9*tick+.18*Math.sin(phase)*Math.sin(Math.PI*u)**2);}
    // Hooray: a quick, soft three-note upward chirp (major arpeggio, triangle-ish) for a happy little jump.
    else if(c.kind==='hooray'){const k=Math.min(2,Math.floor(t/.075)),f=[660,830,990][k]*pitch,d=t-k*.075;phase+=TAU*f/rate;const tri=2/Math.PI*Math.asin(Math.sin(phase));v=.009*tri*Math.min(1,d/.006)*Math.exp(-d*(k<2?14:9));}
+   // Achievement unlocked: a 5-note chiptune trumpet fanfare (25% pulse wave, soft attack, vibrato on the held top note).
+   else if(c.kind==='achievement'){let o=0,k=0;while(k<4&&t>=o+FANFARE[k][1]){o+=FANFARE[k][1];k++;}const [f,len]=FANFARE[k],d=t-o;phase+=TAU*f*pitch*(1+(k===4?.012*Math.sin(TAU*6*d)*Math.min(1,d/.15):0))/rate;const duty=(phase/TAU)%1<.25?1:-1;
+    const env=Math.min(1,d/.01)*(k<4?Math.max(0,1-d/len*.35):Math.exp(-d*2.6))*Math.min(1,(dur-t)/.06);v=.0045*duty*env;}
    // Tiny fireworks: a short run of soft crackles with a faint high ping each (lane-traffic XR-chitect landing).
    else if(c.kind==='firework'){let w=0;for(const [o,f] of FIREWORK){const d=t-o;if(d>=0&&d<.07)w+=Math.exp(-d*80)*(.7*(noise-low)+.5*Math.sin(TAU*f*pitch*d));}v=.02*w;}
    else if(c.kind==='snap'){v=.15*(noise-low)*Math.exp(-t*70)*Math.min(1,t/.002);}

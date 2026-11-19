@@ -654,7 +654,7 @@ const SECTIONS = [
       },
       {
         "id": "sightline-views",
-        "title": "Testing the view",
+        "title": "Testing the view in a flat medium",
         "use": "pmre/v6-gallery",
         "keep": 99,
         "year": "2012",
@@ -665,7 +665,7 @@ const SECTIONS = [
         ],
         "storyRole": "content",
         "props": {
-          "title": "Testing the view",
+          "title": "Testing the view in a flat medium",
           "layout": "grid",
           "media": [
             {
@@ -690,12 +690,14 @@ const SECTIONS = [
       },
       {
         "id": "dk1",
-        "title": "Oculus Rift DK1",
+        "title": "Enter: Oculus Rift DK1",
         "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
-          "title": "Oculus Rift DK1",
+          "title": "Enter: Oculus Rift DK1",
+          "entrance": "spin",
+          "sfx": "achievement",
           "src": "media/pmre/fda-dk1-office-demo.jpg",
           "credit": "",
           "alt": "2013: a headset at work",
