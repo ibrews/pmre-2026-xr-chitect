@@ -19,7 +19,10 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 .big{font-size:30cqh;line-height:.95;font-weight:800;letter-spacing:-.03em;background:linear-gradient(90deg,#00d4ff,#a78bfa,#f43f5e);-webkit-background-clip:text;background-clip:text;color:transparent}
 .quote{text-wrap:balance;font-size:12cqh;line-height:1.1;font-weight:700;color:var(--accent)}
 /* a quote with <b> marks only that phrase in the accent; the rest reads in the text color */
-.quote:has(b){color:var(--text)}.quote b{color:var(--accent);font-weight:inherit}
+.quote:has(b){color:var(--text)}.quote b{color:var(--accent);font-weight:inherit;opacity:0;animation:fadeb 1.1s ease calc(var(--t,0s) + 1s) forwards}
+@keyframes fadeb{from{opacity:0}to{opacity:1}}
+/* Alex 2026-11-19: gold that is a TITLE appears at once; gold that works like a quote fades in (the <b> rule above) */
+.title.fade{opacity:1;animation:none}
 .attr{font:500 4.6cqh/1.3 "Avenir Next",Arial,sans-serif;color:var(--text);max-width:92%;text-wrap:balance}
 .ph{position:relative;flex:1;min-height:0;border:.4cqh dashed rgba(240,244,255,.45);border-radius:1.4cqh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4cqh;background:rgba(240,244,255,.04);text-align:center;padding:2cqh}
 .ph .tag{font-size:3.4cqh;letter-spacing:.3em;color:var(--dim);font-weight:700}
