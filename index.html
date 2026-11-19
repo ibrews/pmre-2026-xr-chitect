@@ -2975,7 +2975,7 @@ function applyStorySpine(){
   const old=sl.querySelector('.v3-tracker');if(old)old.remove();if(ty==='cover'||cfg?.hideTracker)return;
   const tracker=document.createElement('div');tracker.className='v3-tracker';tracker.setAttribute('aria-label',year+': architecture '+weights[0]+', theater '+weights[1]+', technology '+weights[2]);
   const y0=parseInt(year,10)||2026,fr=Math.min(Math.max((y0-2005)/21,0),1),SW=330,R=54,cx=65,cy=65,L=2*Math.PI*R*SW/360,a=(-90+SW*fr)*Math.PI/180;
-  tracker.innerHTML='<span class="v3-year">'+year.replace('–','–<br>')+'</span><svg viewBox="0 0 130 130" aria-hidden="true"><circle cx="65" cy="65" r="'+R+'" fill="none" stroke="rgba(224,215,202,.18)" stroke-width="5"/><circle cx="65" cy="65" r="'+R+'" fill="none" stroke="#e0d7ca" stroke-width="5" stroke-linecap="round" transform="rotate(-90 65 65)" stroke-dasharray="'+(L*fr).toFixed(1)+' 999"/><circle cx="'+(cx+R*Math.cos(a)).toFixed(1)+'" cy="'+(cy+R*Math.sin(a)).toFixed(1)+'" r="7" fill="#fff"/>'+weights.map((w,i)=>{const x=[54,76,65][i],y=[58,58,77][i],r=8+11*Math.sqrt(w);return `<circle cx="${x}" cy="${y}" r="${r}" fill="${colors[i]}" fill-opacity=".18" stroke="${colors[i]}" stroke-width="1.6"/><g transform="translate(${x+[-4,4,0][i]},${y+[-3,-3,4][i]}) scale(${(.2+.28*Math.sqrt(w)).toFixed(2)})" style="shape-rendering:crispEdges">${icons[i]}</g>`;}).join('')+'</svg>';sl.append(tracker);
+  tracker.innerHTML='<span class="v3-year">'+year.replace('–','–<br>')+'</span><svg viewBox="0 0 130 130" aria-hidden="true"><circle cx="65" cy="65" r="'+R+'" fill="none" stroke="rgba(224,215,202,.18)" stroke-width="5"/><circle cx="65" cy="65" r="'+R+'" fill="none" stroke="#e0d7ca" stroke-width="5" stroke-linecap="round" transform="rotate(-90 65 65)" stroke-dasharray="'+(L*fr).toFixed(1)+' 999"/><circle cx="'+(cx+R*Math.cos(a)).toFixed(1)+'" cy="'+(cy+R*Math.sin(a)).toFixed(1)+'" r="7" fill="#fff" class="v3-dot" style="transform-box:fill-box;transform-origin:center"/>'+weights.map((w,i)=>{const x=[54,76,65][i],y=[58,58,77][i],r=8+11*Math.sqrt(w);return `<circle cx="${x}" cy="${y}" r="${r}" fill="${colors[i]}" fill-opacity=".18" stroke="${colors[i]}" stroke-width="1.6"/><g transform="translate(${x+[-4,4,0][i]},${y+[-3,-3,4][i]}) scale(${(.2+.28*Math.sqrt(w)).toFixed(2)})" style="shape-rendering:crispEdges">${icons[i]}</g>`;}).join('')+'</svg>';sl.append(tracker);
  });
  if(!document.getElementById('v3-style')){const st=document.createElement('style');st.id='v3-style';st.textContent=`
  body.story-v3[data-look="house"]{--font:'Archivo',Arial,sans-serif!important;--font-body:'Archivo',Arial,sans-serif!important}
@@ -3030,6 +3030,45 @@ function applyStorySpine(){
  function mix(cues,duration,rate=RATE){const a=new Float32Array(Math.ceil(duration*rate));for(const c of cues){const s=samples(c,rate),off=Math.round(c.t*rate);for(let i=0;i<s.length&&i+off<a.length;i++)if(i+off>=0)a[i+off]+=s[i];}for(let i=0;i<a.length;i++)a[i]=Math.max(-.85,Math.min(.85,a[i]));return a;}
  const api={RATE,samples,mix};if(typeof module==='object'&&module.exports)module.exports=api;else root.SDMotionSfx=api;
 })(typeof window==='object'?window:globalThis);
+// Presenter aid (Alex, 2026-11-19): the corner tracker's position dot gives one short gold pulse the moment the
+// current step has finished, so he can tell when an animation / video / substep is done. Deck-level, no sound.
+// A step counts as finished when, on the active slide:
+//   - no finite Web Animation or CSS transition is still running (slide subtree + same-origin iframes, which covers
+//     every seekable motion frame: they animate only with WAAPI/CSS on their step timing);
+//   - the module's clock is idle (ctx.clock.busy()), or its own stepBusy() hook says so when it defines one;
+//   - every video that started on this step has played through once (first wrap for loops);
+// whichever comes first of that (held for two polls) or a 20 s cap. Fires once per step; any step change re-arms.
+(function(){
+  const POLL=150,SETTLE=400,CAP=20000,TAG='sd-step-done';
+  let key='',t0=0,done=false,quiet=0;const vids=new Map();
+  const finite=a=>{try{return a.id!==TAG&&a.playState==='running'&&isFinite(a.effect?.getComputedTiming().activeDuration);}catch(e){return false;}};
+  function docs(sl){const out=[];sl.querySelectorAll('iframe').forEach(f=>{try{if(f.contentDocument)out.push(f.contentDocument);}catch(e){}});return out;}
+  function animBusy(sl){if(sl.getAnimations({subtree:true}).some(finite))return true;return docs(sl).some(d=>d.getAnimations().some(finite));}
+  function clockBusy(sl){const r=window.SD?._recs?.get(sl);if(!r)return false;try{if(typeof r.inst?.stepBusy==='function')return !!r.inst.stepBusy();return !!r.ctx?.clock?.busy();}catch(e){return false;}}
+  function videoBusy(sl){let busy=false;const all=[...sl.querySelectorAll('video')];docs(sl).forEach(d=>all.push(...d.querySelectorAll('video')));
+    for(const v of all){let s=vids.get(v);
+      if(!s){if(v.paused||v.currentTime>1)continue;s={last:v.currentTime,done:false};vids.set(v,s);}   // started on this step
+      if(s.done)continue;
+      if(v.ended||(v.loop&&v.currentTime+.05<s.last)||(v.paused&&v.currentTime>0))s.done=true;else busy=true;
+      s.last=v.currentTime;}
+    return busy;}
+  function pulse(sl){const dot=sl.querySelector('.v3-tracker .v3-dot');if(!dot)return;
+    dot.animate([{fill:'#ffffff',transform:'scale(1)'},{fill:'#f2c14e',transform:'scale(1.85)',offset:.35},{fill:'#f2c14e',transform:'scale(1.3)',offset:.7},{fill:'#ffffff',transform:'scale(1)'}],{duration:420,easing:'ease-out',id:TAG});
+    document.body.dataset.stepDone=key;}   // read by QA
+  function tick(){
+    if(typeof allSlides==='undefined'||typeof current==='undefined')return;
+    const sl=allSlides[current];if(!sl)return;
+    let step=0;try{const ss=typeof slideSteps!=='undefined'&&slideSteps.get(sl);if(ss)step=ss.current;else{const r=window.SD?._recs?.get(sl);if(r)step=r.cur|0;}}catch(e){}
+    const k=current+':'+step,now=performance.now();
+    if(k!==key){key=k;t0=now;done=false;quiet=0;vids.clear();delete document.body.dataset.stepDone;}
+    if(done||!sl.querySelector('.v3-tracker .v3-dot'))return;
+    const el=now-t0;if(el<SETTLE){videoBusy(sl);return;}
+    const busy=animBusy(sl)|clockBusy(sl)|videoBusy(sl);   // | (not ||) so the video tracker always updates
+    quiet=busy?0:quiet+1;
+    if(quiet>=2||el>=CAP){done=true;pulse(sl);}
+  }
+  setInterval(tick,POLL);
+})();
 // ── TALK END ──
 </script>
 <script>
