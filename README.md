@@ -6,9 +6,9 @@ Package with `python3 tools/package_offline.py --out <organizer-package>`; verif
 
 # Architect to XR-chitect
 
-Alex Coulombe Presents at PMRE 2026, November 19, Las Vegas. V7 extends v6 and follows Alex’s November 18 notes and local talkthrough, from architecture/theater/technology to practical spatial-media services and premium collaboration with Agile Lens.
+Alex Coulombe Presents at PMRE 2026, November 19, Las Vegas. V8 extends v7 and follows Alex’s November 18 notes and local talkthrough, from architecture/theater/technology to practical spatial-media services and premium collaboration with Agile Lens.
 
-[Present v7](https://ibrews.github.io/pmre-2026-xr-chitect/v7/) · [Free starter guide and links](https://ibrews.github.io/pmre-2026-xr-chitect/v7/resources/)
+[Present v8](https://ibrews.github.io/pmre-2026-xr-chitect/v8/) · [Free starter guide and links](https://ibrews.github.io/pmre-2026-xr-chitect/v8/resources/)
 
 ## Present locally on Windows
 
@@ -18,7 +18,7 @@ Full is the default; medium and short cuts remain selectable. These are authored
 
 ## Author and package
 
-Source branch: `story/v7`. Edit `talk/sections.js` and slide modules, then run:
+Source branch: `story/v8`. Edit `talk/sections.js` and slide modules, then run:
 
 ```sh
 python3 tools/bake_talk.py
@@ -32,14 +32,14 @@ After committing all required runtime assets (including media ignored by `.gitig
 
 ```sh
 python3 tools/package_offline.py --out /absolute/path/to/organizer-package
-node tools/qa_v7.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-chrome chrome
-node tools/qa_v7.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-firefox firefox
+node tools/qa_v8.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-chrome chrome
+node tools/qa_v8.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-firefox firefox
 node tools/qa_v7_resources.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-hub chrome
 ```
 
-`qa_v7.mjs` uses system Chrome and installed `playwright-core` (set `PLAYWRIGHT_CORE` if needed). It checks every absolute slide, including hidden structural slides, over ordinary `file://`, records console/page/network/media failures, captures visible slides and checks all length/AI combinations. It does not pass security-bypass flags. ZIPs include a file-hash manifest, opening instructions and an external SHA-256 sidecar. Do not upload to Drive until Alex requests it.
+`qa_v8.mjs` uses system Chrome and installed `playwright-core` (set `PLAYWRIGHT_CORE` if needed). It checks every absolute slide, including hidden structural slides, over ordinary `file://`, records console/page/network/media failures, captures visible slides and checks all length/AI combinations. It does not pass security-bypass flags. ZIPs include a file-hash manifest, opening instructions and an external SHA-256 sidecar. Do not upload to Drive until Alex requests it.
 
-Publish by copying the committed source tree into a **new `/v7/` directory on main**, preserving root, `/v3/`, `/v4/`, `/v5/`, `/v6/`. Compare source and destination tracked paths after copying: nested `.gitignore` rules can silently omit force-tracked media. Public project credits remain in notes and meaningful media credits; no source-deck captions are added.
+Publish by copying the committed source tree into a **new `/v8/` directory on main**, preserving root and `/v3/` through `/v7/`. Compare source and destination tracked paths after copying: nested `.gitignore` rules can silently omit force-tracked media. Public project credits remain in notes and meaningful media credits; no source-deck captions are added.
 
 ## Things to Try
 
@@ -53,4 +53,4 @@ Publish by copying the committed source tree into a **new `/v7/` directory on ma
 
 This talk is built with [Spatial Deck](https://github.com/ibrews/spatial-deck). Media credits and claim sources live in presenter notes and the existing project manifests. New Apple SHARP examples come from the [official research page](https://apple-aiml-research.github.io/ml-sharp/), not a commissioned property survey. Pricing figures are illustrative teaching examples, not vendor rates or Agile Lens quotes.
 
-V7 adds original XR tiers and plan-to-presence diagrams inspired by Matt Michalski (credited in notes); public product imagery/official specs for Vision Pro M5, Quest 3 and XREAL AURA, plus a generic NDA silhouette for PICO Space Pro; Alex’s Cotton placeholder still and Latest BPI Trailer V2 derivative. Source hashes, number sources and qualifications are in `media/pmre/v7/provenance.json` and the canonical KB v7 receipt. No Drive uploads.
+V7 adds original XR tiers and plan-to-presence diagrams inspired by Matt Michalski (credited in notes); public product imagery/official specs for Vision Pro M5, Quest 3 and XREAL AURA, plus a generic NDA silhouette for PICO Space Pro; Alex’s Cotton placeholder still and Latest BPI Trailer V2 derivative. Source hashes, number sources and qualifications are in `media/pmre/v8/provenance.json` and the canonical KB v7 receipt. No Drive uploads.
