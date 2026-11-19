@@ -1166,7 +1166,8 @@ const SECTIONS = [
         "keep": 30,
         "use": "pmre/text-card",
         "props": {
-          "title": "The best brief stretches your reputation",
+          "title": "The best brief<br>stretches your reputation",
+          "layout": "brief",
           "lines": [
             "They see what you do.",
             "They imagine something you have not done yet.",
@@ -1479,7 +1480,7 @@ const SECTIONS = [
           1,
           1
         ],
-        "notes": "⏱ ~25s.\n\n[DWELL] CAPTURE → EDIT → DELIVER → STEP INSIDE. Everything I am about to show you starts as a file from one of these. You already make the first three. I take the same files one step further. Their output is my input: a proposed workflow, not a partnership or a promise of one-click import. Zillow and realtor.com are listing ecosystems, not PMRE sponsors. Bubo² and Nucleus4D are room exhibitors. XGRIDS is Alex’s actual working relationship, separate from this sponsor wall. Vendor sources and limitations live in talk/sponsors.js and assets/pmre-sponsors/verification.json."
+        "notes": "⏱ ~25s.\n\n[DWELL] CAPTURE → EDIT → DELIVER → STEP INSIDE. Everything I am about to show you starts as a file from one of these. You already make the first three. I take the same files one step further. Their output is my input: a proposed workflow, not a partnership or a promise of one-click import. Zillow and realtor.com are listing ecosystems, not PMRE sponsors. Bubo² and Nucleus4D are room exhibitors. XGRIDS is Alex’s actual working relationship, separate from this sponsor wall. Vendor sources and limitations live in talk/sponsors.js and assets/pmre-sponsors/verification.json. November 19 local audit: display current Nucleus, iGuide and Realsee names; current official logos keep their original colors and aspect ratios. Bubo² is splat processing, not camera hardware. Editing/delivery categories overlap. No individual person is named on this slide. One manual arrow fades the exact earlier workflow.jpg diagram back in under Agile Lens; backward navigation hides it again."
       },
       {
         "id": "floor-demo",

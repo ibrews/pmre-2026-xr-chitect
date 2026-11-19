@@ -1220,7 +1220,8 @@ const SECTIONS = [
         "keep": 30,
         "use": "pmre/text-card",
         "props": {
-          "title": "The best brief stretches your reputation",
+          "title": "The best brief<br>stretches your reputation",
+          "layout": "brief",
           "lines": [
             "They see what you do.",
             "They imagine something you have not done yet.",
@@ -1533,7 +1534,7 @@ const SECTIONS = [
           1,
           1
         ],
-        "notes": "⏱ ~25s.\n\n[DWELL] CAPTURE → EDIT → DELIVER → STEP INSIDE. Everything I am about to show you starts as a file from one of these. You already make the first three. I take the same files one step further. Their output is my input: a proposed workflow, not a partnership or a promise of one-click import. Zillow and realtor.com are listing ecosystems, not PMRE sponsors. Bubo² and Nucleus4D are room exhibitors. XGRIDS is Alex’s actual working relationship, separate from this sponsor wall. Vendor sources and limitations live in talk/sponsors.js and assets/pmre-sponsors/verification.json."
+        "notes": "⏱ ~25s.\n\n[DWELL] CAPTURE → EDIT → DELIVER → STEP INSIDE. Everything I am about to show you starts as a file from one of these. You already make the first three. I take the same files one step further. Their output is my input: a proposed workflow, not a partnership or a promise of one-click import. Zillow and realtor.com are listing ecosystems, not PMRE sponsors. Bubo² and Nucleus4D are room exhibitors. XGRIDS is Alex’s actual working relationship, separate from this sponsor wall. Vendor sources and limitations live in talk/sponsors.js and assets/pmre-sponsors/verification.json. November 19 local audit: display current Nucleus, iGuide and Realsee names; current official logos keep their original colors and aspect ratios. Bubo² is splat processing, not camera hardware. Editing/delivery categories overlap. No individual person is named on this slide. One manual arrow fades the exact earlier workflow.jpg diagram back in under Agile Lens; backward navigation hides it again."
       },
       {
         "id": "floor-demo",
@@ -3419,7 +3420,7 @@ body[data-bg-style="extreme"] .bg-overlay--extreme{display:block}
    (hover:hover) so mobile tap-to-advance isn't disrupted. */
 #fx-fs-overlay{position:fixed;inset:0;background:rgba(2,4,10,0);backdrop-filter:blur(0px);-webkit-backdrop-filter:blur(0px);z-index:9999;pointer-events:none;opacity:0;transition:background .35s,backdrop-filter .35s,opacity .35s}
 #fx-fs-overlay.open{background:rgba(2,4,10,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);pointer-events:auto;opacity:1}
-.fx-fs-target{cursor:zoom-out!important;box-shadow:0 28px 80px rgba(0,0,0,.6),0 0 64px var(--fx-glow)!important}
+#fx-fs-overlay>.fx-fs-target{transform:none!important;translate:none!important;rotate:none!important;scale:none!important;max-width:none!important;max-height:none!important;min-width:0!important;min-height:0!important;aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;box-sizing:border-box!important;padding:0!important;border:0!important;filter:none!important;clip-path:none!important;animation:none!important;opacity:1!important;visibility:visible!important;cursor:zoom-out!important;box-shadow:0 28px 80px rgba(0,0,0,.6),0 0 64px var(--fx-glow)!important}
 body.fx-fs-active{overflow:hidden}
 #fx-fs-hint{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);font-family:'Space Grotesk',sans-serif;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6);background:rgba(6,8,16,.7);padding:8px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.12);z-index:10001;opacity:0;transition:opacity .35s;pointer-events:none}
 body.fx-fs-active #fx-fs-hint{opacity:1}
@@ -6355,7 +6356,7 @@ if(_notesParam){
 // decorative UI chrome. Forked from nxtbld-2026-productizing-xr.
 (function(){
   if(!window.matchMedia('(hover:hover)').matches)return;
-  let activeFs=null;
+  let activeFs=null,closingFs=null;
   const FS_SKIP='.qr-card,.cover-logo-wrap,.placed-arrow,.media-cycler-mount,#anno-panel,#move-hud,#search-overlay,#export-modal,#notes-app,#presenter-popup';
   function ensureOverlay(){
     let ovl=document.getElementById('fx-fs-overlay');
@@ -6367,7 +6368,7 @@ if(_notesParam){
   }
   function exitFs(){
     if(!activeFs)return;
-    const a=activeFs;activeFs=null;
+    const a=activeFs;activeFs=null;closingFs=a;
     const live=a.placeholder.getBoundingClientRect();
     a.el.style.transition='top .4s cubic-bezier(.4,.2,.2,1),left .4s cubic-bezier(.4,.2,.2,1),width .4s cubic-bezier(.4,.2,.2,1),height .4s cubic-bezier(.4,.2,.2,1),box-shadow .4s';
     a.el.style.top=live.top+'px';a.el.style.left=live.left+'px';
@@ -6378,34 +6379,42 @@ if(_notesParam){
       if(a.placeholder.parentNode)a.placeholder.parentNode.replaceChild(a.el,a.placeholder);
       else document.body.appendChild(a.el);
       if(a.origStyle)a.el.setAttribute('style',a.origStyle);else a.el.removeAttribute('style');
-      a.el.classList.remove('fx-fs-target');
+      a.el.classList.remove('fx-fs-target');closingFs=null;
     },420);
   }
   function enterFs(el){
-    if(activeFs)return;
+    if(activeFs||closingFs)return;
     const r=el.getBoundingClientRect();
     const origStyle=el.getAttribute('style');
     const placeholder=document.createElement('div');
     placeholder.className='fx-fs-placeholder';
-    placeholder.style.cssText='display:block;width:'+r.width+'px;height:'+r.height+'px;visibility:hidden';
+    const c=getComputedStyle(el);
+    placeholder.style.cssText='display:'+c.display+';width:'+c.width+';height:'+c.height+';position:'+c.position+';top:'+c.top+';left:'+c.left+';right:'+c.right+';bottom:'+c.bottom+';margin:'+c.margin+';flex:'+c.flex+';grid-area:'+c.gridArea+';visibility:hidden';
     const ovl=ensureOverlay();
     el.parentNode.insertBefore(placeholder,el);
     ovl.appendChild(el);
     el.style.cssText='position:fixed;top:'+r.top+'px;left:'+r.left+'px;width:'+r.width+'px;height:'+r.height+'px;margin:0;object-fit:contain;border-radius:8px;z-index:10000;transition:none';
+    el.style.backgroundColor=c.backgroundColor;
     el.classList.add('fx-fs-target');
     activeFs={el:el,placeholder:placeholder,origStyle:origStyle,origRect:r};
     requestAnimationFrame(function(){
       ovl.classList.add('open');document.body.classList.add('fx-fs-active');
-      const pad=Math.max(24,Math.min(window.innerWidth,window.innerHeight)*.04);
+      fitFs();
+    });
+  }
+  function fitFs(){
+      if(!activeFs)return;const el=activeFs.el,r=activeFs.origRect;
+      const pad=Math.max(64,Math.min(window.innerWidth,window.innerHeight)*.04);
       const vw=window.innerWidth-pad*2,vh=window.innerHeight-pad*2;
-      const ar=r.width/r.height;
+      const ar=(el.naturalWidth||el.videoWidth||r.width)/(el.naturalHeight||el.videoHeight||r.height);
       let tw=vw,th=vh;
       if(tw/th>ar)tw=th*ar;else th=tw/ar;
       const tx=(window.innerWidth-tw)/2,ty=(window.innerHeight-th)/2;
       el.style.transition='top .4s cubic-bezier(.2,.7,.3,1.05),left .4s cubic-bezier(.2,.7,.3,1.05),width .4s cubic-bezier(.2,.7,.3,1.05),height .4s cubic-bezier(.2,.7,.3,1.05),box-shadow .4s';
       el.style.top=ty+'px';el.style.left=tx+'px';el.style.width=tw+'px';el.style.height=th+'px';
-    });
   }
+  addEventListener('resize',fitFs);
+  ['load','loadedmetadata'].forEach(type=>document.addEventListener(type,e=>{if(e.target===activeFs?.el)queueMicrotask(fitFs);},true));
   document.addEventListener('click',function(e){
     if(window._moveMode)return;
     if(document.body.classList.contains('annotate-mode'))return;
