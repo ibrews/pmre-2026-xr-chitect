@@ -3,7 +3,7 @@
 // Alex 2026-11-19: it now OPENS on the MIA 'Find the Shot' camera-toy idea (top-down camera frustum sweeping a set),
 // with architecture (walls, columns, stair, door) added, then flows into Plan -> Model -> Photograph.
 // Linework is schematic (not the project's drawings); the rendering reuses the deck's credited DBOX image.
-SD.defineSlide({id:'pmre/unbuilt-shutter',manualSteps:true,steps:3,props:{},assets:[],
+SD.defineSlide({id:'pmre/unbuilt-shutter',manualSteps:true,steps:4,props:{},assets:[],
 provenance:['Claude concept slide 2026-11-19; schematic linework is invented and labeled; photo media/pmre/fs-v2/intro-render.jpg is already used and credited in the deck (Rendering: DBOX for Austin Capital Partners).'],
 css:`.ub-s{position:absolute;inset:4% 4% 19%;color:var(--text)}
 .ub-s h2{margin:0;font:800 100px/1.05 var(--font-display,var(--font))}
@@ -40,6 +40,11 @@ css:`.ub-s{position:absolute;inset:4% 4% 19%;color:var(--text)}
 .ub-s .credit{position:absolute;right:100px;bottom:36px;font:500 26px var(--font);color:#fff;text-shadow:0 1px 6px #000;opacity:0;transition:opacity .8s 1s}
 .ub-s[data-s="2"] .credit{opacity:.9}.ub-s .tag{transition:opacity .4s}.ub-s[data-s="1"] .tag,.ub-s[data-s="2"] .tag{opacity:0}
 .ub-s.noanim *{transition:none!important}
+/* Alex 2026-11-19: conceptual before/after (his own illustrations, no project named): photo = the bare hillside, one more click wipes to the built version */
+.ub-s .photo.after{opacity:1;transform:none;clip-path:inset(0 100% 0 0);transition:clip-path 1.6s cubic-bezier(.65,0,.25,1)}
+.ub-s[data-s="3"] .photo:not(.after){opacity:1;transform:none}.ub-s[data-s="3"] .photo.after{clip-path:inset(0 0 0 0)}
+.ub-s[data-s="3"] .vf{opacity:1}.ub-s[data-s="3"] .tag{opacity:0}
+.ub-s .credit{right:auto;left:60px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.ub-s .after-tag{opacity:0!important}.ub-s[data-s="3"] .credit:not(.after-tag){opacity:0}.ub-s[data-s="3"] .after-tag{opacity:.9!important}
 .ub-s .plane{transition:transform 1.6s cubic-bezier(.65,0,.25,1),opacity .8s ease}.ub-s[data-s="pre"] .plane,.ub-s[data-s="-1"] .plane{opacity:0}
 .ub-s .pre{position:absolute;inset:0;width:100%;height:100%;transition:opacity .9s ease}.ub-s:not([data-s="pre"]) .pre{opacity:0}
 .ub-s .pre .wall{fill:none;stroke:#7fe6ff;stroke-width:6;stroke-linecap:square}.ub-s .pre .thin{fill:none;stroke:#3b82c4;stroke-width:2.5}
@@ -67,12 +72,12 @@ ${B.map(b=>`<rect class="ln" x="${b[0]}" y="${b[1]}" width="${b[2]}" height="${b
 <path class="ln" d="M380 130 L410 186 M440 264 L470 300 M300 376 L330 440"/></svg>
 ${B.map(b=>`<div class="bld" style="left:${b[0]}px;top:${b[1]}px;width:${b[2]}px;height:${b[3]}px">${slabs(b[4])}</div>`).join('')}</div>
 <span class="tag">SCHEMATIC LINEWORK</span>
-<div class="photo" style="background-image:url('media/pmre/fs-v2/intro-render.jpg')"></div>
+<div class="photo" style="background-image:url('media/pmre/v8/unbuilt-before.jpg')"></div><div class="photo after" style="background-image:url('media/pmre/v8/unbuilt-after.jpg')"></div>
 <div class="vf"><i></i><i></i><i></i><i></i><em>REC</em></div><div class="flash"></div>
-<span class="credit">Four Seasons Lake Austin, before it was built · Rendering: DBOX for Austin Capital Partners</span></div></div>`;
+<span class="credit">Before</span><span class="credit after-tag">After</span></div></div>`;
 const root=el.querySelector('.ub-s'),leg=[...el.querySelectorAll('.legend div')],flash=el.querySelector('.flash');
 // deck step 0 = the camera-toy prelude ('pre'); steps 1-3 = the original Plan / Model / Photograph states 0-2
 const S=n=>n<=0?'pre':n-1,set=v=>{root.dataset.s=v;leg.forEach(d=>d.classList.toggle('on',d.dataset.k===String(v)));};
 const shutter=()=>{flash.classList.remove('go');void flash.offsetWidth;flash.classList.add('go');const c=ctx.audio&&ctx.audio();if(!c)return;try{const t=c.currentTime,len=c.sampleRate*.09,b=c.createBuffer(1,len,c.sampleRate),d=b.getChannelData(0);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,3);const s=c.createBufferSource();s.buffer=b;const f=c.createBiquadFilter();f.type='highpass';f.frequency.value=1800;const g=c.createGain();g.gain.value=.012;s.connect(f);f.connect(g);g.connect(c.destination);s.start(t);const s2=c.createBufferSource();s2.buffer=b;const g2=c.createGain();g2.gain.value=.008;s2.connect(f);f.connect(g2);g2.connect(c.destination);s2.start(t+.07);}catch(e){}};
 return{enter(){root.classList.add('noanim');set(-1);void root.offsetWidth;root.classList.remove('noanim');if(ctx.instant)set('pre');else ctx.clock.after(60,()=>set('pre'));},
-step(n){set(S(n));if(n===3&&!ctx.instant)shutter();},complete(n){set(S(n))},restore(n){set(S(n))},staticFrame(){root.classList.add('noanim');set(2);void root.offsetWidth;root.classList.remove('noanim');}};}});
+step(n){set(S(n));if(n===3&&!ctx.instant)shutter();},complete(n){set(S(n))},restore(n){set(S(n))},staticFrame(){root.classList.add('noanim');set(3);void root.offsetWidth;root.classList.remove('noanim');}};}});
