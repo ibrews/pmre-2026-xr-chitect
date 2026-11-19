@@ -16,7 +16,7 @@ const TALK = {
   "closeSub": "Start small. Make it valuable. Bring us the ambitious ones.",
   "web": "ibrews.github.io/pmre-2026-xr-chitect/v8/resources/",
   "qr": "https://ibrews.github.io/pmre-2026-xr-chitect/v8/resources/",
-  "qrLabel": "Welcome PMRE Attendees! · password: pixie\nFree starter kit · training · projects · this deck",
+  "qrLabel": "Free starter kit · training · projects · this deck\nPassword: pixie",
   "options": {
     "cut": {
       "label": "Length",
@@ -1100,6 +1100,7 @@ const SECTIONS = [
             },
             {
               "src": "media/pmre/v8/speaking-unreal.jpg",
+              "position": "50% 15%",
               "alt": "Alex speaking at Unreal"
             },
             {
@@ -1775,7 +1776,7 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/demo-montage",
         "props": {},
-        "notes": "⏱ ~50s.\n\nOpen on IMG_9350 alone with its original sound, untrimmed (20.48 seconds). On clip end, Urban Chomp Funk fades in over an energetic 28-photo collage, including visually selected silent stills from the other attendee videos. After 17 seconds the collage settles into eight favorite memories on a scrapbook page. Music fades out after the page settles.\n\nArrow one skips to the collage, arrow two settles the scrapbook. Automatic transitions keep the arrow position in sync. Re-entering restarts the opening clip. If direct-link autoplay is blocked, click Play with sound. Static, reduced motion and print views show the final scrapbook silently.\n\nAlex supplied every photo/video and Urban Chomp Funk. All source images reviewed, HEIC orientation applied to pixels. Five weaker or out-of-scope sources omitted as listed in slides/pmre/demo-montage/media-manifest.json. Attendee names, exact device models and individual photo authors are not asserted. This replaces the v8d demo-montage module in the same slot after glasses-objections and before headset-comparison."
+        "notes": "⏱ ~50s.\n\nOpen on IMG_9350 alone with its original sound, untrimmed (20.48 seconds). On clip end, Urban Chomp Funk fades in over an energetic 28-photo collage, including visually selected silent stills from the other attendee videos. After 17 seconds the collage settles into eight favorite memories on a scrapbook page. Music fades out after the page settles.\n\nArrow one skips to the collage, arrow two settles the scrapbook. Automatic transitions keep the arrow position in sync. Re-entering restarts the opening clip. If direct-link autoplay is blocked, the first arrow or click starts the opening with sound; it does not skip it. Subsequent arrows may skip phases. Static, reduced motion and print views show the final scrapbook silently.\n\nAlex supplied every photo/video and Urban Chomp Funk. All source images reviewed, HEIC orientation applied to pixels. Five weaker or out-of-scope sources omitted as listed in slides/pmre/demo-montage/media-manifest.json. Attendee names, exact device models and individual photo authors are not asserted. This replaces the v8d demo-montage module in the same slot after glasses-objections and before headset-comparison."
       },
       {
         "id": "headset-comparison",
@@ -1832,7 +1833,7 @@ const SECTIONS = [
           "chapter": "The next few years",
           "title": "Your shoot becomes a place",
           "labels": [
-            "Phone / drone",
+            "Phone + drone photos",
             "3D model / splat",
             "Walkthrough"
           ],
@@ -1855,6 +1856,7 @@ const SECTIONS = [
       },
       {
         "id": "nucleus-zillow",
+        "hidden": true,
         "title": "Splats in the listing ecosystem",
         "use": "pmre/text-card",
         "props": {
@@ -1877,7 +1879,7 @@ const SECTIONS = [
       {
         "id": "view-before-visit",
         "use": "pmre/property-future",
-        "title": "Choose how to live there",
+        "title": "Explore a property before you visit",
         "keep": 19,
         "year": "2026+",
         "venn": [
@@ -1888,12 +1890,14 @@ const SECTIONS = [
         "storyRole": "content",
         "props": {
           "chapter": "The next few years",
-          "title": "Choose how to live there",
+          "title": "Explore a property before you visit",
           "labels": [
-            "Browse at home",
-            "Meet in VR",
-            "Place it in AR"
+            "Tour on screen",
+            "Walk together in VR",
+            "Test furniture in AR"
           ],
+          "parallel": true,
+          "details": ["Explore the captured home", "Meet an agent at human scale", "See what fits in your room"],
           "icons": [
             "home",
             "headset",
@@ -1937,12 +1941,15 @@ const SECTIONS = [
         "keep": 30,
         "use": "pmre/camera-toy",
         "props": {
-          "title": "Photograph an unbuilt space"
+          "title": "Photograph an unbuilt space",
+          "architecture": "media/v3-fix1/xiqu.jpg",
+          "architectureLabel": "Xiqu Centre · Bing Thom Architects rendering"
         },
-        "notes": "⏱ ~40s.\n\nInteractive concept: choose a lens, camera position, mask and shots. Offline file mode uses the built-in 2D projection of the same scene; no network or 3D module fetch is needed."
+        "notes": "⏱ ~40s.\n\nClick-through framing exercise on the actual Xiqu Centre architectural visualization. Three clicks: reframe, choose the film crop, collect three compositions. This uses crops of the supplied render, not a new navigable 3D building or measured camera calibration. Each click has a quiet procedural shutter."
       },
       {
         "id": "ai",
+        "hidden": true,
         "title": "A short AI palate cleanser",
         "year": "2026+",
         "venn": [
@@ -1967,7 +1974,7 @@ const SECTIONS = [
       },
       {
         "id": "sharp",
-        "title": "One image → a photoreal 3D model",
+        "title": "One photo. Nearby views.",
         "year": "2026",
         "venn": [
           1,
@@ -1977,16 +1984,16 @@ const SECTIONS = [
         "keep": 30,
         "use": "pmre/v6-gallery",
         "props": {
-          "title": "One image → a photoreal 3D model",
-          "line": "Apple ML SHARP · predicted geometry is not a measured survey",
+          "title": "One photo. Nearby views.",
+          "line": "AI predicts what a small camera move could reveal. Verify before marketing.",
           "media": [
             {
               "src": "media/pmre/v6/sharp-overview.jpg",
-              "label": "Input / predicted 3D"
+              "label": "Source photo → predicted 3D"
             },
             {
               "src": "media/pmre/v6/sharp-courtyard.mp4",
-              "label": "Nearby viewpoints"
+              "label": "A small camera move · Apple ML SHARP"
             }
           ],
           "steps": false,
@@ -1997,7 +2004,7 @@ const SECTIONS = [
             "luxengine"
           ]
         },
-        "notes": "⏱ ~40s.\n\nOfficial Apple research example, https://apple-aiml-research.github.io/ml-sharp/ . SHARP predicts a 3D Gaussian representation from one photograph for nearby-viewpoint synthesis. This is not measured geometry or evidence of what is behind a wall. Use the local official example clip, silently looping; verify the property before marketing. Research code/model license terms apply to deployment; do not promise unrestricted commercial use.\n\n[FLASH] An edited listing photo—the kind AutoHDR, Fotello and LUXengine deliver—is the proposed input to this separate experiment. Apple supplied the actual example shown; no sponsor edited it. SHARP predicts nearby views, not a complete measured walkable property.",
+        "notes": "Merged the generic AI palate-cleanser into this specific example: generate options, keep your judgment, never market an invented feature as real. Do not let AI do the part of photography you love.\n\n⏱ ~40s.\n\nOfficial Apple research example, https://apple-aiml-research.github.io/ml-sharp/ . SHARP predicts a 3D Gaussian representation from one photograph for nearby-viewpoint synthesis. This is not measured geometry or evidence of what is behind a wall. Use the local official example clip, silently looping; verify the property before marketing. Research code/model license terms apply to deployment; do not promise unrestricted commercial use.\n\n[FLASH] An edited listing photo—the kind AutoHDR, Fotello and LUXengine deliver—is the proposed input to this separate experiment. Apple supplied the actual example shown; no sponsor edited it. SHARP predicts nearby views, not a complete measured walkable property.",
         "opt": "ai:on"
       },
       {
@@ -2066,7 +2073,7 @@ const SECTIONS = [
           "title": "",
           "lines": [],
           "quote": "“If no one is asking for it then you're not educating your client properly.”",
-          "attr": "— Jonathan Lee, yesterday.",
+          "attr": "— Jonathan Lee, Tuesday",
           "kicker": ""
         },
         "notes": "⏱ ~30s.\n\nExact quote and attribution supplied by Alex in this task. The earlier raw note used the typographic apostrophe and lowercase name; V8: conference quotations now appear visibly, with Alex’s exact attributions."
