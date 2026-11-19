@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Each interest feeds the others — motion</title>
+<!-- Spatial Deck slide module pmre/venn-grow (PMRE v5). Three small interest circles; examples drop into the shared
+     center one at a time and every circle grows after each (the presenter's "grew three sizes" beat).
+     Labels come from props.feeds. ?static / reduced motion = final frame. -->
+<style>
+:root{--bg:#060810;--text:#f0f4ff;--dim:rgba(240,244,255,.6);--accent:#d7b668}
+html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:'Space Grotesk','Inter','Avenir Next','Helvetica Neue',system-ui,sans-serif}
+svg{width:100%;height:100%;display:block}
+.lbl{font-size:30px;font-weight:700;letter-spacing:.16em}
+.feed{font-size:34px;font-weight:600;fill:var(--dim)}.feed2{font-size:38px;font-weight:700;fill:var(--text)}
+.cap{font-size:40px;font-weight:800;fill:var(--accent)}
+</style></head><body>
+<svg id="s" viewBox="240 135 1440 810" preserveAspectRatio="xMidYMid meet"></svg>
+<script src="../../sd-frame.js"></script>
+<script src="../../kit/sprite.js"></script>
+<script>
+const ICONS=["<rect x=\"-1\" y=\"-20\" width=\"2\" height=\"2\" fill=\"#c4b5fd\"/><rect x=\"-3\" y=\"-18\" width=\"6\" height=\"2\" fill=\"#c4b5fd\"/><rect x=\"-6\" y=\"-16\" width=\"12\" height=\"2\" fill=\"#a78bfa\"/><rect x=\"-9\" y=\"-14\" width=\"18\" height=\"2\" fill=\"#a78bfa\"/><rect x=\"-12\" y=\"-12\" width=\"24\" height=\"2\" fill=\"#9370db\"/><rect x=\"-13\" y=\"-10\" width=\"26\" height=\"2\" fill=\"#a78bfa\"/><rect x=\"-13\" y=\"-8\" width=\"26\" height=\"1\" fill=\"#7c5cbf\"/><rect x=\"-11\" y=\"-7\" width=\"3\" height=\"18\" fill=\"#c4b5fd\"/><rect x=\"-10\" y=\"-7\" width=\"1\" height=\"18\" fill=\"#a78bfa\"/><rect x=\"-5\" y=\"-7\" width=\"3\" height=\"18\" fill=\"#c4b5fd\"/><rect x=\"-4\" y=\"-7\" width=\"1\" height=\"18\" fill=\"#a78bfa\"/><rect x=\"2\" y=\"-7\" width=\"3\" height=\"18\" fill=\"#c4b5fd\"/><rect x=\"3\" y=\"-7\" width=\"1\" height=\"18\" fill=\"#a78bfa\"/><rect x=\"8\" y=\"-7\" width=\"3\" height=\"18\" fill=\"#c4b5fd\"/><rect x=\"9\" y=\"-7\" width=\"1\" height=\"18\" fill=\"#a78bfa\"/><rect x=\"-14\" y=\"11\" width=\"28\" height=\"2\" fill=\"#a78bfa\"/><rect x=\"-15\" y=\"13\" width=\"30\" height=\"2\" fill=\"#9370db\"/><rect x=\"-16\" y=\"15\" width=\"32\" height=\"2\" fill=\"#7c5cbf\"/>", "<rect x=\"-16\" y=\"-18\" width=\"32\" height=\"3\" fill=\"#f59e0b\"/><rect x=\"-16\" y=\"-15\" width=\"3\" height=\"30\" fill=\"#f59e0b\"/><rect x=\"13\" y=\"-15\" width=\"3\" height=\"30\" fill=\"#f59e0b\"/><rect x=\"-15\" y=\"-17\" width=\"30\" height=\"1\" fill=\"#fde68a\"/><rect x=\"-13\" y=\"-15\" width=\"26\" height=\"27\" fill=\"#0a0812\"/><rect x=\"-13\" y=\"-15\" width=\"4\" height=\"25\" fill=\"#dc2626\"/><rect x=\"-9\" y=\"-15\" width=\"3\" height=\"23\" fill=\"#ef4444\"/><rect x=\"-12\" y=\"-15\" width=\"2\" height=\"25\" fill=\"#b91c1c\"/><rect x=\"-7\" y=\"-15\" width=\"2\" height=\"20\" fill=\"#dc2626\"/><rect x=\"9\" y=\"-15\" width=\"4\" height=\"25\" fill=\"#dc2626\"/><rect x=\"6\" y=\"-15\" width=\"3\" height=\"23\" fill=\"#ef4444\"/><rect x=\"10\" y=\"-15\" width=\"2\" height=\"25\" fill=\"#b91c1c\"/><rect x=\"5\" y=\"-15\" width=\"2\" height=\"20\" fill=\"#dc2626\"/><rect x=\"-9\" y=\"-15\" width=\"18\" height=\"3\" fill=\"#dc2626\"/><rect x=\"-7\" y=\"-13\" width=\"14\" height=\"2\" fill=\"#ef4444\"/><rect x=\"-5\" y=\"-11\" width=\"10\" height=\"1\" fill=\"#dc2626\"/><rect x=\"-13\" y=\"12\" width=\"26\" height=\"3\" fill=\"#8b6f47\"/><rect x=\"-13\" y=\"12\" width=\"26\" height=\"1\" fill=\"#a0845c\"/><rect x=\"-1\" y=\"-12\" width=\"2\" height=\"3\" fill=\"rgba(255,255,200,.3)\"/><rect x=\"-2\" y=\"-9\" width=\"4\" height=\"4\" fill=\"rgba(255,255,200,.15)\"/><rect x=\"-4\" y=\"-5\" width=\"8\" height=\"6\" fill=\"rgba(255,255,200,.08)\"/><rect x=\"-6\" y=\"1\" width=\"12\" height=\"6\" fill=\"rgba(255,255,200,.04)\"/>", "<rect x=\"-16\" y=\"-16\" width=\"32\" height=\"24\" fill=\"#1e293b\"/><rect x=\"-14\" y=\"-14\" width=\"28\" height=\"20\" fill=\"#0f172a\"/><rect x=\"-14\" y=\"-14\" width=\"28\" height=\"1\" fill=\"#334155\"/><rect x=\"-3\" y=\"8\" width=\"6\" height=\"4\" fill=\"#475569\"/><rect x=\"-8\" y=\"12\" width=\"16\" height=\"2\" fill=\"#475569\"/><rect x=\"-7\" y=\"12\" width=\"14\" height=\"1\" fill=\"#64748b\"/><rect x=\"-12\" y=\"2\" width=\"24\" height=\"2\" fill=\"#22c55e\"/><rect x=\"-12\" y=\"4\" width=\"24\" height=\"2\" fill=\"#166534\"/><rect x=\"-6\" y=\"-4\" width=\"2\" height=\"2\" fill=\"#60a5fa\"/><rect x=\"-7\" y=\"-2\" width=\"4\" height=\"4\" fill=\"#3b82f6\"/><rect x=\"-7\" y=\"2\" width=\"2\" height=\"1\" fill=\"#1e40af\"/><rect x=\"-5\" y=\"2\" width=\"2\" height=\"1\" fill=\"#1e40af\"/><rect x=\"2\" y=\"-6\" width=\"2\" height=\"2\" fill=\"#fbbf24\"/><rect x=\"7\" y=\"-8\" width=\"2\" height=\"2\" fill=\"#fbbf24\"/><rect x=\"4\" y=\"-2\" width=\"8\" height=\"2\" fill=\"#854d0e\"/><rect x=\"4\" y=\"-2\" width=\"8\" height=\"1\" fill=\"#a16207\"/><rect x=\"-10\" y=\"-12\" width=\"6\" height=\"2\" fill=\"rgba(255,255,255,.15)\"/><rect x=\"5\" y=\"-10\" width=\"4\" height=\"2\" fill=\"rgba(255,255,255,.1)\"/>"];
+const P=SDFrame.props({feeds:['a play’s structure → a building’s structure','restaurant studio → dinner theater','park studio → modular amphitheater'],caption:'Each interest made the others stronger'});
+const NS='http://www.w3.org/2000/svg',S=document.getElementById('s');
+const el=(t,a,p=S)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p.append(e);return e;};
+S.setAttribute('aria-label','Venn diagram of architecture, theater and technology. Examples feed the center: '+P.feeds.join('; ')+'. '+P.caption);
+const C=[700,540],colors=['#00d4ff','#f43f5e','#a78bfa'],names=['ARCHITECTURE','THEATER','TECHNOLOGY'],off=[[-90,-55],[90,-55],[0,95]],lab=[[430,290],[970,290],[700,905]];
+const n=P.feeds.length,T0=.6,STEP=2.2,TOT=T0+STEP*n+1.5;
+off.forEach((o,i)=>{const x=C[0]+o[0],y=C[1]+o[1],g=el('g',{});g.style.transformOrigin=`${x}px ${y}px`;
+ el('circle',{cx:x,cy:y,r:150,fill:colors[i],'fill-opacity':.15,stroke:colors[i],'stroke-width':4},g);
+ const ic=el('g',{transform:`translate(${x+o[0]*.9},${y+o[1]*.9}) scale(2.2)`,style:'shape-rendering:crispEdges'},g);ic.innerHTML=ICONS[i];
+ const l=el('text',{x:lab[i][0],y:lab[i][1],'text-anchor':'middle',class:'lbl',fill:colors[i]});l.textContent=names[i];
+ // Inflate in the same interval and easing as each feed departing the center.
+ const kf=[{transform:'scale(.72)',offset:0}];for(let k=0;k<n;k++){kf.push({transform:`scale(${.72+.12*k})`,offset:(T0+STEP*k+1.14)/TOT,easing:'ease-in-out'});kf.push({transform:`scale(${.72+.12*(k+1)})`,offset:(T0+STEP*k+1.9)/TOT});}
+ kf.push({transform:`scale(${.72+.12*n})`,offset:1});g.animate(kf,{duration:TOT*1000,fill:'both',easing:'linear'});});
+// feeds: appear in the center, then settle into a list on the right ("A → B" splits into two lines)
+// Pixel Alex stands in the middle and jumps for joy each time the circles grow (under the feeds, so they stay legible).
+const HERO=[700,600],hero=PX.sprite(el('g',{}),{withBeard:false}),hs=[{type:'idle',t0:0,t1:T0+1.14,a:HERO,face:1}];
+for(let k=0;k<n;k++){const t=T0+STEP*k+1.14;hs.push({type:'hop',t0:t,t1:t+.5,a:HERO,b:HERO,h:80,face:1},{type:'idle',t0:t+.5,t1:t+1.0,a:HERO,face:1,cheer:true},{type:'idle',t0:t+1.0,t1:k<n-1?T0+STEP*(k+1)+1.14:TOT+1,a:HERO,face:1});}
+PX.drive(hero,TOT,PX.route(hs),1.5);
+const LX=1150;P.feeds.forEach((f,k)=>{const [a,b]=f.split('→').map(x=>x.trim());const g=el('g',{});
+ const y=380+k*150;const t1=el('text',{x:LX,y,class:'feed'},g);t1.textContent=a+(b?' →':'');
+ if(b){const t2=el('text',{x:LX,y:y+50,class:'feed2'},g);t2.textContent=b;}
+ const dx=C[0]-LX-200,dy=C[1]-y,d=(T0+STEP*k)*1000;
+ g.animate([{transform:`translate(${dx}px,${dy-140}px)`,opacity:0},{transform:`translate(${dx}px,${dy}px)`,opacity:1,offset:.45},{transform:`translate(${dx}px,${dy}px)`,opacity:1,offset:.6,easing:'ease-in-out'},{transform:'translate(0px,0px)',opacity:1}],{duration:1900,delay:d,fill:'both',easing:'linear'});});
+const cap=el('text',{x:960,y:205,'text-anchor':'middle',class:'cap'});cap.textContent=P.caption;
+cap.animate([{opacity:0},{opacity:1}],{duration:800,delay:(T0+STEP*n+.6)*1000,fill:'both'});
+const domainAttrs=[];document.querySelectorAll('svg *').forEach(e=>['fill','stroke'].forEach(a=>{const v=e.getAttribute(a);if(v&&/#00d4ff|#f43f5e|#a78bfa/i.test(v))domainAttrs.push([e,a,v]);}));
+addEventListener('load',()=>domainAttrs.forEach(([e,a,v])=>e.setAttribute(a,v)),{once:true});
+window.MOTION_SFX=P.feeds.flatMap((_,k)=>[{t:T0+STEP*k+1.14,kind:'merge',gain:.08},{t:T0+STEP*k+1.16,kind:'hooray',pitch:1+.06*k}]);
+SDFrame.init({duration:T0+STEP*n+1.6,steps:0,onEnter(){parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}});
+</script>
+</body></html>

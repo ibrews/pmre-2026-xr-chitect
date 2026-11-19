@@ -30,12 +30,9 @@ CODE = re.compile(r"\s*\[[A-Z][A-Z0-9 #:/.,_+&-]*(?:\s[^\]]{0,80})?\]")
 INTERNAL = re.compile(r"(MP4|media/|\.html|\.png|Options\s*→|ALTERNATE|Reduced-motion|reduced-motion|offline|KB |ledger|PROVENANCE|https?://|youtu\.be|\bsee [a-z/]+\.md)", re.I)
 
 def stage_notes(raw, cap=700):
-    """Keep ⏱ timing, spoken lines (quoted text in ✅/✎ paragraphs) and short cues; drop ❓ questions, source codes,
-    provenance and long background paragraphs."""
-    import html
-    # The presenter asked that removed slide explanations, sources and uncertainty survive in the actual PPTX notes.
-    # Preserve the complete text rather than truncating it for the wedge monitors.
-    return re.sub(r'<[^>]+>', '', html.unescape(raw or '')).strip()
+    """Preserve complete source notes, including literal markup/placeholders in archived slide copy."""
+    # Notes are plain text, not HTML. Stripping tags silently deleted archived <name> fields and changed source copy.
+    return raw or ""
 
 def fmt_dur(s):
     s = int(round(s)); return f"{s // 60:02d}:{s % 60:02d}"
@@ -159,9 +156,9 @@ def main():
         notes = stage_notes(st.get("notes", "")) if st["step"] == 0 else "(build step — same talking point)"
         if st["kind"] == "video":
             v = st["video"]; shutil.copyfile(v["cache"], vids / v["file"])
-            s.shapes.add_picture(v["poster"], 0, 0, prs.slide_width, prs.slide_height).name = "venue-video-poster (final frame)"
+            s.shapes.add_picture(v["poster"], 0, 0, prs.slide_width, prs.slide_height).name = "venue-video-poster (selected frame)" if v.get("posterTime") else "venue-video-poster (final frame)"
             notes = f"▶ VIDEO {v['file']} ({fmt_dur(v['duration'])}) — crew plays, then next slide\n\n" + notes
-            row.update(mode="video-poster", video=v["file"], duration=round(v["duration"], 2), audio=bool(v.get("audio")), audio_kind=v.get("audioKind", "synthesized car horns" if v.get("audio") else "silent"))
+            row.update(mode="video-poster", posterTime=v.get("posterTime"), video=v["file"], duration=round(v["duration"], 2), audio=bool(v.get("audio")), audio_kind=v.get("audioKind", "synthesized car horns" if v.get("audio") else "silent"))
         elif st.get("iframes") and st["step"] == 0:  # motion frame without window.seek: keep the whole frame as a still
             s.shapes.add_picture(st["full"], 0, 0, prs.slide_width, prs.slide_height).name = "venue-frame (motion still)"
             row.update(mode="image", kept_in_image=st.get("warn", []))

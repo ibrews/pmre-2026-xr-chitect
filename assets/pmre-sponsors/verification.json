@@ -1,0 +1,303 @@
+{
+  "checked": "2026-11-19",
+  "facts": [
+    {
+      "id": "cubicasa",
+      "url": "https://www.cubi.casa/",
+      "confirmedScope": "Quick phone scan; finished plan delivery later (6\u201324h on current page)."
+    },
+    {
+      "id": "iguide",
+      "url": "https://goiguide.com/",
+      "confirmedScope": "Measured floor plans and 3D virtual tours from one scan."
+    },
+    {
+      "id": "giraffe360",
+      "url": "https://giraffe360.com/blog/solving-the-real-estate-media-puzzle-the-roundup-from-the-first-ever-giraffe360-pmre-collaboration-webinar",
+      "confirmedScope": "Lifelike Digital Twin: dense LiDAR plus Gaussian splatting. No arbitrary headset export established."
+    },
+    {
+      "id": "realsee",
+      "url": "https://www.realsee.ai/pages/galois-new-user-guide",
+      "confirmedScope": "Galois LiDAR scanning and tour delivery."
+    },
+    {
+      "id": "nucleus",
+      "url": "https://www.nucleus4d.com/",
+      "confirmedScope": "Tours, video, plans; publication into Zillow/realtor.com. Current page does not independently establish first, PortalCam, or LCC. Priority quote left unchanged and attributed, per Alex."
+    },
+    {
+      "id": "bubo",
+      "url": "https://bubo2.com/technology",
+      "confirmedScope": "Raw Insta360 recording to 3DGS; PLY/SPZ downloads and browser hosting."
+    },
+    {
+      "id": "bubo-one-video",
+      "url": "https://bubo2.com/interiors",
+      "confirmedScope": "One route, one video capture; upload raw .insv, tidy and publish."
+    },
+    {
+      "id": "autohdr",
+      "url": "https://www.autohdr.com/",
+      "confirmedScope": "AI editing; no market-share number added."
+    },
+    {
+      "id": "fotello",
+      "url": "https://fotello.co/",
+      "confirmedScope": "AI editing, booking, delivery, payments."
+    },
+    {
+      "id": "luxengine",
+      "url": "https://luxengine.com/",
+      "confirmedScope": "AI photo editing and business platform; not a 3D engine."
+    },
+    {
+      "id": "aryeo",
+      "url": "https://www.aryeo.com/",
+      "confirmedScope": "Order forms, scheduling, payments, media delivery; headset hosting not claimed."
+    },
+    {
+      "id": "hdphotohub",
+      "url": "https://www.hdphotohub.com/",
+      "confirmedScope": "White-label scheduling, payments and media delivery."
+    },
+    {
+      "id": "zillow",
+      "url": "https://www.zillow.com/news/skytour-is-pushing-the-tech-boundaries-of-real-estate-visualization/",
+      "confirmedScope": "Showcase exterior Gaussian splat workflow using drone footage."
+    },
+    {
+      "id": "realtor",
+      "url": "https://www.realtor.com/marketing/resources/win-the-listing-perfect-3d-tour-script/",
+      "confirmedScope": "Listing 3D tours; unverified realtor.com Showcase product name omitted."
+    },
+    {
+      "id": "krisse",
+      "url": "https://southernremedia.com/our-story/",
+      "confirmedScope": "Krisse: owner, creative director, photography. Rich: aerials and interior video. In-room identity from Alex."
+    },
+    {
+      "id": "matt",
+      "url": "https://knowledge.autohdr.com/faqs",
+      "confirmedScope": "CEO Matt with matt-gia demo URL. Conference-speaker identity was unverified; attribution removed at Alex\u2019s request."
+    }
+  ],
+  "limits": [
+    "nextStep is Alex\u2019s editorial proposal, not a native integration promise.",
+    "Nucleus priority remains existing company-attributed wording, not independently verified.",
+    "Unverified conference-speaker attribution removed at Alex\u2019s request.",
+    "Perica name and in-room presence from Alex; Bubo product verified first-party.",
+    "No third-party logo implies an affiliation.",
+    "No new ZIP or publication; integration owner applies legacy-resources-pmre.patch at publication root, bakes/retests merged source and writes KB receipt."
+  ],
+  "validation": {
+    "offlineChrome": "All 91 slide slots; all eight cut/AI combinations; zero errors, external requests, missing images or media failures. Re-run after merge because slide numbers change.",
+    "resourcesChrome": "Desktop/mobile, pixie gate, Markdown/ZIP starter downloads, BPI playback pass.",
+    "preview": "Required read-only preview child /root/v8e_preview; requested/submitted model and effort inherited, observed metadata unavailable. Closing strip and attendee headings fixed; visual recheck passed.",
+    "http": [
+      {
+        "url": "https://ibrews.github.io/pmre-2026-xr-chitect/v8/",
+        "status": 200
+      },
+      {
+        "url": "https://alexcoulombepresents.com/pmre",
+        "status": 200
+      }
+    ],
+    "legacy": "v6/resources/index.html on current main has no Placeholder code text. v7 patch prepared for integration; not applied to main.",
+    "packaging": "No offline ZIP rebuild, main publication or KB receipt edit per parallel-mode instruction.",
+    "legacyPatch": "git apply --check and apply passed against retrieved main v7 HTML; exact single paragraph replacement asserted.",
+    "postFix": "Closing-strip and attendee-heading changes re-captured and visually approved; final hub including tool marks re-tested without errors."
+  },
+  "sponsorSlideAudit": {
+    "checked": "2026-11-19",
+    "scope": "Local story/v8 sponsor-pipeline slide only; no publication. Original #63 is now #60. Original workflow #28 is now #27. No person name or portrait is asserted on this slide.",
+    "identity": {
+      "iguide": "Display iGuide, matching current official navigation/logo. iGUIDE retained as historical alias elsewhere.",
+      "nucleus": "Display Nucleus, matching current official site and wordmark; Nucleus4D retained as historical/platform-domain alias elsewhere.",
+      "realsee": "Display Realsee, matching current official site."
+    },
+    "roles": [
+      {
+        "id": "cubicasa",
+        "official": "https://www.cubi.casa/",
+        "confirmed": "Quick phone scan; finished plan delivery later (6\u201324h on current page)."
+      },
+      {
+        "id": "iguide",
+        "official": "https://goiguide.com/",
+        "confirmed": "Measured floor plans and 3D virtual tours from one scan."
+      },
+      {
+        "id": "giraffe360",
+        "official": "https://giraffe360.com/blog/solving-the-real-estate-media-puzzle-the-roundup-from-the-first-ever-giraffe360-pmre-collaboration-webinar",
+        "confirmed": "Lifelike Digital Twin: dense LiDAR plus Gaussian splatting. No arbitrary headset export established."
+      },
+      {
+        "id": "realsee",
+        "official": "https://www.realsee.ai/pages/galois-new-user-guide",
+        "confirmed": "Galois LiDAR scanning and tour delivery."
+      },
+      {
+        "id": "nucleus",
+        "official": "https://www.nucleus4d.com/",
+        "confirmed": "Tours, video, plans; publication into Zillow/realtor.com. Current page does not independently establish first, PortalCam, or LCC. Priority quote left unchanged and attributed, per Alex."
+      },
+      {
+        "id": "bubo",
+        "official": "https://bubo2.com/technology",
+        "confirmed": "Raw Insta360 recording to 3DGS; PLY/SPZ downloads and browser hosting."
+      },
+      {
+        "id": "autohdr",
+        "official": "https://www.autohdr.com/",
+        "confirmed": "AI editing; no market-share number added."
+      },
+      {
+        "id": "fotello",
+        "official": "https://fotello.co/",
+        "confirmed": "AI editing, booking, delivery, payments."
+      },
+      {
+        "id": "luxengine",
+        "official": "https://luxengine.com/",
+        "confirmed": "AI photo editing and business platform; not a 3D engine."
+      },
+      {
+        "id": "aryeo",
+        "official": "https://www.aryeo.com/",
+        "confirmed": "Order forms, scheduling, payments, media delivery; headset hosting not claimed."
+      },
+      {
+        "id": "hdphotohub",
+        "official": "https://www.hdphotohub.com/",
+        "confirmed": "White-label scheduling, payments and media delivery."
+      },
+      {
+        "id": "zillow",
+        "official": "https://www.zillow.com/news/skytour-is-pushing-the-tech-boundaries-of-real-estate-visualization/",
+        "confirmed": "Showcase exterior Gaussian splat workflow using drone footage."
+      },
+      {
+        "id": "realtor",
+        "official": "https://www.realtor.com/marketing/resources/win-the-listing-perfect-3d-tour-script/",
+        "confirmed": "Listing 3D tours; unverified realtor.com Showcase product name omitted."
+      },
+      {
+        "id": "agile",
+        "official": "https://agilelens.com/",
+        "confirmed": "Immersive design studio; Products/Portfolio show real-time and human-scale architectural experiences. This slide proposes using source media, not an import compatibility promise."
+      }
+    ],
+    "roleCorrections": [
+      "Bubo\u00b2 processes uploaded photos/video/Insta360 footage into splats; it is not represented as a capture-camera manufacturer.",
+      "Fotello spans editing and delivery; LUXengine includes business workflow. Categories are examples, not exclusive product scopes.",
+      "Zillow and realtor.com are explicitly listing ecosystems; no sponsor, partnership, native headset publishing or universal file compatibility is asserted."
+    ],
+    "logoSources": [
+      {
+        "file": "iguide-current.svg",
+        "url": "https://goiguide.com/iGUIDE-Logo.svg",
+        "sha256": "9f27c9a7f85c994549274dd67746f75a459b1968eef0d5270090028287e16bab",
+        "adaptation": "none"
+      },
+      {
+        "file": "nucleus-current.png",
+        "url": "https://www.nucleus4d.com/img/logo-ink.png",
+        "sha256": "4b405c9668929506df1e44d2676f1f601c4200efd834afc4db004b716a32304c",
+        "adaptation": "none"
+      },
+      {
+        "file": "realtor-current.svg",
+        "url": "https://static.rdc.moveaws.com/rdc-ui/logos/logo-brand.svg",
+        "sha256": "c19f0fbd4bc68c8ec6a723c63ed53c19f5bb038ccdecd10c0abf15cbce2cc911",
+        "adaptation": "none"
+      },
+      {
+        "file": "agile.svg",
+        "url": "https://agilelens.com/logos/Icon.svg",
+        "sha256": "3abfb7c7504a30e3e0b7d2e963ba2db07598275a68d1d03b0ee593e7593763ed",
+        "adaptation": "none"
+      },
+      {
+        "file": "giraffe360-current.svg",
+        "url": "https://giraffe360.com/",
+        "sha256": "6a6dbc0e65c2fcd37835750599b267f3a9756055021e5539ce16e6bd1f9e85e3",
+        "adaptation": "Header SVG extracted; currentColor resolved to site text color for standalone SVG"
+      },
+      {
+        "file": "hdphotohub-current.svg",
+        "url": "https://www.hdphotohub.com/",
+        "sha256": "da05cee72cbc05917fef2fc3b26bc1aaf40640dfc592deb5eea2a412b4fbdb51",
+        "adaptation": "Header SVG extracted, colors unchanged"
+      },
+      {
+        "file": "bubo-current.svg",
+        "url": "https://bubo2.com/technology",
+        "sha256": "7e3f90dcb054d4883f36e9dd6d53eb93446bfccd5815119f19299fc2c18da5dc",
+        "adaptation": "Header SVG; first group color #1685ff, text #1a1a1a from official CSS --brand-logo and --text-primary; paths unchanged"
+      },
+      {
+        "file": "zillow-current.png",
+        "url": "https://delivery.digitallibrary.zillowgroup.com/AssetLink/wr8p2i1jl6t55su82l7263s6g8x8l52u.png",
+        "sourcePage": "https://www.zillow.com/news/logos/",
+        "sha256": "561b0692a5d55b2c13c4d9b9d3509c75565ac13cb326170e286b6ea0629890f8",
+        "adaptation": "none"
+      },
+      {
+        "file": "cubicasa-current.png",
+        "url": "https://downloads.intercomcdn.com/i/o/164967/94b2ba4059fe278a190aa003/26b0f0e8127443a00205ccb1ba74e313.png",
+        "sourcePage": "https://help.cubi.casa/en/",
+        "sha256": "9e393ed4108c3e83e3e2865b82c5a6357bfdeddbc21d591b721ee2f2a9da01ce",
+        "adaptation": "none"
+      }
+    ],
+    "retainedLogos": [
+      {
+        "file": "autohdr.png",
+        "url": "https://www.autohdr.com/images/common/autohdr-logo.png",
+        "unchanged": true
+      },
+      {
+        "file": "fotello.png",
+        "url": "https://media.fotellocdn.com/public/assets/optimized/fotello-logo-new.png",
+        "unchanged": true
+      },
+      {
+        "file": "luxengine.png",
+        "url": "https://luxengine.com/assets/primary-on-light@3x-BBTlc9TD.png",
+        "unchanged": true
+      },
+      {
+        "file": "aryeo.png",
+        "url": "https://cdn.prod.website-files.com/63da9ce0049e626ceff25b70/63fa88a8f8657172830165bc_Aryeo_Logo_-_Purple_square_white_mark-high_1_256x256.png",
+        "unchanged": true
+      },
+      {
+        "file": "realsee.png",
+        "url": "https://www.realsee.ai/cdn/shop/files/11__02_icon_logo.png?width=200",
+        "unchanged": true
+      },
+      {
+        "file": "hdphotohub.png",
+        "url": "https://cdn.prod.website-files.com/67caf5475ec48839bc4019a2/67caf5475ec48839bc401d3d_HDPHOTOHUB-p-500.png",
+        "unchanged": true
+      }
+    ],
+    "logoRendering": "All original aspect ratios preserved with object-fit:contain; no CSS recoloring/filter. Official CubiCasa white wordmark uses dark tile. Official Agile Lens white icon stays on dark slide. Bubo header paths retain official blue #1685ff and ink #1a1a1a from site CSS.",
+    "build": "One reversible, manual build fades the exact media/v3-fix1/workflow.jpg source under Agile Lens in 700 ms; all company rows remain visible.",
+    "limits": [
+      "Company capability pages verify product scopes; no independent proof of booth attendance or PMRE sponsorship is claimed by this audit.",
+      "Existing separate, attributed Nucleus priority quote is outside this slide and unchanged.",
+      "Dates and capabilities are verified against official sites as served on 2026-11-19."
+    ],
+    "validation": {
+      "lightbox": "PASS: all 92 absolute slots and authored native image/video builds at both 1920x1080 and 1440x900; 134 zoom checks per viewport, centered within 1px, fully inside viewport, contain and natural aspect ratio, source DOM/style restored, resize/navigation close pass. Original baseline offset reproduced.",
+      "substeps": "PASS: 17 slides, 153 forward/backward/repeat/previous-slide restoration checks, including new sponsor build.",
+      "safe70": "PASS: 92 absolute slots, 5971 measured items, zero violations/errors inside centered 1344x756 at 1920x1080.",
+      "visual": "Required read-only preview /root/layout_preview passed layouts at both viewport sizes and sponsor reversal/return. Before/after screenshots remain local in v8u-notes.",
+      "source": "Inline JS parse, branding, asset declarations, logo checksums and git diff whitespace pass. Existing restored Waldorf concierge clip added to module asset list to resolve pre-existing slide.py check failure.",
+      "publication": "None: local story/v8 commit only; no push, ZIP, publish or KB update."
+    }
+  }
+}

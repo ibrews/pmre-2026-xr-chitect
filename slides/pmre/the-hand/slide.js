@@ -2,7 +2,8 @@
 SD.defineSlide({
   id: 'pmre/the-hand',
   frame: 'the-hand.html',
-  steps: 0,
+  manualSteps: true,
+  steps: 1,
   duration: 12,
   assets: ['the-hand.html'],
   provenance: ['ibrews/pmre-2026-xr-chitect media/motion/the-hand.html @310afba'],

@@ -22,12 +22,12 @@
     // overlaps, each a real chapter of the story (same VERIFIED labels as venn.html), revealed as he crosses them
     txt({ x: 960, y: 355 }, 'ov halo fade', at(4.5), 'theater planning');
     txt({ x: 1160, y: 700 }, 'ov halo fade', at(6.6), 'live VR theater');
-    txt({ x: 755, y: 700 }, 'ov halo fade', at(8.6), 'archviz');
-    const pill = E('g', { class: 'pop', style: at(10.2) }, svg);
+    txt({ x: 755, y: 700 }, 'ov halo fade', at(8.4), 'archviz');
+    const pill = E('g', { class: 'pop', style: at(10.7) }, svg);
     E('rect', { x: 790, y: 508, width: 340, height: 76, rx: 38, fill: 'url(#core)' }, pill);
     const core = E('text', { x: 960, y: 560, 'text-anchor': 'middle', class: 'core' }, pill); if (FS) core.setAttribute('style', `font-size:${FS.core}px`); core.textContent = 'XR-CHITECT';
     const heroG = E('g', {}, svg), fx = E('g', {}, svg);
-    txt({ x: 960, y: 56 }, 'cap fade', at(11.4), 'BIZARRE OVERLAPS');
+    txt({ x: 960, y: 56 }, 'cap fade', at(11.9), 'BIZARRE OVERLAPS');
     // Icons in each circle's exclusive region (HXR layout, PMRE colors: architecture teal, theater rose, technology purple).
     const A = [640, 470], Tp = [1280, 470], X = [960, 880], C = [960, 508];  // sprite foot positions
     const tmp = PX.temple(icons, A[0], A[1] - 17 * S, S), th = PX.theater(icons, Tp[0], Tp[1] - 12 * S, S), mo = PX.monitor(icons, X[0], X[1] - 14 * S, S);
@@ -43,13 +43,13 @@
       { type: 'hop', t0: T(6.4), t1: T(7.2), a: [1170, 640], b: X, h: 70 },
       { type: 'idle', t0: T(7.2), t1: T(7.6), a: X },
       { type: 'hop', t0: T(7.6), t1: T(8.4), a: X, b: [760, 640], h: 90 },     // Architecture ∩ Technology
-      { type: 'idle', t0: T(8.4), t1: T(8.9), a: [760, 640] },
-      { type: 'hop', t0: T(8.9), t1: T(9.9), a: [760, 640], b: C, h: 150 },    // up onto the center
-      { type: 'idle', t0: T(9.9), t1: END, a: C, face: 1 }
+      { type: 'idle', t0: T(8.4), t1: T(9.4), a: [760, 640] },                 // holds on archviz (a presenter stop in lane-traffic)
+      { type: 'hop', t0: T(9.4), t1: T(10.4), a: [760, 640], b: C, h: 150 },   // up onto the center
+      { type: 'idle', t0: T(10.4), t1: END, a: C, face: 1 }
     ]);
     PX.drive(hero, END, route, SC, o.handoff ? [T(2.6) - .001, T(2.6)] : [T(2.6), T(3.1)]);
     PX.reactArch(tmp, END, T(3.1)); PX.reactTheater(th, END, T(5.1)); PX.reactTech(mo, END, T(7.2));
-    PX.sparkles(fx, END, A[0], A[1] - 60, T(2.7), 21, .8); PX.sparkles(fx, END, Tp[0], Tp[1] - 60, T(5.1), 22, .6); PX.sparkles(fx, END, X[0], X[1] - 50, T(7.2), 23, .6); PX.sparkles(fx, END, 960, 546, T(10.0), 24, 1.3);
+    PX.sparkles(fx, END, A[0], A[1] - 60, T(2.7), 21, .8); PX.sparkles(fx, END, Tp[0], Tp[1] - 60, T(5.1), 22, .6); PX.sparkles(fx, END, X[0], X[1] - 50, T(7.2), 23, .6); PX.sparkles(fx, END, 960, 546, T(10.4), 24, 1.3);
     return { A, circles: cg, hero, SC };
   };
   PX.VENN_LEN = 13.5;

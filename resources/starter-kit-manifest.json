@@ -1,0 +1,62 @@
+{
+  "display_name": "PMRE 2026: free-tools VR real estate second-brain starter kit",
+  "purpose": "Editable learning notes and reusable property/QA/scope templates.",
+  "project": "PMRE 2026",
+  "subject": "Building VR real estate experiences with free tools",
+  "status": "starter kit; checked 2026-11-18; training code remains a placeholder",
+  "included": [
+    "00-start-here.md",
+    "01-tools-and-links.md",
+    "02-property-brief.md",
+    "03-capture-and-qa.md",
+    "04-webxr-and-unreal.md",
+    "05-service-scope.md",
+    "06-experiment-log.md"
+  ],
+  "omitted": "No client assets, software installers, paid entitlements, or secrets.",
+  "source_repository": "https://github.com/ibrews/pmre-2026-xr-chitect",
+  "source_branch": "story/v8",
+  "creation_tool": "tools/build_starter_kit.py",
+  "archive_exception": "User explicitly requested a downloadable Markdown/ZIP kit; complete kit preserves relative links.",
+  "open_instructions": "Extract and open 00-start-here.md in any text/Markdown editor. External links need internet.",
+  "files": [
+    {
+      "path": "00-start-here.md",
+      "bytes": 1618,
+      "sha256": "3a30a8f3aead3cdd07cac3c71b6266f865558b84d4bcf4c00473b49abc5d6ccb"
+    },
+    {
+      "path": "01-tools-and-links.md",
+      "bytes": 2773,
+      "sha256": "7eadd01ea2904ea74dea71830deb12a7b2187ec7b466f098a0a0acebe8411377"
+    },
+    {
+      "path": "02-property-brief.md",
+      "bytes": 738,
+      "sha256": "ff4204e0121c8525eb1f00fba9fa2abf2da1aa8a7a7546b16ee241512551b5e1"
+    },
+    {
+      "path": "03-capture-and-qa.md",
+      "bytes": 1319,
+      "sha256": "0a69b000c9107b3324a314e5b58369e5b9332af1adba957cd894e6c8df0e7676"
+    },
+    {
+      "path": "04-webxr-and-unreal.md",
+      "bytes": 2063,
+      "sha256": "e67cff10509fa4146af3c5a94c52222921d44accec26b6839abd9ad5b08dd2e2"
+    },
+    {
+      "path": "05-service-scope.md",
+      "bytes": 1304,
+      "sha256": "88e891b2a415417fc6d84ef268a053a489d9ef52235338b6ccce388f1d8675ce"
+    },
+    {
+      "path": "06-experiment-log.md",
+      "bytes": 430,
+      "sha256": "3c42d9bb5804a8c44fab8449ad89cdc9c124e645842342f531a8d625995f37c0"
+    }
+  ],
+  "payload_file_count": 7,
+  "payload_byte_count": 10245,
+  "whole_archive_checksum": "SHA-256 in adjacent .zip.sha256 sidecar."
+}

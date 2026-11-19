@@ -1,3 +1,20 @@
+// A presenter-controlled framing study on a supplied architectural visualization.
+function pmreArchitectureCamera(s,p,ctx){
+ s.innerHTML=`<div class="ct-wrap ct-architecture"><div class="ct-head"><h2 class="case-title">${p.title}</h2><p>Your lens. Your framing. Your story.</p></div><div class="ct-main"><div class="ct-left"><svg class="ct-plan" viewBox="0 0 400 400" aria-label="Schematic room and camera position"><path d="M30 350V45H370V350M30 140H120V45M280 45V150H370" fill="none" stroke="#d7b668" stroke-width="12"/><path d="M65 45H240M370 185V290" stroke="#9cb9b4" stroke-width="6"/><rect x="140" y="160" width="125" height="70" rx="10" fill="#635744"/><rect x="140" y="270" width="125" height="26" rx="6" fill="#8d7b5a"/><path class="ct-fr" d="M200 340L90 70H320Z" fill="#d7b6681c" stroke="#d7b668" stroke-width="3"/><g class="ct-cam" transform="translate(200 340)"><circle r="18" fill="#d7b668"/><rect x="-10" y="-7" width="20" height="14" rx="3" fill="#211d19"/></g><text x="200" y="390" text-anchor="middle" fill="#d7b668" font-size="18">FRAMING STUDY</text></svg><p class="ct-instruction">1 · Reframe<br>2 · Choose the crop<br>3 · Keep the shots</p><p class="ct-source">${p.architectureLabel}</p></div><div class="ct-right"><div class="ct-view"><canvas aria-label="Camera framing of the Xiqu architectural visualization"></canvas><div class="ct-hud"></div></div><div class="ct-strip">${[0,1,2].map(i=>`<div class="ct-frame"><span>${'ABC'[i]}</span></div>`).join('')}</div></div></div></div>`;
+ const q=k=>s.querySelector(k),canvas=q('canvas'),g=canvas.getContext('2d'),view=q('.ct-view'),hud=q('.ct-hud'),frames=[...s.querySelectorAll('.ct-frame')],im=new Image();let gen=0,active=false;
+ let pose={f:35,x:.5,y:.5,mask:0},step=0;
+ canvas.width=1280;canvas.height=720;
+ function paint(target=canvas,c=pose){const d=target.getContext('2d'),W=target.width,H=target.height;if(!im.naturalWidth)return;const zoom=Math.max(1,c.f/35),ratio=W/H;let w=Math.min(im.width,im.height*ratio)/zoom,h=w/ratio;const x=Math.max(0,Math.min(im.width-w,c.x*im.width-w/2)),y=Math.max(0,Math.min(im.height-h,c.y*im.height-h/2));d.drawImage(im,x,y,w,h,0,0,W,H);if(c.mask){d.fillStyle='#000';const bar=(H-W/2.39)/2*c.mask;d.fillRect(0,0,W,bar);d.fillRect(0,H-bar,W,bar);}}
+ function draw(){paint();hud.textContent=`${Math.round(pose.f)} mm · ${pose.mask>.5?'2.39 crop':'16:9'}`;q('.ct-cam').setAttribute('transform',`translate(${200+(pose.x-.5)*220} ${340-(pose.f-35)*.5})`);view.classList.toggle('masked',pose.mask>.5);}
+ function shutter(){if(ctx.instant)return;try{const a=ctx.audio();if(!a)return;const t=a.currentTime,b=a.createBuffer(1,Math.ceil(a.sampleRate*.12),a.sampleRate),v=b.getChannelData(0);let seed=117;for(let i=0;i<v.length;i++){const z=i/a.sampleRate;seed=(Math.imul(seed,1664525)+1013904223)|0;const noise=(seed>>>0)/2147483648-1;v[i]=noise*(Math.exp(-z*100)+.4*Math.exp(-Math.abs(z-.055)*180));}const src=a.createBufferSource(),gain=a.createGain(),f=a.createBiquadFilter();src.buffer=b;f.type='highpass';f.frequency.value=1500;gain.gain.value=.018;src.connect(f);f.connect(gain);gain.connect(a.destination);src.start(t);}catch(_){}}
+ function move(next,instant=ctx.instant){const token=++gen,from={...pose};if(instant){pose={...next};draw();return;}ctx.clock.loop(t=>{if(token!==gen||!active)return false;const u=Math.min(1,t/.7),e=u*u*(3-2*u);for(const k of ['f','x','y','mask'])pose[k]=from[k]+(next[k]-from[k])*e;draw();return u<1;});}
+ const setups=[{f:24,x:.5,y:.5,mask:1},{f:50,x:.43,y:.51,mask:1},{f:85,x:.67,y:.47,mask:1}];
+ function take(i){const c=document.createElement('canvas');c.width=640;c.height=360;paint(c,setups[i]);frames[i].style.backgroundImage=`url(${c.toDataURL('image/jpeg',.9)})`;frames[i].querySelector('span').textContent=`${'ABC'[i]} · ${setups[i].f} mm`;frames[i].classList.add('masked');}
+ function restore(n){ctx.clock.stop();gen++;step=n;pose={f:n?85:35,x:n?.67:.5,y:n?.47:.5,mask:n>=2?1:0};frames.forEach((f,i)=>{f.style.backgroundImage='';f.classList.remove('masked');f.querySelector('span').textContent='ABC'[i];});if(n>=3)setups.forEach((_,i)=>take(i));draw();}
+ im.onload=()=>restore(step);im.src=p.architecture;
+ return{enter(){active=true;restore(0);},step(n){step=n;shutter();if(n===1)move({f:85,x:.67,y:.47,mask:0});else if(n===2)move({...pose,mask:1});else if(n===3){if(ctx.instant)setups.forEach((_,i)=>take(i));else setups.forEach((_,i)=>ctx.clock.after(i*240,()=>{take(i);frames[i].animate([{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'none'}],{duration:500,easing:'ease-out'});}));}},restore(n){active=true;restore(n);},leave(){active=false;gen++;ctx.clock.stop();},staticFrame(){restore(3);}};
+}
+
 /* pmre/camera-toy: a concept demo of choosing a shot inside a virtual set. A top-down plan of a simple set (two actors,
    a lamp, a backdrop) with a camera you can drag; 24/35/50/85 mm lens buttons; a 2.39 mask; "Take shot" fills a
    three-frame strip. The viewfinder is three.js when WebGL and the vendored module load, else a 2D pinhole projection of
@@ -12,6 +29,7 @@
    and then overwritten; colors of the UI come from the look (var(--teal), var(--text)); text is props. */
 SD.defineSlide({
   id: 'pmre/camera-toy',
+  manualSteps: true,
   steps: 3,
   duration: 3.2,
   props: {
@@ -51,8 +69,10 @@ SD.defineSlide({
 .sd-mod-pmre-camera-toy .ct-frame.flash{animation:sdCtFlash .5s ease-out}
 @keyframes sdCtFlash{0%{filter:brightness(3)}100%{filter:brightness(1)}}
 .sd-mod-pmre-camera-toy .ct-badge{position:absolute;right:0;top:0;font-size:calc(.95*var(--vw));font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber,#fde68a);border:1.5px solid var(--amber,#fde68a);padding:.35em .8em;border-radius:999px}
+.ct-architecture .ct-instruction{font:500 30px/1.7 var(--font);color:var(--text);margin:0}.ct-architecture .ct-source{font:22px/1.3 var(--font);color:var(--dim);margin:0}.ct-architecture .ct-main{grid-template-columns:23% 1fr}.ct-architecture .ct-view,.ct-architecture .ct-view.masked{aspect-ratio:16/9}.ct-architecture .ct-frame,.ct-architecture .ct-frame.masked{aspect-ratio:16/9}.ct-architecture .ct-left{gap:20px}.ct-architecture .ct-plan{max-height:340px}.sd-mod-pmre-camera-toy .ct-architecture{bottom:18%}.ct-architecture .ct-right{min-height:0}.ct-architecture .ct-view,.ct-architecture .ct-view.masked{flex:1;min-height:0;aspect-ratio:auto}.ct-architecture .ct-view canvas{object-fit:contain}.ct-architecture .ct-strip{height:140px;flex:none}.ct-architecture .ct-frame,.ct-architecture .ct-frame.masked{height:100%;width:31%;aspect-ratio:auto}
 `,
   render(s, props, ctx) {
+    if(props.architecture)return pmreArchitectureCamera(s,props,ctx);
     const LENSES = props.lenses;
     s.innerHTML = `<div class="ct-wrap"><div class="ct-head"><h2 class="case-title">${props.title || ''}</h2>${props.subtitle ? `<p>${props.subtitle}</p>` : ''}</div>
     <div class="ct-main"><div class="ct-left"><svg class="ct-plan" viewBox="0 0 400 400" aria-label="Top-down plan of the set: drag the camera"></svg>
@@ -136,7 +156,7 @@ SD.defineSlide({
     }
     // Every state change goes through act(): it runs after the viewfinder is ready, and a generation counter drops work
     // queued before the latest enter() (going back to the slide mid-load must not replay stale clicks).
-    let gen = 0; const act = fn => { const g = gen,instant=ctx.instant; ready.then(() => { if (g === gen) {const old=ctx.instant;ctx.instant=instant;try{fn();}finally{ctx.instant=old;}} }); };
+    let gen = 0; const act = (fn,instant=ctx.instant,motion=false) => { const g = gen; return ready.then(() => { if (g === gen) {const old=ctx.instant;ctx.instant=instant;try{if(motion)SDStepMotion.run(s,fn,instant);else fn();}finally{ctx.instant=old;}} }); };
     let drag = false; const toPlan = e => { const b = plan.getBoundingClientRect(); return { x: Math.max(30, Math.min(370, (e.clientX - b.left) / b.width * 400)), y: Math.max(215, Math.min(370, (e.clientY - b.top) / b.height * 400)) }; };
     plan.addEventListener('pointerdown', e => { drag = true; try { plan.setPointerCapture(e.pointerId); } catch (_) {} Object.assign(st, toPlan(e)); act(draw); });
     plan.addEventListener('pointermove', e => { if (drag) { Object.assign(st, toPlan(e)); act(draw); } });
@@ -151,14 +171,16 @@ SD.defineSlide({
       drawPlan(); act(draw);
     }
     const STEPS = {
-      1() { act(() => { Object.assign(st, { f: 85, x: 215, y: 365 }); draw(); }); },
-      2() { act(() => { st.mask = true; draw(); }); },
-      3() { act(() => SETUPS.forEach((u, i) => { const shot = () => { Object.assign(st, u); take(); }; if (ctx.instant) shot(); else ctx.clock.after(i * 900, shot); })); },
+      1() { act(() => { Object.assign(st, { f: 85, x: 215, y: 365 }); draw(); },ctx.instant,true); },
+      2() { act(() => { st.mask = true; draw(); },ctx.instant,true); },
+      3() { act(() => SETUPS.forEach((u, i) => { const shot = () => SDStepMotion.run(s,()=>{ Object.assign(st, u); take(); },ctx.instant); if (ctx.instant) shot(); else ctx.clock.after(i * 900, shot); })); },
     };
     reset();
     return {
       enter: reset,
       step(n) { STEPS[n] && STEPS[n](); },
+      restore(n,animate) { gen++;return act(()=>{Object.assign(st,HOME,{mask:n>=2,shots:0});frames.forEach((f,i)=>{f.style.backgroundImage='';f.classList.remove('masked','flash');f.querySelector('span').textContent='ABC'[i];});if(n>=1)Object.assign(st,{f:85,x:215,y:365});if(n>=3)SETUPS.forEach(u=>{Object.assign(st,u);take();});else draw();},true); },
+      leave(){gen++;},
       // Final frame: mask on, all three shots in the strip, camera back home so the viewfinder and the plan agree.
       staticFrame() { reset(); act(() => { st.mask = true; SETUPS.forEach(u => { Object.assign(st, u); take(); }); Object.assign(st, HOME); draw(); }); },
     };

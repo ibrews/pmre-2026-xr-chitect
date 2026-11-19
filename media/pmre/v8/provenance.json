@@ -1,0 +1,149 @@
+{
+  "created_utc": "2026-11-18",
+  "conference_quotes": "Exact wording/attribution supplied by Alex in the v8 task; Jen wording cross-checked against canonical raw notes. yesterday is authorized presenter-relative wording.",
+  "dave": {
+    "sources": [
+      "https://aviationaircraftphoto.com/"
+    ],
+    "verified": "aviation photography, aircraft interiors/exteriors and 3D aircraft tours",
+    "venn": "Editorial grouping: photography, aviation, spatial media"
+  },
+  "devon": {
+    "sources": [
+      "https://www.pmreconference.com/presenters",
+      "https://narwhalcreative.ca/about/",
+      "https://windsorrealestatephotography.com/about/"
+    ],
+    "verified": "Narwhal Creative director/principal photographer; PMRE bio describes rap videos, cinematic one takes, sketches and agent visibility.",
+    "venn": "Editorial grouping: photography, performance, marketing"
+  },
+  "via": {
+    "status": "Company NOT VERIFIED; omit company and corporate role",
+    "shown": "Via Lloyd-George, Charleston, architect — supplied by Alex",
+    "queries": [
+      "Via Lloyd-George",
+      "Via Lloyd George Charleston",
+      "Via Mi Design",
+      "Via architect Giraffe360"
+    ],
+    "note": "Earlier raw note says Giraffe360; latest task says unsure. Neither published."
+  },
+  "nucleus": {
+    "status": "RESOLVED — visibly attributed vendor claim, per Alex",
+    "quote": "first 3DGS platform approved to publish immersive experiences directly into Zillow's 3D tour ecosystem",
+    "source": "https://www.nucleus4d.com/",
+    "scope": "Exact wording supplied by Alex; current rendered homepage confirms Zillow/realtor.com publication but does not contain the exact first sentence. Not an independent priority finding."
+  },
+  "article": {
+    "url": "https://arinsider.co/2026/06/10/lake-austin-luxury-how-a-developer-presold-500m-in-real-estate-with-vr/",
+    "method": "Playwright headless Google Chrome; actual article title hero bounding-box screenshot; no image reconstruction",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "clip": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 573.53125,
+      "top": 0,
+      "right": 1440,
+      "bottom": 573.53125,
+      "left": 0
+    },
+    "captured_utc": "2026-11-19T07:19:44.044Z",
+    "asset": "media/pmre/v8/emily-olman-arinsider-four-seasons.png",
+    "bytes": 501015,
+    "sha256": "b99f33f203e2d19cd43642c1db26682e45266a404e831753109d666131f2a139",
+    "credit": "Emily Olman / AR Insider",
+    "published": "2026-06-10",
+    "updated": "2026-08-03"
+  },
+  "cotton_video_followup": {
+    "source": "/Users/alex/Archives/pmre2026-2026-10/cotton-muted.mp4",
+    "packaged": "media/pmre/v8/cotton-muted.mp4",
+    "sha256": "04f0d9d3c37833fa79b3d1998f5efc12df2b790ec2325d82c6a78727267b250b",
+    "bytes": 16413671,
+    "duration_seconds": 56.8,
+    "codec": "h264",
+    "audio_streams": 0,
+    "processing": "Byte-for-byte copy; no re-encode",
+    "playback": "Silent autoplay on slide entry; loop; existing still retained as poster"
+  },
+  "november_19_followup": {
+    "authorized_by": "Alex, November 19, 2026 task",
+    "mia_repository": "https://github.com/ibrews/mia-2026-collective-pitch",
+    "mia_commit": "9ee2493da4fb63e0bd2110398817383369411f22",
+    "reuse": "Slide 2 speaker implementation and props; slide 3 monocle geometry and client orbit placement adapted to silent radial labels. No drone sound implementation copied.",
+    "studio_copy": "Exact props equality against published main v5/talk/sections.js and story/v5 831b760",
+    "photos": [
+      {
+        "source": "/Users/alex/Desktop/PMRE VR/autodesk-university-alex-coulombe-class_orig.jpg",
+        "asset": "au-queue.jpg",
+        "size": [
+          750,
+          563
+        ],
+        "source_bytes": 119703,
+        "web_bytes": 93807,
+        "method": "progressive JPEG quality 88"
+      },
+      {
+        "source": "/Users/alex/Desktop/PMRE VR/experiencing-a-theater_orig.jpg",
+        "asset": "wisconsin-theater.jpg",
+        "size": [
+          1100,
+          619
+        ],
+        "source_bytes": 158372,
+        "web_bytes": 122771,
+        "method": "progressive JPEG quality 88"
+      },
+      {
+        "source": "/Users/alex/Desktop/PMRE VR/speaking/alex speaking italy.jpg",
+        "asset": "speaking-italy.jpg",
+        "size": [
+          1200,
+          675
+        ],
+        "source_bytes": 197143,
+        "web_bytes": 179728,
+        "method": "progressive JPEG quality 88"
+      },
+      {
+        "source": "/Users/alex/Desktop/PMRE VR/speaking/alex speaking unreal.jpg",
+        "asset": "speaking-unreal.jpg",
+        "size": [
+          1179,
+          781
+        ],
+        "source_bytes": 47289,
+        "web_bytes": 47289,
+        "method": "original already smaller; preserve original JPEG quality"
+      },
+      {
+        "source": "/Users/alex/Desktop/PMRE VR/speaking/speaking ial.jpg",
+        "asset": "speaking-ial.jpg",
+        "size": [
+          1125,
+          844
+        ],
+        "source_bytes": 281603,
+        "web_bytes": 224318,
+        "method": "progressive JPEG quality 88"
+      },
+      {
+        "source": "/Users/alex/Desktop/PMRE VR/speaking/speaking.jpg",
+        "asset": "speaking-stage.jpg",
+        "size": [
+          1125,
+          844
+        ],
+        "source_bytes": 84523,
+        "web_bytes": 84523,
+        "method": "original already smaller; preserve original JPEG quality"
+      }
+    ],
+    "display": "No provenance captions on the new images; alt text and speaker notes retain context."
+  }
+}

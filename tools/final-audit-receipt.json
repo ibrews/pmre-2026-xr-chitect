@@ -1,0 +1,101 @@
+{
+  "source_commit": "a9507f73e48ae161b6176474de3e0261e587e64b",
+  "branch": "story/v8",
+  "local_only": true,
+  "checklist": {
+    "DONE-VERIFIED": 199,
+    "CONFLICT": 9
+  },
+  "baseline": {
+    "DONE-VERIFIED": 155,
+    "LAZY": 25,
+    "CONFLICT": 10,
+    "MISSING": 18
+  },
+  "slides": 99,
+  "visible": 83,
+  "safe_measurements": 6114,
+  "safe_violations": 0,
+  "manual_modules": 27,
+  "manual_states": 90,
+  "navigation_checks": 268,
+  "native_zoom_checks": 298,
+  "frame_zoom_checks": 22,
+  "motion_edges": 126,
+  "motion_snaps": 0,
+  "movies": 24,
+  "checked_images": 113,
+  "errors": 0,
+  "review_artifacts": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit",
+  "runtime": "http://localhost:8765/",
+  "host": "Alexs-MacBook-Pro-3.local / Apple M1 Max",
+  "physical_venue_test": false,
+  "receipt_scope": "Validation-only checkpoint; reviewed implementation is source_commit. No publication.",
+  "evidence": [
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/REPORT.md",
+      "sha256": "cadf4ee480ea532c3569abd66f71b4da0617c1052cda14585c0f243101ba62f4"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/checklist.md",
+      "sha256": "63c2daf0437129545e65dd378c866848f2fa7c5a4f4223bba4cd1b83fbf983fc"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/contact-final.png",
+      "sha256": "e2387f83d38e38ad884209b35261eb771197e1486c84119e241f1279866b2ffa"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/source-manifest.json",
+      "sha256": "f41b72945d501fd1cc595d69c2ba10415cc5182500d8ff22548e815600bccdcb"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/shots/report.json",
+      "sha256": "f3b32c5cb6b9c07154a490f4ecbe1fe6259c7f064e93103195494b03dd543b81"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/shots/steps/report.json",
+      "sha256": "fd294631456480fcfc4283fbdce6f6ccc80699f5f3f16fc9d3fc2957d9a6212d"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/qa-lightbox/report.json",
+      "sha256": "7c4416176d226996ecac0cea495957fe1fe7ff939be38c57ed4a6eb241c3f3f7"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/qa-frame-lightbox/report.json",
+      "sha256": "0a67cca4af323d421ee78e8b4ec613b0d2b94f74104b1a43278475226dee89e9"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/qa-media.json",
+      "sha256": "8f5529252efc3ed4d1c19f3afd09ac996c8b9d2d1267903d0cf02652a7161062"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/qa-montage/montage-report.json",
+      "sha256": "0b07b2713ea2bfb447c1ac7b0e688fed06601dffd3cb98cae8e525539bc648f9"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/qa-motion/report.json",
+      "sha256": "549751266a132e9ac2414906aeeffccbc01b61dd4af8b146422a69f3259573ff"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/qa-native-audio.json",
+      "sha256": "541f6b3bf7dfa420e8b5ff6bafde7ca173095bdd7b3a4e02870ef6e998ffe9aa"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/qa-opener.json",
+      "sha256": "e327be6ac1ccab45f2226c90253a47fc7bfb9a14637617fbbc824c19423a8d04"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/qa-audio-navigation.json",
+      "sha256": "169347a6ed974e567253680bee8e02a35d2656d13c010f620fdf80e904b828bf"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/qa-resource-links.json",
+      "sha256": "1432240f8dc69fa2b95e36036ad776587cca2cd684427e2bfa8b04f2758187e5"
+    },
+    {
+      "path": "/Users/alex/Archives/pmre2026-2026-10/v8z-audit/preview/final-closeout.json",
+      "sha256": "3f985648a633fde17fb20b909f48bd0875c69fe6bd81b80f95ca442c4edf4025"
+    }
+  ],
+  "runtime_index_sha256": "cc1cd7d018f8848fa0712a00fe218eabadb144a74c46c0fa118d65c6fa884650"
+}

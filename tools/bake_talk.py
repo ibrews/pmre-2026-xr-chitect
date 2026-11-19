@@ -22,11 +22,25 @@ while SYNC_GUARD + SYNC_GUARD in s:
 if SYNC_GUARD + "const r=await fetch('notes-config.json'" not in s:
     s = s.replace("const r=await fetch('notes-config.json'", SYNC_GUARD + "const r=await fetch('notes-config.json'", 1)
 
+# Explicit presenter steps must not be consumed by the generic finish-animation shortcut.
+s = s.replace("const r=recs.get(sl),aa=sl.getAnimations", "const r=recs.get(sl);if(r?.def.manualSteps&&r.steps>0)return false;const aa=sl.getAnimations")
+
+# Reversible builds: the baked runtime owns this state restoration contract.
+RESTORE_BUILD = "  // Restore a build from its authored state, rather than leaving animation fill effects and timers behind.\n  SD.restoreStep=function(sl,n){\n    const r=recs.get(sl),ss=slideSteps.get(sl);if(!r||!ss||r.frozen)return false;\n    n=Math.max(0,Math.min(r.steps,n|0));window._killAllSfx();r.ctx.clock.stop();call(r,'leave');\n    sl.getAnimations({subtree:true}).forEach(a=>{if(a.effect?.target!==sl)try{a.cancel();}catch(_){}});\n    const old=r.ctx.instant;r.ctx.instant=true;\n    if(typeof r.inst.restore==='function')call(r,'restore',n);\n    else{call(r,'enter');for(let k=1;k<=n;k++)call(r,'step',k);if(typeof r.inst.complete==='function')call(r,'complete',n);}\n    r.ctx.clock.stop();r.ctx.instant=old;r.cur=n;r.on=true;r.settled=true;r.started=performance.now();ss.current=n;\n    sl.dataset.sdCompletedStep=String(n);sl.classList.add('sd-beat-complete');return true;\n  };\n"
+if 'SD.restoreStep=function' not in s:
+    s=s.replace('  SD.seekSlide=function(i,t)',RESTORE_BUILD+'  SD.seekSlide=function(i,t)',1)
+s=s.replace("return{complete(n){post({type:'complete',n,instant:true});}","return{restore(n){post({type:'restore',n,instant:true});},complete(n){post({type:'complete',n,instant:true});}",1)
+s=s.replace("if(r.on){post({type:'enter'});for(let i=1;i<=r.cur;i++)post({type:'step',n:i,instant:true});}","if(r.on){if(r.settled)post({type:'restore',n:r.cur,instant:true});else{post({type:'enter'});for(let i=1;i<=r.cur;i++)post({type:'step',n:i,instant:true});}}",1)
+s=s.replace('function goPrev(){goTo(nextVisible(current,-1),false);}','function restoreBuild(sl,n){if(window.SD?.restoreStep?.(sl,n))return;const ss=slideSteps.get(sl);if(!ss)return;ss.reset?.();for(let k=0;k<n;k++)ss.steps[k]();ss.current=n;sl.getAnimations({subtree:true}).forEach(a=>{if(isFinite(a.effect?.getComputedTiming().endTime))try{a.finish();}catch(_){}});}\nfunction goPrev(){const ss=slideSteps.get(allSlides[current]);if(window._arrowSubstep!==false&&ss?.current>0){restoreBuild(allSlides[current],ss.current-1);updateStepIndicator();return;}const prev=nextVisible(current,-1);goTo(prev,false);if(window._arrowSubstep!==false)queueMicrotask(()=>{const sl=allSlides[current],st=slideSteps.get(sl);if(st){restoreBuild(sl,st.steps.length);updateStepIndicator();}});}',1)
+
+# A hashchange echoes goTo(current); it must not reset the restored build count.
+s=s.replace('{const _og=goTo;goTo=function(n){window._hidePlaying();','{const _og=goTo;goTo=function(n){if(n===current)return;window._hidePlaying();',1)
+
 # Navigation may close a suspended context before Chrome resolves its pending resume promise.
 # Sound is optional; absorb that asynchronous close/resume race just like synchronous audio failures.
 s = s.replace("_sfxCtx.resume();", "_sfxCtx.resume().catch(()=>{});")
 s = s.replace("_audio.resume();", "_audio.resume().catch(()=>{});")
-talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "journey.js", "motion-fit.js", "safezone.js", "media-fit.js"))
+talk = "\n".join((ROOT / "talk" / f).read_text(encoding="utf-8").strip() for f in ("sections.js", "options.js", "journey.js", "motion-fit.js", "safezone.js", "media-fit.js", "story.js", "motion-sfx.js"))
 
 def patch(marker, anchor, new, count=1):
     """Replace anchor with new unless marker already present."""
@@ -45,6 +59,15 @@ s = s.replace(VIDEO_OLD, VIDEO_NEW, 1)
 # Venue video peak: preserve the complete Aspen clip and audio while keeping the brightest frame below 0.35.
 if 'PMRE_ASPEN_DARK' not in s:
     s=s.replace('</head>', '<style id="PMRE_ASPEN_DARK">video.full-media[src*="holo-aspen.mp4"]{filter:brightness(.94)}</style>\n</head>',1)
+
+# PMRE_FRAME_ZOOM: use the same viewport lightbox for image-rich slide frames.
+if 'window._pmreZoomFrameImage=' not in s:
+    s=s.replace('  function exitFs(){', "  function fsRect(el,frame){const r=el.getBoundingClientRect();if(!frame)return r;const f=frame.getBoundingClientRect(),sx=f.width/frame.contentWindow.innerWidth,sy=f.height/frame.contentWindow.innerHeight;return{left:f.left+r.left*sx,top:f.top+r.top*sy,width:r.width*sx,height:r.height*sy};}\n  function exitFs(){", 1)
+    s=s.replace('const live=a.placeholder.getBoundingClientRect();','const live=fsRect(a.placeholder,a.frame);',1)
+    s=s.replace('function enterFs(el){','function enterFs(el,frame=null){',1)
+    s=s.replace('    const r=el.getBoundingClientRect();\n    const origStyle=', '    const r=fsRect(el,frame);\n    const origStyle=',1)
+    s=s.replace('origRect:r};','origRect:r,frame};',1)
+    s=s.replace("  addEventListener('resize',fitFs);", "  window._pmreZoomFrameImage=function(el,source){const frame=[...document.querySelectorAll('.slide.active iframe')].find(f=>f.contentWindow===source);if(!frame||el.tagName!=='IMG'||!el.complete||activeFs||closingFs||window._moveMode||document.body.classList.contains('annotate-mode'))return false;enterFs(el,frame);return true;};\n  addEventListener('resize',fitFs);",1)
 
 # 1. Content block: first bake replaces the template's SECTIONS..BONUS; later bakes replace between sentinels.
 START, END = "// ── TALK START ──", "// ── TALK END ──"
@@ -92,6 +115,11 @@ if "TALK.closeTitle" not in s:
         "<div class=\"close-qr-row\"><div class=\"qr-card\"><img src=\"talk/qr.png\" alt=\"QR code: ${TALK.qr}\" onerror=\"this.parentNode.style.display='none'\"><div class=\"qr-label\">${TALK.qrLabel}</div><div class=\"qr-badge b-teal\">${TALK.web}</div></div></div>\n") + s[m.end():]
 patch("TALK.mapCenter[0]", "ct.textContent='IS XR RIGHT'", "ct.textContent=TALK.mapCenter[0]")
 patch("TALK.mapCenter[1]", "ct2.textContent='FOR YOUR PROJECT?'", "ct2.textContent=TALK.mapCenter[1]")
+
+# The first organizational slot can host the speaker module without moving studio URL #3.
+INTRO_ANCHOR='  deck.appendChild(ls);allSlides.push(ls);lessonIdxs.push(allSlides.length-1);'
+if 'if(sec.introLesson)' not in s:
+    s=s.replace(INTRO_ANCHOR,"  if(sec.introLesson){ls.classList.remove('slide-lesson');ls.classList.add('case-slide');ls.innerHTML='';SD._build(ls,sec.lesson,sec); }\n"+INTRO_ANCHOR,1)
 
 # 4. Presenter notes for cover/close/map/bonus come from TALK/BONUS.
 patch("BONUS.notes)return BONUS.notes;",  # marker = the inserted text, so re-bakes do not stack copies
@@ -152,13 +180,11 @@ function arm(sl){if(!sl)return;sl.querySelectorAll('iframe[data-motion-base]').f
 function rest(sl){if(!sl)return;sl.querySelectorAll('iframe[data-motion-base]').forEach(f=>{f.setAttribute('src',f.dataset.motionBase+'?static');});}
 let last=null;new MutationObserver(()=>{const a=document.querySelector('#deck .slide.active');if(a!==last){rest(last);arm(a);last=a;}}).observe(document.getElementById('deck'),{subtree:true,attributes:true,attributeFilter:['class']});
 const a0=document.querySelector('#deck .slide.active');if(a0){arm(a0);last=a0;}
-// Sound cues: a motion graphic on a live play posts {sdMotionSfx:[{t,kind,pitch}]} (lane-traffic's honks). They are scheduled on the
-// deck's own audio clock (sfxCtx), so goTo() -> _killAllSfx() silences the rest when you leave the slide; ?reduced never plays them.
-addEventListener('message',e=>{const c=e.data&&e.data.sdMotionSfx;if(!Array.isArray(c)||reduced)return;
-  const f=[...document.querySelectorAll('#deck .slide.active iframe')].find(x=>x.contentWindow===e.source);if(!f)return;
-  try{const ctx=sfxCtx(),t0=ctx.currentTime+.05;c.forEach(q=>{if(q.kind!=='honk')return;const p=q.pitch||1,s=t0+q.t,g=ctx.createGain(),lp=ctx.createBiquadFilter();
-    lp.type='lowpass';lp.frequency.value=2200;lp.connect(g);g.connect(ctx.destination);g.gain.setValueAtTime(0,s);g.gain.linearRampToValueAtTime(.09,s+.012);g.gain.setValueAtTime(.09,s+.23);g.gain.linearRampToValueAtTime(0,s+.28);
-    [350,440].forEach(f0=>{const o=ctx.createOscillator();o.type='square';o.frequency.value=f0*p;o.connect(lp);o.start(s);o.stop(s+.3);});});}catch(err){}});
+// Only the active frame may schedule original procedural cues on the deck audio clock.
+addEventListener('message',e=>{const cues=e.data&&e.data.sdMotionSfx;if(!Array.isArray(cues)||reduced||!window._sdSoundAllowed())return;
+ const f=[...document.querySelectorAll('#deck .slide.active iframe')].find(x=>x.contentWindow===e.source);if(!f)return;
+ try{const ctx=sfxCtx();if(!ctx)return;const start=ctx.currentTime+.02;for(const q of cues){const pcm=SDMotionSfx.samples(q,ctx.sampleRate),buf=ctx.createBuffer(1,pcm.length,ctx.sampleRate);buf.copyToChannel(pcm,0);const src=ctx.createBufferSource();src.buffer=buf;src.connect(ctx.destination);src.start(start+q.t);}}catch(_){}
+});
 })();
 </script>
 """

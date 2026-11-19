@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Career ring — motion</title>
+<!-- Spatial Deck slide module pmre/ring-chapter (PMRE v5). Outer ring = years 2005–2026 with a marker that travels from
+     props.from to props.year; inner Venn = architecture / theater / technology weights for that year. Large chapter-break
+     version of the corner tracker. ?static / reduced motion = final frame. -->
+<style>
+:root{--bg:#060810;--text:#f0f4ff;--dim:rgba(240,244,255,.55)}
+html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:'Space Grotesk','Inter','Avenir Next','Helvetica Neue',system-ui,sans-serif}
+svg{width:100%;height:100%;display:block}
+.fade{opacity:0;animation:fade .8s ease var(--t,0s) forwards}
+.out{animation:out .6s ease var(--t,0s) forwards}
+@keyframes fade{to{opacity:1}}
+@keyframes out{to{opacity:0}}
+.kick{font-size:34px;letter-spacing:.32em;fill:var(--dim);font-weight:600}
+.yr{font-size:210px;font-weight:700;fill:var(--text);letter-spacing:-.02em}
+.sub{font-size:46px;fill:var(--text);font-weight:500}
+.tick{font-size:24px;fill:var(--dim)}
+</style></head><body>
+<svg id="s" viewBox="240 135 1440 810" preserveAspectRatio="xMidYMid meet"></svg>
+<script src="../../sd-frame.js"></script>
+<script src="../../kit/sprite.js"></script>
+<script>
+const ICONS=["<rect x=\"-1\" y=\"-20\" width=\"2\" height=\"2\" fill=\"#c4b5fd\"/><rect x=\"-3\" y=\"-18\" width=\"6\" height=\"2\" fill=\"#c4b5fd\"/><rect x=\"-6\" y=\"-16\" width=\"12\" height=\"2\" fill=\"#a78bfa\"/><rect x=\"-9\" y=\"-14\" width=\"18\" height=\"2\" fill=\"#a78bfa\"/><rect x=\"-12\" y=\"-12\" width=\"24\" height=\"2\" fill=\"#9370db\"/><rect x=\"-13\" y=\"-10\" width=\"26\" height=\"2\" fill=\"#a78bfa\"/><rect x=\"-13\" y=\"-8\" width=\"26\" height=\"1\" fill=\"#7c5cbf\"/><rect x=\"-11\" y=\"-7\" width=\"3\" height=\"18\" fill=\"#c4b5fd\"/><rect x=\"-10\" y=\"-7\" width=\"1\" height=\"18\" fill=\"#a78bfa\"/><rect x=\"-5\" y=\"-7\" width=\"3\" height=\"18\" fill=\"#c4b5fd\"/><rect x=\"-4\" y=\"-7\" width=\"1\" height=\"18\" fill=\"#a78bfa\"/><rect x=\"2\" y=\"-7\" width=\"3\" height=\"18\" fill=\"#c4b5fd\"/><rect x=\"3\" y=\"-7\" width=\"1\" height=\"18\" fill=\"#a78bfa\"/><rect x=\"8\" y=\"-7\" width=\"3\" height=\"18\" fill=\"#c4b5fd\"/><rect x=\"9\" y=\"-7\" width=\"1\" height=\"18\" fill=\"#a78bfa\"/><rect x=\"-14\" y=\"11\" width=\"28\" height=\"2\" fill=\"#a78bfa\"/><rect x=\"-15\" y=\"13\" width=\"30\" height=\"2\" fill=\"#9370db\"/><rect x=\"-16\" y=\"15\" width=\"32\" height=\"2\" fill=\"#7c5cbf\"/>", "<rect x=\"-16\" y=\"-18\" width=\"32\" height=\"3\" fill=\"#f59e0b\"/><rect x=\"-16\" y=\"-15\" width=\"3\" height=\"30\" fill=\"#f59e0b\"/><rect x=\"13\" y=\"-15\" width=\"3\" height=\"30\" fill=\"#f59e0b\"/><rect x=\"-15\" y=\"-17\" width=\"30\" height=\"1\" fill=\"#fde68a\"/><rect x=\"-13\" y=\"-15\" width=\"26\" height=\"27\" fill=\"#0a0812\"/><rect x=\"-13\" y=\"-15\" width=\"4\" height=\"25\" fill=\"#dc2626\"/><rect x=\"-9\" y=\"-15\" width=\"3\" height=\"23\" fill=\"#ef4444\"/><rect x=\"-12\" y=\"-15\" width=\"2\" height=\"25\" fill=\"#b91c1c\"/><rect x=\"-7\" y=\"-15\" width=\"2\" height=\"20\" fill=\"#dc2626\"/><rect x=\"9\" y=\"-15\" width=\"4\" height=\"25\" fill=\"#dc2626\"/><rect x=\"6\" y=\"-15\" width=\"3\" height=\"23\" fill=\"#ef4444\"/><rect x=\"10\" y=\"-15\" width=\"2\" height=\"25\" fill=\"#b91c1c\"/><rect x=\"5\" y=\"-15\" width=\"2\" height=\"20\" fill=\"#dc2626\"/><rect x=\"-9\" y=\"-15\" width=\"18\" height=\"3\" fill=\"#dc2626\"/><rect x=\"-7\" y=\"-13\" width=\"14\" height=\"2\" fill=\"#ef4444\"/><rect x=\"-5\" y=\"-11\" width=\"10\" height=\"1\" fill=\"#dc2626\"/><rect x=\"-13\" y=\"12\" width=\"26\" height=\"3\" fill=\"#8b6f47\"/><rect x=\"-13\" y=\"12\" width=\"26\" height=\"1\" fill=\"#a0845c\"/><rect x=\"-1\" y=\"-12\" width=\"2\" height=\"3\" fill=\"rgba(255,255,200,.3)\"/><rect x=\"-2\" y=\"-9\" width=\"4\" height=\"4\" fill=\"rgba(255,255,200,.15)\"/><rect x=\"-4\" y=\"-5\" width=\"8\" height=\"6\" fill=\"rgba(255,255,200,.08)\"/><rect x=\"-6\" y=\"1\" width=\"12\" height=\"6\" fill=\"rgba(255,255,200,.04)\"/>", "<rect x=\"-16\" y=\"-16\" width=\"32\" height=\"24\" fill=\"#1e293b\"/><rect x=\"-14\" y=\"-14\" width=\"28\" height=\"20\" fill=\"#0f172a\"/><rect x=\"-14\" y=\"-14\" width=\"28\" height=\"1\" fill=\"#334155\"/><rect x=\"-3\" y=\"8\" width=\"6\" height=\"4\" fill=\"#475569\"/><rect x=\"-8\" y=\"12\" width=\"16\" height=\"2\" fill=\"#475569\"/><rect x=\"-7\" y=\"12\" width=\"14\" height=\"1\" fill=\"#64748b\"/><rect x=\"-12\" y=\"2\" width=\"24\" height=\"2\" fill=\"#22c55e\"/><rect x=\"-12\" y=\"4\" width=\"24\" height=\"2\" fill=\"#166534\"/><rect x=\"-6\" y=\"-4\" width=\"2\" height=\"2\" fill=\"#60a5fa\"/><rect x=\"-7\" y=\"-2\" width=\"4\" height=\"4\" fill=\"#3b82f6\"/><rect x=\"-7\" y=\"2\" width=\"2\" height=\"1\" fill=\"#1e40af\"/><rect x=\"-5\" y=\"2\" width=\"2\" height=\"1\" fill=\"#1e40af\"/><rect x=\"2\" y=\"-6\" width=\"2\" height=\"2\" fill=\"#fbbf24\"/><rect x=\"7\" y=\"-8\" width=\"2\" height=\"2\" fill=\"#fbbf24\"/><rect x=\"4\" y=\"-2\" width=\"8\" height=\"2\" fill=\"#854d0e\"/><rect x=\"4\" y=\"-2\" width=\"8\" height=\"1\" fill=\"#a16207\"/><rect x=\"-10\" y=\"-12\" width=\"6\" height=\"2\" fill=\"rgba(255,255,255,.15)\"/><rect x=\"5\" y=\"-10\" width=\"4\" height=\"2\" fill=\"rgba(255,255,255,.1)\"/>"];
+const P=SDFrame.props({from:2026,year:2005,kicker:'REWIND',label:'2005',sub:'',venn:[1,1,1],vennFrom:null,dur:2.6,sfx:''});
+const NS='http://www.w3.org/2000/svg',S=document.getElementById('s'),C=[700,540],R=300,Y0=2005,Y1=2026,SWEEP=330;
+const ang=y=>-90+SWEEP*(y-Y0)/(Y1-Y0);
+const pt=(a,r)=>[C[0]+r*Math.cos(a*Math.PI/180),C[1]+r*Math.sin(a*Math.PI/180)];
+const el=(t,a,p=S)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p.append(e);return e;};
+S.setAttribute('aria-label',`Career ring: ${P.label}. Architecture ${P.venn[0]}, theater ${P.venn[1]}, technology ${P.venn[2]}.`);
+// track + year ticks
+el('circle',{cx:C[0],cy:C[1],r:R,fill:'none',stroke:'rgba(240,244,255,.14)','stroke-width':10});
+for(let y=Y0;y<=Y1;y++){const a=ang(y),major=[2005,2008,2010,2013,2016,2020,2023,2026].includes(y),[x1,y1]=pt(a,R-(major?26:14)),[x2,y2]=pt(a,R+(major?26:14));
+ el('line',{x1,y1,x2,y2,stroke:major?'rgba(240,244,255,.7)':'rgba(240,244,255,.3)','stroke-width':major?4:2});
+ if(major){const [tx,ty]=pt(a,R+62);el('text',{x:tx,y:ty+8,'text-anchor':'middle',class:'tick'}).textContent=y;}}
+// progress arc (dash) from 2005 to the marker, animated from `from` to `year`
+const L=2*Math.PI*R*SWEEP/360,frac=y=>(Math.min(Math.max(y,Y0),Y1)-Y0)/(Y1-Y0);
+const arc=el('circle',{cx:C[0],cy:C[1],r:R,fill:'none',stroke:'url(#g)','stroke-width':10,'stroke-linecap':'round',transform:`rotate(-90 ${C[0]} ${C[1]})`,'stroke-dasharray':`${L} ${2*Math.PI*R}`});
+const defs=el('defs',{});const g=el('linearGradient',{id:'g',x1:0,x2:1},defs);[['0','#00d4ff'],['.5','#a78bfa'],['1','#f43f5e']].forEach(([o,c])=>el('stop',{offset:o,'stop-color':c},g));
+arc.animate([{strokeDashoffset:L*(1-frac(P.from))},{strokeDashoffset:L*(1-frac(P.year))}],{duration:P.dur*1000,delay:300,easing:'cubic-bezier(.45,0,.2,1)',fill:'both'});
+// marker
+const mk=el('g',{id:'alex-marker'});const [mx,my]=pt(-90,R);
+const upright=el('g',{transform:`translate(${mx} ${my})`},mk),counter=el('g',{},upright),sprite=el('g',{transform:'translate(0 6) scale(.72)'},counter);PX.avatar(sprite,{withBeard:P.year>=2020});
+counter.animate([{transform:`rotate(${-ang(P.from)-90}deg)`},{transform:`rotate(${-ang(P.year)-90}deg)`}],{duration:P.dur*1000,delay:300,easing:'cubic-bezier(.45,0,.2,1)',fill:'both'});
+mk.style.transformOrigin=`${C[0]}px ${C[1]}px`;
+mk.animate([{transform:`rotate(${ang(P.from)+90}deg)`},{transform:`rotate(${ang(P.year)+90}deg)`}],{duration:P.dur*1000,delay:300,easing:'cubic-bezier(.45,0,.2,1)',fill:'both'});
+// inner Venn with the three interest icons, sized by weight
+const colors=['#00d4ff','#f43f5e','#a78bfa'],off=[[-62,-40],[62,-40],[0,66]],vf=P.vennFrom||P.venn;
+P.venn.forEach((w,i)=>{const x=C[0]+off[i][0],y=C[1]+off[i][1];const grp=el('g',{});grp.style.transformOrigin=`${x}px ${y}px`;
+ const rad=w=>60+80*Math.sqrt(w);el('circle',{cx:x,cy:y,r:rad(1),fill:colors[i],'fill-opacity':.16,stroke:colors[i],'stroke-width':4},grp);
+ const ic=el('g',{transform:`translate(${x+off[i][0]*.55},${y+off[i][1]*.55}) scale(2.4)`,style:'shape-rendering:crispEdges'},grp);ic.innerHTML=ICONS[i];
+ const sc=w=>rad(w)/rad(1);grp.animate([{transform:`scale(${sc(vf[i])})`},{transform:`scale(${sc(w)})`}],{duration:P.dur*1000,delay:300,easing:'cubic-bezier(.45,0,.2,1)',fill:'both'});});
+// copy
+const t=(x,y,cls,txt,d)=>{const e=el('text',{x,y,class:cls+' fade',style:`--t:${d}s`});e.textContent=txt;return e;};
+t(1100,370,'kick',P.kicker,.1);t(1090,580,'yr',P.label,P.dur*.75);
+String(P.sub).split('\n').forEach((line,i)=>t(1100,670+i*60,'sub',line,P.dur*.9));
+const domainAttrs=[];document.querySelectorAll('svg *').forEach(e=>['fill','stroke','stop-color'].forEach(a=>{const v=e.getAttribute(a);if(v&&/#00d4ff|#f43f5e|#a78bfa/i.test(v))domainAttrs.push([e,a,v]);}));
+addEventListener('load',()=>domainAttrs.forEach(([e,a,v])=>e.setAttribute(a,v)),{once:true});
+window.MOTION_SFX=P.year<P.from?[{t:.3,kind:'rewind',duration:2.6}]:[{t:.3,kind:P.sfx||'pass',gain:P.sfx?1:.06,duration:P.dur}];  // sfx:'advance' = audible forward progression
+SDFrame.init({duration:P.dur+1.2,steps:0,onEnter(){if(window.MOTION_SFX.length)parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}});
+</script>
+</body></html>

@@ -1,0 +1,32 @@
+{
+  "source": "Presenter supplied PPTX slide28.xml and media image39\u2013image42.png",
+  "slideSizeEMU": [
+    18288000,
+    10287000
+  ],
+  "zOrder": [
+    39,
+    40,
+    41,
+    42
+  ],
+  "arrivalOrder": [
+    42,
+    40,
+    39,
+    41
+  ],
+  "timing": "PPTX image42 initially visible; then click targets 9 (image40), 5 (image39), 11 (image41). Web gives image42 its own first click.",
+  "image42": {
+    "groupBoundsEMU": [
+      494803,
+      7145136,
+      12070172,
+      2714676
+    ],
+    "cropBottomPercent": 44.632,
+    "redaction": "Retain original Rectangle 3 black mask over recipient name"
+  },
+  "optimization": "Lossless WebP, original pixels preserved; PPTX crop applied in CSS.",
+  "sourceNotes": "As someone who has been working in VR for over ten years now, it\u2019s still a relatively small community, when an exciting new project comes about it starts to permeate the ether. Around this time last year I started to hear rumblings of a luxury real estate project that was looking to create a mindblowing VR showroom experience\u2026 from people like Shane Scranton of IrisVR, Paul Debevec, Kim Baumann Larsen, Jeff Mottle, and it was finally Vikas Reddy and Jeff Powers who connected me with Jonathan for a conversation about what he was trying to pull off. I loved the scope and ambition and we got to work,"
+}

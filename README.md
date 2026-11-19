@@ -1,77 +1,59 @@
-> **PMRE venue default:** use cut20t PowerPoint + separate videos. Web defaults to `?cut=20t&safe=70&theme=house`. [Venue delivery and cut limits](README-VENUE.md).
+## PMRE v8 — speaker, studio wheel and story photos
 
-# Architect to XR-chitect: The Best Career Advice I Ever Ignored
+Source: `story/v8`; publish only the `/v8/` subtree. Root and `/v3/` through `/v7/` are preserved. Conference quotes now appear on slides; attendee Venn spotlights, an attributed Nucleus4D claim and Emily Olman’s AR Insider Four Seasons header capture are included. Via’s company could not be verified and is omitted. Cotton now plays Alex’s supplied, audio-free H.264 clip without re-encoding, looping silently with the original still as poster. Source details: `media/pmre/v8/provenance.json`.
 
-**Alex Coulombe at PMRE 2026** (Photo + Media for Real Estate), Palms Casino Resort, Las Vegas, Thursday, November 19, 11:00 am. The talk follows one winding career through architecture, theater and VR, and connects it to the craft of real-estate photographers and videographers.
+November 19: slide #2 reuses the MIA speaker intro (Co-Founder; 350+ classes), including a bulky first headset replaced by the compact VR power-up. Slide #3 restores v5’s exact studio copy beside MIA’s silent 18-client wheel. Presenter-supplied AU queue, Wisconsin theater and speaking photos are web optimized without visible provenance captions. There are 92 absolute slide slots; three new visible beats add to the default full story.
 
-**▶ View the deck:** https://ibrews.github.io/pmre-2026-xr-chitect/
+Package with `python3 tools/package_offline.py --out <organizer-package>`; verify the extracted ZIP using `node tools/qa_v8.mjs ROOT OUT chrome|firefox` and `tools/qa_v7_resources.mjs`. No Drive upload. The existing main-only PMRE20 offer update is retained.
 
-The deck is built on [Spatial Deck](https://github.com/ibrews/spatial-deck), a single-file HTML presentation framework.
+# Architect to XR-chitect
 
-## Quickstart
+Alex Coulombe Presents at PMRE 2026, November 19, Las Vegas. V8 extends v7 and follows Alex’s November 18 notes and local talkthrough, from architecture/theater/technology to practical spatial-media services and premium collaboration with Agile Lens.
 
-```bash
-git clone https://github.com/ibrews/pmre-2026-xr-chitect
-open pmre-2026-xr-chitect/index.html
+[Present v8](https://ibrews.github.io/pmre-2026-xr-chitect/v8/) · [Free starter guide and links](https://ibrews.github.io/pmre-2026-xr-chitect/v8/resources/)
+
+## Present locally on Windows
+
+Extract **all** files from the offline ZIP, then double-click `index.html` and open it in Chrome or Firefox. No Python, server or internet is required for the presentation. Keep its folders together. Press F11 for full screen; arrows advance; O opens the cut/theme options; Shift+N shows notes. The QR destination and external resource links need internet on the viewer’s device.
+
+Full is the default and deliberately overcomplete: its 65:11 authored budget exceeds the 60-minute slot. Use a medium or short cut when allowing time for Q&A. Medium and short cuts remain selectable. These are authored rehearsal budgets, not a measured performance; see `talk/REHEARSAL.md` for the current order and timing. All length cuts retain the three-beat ending: how spatial media changes property work; start building and selling; collaborate on premium briefs. The final slide has one QR plus Q&A. The final QR opens the Welcome PMRE Attendees hub (password `pixie`, a playful client-side gate, not security), including a real Markdown/ZIP second-brain kit, 1:1/company training offer (20% off; use `PMRE20` at alexcoulombepresents.com/pmre), project details and the full deck.
+
+## Author and package
+
+Source branch: `story/v8`. Edit `talk/sections.js` and slide modules, then run:
+
+```sh
+python3 tools/bake_talk.py
+python3 tools/slide.py check
+python3 tools/check_branding.py
 ```
 
-There's no build step. Arrow keys or clicks advance the slides.
+Runtime dependencies are local classic scripts, relative HTML frames, fonts and media. No JSON is fetched for local presentation. The camera concept uses its built-in 2D projection over `file://`; the normal served version can use its vendored Three.js renderer. Optional cloud notes sync is opt-in.
+
+After committing all required runtime assets (including media ignored by `.gitignore`):
+
+```sh
+python3 tools/package_offline.py --out /absolute/path/to/organizer-package
+node tools/qa_v8.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-chrome chrome
+node tools/qa_v8_followup.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-followup
+node tools/qa_v8.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-firefox firefox
+node tools/qa_v7_resources.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-hub chrome
+```
+
+`qa_v8.mjs` uses system Chrome and installed `playwright-core` (set `PLAYWRIGHT_CORE` if needed). It checks every absolute slide, including hidden structural slides, over ordinary `file://`, records console/page/network/media failures, captures visible slides and checks all length/AI combinations. It does not pass security-bypass flags. ZIPs include a file-hash manifest, opening instructions and an external SHA-256 sidecar. Do not upload to Drive until Alex requests it.
+
+Publish by copying the committed source tree into the **`/v8/` directory on main**, preserving root and `/v3/` through `/v7/`. Compare source and destination tracked paths after copying: nested `.gitignore` rules can silently omit force-tracked media. Public project credits remain in notes and meaningful media credits; no source-deck captions are added.
 
 ## Things to Try
 
-1. Open the deck and press **→** through the opening. Right after the chapter card, 8-bit Alex walks in and powers up with a headset (→ again for the bio, the Unreal power-up with fireballs, and the stat cards), then the Agile Lens monocle orbit counts back to 2016 over five clicks. The "Pick a lane" motion graphic follows, and every one of these replays each time you land on its slide. Turn the intro off with `?intro=none`, or keep just the power-up with `?intro=alex`. The "Pick a lane" slide is now `lane-traffic` (sound on: pixel Alex dodges honking traffic across the three lanes, then the roads curl into the Venn: "Reframe it."). Other versions to compare: `?lanemotion=original` (no sprite), `?lanemotion=sprite` (pixel Alex walks the lane and collects the temple, stage and monitor power-ups), `?lanemotion=venn` (he bounces through the HarvardXR Venn) and `?lanemotion=lanevenn` (the lane curls into the Venn).
-2. Press **O** to open the options picker. You can switch the opening, the thesis line, the close, the length (full ~69 min, medium ~57 min, short ~36 min, trimmed short 34:30) and the look: House (theater program, the default), Drawing set, Folio or Noir (the original), from the Spatial Deck style library in `styles/`. Your picks are saved in your browser.
-3. Use `index.html?cut=20t` for cut20 minus the 60-second illustrative scale motion (34:30 talk + 15 min Q&A = 49:30). Existing cuts keep their content and timings. Try a combination straight from the URL: `index.html?open=question&thesis=b&cut=30&theme=sheet`.
-4. Press **N** for the presenter-notes popup, or open `index.html?notes` on a phone for the speaker companion.
-5. Watch the bottom-right corner as you move through the chapters: pixel Alex walks a tiny braided road to each chapter's stop, gets his headset on the 2013 card, takes it off on the 2020 card to reveal his pandemic beard, and waves on the close. `?journey=map` keeps the minimap without the hop-outs; `?journey=off` removes him. Open `index.html?reduced` to see each motion graphic as its final frame with Alex simply placed at his stop (the reduced-motion mode; it also works offline).
-6. Go to the 2025 chapter, "Capturing Places That Don’t Exist" (after the holodeck timeline). Three clicks on **Cut Your Own Version of the Show** walk the A Christmas Carol VR recording to your camera (50 mm), your credited shot and the working cut in 2.39. Then **Find the Shot**: three clicks switch to 85 mm, add the 2.39 mask and take a wide, a two-shot and a close-up. Between clicks, drag the camera on the plan or press the lens buttons yourself; the deck will not advance while you play. The viewfinder is real 3D when the deck is served over http; opened from a file it draws a flat version of the same set.
-7. Open `index.html?safe=70&safezone` to see the deck the way PMRE's concave 1920×1080 screen needs it: each slide's content fitted to the centered 1344×756 safe zone (dashed box) as large as it will go, background still full-frame. The same toggle is in the **O** picker as "Venue safe zone".
-8. Build the organizer package (PowerPoint + separate MP4s + cue sheet + checks) in one command: `PLAYWRIGHT_CORE=/Users/alex/GH/xrsim/node_modules/playwright-core node tools/export_venue_package.mjs --cuts 20,30`. SVG parts have unique package names, including repeated artwork, so PowerPoint can open without a duplicate-part repair. It walks every slide and substep in safe-zone mode, re-renders only the animations that changed, and exits 1 with a slide-by-slide list if anything breaks a venue rule.
+1. Open `index.html` without a server, disconnect the network and step through the entire deck.
+2. On #2, click through the speaker intro and watch the bulky headset get replaced; on #3, inspect the silent client wheel. Then click through the lane animation’s four overlap reveals.
+3. Compare virtual and built Macbeth/Brockman images; inspect the restored Waldorf and Geffen galleries without pixel cycling.
+4. Watch the Aspen setup shrink beside the America map while the video continues.
+5. Use the final QR/resources page to download the free guide, then inspect the package/pricing example and collaboration close.
 
-## Four Seasons chapter (2026-10-30)
+## Source and attribution
 
-The default `fs=v2` chapter introduces Lake Austin with the supplied images, reveals **$500M+ presales** and **$870M investment** separately, retains the walkable scale / spike-tape material, maps the traveling holodeck, plays the complete Aspen video, and closes with the Perfect Day Mexico counterpoint. The $870M is the project’s TYKO construction loan; it is not VR revenue. Credits and timestamped source prompts are in the notes (the short timestamped quotes and Mexico questions also survive the PowerPoint stage-note curation) and [media provenance](media/pmre/fs-v2/PROVENANCE.md).
+This talk is built with [Spatial Deck](https://github.com/ibrews/spatial-deck). Media credits and claim sources live in presenter notes and the existing project manifests. New Apple SHARP examples come from the [official research page](https://apple-aiml-research.github.io/ml-sharp/), not a commissioned property survey. Pricing figures are illustrative teaching examples, not vendor rates or Agile Lens quotes.
 
-- New chapter: [`?opt=fs:v2`](https://ibrews.github.io/pmre-2026-xr-chitect/?opt=fs:v2). Original: `?fs=legacy`.
-- Venue short: `?opt=fs:v2&cut=20t&safe=70`. Default `fsbudget=tight` skips four repeated setup cards only for v2 / 20t (ADVICE, 2010, TASTE, YOU); `?fsbudget=all` restores them. No notes or media holds are shortened.
-- Default estimates: **20t 33:45 · 20 41:45 · 30 61:30 · full 72:15**. 20t plus 15 minutes Q&A is 48:45. Medium/full remain rehearsal material. Legacy chapter timing is unchanged.
-- **ALEX TO CONFIRM:** California tour stops, dates and photo; itinerary order; relationship of the older 57th Street montage to the 2026 NYC pop-up; Aspen source audio; Alex’s firsthand Mexico lesson. The map visibly marks California’s missing photo instead of reusing a different location.
-- Fonts and the used Three.js module are local. Optional notes sync loads only with `?sync`. Navigation safely handles Chrome closing a suspended sound context before its resume promise completes. The venue exporter now emits complete local MP4s, with original audio and a safe-zone final-frame poster, alongside seekable motions. Poster extraction retains the last available video frame even when audio ends later. Run `node tools/tests/test_venue_local_video.mjs` for its regression fixture.
-
-Rebuild from this checkout with `python3 tools/bake_talk.py` and `node tools/talk_script.mjs`. Repackage with `PLAYWRIGHT_CORE=/Users/alex/GH/xrsim/node_modules/playwright-core node tools/export_venue_package.mjs --cuts 20t,30 --label 2026-10-30-holodeck` (use the documented `--captured` path when rendering off-host).
-
-## What's in here
-
-| Path | What |
-|---|---|
-| `talk/sections.js` | Talk content and presenter notes. Edit here, then run `python3 tools/bake_talk.py` |
-| `talk/options.js` | The runtime options picker (key **O** or URL params) |
-| `talk/intro.js`, `talk/intro.css` | The two intro slides (layouts `intro-alex` and `intro-lens`), ported from Alex's HarvardXR, FMX and NXT BLD decks. Their text lives in the `intro` / `lens` objects in `sections.js`; `bake_talk.py` splices both files in |
-| `talk/journey.js`, `talk/journey.css` | The journey minimap and persistent pixel Alex (option `journey`), after the HarvardXR keynote's bottom-right tracker. Spliced in by `bake_talk.py`; PPTX PNGs come from `tools/render_journey_png.mjs` into `media/journey/` |
-| `talk/REHEARSAL.md` | Timed run-of-show and full script, generated by `node tools/talk_script.mjs` |
-| `talk/OPTIONS.md` | Every option, each with a one-line pitch |
-| `media/motion/*.html` | Seekable motion graphics (`window.seek(sec)`, `?static`, `?t=N`) |
-| `media/motion/mp4/` | MP4 and poster renders of each motion graphic (`node tools/render_motion.mjs`) |
-| `media/pmre/` | Talk photos and renders, with sources in `PROVENANCE.md` |
-| `tools/export_talk_pptx.py` | Editable PowerPoint export, e.g. `--pick cut=30 --pick thesis=b` |
-| `talk/safezone.js` | Venue safe zone (`?safe=70`, `?safezone` QA box); defines `--safe-inset-x/y` and `--safe-scale` |
-| `tools/export_venue_package.mjs` | PMRE organizer package: `venue_capture.mjs` (drives the rendered deck, one PPTX slide per build state, MP4 per animated state) → `venue_pptx.py` (native text/pictures/SVG over a frame image, clean stage notes) → `venue_checks.py` (safe zone, dark, no embedded media/links, cue files + durations, timing; `--selftest` proves each check fails on a broken copy) |
-| `tools/venue_audit_selftest.mjs` | Proves the baked-in video text audit is not vacuous (full-frame motion text must be flagged, safe-framed must pass). Cross-host renders: run `venue_capture.mjs` on another machine, then `export_venue_package.mjs --captured DIR --cache DIR` |
-
-To pull framework updates: `git remote add upstream https://github.com/ibrews/spatial-deck && git fetch upstream`.
-
-## Credits
-
-**Alex Coulombe Presents.** Built on the open-source [Spatial Deck](https://github.com/ibrews/spatial-deck) framework (see `LICENSE`). Sources for the project imagery are credited in `media/pmre/PROVENANCE.md`.
-
-### Presenter corrective pass (2026-10-31)
-
-Royal Caribbean / Perfect Day Mexico sets up the human-scale lesson before Four Seasons. The travel sequence is Austin, Aspen, DBOX New York, the 57th Street investor pop-up, then California. Image frames follow each source's aspect ratio, including ported canvas substeps. A forward press during a module beat completes that beat; the following press advances. The frame protocol accepts `complete` with the current step number. Speaker wording and new image provenance are in `talk/sections.js` and `media/pmre/round4/PROVENANCE.md`. Cut20t remains 34:10; cut30 remains 72:00 (reference only).
-
-To regression-test rapid navigation at 1920×1080, serve this checkout and run `node tools/qa_step_completion.cjs http://127.0.0.1:8774/ navigation-qa.json`. It visits every slide with registered substeps, presses during each beat, and requires that the completion press stays on the same slide/step before the subsequent press advances.
-
-## Presenter keep/cut review
-
-Press **X** to hide or restore the current slide. Normal forward/back navigation skips local hidden slides. **Shift+X** toggles review navigation through them. The grid keeps them dimmed with struck labels; Ctrl/Cmd-click uses the same persistent hide list. Press **?** for the help overlay. Keys are ignored while typing or using command modifiers.
-
-Choices persist in localStorage for this deck path and browser. **A → Copy All** includes a **HIDDEN SLIDES** section with the deck-counter number, stable content ID and title, even with no other annotations. Paste that list to request a permanent cut. Local choices never alter source defaults, print/shot output, or venue exports; applying a list to source requires an explicit request. Option-group and baked-cut exclusions remain separate.
+V7 adds original XR tiers and plan-to-presence diagrams inspired by Matt Michalski (credited in notes); public product imagery/official specs for Vision Pro M5, Quest 3 and XREAL AURA, plus a generic NDA silhouette for PICO Space Pro; Alex’s Cotton placeholder still and Latest BPI Trailer V2 derivative. Source hashes, number sources and qualifications are in `media/pmre/v7/provenance.json` and the canonical KB v7 receipt. No Drive uploads.

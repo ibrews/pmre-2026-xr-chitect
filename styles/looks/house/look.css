@@ -55,7 +55,8 @@
 :look .grid-stage{gap:8px;padding-top:calc(clamp(30px,calc(3.4*var(--vh)),44px) + 8px)}
 :look .grid-label{background:var(--gold);color:#141110;padding:4px 10px;font-size:var(--t-label);left:0;top:0}
 /* close: curtain call */
-:look .slide[data-type="close"]{background:linear-gradient(90deg,var(--curtain) 0 3.5%,transparent 3.5% 96.5%,var(--curtain) 96.5%)}
+:look .slide[data-type="close"]{background:none}
+:look:has(.slide[data-type="close"].active)::before{content:"";position:fixed;inset:0;z-index:14;pointer-events:none;background:linear-gradient(90deg,var(--curtain) 0 3.5%,transparent 3.5% 96.5%,var(--curtain) 96.5%)}
 :look .close-ey{color:var(--gold);opacity:1;font-size:var(--t-lead)}
 :look .close-title{font-size:calc(var(--t-display)*1.1)}
 :look .close-sub{font-style:italic;font-size:var(--t-lead)}

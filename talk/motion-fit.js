@@ -9,6 +9,15 @@ window.MOTION_FIT = {
   ],
   "src": "208bc3850cfb908c"
  },
+ "film-language": {
+  "box": [
+   0.09,
+   0.04,
+   0.7069,
+   0.96
+  ],
+  "src": "a95d88dc54949101"
+ },
  "frame-to-room": {
   "box": [
    0,
@@ -56,12 +65,12 @@ window.MOTION_FIT = {
  },
  "lane-to-venn": {
   "box": [
-   0.0625,
-   0.0176,
-   0.917,
-   0.9546
+   0.0581,
+   0.0269,
+   0.9265,
+   0.9454
   ],
-  "src": "4e3397b7e988c2a4"
+  "src": "4bf3b0ed3f9aed44"
  },
  "lane-traffic": {
   "box": [
@@ -70,7 +79,7 @@ window.MOTION_FIT = {
    1,
    0.6702
   ],
-  "src": "61116f1e5c3856ed"
+  "src": "76ae1b0a00d0351a"
  },
  "mexico-scale": {
   "box": [
@@ -129,11 +138,11 @@ window.MOTION_FIT = {
  "the-hand": {
   "box": [
    0.0595,
-   0.1148,
-   0.8341,
-   0.8639
+   0.1176,
+   0.8344,
+   0.8602
   ],
-  "src": "5bd1cd02a1995101"
+  "src": "df2ab6807a86154b"
  },
  "timeline": {
   "box": [
@@ -151,7 +160,7 @@ window.MOTION_FIT = {
    0.68,
    0.9328
   ],
-  "src": "49c7abc2fd1a689f"
+  "src": "830bbfe3907513f3"
  },
  "venn-sprite": {
   "box": [

@@ -157,3 +157,5 @@ setTimeout(()=>{
 // Position an element at a specific location
 element.style.cssText = 'position:absolute;left:45%;top:30%;z-index:2';
 ```
+
+> PMRE v4 property-media revision: see `talk/REAL-ESTATE-V4.md`. Author `takeaway` in story-media props; it reserves a second footer line without covering source media. `pmre/property-future` contains three static forecast/service diagrams and optional silent MIA scan footage. Full80:00 / medium43:34 /20t34:29. Actual Vision Pro movie replaces the SplatDiorama simulator still; retain honest web/headset/capture credits and silent derivatives. Main publication is authorized only under `/v4/`, preserving root and `/v3/`.

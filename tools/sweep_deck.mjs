@@ -118,7 +118,7 @@ p.on('response', (r) => {
 });
 
 const q = 'view' + (STEPS && !LIVE ? '&reduced' : '');
-await p.goto(url + (url.includes('?') ? '&' : '?') + q, { waitUntil: 'load' });
+await p.goto(url + (url.includes('?') ? '&' : '?') + q, { waitUntil: 'domcontentloaded', timeout: 120000 });
 // The step indicator and the 'playing' spinner change on every click; hidden so a dead step really looks identical.
 if (STEPS) await p.addStyleTag({ content: '.bg,#stars,#step-indicator,#nav-playing{visibility:hidden!important}' });
 await p.waitForTimeout(2500);
@@ -194,7 +194,7 @@ for (let i = 0; i < total; i++) {
     s.querySelectorAll('img').forEach((im) => { if (!im.complete || !im.naturalWidth) r.badImg.push(im.getAttribute('src')); });
     const vs = [...s.querySelectorAll('video')];
     // Reduced-mode modules intentionally pause their hidden canvas sources. Explicitly prove each clip plays.
-    await Promise.all(vs.map(async v=>{v.muted=true;try{await v.play();}catch(_){}}));
+    await Promise.all(vs.map(async v=>{v.muted=true;try{await Promise.race([v.play(),new Promise(r=>setTimeout(r,2000))]);}catch(_){}}));
     const t0 = vs.map((v) => v.currentTime);
     await new Promise((z) => setTimeout(z, 700));
     vs.forEach((v, k) => r.videos.push({

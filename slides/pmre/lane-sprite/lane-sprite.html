@@ -103,7 +103,8 @@ PX.sparkles(fx,END,860,240,7.3,11,.7); PX.sparkles(fx,END,1060,760,8.9,12,.7); P
 PX.sparkles(fx,END,1720,330,GRAB,14,1.2);
 const fl=E('rect',{x:0,y:0,width:1920,height:1080,fill:'#f0f4ff','pointer-events':'none'},fx);
 track(fl,END,t=>{const k=(t-GRAB)/.45;return{opacity:k<0||k>1?0:+(.18*(1-k)).toFixed(3)};});
-SDFrame.init({ duration: END, steps: 0 });
+window.MOTION_SFX=[{t:4.7,kind:'merge'},{t:7.3,kind:'pop',gain:.5},{t:8.9,kind:'pop',gain:.5},{t:10.8,kind:'pop',gain:.5},{t:13.25,kind:'pop'}];
+SDFrame.init({duration:END,steps:0,onEnter(){parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}});
 })();
 </script>
 </body></html>
