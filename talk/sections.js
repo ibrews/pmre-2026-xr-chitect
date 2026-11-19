@@ -1312,13 +1312,9 @@ const SECTIONS = [
       },
       {
         "id": "referrals",
-        "use": "pmre/story-media",
+        "use": "pmre/email-arrivals",
         "props": {
-          "mode": "content",
-          "title": "A reputation becomes a brief",
-          "src": "media/v3/referrals.jpg",
-          "credit": "",
-          "brightness": 1
+          "title": "A reputation becomes a brief"
         },
         "title": "Getting the brief",
         "keep": 30,
