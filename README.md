@@ -1,71 +1,46 @@
-> November 11 PMRE v4: full **80:00**, medium **43:34**, 20/20t **34:29** (49:29 with 15 minutes Q&A). Real estate media takeaways now connect Four Seasons, DBOX, Blueprint Immersive and Floor Tour. Four splat beats include Rome web renders, actual silent Vision Pro excerpts and MIA footage; **The next few years** covers capture-to-walkthrough, VR/AR viewing, AI-assisted staging and services to sell. The presenter-restored AI/niche ending remains. See [v4 editorial decisions, trims and sources](talk/REAL-ESTATE-V4.md).
-
 # Architect to XR-chitect
 
-Alex Coulombe Presents at PMRE 2026, November 19, Las Vegas. A chronological story about architecture, theater and emerging technology becoming one career. Source lives on `story/v3-chronological`; main remains unchanged.
+Alex Coulombe Presents at PMRE 2026, November 19, Las Vegas. V6 follows Alex’s November 18 notes and local talkthrough, from architecture/theater/technology to practical spatial-media services and premium collaboration with Agile Lens.
 
-Full is the default **80:00** rehearsal. Medium (`30`) is **43:40**, short (`20` / `20t`) **34:35**. Short plus 15 minutes Q&A is **49:35**. These are authored budgets, including media playback, not a measured rehearsal. The AI pair is included by default in full (first AI slide in medium); `?ai=off` skips it. `?niche=devon|miranda|natalia|matt` selects one 65-second example in every cut. [Running order and notes](talk/REHEARSAL.md) · [V3 source guide](talk/STORY-V3.md).
+[Present v6](https://ibrews.github.io/pmre-2026-xr-chitect/v6/) · [Free starter guide and links](https://ibrews.github.io/pmre-2026-xr-chitect/v6/resources/)
 
-## Quickstart
+## Present locally on Windows
 
-```bash
-git clone --single-branch --branch story/v3-chronological https://github.com/ibrews/pmre-2026-xr-chitect
-cd pmre-2026-xr-chitect
-python3 tools/serve_deck.py --port 8791
+Extract **all** files from the offline ZIP, then double-click `index.html` and open it in Chrome or Firefox. No Python, server or internet is required for the presentation. Keep its folders together. Press F11 for full screen; arrows advance; O opens the cut/theme options; Shift+N shows notes. The QR destination and external resource links need internet on the viewer’s device.
+
+Full is the default; medium and short cuts remain selectable. These are authored rehearsal budgets, not a measured performance; see `talk/REHEARSAL.md` for the current order and timing. All length cuts retain the three-beat ending: how spatial media changes property work; start building and selling; collaborate on premium briefs. The final slide has one QR plus Q&A. There is a real downloadable starter guide, with no promised second-brain signup or course entitlement.
+
+## Author and package
+
+Source branch: `story/v6`. Edit `talk/sections.js` and slide modules, then run:
+
+```sh
+python3 tools/bake_talk.py
+python3 tools/slide.py check
+python3 tools/check_branding.py
 ```
 
-Open `http://127.0.0.1:8791/?cut=full&safe=70&theme=house`. Arrow keys advance slides and reveals. Fonts and media are local. Use the supplied server: its concurrent request handling prevents false image failures during QA, and byte-range responses support actual video seeking and selected posters.
+Runtime dependencies are local classic scripts, relative HTML frames, fonts and media. No JSON is fetched for local presentation. The camera concept uses its built-in 2D projection over `file://`; the normal served version can use its vendored Three.js renderer. Optional cloud notes sync is opt-in.
+
+After committing all required runtime assets (including media ignored by `.gitignore`):
+
+```sh
+python3 tools/package_offline.py --out /absolute/path/to/organizer-package
+node tools/qa_v6.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-output
+```
+
+`qa_v6.mjs` uses system Chrome and installed `playwright-core` (set `PLAYWRIGHT_CORE` if needed). It checks every absolute slide, including hidden structural slides, over ordinary `file://`, records console/page/network/media failures, captures visible slides and checks all length/AI combinations. It does not pass security-bypass flags. ZIPs include a file-hash manifest, opening instructions and an external SHA-256 sidecar. Do not upload to Drive until Alex requests it.
+
+Publish by copying the committed source tree into a **new `/v6/` directory on main**, preserving root, `/v3/`, `/v4/`, `/v5/`. Compare source and destination tracked paths after copying: nested `.gitignore` rules can silently omit force-tracked media. Public project credits remain in notes and meaningful media credits; no source-deck captions are added.
 
 ## Things to Try
 
-1. Follow the year and weighted architecture/theater/technology icons through the story.
-2. At Picasso, reveal the 1896 self-portrait, then the catalog-matched color *Facing Death*, then dates and ages 14–15 and 90. Notes connect this to deliberate practice.
-3. Press **O** to select the short cut, include the two extra Designing Naturally workflow demonstrations (`workflows=extended`).
-4. Press **X** to hide or restore a slide locally. **Shift+X** includes hidden slides for review. These choices never alter source or exports.
-5. Press **O** to choose Devon, Lin-Manuel Miranda, Natalia or Matt. Each niche slide shows “Not the best X — the best at X + Y”, a named portrait and two paired terms. Press **N** for presenter notes or **Shift+N** for the notes drawer. `?safe=70&safezone` shows the venue safe box.
+1. Open `index.html` without a server, disconnect the network and step through the entire deck.
+2. Pause the opening sprite/lane animation, then click through its two reveals.
+3. Compare virtual and built Macbeth/Brockman images; inspect the restored Waldorf and Geffen galleries without pixel cycling.
+4. Watch the Aspen setup shrink beside the America map while the video continues.
+5. Use the final QR/resources page to download the free guide, then inspect the package/pricing example and collaboration close.
 
-## Source and media
+## Source and attribution
 
-Edit `talk/sections.js` and the relevant modules, then bake `index.html`. `talk/v3-plan.json` records the running order, authored budgets, source media, notes and merged beats. The restored Designing Naturally, AU 2017, RTC 2021 and HarvardXR media have separate relevant views. [New media manifest](media/v3-fix1/manifest.json) · [Verified source details](media/v3-fix1/PROVENANCE.md) · [Earlier sources](media/v3/PROVENANCE.md).
-
-Picasso has three click states. The napkin sketch combines the sketchbook, sketching and sketch at scale in one beat. Children’s drawing/VR are one short personal beat. Set-designer footage is silent in both web and separate venue AV. Source captions that conflict with recalled dates are qualified in notes. Museum design work precedes the 2019 built view; the RTC 2021 Brockman comparison appears after the 2015–2016 design work.
-
-## Verification and venue package
-
-```bash
-python3 tools/bake_talk.py
-node tools/talk_script.mjs
-python3 tools/check_branding.py
-python3 tools/slide.py check .
-node tools/qa_v3.mjs http://127.0.0.1:8791/ ../qa-runtime
-node tools/sweep_deck.mjs 'http://127.0.0.1:8791/?cut=full&safe=70&theme=house' ../sweep 1920 1080 v3-fix1 --steps
-node tools/export_venue_package.mjs --cuts full,30,20t --label property-media-v4 --no-keynote
-```
-
-Run heavy capture only after host admission. For admitted fleet capture, use `tools/venue_capture.mjs`, then pass `--captured DIR --cache DIR` to the same exporter. [Venue pipeline](README-VENUE.md). Each PowerPoint has its own separate numbered MP4 cues. No movies are embedded or linked. Full and medium are rehearsal cuts exceeding the venue slot; the web short cut fits the 50-minute talk-plus-Q&A budget. Publishing this source under GitHub Pages `/v4/` is authorized; root and `/v3/` must remain unchanged. No email or Drive upload.
-
-## Credits
-
-**Alex Coulombe Presents.** Built on [Spatial Deck](https://github.com/ibrews/spatial-deck). Project media retains credits to Fisher Dachs Associates, Agile Lens, collaborating architects, Royal Shakespeare Company and source photographers where known. DBOX renders remain visibly credited **Rendering: DBOX for Austin Capital Partners**. Simulator and web-rendered footage retain their actual playback identity.
-
-## November 9 presenter corrections
-
-The cover omits the year/Venn tracker. Picasso’s three-click-state comparison follows the 2016 hiring/curiosity beat. All content media reserves a footer for the title and tracker, keeping captions/credits baked into images and footage clear. Designing Naturally sequences use the same large source-ratio media and short lower-left title.
-
-Motion sound design is original procedural synthesis by Alex Coulombe Presents (2026), with no sampled or third-party audio. `talk/motion-sfx.js` generates the same PCM samples for live WebAudio and `tools/motion_sfx.mjs` offline WAV generation. Both MP4 renderers mix those cues into their separate venue videos: car/engine passes and honks, road merges, Venn pops, projector clatter and hard-cut snaps. Live sounds require a trusted pointer/touch/key interaction, stop on slide exit and stay silent in static/reduced/export views. Add `?mute` or `?audio=off` to silence all deck SFX; `window.setMotionMuted(true)` also stops pending cues. This does not change source videos’ existing muted playback. Venue cue sheets identify the baked SFX audio tracks.
-
-The traffic graphic includes four staggered car speech bubbles, each held 1.8 seconds with a paired horn. Current budgets after the presenter restoration are full80:00 / medium43:40 / short34:35.
-
-Venue export captures transparent title/credit/tracker chrome above video-backed canvases as well as normal videos, preserving the complete source credit on sequence movie posters and playback. Captured overlays exclude presenter navigation and step controls.
-
-## November 9 verified facts
-
-Speaker notes cite career dates, the Miranda quotation, AU 2017, TCG 2017 in Portland with the Brockman model, Perfect Day Mexico 2025, RSC rehearsal R&D in 2024–2025, SIGGRAPH 2025/2026 and FMX 2026 roles, the California/Miami 2026 tour, and the Sina Bernini Bristol hotel scan. The supplied monochrome 1972 Picasso was a different work. The displayed color *Facing Death* matches the June 30, 1972 catalog. [Additional source and portrait manifest](media/v3-fix3/manifest.json). Princeton teaching is dated 2021 by the presenter. Yu-Jun Yeh’s hiring year remains undocumented and omitted. No relative PMRE speaker order is claimed.
-
-Niche options replace the default 65-second example at the same budget. Each option uses the same explanatory composition and a credited portrait. The paired terms are Photography + Performance, Theatre + Hip-hop, Interiors + Architecture, and Photography + Branding. The sourced combinations are facts; “best at X-plus-Y” and the Sondheim comparison are presenter opinion. Miranda is an outside example. Devon, Natalia and Matt are listed PMRE 2026 participants. `talk/story-baseline*.json` and `talk/story-plan.json` are historical source snapshots, rather than current fact status. Current wording lives in `talk/sections.js` and the generated rehearsal notes.
-
-Venue source-sequence export freezes each requested beat before settling. The napkin image remains the first static page, followed by the sketching and full-scale clips. This prevents the auto-play clock from replacing the first still with a repeated next clip.
-
-## November 11 presenter restoration
-
-Restored the closing trio and original notes/sources from `4947e11` over `e5b4aff`, ahead of the labeled QR close. The niche headline explains the X + Y idea on screen; detailed qualifications remain in notes. [New illustration and portrait provenance](media/v3-fix5/manifest.json). Full remains 80:00 by moving 250 seconds of the previous full-only expansion to the restored ending; its project prompts remain. Medium is 43:40; short/20t is 34:35. AI-off budgets are full 76:55, medium 42:00 and short 34:35. Every niche option has the same timing.
+This talk is built with [Spatial Deck](https://github.com/ibrews/spatial-deck). Media credits and claim sources live in presenter notes and the existing project manifests. New Apple SHARP examples come from the [official research page](https://apple-aiml-research.github.io/ml-sharp/), not a commissioned property survey. Pricing figures are illustrative teaching examples, not vendor rates or Agile Lens quotes.

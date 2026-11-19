@@ -22,6 +22,9 @@ while SYNC_GUARD + SYNC_GUARD in s:
 if SYNC_GUARD + "const r=await fetch('notes-config.json'" not in s:
     s = s.replace("const r=await fetch('notes-config.json'", SYNC_GUARD + "const r=await fetch('notes-config.json'", 1)
 
+# Explicit presenter steps must not be consumed by the generic finish-animation shortcut.
+s = s.replace("const r=recs.get(sl),aa=sl.getAnimations", "const r=recs.get(sl);if(r?.def.manualSteps)return false;const aa=sl.getAnimations")
+
 # Navigation may close a suspended context before Chrome resolves its pending resume promise.
 # Sound is optional; absorb that asynchronous close/resume race just like synchronous audio failures.
 s = s.replace("_sfxCtx.resume();", "_sfxCtx.resume().catch(()=>{});")

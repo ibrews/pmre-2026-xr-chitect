@@ -1,8 +1,8 @@
 SD.defineSlide({
   "id": "pmre/fs-travels",
   "frame": "fs-travels.html",
-  "steps": 0,
-  "duration": 21,
+  "steps": 1,
+  "duration": 22,
   "assets": [
     "fs-travels.html"
   ],

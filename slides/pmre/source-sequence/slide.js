@@ -13,7 +13,7 @@ SD.defineSlide({
     const layoutTitle=()=>{title.style.fontSize='76px';const max=root.clientWidth-410;if(title.scrollWidth>max)title.style.fontSize=Math.max(30,76*max/title.scrollWidth)+'px';};document.fonts?.ready.then(layoutTitle);addEventListener('resize',()=>{layoutTitle();draw();});requestAnimationFrame(layoutTitle);
     const canvas=document.createElement('canvas');canvas.width=1100;canvas.height=700;canvas.setAttribute('role','img');canvas.setAttribute('aria-label',p.title);canvas.style.cssText='width:100%;height:100%;object-fit:contain';stage.appendChild(canvas);
     const g=canvas.getContext('2d'),off=document.createElement('canvas'),og=off.getContext('2d');
-    const sources=p.media.map(it=>{const m=document.createElement(/\.(mp4|webm)$/i.test(it.src)?'video':'img');m.src=ctx.asset(it.src);if(m.tagName==='VIDEO'){m.muted=true;m.playsInline=true;m.preload='auto';m.loop=!!it.loop;}else m.alt=it.alt||p.title;m.style.display='none';stage.appendChild(m);m.addEventListener(m.tagName==='VIDEO'?'loadeddata':'load',()=>draw());return m;});
+    const sources=p.media.map(it=>{const m=document.createElement(/\.(mp4|webm)$/i.test(it.src)?'video':'img');m.src=ctx.asset(it.src);if(m.tagName==='VIDEO'){m.muted=true;m.playsInline=true;m.preload='auto';m.loop=true;}else m.alt=it.alt||p.title;m.style.display='none';stage.appendChild(m);m.addEventListener(m.tagName==='VIDEO'?'loadeddata':'load',()=>draw());return m;});
     let active=false,manual=false,selected=0,last=-1,phase=2.3,exit=0,seeking=false;
     const clamp=(n,a=0,b=1)=>Math.max(a,Math.min(b,n));
     const pause=()=>sources.forEach(m=>{if(m.tagName==='VIDEO')m.pause();});

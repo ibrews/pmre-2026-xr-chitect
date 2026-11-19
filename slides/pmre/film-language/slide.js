@@ -1,1 +1,1 @@
-SD.defineSlide({id:'pmre/film-language',frame:'film-language.html',steps:0,duration:28,assets:['film-language.html'],provenance:['New schematic motion illustrating cinematic language; dated primary museum/archive sources in talk/sections.js. No first-invention claims.']});
+SD.defineSlide({id:'pmre/film-language',frame:'film-language.html',steps:0,duration:36,assets:['film-language.html'],provenance:['New schematic motion illustrating cinematic language; dated primary museum/archive sources in talk/sections.js. No first-invention claims.']});
