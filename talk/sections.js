@@ -1114,6 +1114,21 @@ const SECTIONS = [
           ]
         },
         "notes": "⏱ ~55s.\n\nDelivery prompts from Alex’s supplied decks and November 8 direction.\n\nHarvardXR #10 source. Per Alex’s supplied brief, we did this basically for free and it became an important portfolio item. FXCollaborative were sad to experience it in VR only after the design decisions were settled. Bring VR into the process while it can still change decisions. This is the unbuilt render, not a completed-building photo. Work happened before the2019 opening; the shown year range is a source-deck era, not a contract date.\nFinal audit: reveal the completed museum on click. Public project photograph from FXCollaborative https://www.fxcollaborative.com/projects/175/the-statue-of-liberty-museum/ (photo 3, downloaded 2026-11-19). Source page does not name an individual photographer; no attribution invented. The render and photograph are different viewpoints, not a registered before/after.\n\nCompleted-museum photo (step 1) supplied by Alex 2026-11-19: the finished interior with the original torch, matching the VR view. Source/credit not recorded; confirm before any public reuse outside the talk."
+      },
+      {
+        "id": "tour-pitch",
+        "title": "Touring the country, selling services",
+        "use": "pmre/tour-pitch",
+        "props": {},
+        "keep": 19,
+        "year": "2016",
+        "venn": [
+          0.7,
+          0.8,
+          1
+        ],
+        "storyRole": "content",
+        "notes": "⏱ ~20s.\n\nAlex, 2026-11-19: after the Statue of Liberty Museum, I went around the country to architecture offices trying to sell our services, and it mostly did not work. Pixel me hops office to office; each one is a no. The pins are illustrative positions (no specific firms or cities are claimed). This sets up the turn: speaking, not cold pitching, is what worked."
       }
     ]
   },
