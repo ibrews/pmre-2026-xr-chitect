@@ -21,7 +21,8 @@
       s.last=v.currentTime;}
     return busy;}
   function pulse(sl){const dot=sl.querySelector('.v3-tracker .v3-dot');if(!dot)return;
-    dot.animate([{fill:'#ffffff',transform:'scale(1)'},{fill:'#f2c14e',transform:'scale(1.85)',offset:.35},{fill:'#f2c14e',transform:'scale(1.3)',offset:.7},{fill:'#ffffff',transform:'scale(1)'}],{duration:420,easing:'ease-out',id:TAG});
+    // Alex had not noticed the first version: bigger, brighter, a double beat with a glow (still silent, ~0.7 s).
+    dot.animate([{fill:'#ffffff',transform:'scale(1)',filter:'none'},{fill:'#ffd34d',transform:'scale(2.6)',filter:'drop-shadow(0 0 6px #ffd34d)',offset:.22},{fill:'#ffd34d',transform:'scale(1.6)',filter:'drop-shadow(0 0 4px #ffd34d)',offset:.45},{fill:'#ffd34d',transform:'scale(2.3)',filter:'drop-shadow(0 0 6px #ffd34d)',offset:.65},{fill:'#ffffff',transform:'scale(1)',filter:'none'}],{duration:720,easing:'ease-out',id:TAG});
     document.body.dataset.stepDone=key;}   // read by QA
   function tick(){
     if(typeof allSlides==='undefined'||typeof current==='undefined')return;
