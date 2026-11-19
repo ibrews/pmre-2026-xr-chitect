@@ -4717,7 +4717,9 @@ function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),
     if(!r){if(!aa.length)return false;aa.forEach(a=>{try{a.finish();}catch(_){}});return true;}
     if(r.settled)return false;
     const elapsed=performance.now()-(r.started||0),hold=(+sl.dataset.sdDuration||r.def.duration||3)*1000;
-    if(!aa.length&&!r.ctx.clock.busy()&&elapsed>=hold)return false;
+    /* A build click on a framed slide must not be swallowed for the whole 8s intro duration: after a step has been issued, a short hold is enough to let its fade finish. */
+    const holdMs=r.frameEl&&r.cur>0?Math.min(hold,2200):hold;
+    if(!aa.length&&!r.ctx.clock.busy()&&elapsed>=holdMs)return false;
     sl.classList.add('sd-beat-complete');window._killAllSfx();r.ctx.clock.stop();const old=r.ctx.instant;r.ctx.instant=true;
     if(typeof r.inst.complete==='function'){call(r,'complete',r.cur);}
     else {call(r,'leave');call(r,'enter');for(let n=1;n<=r.cur;n++)call(r,'step',n);r.ctx.clock.stop();}
