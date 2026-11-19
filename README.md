@@ -36,7 +36,7 @@ Publish by copying the committed source tree into a **new `/v6/` directory on ma
 ## Things to Try
 
 1. Open `index.html` without a server, disconnect the network and step through the entire deck.
-2. Pause the opening sprite/lane animation, then click through its two reveals.
+2. Pause the opening sprite/lane animation, then click through its four overlap reveals.
 3. Compare virtual and built Macbeth/Brockman images; inspect the restored Waldorf and Geffen galleries without pixel cycling.
 4. Watch the Aspen setup shrink beside the America map while the video continues.
 5. Use the final QR/resources page to download the free guide, then inspect the package/pricing example and collaboration close.

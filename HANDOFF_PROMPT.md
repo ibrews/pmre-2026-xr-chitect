@@ -381,7 +381,7 @@ Committing large GIFs/videos to git history makes future pushes permanently slow
 
 ## PMRE v6 — November 18, 2026
 
-Author `talk/sections.js`, then `python3 tools/bake_talk.py`. The v6 story follows the local talkthrough and raw notes indexed in the canonical KB `projects/pmre2026/2026-11-18-talkthrough-transcript.md`. Preserve the three-beat close in every cut. New modules: `drawing-review`, `v6-gallery` (simultaneous media, optional click-to-compare), `package-table`. Lane-to-Venn has two manual holds. Film language ends with human pictograms watching cuts in a theater. Holodeck travel starts with a setup film that shrinks beside the America map. All story videos loop silently with controls hidden.
+Author `talk/sections.js`, then `python3 tools/bake_talk.py`. The v6 story follows the local talkthrough and raw notes indexed in the canonical KB `projects/pmre2026/2026-11-18-talkthrough-transcript.md`. Preserve the three-beat close in every cut. New modules: `drawing-review`, `v6-gallery` (simultaneous media, optional click-to-compare), `package-table`. Lane traffic vamps until the presenter advances; four manual steps reveal the overlaps. Film language ends with human pictograms watching cuts in a theater. Holodeck travel starts with a setup film that shrinks beside the America map. All story videos loop silently with controls hidden.
 
 `resources/index.html` is the single QR destination. Its starter guide exists; no signup or course access is promised. No Cotton movie or “first company on Zillow” priority claim has been verified. Use the exact supplied Jonathan Lee quote on a slide; other conference quotations and Unreal NYC stay in speaker notes. Never expose the NDA headset name.
 

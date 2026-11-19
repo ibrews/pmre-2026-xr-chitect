@@ -115,9 +115,7 @@ PX.sparkles(document.getElementById('fx'),END,960,470,10.9,31,1.3);
 const domainAttrs=[];document.querySelectorAll('svg *').forEach(el=>['fill','stroke','stop-color','style'].forEach(a=>{const v=el.getAttribute(a);if(v&&/#00d4ff|#f43f5e|#a78bfa/i.test(v))domainAttrs.push([el,a,v]);}));
 addEventListener('load',()=>domainAttrs.forEach(([el,a,v])=>el.setAttribute(a,v)),{once:true});
 window.MOTION_SFX=[{t:4.7,kind:'merge'},{t:7.9,kind:'merge'},{t:9.4,kind:'pop'},{t:10.8,kind:'pop'}];
-let hold=5.9,raf=0,active=false;
-function watch(){if(!active)return;const clock=Math.max(0,...document.getAnimations().map(a=>+a.currentTime||0));if(clock>=hold*1000){document.getAnimations().forEach(x=>{x.pause();x.currentTime=hold*1000;});}raf=requestAnimationFrame(watch);}
-SDFrame.init({duration:END,steps:2,onEnter(){hold=5.9;active=true;cancelAnimationFrame(raf);raf=requestAnimationFrame(watch);},onStep(n,instant){if(!n)return;hold=n===1?10.8:END;if(instant){document.getAnimations().forEach(a=>{a.pause();a.currentTime=hold*1000;});}else document.getAnimations().forEach(a=>a.play());},onLeave(){active=false;cancelAnimationFrame(raf);}});
+SDFrame.init({duration:END,steps:0,onEnter(){parent.postMessage({sdMotionSfx:window.MOTION_SFX},'*');}});
 })();
 </script>
 </body></html>

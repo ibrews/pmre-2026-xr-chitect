@@ -257,10 +257,10 @@ const SECTIONS = [
     },
     "cases": [
       {
-        "id": "lanes-venn",
-        "use": "pmre/lane-to-venn",
+        "id": "lanes",
+        "use": "pmre/lane-traffic",
         "props": {},
-        "title": "lanes-venn",
+        "title": "",
         "keep": 19,
         "year": "2005",
         "venn": [
@@ -269,8 +269,8 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~50s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nI was looking for places where those interests could work together. Establish cyan architecture, rose theater and violet technology, matching the tracker.\n\nYear: 2005. Venn weights: 1 / 1 / 1.\n\n2026-11-14 dictation:\nI was looking for overlaps. The structure of a play would inform the structure of my architecture project; creative energy fed from one project into another.\n",
-        "motion": "lane-to-venn"
+        "notes": "⏱ ~50s.\n\nAlex’s November 18 direction: retain the fuller traffic/road opening (v5 #8) and omit the simpler variant (#9). Traffic vamps until the presenter clicks. Then four clicks take the scene through theater planning, live VR theater, archviz and the XR-chitect intersection. Keep the original Alex sprite and domain colors. No timed transition forces the presenter to finish speaking.",
+        "motion": "lane-traffic"
       },
       {
         "id": "what",

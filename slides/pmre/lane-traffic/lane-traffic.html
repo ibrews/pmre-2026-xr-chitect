@@ -184,6 +184,10 @@ window.MOTION_END=END; window.MOTION_SFX=SFX.sort((a,b)=>a.t-b.t);
 // Domain colors carry meaning across the talk; preserve them when a look recolors decorative accents.
 const domainAttrs=[];document.querySelectorAll('svg *').forEach(el=>['fill','stroke','stop-color','style'].forEach(a=>{const v=el.getAttribute(a);if(v&&/#00d4ff|#f43f5e|#a78bfa/i.test(v))domainAttrs.push([el,a,v]);}));
 addEventListener('load',()=>domainAttrs.forEach(([el,a,v])=>el.setAttribute(a,v)),{once:true});
-SDFrame.init({ duration: window.MOTION_END, steps: 0, onEnter() { try { parent.postMessage({ sdMotionSfx: window.MOTION_SFX }, '*'); } catch (e) {} } });
+// The road keeps moving until Alex chooses the reframe. Each overlap then holds for a click.
+const stops=[20.4,34.7,36.9,38.9,window.MOTION_END];let phase=0,active=false,raf=0;
+function setTime(t,play){document.getAnimations().forEach(a=>{a.pause();a.currentTime=t*1000;if(play)a.play();});}
+function watch(){if(!active)return;const t=Math.max(0,...document.getAnimations().map(a=>+a.currentTime||0))/1000;if(t>=stops[phase])setTime(phase===0?9.4:stops[phase],phase===0);raf=requestAnimationFrame(watch);}
+SDFrame.init({duration:window.MOTION_END,steps:4,onEnter(){phase=0;active=true;cancelAnimationFrame(raf);raf=requestAnimationFrame(watch);},onStep(n,instant){if(!n)return;phase=Math.min(n,4);setTime(instant?stops[phase]:stops[phase-1],!instant);},onLeave(){active=false;cancelAnimationFrame(raf);}});
 </script>
 </body></html>
