@@ -1819,21 +1819,21 @@ const SECTIONS = [
       },
       {
         "id": "hotel",
-        "title": "Sina Bernini Bristol",
+        "title": "Captured in minutes",
         "use": "pmre/story-media",
         "keep": 19,
         "storyRole": "content",
         "props": {
-          "title": "Sina Bernini Bristol",
-          "src": "slides/pmre/rome-splats/media/rome-hotel-flythrough-fast.mp4",
-          "credit": "Sina Bernini Bristol, Autograph Collection · PortalCam: Josette Seitz / Agile Lens",
-          "alt": "Gaussian splat of Sina Bernini Bristol, Autograph Collection, Rome",
+          "title": "Captured in minutes",
+          "src": "media/pmre/v8/josette-portalcam-reel.mp4",
+          "credit": "XGRIDS PortalCam captures: Josette Seitz / Agile Lens",
+          "alt": "Reel of Gaussian-splat captures by Josette Seitz with XGRIDS PortalCam",
           "mode": "content",
           "brightness": 1,
           "posterTime": 2,
           "takeaway": "Now imagine this as your next listing"
         },
-        "notes": "⏱ ~45s.\n\nSina Bernini Bristol, Autograph Collection, Rome. Josette Seitz captured this hotel with XGRIDS PortalCam during the October 2026 MIA trip. This is the existing slow 10-second web-rendered Gaussian-splat flythrough of the whole-scene LOD scan, not headset footage and not a hotel-supplied marketing film. Credit capture to Josette Seitz / Agile Lens; rendering uses GaussianSplats3D / Three.js.\nSources: presenter identification November 9, 2026; KB daily/2026-10-21-alex-mbp.md (12:25Z scan receipt, RomaHotelMIA files copied to Fort H:/XR/UOXRShowcase/data/RomaHotelMIA), daily/2026-10-22-alex-mbp.md (SplatDiorama scan lineage); https://www.marriott.com/en-us/hotels/romab-sina-bernini-bristol-autograph-collection/overview/ . Existing shipped clip: slides/pmre/rome-splats/media/rome-hotel-flythrough-10s-1080p.mp4. The brand identity source does not imply that Marriott commissioned this scan.\n\nI love the Colosseum, but this is the bridge to your business: an actual hotel interior. Let someone look around the arrival space before they book or buy. The same idea applies to a home, amenity floor or event venue. You would still capture good photographs; I would sell the walkable place as an additional deliverable. This is my proposal, not a Marriott endorsement.",
+        "notes": "Video swapped 2026-11-19: Josette Seitz\u2019s PortalCam reel (Milan captures incl. Olympic venues and the Last Supper; 1080p, audio removed) replaces the Sina Bernini Bristol flythrough. Older notes below refer to the hotel clip.\n\n⏱ ~45s.\n\nSina Bernini Bristol, Autograph Collection, Rome. Josette Seitz captured this hotel with XGRIDS PortalCam during the October 2026 MIA trip. This is the existing slow 10-second web-rendered Gaussian-splat flythrough of the whole-scene LOD scan, not headset footage and not a hotel-supplied marketing film. Credit capture to Josette Seitz / Agile Lens; rendering uses GaussianSplats3D / Three.js.\nSources: presenter identification November 9, 2026; KB daily/2026-10-21-alex-mbp.md (12:25Z scan receipt, RomaHotelMIA files copied to Fort H:/XR/UOXRShowcase/data/RomaHotelMIA), daily/2026-10-22-alex-mbp.md (SplatDiorama scan lineage); https://www.marriott.com/en-us/hotels/romab-sina-bernini-bristol-autograph-collection/overview/ . Existing shipped clip: slides/pmre/rome-splats/media/rome-hotel-flythrough-10s-1080p.mp4. The brand identity source does not imply that Marriott commissioned this scan.\n\nI love the Colosseum, but this is the bridge to your business: an actual hotel interior. Let someone look around the arrival space before they book or buy. The same idea applies to a home, amenity floor or event venue. You would still capture good photographs; I would sell the walkable place as an additional deliverable. This is my proposal, not a Marriott endorsement.",
         "year": "2026",
         "venn": [
           1,
@@ -2306,6 +2306,21 @@ const SECTIONS = [
         "hideTracker": true,
         "props": {},
         "notes": "⏱ ~30s. Talkthrough 54:27–54:40 asked for the years and key lessons to return. 2005: work with intention. 2006: theater makes an experience for people. 2013: experiment with a new medium. 2026: combine those skills into something valuable for your clients. Your own overlap will be different."
+      },
+      {
+        "id": "career-ring-recap",
+        "use": "pmre/career-ring-recap",
+        "title": "ALT: Keep the whole mix (ring)",
+        "keep": 19,
+        "year": "2005–2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "hideTracker": true,
+        "props": {},
+        "notes": "ALTERNATIVE VERSION of the previous slide (Alex, 2026-11-19 talkthrough: 'give it to me as an alternative'). Same four lessons, branching off the big year ring with the full Venn in the middle. Pick one and hide the other (add \"hidden\": true in talk/sections.js).\n\n⏱ ~30s. 2005: work with intention. 2006: design an experience. 2013: try the new medium. 2026: combine your skills. Last click: What could your mix make possible?"
       },
       {
         "id": "start-now",
