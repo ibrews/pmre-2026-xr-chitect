@@ -1123,6 +1123,7 @@ const SECTIONS = [
         "props": {
           "title": "Statue of Liberty Museum",
           "line": "Bring VR in while the design can still change.",
+          "equalHeights": true,
           "steps": true,
           "media": [
             {
