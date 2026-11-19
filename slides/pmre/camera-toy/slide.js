@@ -12,6 +12,7 @@
    and then overwritten; colors of the UI come from the look (var(--teal), var(--text)); text is props. */
 SD.defineSlide({
   id: 'pmre/camera-toy',
+  manualSteps: true,
   steps: 3,
   duration: 3.2,
   props: {
@@ -136,7 +137,7 @@ SD.defineSlide({
     }
     // Every state change goes through act(): it runs after the viewfinder is ready, and a generation counter drops work
     // queued before the latest enter() (going back to the slide mid-load must not replay stale clicks).
-    let gen = 0; const act = fn => { const g = gen,instant=ctx.instant; ready.then(() => { if (g === gen) {const old=ctx.instant;ctx.instant=instant;try{fn();}finally{ctx.instant=old;}} }); };
+    let gen = 0; const act = (fn,instant=ctx.instant,motion=false) => { const g = gen; return ready.then(() => { if (g === gen) {const old=ctx.instant;ctx.instant=instant;try{if(motion)SDStepMotion.run(s,fn,instant);else fn();}finally{ctx.instant=old;}} }); };
     let drag = false; const toPlan = e => { const b = plan.getBoundingClientRect(); return { x: Math.max(30, Math.min(370, (e.clientX - b.left) / b.width * 400)), y: Math.max(215, Math.min(370, (e.clientY - b.top) / b.height * 400)) }; };
     plan.addEventListener('pointerdown', e => { drag = true; try { plan.setPointerCapture(e.pointerId); } catch (_) {} Object.assign(st, toPlan(e)); act(draw); });
     plan.addEventListener('pointermove', e => { if (drag) { Object.assign(st, toPlan(e)); act(draw); } });
@@ -151,14 +152,16 @@ SD.defineSlide({
       drawPlan(); act(draw);
     }
     const STEPS = {
-      1() { act(() => { Object.assign(st, { f: 85, x: 215, y: 365 }); draw(); }); },
-      2() { act(() => { st.mask = true; draw(); }); },
-      3() { act(() => SETUPS.forEach((u, i) => { const shot = () => { Object.assign(st, u); take(); }; if (ctx.instant) shot(); else ctx.clock.after(i * 900, shot); })); },
+      1() { act(() => { Object.assign(st, { f: 85, x: 215, y: 365 }); draw(); },ctx.instant,true); },
+      2() { act(() => { st.mask = true; draw(); },ctx.instant,true); },
+      3() { act(() => SETUPS.forEach((u, i) => { const shot = () => SDStepMotion.run(s,()=>{ Object.assign(st, u); take(); },ctx.instant); if (ctx.instant) shot(); else ctx.clock.after(i * 900, shot); })); },
     };
     reset();
     return {
       enter: reset,
       step(n) { STEPS[n] && STEPS[n](); },
+      restore(n,animate) { gen++;return act(()=>{Object.assign(st,HOME,{mask:n>=2,shots:0});frames.forEach((f,i)=>{f.style.backgroundImage='';f.classList.remove('masked','flash');f.querySelector('span').textContent='ABC'[i];});if(n>=1)Object.assign(st,{f:85,x:215,y:365});if(n>=3)SETUPS.forEach(u=>{Object.assign(st,u);take();});else draw();},true); },
+      leave(){gen++;},
       // Final frame: mask on, all three shots in the strip, camera back home so the viewfinder and the plan agree.
       staticFrame() { reset(); act(() => { st.mask = true; SETUPS.forEach(u => { Object.assign(st, u); take(); }); Object.assign(st, HOME); draw(); }); },
     };

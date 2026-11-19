@@ -8,7 +8,7 @@ const frameTime=(id,n)=>id==='lanes'?[5.6,9.4,12,34.7,36.9,38.9,42.9][n]:id==='h
 async function current(){return p.evaluate(()=>({i:current,n:slideSteps.get(allSlides[current])?.current||0}));}
 async function settle(s,n,direction){
  const iframe=await p.locator('.slide.active iframe').count()?await p.locator('.slide.active iframe').elementHandle():null;
- if(iframe){const f=await iframe.contentFrame();await f.waitForFunction(()=>typeof window.seek==='function');if(direction==='forward'){await f.evaluate(t=>window.seek(t),frameTime(s.id,n));await p.clock.runFor(25);}return f;}
+ if(iframe){const f=await iframe.contentFrame();await f.waitForFunction(()=>typeof window.seek==='function');if(direction==='forward'){await f.evaluate(t=>window.seek(t),frameTime(s.id,n));await p.clock.runFor(25);}await f.evaluate(()=>document.getAnimations().filter(a=>window.SDStepMotion?.owns(a)).forEach(a=>a.finish()));return f;}
  if(direction==='forward')await p.clock.runFor(s.id==='speaker-intro'?[4400,1400,16500,1700][n]:s.id==='demo-montage'?(n===1?1600:300):2400);
  await p.locator('.slide.active').evaluate(sl=>sl.getAnimations({subtree:true}).forEach(a=>{if(a.effect?.target!==sl&&isFinite(a.effect?.getComputedTiming().endTime))try{a.finish();}catch(_){}}));
  await p.clock.runFor(30);return p;

@@ -65,6 +65,8 @@ SD.defineSlide({
 `var(--text)`, `var(--ink)` …) so every `styles/` look recolors it. Hard-coded hex is only for pixel art that is the
 same in every look.
 
+**Build motion.** The deck loads `kit/step-motion.js`; `sd-frame.js` loads the same classic script in frames, including file://. Native step mutations use a 700 ms FLIP pass. A frame can opt forward builds in with `layoutSteps: true` or `layoutSteps: n => n === 3`; backward restores always capture the current pose before seeking. Custom frame clocks must exclude `SDStepMotion.owns(animation)` when seeking or measuring timeline time. Reduced motion and export restoration stay instant. A native `restore(n, animate)` may return its render promise so the FLIP pass waits for asynchronous drawing.
+
 **Lifecycle order.** On every slide change the old slide's `leave()` runs before the new slide's `enter()`; a click
 that arrives in the same task as the slide change enters the slide first. `enter()` runs again on every re-entry
 (going back included), from step 0.

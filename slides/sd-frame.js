@@ -16,16 +16,18 @@
   // Same look lookup as the motion recolorer: ?look=, else window.name "sd-look:<id>" (set by the deck), else the parent's.
   function lookId(){var l=P.get('look');if(!l){var n=/sd-look:([\w-]+)/.exec(window.name||'');if(n)l=n[1];}
     if(!l){try{if(inDeck)l=parent.document.body.dataset.look;}catch(e){}}return l||'noir';}
-  function anims(){return document.getAnimations();}
+  if(document.readyState==='loading')document.write('<script src="'+here+'kit/step-motion.js"><\/script>');
+  function anims(){return document.getAnimations().filter(a=>!window.SDStepMotion?.owns(a));}
   function seek(t){anims().forEach(function(a){a.pause();a.currentTime=t*1000;});if(cfg&&cfg.onSeek)cfg.onSeek(t);}
   function setStep(n,instant){document.documentElement.dataset.step=String(n);if(cfg&&cfg.onStep)cfg.onStep(n,!!instant);}
-  function finalFrame(){setStep(cfg.steps,true);seek(cfg.duration);}
-  function play(){setStep(0,true);if(cfg.onEnter)cfg.onEnter();anims().forEach(function(a){a.currentTime=0;a.play();});}
+  function clearMotion(){if(window.SDStepMotion)SDStepMotion.cancel(SDStepMotion.capture(document.body));}
+  function finalFrame(){clearMotion();setStep(cfg.steps,true);seek(cfg.duration);}
+  function play(){clearMotion();setStep(0,true);if(cfg.onEnter)cfg.onEnter();anims().forEach(function(a){a.currentTime=0;a.play();});}
   window.SDFrame={
     // Defaults merged with the deck's props (shallow, like the deck): the frame must build from these before init().
     props:function(defaults){var o={},k;for(k in defaults||{})o[k]=defaults[k];for(k in props)o[k]=props[k];return o;},
     init:function(c){
-      cfg={duration:+c.duration||0,steps:Math.max(0,c.steps|0),onEnter:c.onEnter,onStep:c.onStep,onLeave:c.onLeave,onSeek:c.onSeek,stepTimes:c.stepTimes};
+      cfg={duration:+c.duration||0,steps:Math.max(0,c.steps|0),onEnter:c.onEnter,onStep:c.onStep,onLeave:c.onLeave,onSeek:c.onSeek,stepTimes:c.stepTimes,layoutSteps:c.layoutSteps};
       window.MOTION_END=cfg.duration;window.seek=seek;window.SDFrame.config=cfg;
       // A non-noir look recolors the frame with slides/look.js (written by tools/apply_look.py). document.write keeps it
       // synchronous: it runs right after the frame's build script, before anything is captured.
@@ -41,8 +43,8 @@
     var d=e.data;if(!d||d.sd!==MSG||!cfg||e.source!==window.parent)return;
     var instant=!!d.instant||rm;
     if(d.type==='enter'){if(instant){seek(cfg.stepTimes?.[0]??cfg.duration);setStep(0,true);}else play();}
-    else if(d.type==='complete'||d.type==='restore'){if(cfg.onLeave)cfg.onLeave();var n=Math.max(0,Math.min(cfg.steps,d.n|0));seek(cfg.stepTimes?.[n]??cfg.duration);setStep(n,true);}
-    else if(d.type==='step')setStep(d.n|0,instant);
+    else if(d.type==='complete'||d.type==='restore'){const snapshot=SDStepMotion.capture(document.body),before=d.animate&&!rm?snapshot:null;SDStepMotion.cancel(snapshot);if(cfg.onLeave)cfg.onLeave();var n=Math.max(0,Math.min(cfg.steps,d.n|0));seek(cfg.stepTimes?.[n]??cfg.duration);setStep(n,true);if(before)SDStepMotion.play(before);}
+    else if(d.type==='step'){if((typeof cfg.layoutSteps==='function'?cfg.layoutSteps(d.n|0):cfg.layoutSteps)&&!instant)SDStepMotion.run(document.body,()=>setStep(d.n|0,false),false);else setStep(d.n|0,instant);}
     else if(d.type==='leave'){if(cfg.onLeave)cfg.onLeave();finalFrame();}
     else if(d.type==='seek')seek(+d.t||0);
     else if(d.type==='static')finalFrame();

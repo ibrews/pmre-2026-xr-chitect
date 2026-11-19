@@ -2836,6 +2836,7 @@ window.SD=window.SD||{};
   };
 })(window.SD);
 </script>
+<script src="slides/kit/step-motion.js"></script>
 <!-- ── SD SLIDE MODULES START ── -->
 <script src="slides/core/intro-avatar/slide.js"></script>
 <script src="slides/core/intro-lens/slide.js"></script>
@@ -4501,12 +4502,12 @@ function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),
     const shows=c.shows||def.shows;if(shows&&shows.length)s.dataset.sdShows=[].concat(shows).join(' ');
     const ctx={id,slide:s,props,steps,base:def.base,asset:p=>def.base+p,instant:INSTANT,exportMode:EXPORT,params:Q,
       clock:clock(),audio,svg:svgE,section:sec,look:()=>window.SD_ACTIVE_LOOK||document.body.dataset.look||'noir'};
-    const r={id,def,c,props,ctx,steps,inst:{},on:false,cur:0,frozen:false};recs.set(s,r);
+    const r={id,def,c,props,ctx,steps,inst:{},on:false,cur:0,motionRevision:0,frozen:false};recs.set(s,r);
     try{r.inst=def.frame?frameInstance(r):(def.render(s,props,ctx)||{});}catch(e){fail(s,`Module <code>${esc(id)}</code> failed to render: ${esc(e&&e.message||e)}`);r.inst={};}
     if(steps>0)slideSteps.set(s,{current:0,sdModule:id,reset(){},
-      steps:Array.from({length:steps},(_,i)=>()=>{if(r.frozen)return;if(!r.on)sync();s.classList.remove('sd-beat-complete');r.cur=i+1;r.settled=false;r.started=performance.now();call(r,'step',i+1);})});
+      steps:Array.from({length:steps},(_,i)=>()=>{if(r.frozen)return;if(!r.on)sync();s.classList.remove('sd-beat-complete');r.cur=i+1;r.motionRevision++;r.settled=false;r.started=performance.now();if(r.frameEl)call(r,'step',i+1);else SDStepMotion.run(s,()=>call(r,'step',i+1),INSTANT);})});
   };
-  function enter(r){if(r.on||r.frozen)return;r.ctx.slide.classList.remove('sd-beat-complete');r.on=true;r.cur=0;r.settled=false;r.started=performance.now();r.ctx.clock.stop();call(r,'enter');}
+  function enter(r){if(r.on||r.frozen)return;r.ctx.slide.classList.remove('sd-beat-complete');r.on=true;r.cur=0;r.motionRevision++;r.settled=false;r.started=performance.now();r.ctx.clock.stop();call(r,'enter');}
   function leave(r){if(!r.on)return;r.on=false;r.ctx.clock.stop();call(r,'leave');}
   // Final frame with every step applied: staticFrame() if the module has one, else an instant replay of every beat.
   function freeze(r){r.frozen=true;r.ctx.clock.stop();if(typeof r.inst.staticFrame==='function')call(r,'staticFrame');else{const i0=r.ctx.instant;r.ctx.instant=true;call(r,'enter');for(let i=1;i<=r.steps;i++)call(r,'step',i);r.ctx.instant=i0;}r.ctx.clock.stop();}
@@ -4562,7 +4563,7 @@ function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),
     r.frameReady=d=>{ready=true;s.dataset.sdFrameSteps=d.steps|0;if(d.duration)s.dataset.sdDuration=d.duration;
       if((d.steps|0)!==r.steps)console.warn(`SD: ${r.id} frame reports ${d.steps|0} step(s) but the deck asks for ${r.steps}`);sync();};
     // A frame that reloads (look change, src reassigned) sends ready again and is resynced to the current step.
-    return{restore(n){post({type:'restore',n,instant:true});},complete(n){post({type:'complete',n,instant:true});},enter(){post({type:'enter'});},step(n){post({type:'step',n});},leave(){post({type:'leave'});},staticFrame(){post({type:'static'});},seek(t){post({type:'seek',t});}};
+    return{restore(n,animate){post({type:'restore',n,instant:!animate,animate:!!animate});},complete(n){post({type:'complete',n,instant:true});},enter(){post({type:'enter'});},step(n){post({type:'step',n});},leave(){post({type:'leave'});},staticFrame(){post({type:'static'});},seek(t){post({type:'seek',t});}};
   }
   // ── Tool hooks (sweep, lint, slide.py list, render_motion) ──
   SD.list=function(){const out=[];allSlides.forEach((s,i)=>{const r=recs.get(s);if(r)out.push({index:i,id:r.id,name:r.c.motion||null,src:r.frameEl?r.frameEl.getAttribute('src'):null,steps:r.steps,duration:r.def.duration||null,frame:r.def.frame||null,frameSteps:s.dataset.sdFrameSteps!=null?+s.dataset.sdFrameSteps:null,hidden:s.dataset.hidden==='1',seekable:typeof r.inst.seek==='function'});});return out;};
@@ -4582,15 +4583,16 @@ function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),
     return true;
   };
   // Restore a build from its authored state, rather than leaving animation fill effects and timers behind.
-  SD.restoreStep=function(sl,n){
+  SD.restoreStep=function(sl,n,animate=false){
     const r=recs.get(sl),ss=slideSteps.get(sl);if(!r||!ss||r.frozen)return false;
-    n=Math.max(0,Math.min(r.steps,n|0));window._killAllSfx();r.ctx.clock.stop();call(r,'leave');
+    const revision=++r.motionRevision,before=animate&&!INSTANT&&!r.frameEl?SDStepMotion.capture(sl):null;if(before)SDStepMotion.cancel(before);
+    n=Math.max(0,Math.min(r.steps,n|0));window._killAllSfx();r.ctx.clock.stop();if(!r.frameEl)call(r,'leave');
     sl.getAnimations({subtree:true}).forEach(a=>{if(a.effect?.target!==sl)try{a.cancel();}catch(_){}});
     const old=r.ctx.instant;r.ctx.instant=true;
-    if(typeof r.inst.restore==='function')call(r,'restore',n);
+    let restored;if(typeof r.inst.restore==='function')restored=call(r,'restore',n,animate&&!INSTANT);
     else{call(r,'enter');for(let k=1;k<=n;k++)call(r,'step',k);if(typeof r.inst.complete==='function')call(r,'complete',n);}
     r.ctx.clock.stop();r.ctx.instant=old;r.cur=n;r.on=true;r.settled=true;r.started=performance.now();ss.current=n;
-    sl.dataset.sdCompletedStep=String(n);sl.classList.add('sd-beat-complete');return true;
+    sl.dataset.sdCompletedStep=String(n);sl.classList.toggle('sd-beat-complete',!animate||INSTANT);if(before){if(restored?.then)restored.then(()=>{if(r.on&&r.cur===n&&r.motionRevision===revision)SDStepMotion.play(before);});else SDStepMotion.play(before);}return true;
   };
   SD.seekSlide=function(i,t){window._killAllSfx();const r=recs.get(allSlides[i]);if(!r||typeof r.inst.seek!=='function')return false;r.ctx.clock.stop();call(r,'seek',t);return true;};
 })(window.SD);
@@ -4876,8 +4878,8 @@ let current=1,total=allSlides.length,direction=1;
 function nextVisible(f,d){let i=f;for(let n=0;n<total;n++){i=(i+d+total)%total;if(presenterNavigable(allSlides[i]))return i;}return f;}
 function goTo(n,fwd){if(n<0||n>=total||n===current)return;window._killAllSfx();const dir=fwd!==undefined?fwd:n>current;direction=dir?1:-1;if(window._verticalMode){const prev=allSlides[current];if(prev)prev.classList.remove('active');current=n;_primeSlideMedia(n);const next=allSlides[current];next.classList.add('active');try{next.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){next.scrollIntoView();}updateHUD();updateHash();if(typeof gridEnsureSlide==='function')gridEnsureSlide();if(window.kfOnSlideEnter)window.kfOnSlideEnter();return;}const trans=(window._sdCfg||JSON.parse(localStorage.getItem('sd-cfg')||'{}')).transition||'slide';const prev=allSlides[current];prev.classList.remove('active');if(trans==='none'){prev.style.animation='';}else{let exitAnim;if(trans==='fade')exitAnim='fadeOut';else if(trans==='zoom')exitAnim=dir?'zoomOutFwd':'zoomOutBwd';else exitAnim=dir?'slideOutFwd':'slideOutBwd';prev.style.animation=exitAnim+' .4s ease forwards';setTimeout(()=>{prev.style.animation='';},450);}current=n;_primeSlideMedia(n);const next=allSlides[current];next.classList.add('active');if(trans==='none'){next.style.animation='';}else{let enterAnim;if(trans==='fade')enterAnim='fadeIn';else if(trans==='zoom')enterAnim=dir?'zoomInFwd':'zoomInBwd';else enterAnim=dir?'slideInFwd':'slideInBwd';next.style.animation=enterAnim+' .4s ease forwards';setTimeout(()=>{next.style.animation='';},450);}updateHUD();updateHash();playWhoosh();if(typeof gridEnsureSlide==='function')gridEnsureSlide();if(window.kfOnSlideEnter)window.kfOnSlideEnter();}
 function goNext(){goTo(nextVisible(current,1),true);}
-function restoreBuild(sl,n){if(window.SD?.restoreStep?.(sl,n))return;const ss=slideSteps.get(sl);if(!ss)return;ss.reset?.();for(let k=0;k<n;k++)ss.steps[k]();ss.current=n;sl.getAnimations({subtree:true}).forEach(a=>{if(isFinite(a.effect?.getComputedTiming().endTime))try{a.finish();}catch(_){}});}
-function goPrev(){const ss=slideSteps.get(allSlides[current]);if(window._arrowSubstep!==false&&ss?.current>0){restoreBuild(allSlides[current],ss.current-1);updateStepIndicator();return;}const prev=nextVisible(current,-1);goTo(prev,false);if(window._arrowSubstep!==false)queueMicrotask(()=>{const sl=allSlides[current],st=slideSteps.get(sl);if(st){restoreBuild(sl,st.steps.length);updateStepIndicator();}});}
+function restoreBuild(sl,n,animate=false){if(window.SD?.restoreStep?.(sl,n,animate))return;const ss=slideSteps.get(sl);if(!ss)return;ss.reset?.();for(let k=0;k<n;k++)ss.steps[k]();ss.current=n;sl.getAnimations({subtree:true}).forEach(a=>{if(isFinite(a.effect?.getComputedTiming().endTime))try{a.finish();}catch(_){}});}
+function goPrev(){const ss=slideSteps.get(allSlides[current]);if(window._arrowSubstep!==false&&ss?.current>0){restoreBuild(allSlides[current],ss.current-1,true);updateStepIndicator();return;}const prev=nextVisible(current,-1);goTo(prev,false);if(window._arrowSubstep!==false)queueMicrotask(()=>{const sl=allSlides[current],st=slideSteps.get(sl);if(st){restoreBuild(sl,st.steps.length);updateStepIndicator();}});}
 function advanceStep(){if(window.SD?.completeCurrent?.(allSlides[current]))return true;const ss=slideSteps.get(allSlides[current]);if(ss&&ss.current<ss.steps.length){ss.steps[ss.current]();ss.current++;updateStepIndicator();return true;}return false;}
 function updateStepIndicator(){const el=document.getElementById('step-indicator');const ss=slideSteps.get(allSlides[current]);el.textContent=(ss&&ss.current<ss.steps.length)?`Step ${ss.current+1}/${ss.steps.length}`:'';}
 function updateHUD(){document.getElementById('counter').textContent=`${String(current).padStart(2,'0')} / ${String(total-1).padStart(2,'0')}`;updateStepIndicator();buildGrid();}

@@ -186,14 +186,14 @@ window.MOTION_END=END; window.MOTION_SFX=SFX.sort((a,b)=>a.t-b.t);
 const domainAttrs=[];document.querySelectorAll('svg *').forEach(el=>['fill','stroke','stop-color','style'].forEach(a=>{const v=el.getAttribute(a);if(v&&/#00d4ff|#f43f5e|#a78bfa/i.test(v))domainAttrs.push([el,a,v]);}));
 addEventListener('load',()=>domainAttrs.forEach(([el,a,v])=>el.setAttribute(a,v)),{once:true});
 // The road keeps moving until Alex chooses the reframe. Each overlap then holds for a click.
-const stops=[5.6,9.4,20.4,34.7,36.9,38.9,window.MOTION_END];let phase=0,active=false,raf=0,last=0;
-function setTime(t,play){document.getAnimations().forEach(a=>{a.pause();a.currentTime=t*1000;if(play)a.play();});last=t;}
-function watch(){if(!active)return;let t=Math.max(0,...document.getAnimations().map(a=>+a.currentTime||0))/1000;
+const stops=[5.6,9.4,20.4,34.7,36.9,38.9,window.MOTION_END];let phase=0,active=false,raf=0,last=0,resume=0;
+function setTime(t,play){document.getAnimations().filter(a=>!window.SDStepMotion?.owns(a)).forEach(a=>{a.pause();a.currentTime=t*1000;if(play)a.play();});last=t;}
+function watch(){if(!active)return;let t=Math.max(0,...document.getAnimations().filter(a=>!window.SDStepMotion?.owns(a)).map(a=>+a.currentTime||0))/1000;
  if(t>last&&t-last<.3){const cues=window.MOTION_SFX.filter(c=>c.t>last&&c.t<=t).map(c=>({...c,t:0}));if(cues.length)parent.postMessage({sdMotionSfx:cues},'*');}last=t;
  if(t>=stops[phase]){if(phase===2){setTime(9.4,true);}else{setTime(stops[phase],false);active=false;}}
  if(active)raf=requestAnimationFrame(watch);
 }
 function startWatch(){cancelAnimationFrame(raf);active=true;raf=requestAnimationFrame(watch);}
-SDFrame.init({duration:window.MOTION_END,steps:6,onEnter(){phase=0;last=0;startWatch();},onStep(n,instant){phase=Math.min(n,6);cancelAnimationFrame(raf);active=false;if(instant)setTime(phase===2?12:stops[phase],false);else{setTime(phase===2?9.4:stops[Math.max(0,phase-1)],true);startWatch();}},onLeave(){active=false;cancelAnimationFrame(raf);}});
+SDFrame.init({duration:window.MOTION_END,steps:6,layoutSteps:n=>n===3,onEnter(){phase=0;last=0;startWatch();},onStep(n,instant){clearTimeout(resume);phase=Math.min(n,6);cancelAnimationFrame(raf);active=false;if(instant)setTime(phase===2?12:stops[phase],false);else{setTime(phase===2?9.4:stops[Math.max(0,phase-1)],phase!==3);if(phase===3)resume=setTimeout(()=>{setTime(stops[2],true);startWatch();},700);else startWatch();}},onLeave(){clearTimeout(resume);active=false;cancelAnimationFrame(raf);}});
 </script>
 </body></html>
