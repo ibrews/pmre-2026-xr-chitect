@@ -198,6 +198,27 @@ const SECTIONS = [
         "hideTracker": true
       },
       {
+        "id": "xr-terms",
+        "title": "VR, AR, MR, XR",
+        "year": "2026+",
+        "venn": [1, 1, 1],
+        "keep": 19,
+        "use": "pmre/text-card",
+        "props": {
+          "kicker": "",
+          "title": "Quick vocabulary",
+          "lines": [
+            "<b>VR</b> Virtual reality replaces the world around you",
+            "<b>AR</b> Augmented reality adds to the world you see",
+            "<b>MR</b> Mixed reality blends both, aware of your real room",
+            "<b>XR</b> Extended reality is the umbrella for all of it"
+          ],
+          "lineSteps": true
+        },
+        "notes": "⏱ ~30s.\n\nKeep it brief: one click per term. VR: a headset fully replaces what you see. AR: digital content layered on your view of the real world, on a phone or glasses. MR: digital content that understands your real room, so a floor plan can sit on this floor or walls can rise around you. XR: the umbrella term. Most new headsets do all of it, so the labels matter less every year.",
+        "hideTracker": true
+      },
+      {
         "id": "goals",
         "use": "pmre/text-card",
         "props": {
@@ -507,7 +528,7 @@ const SECTIONS = [
           0.4
         ],
         "storyRole": "content",
-        "notes": "⏱ ~25s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nOpportunities come from having a weird reputation. When you’re the weird person doing a weird combination of things, you stick in people’s heads. They remember you. It happened with Equus, and it happens again in 2012 with Connie Caldwell.\n\nYear: 2008. Venn weights: 0.8 / 1 / 0.4.\n"
+        "notes": "⏱ ~25s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nOpportunities come from having a weird reputation. When you’re the weird person doing a weird combination of things, you stick in people’s heads. They remember you. It happened with Equus, and it happens again in 2012 with Connie Caldwell.\n\nYear: 2008. Venn weights: 0.8 / 1 / 0.4.\n\n\nNot “follow your dream.” The niche came from deliberate practice: years of focused, effortful work on things just past my ability, with feedback. That does not guarantee a niche. What it does is put you in alignment (Oliver Ward’s word at PMRE yesterday) so that when a lucky opportunity shows up, you are ready to take it. Luck plus preparation, not a dream."
       },
       {
         "id": "overlap-yours",
@@ -1670,7 +1691,7 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~90s. Ten quick, one-click spotlights, then the whole room. These combinations are editorial summaries, not quoted biographies. Dave → Navjeet → Tom → Krisse & Rich → Devon → Via → Perica → Emily → Matt → Brandon. Sources and omitted claims: media/pmre/v8/niche-audit-sources.json. Via’s company is unverified and intentionally omitted. No six-figure production-cost, production-time, drone-first-history or product-priority claims. Brandon closes: you are standing in his overlap.\nFinal narrative audit: moved the audience niche sequence after the major projects, before the future-media chapter. This follows Alex’s current origin → projects → audience niche → next-tier/future → DIY/pricing → hire/QR order. The earlier typed placement was a suggestion, not a requirement to interrupt the 2005–2010 story."
+        "notes": "⏱ ~90s. Ten quick, one-click spotlights, then the whole room. These combinations are editorial summaries, not quoted biographies. Dave → Navjeet → Tom → Krisse & Rich → Devon → Via → Perica → Emily → Matt → Brandon. Sources and omitted claims: media/pmre/v8/niche-audit-sources.json. Via’s company is unverified and intentionally omitted. No six-figure production-cost, production-time, drone-first-history or product-priority claims. Brandon closes: you are standing in his overlap.\nFinal narrative audit: moved the audience niche sequence after the major projects, before the future-media chapter. This follows Alex’s current origin → projects → audience niche → next-tier/future → DIY/pricing → hire/QR order. The earlier typed placement was a suggestion, not a requirement to interrupt the 2005–2010 story.\n\nFraming: these people did not stumble into niches by following a dream. Each built real craft first, then stayed aligned (Oliver Ward’s word) when the opening came."
       }
     ]
   },
