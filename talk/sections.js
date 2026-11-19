@@ -2308,6 +2308,21 @@ const SECTIONS = [
         "notes": "⏱ ~30s. Talkthrough 54:27–54:40 asked for the years and key lessons to return. 2005: work with intention. 2006: theater makes an experience for people. 2013: experiment with a new medium. 2026: combine those skills into something valuable for your clients. Your own overlap will be different."
       },
       {
+        "id": "career-ring-recap",
+        "use": "pmre/career-ring-recap",
+        "title": "ALT: Keep the whole mix (ring)",
+        "keep": 19,
+        "year": "2005–2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "hideTracker": true,
+        "props": {},
+        "notes": "ALTERNATIVE VERSION of the previous slide (Alex, 2026-11-19 talkthrough: 'give it to me as an alternative'). Same four lessons, branching off the big year ring with the full Venn in the middle. Pick one and hide the other (add \"hidden\": true in talk/sections.js).\n\n⏱ ~30s. 2005: work with intention. 2006: design an experience. 2013: try the new medium. 2026: combine your skills. Last click: What could your mix make possible?"
+      },
+      {
         "id": "start-now",
         "hidden": true,
         "title": "Start with a place you already know",

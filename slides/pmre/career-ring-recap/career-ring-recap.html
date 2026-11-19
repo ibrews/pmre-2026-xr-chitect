@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Keep the whole mix (ring)</title>
+<!-- pmre/career-ring-recap: alternative recap. Year ring 2005-2026 (same geometry/colors as pmre/ring-chapter), Venn at full
+     weight in the middle, the four lessons branch off the ring at their years. Step n reveals lessons 0..n; step 3 adds the question. -->
+<link rel="stylesheet" href="../../../assets/fonts/base.css">
+<style>
+html,body{margin:0;height:100%;background:#141110;overflow:hidden;font-family:'Space Grotesk','Inter',system-ui,sans-serif}
+svg{width:100%;height:100%;display:block}
+.les{opacity:0;transition:opacity .7s ease}.les.on{opacity:1}
+.les .y{font-size:44px;font-weight:700;fill:#e5bb61}.les .h{font-size:34px;font-weight:700;fill:#f3e9d6}.les .p{font-size:26px;fill:rgba(243,233,214,.7)}
+.les line{stroke:#e5bb61;stroke-width:3}.les circle{fill:#e5bb61}
+.ttl{font-size:60px;font-weight:800;fill:#e5bb61}.sub{font-size:28px;fill:rgba(243,233,214,.7)}
+.q{font-size:36px;font-weight:700;fill:#e5bb61;opacity:0;transition:opacity .7s ease}.q.on{opacity:1}
+.tick{font-size:22px;fill:rgba(240,244,255,.45)}
+body.instant *{transition:none!important}
+</style></head><body>
+<svg id="s" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet"></svg>
+<script src="../../sd-frame.js"></script>
+<script src="../../kit/sprite.js"></script>
+<script>
+const ICONS=["<rect x=\"-1\" y=\"-20\" width=\"2\" height=\"2\" fill=\"#c4b5fd\"/><rect x=\"-3\" y=\"-18\" width=\"6\" height=\"2\" fill=\"#c4b5fd\"/><rect x=\"-6\" y=\"-16\" width=\"12\" height=\"2\" fill=\"#a78bfa\"/><rect x=\"-9\" y=\"-14\" width=\"18\" height=\"2\" fill=\"#a78bfa\"/><rect x=\"-12\" y=\"-12\" width=\"24\" height=\"2\" fill=\"#9370db\"/><rect x=\"-13\" y=\"-10\" width=\"26\" height=\"2\" fill=\"#a78bfa\"/><rect x=\"-13\" y=\"-8\" width=\"26\" height=\"1\" fill=\"#7c5cbf\"/><rect x=\"-11\" y=\"-7\" width=\"3\" height=\"18\" fill=\"#c4b5fd\"/><rect x=\"-10\" y=\"-7\" width=\"1\" height=\"18\" fill=\"#a78bfa\"/><rect x=\"-5\" y=\"-7\" width=\"3\" height=\"18\" fill=\"#c4b5fd\"/><rect x=\"-4\" y=\"-7\" width=\"1\" height=\"18\" fill=\"#a78bfa\"/><rect x=\"2\" y=\"-7\" width=\"3\" height=\"18\" fill=\"#c4b5fd\"/><rect x=\"3\" y=\"-7\" width=\"1\" height=\"18\" fill=\"#a78bfa\"/><rect x=\"8\" y=\"-7\" width=\"3\" height=\"18\" fill=\"#c4b5fd\"/><rect x=\"9\" y=\"-7\" width=\"1\" height=\"18\" fill=\"#a78bfa\"/><rect x=\"-14\" y=\"11\" width=\"28\" height=\"2\" fill=\"#a78bfa\"/><rect x=\"-15\" y=\"13\" width=\"30\" height=\"2\" fill=\"#9370db\"/><rect x=\"-16\" y=\"15\" width=\"32\" height=\"2\" fill=\"#7c5cbf\"/>", "<rect x=\"-16\" y=\"-18\" width=\"32\" height=\"3\" fill=\"#f59e0b\"/><rect x=\"-16\" y=\"-15\" width=\"3\" height=\"30\" fill=\"#f59e0b\"/><rect x=\"13\" y=\"-15\" width=\"3\" height=\"30\" fill=\"#f59e0b\"/><rect x=\"-15\" y=\"-17\" width=\"30\" height=\"1\" fill=\"#fde68a\"/><rect x=\"-13\" y=\"-15\" width=\"26\" height=\"27\" fill=\"#0a0812\"/><rect x=\"-13\" y=\"-15\" width=\"4\" height=\"25\" fill=\"#dc2626\"/><rect x=\"-9\" y=\"-15\" width=\"3\" height=\"23\" fill=\"#ef4444\"/><rect x=\"-12\" y=\"-15\" width=\"2\" height=\"25\" fill=\"#b91c1c\"/><rect x=\"-7\" y=\"-15\" width=\"2\" height=\"20\" fill=\"#dc2626\"/><rect x=\"9\" y=\"-15\" width=\"4\" height=\"25\" fill=\"#dc2626\"/><rect x=\"6\" y=\"-15\" width=\"3\" height=\"23\" fill=\"#ef4444\"/><rect x=\"10\" y=\"-15\" width=\"2\" height=\"25\" fill=\"#b91c1c\"/><rect x=\"5\" y=\"-15\" width=\"2\" height=\"20\" fill=\"#dc2626\"/><rect x=\"-9\" y=\"-15\" width=\"18\" height=\"3\" fill=\"#dc2626\"/><rect x=\"-7\" y=\"-13\" width=\"14\" height=\"2\" fill=\"#ef4444\"/><rect x=\"-5\" y=\"-11\" width=\"10\" height=\"1\" fill=\"#dc2626\"/><rect x=\"-13\" y=\"12\" width=\"26\" height=\"3\" fill=\"#8b6f47\"/><rect x=\"-13\" y=\"12\" width=\"26\" height=\"1\" fill=\"#a0845c\"/><rect x=\"-1\" y=\"-12\" width=\"2\" height=\"3\" fill=\"rgba(255,255,200,.3)\"/><rect x=\"-2\" y=\"-9\" width=\"4\" height=\"4\" fill=\"rgba(255,255,200,.15)\"/><rect x=\"-4\" y=\"-5\" width=\"8\" height=\"6\" fill=\"rgba(255,255,200,.08)\"/><rect x=\"-6\" y=\"1\" width=\"12\" height=\"6\" fill=\"rgba(255,255,200,.04)\"/>", "<rect x=\"-16\" y=\"-16\" width=\"32\" height=\"24\" fill=\"#1e293b\"/><rect x=\"-14\" y=\"-14\" width=\"28\" height=\"20\" fill=\"#0f172a\"/><rect x=\"-14\" y=\"-14\" width=\"28\" height=\"1\" fill=\"#334155\"/><rect x=\"-3\" y=\"8\" width=\"6\" height=\"4\" fill=\"#475569\"/><rect x=\"-8\" y=\"12\" width=\"16\" height=\"2\" fill=\"#475569\"/><rect x=\"-7\" y=\"12\" width=\"14\" height=\"1\" fill=\"#64748b\"/><rect x=\"-12\" y=\"2\" width=\"24\" height=\"2\" fill=\"#22c55e\"/><rect x=\"-12\" y=\"4\" width=\"24\" height=\"2\" fill=\"#166534\"/><rect x=\"-6\" y=\"-4\" width=\"2\" height=\"2\" fill=\"#60a5fa\"/><rect x=\"-7\" y=\"-2\" width=\"4\" height=\"4\" fill=\"#3b82f6\"/><rect x=\"-7\" y=\"2\" width=\"2\" height=\"1\" fill=\"#1e40af\"/><rect x=\"-5\" y=\"2\" width=\"2\" height=\"1\" fill=\"#1e40af\"/><rect x=\"2\" y=\"-6\" width=\"2\" height=\"2\" fill=\"#fbbf24\"/><rect x=\"7\" y=\"-8\" width=\"2\" height=\"2\" fill=\"#fbbf24\"/><rect x=\"4\" y=\"-2\" width=\"8\" height=\"2\" fill=\"#854d0e\"/><rect x=\"4\" y=\"-2\" width=\"8\" height=\"1\" fill=\"#a16207\"/><rect x=\"-10\" y=\"-12\" width=\"6\" height=\"2\" fill=\"rgba(255,255,255,.15)\"/><rect x=\"5\" y=\"-10\" width=\"4\" height=\"2\" fill=\"rgba(255,255,255,.1)\"/>"];
+const NS='http://www.w3.org/2000/svg',S=document.getElementById('s'),C=[960,590],R=215,Y0=2005,Y1=2026,SWEEP=330;
+const ang=y=>-90+SWEEP*(y-Y0)/(Y1-Y0),pt=(a,r)=>[C[0]+r*Math.cos(a*Math.PI/180),C[1]+r*Math.sin(a*Math.PI/180)];
+const el=(t,a,p=S)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p.append(e);return e;};
+const defs=el('defs',{}),g=el('linearGradient',{id:'g',x1:0,x2:1},defs);[['0','#00d4ff'],['.5','#a78bfa'],['1','#f43f5e']].forEach(([o,c])=>el('stop',{offset:o,'stop-color':c},g));
+el('circle',{cx:C[0],cy:C[1],r:R,fill:'none',stroke:'rgba(240,244,255,.14)','stroke-width':10});
+for(let y=Y0;y<=Y1;y++){const a=ang(y),major=[2010,2016,2020,2023].includes(y),[x1,y1]=pt(a,R-(major?22:12)),[x2,y2]=pt(a,R+(major?22:12));
+ el('line',{x1,y1,x2,y2,stroke:major?'rgba(240,244,255,.6)':'rgba(240,244,255,.25)','stroke-width':major?4:2});
+ if(major){const [tx,ty]=pt(a,R+50);el('text',{x:tx,y:ty+8,'text-anchor':'middle',class:'tick'}).textContent=y;}}
+const L=2*Math.PI*R*SWEEP/360,frac=y=>(y-Y0)/(Y1-Y0);
+const arc=el('circle',{cx:C[0],cy:C[1],r:R,fill:'none',stroke:'url(#g)','stroke-width':10,'stroke-linecap':'round',transform:`rotate(-90 ${C[0]} ${C[1]})`,'stroke-dasharray':`${L} ${2*Math.PI*R}`,'stroke-dashoffset':L});
+arc.style.transition='stroke-dashoffset .9s cubic-bezier(.45,0,.2,1)';
+// Venn at full weight (the whole mix)
+const colors=['#00d4ff','#f43f5e','#a78bfa'],off=[[-46,-30],[46,-30],[0,50]];
+colors.forEach((c,i)=>{const x=C[0]+off[i][0],y=C[1]+off[i][1];el('circle',{cx:x,cy:y,r:92,fill:c,'fill-opacity':.16,stroke:c,'stroke-width':4});
+ const ic=el('g',{transform:`translate(${x+off[i][0]*.7},${y+off[i][1]*.7}) scale(1.7)`,style:'shape-rendering:crispEdges'});ic.innerHTML=ICONS[i];});
+// lessons: [year, title, line, label anchor x, y (top baseline), text-anchor]
+const LES=[[2005,'Work with intention.','Know why you make every mark.',900,215,'end'],
+ [2006,'Design an experience.','Think about the people inside it.',1030,215,'start'],
+ [2013,'Try the new medium.','Learn by making something real.',1215,690,'start'],
+ [2026,'Combine your skills.','Make something your clients need.',705,445,'end']];
+const groups=LES.map(([yr,h,p,x,y,anc])=>{const gg=el('g',{class:'les'});const [px,py]=pt(ang(yr),R);
+ const ex=anc==='end'?x+14:x-14,ey=y+40;el('line',{x1:px,y1:py,x2:ex,y2:ey},gg);el('circle',{cx:px,cy:py,r:9},gg);
+ [[yr,'y',0],[h,'h',44],[p,'p',82]].forEach(([tx,cl,dy])=>{const t=el('text',{x,y:y+dy,'text-anchor':anc,class:cl},gg);t.textContent=tx;});return gg;});
+el('text',{x:288,y:830,class:'ttl'}).textContent='Keep the whole mix';
+el('text',{x:288,y:875,class:'sub'}).textContent='The next medium still needs everything you know.';
+const q=el('text',{x:1440,y:440,'text-anchor':'middle',class:'q'});
+[['What could your',0],['mix make possible?',44]].forEach(([s,dy])=>{const ts=el('tspan',{x:1440,dy:dy?44:0},q);ts.textContent=s;});
+// walking marker (same sprite as the chapter ring)
+const mk=el('g',{}),up=el('g',{},mk),sp=el('g',{transform:'translate(0 -30) scale(.62)'},up);PX.avatar(sp,{withBeard:true});
+let curA=ang(2005);
+function place(a){const [x,y]=pt(a,R);up.setAttribute('transform',`translate(${x} ${y})`);}
+function moveTo(a,instant){if(instant){curA=a;place(a);return;}const a0=curA,t0=performance.now();curA=a;
+ const f=now=>{const k=Math.min(1,(now-t0)/900),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;place(a0+(a-a0)*e);if(k<1)requestAnimationFrame(f);};requestAnimationFrame(f);}
+function ping(n){try{const a=parent.sfxCtx&&parent.sfxCtx();if(!a)return;const t=a.currentTime,f=[523,659,784,1047][n]||784;[[f,.02],[f*1.5,.007]].forEach(([fr,v])=>{const o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.setValueAtTime(fr*.85,t);o.frequency.exponentialRampToValueAtTime(fr,t+.05);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.015);g.gain.exponentialRampToValueAtTime(.0001,t+.5);o.connect(g).connect(a.destination);o.start(t);o.stop(t+.52);});}catch(e){}}
+function set(n,instant){document.body.classList.toggle('instant',!!instant);n=Math.max(0,Math.min(3,n));
+ groups.forEach((gg,i)=>gg.classList.toggle('on',i<=n));q.classList.toggle('on',n===3);
+ const yr=LES[n][0];arc.setAttribute('stroke-dashoffset',L*(1-frac(yr)));moveTo(ang(yr),instant);}
+set(0,true);window.MOTION_SFX=[];
+SDFrame.init({duration:1,steps:3,layoutSteps:true,onStep:(n,i)=>{set(n,i);if(!i)ping(n);}});
+</script>
+</body></html>
