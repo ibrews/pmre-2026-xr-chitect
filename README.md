@@ -1,6 +1,8 @@
-## PMRE v8 — conference voices and attendee niches
+## PMRE v8 — speaker, studio wheel and story photos
 
 Source: `story/v8`; publish only the `/v8/` subtree. Root and `/v3/` through `/v7/` are preserved. Conference quotes now appear on slides; attendee Venn spotlights, Matt Gio’s cognitive-ladder idea, an attributed Nucleus4D claim and Emily Olman’s AR Insider Four Seasons header capture are included. Via’s company could not be verified and is omitted. Cotton now plays Alex’s supplied, audio-free H.264 clip without re-encoding, looping silently with the original still as poster. Source details: `media/pmre/v8/provenance.json`.
+
+November 19: slide #2 reuses the MIA speaker intro (Co-Founder; 350+ classes), including a bulky first headset replaced by the compact VR power-up. Slide #3 restores v5’s exact studio copy beside MIA’s silent 18-client wheel. Presenter-supplied AU queue, Wisconsin theater and speaking photos are web optimized without visible provenance captions. There are 92 absolute slide slots; three new visible beats add to the default full story.
 
 Package with `python3 tools/package_offline.py --out <organizer-package>`; verify the extracted ZIP using `node tools/qa_v8.mjs ROOT OUT chrome|firefox` and `tools/qa_v7_resources.mjs`. No Drive upload.
 
@@ -33,6 +35,7 @@ After committing all required runtime assets (including media ignored by `.gitig
 ```sh
 python3 tools/package_offline.py --out /absolute/path/to/organizer-package
 node tools/qa_v8.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-chrome chrome
+node tools/qa_v8_followup.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-followup
 node tools/qa_v8.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-firefox firefox
 node tools/qa_v7_resources.mjs /absolute/path/to/extracted-package /absolute/path/to/qa-hub chrome
 ```
@@ -44,7 +47,7 @@ Publish by copying the committed source tree into the **`/v8/` directory on main
 ## Things to Try
 
 1. Open `index.html` without a server, disconnect the network and step through the entire deck.
-2. Pause the opening sprite/lane animation, then click through its four overlap reveals.
+2. On #2, click through the speaker intro and watch the bulky headset get replaced; on #3, inspect the silent client wheel. Then click through the lane animation’s four overlap reveals.
 3. Compare virtual and built Macbeth/Brockman images; inspect the restored Waldorf and Geffen galleries without pixel cycling.
 4. Watch the Aspen setup shrink beside the America map while the video continues.
 5. Use the final QR/resources page to download the free guide, then inspect the package/pricing example and collaboration close.

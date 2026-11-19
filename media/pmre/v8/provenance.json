@@ -69,5 +69,81 @@
     "audio_streams": 0,
     "processing": "Byte-for-byte copy; no re-encode",
     "playback": "Silent autoplay on slide entry; loop; existing still retained as poster"
+  },
+  "november_19_followup": {
+    "authorized_by": "Alex, November 19, 2026 task",
+    "mia_repository": "https://github.com/ibrews/mia-2026-collective-pitch",
+    "mia_commit": "9ee2493da4fb63e0bd2110398817383369411f22",
+    "reuse": "Slide 2 speaker implementation and props; slide 3 monocle geometry and client orbit placement adapted to silent radial labels. No drone sound implementation copied.",
+    "studio_copy": "Exact props equality against published main v5/talk/sections.js and story/v5 831b760",
+    "photos": [
+      {
+        "source": "/Users/alex/Desktop/PMRE VR/autodesk-university-alex-coulombe-class_orig.jpg",
+        "asset": "au-queue.jpg",
+        "size": [
+          750,
+          563
+        ],
+        "source_bytes": 119703,
+        "web_bytes": 93807,
+        "method": "progressive JPEG quality 88"
+      },
+      {
+        "source": "/Users/alex/Desktop/PMRE VR/experiencing-a-theater_orig.jpg",
+        "asset": "wisconsin-theater.jpg",
+        "size": [
+          1100,
+          619
+        ],
+        "source_bytes": 158372,
+        "web_bytes": 122771,
+        "method": "progressive JPEG quality 88"
+      },
+      {
+        "source": "/Users/alex/Desktop/PMRE VR/speaking/alex speaking italy.jpg",
+        "asset": "speaking-italy.jpg",
+        "size": [
+          1200,
+          675
+        ],
+        "source_bytes": 197143,
+        "web_bytes": 179728,
+        "method": "progressive JPEG quality 88"
+      },
+      {
+        "source": "/Users/alex/Desktop/PMRE VR/speaking/alex speaking unreal.jpg",
+        "asset": "speaking-unreal.jpg",
+        "size": [
+          1179,
+          781
+        ],
+        "source_bytes": 47289,
+        "web_bytes": 47289,
+        "method": "original already smaller; preserve original JPEG quality"
+      },
+      {
+        "source": "/Users/alex/Desktop/PMRE VR/speaking/speaking ial.jpg",
+        "asset": "speaking-ial.jpg",
+        "size": [
+          1125,
+          844
+        ],
+        "source_bytes": 281603,
+        "web_bytes": 224318,
+        "method": "progressive JPEG quality 88"
+      },
+      {
+        "source": "/Users/alex/Desktop/PMRE VR/speaking/speaking.jpg",
+        "asset": "speaking-stage.jpg",
+        "size": [
+          1125,
+          844
+        ],
+        "source_bytes": 84523,
+        "web_bytes": 84523,
+        "method": "original already smaller; preserve original JPEG quality"
+      }
+    ],
+    "display": "No provenance captions on the new images; alt text and speaker notes retain context."
   }
 }
