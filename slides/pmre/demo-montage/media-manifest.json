@@ -362,6 +362,60 @@
       "kind": "music",
       "excerpt": "first 30 s of the supplied trim (fade-in included); AAC 128k; played at volume .0127 (matches the old excerpt mean level)",
       "added": "2026-11-19"
+    },
+    {
+      "source_file": "IMG_9174.jpeg",
+      "file": "media/IMG_9174.jpg",
+      "source_sha256": "cf9c4a677cdca547719c6ece087b2f9ff7013b432f780308bf5e0648198295c0",
+      "sha256": "cd2cce1239b7b01418b2f47c776269d50cfdf256e8f06d8536e8f165e78603e2",
+      "bytes": 445053,
+      "kind": "photo",
+      "added": "2026-11-19 10:20, Alex: include all distinct items"
+    },
+    {
+      "source_file": "IMG_9182.jpeg",
+      "file": "media/IMG_9182.jpg",
+      "source_sha256": "557bbe090182d21c9a7942b6ddf5ace20386db3058896964f4dafe5a306c75d8",
+      "sha256": "bd0be682477dc200e1ba37312c83af3e4255a16c093b3bdca7dc66e115bb8154",
+      "bytes": 439128,
+      "kind": "photo",
+      "added": "2026-11-19 10:20, Alex: include all distinct items"
+    },
+    {
+      "source_file": "IMG_9307.HEIC",
+      "file": "media/IMG_9307.jpg",
+      "source_sha256": "9c2be758d83b0ff0a9b55890d4f3d92fee96ebc024545479c1b9e6e4cd2a7c16",
+      "sha256": "5d6db12be851a9a2b5ac0aedeef155dfbc1ffb7d564226e33a3de63aba88d8d5",
+      "bytes": 433007,
+      "kind": "photo",
+      "added": "2026-11-19 10:20, Alex: include all distinct items"
+    },
+    {
+      "source_file": "picogemini.jpeg",
+      "file": "media/picogemini.jpg",
+      "source_sha256": "d6f28523d08f5754a1794d8fe706282303310244cab9d999a8aa5a1df1104f3d",
+      "sha256": "cd525139b0b7996b9c049abebaf6a95206af303af3ecb62b4800232cf2f29e2e",
+      "bytes": 285065,
+      "kind": "photo",
+      "added": "2026-11-19 10:20, Alex: include all distinct items"
+    },
+    {
+      "source_file": "screen-20261117-201222.mp4",
+      "file": "media/screen-20261117.mp4",
+      "source_sha256": "d1f1086beb5ab4562f3677155253e531aeb1ef511d15c7e9c5ea81ad865b0007",
+      "sha256": "481815e41f268f9169979a23cc3586da44503341fb3a22023e0f781bce2a3bf8",
+      "bytes": 1020624,
+      "kind": "video (muted 1280w H.264)",
+      "added": "2026-11-19 10:20, Alex: include all distinct items"
+    },
+    {
+      "source_file": "screen-20261117-201222.mp4",
+      "file": "media/screen-20261117.jpg",
+      "source_sha256": "d1f1086beb5ab4562f3677155253e531aeb1ef511d15c7e9c5ea81ad865b0007",
+      "sha256": "851e5d9f1e63b3885d4323540cc1a6ecc6b7b3a78c773e518a1fd9476a1d4a63",
+      "bytes": 51884,
+      "kind": "video still",
+      "added": "2026-11-19 10:20, Alex: include all distinct items"
     }
   ],
   "excluded": {
@@ -380,5 +434,9 @@
     "IMG_9241",
     "IMG_9351",
     "IMG_9261"
+  ],
+  "dropped_near_duplicates": [
+    "IMG_9330 (same person as IMG_9333)",
+    "IMG_9340 (same person as IMG_9353 video)"
   ]
 }
