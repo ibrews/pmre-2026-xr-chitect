@@ -12,8 +12,8 @@ const TALK = {
   ],
   "mapNotes": "⏱ ~0s.\nHidden: per-slide year and Venn carry the orientation.",
   "closeEyebrow": "",
-  "closeTitle": "Build it together. Q&A",
-  "closeSub": "Start small. Make it valuable. Bring us the ambitious ones.",
+  "closeTitle": "Thank you.",
+  "closeSub": "alex@agilelens.com &middot; www.agilelens.com",
   "web": "ibrews.github.io/pmre-2026-xr-chitect/v8/resources/",
   "qr": "https://ibrews.github.io/pmre-2026-xr-chitect/v8/resources/",
   "qrLabel": "Free starter kit · training · projects · this deck\nPassword: pixie",
@@ -575,7 +575,7 @@ const SECTIONS = [
         },
         "title": "When you’re the weird person with weird overlaps in interests, people remember you.",
         "keep": 30,
-        "year": "2008",
+        "year": "2010",
         "venn": [
           0.8,
           1,
@@ -939,7 +939,7 @@ const SECTIONS = [
       {
         "id": "rice-early",
         "year": "2015",
-        "title": "Rice / designing at human scale",
+        "title": "Brockman Hall for Opera / designing at human scale",
         "use": "pmre/story-media",
         "keep": 99,
         "venn": [
@@ -950,11 +950,11 @@ const SECTIONS = [
         "storyRole": "content",
         "props": {
           "mode": "content",
-          "title": "Rice / designing at human scale",
+          "title": "Brockman Hall for Opera / designing at human scale",
           "src": "media/v3-fix1/rice-2015.mp4",
           "credit": "Allan Greenberg Architect / Fisher Dachs Associates",
           "brightness": 1,
-          "alt": "Rice / designing at human scale",
+          "alt": "Brockman Hall for Opera / designing at human scale",
           "posterTime": 8,
           "mediaFooter": true
         },
@@ -1260,7 +1260,7 @@ const SECTIONS = [
       {
         "id": "waldorf",
         "title": "Projects can come from anywhere",
-        "year": "2025",
+        "year": "2020",
         "venn": [
           1,
           1,
@@ -1274,7 +1274,7 @@ const SECTIONS = [
       {
         "id": "expectations",
         "title": "The best brief stretches your reputation",
-        "year": "2025",
+        "year": "2020",
         "venn": [
           1,
           1,
@@ -1299,7 +1299,7 @@ const SECTIONS = [
       },
       {
         "id": "brockman-virtual",
-        "year": "2021",
+        "year": "2020",
         "title": "Brockman / virtual and construction",
         "use": "pmre/story-media",
         "keep": 99,
@@ -1322,7 +1322,7 @@ const SECTIONS = [
       {
         "id": "brockman-real",
         "title": "Brockman Hall for Opera · virtual and built",
-        "year": "2021–2022",
+        "year": "2020",
         "venn": [
           1,
           1,
@@ -1351,7 +1351,7 @@ const SECTIONS = [
       {
         "id": "geffen",
         "title": "David Geffen Hall",
-        "year": "2022",
+        "year": "2020",
         "venn": [
           1,
           1,
@@ -1403,7 +1403,7 @@ const SECTIONS = [
         "id": "ring-2023",
         "use": "pmre/ring-chapter",
         "props": {
-          "from": 2022,
+          "from": 2020,
           "year": 2022,
           "kicker": "REAL ESTATE",
           "label": "2022",
@@ -1616,16 +1616,10 @@ const SECTIONS = [
           "alt": "A plan becomes walkable",
           "mode": "content",
           "brightness": 1,
-          "takeaway": "Let buyers feel the floor plan",
-          "inputs": [
-            "cubicasa",
-            "iguide"
-          ],
-          "inputLabel": "Plan reference",
-          "outputLabel": "Walkable Floor Tour: Agile Lens"
+          "takeaway": "Let buyers feel the floor plan"
         },
         "notes": "[FLASH] Plan reference: CubiCasa / iGUIDE → walkable Floor Tour: Agile Lens. Workflow proposal; neither vendor is credited as the actual source of the demonstration plan. No direct importer claimed.\n\nSponsor nod (keep it light, one sentence): you may already make the plan this starts from. CubiCasa (floor plans from a five-minute phone scan) and iGuide (floor plans and 3D tours) are PMRE 2026 sponsors. Source: pmreconference.com/sponsors and each sponsor’s own site, checked 2026-11-17.\n\n⏱ ~26s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother repeatable tool: walk an architectural plan at human scale. Product demonstration, not a current price or availability claim.\n\nYear: 2025–2026. Venn weights: 1 / 0.3 / 1.\n\n\nFor your business — presenter proposal: A floor plan is obvious to an architect and unfamiliar to many buyers. I would sell a guided plan walkthrough beside the photographs, especially before a home is built. This clip demonstrates Floor Tour; it does not establish a price, availability or measured conversion rate.\n\nClip: FloorTour_1Min (55 s, supplied by Alex 2026-11-14): plan in the headset, mixed-reality pass-through, then the rendered interior. Video only (the deck plays clips muted); re-encoded 1080p H.264.",
-        "year": "2025–2026",
+        "year": "2024–2026",
         "venn": [
           1,
           0.3,
@@ -2006,6 +2000,7 @@ const SECTIONS = [
       },
       {
         "id": "view-before-visit",
+        "hidden": true,
         "use": "pmre/property-future",
         "title": "Explore a property before you visit",
         "keep": 19,
@@ -2130,6 +2125,7 @@ const SECTIONS = [
       },
       {
         "id": "sharp",
+        "hidden": true,
         "title": "One photo. Nearby views.",
         "year": "2026",
         "venn": [
@@ -2165,6 +2161,7 @@ const SECTIONS = [
       },
       {
         "id": "ai-hand",
+        "hidden": true,
         "use": "pmre/story-media",
         "props": {
           "mode": "content",
@@ -2213,10 +2210,11 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/package-table",
         "props": {},
-        "notes": "⏱ ~70s.\n\nIdea credit: Matt Michalski, PMRE 2026 day-1 package/product slides, supplied by Alex as two photographs in Downloads/PMRE Packages. This is our original design, with our own hypothetical add-on figures and scope, not a reproduction of his slides or confidential Aryeo data.\n\nFor this room: keep photos, video, aerials, plans and existing 3D tours. Add a splat tour, guided VR walkthrough, mixed reality on site, then a bespoke Unreal premium. The example add-on prices are teaching proposals, NOT market medians, vendor rates, Agile Lens quotes or guaranteed margins. Scope revisions, travel, hosting and device support separately. A reusable template can reduce marginal setup work; a client pays for a reliable visit and decision, not the number of clicks. Custom Unreal and MR alignment still take real production and QA.\n\nNucleus4D officially confirms Zillow/realtor.com 3D tour publication (https://www.nucleus4d.com/). V8 RESOLVED: Nucleus4D’s supplied priority wording is shown as a vendor claim, visibly attributed; independent priority is not asserted.\n\n[FLASH] Starting products are examples, not verified native imports. Plan reference: CubiCasa / iGUIDE. Capture category: Giraffe360 / Nucleus4D / Bubo². Sell through Aryeo / HDPhotoHub, publish a supported companion tour to Zillow; guided headset delivery and compatibility remain separate.\n\nClient education: the next step should feel familiar. Connect each new spatial deliverable to work the client already values: a photograph chooses a view, a tour connects views, and a guided VR visit lets them judge the place at human scale. Introduce 3D models & splats as an additional deliverable, then price the useful client outcome. This folds the former cognitive-ladder slide into the business section.\nProduction scope moved offscreen for readability: plan/tour = capture, check dimensions, publish; splat = coverage, cleanup, hosting; VR = template, scale and headset QA; MR = alignment, options and hosted session; Unreal = model, lighting, optimization, deployment. No guaranteed file conversion or platform compatibility."
+        "notes": "⏱ ~70s.\n\nIdea credit: Matt Michalski, PMRE 2026 day-1 package/product slides, supplied by Alex as two photographs in Downloads/PMRE Packages. This is our original design, with our own hypothetical add-on figures and scope, not a reproduction of his slides or confidential Aryeo data.\n\nFor this room: keep photos, video, aerials, plans and existing 3D tours. Add a splat tour, guided VR walkthrough, mixed reality on site, then a bespoke Unreal premium. The example add-on prices are teaching proposals, NOT market medians, vendor rates, Agile Lens quotes or guaranteed margins. Scope revisions, travel, hosting and device support separately. A reusable template can reduce marginal setup work; a client pays for a reliable visit and decision, not the number of clicks. Custom Unreal and MR alignment still take real production and QA.\n\nNucleus4D officially confirms Zillow/realtor.com 3D tour publication (https://www.nucleus4d.com/). V8 RESOLVED: Nucleus4D’s supplied priority wording is shown as a vendor claim, visibly attributed; independent priority is not asserted.\n\n[FLASH] Starting products are examples, not verified native imports. Plan reference: CubiCasa / iGUIDE. Capture category: Giraffe360 / Nucleus4D / Bubo². Sell through Aryeo / HDPhotoHub, publish a supported companion tour to Zillow; guided headset delivery and compatibility remain separate.\n\nClient education: the next step should feel familiar. Connect each new spatial deliverable to work the client already values: a photograph chooses a view, a tour connects views, and a guided VR visit lets them judge the place at human scale. Introduce 3D models & splats as an additional deliverable, then price the useful client outcome. This folds the former cognitive-ladder slide into the business section.\nProduction scope moved offscreen for readability: plan/tour = capture, check dimensions, publish; splat = coverage, cleanup, hosting; VR = template, scale and headset QA; MR = alignment, options and hosted session; Unreal = model, lighting, optimization, deployment. No guaranteed file conversion or platform compatibility.\n\nInspiration for this slide: Matt Michalski. Thank him by name."
       },
       {
         "id": "plan-to-presence",
+        "hidden": true,
         "title": "A floor plan is already a starting point",
         "year": "2026+",
         "venn": [
@@ -2231,6 +2229,7 @@ const SECTIONS = [
       },
       {
         "id": "brief-closer",
+        "hidden": true,
         "title": "Your next tier is a place",
         "use": "pmre/brief-closer",
         "props": {},
@@ -2258,7 +2257,7 @@ const SECTIONS = [
         "props": {
           "title": "",
           "lines": [],
-          "quote": "“If no one is asking for it then you're not educating your client properly.”",
+          "quote": "“If no one is asking for it then you're <b>not educating your client properly</b>.”",
           "attr": "— Jonathan Lee, Tuesday",
           "kicker": ""
         },
@@ -2281,6 +2280,7 @@ const SECTIONS = [
       },
       {
         "id": "start-now",
+        "hidden": true,
         "title": "Start with a place you already know",
         "year": "2026+",
         "venn": [
@@ -2305,6 +2305,7 @@ const SECTIONS = [
       },
       {
         "id": "premium-proof",
+        "hidden": true,
         "title": "When the brief needs more",
         "year": "2026",
         "venn": [
