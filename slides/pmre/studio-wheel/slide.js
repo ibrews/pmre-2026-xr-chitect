@@ -13,7 +13,7 @@ SD.defineSlide({id:'pmre/studio-wheel',steps:0,props:{},assets:[],css:".slide.sd
   const txt = (str, x, y, size, weight, ls, fill) => { const t = svgE('text', { x, y, 'text-anchor': 'middle', 'dominant-baseline': 'middle', fill, 'font-family': 'Space Grotesk,sans-serif', 'font-size': size, 'font-weight': weight, 'letter-spacing': ls }); t.textContent = str; svg.appendChild(t); return t; };
   const heads = [txt(L.name || 'AGILE LENS', CX + 2, CY - 16, 42, 700, 6, 'rgba(255,255,255,.85)'), txt(L.tagline || '', CX, CY + 18, 16, 400, 4, 'rgba(255,255,255,.35)'), txt(L.est || '', CX, CY + 42, 14, 400, 5, 'rgba(255,255,255,.30)'), txt(L.city || '', CX, CY + 64, 13, 400, 6, 'rgba(255,255,255,.20)')];
 
-  const oR=250, clients=L.clients.map((name,i)=>{const t=txt(name,0,0,30,600,.2,'rgba(255,255,255,.85)');t.classList.add('client-label');t.dataset.a=-Math.PI/2+i*Math.PI*2/L.clients.length;return t;});
+  const oR=282, clients=L.clients.map((name,i)=>{const t=txt(name,0,0,30,600,.2,'rgba(255,255,255,.85)');t.classList.add('client-label');t.dataset.a=-Math.PI/2+i*Math.PI*2/L.clients.length;return t;});
   function fit(){clients.forEach(t=>{t.setAttribute('font-size',30);const n=t.getComputedTextLength();if(n>225)t.setAttribute('font-size',(30*225/n).toFixed(2));});}
   let angle=0,raf=0;
   function place(a=angle){clients.forEach(t=>{const rad=+t.dataset.a+a,deg=rad*180/Math.PI,flip=Math.cos(rad)<0;t.setAttribute('text-anchor',flip?'end':'start');t.setAttribute('x',CX+Math.cos(rad)*oR);t.setAttribute('y',CY+Math.sin(rad)*oR);t.setAttribute('transform',`rotate(${deg+(flip?180:0)} ${CX+Math.cos(rad)*oR} ${CY+Math.sin(rad)*oR})`);});}
