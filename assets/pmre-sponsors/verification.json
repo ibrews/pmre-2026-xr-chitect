@@ -1,0 +1,112 @@
+{
+  "checked": "2026-11-19",
+  "facts": [
+    {
+      "id": "cubicasa",
+      "url": "https://www.cubi.casa/",
+      "confirmedScope": "Quick phone scan; finished plan delivery later (6–24h on current page)."
+    },
+    {
+      "id": "iguide",
+      "url": "https://goiguide.com/",
+      "confirmedScope": "Measured floor plans and 3D virtual tours from one scan."
+    },
+    {
+      "id": "giraffe360",
+      "url": "https://giraffe360.com/blog/solving-the-real-estate-media-puzzle-the-roundup-from-the-first-ever-giraffe360-pmre-collaboration-webinar",
+      "confirmedScope": "Lifelike Digital Twin: dense LiDAR plus Gaussian splatting. No arbitrary headset export established."
+    },
+    {
+      "id": "realsee",
+      "url": "https://www.realsee.ai/pages/galois-new-user-guide",
+      "confirmedScope": "Galois LiDAR scanning and tour delivery."
+    },
+    {
+      "id": "nucleus",
+      "url": "https://www.nucleus4d.com/",
+      "confirmedScope": "Tours, video, plans; publication into Zillow/realtor.com. Current page does not independently establish first, PortalCam, or LCC. Priority quote left unchanged and attributed, per Alex."
+    },
+    {
+      "id": "bubo",
+      "url": "https://bubo2.com/technology",
+      "confirmedScope": "Raw Insta360 recording to 3DGS; PLY/SPZ downloads and browser hosting."
+    },
+    {
+      "id": "bubo-one-video",
+      "url": "https://bubo2.com/interiors",
+      "confirmedScope": "One route, one video capture; upload raw .insv, tidy and publish."
+    },
+    {
+      "id": "autohdr",
+      "url": "https://www.autohdr.com/",
+      "confirmedScope": "AI editing; no market-share number added."
+    },
+    {
+      "id": "fotello",
+      "url": "https://fotello.co/",
+      "confirmedScope": "AI editing, booking, delivery, payments."
+    },
+    {
+      "id": "luxengine",
+      "url": "https://luxengine.com/",
+      "confirmedScope": "AI photo editing and business platform; not a 3D engine."
+    },
+    {
+      "id": "aryeo",
+      "url": "https://www.aryeo.com/",
+      "confirmedScope": "Order forms, scheduling, payments, media delivery; headset hosting not claimed."
+    },
+    {
+      "id": "hdphotohub",
+      "url": "https://www.hdphotohub.com/",
+      "confirmedScope": "White-label scheduling, payments and media delivery."
+    },
+    {
+      "id": "zillow",
+      "url": "https://www.zillow.com/news/skytour-is-pushing-the-tech-boundaries-of-real-estate-visualization/",
+      "confirmedScope": "Showcase exterior Gaussian splat workflow using drone footage."
+    },
+    {
+      "id": "realtor",
+      "url": "https://www.realtor.com/marketing/resources/win-the-listing-perfect-3d-tour-script/",
+      "confirmedScope": "Listing 3D tours; unverified realtor.com Showcase product name omitted."
+    },
+    {
+      "id": "krisse",
+      "url": "https://southernremedia.com/our-story/",
+      "confirmedScope": "Krisse: owner, creative director, photography. Rich: aerials and interior video. In-room identity from Alex."
+    },
+    {
+      "id": "matt",
+      "url": "https://knowledge.autohdr.com/faqs",
+      "confirmedScope": "CEO Matt with matt-gia demo URL. Identity tie to Alex’s cognitive-ladder speaker remains unverified; Matt Gio retained."
+    }
+  ],
+  "limits": [
+    "nextStep is Alex’s editorial proposal, not a native integration promise.",
+    "Nucleus priority remains existing company-attributed wording, not independently verified.",
+    "Matt Gio to Matt Gia identity not confirmed; spelling retained.",
+    "Perica name and in-room presence from Alex; Bubo product verified first-party.",
+    "No third-party logo implies an affiliation.",
+    "No new ZIP or publication; integration owner applies legacy-resources-pmre.patch at publication root, bakes/retests merged source and writes KB receipt."
+  ],
+  "validation": {
+    "offlineChrome": "All 91 slide slots; all eight cut/AI combinations; zero errors, external requests, missing images or media failures. Re-run after merge because slide numbers change.",
+    "resourcesChrome": "Desktop/mobile, pixie gate, Markdown/ZIP starter downloads, BPI playback pass.",
+    "preview": "Required read-only preview child /root/v8e_preview; requested/submitted model and effort inherited, observed metadata unavailable. Closing strip and attendee headings fixed; visual recheck passed.",
+    "http": [
+      {
+        "url": "https://ibrews.github.io/pmre-2026-xr-chitect/v8/",
+        "status": 200
+      },
+      {
+        "url": "https://alexcoulombepresents.com/pmre",
+        "status": 200
+      }
+    ],
+    "legacy": "v6/resources/index.html on current main has no Placeholder code text. v7 patch prepared for integration; not applied to main.",
+    "packaging": "No offline ZIP rebuild, main publication or KB receipt edit per parallel-mode instruction.",
+    "legacyPatch": "git apply --check and apply passed against retrieved main v7 HTML; exact single paragraph replacement asserted.",
+    "postFix": "Closing-strip and attendee-heading changes re-captured and visually approved; final hub including tool marks re-tested without errors."
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "checked": "2026-11-19",
+  "assets": [
+    {
+      "file": "assets/pmre-sponsors/autohdr.png",
+      "url": "https://www.autohdr.com/images/common/autohdr-logo.png",
+      "sha256": "0cc472c743f9676567713b3e944d6d2af2c648fd4d8996f0f8d697ddf33da1d9",
+      "bytes": 1194
+    },
+    {
+      "file": "assets/pmre-sponsors/fotello.png",
+      "url": "https://media.fotellocdn.com/public/assets/optimized/fotello-logo-new.png",
+      "sha256": "9ffb7e1cab2844f035a8472e69fe464dc9b13b82b2012205d9c375f459b4e03f",
+      "bytes": 20352
+    },
+    {
+      "file": "assets/pmre-sponsors/luxengine.png",
+      "url": "https://luxengine.com/assets/primary-on-light@3x-BBTlc9TD.png",
+      "sha256": "cc5e50e6b97d21b78b4b9043b479f8dc2189d7a23b395943e5adc24ac79de904",
+      "bytes": 39454
+    },
+    {
+      "file": "assets/pmre-sponsors/aryeo.png",
+      "url": "https://cdn.prod.website-files.com/63da9ce0049e626ceff25b70/63fa88a8f8657172830165bc_Aryeo_Logo_-_Purple_square_white_mark-high_1_256x256.png",
+      "sha256": "c0c042358a229f5b9537ad30da6dfc78b46c8580411b5df5fc159cf6b8ce1470",
+      "bytes": 15467
+    },
+    {
+      "file": "assets/pmre-sponsors/realsee.png",
+      "url": "https://www.realsee.ai/cdn/shop/files/11__02_icon_logo.png?width=200",
+      "sha256": "92c69a0dcb7e62e5af3d6981d1261bc45942d0074d1663046579bf918c4a9d0f",
+      "bytes": 9182
+    },
+    {
+      "file": "assets/pmre-sponsors/hdphotohub.png",
+      "url": "https://cdn.prod.website-files.com/67caf5475ec48839bc4019a2/67caf5475ec48839bc401d3d_HDPHOTOHUB-p-500.png",
+      "sha256": "9064658222d6ce91c53a0cc05d399e557bd704b320ab75fe2245dcf079a64ee7",
+      "bytes": 7369
+    }
+  ],
+  "bubo": "First header logo SVG from https://bubo2.com/; currentColor resolved for standalone image",
+  "inherited": "CubiCasa, iGUIDE, Giraffe360 and Nucleus reused from existing curated media/pmre/sponsors; HDPhotoHub mark from official PMRE sponsor listing.",
+  "additionalAssets": [
+    {
+      "file": "zillow.png",
+      "url": "https://www.nucleus4d.com/img/zillow.png"
+    },
+    {
+      "file": "realtor.png",
+      "url": "https://www.nucleus4d.com/img/realtor.png"
+    }
+  ],
+  "toolIcons": [
+    {
+      "id": "scaniverse",
+      "error": "no icon"
+    },
+    {
+      "id": "polycam",
+      "file": "assets/pmre-sponsors/polycam.png",
+      "url": "https://cdn.prod.website-files.com/67a3e58efec5f4dc95fd18c6/6aed173a0760f8f9e323568c_logo.png"
+    },
+    {
+      "id": "supersplat",
+      "file": "assets/pmre-sponsors/supersplat.svg",
+      "url": "https://superspl.at/supersplat-logo.svg"
+    },
+    {
+      "id": "aframe",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "unreal",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "assets/pmre-sponsors/aframe.png",
+      "url": "https://aframe.io/images/aframe-logo.png"
+    }
+  ],
+  "toolWordmarks": "Scaniverse and Unreal Engine use plain text wordmarks; official icon endpoints were unavailable. Other tool marks are first-party downloaded assets."
+}

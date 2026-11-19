@@ -669,7 +669,7 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~25s.\n\nIdea credit: Matt Gio, PMRE 2026, as recorded in Alex’s Apple Note: cognitive ladder, acclimating to a new world, tell the story. This is an editorial diagram, not a quotation. Educate the client by connecting each new spatial deliverable to the work they already value. A photo shows the view; a tour connects views; VR lets them judge the place at human scale. Natural extension, not a demand to replace their existing media."
+        "notes": "⏱ ~25s.\n\nIdea credit: Matt Gio, PMRE 2026, as recorded in Alex’s Apple Note: cognitive ladder, acclimating to a new world, tell the story. This is an editorial diagram, not a quotation. Educate the client by connecting each new spatial deliverable to the work they already value. A photo shows the view; a tour connects views; VR lets them judge the place at human scale. Natural extension, not a demand to replace their existing media.\n\nIdentity check 2026-11-19: AutoHDR’s knowledge base confirms CEO Matt and links his matt-gia booking page; Matt Gia’s own profile confirms AutoHDR. This does not establish that Alex’s Matt Gio note names that same speaker. Keep the supplied attribution until Alex confirms. The four stages connect photographs, floor plans/tours, splats and a VR visit; CAPTURE → EDIT → DELIVER → STEP INSIDE is the business pipeline."
       },
       {
         "id": "macbeth-comparison",
@@ -765,7 +765,7 @@ const SECTIONS = [
           1
         ],
         "storyRole": "content",
-        "notes": "⏱ ~45s.\n\nThese little Venn diagrams apply the talk’s architecture/theater/technology visual language to attendees. Dave Koch: aviation photography, aircraft interiors/exteriors and 3D aircraft tours verified at https://aviationaircraftphoto.com/ . Devon Pastorius: Creative Director and Principal Photographer at Narwhal Creative; PMRE bio describes rap music videos, cinematic one takes and sketches that expand agent visibility: https://www.pmreconference.com/presenters ; corroborating company pages https://narwhalcreative.ca/about/ and https://windsorrealestatephotography.com/about/ . Circle labels are our editorial summaries, not self-descriptions or quotes. Via Lloyd-George: name, Charleston and architect supplied by Alex. Company NOT VERIFIED after exact-name, spelling/spacing, Charleston, Via Mi Design and Giraffe360 searches. Earlier raw note says Giraffe360, latest instruction says unsure; do not publish either company. Her minimal two-circle spotlight uses only Charleston and architect; no invented corporate role."
+        "notes": "⏱ ~45s.\n\nThese little Venn diagrams apply the talk’s architecture/theater/technology visual language to attendees. Dave Koch: aviation photography, aircraft interiors/exteriors and 3D aircraft tours verified at https://aviationaircraftphoto.com/ . Devon Pastorius: Creative Director and Principal Photographer at Narwhal Creative; PMRE bio describes rap music videos, cinematic one takes and sketches that expand agent visibility: https://www.pmreconference.com/presenters ; corroborating company pages https://narwhalcreative.ca/about/ and https://windsorrealestatephotography.com/about/ . Circle labels are our editorial summaries, not self-descriptions or quotes. Via Lloyd-George: name, Charleston and architect supplied by Alex. Company NOT VERIFIED after exact-name, spelling/spacing, Charleston, Via Mi Design and Giraffe360 searches. Earlier raw note says Giraffe360, latest instruction says unsure; do not publish either company. Her minimal two-circle spotlight uses only Charleston and architect; no invented corporate role.\n\nKrisse Newport: Southern Real Estate Media /our-story/ confirms owner, creative director and photographer, with husband Rich handling aerial work and video; first-party page checked 2026-11-19. Perica Milosevic: Alex’s in-room identity, Bubo²; its own /technology and /interiors pages verify a single Insta360 recording to Gaussian-splat browser tour. No speed, cheapest or universal headset claim."
       },
       {
         "id": "people-pleaser",
@@ -1427,6 +1427,20 @@ const SECTIONS = [
         "notes": "⏱ ~65s.\n\nRoot #60 America map style. Start with the Aspen setup timelapse; after about 12 seconds it shrinks beside the map. Presenter then reveals photos at Austin, Aspen, New York and California, with the timelapse still running. California summer 2026; New York 57th Street investor demonstration January 2026. DBOX is another New York location, not a separate city. Miami is current as of November 9 but no verified photograph is supplied here."
       },
       {
+        "id": "sponsor-pipeline",
+        "title": "The first three steps are in this room",
+        "use": "pmre/sponsor-pipeline",
+        "props": {},
+        "keep": 19,
+        "year": "2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "notes": "⏱ ~25s.\n\n[DWELL] CAPTURE → EDIT → DELIVER → STEP INSIDE. Everything I am about to show you starts as a file from one of these. You already make the first three. I take the same files one step further. Their output is my input: a proposed workflow, not a partnership or a promise of one-click import. Zillow and realtor.com are listing ecosystems, not PMRE sponsors. Bubo² and Nucleus4D are room exhibitors. XGRIDS is Alex’s actual working relationship, separate from this sponsor wall. Vendor sources and limitations live in talk/sponsors.js and assets/pmre-sponsors/verification.json."
+      },
+      {
         "id": "floor-demo",
         "title": "Floor Tour",
         "use": "pmre/story-media",
@@ -1440,21 +1454,14 @@ const SECTIONS = [
           "mode": "content",
           "brightness": 1,
           "takeaway": "Let buyers feel the floor plan",
-          "shout": {
-            "text": "Plans from PMRE sponsors",
-            "logos": [
-              {
-                "src": "media/pmre/sponsors/cubicasa.webp",
-                "alt": "CubiCasa"
-              },
-              {
-                "src": "media/pmre/sponsors/iguide.svg",
-                "alt": "iGuide"
-              }
-            ]
-          }
+          "inputs": [
+            "cubicasa",
+            "iguide"
+          ],
+          "inputLabel": "Plan reference",
+          "outputLabel": "Walkable Floor Tour: Agile Lens"
         },
-        "notes": "Sponsor nod (keep it light, one sentence): you may already make the plan this starts from. CubiCasa (floor plans from a five-minute phone scan) and iGuide (floor plans and 3D tours) are PMRE 2026 sponsors. Source: pmreconference.com/sponsors and each sponsor’s own site, checked 2026-11-17.\n\n⏱ ~51s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother repeatable tool: walk an architectural plan at human scale. Product demonstration, not a current price or availability claim.\n\nYear: 2025–2026. Venn weights: 1 / 0.3 / 1.\n\n\nFor your business — presenter proposal: A floor plan is obvious to an architect and unfamiliar to many buyers. I would sell a guided plan walkthrough beside the photographs, especially before a home is built. This clip demonstrates Floor Tour; it does not establish a price, availability or measured conversion rate.\n\nClip: FloorTour_1Min (55 s, supplied by Alex 2026-11-14): plan in the headset, mixed-reality pass-through, then the rendered interior. Video only (the deck plays clips muted); re-encoded 1080p H.264.",
+        "notes": "[FLASH] Plan reference: CubiCasa / iGUIDE → walkable Floor Tour: Agile Lens. Workflow proposal; neither vendor is credited as the actual source of the demonstration plan. No direct importer claimed.\n\nSponsor nod (keep it light, one sentence): you may already make the plan this starts from. CubiCasa (floor plans from a five-minute phone scan) and iGuide (floor plans and 3D tours) are PMRE 2026 sponsors. Source: pmreconference.com/sponsors and each sponsor’s own site, checked 2026-11-17.\n\n⏱ ~26s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nAnother repeatable tool: walk an architectural plan at human scale. Product demonstration, not a current price or availability claim.\n\nYear: 2025–2026. Venn weights: 1 / 0.3 / 1.\n\n\nFor your business — presenter proposal: A floor plan is obvious to an architect and unfamiliar to many buyers. I would sell a guided plan walkthrough beside the photographs, especially before a home is built. This clip demonstrates Floor Tour; it does not establish a price, availability or measured conversion rate.\n\nClip: FloorTour_1Min (55 s, supplied by Alex 2026-11-14): plan in the headset, mixed-reality pass-through, then the rendered interior. Video only (the deck plays clips muted); re-encoded 1080p H.264.",
         "year": "2025–2026",
         "venn": [
           1,
@@ -1753,22 +1760,15 @@ const SECTIONS = [
           ],
           "src": "media/v3-fix6/mia-fountain.mp4",
           "credit": "Gaussian splat walkthrough: Alex Coulombe",
-          "shout": {
-            "text": "Tours from PMRE sponsors",
-            "logos": [
-              {
-                "src": "media/pmre/sponsors/giraffe360.svg",
-                "alt": "Giraffe360",
-                "h": 62
-              },
-              {
-                "src": "media/pmre/sponsors/nucleus.png",
-                "alt": "Nucleus"
-              }
-            ]
-          }
+          "inputs": [
+            "giraffe360",
+            "nucleus",
+            "bubo"
+          ],
+          "inputLabel": "Capture tools in this room",
+          "outputLabel": "A visit at human scale"
         },
-        "notes": "Sponsor nod (one sentence, not a pitch): the walkable-tour step is already a product category in this room. Giraffe360 (camera plus AI: HDR photos, floor plans, 360 tours) and Nucleus (one capture to self-guided 3D tours, live showings, video, floor plans) are PMRE 2026 sponsors. Do not imply either sponsor produced the example scan on this slide. Nucleus now documents radiance-field and Gaussian-splat delivery separately on its official site; no unsupported feature or priority claim is needed for this sponsor nod. Source: pmreconference.com/sponsors and each sponsor’s own site, checked 2026-11-17.\n\n⏱ ~75s.\n\nPresenter forecast/proposal, November 2026.\n\nMy bet: the deliverable expands from a set of views to a place the buyer can explore. On a phone or drone shoot, plan overlapping coverage for reconstruction alongside the hero shots. Process the images, clean the scan, choose the start point, then publish a walkthrough and a short film. That is a capture-to-walkthrough service you can begin testing on a property you control. A drone covers the outside; a phone or handheld capture covers the inside. This is an additional capture plan, not a promise that every ordinary real-estate shoot will reconstruct well.\n\nThe Rome examples are PortalCam captures. The phone/drone route is a separate workflow. Polycam documents Gaussian splats from existing overlapping photos or video, including drone captures; this is a supported input route, not a promised turnaround or quality guarantee. Sources: https://learn.poly.cam/hc/en-us/articles/30549134403860-How-to-Create-Drone-3D-Models-in-Polycam ; https://learn.poly.cam/hc/en-us/articles/30549121659412-How-to-Create-Photogrammetry-and-Gaussian-splats-from-Existing-Images-and-Videos-on-Mobile-and-Web . Use overlap and coverage, inspect glass/mirrors/moving subjects, clean the result and test the actual viewer. Price the work, not an assumed one-click conversion.\n\nThe portrait movie is reused from the MIA deck: media/video/splat-walkthrough.mp4, credited there to Alex Coulombe. It shows a fountain scan viewed from a moving virtual camera, not a new Rome hotel capture and not a recording of a phone actively scanning. PMRE derivative uses 00:03–00:12, audio removed, height 1080. It illustrates the middle (reconstructed scene) stage; the phone/drone input route is described separately above.\n\nV8 RESOLVED: use the explicitly attributed Nucleus4D priority claim on the following slide, as supplied by Alex; do not state priority in the presenter’s own voice."
+        "notes": "[FLASH] Capture tools in this room: Giraffe360 · Nucleus4D · Bubo². They did not produce this example scan. Compatible exports and viewer support must be checked per product; do not promise a one-click headset path. Sources: talk/sponsors.js.\n\n⏱ ~75s.\n\nPresenter forecast/proposal, November 2026.\n\nMy bet: the deliverable expands from a set of views to a place the buyer can explore. On a phone or drone shoot, plan overlapping coverage for reconstruction alongside the hero shots. Process the images, clean the scan, choose the start point, then publish a walkthrough and a short film. That is a capture-to-walkthrough service you can begin testing on a property you control. A drone covers the outside; a phone or handheld capture covers the inside. This is an additional capture plan, not a promise that every ordinary real-estate shoot will reconstruct well.\n\nThe Rome examples are PortalCam captures. The phone/drone route is a separate workflow. Polycam documents Gaussian splats from existing overlapping photos or video, including drone captures; this is a supported input route, not a promised turnaround or quality guarantee. Sources: https://learn.poly.cam/hc/en-us/articles/30549134403860-How-to-Create-Drone-3D-Models-in-Polycam ; https://learn.poly.cam/hc/en-us/articles/30549121659412-How-to-Create-Photogrammetry-and-Gaussian-splats-from-Existing-Images-and-Videos-on-Mobile-and-Web . Use overlap and coverage, inspect glass/mirrors/moving subjects, clean the result and test the actual viewer. Price the work, not an assumed one-click conversion.\n\nThe portrait movie is reused from the MIA deck: media/video/splat-walkthrough.mp4, credited there to Alex Coulombe. It shows a fountain scan viewed from a moving virtual camera, not a new Rome hotel capture and not a recording of a phone actively scanning. PMRE derivative uses 00:03–00:12, audio removed, height 1080. It illustrates the middle (reconstructed scene) stage; the phone/drone input route is described separately above.\n\nV8 RESOLVED: use the explicitly attributed Nucleus4D priority claim on the following slide, as supplied by Alex; do not state priority in the presenter’s own voice."
       },
       {
         "id": "nucleus-zillow",
@@ -1907,9 +1907,14 @@ const SECTIONS = [
             }
           ],
           "steps": false,
-          "layout": "row"
+          "layout": "row",
+          "inputs": [
+            "autohdr",
+            "fotello",
+            "luxengine"
+          ]
         },
-        "notes": "⏱ ~40s.\n\nOfficial Apple research example, https://apple-aiml-research.github.io/ml-sharp/ . SHARP predicts a 3D Gaussian representation from one photograph for nearby-viewpoint synthesis. This is not measured geometry or evidence of what is behind a wall. Use the local official example clip, silently looping; verify the property before marketing. Research code/model license terms apply to deployment; do not promise unrestricted commercial use.",
+        "notes": "⏱ ~40s.\n\nOfficial Apple research example, https://apple-aiml-research.github.io/ml-sharp/ . SHARP predicts a 3D Gaussian representation from one photograph for nearby-viewpoint synthesis. This is not measured geometry or evidence of what is behind a wall. Use the local official example clip, silently looping; verify the property before marketing. Research code/model license terms apply to deployment; do not promise unrestricted commercial use.\n\n[FLASH] An edited listing photo—the kind AutoHDR, Fotello and LUXengine deliver—is the proposed input to this separate experiment. Apple supplied the actual example shown; no sponsor edited it. SHARP predicts nearby views, not a complete measured walkable property.",
         "opt": "ai:on"
       },
       {
@@ -1947,7 +1952,7 @@ const SECTIONS = [
         "keep": 19,
         "use": "pmre/package-table",
         "props": {},
-        "notes": "⏱ ~70s.\n\nIdea credit: Matt Michalski, PMRE 2026 day-1 package/product slides, supplied by Alex as two photographs in Downloads/PMRE Packages. This is our original design, with our own hypothetical add-on figures and scope, not a reproduction of his slides or confidential Aryeo data.\n\nFor this room: keep photos, video, aerials, plans and existing 3D tours. Add a splat tour, guided VR walkthrough, mixed reality on site, then a bespoke Unreal premium. The example add-on prices are teaching proposals, NOT market medians, vendor rates, Agile Lens quotes or guaranteed margins. Scope revisions, travel, hosting and device support separately. A reusable template can reduce marginal setup work; a client pays for a reliable visit and decision, not the number of clicks. Custom Unreal and MR alignment still take real production and QA.\n\nNucleus4D officially confirms Zillow/realtor.com 3D tour publication (https://www.nucleus4d.com/). V8 RESOLVED: Nucleus4D’s supplied priority wording is shown as a vendor claim, visibly attributed; independent priority is not asserted."
+        "notes": "⏱ ~70s.\n\nIdea credit: Matt Michalski, PMRE 2026 day-1 package/product slides, supplied by Alex as two photographs in Downloads/PMRE Packages. This is our original design, with our own hypothetical add-on figures and scope, not a reproduction of his slides or confidential Aryeo data.\n\nFor this room: keep photos, video, aerials, plans and existing 3D tours. Add a splat tour, guided VR walkthrough, mixed reality on site, then a bespoke Unreal premium. The example add-on prices are teaching proposals, NOT market medians, vendor rates, Agile Lens quotes or guaranteed margins. Scope revisions, travel, hosting and device support separately. A reusable template can reduce marginal setup work; a client pays for a reliable visit and decision, not the number of clicks. Custom Unreal and MR alignment still take real production and QA.\n\nNucleus4D officially confirms Zillow/realtor.com 3D tour publication (https://www.nucleus4d.com/). V8 RESOLVED: Nucleus4D’s supplied priority wording is shown as a vendor claim, visibly attributed; independent priority is not asserted.\n\n[FLASH] Starting products are examples, not verified native imports. Plan reference: CubiCasa / iGUIDE. Capture category: Giraffe360 / Nucleus4D / Bubo². Sell through Aryeo / HDPhotoHub, publish a supported companion tour to Zillow; guided headset delivery and compatibility remain separate."
       },
       {
         "id": "plan-to-presence",
