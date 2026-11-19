@@ -290,6 +290,78 @@
       "bytes": 106524,
       "kind": "opening-poster",
       "time_seconds": 8.2
+    },
+    {
+      "source_file": "IMG_9245.mp4",
+      "file": "media/IMG_9245.mp4",
+      "sha256": "8a826dd0723276854f4193d09b9137e3f0db5f2d3c12dbc870b5e3c2639b6bdb",
+      "bytes": 509408,
+      "kind": "pile-video",
+      "derivative": "muted, 720p H.264 CRF 27, untrimmed",
+      "added": "2026-11-19"
+    },
+    {
+      "source_file": "IMG_9266.mp4",
+      "file": "media/IMG_9266.mp4",
+      "sha256": "dac183116994430de7abf3c186c36f2be7fa85ded0c22c5de97015070ae4953b",
+      "bytes": 1296194,
+      "kind": "pile-video",
+      "derivative": "muted, 720p H.264 CRF 27, untrimmed",
+      "added": "2026-11-19"
+    },
+    {
+      "source_file": "IMG_9270.mp4",
+      "file": "media/IMG_9270.mp4",
+      "sha256": "4a8c65183512ee067a27b7deae04bf72ced417511c54b2c62e2bbb3c2088710d",
+      "bytes": 274402,
+      "kind": "pile-video",
+      "derivative": "muted, 720p H.264 CRF 27, untrimmed",
+      "added": "2026-11-19"
+    },
+    {
+      "source_file": "IMG_9328.mp4",
+      "file": "media/IMG_9328.mp4",
+      "sha256": "c81283da5d4dedeb880f526e922b11a94d2f384521f8cb53c0dacca3d0bb94da",
+      "bytes": 577090,
+      "kind": "pile-video",
+      "derivative": "muted, 720p H.264 CRF 27, untrimmed",
+      "added": "2026-11-19"
+    },
+    {
+      "source_file": "IMG_9351.mp4",
+      "file": "media/IMG_9351.mp4",
+      "sha256": "4b6627e6d472b2a794d7b9ba64b33979a387c562282a1fa53d4ef5e3aae2a688",
+      "bytes": 1569540,
+      "kind": "pile-video",
+      "derivative": "muted, 720p H.264 CRF 27, untrimmed",
+      "added": "2026-11-19"
+    },
+    {
+      "source_file": "IMG_9352.mp4",
+      "file": "media/IMG_9352.mp4",
+      "sha256": "6169cb9ab442ef8b7836475655418ac7ad259e2eced680d416a9873fb73d2cbe",
+      "bytes": 2622872,
+      "kind": "pile-video",
+      "derivative": "muted, 720p H.264 CRF 27, untrimmed",
+      "added": "2026-11-19"
+    },
+    {
+      "source_file": "IMG_9353.mp4",
+      "file": "media/IMG_9353.mp4",
+      "sha256": "098f1d3e11b904b106f8a157dba2e3064621a64b3a215e93472663531319576b",
+      "bytes": 942358,
+      "kind": "pile-video",
+      "derivative": "muted, 720p H.264 CRF 27, untrimmed",
+      "added": "2026-11-19"
+    },
+    {
+      "source_file": "Urban Chomp Rampage - 0m33s start - 3s fade-in.mp3",
+      "file": "media/urban-chomp-rampage.m4a",
+      "sha256": "1f4bf6fe177cd97d6f46d05016170fe00c38b77769bfb6f0bbe62a71ad08d13e",
+      "bytes": 495058,
+      "kind": "music",
+      "excerpt": "first 30 s of the supplied trim (fade-in included); AAC 128k; played at volume .0127 (matches the old excerpt mean level)",
+      "added": "2026-11-19"
     }
   ],
   "excluded": {
