@@ -1762,6 +1762,7 @@ const SECTIONS = [
           "kicker": "NOW",
           "label": "2026",
           "sub": "What excites me",
+          "sfx": "advance",
           "venn": [
             0.6,
             0.5,
@@ -1787,17 +1788,20 @@ const SECTIONS = [
       },
       {
         "id": "rome",
-        "title": "Walk around the Colosseum",
-        "use": "pmre/story-media",
+        "title": "Splats",
+        "use": "pmre/text-card",
         "keep": 19,
         "storyRole": "content",
         "props": {
+          "title": "Splats",
+          "centered": true,
+          "big": ""
+        },
+        "_prevProps": {
+          "use": "pmre/story-media",
           "title": "Walk around the Colosseum",
           "src": "slides/pmre/rome-splats/media/rome-colosseum-flythrough-15s-1080p.mp4",
           "credit": "Josette Seitz / Agile Lens · Web-rendered scan",
-          "alt": "Colosseum: a photoreal 3D capture you can walk through",
-          "mode": "content",
-          "brightness": 1,
           "takeaway": "Splats: photoreal 3D captures you can walk through"
         },
         "notes": "⏱ ~85s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nThis is what is exciting me now: places captured from photographs that you can move through. Josette Seitz / Agile Lens scan. Web-rendered footage, not headset footage.\n\nYear: 2026. Venn weights: 1 / 0.3 / 1.\n\n\nGaussian splats are a way to reconstruct the appearance of a place from overlapping photographs/video, so a viewer can choose a new viewpoint. This clip is a web-rendered camera path through our Rome scan; the next headset clip shows the difference between watching that path and choosing your own. The thing that gets me is walking around the Colosseum and looking back at a detail. For a property, that could be a buyer choosing to look back through the living room. Do not describe this Rome capture as a phone or drone scan: the Rome examples use PortalCam. Background: Kerbl, Kopanas, Leimkühler and Drettakis, SIGGRAPH 2023, https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/ . No performance number or equivalence to a measured survey is asserted.",
@@ -1816,12 +1820,12 @@ const SECTIONS = [
         "storyRole": "content",
         "props": {
           "title": "Sina Bernini Bristol",
-          "src": "slides/pmre/rome-splats/media/rome-hotel-flythrough-10s-1080p.mp4",
+          "src": "slides/pmre/rome-splats/media/rome-hotel-flythrough-fast.mp4",
           "credit": "Sina Bernini Bristol, Autograph Collection · PortalCam: Josette Seitz / Agile Lens",
           "alt": "Gaussian splat of Sina Bernini Bristol, Autograph Collection, Rome",
           "mode": "content",
           "brightness": 1,
-          "posterTime": 3,
+          "posterTime": 2,
           "takeaway": "Now imagine this as your next listing"
         },
         "notes": "⏱ ~45s.\n\nSina Bernini Bristol, Autograph Collection, Rome. Josette Seitz captured this hotel with XGRIDS PortalCam during the October 2026 MIA trip. This is the existing slow 10-second web-rendered Gaussian-splat flythrough of the whole-scene LOD scan, not headset footage and not a hotel-supplied marketing film. Credit capture to Josette Seitz / Agile Lens; rendering uses GaussianSplats3D / Three.js.\nSources: presenter identification November 9, 2026; KB daily/2026-10-21-alex-mbp.md (12:25Z scan receipt, RomaHotelMIA files copied to Fort H:/XR/UOXRShowcase/data/RomaHotelMIA), daily/2026-10-22-alex-mbp.md (SplatDiorama scan lineage); https://www.marriott.com/en-us/hotels/romab-sina-bernini-bristol-autograph-collection/overview/ . Existing shipped clip: slides/pmre/rome-splats/media/rome-hotel-flythrough-10s-1080p.mp4. The brand identity source does not imply that Marriott commissioned this scan.\n\nI love the Colosseum, but this is the bridge to your business: an actual hotel interior. Let someone look around the arrival space before they book or buy. The same idea applies to a home, amenity floor or event venue. You would still capture good photographs; I would sell the walkable place as an additional deliverable. This is my proposal, not a Marriott endorsement.",
@@ -1856,7 +1860,25 @@ const SECTIONS = [
           1
         ]
       },
-      {
+{
+        "id": "vr-evolving",
+        "title": "VR is evolving",
+        "use": "pmre/text-card",
+        "keep": 19,
+        "storyRole": "content",
+        "props": {
+          "title": "VR is evolving",
+          "centered": true
+        },
+        "year": "2026",
+        "venn": [
+          0.4,
+          0.6,
+          1
+        ],
+        "notes": "⏱ ~10s.\n\nAlex, 2026-11-19: a beat before the old objections. VR is evolving; here is how people used to talk about it."
+      },
+            {
         "id": "glasses-objections",
         "title": "Now we’re there.",
         "year": "2026",
