@@ -4,7 +4,7 @@ const TALK = {
   "coverTitle": "Architect to <span class=\"xr\">XR</span>-chitect",
   "coverSub": "The Best Career Advice I Ever Ignored",
   "speaker": "Alex Coulombe",
-  "speakerCo": "Founder, Agile Lens &middot; New York City",
+  "speakerCo": "Co-Founder, Agile Lens &middot; New York City",
   "coverNotes": "⏱ ~30s.\n\nI want to tell you how architecture, theater and emerging technology became one job. I hope this sparks an idea about the things you love. Full is the primary rehearsal cut. Select 20t for the venue time limit.\n\nFor this room: I make spaces understandable before people can be there. You already do that with property photographs and films. I want to show you what you might sell when the buyer can step inside the media.\n\nNovember 18: I have the great honor of knowing that I am very likely the worst photographer in this room. Thanks to Brandon, the PMRE team, Reed and Jazz. I have learned from the people here and calibrated this talk to your work. Buckle up: I will move quickly. Recent events I have attended include Augmented Enterprise Summit in Atlanta, the film/television event in Rome, Meta Connect and an Android developer event. This conference has helped me connect that work to property media. The last slide has one QR for the talk, links and a free starter guide.",
   "mapCenter": [
     "ARCHITECT",
@@ -106,25 +106,61 @@ const SECTIONS = [
     "storyChapter": 1,
     "storyLesson": "Hello",
     "lesson": {
-      "title": "Hello",
+      "title": "Alex Coulombe",
       "short": "Hello",
       "tagline": "",
       "tags": "",
-      "opt": "chapter:off",
-      "notes": "⏱ ~0s.\nHidden organizational record."
+      "opt": "",
+      "notes": "⏱ ~45s.\n\nMIA slide #2 reused per Alex, November 19. Co-Founder; 350+ classes. Three clicks: bio, five icon power-ups including replacement compact VR glasses, stat tallies. First headset covers the whole head; VR pickup replaces it.",
+      "id": "speaker-intro",
+      "use": "pmre/mia-speaker",
+      "props": {
+        "eyebrow": "Your Speaker",
+        "name": "Alex<br>Coulombe",
+        "role": "Co-Founder &amp; CEO, Agile Lens: Immersive Design",
+        "withBeard": true,
+        "bio": "Architect turned XR-chitect who has spent the last decade building spatial experiences for the world’s most ambitious clients.",
+        "ue5": "Authorized Unreal Engine instructor since 2020: 350+ classes taught, 40+ courses written.",
+        "stats": [
+          {
+            "n": "16",
+            "l": "Years in XR"
+          },
+          {
+            "n": "10",
+            "l": "Years of Agile Lens"
+          },
+          {
+            "n": "10",
+            "l": "Years in Unreal"
+          },
+          {
+            "n": "100+",
+            "l": "Experiences built"
+          }
+        ],
+        "icons": [
+          "architecture",
+          "theatre",
+          "film",
+          "computer",
+          "vr"
+        ]
+      },
+      "hideTracker": true
     },
     "cases": [
       {
         "id": "hello",
-        "use": "pmre/text-card",
+        "use": "pmre/studio-wheel",
         "props": {
           "kicker": "Agile Lens Immersive Design · New York City",
           "title": "An XR studio",
           "lines": [
-            "Architecture + real estate",
-            "Entertainment + spatial storytelling",
-            "Four Seasons · Waldorf Astoria",
-            "David Geffen Hall · Royal Caribbean"
+            "Architecture",
+            "Real estate",
+            "Entertainment",
+            "…and much more"
           ]
         },
         "title": "An XR studio",
@@ -240,7 +276,8 @@ const SECTIONS = [
         "hideTracker": true,
         "notes": "⏱ ~15s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-14 dictation.\n\nLet’s rewind. 2005. I am fresh out of high school, starting architecture school at Syracuse University. (Skip why architecture and the degree; dive right in.)\n\nThe outer ring is the years of this story; my marker travels around it. The Venn inside is the mix of architecture, theater and emerging technology at each point. A compact version lives in the corner of every slide.\n\nYear: 2005. Venn weights: 1 / 1 / 1.\n"
       }
-    ]
+    ],
+    "introLesson": true
   },
   {
     "year": "2005",
@@ -610,6 +647,27 @@ const SECTIONS = [
           0.8,
           1
         ]
+      },
+      {
+        "id": "wisconsin-detail",
+        "title": "I added too much detail",
+        "use": "pmre/story-media",
+        "keep": 19,
+        "year": "2013–2015",
+        "venn": [
+          1,
+          0.8,
+          1
+        ],
+        "props": {
+          "title": "I added too much detail",
+          "src": "media/pmre/v8/wisconsin-theater.jpg",
+          "credit": "",
+          "alt": "Wisconsin School of Music theater model",
+          "mode": "content",
+          "brightness": 1
+        },
+        "notes": "⏱ ~35s.\n\nAlex’s November 19 direction: Wisconsin School of Music, where I added too much detail. Use his supplied experiencing-a-theater image. Modeling for rendering did not automatically make an optimized VR experience."
       },
       {
         "id": "xiqu",
@@ -1022,22 +1080,55 @@ const SECTIONS = [
           "line": "",
           "media": [
             {
+              "src": "media/pmre/v8/au-queue.jpg",
+              "alt": "The line waiting for Alex’s talk at Autodesk University"
+            },
+            {
               "src": "media/v3/au-panel.jpeg",
-              "label": "Autodesk University 2017 · Las Vegas"
-            },
-            {
-              "src": "media/v3/au-line.jpg",
-              "label": "The queue outside the talk"
-            },
-            {
-              "src": "slides/pmre/hxr-statue-free-work/media/pivot/pivot04_autodeskuniversity2017.jpg",
-              "label": "Sharing the work"
+              "alt": "Alex on the Autodesk University expert panel"
             }
           ],
           "steps": false,
           "layout": "row"
         },
         "notes": "⏱ ~70s.\n\n⏱ ~110s.\n\nDelivery prompts, paraphrased from Alex’s 2026-11-08 walk.\n\nBusiness development took off when I stopped cold calling and started speaking. Jeff Mottle invited me to Autodesk University after a YouTube video with few views. It did not need to go viral. It needed to reach the right person. Separate channels are fine if that helps you put work out there. Name corrected against official Autodesk panel credits.\n\nYear: 2017. Venn weights: 0.4 / 0.6 / 1.\nSource: https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017\n\nA low-view YouTube video reached Jeff Mottle, leading to a speaking invitation. This picture shows the resulting Autodesk expert panel, not a screenshot of the video. Speaking made the work visible to potential collaborators. Source: presenter recollection and official Autodesk 2017 panel https://www.autodesk.com/autodesk-university/class/vision-future-Virtual-Reality-Design-Viz-Advice-Experts-2017 . The separate Vegas crowd selfie is removed; it obscures this cause-and-effect story.\n\nVegas callback (Alex, 2026-11-14): this is the Vegas moment from the opening. Autodesk University 2017, Las Vegas, about ten years ago. What happened in Vegas did not stay in Vegas.\n"
+      },
+      {
+        "id": "speaking-unlock",
+        "title": "Speaking opened the doors",
+        "use": "pmre/v6-gallery",
+        "keep": 19,
+        "year": "2017–2026",
+        "venn": [
+          1,
+          1,
+          1
+        ],
+        "props": {
+          "title": "Speaking opened the doors",
+          "line": "I toured the country pitching architects. Sharing the work changed the conversation.",
+          "media": [
+            {
+              "src": "media/pmre/v8/speaking-italy.jpg",
+              "alt": "Alex speaking in Italy"
+            },
+            {
+              "src": "media/pmre/v8/speaking-unreal.jpg",
+              "alt": "Alex speaking at Unreal"
+            },
+            {
+              "src": "media/pmre/v8/speaking-ial.jpg",
+              "alt": "Alex speaking to an audience"
+            },
+            {
+              "src": "media/pmre/v8/speaking-stage.jpg",
+              "alt": "Alex presenting onstage"
+            }
+          ],
+          "layout": "grid",
+          "steps": false
+        },
+        "notes": "⏱ ~40s.\n\nAlex’s account, November 19: trying to sell services to architects all over the country was not working. Speaking was a huge unlock. These are the four photos he supplied in speaking/. No provenance captions or invented event identities."
       },
       {
         "id": "speaking-and-rates",

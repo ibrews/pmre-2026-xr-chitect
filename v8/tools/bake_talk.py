@@ -96,6 +96,11 @@ if "TALK.closeTitle" not in s:
 patch("TALK.mapCenter[0]", "ct.textContent='IS XR RIGHT'", "ct.textContent=TALK.mapCenter[0]")
 patch("TALK.mapCenter[1]", "ct2.textContent='FOR YOUR PROJECT?'", "ct2.textContent=TALK.mapCenter[1]")
 
+# The first organizational slot can host the speaker module without moving studio URL #3.
+INTRO_ANCHOR='  deck.appendChild(ls);allSlides.push(ls);lessonIdxs.push(allSlides.length-1);'
+if 'if(sec.introLesson)' not in s:
+    s=s.replace(INTRO_ANCHOR,"  if(sec.introLesson){ls.classList.remove('slide-lesson');ls.classList.add('case-slide');ls.innerHTML='';SD._build(ls,sec.lesson,sec); }\n"+INTRO_ANCHOR,1)
+
 # 4. Presenter notes for cover/close/map/bonus come from TALK/BONUS.
 patch("BONUS.notes)return BONUS.notes;",  # marker = the inserted text, so re-bakes do not stack copies
       "if(ty==='bonus')return'Bonus lesson:", "if(ty==='bonus'&&BONUS.notes)return BONUS.notes;\n  if(ty==='bonus')return'Bonus lesson:")
