@@ -13,7 +13,19 @@ render(el,p,ctx){
  const VIDS=new Set(['IMG_9245','IMG_9266','IMG_9270','IMG_9328','IMG_9351','IMG_9352','IMG_9353','screen-20261117']);
  const N=files.length,PER=17/N,rnd=k=>{const x=Math.sin(k*999.7)*43758.5453;return x-Math.floor(x);};
  const BIG={x:12,y:-2,w:76,h:104,r:0};
- const pile=files.map((_,i)=>{const slot=(i*13)%32,c=slot%8,r=Math.floor(slot/8);return{x:Math.min(83,Math.max(0,c*(83/7)+(rnd(i+1)-.5)*4)),y:Math.min(68,Math.max(0,r*(68/3)+(rnd(i+7)-.5)*6)),w:17,h:32,r:(rnd(i+3)-.5)*18};});
+ // Alex 2026-11-20: every clip must stay fully visible on the pile. The board (1731x682 px) is a 5x3 checkerboard:
+ // the 8 clips own alternate cells, sit above every photo, and are shaped to their own frame (4:3 or 16:9, 11 px
+ // mat), so nothing crops or covers them. Photos (a little smaller) pile up in the 7 open cells and tuck under clip edges.
+ const BW=1731,BH=682,MAT=22,AR={IMG_9245:4/3,IMG_9266:4/3,IMG_9270:4/3},ar=f=>AR[f]||16/9;
+ const fitH=(w,a)=>((w*BW/100-MAT)/a+MAT)/BH*100,fitW=(h,a)=>((h*BH/100-MAT)*a+MAT)/BW*100;
+ const CW=20,CH=33,ROWY=[0,33.5,67],cell=(c,r)=>({x:c*CW,y:ROWY[r]});
+ const VCELLS=[[0,0],[4,2],[1,1],[4,0],[0,2],[3,1],[2,0],[2,2]],PCELLS=[[1,0],[0,1],[3,2],[2,1],[3,0],[4,1],[1,2]];
+ let nv=0,np=0;
+ const pile=files.map((file,i)=>{if(VIDS.has(file)){const a=ar(file),w=a<1.5?16:18.5,h=fitH(w,a),o=cell(...VCELLS[nv++]);return{x:o.x+(CW-w)/2,y:o.y+(CH-h)/2,w,h,r:(rnd(i+3)-.5)*5};}
+  const w=14.5,h=27,o=cell(...PCELLS[(np*3)%7]);np++;return{x:Math.min(100-w,Math.max(0,o.x+(CW-w)/2+(rnd(i+1)-.5)*9)),y:Math.min(100-h,Math.max(0,o.y+(CH-h)/2+(rnd(i+7)-.5)*10)),w,h,r:(rnd(i+3)-.5)*18};});
+ // A clip lands big at its own aspect too, so the whole frame shows from the first moment.
+ const big=files.map(file=>{if(!VIDS.has(file))return BIG;const w=fitW(BIG.h,ar(file));return{x:50-w/2,y:BIG.y,w,h:BIG.h,r:0};});
+ const FLY=2*N+10,zOf=i=>String(VIDS.has(files[i])?N+3:i+2);
  const COLS=8,ROWS=Math.ceil(N/COLS),grid=files.map((_,i)=>({x:(i%COLS)*(100/COLS)+.6,y:Math.floor(i/COLS)*(100/ROWS)+1,w:100/COLS-1.2,h:100/ROWS-2,r:0}));
  const lerp=(a,b,e)=>({x:a.x+(b.x-a.x)*e,y:a.y+(b.y-a.y)*e,w:a.w+(b.w-a.w)*e,h:a.h+(b.h-a.h)*e,r:a.r+(b.r-a.r)*e});
  const place=(f,q,op=1,sc=1)=>Object.assign(f.style,{left:q.x+'%',top:q.y+'%',width:q.w+'%',height:q.h+'%',opacity:String(op),transform:`rotate(${q.r}deg) scale(${sc})`});
@@ -29,12 +41,12 @@ render(el,p,ctx){
  const logoCard=document.createElement('figure');logoCard.className='pmre-logo-card';logoCard.innerHTML=`<img src="${ctx.asset('../../../media/pmre/v8/pmre-logo.webp')}" alt="PMRE logo">`;board.append(logoCard);logoCard.hidden=true;
  const logoCell=N;// first free grid cell
  function placeLogo(e){logoCard.hidden=e<=0;if(e<=0)return;const q={x:(logoCell%COLS)*(100/COLS)+.6,y:Math.floor(logoCell/COLS)*(100/ROWS)+1,w:100/COLS-1.2,h:100/ROWS-2,r:0};place(logoCard,q,Math.max(0,(e-.5)*2),.9+.1*e);logoCard.style.zIndex='1';}
- function final(t=1){if(active&&!seeking&&!ctx.instant)cards.forEach(clipStart);const e=t>=1?1:(t<=0?0:(t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2));cards.forEach((f,i)=>{f.hidden=false;f.style.zIndex=String(i+2);place(f,lerp(pile[i],grid[i],e));});placeLogo(e);}
+ function final(t=1){if(active&&!seeking&&!ctx.instant)cards.forEach(clipStart);const e=t>=1?1:(t<=0?0:(t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2));cards.forEach((f,i)=>{f.hidden=false;f.style.zIndex=zOf(i);place(f,lerp(pile[i],grid[i],e));});placeLogo(e);}
  // restored mid-collage state: the first k photos already on the pile, none in flight
- function pileOf(k){logoCard.hidden=true;cards.forEach((f,i)=>{f.hidden=i>=k;if(i<k){f.style.zIndex=String(i+2);place(f,pile[i]);}});}
- function accumulate(t){cards.forEach((f,i)=>{const L=t-i*PER;f.hidden=L<0;if(L<0)return;clipStart(f);f.style.zIndex=String(i+2);
-  if(L<.3){const a=Math.min(1,L/.12);place(f,BIG,a,.94+.06*a);f.style.zIndex=String(N+5);}
-  else{const k=Math.min(1,(L-.3)/.32),e=1-Math.pow(1-k,3),q=lerp(BIG,pile[i],e);q.r=pile[i].r*e+Math.sin(k*Math.PI)*6*(pile[i].r<0?-1:1);place(f,q,1,1+.05*Math.sin(k*Math.PI));if(k<1)f.style.zIndex=String(N+5);}});}
+ function pileOf(k){logoCard.hidden=true;cards.forEach((f,i)=>{f.hidden=i>=k;if(i<k){f.style.zIndex=zOf(i);place(f,pile[i]);}});}
+ function accumulate(t){cards.forEach((f,i)=>{const L=t-i*PER;f.hidden=L<0;if(L<0)return;clipStart(f);f.style.zIndex=zOf(i);
+  if(L<.3){const a=Math.min(1,L/.12);place(f,big[i],a,.94+.06*a);f.style.zIndex=String(FLY);}
+  else{const k=Math.min(1,(L-.3)/.32),e=1-Math.pow(1-k,3),q=lerp(big[i],pile[i],e);q.r=pile[i].r*e+Math.sin(k*Math.PI)*6*(pile[i].r<0?-1:1);place(f,q,1,1+.05*Math.sin(k*Math.PI));if(k<1)f.style.zIndex=String(FLY);}});}
  function playMusic(){if(ctx.instant||seeking||!active)return;music.play().then(()=>{retry.hidden=true}).catch(()=>{if(active&&phase>0)retry.hidden=false});}
  function collage(){if(!active)return;clipReset();logoCard.hidden=true;collageT=0;phase=1;syncStep(1);v.pause();opening.hidden=true;album.hidden=false;start.hidden=true;if(!music.src)music.src=ctx.asset('media/urban-chomp-rampage.m4a');music.volume=0;music.currentTime=0;playMusic();ctx.clock.stop();ctx.clock.loop(t=>{if(!active)return false;collageT=t;music.volume=MUSIC_VOL*Math.min(1,t/.8)*Math.min(1,Math.max(0,(28-t)/5));if(t<17)accumulate(t);else{if(phase!==2){phase=2;syncStep(2);}final((t-17)/1.4);}if(t>=28){music.pause();ctx.clock.stop();return false;}});}
  function scrapbook(){ctx.clock.stop();collageT=99;phase=2;syncStep(2);opening.hidden=true;album.hidden=false;v.pause();start.hidden=true;final(1);if(active&&!seeking&&!ctx.instant){if(!music.src)music.src=ctx.asset('media/urban-chomp-rampage.m4a');if(music.paused)playMusic();const level=Math.min(MUSIC_VOL,music.volume||MUSIC_VOL);ctx.clock.loop(t=>{music.volume=level*Math.max(0,1-t/5);if(t>=5){music.pause();return false;}});}}
